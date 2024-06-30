@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "96f1559e-93fc-4cad-bd73-6083d549a6b1",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1493,
+  "height": 826,
+  "platformSettings": {},
+  "subMetas": {
+    "mengpo_attack_01": {
+      "ver": "1.0.6",
+      "uuid": "45135029-eb28-43a6-858d-946fa05edebb",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "96f1559e-93fc-4cad-bd73-6083d549a6b1",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1489,
+      "height": 822,
+      "rawWidth": 1493,
+      "rawHeight": 826,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

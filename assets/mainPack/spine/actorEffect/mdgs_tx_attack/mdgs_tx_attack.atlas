@@ -1,0 +1,20 @@
+
+mdgs_tx_attack.png
+size: 638,72
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/jt
+  rotate: false
+  xy: 2, 13
+  size: 563, 57
+  orig: 563, 57
+  offset: 0, 0
+  index: -1
+ef/yuandian
+  rotate: true
+  xy: 567, 2
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "7c93bee6-a9ff-4b7c-a472-e69ddc8dd30e",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1080,
+  "height": 1920,
+  "platformSettings": {},
+  "subMetas": {
+    "image_denglu_dabeijing": {
+      "ver": "1.0.6",
+      "uuid": "69c38bc9-0c7d-4534-9b0c-c8e0a7b0c9b8",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "7c93bee6-a9ff-4b7c-a472-e69ddc8dd30e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 1080,
+      "height": 1920,
+      "rawWidth": 1080,
+      "rawHeight": 1920,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "45b1a6df-dc8e-4212-8df8-6a202b8d05c3",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1937,
+  "height": 1480,
+  "platformSettings": {},
+  "subMetas": {
+    "baiwuchang_tx_attack2": {
+      "ver": "1.0.6",
+      "uuid": "13445ee6-3cb9-46ae-bacf-4991e588c889",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "45b1a6df-dc8e-4212-8df8-6a202b8d05c3",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1933,
+      "height": 1476,
+      "rawWidth": 1937,
+      "rawHeight": 1480,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

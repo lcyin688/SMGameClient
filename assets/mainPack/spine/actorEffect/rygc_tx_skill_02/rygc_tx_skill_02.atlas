@@ -1,0 +1,209 @@
+
+rygc_tx_skill_02.png
+size: 1999,417
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/3x-1_00000
+  rotate: true
+  xy: 1465, 2
+  size: 189, 192
+  orig: 384, 384
+  offset: 98, 96
+  index: -1
+ef/3x-1_00001
+  rotate: false
+  xy: 966, 185
+  size: 228, 230
+  orig: 384, 384
+  offset: 83, 77
+  index: -1
+ef/3x-1_00002
+  rotate: false
+  xy: 490, 175
+  size: 239, 240
+  orig: 384, 384
+  offset: 78, 72
+  index: -1
+ef/3x-1_00003
+  rotate: false
+  xy: 2, 170
+  size: 242, 245
+  orig: 384, 384
+  offset: 71, 68
+  index: -1
+ef/3x-1_00004
+  rotate: false
+  xy: 246, 171
+  size: 242, 244
+  orig: 384, 384
+  offset: 77, 69
+  index: -1
+ef/3x-1_00005
+  rotate: true
+  xy: 731, 181
+  size: 234, 233
+  orig: 384, 384
+  offset: 81, 75
+  index: -1
+ef/3x-1_00006
+  rotate: false
+  xy: 1196, 186
+  size: 229, 229
+  orig: 384, 384
+  offset: 80, 80
+  index: -1
+ef/3x-1_00007
+  rotate: false
+  xy: 1427, 193
+  size: 221, 222
+  orig: 384, 384
+  offset: 94, 89
+  index: -1
+ef/3x-1_00008
+  rotate: true
+  xy: 979, 8
+  size: 175, 106
+  orig: 384, 384
+  offset: 125, 210
+  index: -1
+ef/fuzhou_00021
+  rotate: true
+  xy: 332, 8
+  size: 161, 189
+  orig: 491, 447
+  offset: 163, 127
+  index: -1
+ef/fuzhou_00023
+  rotate: true
+  xy: 140, 6
+  size: 162, 190
+  orig: 491, 447
+  offset: 163, 129
+  index: -1
+ef/fuzhou_00025
+  rotate: true
+  xy: 523, 16
+  size: 157, 189
+  orig: 491, 447
+  offset: 168, 130
+  index: -1
+ef/fuzhou_00027
+  rotate: true
+  xy: 1087, 30
+  size: 153, 188
+  orig: 491, 447
+  offset: 172, 131
+  index: -1
+ef/fuzhou_00029
+  rotate: true
+  xy: 1277, 34
+  size: 150, 186
+  orig: 491, 447
+  offset: 175, 133
+  index: -1
+ef/fuzhou_00031
+  rotate: false
+  xy: 1650, 231
+  size: 148, 184
+  orig: 491, 447
+  offset: 177, 135
+  index: -1
+ef/fuzhou_00033
+  rotate: false
+  xy: 837, 2
+  size: 140, 177
+  orig: 491, 447
+  offset: 185, 142
+  index: -1
+ef/fuzhou_00035
+  rotate: false
+  xy: 2, 3
+  size: 136, 165
+  orig: 491, 447
+  offset: 188, 153
+  index: -1
+ef/fuzhou_00037
+  rotate: false
+  xy: 714, 19
+  size: 121, 154
+  orig: 491, 447
+  offset: 193, 161
+  index: -1
+ef/fuzhou_00039
+  rotate: false
+  xy: 1906, 126
+  size: 91, 94
+  orig: 491, 447
+  offset: 223, 177
+  index: -1
+ef/fuzhou_00041
+  rotate: false
+  xy: 1906, 45
+  size: 79, 79
+  orig: 491, 447
+  offset: 232, 184
+  index: -1
+ef/hh1
+  rotate: false
+  xy: 1928, 222
+  size: 52, 74
+  orig: 115, 129
+  offset: 22, 22
+  index: -1
+ef/hh2
+  rotate: false
+  xy: 1765, 14
+  size: 100, 103
+  orig: 115, 129
+  offset: 2, 10
+  index: -1
+ef/hh3
+  rotate: false
+  xy: 1659, 13
+  size: 104, 104
+  orig: 115, 129
+  offset: 3, 16
+  index: -1
+ef/hh4
+  rotate: true
+  xy: 1785, 119
+  size: 102, 119
+  orig: 115, 129
+  offset: 8, 6
+  index: -1
+ef/hh5
+  rotate: true
+  xy: 1800, 317
+  size: 98, 128
+  orig: 115, 129
+  offset: 16, 0
+  index: -1
+ef/hh6
+  rotate: true
+  xy: 1800, 223
+  size: 92, 126
+  orig: 115, 129
+  offset: 16, 3
+  index: -1
+ef/hh7
+  rotate: true
+  xy: 1659, 156
+  size: 73, 124
+  orig: 115, 129
+  offset: 32, 1
+  index: -1
+ef/hh8
+  rotate: true
+  xy: 1930, 298
+  size: 60, 63
+  orig: 115, 129
+  offset: 43, 19
+  index: -1
+ef/hh9
+  rotate: true
+  xy: 1930, 360
+  size: 55, 65
+  orig: 115, 129
+  offset: 49, 20
+  index: -1

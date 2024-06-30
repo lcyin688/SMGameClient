@@ -1,0 +1,41 @@
+
+chiyou_tx_skill_03.png
+size: 1478,528
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/ddd
+  rotate: false
+  xy: 2, 2
+  size: 591, 524
+  orig: 613, 536
+  offset: 14, 12
+  index: -1
+images/ef/g1
+  rotate: false
+  xy: 1160, 65
+  size: 136, 136
+  orig: 152, 152
+  offset: 8, 8
+  index: -1
+images/ef/liewen_00000
+  rotate: false
+  xy: 1160, 203
+  size: 316, 323
+  orig: 462, 448
+  offset: 67, 60
+  index: -1
+images/ef/mengban
+  rotate: false
+  xy: 595, 19
+  size: 26, 26
+  orig: 26, 26
+  offset: 0, 0
+  index: -1
+images/ef/yy
+  rotate: true
+  xy: 595, 47
+  size: 479, 563
+  orig: 483, 564
+  offset: 1, 0
+  index: -1

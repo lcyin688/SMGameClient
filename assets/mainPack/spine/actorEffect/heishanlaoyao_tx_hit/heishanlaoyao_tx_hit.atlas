@@ -1,0 +1,111 @@
+
+heishanlaoyao_tx_hit.png
+size: 1178,1039
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/jz1
+  rotate: false
+  xy: 516, 29
+  size: 518, 461
+  orig: 615, 581
+  offset: 93, 35
+  index: -1
+images/ef/jz2
+  rotate: true
+  xy: 2, 492
+  size: 545, 537
+  orig: 615, 581
+  offset: 43, 11
+  index: -1
+images/ef/jz3
+  rotate: false
+  xy: 2, 8
+  size: 512, 482
+  orig: 615, 581
+  offset: 51, 25
+  index: -1
+images/ef/jz4
+  rotate: true
+  xy: 541, 630
+  size: 407, 411
+  orig: 615, 581
+  offset: 137, 87
+  index: -1
+images/ef/shouji_00
+  rotate: false
+  xy: 541, 500
+  size: 120, 128
+  orig: 250, 250
+  offset: 26, 49
+  index: -1
+images/ef/shouji_01
+  rotate: true
+  xy: 1036, 2
+  size: 193, 121
+  orig: 250, 250
+  offset: 18, 62
+  index: -1
+images/ef/shouji_02
+  rotate: true
+  xy: 1036, 609
+  size: 214, 135
+  orig: 250, 250
+  offset: 18, 62
+  index: -1
+images/ef/shouji_03
+  rotate: true
+  xy: 1036, 395
+  size: 212, 134
+  orig: 250, 250
+  offset: 7, 61
+  index: -1
+images/ef/shouji_04
+  rotate: true
+  xy: 1036, 825
+  size: 212, 140
+  orig: 250, 250
+  offset: 7, 59
+  index: -1
+images/ef/shouji_05
+  rotate: true
+  xy: 1036, 197
+  size: 196, 130
+  orig: 250, 250
+  offset: 24, 58
+  index: -1
+images/ef/shouji_06
+  rotate: false
+  xy: 663, 512
+  size: 193, 116
+  orig: 250, 250
+  offset: 27, 73
+  index: -1
+images/ef/shouji_07
+  rotate: false
+  xy: 858, 532
+  size: 151, 96
+  orig: 250, 250
+  offset: 27, 74
+  index: -1
+images/ef/shouji_08
+  rotate: false
+  xy: 954, 964
+  size: 77, 73
+  orig: 250, 250
+  offset: 27, 74
+  index: -1
+images/ef/shouji_09
+  rotate: false
+  xy: 954, 851
+  size: 42, 41
+  orig: 250, 250
+  offset: 57, 96
+  index: -1
+images/ef/yuandian2
+  rotate: true
+  xy: 954, 894
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

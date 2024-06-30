@@ -1,0 +1,488 @@
+
+baiwuchang_tx_attack.png
+size: 2034,1971
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+2c1
+  rotate: false
+  xy: 2, 1926
+  size: 87, 43
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+2c10
+  rotate: false
+  xy: 1846, 1769
+  size: 186, 101
+  orig: 256, 128
+  offset: 33, 0
+  index: -1
+2c11
+  rotate: false
+  xy: 2, 1817
+  size: 158, 100
+  orig: 256, 128
+  offset: 60, 0
+  index: -1
+2c12
+  rotate: false
+  xy: 1318, 1888
+  size: 153, 81
+  orig: 256, 128
+  offset: 61, 0
+  index: -1
+2c13
+  rotate: false
+  xy: 1164, 1889
+  size: 152, 80
+  orig: 256, 128
+  offset: 64, 0
+  index: -1
+2c14
+  rotate: false
+  xy: 864, 1890
+  size: 136, 79
+  orig: 256, 128
+  offset: 80, 0
+  index: -1
+2c15
+  rotate: false
+  xy: 268, 1912
+  size: 133, 57
+  orig: 256, 128
+  offset: 83, 0
+  index: -1
+2c16
+  rotate: false
+  xy: 191, 1913
+  size: 75, 56
+  orig: 256, 128
+  offset: 141, 0
+  index: -1
+2c2
+  rotate: false
+  xy: 1002, 1889
+  size: 160, 80
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+2c3
+  rotate: false
+  xy: 162, 1815
+  size: 200, 95
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+2c4
+  rotate: false
+  xy: 608, 1801
+  size: 211, 98
+  orig: 256, 128
+  offset: 1, 0
+  index: -1
+2c5
+  rotate: false
+  xy: 821, 1789
+  size: 213, 98
+  orig: 256, 128
+  offset: 4, 0
+  index: -1
+2c6
+  rotate: false
+  xy: 1036, 1789
+  size: 210, 98
+  orig: 256, 128
+  offset: 9, 0
+  index: -1
+2c7
+  rotate: false
+  xy: 1248, 1787
+  size: 202, 99
+  orig: 256, 128
+  offset: 14, 0
+  index: -1
+2c8
+  rotate: false
+  xy: 1452, 1775
+  size: 201, 100
+  orig: 256, 128
+  offset: 17, 0
+  index: -1
+2c9
+  rotate: false
+  xy: 1655, 1774
+  size: 189, 101
+  orig: 256, 128
+  offset: 31, 0
+  index: -1
+33/hyxs_00000
+  rotate: true
+  xy: 1689, 1644
+  size: 123, 313
+  orig: 223, 410
+  offset: 48, 29
+  index: -1
+33/hyxs_00001
+  rotate: true
+  xy: 1668, 1490
+  size: 152, 342
+  orig: 223, 410
+  offset: 27, 32
+  index: -1
+33/hyxs_00003
+  rotate: true
+  xy: 2, 1424
+  size: 154, 302
+  orig: 223, 410
+  offset: 34, 33
+  index: -1
+33/hyxs_00004
+  rotate: true
+  xy: 1336, 1340
+  size: 156, 317
+  orig: 223, 410
+  offset: 36, 30
+  index: -1
+33/hyxs_00005
+  rotate: true
+  xy: 865, 1194
+  size: 164, 302
+  orig: 223, 410
+  offset: 30, 35
+  index: -1
+33/hyxs_00006
+  rotate: true
+  xy: 1010, 1360
+  size: 154, 324
+  orig: 223, 410
+  offset: 41, 40
+  index: -1
+33/hyxs_00007
+  rotate: true
+  xy: 694, 1531
+  size: 134, 316
+  orig: 223, 410
+  offset: 57, 59
+  index: -1
+33/hyxs_00008
+  rotate: true
+  xy: 364, 1807
+  size: 96, 242
+  orig: 223, 410
+  offset: 66, 79
+  index: -1
+33/hyxs_00009
+  rotate: true
+  xy: 2, 1710
+  size: 103, 213
+  orig: 223, 410
+  offset: 60, 62
+  index: -1
+33/hyxs_00010
+  rotate: true
+  xy: 1473, 1877
+  size: 92, 167
+  orig: 223, 410
+  offset: 70, 126
+  index: -1
+33/hyxs_00011
+  rotate: true
+  xy: 1642, 1877
+  size: 92, 210
+  orig: 223, 410
+  offset: 69, 90
+  index: -1
+33/hyy1_00000
+  rotate: true
+  xy: 2, 1580
+  size: 123, 315
+  orig: 223, 412
+  offset: 48, 29
+  index: -1
+33/hyy1_00001
+  rotate: true
+  xy: 306, 1389
+  size: 152, 344
+  orig: 223, 412
+  offset: 27, 32
+  index: -1
+33/hyy1_00002
+  rotate: true
+  xy: 1655, 1335
+  size: 153, 370
+  orig: 223, 412
+  offset: 32, 31
+  index: -1
+33/hyy1_00003
+  rotate: true
+  xy: 1360, 1498
+  size: 153, 306
+  orig: 223, 412
+  offset: 35, 31
+  index: -1
+33/hyy1_00004
+  rotate: true
+  xy: 544, 1219
+  size: 156, 319
+  orig: 223, 412
+  offset: 36, 30
+  index: -1
+33/hyy1_00005
+  rotate: true
+  xy: 1336, 1174
+  size: 164, 310
+  orig: 223, 412
+  offset: 30, 29
+  index: -1
+33/hyy1_00006
+  rotate: true
+  xy: 199, 1232
+  size: 155, 343
+  orig: 223, 412
+  offset: 40, 29
+  index: -1
+33/hyy1_00007
+  rotate: true
+  xy: 652, 1377
+  size: 152, 356
+  orig: 223, 412
+  offset: 39, 30
+  index: -1
+33/hyy1_00008
+  rotate: true
+  xy: 217, 1705
+  size: 100, 364
+  orig: 223, 412
+  offset: 64, 29
+  index: -1
+33/hyy1_00009
+  rotate: true
+  xy: 960, 1667
+  size: 118, 373
+  orig: 223, 412
+  offset: 60, 30
+  index: -1
+33/hyy1_00010
+  rotate: true
+  xy: 583, 1676
+  size: 111, 375
+  orig: 223, 412
+  offset: 67, 30
+  index: -1
+33/hyy1_00011
+  rotate: true
+  xy: 1335, 1653
+  size: 119, 352
+  orig: 223, 412
+  offset: 68, 32
+  index: -1
+cj1
+  rotate: true
+  xy: 1278, 885
+  size: 287, 294
+  orig: 311, 317
+  offset: 11, 13
+  index: -1
+cj2
+  rotate: false
+  xy: 320, 683
+  size: 313, 311
+  orig: 333, 333
+  offset: 10, 13
+  index: -1
+cj3
+  rotate: false
+  xy: 2, 719
+  size: 316, 305
+  orig: 337, 330
+  offset: 10, 13
+  index: -1
+cj4
+  rotate: false
+  xy: 1574, 852
+  size: 322, 287
+  orig: 342, 313
+  offset: 11, 14
+  index: -1
+eff/chong_03
+  rotate: false
+  xy: 635, 532
+  size: 526, 402
+  orig: 1126, 534
+  offset: 108, 43
+  index: -1
+eff/chong_05
+  rotate: false
+  xy: 502, 2
+  size: 903, 433
+  orig: 1126, 534
+  offset: 83, 40
+  index: -1
+eff/chong_21
+  rotate: false
+  xy: 1163, 437
+  size: 726, 413
+  orig: 1126, 534
+  offset: 330, 59
+  index: -1
+eff/chong_24
+  rotate: true
+  xy: 530, 996
+  size: 221, 252
+  orig: 1126, 534
+  offset: 826, 65
+  index: -1
+eff/chong_27
+  rotate: true
+  xy: 2, 1031
+  size: 199, 231
+  orig: 1126, 534
+  offset: 831, 78
+  index: -1
+eff/ciji_2_00000
+  rotate: false
+  xy: 1012, 1516
+  size: 346, 135
+  orig: 402, 145
+  offset: 18, 5
+  index: -1
+eff/ciji_2_00001
+  rotate: false
+  xy: 319, 1543
+  size: 373, 131
+  orig: 402, 145
+  offset: 3, 7
+  index: -1
+eff/ciji_2_00002
+  rotate: false
+  xy: 403, 1905
+  size: 317, 64
+  orig: 402, 145
+  offset: 73, 48
+  index: -1
+eff/xuanzhuanluoxuan0002
+  rotate: false
+  xy: 2, 1262
+  size: 195, 160
+  orig: 403, 225
+  offset: 107, 29
+  index: -1
+eff/xuanzhuanluoxuan0003
+  rotate: false
+  xy: 1648, 1141
+  size: 324, 192
+  orig: 403, 225
+  offset: 10, 23
+  index: -1
+eff/xuanzhuanluoxuan0004
+  rotate: false
+  xy: 235, 1026
+  size: 293, 204
+  orig: 403, 225
+  offset: 57, 9
+  index: -1
+eff/xuanzhuanluoxuan0008
+  rotate: false
+  xy: 1169, 1194
+  size: 165, 164
+  orig: 403, 225
+  offset: 230, 23
+  index: -1
+eff/xuanzhuanluoxuan0010
+  rotate: true
+  xy: 1854, 1872
+  size: 97, 175
+  orig: 403, 225
+  offset: 266, 21
+  index: -1
+eff/xuanzhuanluoxuan0012
+  rotate: true
+  xy: 91, 1919
+  size: 50, 98
+  orig: 403, 225
+  offset: 304, 100
+  index: -1
+eff/yuandian
+  rotate: true
+  xy: 722, 1901
+  size: 68, 69
+  orig: 100, 100
+  offset: 14, 16
+  index: -1
+eff/yuandian2
+  rotate: true
+  xy: 793, 1901
+  size: 68, 69
+  orig: 100, 100
+  offset: 14, 16
+  index: -1
+fgq
+  rotate: false
+  xy: 1020, 936
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+ray_23
+  rotate: true
+  xy: 2, 227
+  size: 454, 498
+  orig: 512, 512
+  offset: 43, 14
+  index: -1
+star_40
+  rotate: false
+  xy: 784, 958
+  size: 234, 234
+  orig: 256, 256
+  offset: 13, 9
+  index: -1
+
+baiwuchang_tx_attack2.png
+size: 1937,1480
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+eff/chong_08
+  rotate: true
+  xy: 453, 113
+  size: 914, 461
+  orig: 1126, 534
+  offset: 68, 36
+  index: -1
+eff/chong_11
+  rotate: true
+  xy: 1038, 450
+  size: 1028, 462
+  orig: 1126, 534
+  offset: 48, 32
+  index: -1
+eff/chong_12
+  rotate: false
+  xy: 2, 1029
+  size: 1034, 449
+  orig: 1126, 534
+  offset: 42, 37
+  index: -1
+eff/chong_14
+  rotate: true
+  xy: 2, 8
+  size: 1019, 449
+  orig: 1126, 534
+  offset: 42, 37
+  index: -1
+eff/chong_17
+  rotate: false
+  xy: 916, 2
+  size: 1018, 446
+  orig: 1126, 534
+  offset: 41, 43
+  index: -1
+eff/chong_20
+  rotate: true
+  xy: 1502, 464
+  size: 1014, 433
+  orig: 1126, 534
+  offset: 42, 52
+  index: -1

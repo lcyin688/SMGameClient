@@ -1,0 +1,264 @@
+
+mengpo_tx_skill_01.png
+size: 2044,1911
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/1/lianyi_00015
+  rotate: false
+  xy: 845, 1767
+  size: 156, 142
+  orig: 755, 765
+  offset: 302, 510
+  index: -1
+images/1/lianyi_00016
+  rotate: false
+  xy: 2, 1905
+  size: 9, 4
+  orig: 755, 765
+  offset: 373, 590
+  index: -1
+images/1/sd1_00001
+  rotate: true
+  xy: 2, 331
+  size: 489, 518
+  orig: 755, 765
+  offset: 144, 163
+  index: -1
+images/1/sd1_00002
+  rotate: true
+  xy: 2, 822
+  size: 487, 520
+  orig: 755, 765
+  offset: 148, 180
+  index: -1
+images/1/sd1_00003
+  rotate: true
+  xy: 524, 621
+  size: 488, 528
+  orig: 755, 765
+  offset: 149, 196
+  index: -1
+images/1/sd1_00004
+  rotate: true
+  xy: 1054, 507
+  size: 488, 528
+  orig: 755, 765
+  offset: 149, 196
+  index: -1
+images/1/sd1_00005
+  rotate: true
+  xy: 1024, 11
+  size: 494, 519
+  orig: 755, 765
+  offset: 143, 205
+  index: -1
+images/1/sd1_00006
+  rotate: false
+  xy: 1545, 2
+  size: 497, 503
+  orig: 755, 765
+  offset: 141, 221
+  index: -1
+images/1/sd1_00008
+  rotate: true
+  xy: 522, 130
+  size: 489, 500
+  orig: 755, 765
+  offset: 151, 217
+  index: -1
+images/1/sd1_00010
+  rotate: true
+  xy: 1420, 997
+  size: 486, 496
+  orig: 755, 765
+  offset: 156, 201
+  index: -1
+images/1/sd1_00011
+  rotate: true
+  xy: 926, 1111
+  size: 480, 492
+  orig: 755, 765
+  offset: 161, 189
+  index: -1
+images/1/sd1_00012
+  rotate: true
+  xy: 455, 1311
+  size: 454, 469
+  orig: 755, 765
+  offset: 174, 164
+  index: -1
+images/1/sd1_00013
+  rotate: true
+  xy: 2, 1379
+  size: 442, 451
+  orig: 755, 765
+  offset: 183, 89
+  index: -1
+images/1/sd1_00014
+  rotate: true
+  xy: 2, 1379
+  size: 442, 451
+  orig: 755, 765
+  offset: 183, 89
+  index: -1
+images/1/sd1_00015
+  rotate: true
+  xy: 1604, 1485
+  size: 424, 427
+  orig: 755, 765
+  offset: 193, 0
+  index: -1
+images/1/sd1_00016
+  rotate: false
+  xy: 1189, 1593
+  size: 413, 316
+  orig: 755, 765
+  offset: 198, 0
+  index: -1
+images/1/shanguang_lan_1x
+  rotate: false
+  xy: 1003, 1725
+  size: 184, 184
+  orig: 184, 184
+  offset: 0, 0
+  index: -1
+images/1/xuanzhuan_27
+  rotate: false
+  xy: 734, 1800
+  size: 109, 109
+  orig: 216, 216
+  offset: 52, 52
+  index: -1
+images/1/xuanzhuan_29
+  rotate: false
+  xy: 627, 1809
+  size: 105, 100
+  orig: 216, 216
+  offset: 56, 55
+  index: -1
+images/1/xuanzhuan_31
+  rotate: true
+  xy: 526, 1816
+  size: 93, 99
+  orig: 216, 216
+  offset: 57, 57
+  index: -1
+images/1/xuanzhuan_33
+  rotate: true
+  xy: 347, 1824
+  size: 85, 86
+  orig: 216, 216
+  offset: 66, 64
+  index: -1
+images/1/xuanzhuan_35
+  rotate: true
+  xy: 435, 1823
+  size: 86, 89
+  orig: 216, 216
+  offset: 68, 63
+  index: -1
+images/1/xuanzhuan_37
+  rotate: false
+  xy: 265, 1829
+  size: 80, 80
+  orig: 216, 216
+  offset: 68, 68
+  index: -1
+images/1/xuanzhuan_38
+  rotate: false
+  xy: 186, 1835
+  size: 77, 74
+  orig: 216, 216
+  offset: 69, 68
+  index: -1
+images/1/xuanzhuan_40
+  rotate: true
+  xy: 115, 1844
+  size: 65, 69
+  orig: 216, 216
+  offset: 73, 73
+  index: -1
+images/yuandian
+  rotate: false
+  xy: 13, 1860
+  size: 49, 49
+  orig: 58, 58
+  offset: 5, 4
+  index: -1
+images/yuandian2
+  rotate: false
+  xy: 64, 1860
+  size: 49, 49
+  orig: 58, 58
+  offset: 5, 4
+  index: -1
+
+mengpo_tx_skill_012.png
+size: 1926,1850
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/1/lianyi_00008
+  rotate: false
+  xy: 2, 498
+  size: 625, 583
+  orig: 755, 765
+  offset: 47, 93
+  index: -1
+images/1/lianyi_00009
+  rotate: true
+  xy: 1337, 612
+  size: 617, 573
+  orig: 755, 765
+  offset: 51, 93
+  index: -1
+images/1/lianyi_00010
+  rotate: true
+  xy: 759, 635
+  size: 614, 576
+  orig: 755, 765
+  offset: 55, 88
+  index: -1
+images/1/lianyi_00011
+  rotate: false
+  xy: 759, 1251
+  size: 598, 597
+  orig: 755, 765
+  offset: 63, 83
+  index: -1
+images/1/lianyi_00012
+  rotate: false
+  xy: 1359, 1231
+  size: 565, 617
+  orig: 755, 765
+  offset: 68, 83
+  index: -1
+images/1/lianyi_00013
+  rotate: true
+  xy: 629, 78
+  size: 555, 601
+  orig: 755, 765
+  offset: 86, 99
+  index: -1
+images/1/lianyi_00014
+  rotate: false
+  xy: 1232, 81
+  size: 509, 529
+  orig: 755, 765
+  offset: 117, 171
+  index: -1
+images/1/sd1_00007
+  rotate: true
+  xy: 2, 2
+  size: 494, 508
+  orig: 755, 765
+  offset: 146, 216
+  index: -1
+images/1/sd1_00009
+  rotate: false
+  xy: 2, 1083
+  size: 755, 765
+  orig: 755, 765
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,55 @@
+
+hanba_tx_attack.png
+size: 714,649
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/dg_00001
+  rotate: true
+  xy: 469, 2
+  size: 161, 243
+  orig: 424, 429
+  offset: 46, 109
+  index: -1
+images/ef/dg_00002
+  rotate: false
+  xy: 2, 330
+  size: 231, 317
+  orig: 424, 429
+  offset: 47, 47
+  index: -1
+images/ef/dg_00004
+  rotate: true
+  xy: 2, 24
+  size: 304, 296
+  orig: 424, 429
+  offset: 50, 47
+  index: -1
+images/ef/dg_00006
+  rotate: true
+  xy: 235, 345
+  size: 302, 248
+  orig: 424, 429
+  offset: 76, 50
+  index: -1
+images/ef/dg_00007
+  rotate: true
+  xy: 485, 369
+  size: 278, 225
+  orig: 424, 429
+  offset: 102, 52
+  index: -1
+images/ef/dg_00009
+  rotate: true
+  xy: 485, 165
+  size: 202, 224
+  orig: 424, 429
+  offset: 173, 66
+  index: -1
+images/ef/dg_00010
+  rotate: false
+  xy: 300, 130
+  size: 167, 213
+  orig: 424, 429
+  offset: 208, 76
+  index: -1

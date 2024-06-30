@@ -1,0 +1,209 @@
+
+xuenv_tx_skill_02.png
+size: 1537,1537
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/bingzhuisui_00001
+  rotate: true
+  xy: 842, 645
+  size: 273, 234
+  orig: 376, 332
+  offset: 28, 29
+  index: -1
+images/ef/bingzhuisui_00003
+  rotate: true
+  xy: 2, 2
+  size: 294, 252
+  orig: 376, 332
+  offset: 22, 21
+  index: -1
+images/ef/bingzhuisui_00004
+  rotate: false
+  xy: 340, 637
+  size: 299, 261
+  orig: 376, 332
+  offset: 18, 17
+  index: -1
+images/ef/bingzhuisui_00005
+  rotate: false
+  xy: 1078, 652
+  size: 299, 266
+  orig: 376, 332
+  offset: 16, 17
+  index: -1
+images/ef/bingzhuisui_00007
+  rotate: true
+  xy: 920, 4
+  size: 310, 268
+  orig: 376, 332
+  offset: 8, 18
+  index: -1
+images/ef/bingzhuisui_00009
+  rotate: true
+  xy: 1134, 325
+  size: 325, 282
+  orig: 376, 332
+  offset: 0, 7
+  index: -1
+images/ef/bingzhuisui_00010
+  rotate: false
+  xy: 585, 5
+  size: 333, 291
+  orig: 376, 332
+  offset: 0, 2
+  index: -1
+images/ef/bingzhuisui_00011
+  rotate: false
+  xy: 2, 633
+  size: 336, 297
+  orig: 376, 332
+  offset: 0, 0
+  index: -1
+images/ef/bingzhuisui_00013
+  rotate: true
+  xy: 2, 298
+  size: 333, 306
+  orig: 376, 332
+  offset: 0, 4
+  index: -1
+images/ef/bingzhuisui_00014
+  rotate: true
+  xy: 310, 298
+  size: 333, 304
+  orig: 376, 332
+  offset: 0, 6
+  index: -1
+images/ef/bingzhuisui_00015
+  rotate: true
+  xy: 616, 308
+  size: 327, 300
+  orig: 376, 332
+  offset: 4, 14
+  index: -1
+images/ef/bingzhuisui_00017
+  rotate: true
+  xy: 1190, 2
+  size: 321, 291
+  orig: 376, 332
+  offset: 19, 21
+  index: -1
+images/ef/bingzhuisui_00018
+  rotate: false
+  xy: 256, 4
+  size: 327, 292
+  orig: 376, 332
+  offset: 22, 22
+  index: -1
+images/ef/bingzhuisui_00019
+  rotate: false
+  xy: 496, 900
+  size: 344, 303
+  orig: 376, 332
+  offset: 15, 17
+  index: -1
+images/ef/bingzhuisui_00021
+  rotate: false
+  xy: 968, 920
+  size: 367, 330
+  orig: 376, 332
+  offset: 9, 0
+  index: -1
+images/ef/bk1
+  rotate: false
+  xy: 1385, 1059
+  size: 119, 391
+  orig: 119, 391
+  offset: 0, 0
+  index: -1
+images/ef/gutai_00
+  rotate: true
+  xy: 918, 316
+  size: 327, 214
+  orig: 604, 460
+  offset: 131, 110
+  index: -1
+images/ef/gutai_01
+  rotate: false
+  xy: 968, 1252
+  size: 415, 283
+  orig: 604, 460
+  offset: 89, 89
+  index: -1
+images/ef/gutai_02
+  rotate: false
+  xy: 2, 932
+  size: 441, 302
+  orig: 604, 460
+  offset: 71, 80
+  index: -1
+images/ef/gutai_03
+  rotate: false
+  xy: 502, 1205
+  size: 464, 330
+  orig: 604, 460
+  offset: 62, 77
+  index: -1
+images/ef/gutai_04
+  rotate: false
+  xy: 2, 1236
+  size: 498, 299
+  orig: 604, 460
+  offset: 45, 128
+  index: -1
+images/ef/sp1
+  rotate: true
+  xy: 1385, 1501
+  size: 34, 125
+  orig: 34, 125
+  offset: 0, 0
+  index: -1
+images/ef/sp2
+  rotate: false
+  xy: 1337, 1138
+  size: 38, 112
+  orig: 38, 113
+  offset: 0, 0
+  index: -1
+images/ef/sp3
+  rotate: false
+  xy: 445, 1051
+  size: 49, 183
+  orig: 49, 185
+  offset: 0, 2
+  index: -1
+images/ef/sp4
+  rotate: true
+  xy: 1372, 995
+  size: 62, 119
+  orig: 62, 119
+  offset: 0, 0
+  index: -1
+images/ef/sp5
+  rotate: false
+  xy: 1337, 1017
+  size: 33, 119
+  orig: 33, 119
+  offset: 0, 0
+  index: -1
+images/ef/sp6
+  rotate: true
+  xy: 1385, 1452
+  size: 47, 122
+  orig: 47, 122
+  offset: 0, 0
+  index: -1
+images/ef/sp7
+  rotate: false
+  xy: 1509, 1410
+  size: 25, 89
+  orig: 25, 89
+  offset: 0, 0
+  index: -1
+images/ef/yuandian2
+  rotate: true
+  xy: 842, 1135
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

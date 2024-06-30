@@ -1,0 +1,41 @@
+
+zixiaxianzi_tx_attack.png
+size: 1180,1030
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/canying
+  rotate: true
+  xy: 1030, 715
+  size: 313, 148
+  orig: 317, 148
+  offset: 3, 0
+  index: -1
+images/ef/zj1
+  rotate: false
+  xy: 2, 516
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+images/ef/zj2
+  rotate: false
+  xy: 2, 2
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+images/ef/zj3
+  rotate: false
+  xy: 516, 516
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+images/ef/zj4
+  rotate: false
+  xy: 516, 2
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1

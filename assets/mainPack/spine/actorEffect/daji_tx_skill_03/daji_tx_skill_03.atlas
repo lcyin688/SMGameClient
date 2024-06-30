@@ -1,0 +1,111 @@
+
+daji_tx_skill_03.png
+size: 1010,1010
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/ss_00000
+  rotate: true
+  xy: 2, 35
+  size: 208, 292
+  orig: 228, 307
+  offset: 14, 6
+  index: -1
+images/ef/ss_00002
+  rotate: true
+  xy: 590, 2
+  size: 217, 292
+  orig: 228, 307
+  offset: 7, 6
+  index: -1
+images/ef/ss_00004
+  rotate: true
+  xy: 296, 12
+  size: 215, 292
+  orig: 228, 307
+  offset: 9, 6
+  index: -1
+images/ef/ss_00006
+  rotate: true
+  xy: 590, 221
+  size: 207, 292
+  orig: 228, 307
+  offset: 15, 6
+  index: -1
+images/ef/ss_00008
+  rotate: true
+  xy: 2, 245
+  size: 202, 292
+  orig: 228, 307
+  offset: 16, 6
+  index: -1
+images/ef/ss_00010
+  rotate: true
+  xy: 590, 430
+  size: 200, 292
+  orig: 228, 307
+  offset: 16, 6
+  index: -1
+images/ef/ss_00012
+  rotate: true
+  xy: 296, 435
+  size: 199, 292
+  orig: 228, 307
+  offset: 16, 6
+  index: -1
+images/ef/ss_00014
+  rotate: true
+  xy: 2, 829
+  size: 179, 292
+  orig: 228, 307
+  offset: 15, 6
+  index: -1
+images/ef/ss_00016
+  rotate: true
+  xy: 296, 828
+  size: 180, 292
+  orig: 228, 307
+  offset: 15, 6
+  index: -1
+images/ef/ss_00018
+  rotate: true
+  xy: 590, 827
+  size: 181, 292
+  orig: 228, 307
+  offset: 15, 6
+  index: -1
+images/ef/ss_00020
+  rotate: true
+  xy: 2, 646
+  size: 181, 292
+  orig: 228, 307
+  offset: 15, 6
+  index: -1
+images/ef/ss_00022
+  rotate: true
+  xy: 296, 636
+  size: 190, 292
+  orig: 228, 307
+  offset: 15, 6
+  index: -1
+images/ef/ss_00024
+  rotate: true
+  xy: 590, 632
+  size: 193, 292
+  orig: 228, 307
+  offset: 15, 6
+  index: -1
+images/ef/ss_00026
+  rotate: true
+  xy: 2, 449
+  size: 195, 292
+  orig: 228, 307
+  offset: 14, 6
+  index: -1
+images/ef/ss_00028
+  rotate: true
+  xy: 296, 229
+  size: 204, 292
+  orig: 228, 307
+  offset: 14, 6
+  index: -1

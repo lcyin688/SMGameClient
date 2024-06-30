@@ -1,0 +1,265 @@
+
+zixiaxianzi_tx_skill.png
+size: 2001,1411
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/canying
+  rotate: true
+  xy: 1394, 464
+  size: 313, 148
+  orig: 317, 148
+  offset: 3, 0
+  index: -1
+images/ef/dg/dd_00000
+  rotate: false
+  xy: 1393, 194
+  size: 289, 268
+  orig: 360, 365
+  offset: 45, 52
+  index: -1
+images/ef/dg/dd_00001
+  rotate: false
+  xy: 356, 324
+  size: 338, 351
+  orig: 360, 365
+  offset: 13, 6
+  index: -1
+images/ef/dg/dd_00002
+  rotate: false
+  xy: 2, 678
+  size: 360, 365
+  orig: 360, 365
+  offset: 0, 0
+  index: -1
+images/ef/dg/dd_00003
+  rotate: true
+  xy: 379, 1049
+  size: 360, 365
+  orig: 360, 365
+  offset: 0, 0
+  index: -1
+images/ef/dg/dd_00004
+  rotate: false
+  xy: 2, 311
+  size: 352, 365
+  orig: 360, 365
+  offset: 8, 0
+  index: -1
+images/ef/dg/dd_00005
+  rotate: false
+  xy: 384, 4
+  size: 316, 318
+  orig: 360, 365
+  offset: 26, 27
+  index: -1
+images/ef/dg/dd_00006
+  rotate: false
+  xy: 1544, 580
+  size: 253, 216
+  orig: 360, 365
+  offset: 56, 77
+  index: -1
+images/ef/dg/dg_00003
+  rotate: false
+  xy: 2, 1045
+  size: 375, 364
+  orig: 456, 456
+  offset: 7, 7
+  index: -1
+images/ef/dg/dg_00007
+  rotate: true
+  xy: 364, 677
+  size: 366, 327
+  orig: 456, 456
+  offset: 84, 10
+  index: -1
+images/ef/dg/dg_00008
+  rotate: false
+  xy: 696, 493
+  size: 317, 323
+  orig: 456, 456
+  offset: 132, 15
+  index: -1
+images/ef/dg/dg_00010
+  rotate: false
+  xy: 1800, 825
+  size: 195, 269
+  orig: 456, 456
+  offset: 248, 55
+  index: -1
+images/ef/dg/dg_00011
+  rotate: false
+  xy: 1854, 280
+  size: 124, 251
+  orig: 456, 456
+  offset: 309, 73
+  index: -1
+images/ef/dg/dg_00012
+  rotate: true
+  xy: 1012, 6
+  size: 53, 178
+  orig: 456, 456
+  offset: 367, 144
+  index: -1
+images/ef/dg/dg_00014
+  rotate: true
+  xy: 1192, 19
+  size: 40, 123
+  orig: 456, 456
+  offset: 373, 198
+  index: -1
+images/ef/dg/dg_00015
+  rotate: false
+  xy: 693, 911
+  size: 25, 136
+  orig: 456, 456
+  offset: 378, 179
+  index: -1
+images/ef/dg/lizi_00005
+  rotate: true
+  xy: 696, 337
+  size: 154, 367
+  orig: 422, 545
+  offset: 55, 73
+  index: -1
+images/ef/dg/lizi_00007
+  rotate: true
+  xy: 1012, 61
+  size: 171, 372
+  orig: 422, 545
+  offset: 55, 69
+  index: -1
+images/ef/dg/lizi_00009
+  rotate: true
+  xy: 1015, 540
+  size: 237, 377
+  orig: 422, 545
+  offset: 55, 65
+  index: -1
+images/ef/dg/lizi_00011
+  rotate: true
+  xy: 746, 818
+  size: 274, 379
+  orig: 422, 545
+  offset: 55, 64
+  index: -1
+images/ef/dg/lizi_00012
+  rotate: true
+  xy: 2, 2
+  size: 307, 380
+  orig: 422, 545
+  offset: 56, 64
+  index: -1
+images/ef/dg/lizi_00014
+  rotate: true
+  xy: 1511, 1096
+  size: 313, 381
+  orig: 422, 545
+  offset: 56, 64
+  index: -1
+images/ef/dg/lizi_00015
+  rotate: true
+  xy: 746, 1094
+  size: 315, 381
+  orig: 422, 545
+  offset: 56, 64
+  index: -1
+images/ef/dg/lizi_00018
+  rotate: true
+  xy: 1129, 1094
+  size: 315, 380
+  orig: 422, 545
+  offset: 57, 63
+  index: -1
+images/ef/dg/lizi_00019
+  rotate: true
+  xy: 1127, 779
+  size: 313, 378
+  orig: 422, 545
+  offset: 59, 63
+  index: -1
+images/ef/dg/lizi_00021
+  rotate: false
+  xy: 702, 5
+  size: 308, 330
+  orig: 422, 545
+  offset: 63, 63
+  index: -1
+images/ef/dg/lizi_00022
+  rotate: true
+  xy: 1065, 234
+  size: 304, 326
+  orig: 422, 545
+  offset: 67, 63
+  index: -1
+images/ef/dg/lizi_00024
+  rotate: true
+  xy: 1507, 798
+  size: 294, 291
+  orig: 422, 545
+  offset: 77, 64
+  index: -1
+images/ef/dg/lizi_00027
+  rotate: true
+  xy: 1386, 21
+  size: 171, 284
+  orig: 422, 545
+  offset: 199, 69
+  index: -1
+images/ef/dg/lizi_00028
+  rotate: false
+  xy: 1684, 205
+  size: 168, 265
+  orig: 422, 545
+  offset: 201, 105
+  index: -1
+images/ef/dg/lizi_00029
+  rotate: false
+  xy: 1805, 533
+  size: 165, 264
+  orig: 422, 545
+  offset: 204, 108
+  index: -1
+images/ef/dg/lizi_00030
+  rotate: true
+  xy: 1544, 472
+  size: 106, 259
+  orig: 422, 545
+  offset: 262, 113
+  index: -1
+images/ef/dg/lizi_00031
+  rotate: false
+  xy: 1894, 1185
+  size: 105, 224
+  orig: 422, 545
+  offset: 262, 148
+  index: -1
+images/ef/dg/lizi_00032
+  rotate: false
+  xy: 1854, 117
+  size: 102, 161
+  orig: 422, 545
+  offset: 262, 211
+  index: -1
+images/ef/fsl
+  rotate: true
+  xy: 1800, 799
+  size: 24, 193
+  orig: 32, 206
+  offset: 5, 8
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 1894, 1114
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1
+images/ef/yuandian2
+  rotate: false
+  xy: 1672, 123
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

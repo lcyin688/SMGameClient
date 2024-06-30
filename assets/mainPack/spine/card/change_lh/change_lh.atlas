@@ -1,0 +1,278 @@
+
+change_lh.png
+size: 2002,2016
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ce_fa_01
+  rotate: true
+  xy: 878, 1905
+  size: 109, 231
+  orig: 109, 233
+  offset: 0, 0
+  index: -1
+ce_fa_02
+  rotate: true
+  xy: 739, 1910
+  size: 104, 137
+  orig: 106, 137
+  offset: 0, 0
+  index: -1
+ce_fa_03
+  rotate: true
+  xy: 348, 1934
+  size: 80, 161
+  orig: 80, 161
+  offset: 0, 0
+  index: -1
+ce_fa_04
+  rotate: true
+  xy: 1448, 1881
+  size: 133, 260
+  orig: 133, 260
+  offset: 0, 0
+  index: -1
+ce_pdai_12
+  rotate: true
+  xy: 2, 670
+  size: 356, 610
+  orig: 356, 628
+  offset: 0, 0
+  index: -1
+ce_pdai_17
+  rotate: true
+  xy: 614, 554
+  size: 472, 772
+  orig: 472, 772
+  offset: 0, 0
+  index: -1
+ce_pdai_24
+  rotate: true
+  xy: 901, 1287
+  size: 218, 557
+  orig: 218, 557
+  offset: 0, 0
+  index: -1
+ce_pdai_30
+  rotate: true
+  xy: 1388, 472
+  size: 509, 610
+  orig: 509, 610
+  offset: 0, 0
+  index: -1
+ce_pdai_38
+  rotate: false
+  xy: 1312, 1698
+  size: 560, 167
+  orig: 560, 167
+  offset: 0, 0
+  index: -1
+ce_qbai_21
+  rotate: true
+  xy: 1460, 983
+  size: 341, 527
+  orig: 341, 527
+  offset: 0, 0
+  index: -1
+ce_qbai_22
+  rotate: true
+  xy: 2, 1165
+  size: 225, 502
+  orig: 225, 502
+  offset: 0, 0
+  index: -1
+ce_sshen_26
+  rotate: false
+  xy: 1709, 1326
+  size: 290, 370
+  orig: 290, 370
+  offset: 0, 0
+  index: -1
+ce_tou_05
+  rotate: false
+  xy: 2, 2005
+  size: 54, 9
+  orig: 54, 9
+  offset: 0, 0
+  index: -1
+ce_tou_06
+  rotate: false
+  xy: 58, 2005
+  size: 38, 9
+  orig: 38, 9
+  offset: 0, 0
+  index: -1
+ce_tou_07
+  rotate: false
+  xy: 98, 1966
+  size: 65, 48
+  orig: 65, 48
+  offset: 0, 0
+  index: -1
+ce_tou_08
+  rotate: false
+  xy: 165, 1966
+  size: 65, 48
+  orig: 65, 48
+  offset: 0, 0
+  index: -1
+ce_tou_09
+  rotate: true
+  xy: 232, 1961
+  size: 53, 56
+  orig: 53, 56
+  offset: 0, 0
+  index: -1
+ce_tou_10
+  rotate: false
+  xy: 290, 1958
+  size: 56, 56
+  orig: 56, 56
+  offset: 0, 0
+  index: -1
+ce_tou_11
+  rotate: true
+  xy: 2, 1812
+  size: 152, 210
+  orig: 152, 210
+  offset: 0, 0
+  index: -1
+ce_tshi_36
+  rotate: true
+  xy: 906, 1748
+  size: 155, 173
+  orig: 155, 173
+  offset: 0, 0
+  index: -1
+ce_tshi_37
+  rotate: true
+  xy: 511, 1911
+  size: 103, 116
+  orig: 103, 116
+  offset: 0, 0
+  index: -1
+ce_tui_32
+  rotate: true
+  xy: 2, 1392
+  size: 180, 897
+  orig: 180, 897
+  offset: 0, 0
+  index: -1
+ce_tui_33
+  rotate: true
+  xy: 192, 1574
+  size: 172, 815
+  orig: 172, 815
+  offset: 0, 0
+  index: -1
+ce_ydai_18
+  rotate: true
+  xy: 2, 1624
+  size: 186, 188
+  orig: 186, 188
+  offset: 0, 0
+  index: -1
+ce_ydai_19
+  rotate: true
+  xy: 1710, 1867
+  size: 147, 290
+  orig: 147, 290
+  offset: 0, 0
+  index: -1
+ce_ydai_20
+  rotate: false
+  xy: 1081, 1724
+  size: 229, 166
+  orig: 229, 166
+  offset: 0, 0
+  index: -1
+ce_yshou_13
+  rotate: true
+  xy: 426, 1763
+  size: 140, 478
+  orig: 140, 478
+  offset: 0, 0
+  index: -1
+ce_yshou_14
+  rotate: true
+  xy: 2, 100
+  size: 452, 1015
+  orig: 452, 1015
+  offset: 0, 0
+  index: -1
+ce_yshou_15
+  rotate: true
+  xy: 214, 1779
+  size: 153, 210
+  orig: 153, 210
+  offset: 0, 0
+  index: -1
+ce_yshou_16
+  rotate: true
+  xy: 506, 1028
+  size: 257, 636
+  orig: 257, 636
+  offset: 0, 0
+  index: -1
+ce_zshou_23
+  rotate: true
+  xy: 1009, 1518
+  size: 204, 268
+  orig: 204, 268
+  offset: 0, 0
+  index: -1
+ce_zshou_25
+  rotate: true
+  xy: 1019, 2
+  size: 468, 963
+  orig: 468, 963
+  offset: 0, 0
+  index: -1
+ce_zshou_27
+  rotate: true
+  xy: 1111, 1892
+  size: 122, 335
+  orig: 122, 335
+  offset: 0, 0
+  index: -1
+ce_zshou_28
+  rotate: false
+  xy: 629, 1911
+  size: 108, 103
+  orig: 108, 103
+  offset: 0, 0
+  index: -1
+ce_zshou_29
+  rotate: true
+  xy: 1279, 1507
+  size: 189, 428
+  orig: 189, 428
+  offset: 0, 0
+  index: -1
+
+change_lh2.png
+size: 2030,2018
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ce_fa_35
+  rotate: true
+  xy: 1162, 922
+  size: 1094, 866
+  orig: 1094, 866
+  offset: 0, 0
+  index: -1
+ce_qbai_31
+  rotate: true
+  xy: 2, 730
+  size: 1286, 1158
+  orig: 1286, 1158
+  offset: 0, 0
+  index: -1
+ce_qbai_34
+  rotate: true
+  xy: 1162, 2
+  size: 918, 833
+  orig: 918, 833
+  offset: 0, 0
+  index: -1

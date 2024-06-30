@@ -1,0 +1,146 @@
+
+haila_tx_hit.png
+size: 2016,1195
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/bingzhuisui_00001
+  rotate: true
+  xy: 1708, 30
+  size: 273, 234
+  orig: 376, 332
+  offset: 28, 29
+  index: -1
+images/ef/bingzhuisui_00003
+  rotate: false
+  xy: 1429, 311
+  size: 294, 252
+  orig: 376, 332
+  offset: 22, 21
+  index: -1
+images/ef/bingzhuisui_00004
+  rotate: true
+  xy: 1429, 565
+  size: 299, 261
+  orig: 376, 332
+  offset: 18, 17
+  index: -1
+images/ef/bingzhuisui_00005
+  rotate: true
+  xy: 1440, 4
+  size: 299, 266
+  orig: 376, 332
+  offset: 16, 17
+  index: -1
+images/ef/bingzhuisui_00007
+  rotate: false
+  xy: 1693, 632
+  size: 310, 268
+  orig: 376, 332
+  offset: 8, 18
+  index: -1
+images/ef/bingzhuisui_00009
+  rotate: true
+  xy: 1725, 305
+  size: 325, 282
+  orig: 376, 332
+  offset: 0, 7
+  index: -1
+images/ef/bingzhuisui_00010
+  rotate: true
+  xy: 1106, 860
+  size: 333, 291
+  orig: 376, 332
+  offset: 0, 2
+  index: -1
+images/ef/bingzhuisui_00011
+  rotate: true
+  xy: 807, 857
+  size: 336, 297
+  orig: 376, 332
+  offset: 0, 0
+  index: -1
+images/ef/bingzhuisui_00013
+  rotate: false
+  xy: 1105, 3
+  size: 333, 306
+  orig: 376, 332
+  offset: 0, 4
+  index: -1
+images/ef/bingzhuisui_00014
+  rotate: false
+  xy: 424, 2
+  size: 333, 304
+  orig: 376, 332
+  offset: 0, 6
+  index: -1
+images/ef/bingzhuisui_00015
+  rotate: true
+  xy: 1127, 531
+  size: 327, 300
+  orig: 376, 332
+  offset: 4, 14
+  index: -1
+images/ef/bingzhuisui_00017
+  rotate: false
+  xy: 1693, 902
+  size: 321, 291
+  orig: 376, 332
+  offset: 19, 21
+  index: -1
+images/ef/bingzhuisui_00018
+  rotate: true
+  xy: 1399, 866
+  size: 327, 292
+  orig: 376, 332
+  offset: 22, 22
+  index: -1
+images/ef/bingzhuisui_00019
+  rotate: false
+  xy: 759, 3
+  size: 344, 303
+  orig: 376, 332
+  offset: 15, 17
+  index: -1
+images/ef/bingzhuisui_00021
+  rotate: true
+  xy: 795, 311
+  size: 367, 330
+  orig: 376, 332
+  offset: 9, 0
+  index: -1
+images/ef/bj1
+  rotate: true
+  xy: 2, 638
+  size: 555, 374
+  orig: 582, 464
+  offset: 27, 52
+  index: -1
+images/ef/bj2
+  rotate: true
+  xy: 2, 116
+  size: 520, 420
+  orig: 582, 464
+  offset: 32, 7
+  index: -1
+images/ef/bj3
+  rotate: true
+  xy: 378, 680
+  size: 513, 427
+  orig: 582, 464
+  offset: 30, 0
+  index: -1
+images/ef/bj4
+  rotate: false
+  xy: 424, 308
+  size: 369, 370
+  orig: 582, 464
+  offset: 114, 54
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 2, 45
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

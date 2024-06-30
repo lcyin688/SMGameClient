@@ -1,0 +1,69 @@
+
+yinjiao_tx_hit.png
+size: 683,683
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/baodian_00000
+  rotate: false
+  xy: 417, 282
+  size: 84, 63
+  orig: 300, 339
+  offset: 110, 115
+  index: -1
+images/ef/baodian_00001
+  rotate: false
+  xy: 222, 207
+  size: 193, 138
+  orig: 300, 339
+  offset: 55, 99
+  index: -1
+images/ef/baodian_00002
+  rotate: false
+  xy: 2, 358
+  size: 205, 144
+  orig: 300, 339
+  offset: 51, 94
+  index: -1
+images/ef/baodian_00003
+  rotate: true
+  xy: 512, 217
+  size: 217, 152
+  orig: 300, 339
+  offset: 43, 92
+  index: -1
+images/ef/baodian_00004
+  rotate: true
+  xy: 516, 436
+  size: 245, 165
+  orig: 300, 339
+  offset: 24, 85
+  index: -1
+images/ef/baodian_00005
+  rotate: false
+  xy: 265, 347
+  size: 245, 162
+  orig: 300, 339
+  offset: 26, 87
+  index: -1
+images/ef/baodian_00006
+  rotate: false
+  xy: 265, 511
+  size: 249, 170
+  orig: 300, 339
+  offset: 27, 84
+  index: -1
+images/ef/baodian_00007
+  rotate: false
+  xy: 2, 504
+  size: 261, 177
+  orig: 300, 339
+  offset: 22, 79
+  index: -1
+images/ef/baodian_00008
+  rotate: false
+  xy: 2, 228
+  size: 218, 128
+  orig: 300, 339
+  offset: 20, 129
+  index: -1

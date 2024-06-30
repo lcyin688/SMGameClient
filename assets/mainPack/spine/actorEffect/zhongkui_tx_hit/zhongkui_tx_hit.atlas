@@ -1,0 +1,62 @@
+
+zhongkui_tx_hit.png
+size: 1728,1051
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/gj1
+  rotate: false
+  xy: 347, 6
+  size: 560, 472
+  orig: 620, 535
+  offset: 43, 34
+  index: -1
+images/ef/gj2
+  rotate: true
+  xy: 2, 480
+  size: 569, 404
+  orig: 620, 535
+  offset: 38, 64
+  index: -1
+images/ef/gj3
+  rotate: true
+  xy: 408, 486
+  size: 563, 452
+  orig: 620, 535
+  offset: 43, 37
+  index: -1
+images/ef/gj4
+  rotate: true
+  xy: 862, 499
+  size: 550, 490
+  orig: 620, 535
+  offset: 47, 21
+  index: -1
+images/ef/gj5
+  rotate: false
+  xy: 909, 11
+  size: 550, 486
+  orig: 620, 535
+  offset: 43, 24
+  index: -1
+images/ef/gj6
+  rotate: true
+  xy: 1354, 579
+  size: 470, 372
+  orig: 620, 535
+  offset: 92, 74
+  index: -1
+images/ef/gj7
+  rotate: true
+  xy: 2, 2
+  size: 476, 343
+  orig: 620, 535
+  offset: 86, 101
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 1354, 508
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

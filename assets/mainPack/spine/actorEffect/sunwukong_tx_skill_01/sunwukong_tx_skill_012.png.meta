@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "c85be440-94ab-4f1c-b52e-db4a371df126",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1967,
+  "height": 1936,
+  "platformSettings": {},
+  "subMetas": {
+    "sunwukong_tx_skill_012": {
+      "ver": "1.0.6",
+      "uuid": "ae5f0e21-2cc7-4aa0-bf81-01e69364837e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "c85be440-94ab-4f1c-b52e-db4a371df126",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1963,
+      "height": 1932,
+      "rawWidth": 1967,
+      "rawHeight": 1936,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

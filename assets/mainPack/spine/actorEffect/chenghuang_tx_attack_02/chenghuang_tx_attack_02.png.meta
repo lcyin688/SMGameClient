@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "8ce2e4c1-9157-42a2-8890-f97c17a2d8e7",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 2018,
+  "height": 533,
+  "platformSettings": {},
+  "subMetas": {
+    "chenghuang_tx_attack_02": {
+      "ver": "1.0.6",
+      "uuid": "0d097bda-58e9-4b1b-b86a-bb03893a0b1c",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "8ce2e4c1-9157-42a2-8890-f97c17a2d8e7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 2014,
+      "height": 529,
+      "rawWidth": 2018,
+      "rawHeight": 533,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

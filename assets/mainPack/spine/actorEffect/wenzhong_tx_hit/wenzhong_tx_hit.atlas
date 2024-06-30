@@ -1,0 +1,90 @@
+
+wenzhong_tx_hit.png
+size: 1079,1079
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/hit_00000
+  rotate: false
+  xy: 772, 794
+  size: 305, 283
+  orig: 485, 412
+  offset: 118, 61
+  index: -1
+images/ef/hit_00001
+  rotate: true
+  xy: 2, 27
+  size: 382, 290
+  orig: 485, 412
+  offset: 56, 54
+  index: -1
+images/ef/hit_00002
+  rotate: false
+  xy: 2, 791
+  size: 383, 286
+  orig: 485, 412
+  offset: 56, 55
+  index: -1
+images/ef/hit_00003
+  rotate: false
+  xy: 387, 791
+  size: 383, 286
+  orig: 485, 412
+  offset: 55, 55
+  index: -1
+images/ef/hit_00004
+  rotate: true
+  xy: 772, 411
+  size: 381, 303
+  orig: 485, 412
+  offset: 57, 59
+  index: -1
+images/ef/hit_00005
+  rotate: true
+  xy: 2, 421
+  size: 368, 262
+  orig: 485, 412
+  offset: 68, 62
+  index: -1
+images/ef/hit_00006
+  rotate: true
+  xy: 266, 421
+  size: 368, 262
+  orig: 485, 412
+  offset: 68, 62
+  index: -1
+images/ef/hit_00007
+  rotate: false
+  xy: 799, 155
+  size: 277, 254
+  orig: 485, 412
+  offset: 93, 75
+  index: -1
+images/ef/hit_00009
+  rotate: true
+  xy: 544, 117
+  size: 292, 253
+  orig: 485, 412
+  offset: 110, 82
+  index: -1
+images/ef/hit_00011
+  rotate: true
+  xy: 294, 111
+  size: 298, 248
+  orig: 485, 412
+  offset: 110, 84
+  index: -1
+images/ef/hit_00013
+  rotate: false
+  xy: 530, 529
+  size: 228, 260
+  orig: 485, 412
+  offset: 176, 89
+  index: -1
+images/ef/hit_00015
+  rotate: true
+  xy: 530, 432
+  size: 95, 93
+  orig: 485, 412
+  offset: 208, 134
+  index: -1

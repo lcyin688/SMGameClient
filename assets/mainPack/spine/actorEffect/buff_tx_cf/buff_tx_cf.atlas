@@ -1,0 +1,13 @@
+
+buff_tx_cf.png
+size: 191,187
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/cf/cf_00000
+  rotate: false
+  xy: 2, 2
+  size: 187, 183
+  orig: 202, 202
+  offset: 8, 13
+  index: -1

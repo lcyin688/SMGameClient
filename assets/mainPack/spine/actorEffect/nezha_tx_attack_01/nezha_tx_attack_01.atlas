@@ -1,0 +1,216 @@
+
+nezha_tx_attack_01.png
+size: 1956,867
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/chonghuo_00000
+  rotate: true
+  xy: 1741, 161
+  size: 141, 111
+  orig: 254, 165
+  offset: 15, 23
+  index: -1
+images/ef/chonghuo_00002
+  rotate: true
+  xy: 1717, 7
+  size: 152, 135
+  orig: 254, 165
+  offset: 20, 0
+  index: -1
+images/ef/chonghuo_00004
+  rotate: true
+  xy: 1576, 2
+  size: 161, 139
+  orig: 254, 165
+  offset: 27, 2
+  index: -1
+images/ef/chonghuo_00006
+  rotate: false
+  xy: 1577, 165
+  size: 162, 137
+  orig: 254, 165
+  offset: 41, 0
+  index: -1
+images/ef/chonghuo_00008
+  rotate: true
+  xy: 1820, 308
+  size: 152, 122
+  orig: 254, 165
+  offset: 59, 0
+  index: -1
+images/ef/chonghuo_00010
+  rotate: true
+  xy: 1854, 159
+  size: 147, 91
+  orig: 254, 165
+  offset: 71, 26
+  index: -1
+images/ef/chonghuo_00012
+  rotate: true
+  xy: 1854, 17
+  size: 140, 80
+  orig: 254, 165
+  offset: 78, 34
+  index: -1
+images/ef/chonghuo_00014
+  rotate: false
+  xy: 961, 13
+  size: 94, 60
+  orig: 254, 165
+  offset: 117, 51
+  index: -1
+images/ef/daoguang_00001
+  rotate: false
+  xy: 1470, 93
+  size: 104, 191
+  orig: 458, 464
+  offset: 111, 135
+  index: -1
+images/ef/daoguang_00003
+  rotate: false
+  xy: 1739, 653
+  size: 201, 212
+  orig: 458, 464
+  offset: 114, 115
+  index: -1
+images/ef/daoguang_00005
+  rotate: false
+  xy: 961, 75
+  size: 200, 202
+  orig: 458, 464
+  offset: 115, 116
+  index: -1
+images/ef/daoguang_00006
+  rotate: false
+  xy: 2, 4
+  size: 200, 197
+  orig: 458, 464
+  offset: 115, 117
+  index: -1
+images/ef/daoguang_00007
+  rotate: true
+  xy: 1163, 83
+  size: 198, 184
+  orig: 458, 464
+  offset: 117, 117
+  index: -1
+images/ef/daoguang_00008
+  rotate: true
+  xy: 1820, 462
+  size: 189, 134
+  orig: 458, 464
+  offset: 125, 118
+  index: -1
+images/ef/daoguang_00010
+  rotate: false
+  xy: 1349, 86
+  size: 119, 198
+  orig: 458, 464
+  offset: 185, 125
+  index: -1
+images/ef/huohuan_00000
+  rotate: true
+  xy: 204, 55
+  size: 146, 251
+  orig: 345, 345
+  offset: 164, 45
+  index: -1
+images/ef/huohuan_00001
+  rotate: false
+  xy: 722, 20
+  size: 237, 254
+  orig: 345, 345
+  offset: 71, 36
+  index: -1
+images/ef/huohuan_00002
+  rotate: true
+  xy: 1054, 283
+  size: 278, 243
+  orig: 345, 345
+  offset: 36, 36
+  index: -1
+images/ef/huohuan_00003
+  rotate: false
+  xy: 1448, 573
+  size: 289, 292
+  orig: 345, 345
+  offset: 27, 25
+  index: -1
+images/ef/huohuan_00004
+  rotate: false
+  xy: 871, 563
+  size: 287, 302
+  orig: 345, 345
+  offset: 29, 20
+  index: -1
+images/ef/huohuan_00005
+  rotate: false
+  xy: 1160, 566
+  size: 286, 299
+  orig: 345, 345
+  offset: 30, 21
+  index: -1
+images/ef/huohuan_00006
+  rotate: false
+  xy: 484, 276
+  size: 285, 285
+  orig: 345, 345
+  offset: 30, 24
+  index: -1
+images/ef/huohuan_00007
+  rotate: false
+  xy: 771, 279
+  size: 281, 282
+  orig: 345, 345
+  offset: 33, 28
+  index: -1
+images/ef/huohuan_00008
+  rotate: true
+  xy: 1299, 286
+  size: 278, 276
+  orig: 345, 345
+  offset: 35, 30
+  index: -1
+images/ef/huohuan_00009
+  rotate: true
+  xy: 481, 2
+  size: 272, 239
+  orig: 345, 345
+  offset: 38, 50
+  index: -1
+images/ef/huohuan_00010
+  rotate: true
+  xy: 1577, 304
+  size: 267, 241
+  orig: 345, 345
+  offset: 40, 48
+  index: -1
+images/ef/jiz1
+  rotate: false
+  xy: 484, 563
+  size: 385, 302
+  orig: 540, 358
+  offset: 84, 8
+  index: -1
+images/ef/jiz2
+  rotate: false
+  xy: 2, 203
+  size: 477, 315
+  orig: 540, 358
+  offset: 18, 5
+  index: -1
+images/ef/jiz3
+  rotate: false
+  xy: 2, 520
+  size: 480, 345
+  orig: 540, 358
+  offset: 52, 0
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 1739, 582
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

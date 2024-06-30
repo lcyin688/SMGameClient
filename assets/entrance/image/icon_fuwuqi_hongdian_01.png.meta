@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "26df002b-d852-4d83-9122-4d1dd73cb867",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 32,
+  "height": 32,
+  "platformSettings": {},
+  "subMetas": {
+    "icon_fuwuqi_hongdian_01": {
+      "ver": "1.0.6",
+      "uuid": "792dff5d-46b2-44eb-b4be-0e43cce9c6ae",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "26df002b-d852-4d83-9122-4d1dd73cb867",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0.5,
+      "trimX": 1,
+      "trimY": 1,
+      "width": 29,
+      "height": 29,
+      "rawWidth": 32,
+      "rawHeight": 32,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

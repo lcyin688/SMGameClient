@@ -1,0 +1,328 @@
+
+longnv_tx_skill_02.png
+size: 1990,1971
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/longjuanfeng_00000
+  rotate: false
+  xy: 966, 1176
+  size: 301, 395
+  orig: 386, 424
+  offset: 46, 16
+  index: -1
+images/ef/longjuanfeng_00001
+  rotate: false
+  xy: 663, 1169
+  size: 301, 397
+  orig: 386, 424
+  offset: 44, 16
+  index: -1
+images/ef/longjuanfeng_00002
+  rotate: false
+  xy: 2, 322
+  size: 299, 409
+  orig: 386, 424
+  offset: 44, 15
+  index: -1
+images/ef/longjuanfeng_00003
+  rotate: false
+  xy: 655, 753
+  size: 303, 398
+  orig: 386, 424
+  offset: 40, 14
+  index: -1
+images/ef/longjuanfeng_00004
+  rotate: false
+  xy: 675, 1573
+  size: 311, 396
+  orig: 386, 424
+  offset: 34, 15
+  index: -1
+images/ef/longjuanfeng_00005
+  rotate: true
+  xy: 1599, 957
+  size: 313, 385
+  orig: 386, 424
+  offset: 34, 15
+  index: -1
+images/ef/longjuanfeng_00006
+  rotate: true
+  xy: 404, 6
+  size: 315, 389
+  orig: 386, 424
+  offset: 34, 13
+  index: -1
+images/ef/longjuanfeng_00007
+  rotate: true
+  xy: 2, 3
+  size: 317, 400
+  orig: 386, 424
+  offset: 32, 13
+  index: -1
+images/ef/longjuanfeng_00008
+  rotate: false
+  xy: 2, 733
+  size: 322, 410
+  orig: 386, 424
+  offset: 28, 14
+  index: -1
+images/ef/longjuanfeng_00009
+  rotate: false
+  xy: 303, 323
+  size: 324, 408
+  orig: 386, 424
+  offset: 25, 13
+  index: -1
+images/ef/longjuanfeng_00010
+  rotate: false
+  xy: 326, 739
+  size: 327, 404
+  orig: 386, 424
+  offset: 22, 14
+  index: -1
+images/ef/longjuanfeng_00011
+  rotate: false
+  xy: 1269, 1186
+  size: 328, 390
+  orig: 386, 424
+  offset: 19, 14
+  index: -1
+images/ef/longjuanfeng_00012
+  rotate: false
+  xy: 331, 1153
+  size: 330, 403
+  orig: 386, 424
+  offset: 16, 15
+  index: -1
+images/ef/longjuanfeng_00013
+  rotate: true
+  xy: 795, 2
+  size: 332, 389
+  orig: 386, 424
+  offset: 12, 14
+  index: -1
+images/ef/longjuanfeng_00014
+  rotate: false
+  xy: 340, 1568
+  size: 333, 401
+  orig: 386, 424
+  offset: 9, 14
+  index: -1
+images/ef/longjuanfeng_00015
+  rotate: false
+  xy: 988, 1578
+  size: 323, 391
+  orig: 386, 424
+  offset: 21, 13
+  index: -1
+images/ef/longjuanfeng_00016
+  rotate: false
+  xy: 2, 1145
+  size: 327, 411
+  orig: 386, 424
+  offset: 19, 13
+  index: -1
+images/ef/longjuanfeng_00017
+  rotate: false
+  xy: 1313, 1580
+  size: 331, 389
+  orig: 386, 424
+  offset: 17, 14
+  index: -1
+images/ef/longjuanfeng_00018
+  rotate: false
+  xy: 629, 336
+  size: 333, 401
+  orig: 386, 424
+  offset: 16, 14
+  index: -1
+images/ef/longjuanfeng_00019
+  rotate: false
+  xy: 960, 772
+  size: 336, 395
+  orig: 386, 424
+  offset: 14, 14
+  index: -1
+images/ef/longjuanfeng_00020
+  rotate: false
+  xy: 2, 1558
+  size: 336, 411
+  orig: 386, 424
+  offset: 13, 13
+  index: -1
+images/ef/longjuanfeng_00021
+  rotate: false
+  xy: 1646, 1583
+  size: 338, 386
+  orig: 386, 424
+  offset: 11, 13
+  index: -1
+images/ef/longjuanfeng_00022
+  rotate: true
+  xy: 1599, 1272
+  size: 306, 388
+  orig: 386, 424
+  offset: 42, 14
+  index: -1
+images/ef/penshui1
+  rotate: false
+  xy: 964, 643
+  size: 63, 127
+  orig: 273, 273
+  offset: 12, 74
+  index: -1
+images/ef/penshui2
+  rotate: false
+  xy: 1131, 363
+  size: 166, 253
+  orig: 273, 273
+  offset: 13, 8
+  index: -1
+images/ef/penshui3
+  rotate: false
+  xy: 964, 352
+  size: 165, 264
+  orig: 273, 273
+  offset: 16, 0
+  index: -1
+images/ef/penshui4
+  rotate: true
+  xy: 1569, 618
+  size: 165, 267
+  orig: 273, 273
+  offset: 18, 0
+  index: -1
+images/ef/penshui5
+  rotate: true
+  xy: 1573, 785
+  size: 170, 270
+  orig: 273, 273
+  offset: 18, 0
+  index: -1
+images/ef/penshui6
+  rotate: true
+  xy: 1298, 1014
+  size: 170, 273
+  orig: 273, 273
+  offset: 19, 0
+  index: -1
+images/ef/penshui7
+  rotate: true
+  xy: 1298, 843
+  size: 169, 273
+  orig: 273, 273
+  offset: 21, 0
+  index: -1
+images/ef/penshui8
+  rotate: true
+  xy: 1298, 673
+  size: 168, 269
+  orig: 273, 273
+  offset: 22, 4
+  index: -1
+images/ef/penshui9
+  rotate: false
+  xy: 1845, 586
+  size: 135, 243
+  orig: 273, 273
+  offset: 23, 30
+  index: -1
+images/ef/shui_00000
+  rotate: false
+  xy: 1845, 831
+  size: 143, 124
+  orig: 256, 256
+  offset: 67, 8
+  index: -1
+images/ef/shui_00001
+  rotate: true
+  xy: 1754, 4
+  size: 185, 172
+  orig: 256, 256
+  offset: 43, 7
+  index: -1
+images/ef/shui_00002
+  rotate: false
+  xy: 1556, 4
+  size: 196, 176
+  orig: 256, 256
+  offset: 40, 8
+  index: -1
+images/ef/shui_00003
+  rotate: false
+  xy: 1754, 191
+  size: 201, 195
+  orig: 256, 256
+  offset: 34, 7
+  index: -1
+images/ef/shui_00004
+  rotate: false
+  xy: 1754, 191
+  size: 201, 195
+  orig: 256, 256
+  offset: 34, 7
+  index: -1
+images/ef/shui_00005
+  rotate: true
+  xy: 1719, 388
+  size: 196, 204
+  orig: 256, 256
+  offset: 33, 8
+  index: -1
+images/ef/shui_00006
+  rotate: false
+  xy: 1556, 182
+  size: 196, 204
+  orig: 256, 256
+  offset: 33, 8
+  index: -1
+images/ef/shui_00007
+  rotate: true
+  xy: 1299, 475
+  size: 196, 208
+  orig: 256, 256
+  offset: 29, 8
+  index: -1
+images/ef/shui_00008
+  rotate: true
+  xy: 1509, 420
+  size: 196, 208
+  orig: 256, 256
+  offset: 29, 8
+  index: -1
+images/ef/shui_00009
+  rotate: true
+  xy: 1299, 278
+  size: 195, 207
+  orig: 256, 256
+  offset: 30, 9
+  index: -1
+images/ef/shui_00010
+  rotate: true
+  xy: 1299, 278
+  size: 195, 207
+  orig: 256, 256
+  offset: 30, 9
+  index: -1
+images/ef/shui_00011
+  rotate: false
+  xy: 1186, 69
+  size: 183, 207
+  orig: 256, 256
+  offset: 41, 8
+  index: -1
+images/ef/shui_00012
+  rotate: false
+  xy: 1371, 69
+  size: 183, 207
+  orig: 256, 256
+  offset: 41, 8
+  index: -1
+images/ef/shui_00013
+  rotate: false
+  xy: 1029, 700
+  size: 70, 70
+  orig: 256, 256
+  offset: 133, 9
+  index: -1

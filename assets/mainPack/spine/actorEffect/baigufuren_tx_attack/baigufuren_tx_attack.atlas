@@ -1,0 +1,41 @@
+
+baigufuren_tx_attack.png
+size: 1360,357
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/daoguang_00001
+  rotate: false
+  xy: 1193, 66
+  size: 165, 289
+  orig: 458, 464
+  offset: 62, 92
+  index: -1
+images/ef/daoguang_00003
+  rotate: false
+  xy: 2, 24
+  size: 331, 331
+  orig: 458, 464
+  offset: 59, 52
+  index: -1
+images/ef/daoguang_00007
+  rotate: true
+  xy: 335, 2
+  size: 353, 296
+  orig: 458, 464
+  offset: 58, 63
+  index: -1
+images/ef/daoguang_00008
+  rotate: true
+  xy: 633, 7
+  size: 348, 298
+  orig: 458, 464
+  offset: 62, 64
+  index: -1
+images/ef/daoguang_00011
+  rotate: false
+  xy: 933, 21
+  size: 258, 334
+  orig: 458, 464
+  offset: 143, 96
+  index: -1

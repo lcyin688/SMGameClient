@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "873fa2df-a466-4c8a-9066-6807de3d0417",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1645,
+  "height": 1645,
+  "platformSettings": {},
+  "subMetas": {
+    "yaochi_tx_attack_01": {
+      "ver": "1.0.6",
+      "uuid": "68bb778f-78e7-40d4-9c6b-43fcfeee2343",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "873fa2df-a466-4c8a-9066-6807de3d0417",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -50,
+      "trimX": 2,
+      "trimY": 102,
+      "width": 1641,
+      "height": 1541,
+      "rawWidth": 1645,
+      "rawHeight": 1645,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

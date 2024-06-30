@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "0fd2e1b4-0d40-47b8-8349-28489043181b",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1977,
+  "height": 1866,
+  "platformSettings": {},
+  "subMetas": {
+    "leizhenzi_tx_attack_02": {
+      "ver": "1.0.6",
+      "uuid": "54876928-27a7-4a42-9419-a56465c5445a",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "0fd2e1b4-0d40-47b8-8349-28489043181b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1973,
+      "height": 1862,
+      "rawWidth": 1977,
+      "rawHeight": 1866,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

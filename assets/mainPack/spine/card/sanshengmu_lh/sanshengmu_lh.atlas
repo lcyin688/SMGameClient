@@ -1,0 +1,272 @@
+
+sanshengmu_lh.png
+size: 2033,1137
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ssm_bldeng_01
+  rotate: true
+  xy: 2, 18
+  size: 128, 149
+  orig: 128, 149
+  offset: 0, 0
+  index: -1
+ssm_fa_04
+  rotate: true
+  xy: 153, 53
+  size: 93, 89
+  orig: 93, 89
+  offset: 0, 0
+  index: -1
+ssm_fa_05
+  rotate: false
+  xy: 1396, 12
+  size: 120, 90
+  orig: 120, 90
+  offset: 0, 0
+  index: -1
+ssm_fa_06
+  rotate: false
+  xy: 1980, 1005
+  size: 51, 130
+  orig: 51, 130
+  offset: 0, 0
+  index: -1
+ssm_fa_07
+  rotate: false
+  xy: 1980, 885
+  size: 37, 118
+  orig: 39, 118
+  offset: 2, 0
+  index: -1
+ssm_fa_15
+  rotate: true
+  xy: 835, 2
+  size: 102, 129
+  orig: 102, 129
+  offset: 0, 0
+  index: -1
+ssm_fa_16
+  rotate: true
+  xy: 1714, 464
+  size: 367, 159
+  orig: 367, 159
+  offset: 0, 0
+  index: -1
+ssm_fa_37
+  rotate: true
+  xy: 842, 405
+  size: 558, 452
+  orig: 558, 452
+  offset: 0, 0
+  index: -1
+ssm_fa_38
+  rotate: true
+  xy: 1264, 104
+  size: 220, 383
+  orig: 220, 383
+  offset: 0, 0
+  index: -1
+ssm_qzi_27
+  rotate: true
+  xy: 1719, 833
+  size: 302, 259
+  orig: 302, 259
+  offset: 0, 0
+  index: -1
+ssm_qzi_31
+  rotate: true
+  xy: 1721, 26
+  size: 298, 163
+  orig: 298, 163
+  offset: 0, 0
+  index: -1
+ssm_qzi_32
+  rotate: false
+  xy: 2, 359
+  size: 838, 776
+  orig: 838, 776
+  offset: 0, 0
+  index: -1
+ssm_sshen_25
+  rotate: false
+  xy: 244, 13
+  size: 225, 161
+  orig: 225, 161
+  offset: 0, 0
+  index: -1
+ssm_sshen_26
+  rotate: true
+  xy: 2, 148
+  size: 209, 240
+  orig: 209, 240
+  offset: 0, 0
+  index: -1
+ssm_tou_08
+  rotate: false
+  xy: 1875, 477
+  size: 37, 12
+  orig: 37, 12
+  offset: 0, 0
+  index: -1
+ssm_tou_09
+  rotate: false
+  xy: 1651, 466
+  size: 27, 21
+  orig: 27, 21
+  offset: 0, 0
+  index: -1
+ssm_tou_10
+  rotate: false
+  xy: 1605, 459
+  size: 44, 28
+  orig: 44, 28
+  offset: 0, 0
+  index: -1
+ssm_tou_11
+  rotate: false
+  xy: 1980, 847
+  size: 47, 36
+  orig: 47, 36
+  offset: 0, 0
+  index: -1
+ssm_tou_12
+  rotate: false
+  xy: 1570, 456
+  size: 33, 31
+  orig: 33, 31
+  offset: 0, 0
+  index: -1
+ssm_tou_13
+  rotate: false
+  xy: 1526, 455
+  size: 42, 32
+  orig: 42, 32
+  offset: 0, 0
+  index: -1
+ssm_tou_14
+  rotate: true
+  xy: 978, 20
+  size: 109, 136
+  orig: 109, 136
+  offset: 0, 0
+  index: -1
+ssm_tshi_02
+  rotate: true
+  xy: 1262, 5
+  size: 97, 132
+  orig: 97, 132
+  offset: 0, 0
+  index: -1
+ssm_tshi_03
+  rotate: true
+  xy: 835, 106
+  size: 120, 141
+  orig: 120, 141
+  offset: 0, 0
+  index: -1
+ssm_tui_28
+  rotate: true
+  xy: 1296, 326
+  size: 126, 622
+  orig: 126, 622
+  offset: 0, 0
+  index: -1
+ssm_tui_29
+  rotate: true
+  xy: 842, 965
+  size: 170, 875
+  orig: 170, 875
+  offset: 0, 0
+  index: -1
+ssm_tui_30
+  rotate: false
+  xy: 1649, 24
+  size: 70, 300
+  orig: 70, 300
+  offset: 0, 0
+  index: -1
+ssm_ydai_17
+  rotate: false
+  xy: 1116, 21
+  size: 144, 108
+  orig: 144, 108
+  offset: 0, 0
+  index: -1
+ssm_yshou_18
+  rotate: false
+  xy: 1296, 454
+  size: 228, 509
+  orig: 228, 509
+  offset: 0, 0
+  index: -1
+ssm_yshou_19
+  rotate: false
+  xy: 663, 22
+  size: 170, 335
+  orig: 170, 335
+  offset: 0, 0
+  index: -1
+ssm_yshou_20
+  rotate: false
+  xy: 1920, 278
+  size: 103, 211
+  orig: 103, 211
+  offset: 0, 0
+  index: -1
+ssm_yshou_21
+  rotate: true
+  xy: 1173, 148
+  size: 78, 72
+  orig: 78, 72
+  offset: 0, 0
+  index: -1
+ssm_yshou_22
+  rotate: false
+  xy: 1875, 491
+  size: 140, 340
+  orig: 140, 340
+  offset: 0, 0
+  index: -1
+ssm_yshou_23
+  rotate: true
+  xy: 842, 228
+  size: 175, 420
+  orig: 175, 420
+  offset: 0, 0
+  index: -1
+ssm_yshou_24
+  rotate: true
+  xy: 978, 131
+  size: 95, 193
+  orig: 95, 193
+  offset: 0, 0
+  index: -1
+ssm_zshou_33
+  rotate: false
+  xy: 1886, 10
+  size: 132, 266
+  orig: 132, 266
+  offset: 0, 0
+  index: -1
+ssm_zshou_34
+  rotate: false
+  xy: 1526, 489
+  size: 186, 474
+  orig: 186, 474
+  offset: 0, 0
+  index: -1
+ssm_zshou_35
+  rotate: false
+  xy: 471, 62
+  size: 154, 112
+  orig: 154, 112
+  offset: 0, 0
+  index: -1
+ssm_zshou_36
+  rotate: true
+  xy: 244, 176
+  size: 181, 417
+  orig: 181, 417
+  offset: 0, 0
+  index: -1

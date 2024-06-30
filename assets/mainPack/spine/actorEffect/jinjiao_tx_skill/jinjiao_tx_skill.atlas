@@ -1,0 +1,132 @@
+
+jinjiao_tx_skill.png
+size: 1745,416
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+efc_a_xshanguang0003
+  rotate: true
+  xy: 462, 11
+  size: 259, 254
+  orig: 263, 259
+  offset: 2, 2
+  index: -1
+fgg
+  rotate: true
+  xy: 976, 2
+  size: 126, 125
+  orig: 126, 125
+  offset: 0, 0
+  index: -1
+fgg2
+  rotate: false
+  xy: 1103, 9
+  size: 118, 119
+  orig: 126, 125
+  offset: 5, 2
+  index: -1
+fgq
+  rotate: false
+  xy: 718, 14
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+fzz
+  rotate: true
+  xy: 2, 7
+  size: 407, 458
+  orig: 407, 458
+  offset: 0, 0
+  index: -1
+hh1
+  rotate: true
+  xy: 1657, 89
+  size: 78, 86
+  orig: 81, 86
+  offset: 1, 0
+  index: -1
+hh2
+  rotate: true
+  xy: 1657, 250
+  size: 79, 86
+  orig: 82, 86
+  offset: 2, 0
+  index: -1
+hh3
+  rotate: true
+  xy: 1657, 169
+  size: 79, 86
+  orig: 81, 86
+  offset: 2, 0
+  index: -1
+hh4
+  rotate: true
+  xy: 1657, 331
+  size: 83, 86
+  orig: 85, 86
+  offset: 0, 0
+  index: -1
+hh5
+  rotate: false
+  xy: 1302, 45
+  size: 75, 83
+  orig: 79, 84
+  offset: 3, 1
+  index: -1
+hh6
+  rotate: true
+  xy: 1657, 8
+  size: 79, 83
+  orig: 82, 84
+  offset: 3, 1
+  index: -1
+hh7
+  rotate: true
+  xy: 1223, 44
+  size: 84, 77
+  orig: 86, 80
+  offset: 0, 3
+  index: -1
+hh8
+  rotate: false
+  xy: 1479, 213
+  size: 63, 57
+  orig: 81, 66
+  offset: 14, 2
+  index: -1
+sd1
+  rotate: true
+  xy: 976, 130
+  size: 56, 493
+  orig: 64, 504
+  offset: 4, 3
+  index: -1
+sd2
+  rotate: true
+  xy: 976, 188
+  size: 82, 501
+  orig: 86, 511
+  offset: 0, 2
+  index: -1
+sd3
+  rotate: false
+  xy: 1603, 14
+  size: 52, 400
+  orig: 60, 424
+  offset: 4, 14
+  index: -1
+sd4
+  rotate: false
+  xy: 1545, 24
+  size: 56, 390
+  orig: 60, 398
+  offset: 4, 4
+  index: -1
+sl3
+  rotate: false
+  xy: 462, 272
+  size: 1081, 142
+  orig: 1097, 154
+  offset: 8, 6
+  index: -1

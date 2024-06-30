@@ -1,0 +1,90 @@
+
+zuofutongzi_tx_attack.png
+size: 1006,1028
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hdg_00001
+  rotate: false
+  xy: 532, 56
+  size: 170, 258
+  orig: 458, 464
+  offset: 42, 112
+  index: -1
+hdg_00003
+  rotate: true
+  xy: 709, 339
+  size: 316, 295
+  orig: 458, 464
+  offset: 42, 44
+  index: -1
+hdg_00005
+  rotate: true
+  xy: 501, 316
+  size: 336, 206
+  orig: 458, 464
+  offset: 74, 44
+  index: -1
+hdg_00007
+  rotate: false
+  xy: 2, 2
+  size: 303, 271
+  orig: 458, 464
+  offset: 113, 48
+  index: -1
+hdg_00009
+  rotate: true
+  xy: 709, 120
+  size: 217, 250
+  orig: 458, 464
+  offset: 199, 73
+  index: -1
+hdg_00011
+  rotate: true
+  xy: 704, 26
+  size: 92, 207
+  orig: 458, 464
+  offset: 309, 106
+  index: -1
+hdg_00013
+  rotate: false
+  xy: 961, 266
+  size: 27, 71
+  orig: 458, 464
+  offset: 353, 239
+  index: -1
+hdg_00015
+  rotate: true
+  xy: 307, 2
+  size: 17, 36
+  orig: 458, 464
+  offset: 355, 273
+  index: -1
+jizhong1
+  rotate: true
+  xy: 307, 21
+  size: 252, 223
+  orig: 512, 512
+  offset: 145, 64
+  index: -1
+jizhong2
+  rotate: false
+  xy: 516, 657
+  size: 482, 369
+  orig: 512, 512
+  offset: 30, 63
+  index: -1
+jizhong3
+  rotate: false
+  xy: 2, 275
+  size: 497, 377
+  orig: 512, 512
+  offset: 15, 82
+  index: -1
+jizhong4
+  rotate: false
+  xy: 2, 654
+  size: 512, 372
+  orig: 512, 512
+  offset: 0, 93
+  index: -1

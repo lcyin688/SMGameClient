@@ -1,0 +1,62 @@
+
+xiaofuxian_tx_attack.png
+size: 715,715
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dilei_00
+  rotate: true
+  xy: 621, 216
+  size: 261, 92
+  orig: 280, 120
+  offset: 14, 13
+  index: -1
+hit1
+  rotate: true
+  xy: 94, 8
+  size: 210, 218
+  orig: 256, 256
+  offset: 30, 38
+  index: -1
+hit2
+  rotate: true
+  xy: 389, 245
+  size: 232, 230
+  orig: 256, 256
+  offset: 20, 14
+  index: -1
+hit3
+  rotate: true
+  xy: 389, 479
+  size: 234, 231
+  orig: 256, 256
+  offset: 14, 1
+  index: -1
+hit4
+  rotate: false
+  xy: 319, 25
+  size: 239, 218
+  orig: 256, 256
+  offset: 5, 0
+  index: -1
+jinyuanbao
+  rotate: false
+  xy: 2, 451
+  size: 385, 262
+  orig: 385, 262
+  offset: 0, 0
+  index: -1
+star_1
+  rotate: false
+  xy: 94, 220
+  size: 223, 229
+  orig: 256, 256
+  offset: 14, 13
+  index: -1
+tuowei_00
+  rotate: false
+  xy: 2, 138
+  size: 90, 311
+  orig: 125, 320
+  offset: 17, 0
+  index: -1

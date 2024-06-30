@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "5a98feab-e37e-4957-a060-8e5c36f6249b",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 2000,
+  "height": 1795,
+  "platformSettings": {},
+  "subMetas": {
+    "sunwukong_tx_attack_01": {
+      "ver": "1.0.6",
+      "uuid": "8da7d61b-c8f8-4438-b8e8-45dd20510818",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "5a98feab-e37e-4957-a060-8e5c36f6249b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1996,
+      "height": 1791,
+      "rawWidth": 2000,
+      "rawHeight": 1795,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "287c2c0a-ac9b-40f6-8436-fc8b00eb9588",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 338,
+  "height": 28,
+  "platformSettings": {},
+  "subMetas": {
+    "button_fuwuqi_daanniu_03": {
+      "ver": "1.0.6",
+      "uuid": "27755424-2af5-47de-a702-7ac38cc8640a",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "287c2c0a-ac9b-40f6-8436-fc8b00eb9588",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 338,
+      "height": 28,
+      "rawWidth": 338,
+      "rawHeight": 28,
+      "borderTop": 13,
+      "borderBottom": 13,
+      "borderLeft": 15,
+      "borderRight": 15,
+      "subMetas": {}
+    }
+  }
+}

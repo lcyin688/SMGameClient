@@ -1,0 +1,20 @@
+
+dizang_tx_attack_02.png
+size: 563,417
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/yuandian
+  rotate: false
+  xy: 493, 346
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1
+ef/z_fahuan_44
+  rotate: true
+  xy: 2, 2
+  size: 413, 489
+  orig: 418, 493
+  offset: 2, 2
+  index: -1

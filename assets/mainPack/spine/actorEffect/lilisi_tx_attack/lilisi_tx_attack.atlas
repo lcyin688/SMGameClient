@@ -1,0 +1,125 @@
+
+lilisi_tx_attack.png
+size: 1127,562
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/xuanzhuan_00038
+  rotate: true
+  xy: 427, 259
+  size: 301, 169
+  orig: 488, 496
+  offset: 45, 305
+  index: -1
+images/ef/xuanzhuan_00040
+  rotate: false
+  xy: 386, 12
+  size: 271, 243
+  orig: 488, 496
+  offset: 35, 232
+  index: -1
+images/ef/xuanzhuan_00042
+  rotate: false
+  xy: 598, 277
+  size: 237, 283
+  orig: 488, 496
+  offset: 30, 186
+  index: -1
+images/ef/xuanzhuan_00044
+  rotate: false
+  xy: 142, 239
+  size: 194, 321
+  orig: 488, 496
+  offset: 28, 136
+  index: -1
+images/ef/xuanzhuan_00046
+  rotate: false
+  xy: 2, 229
+  size: 138, 331
+  orig: 488, 496
+  offset: 30, 107
+  index: -1
+images/ef/xuanzhuan_00048
+  rotate: false
+  xy: 338, 257
+  size: 87, 303
+  orig: 488, 496
+  offset: 32, 87
+  index: -1
+images/ef/xuanzhuan_00050
+  rotate: true
+  xy: 837, 442
+  size: 118, 278
+  orig: 488, 496
+  offset: 31, 76
+  index: -1
+images/ef/xuanzhuan_00052
+  rotate: false
+  xy: 236, 9
+  size: 148, 228
+  orig: 488, 496
+  offset: 32, 67
+  index: -1
+images/ef/xuanzhuan_00054
+  rotate: true
+  xy: 947, 152
+  size: 175, 176
+  orig: 488, 496
+  offset: 37, 62
+  index: -1
+images/ef/xuanzhuan_00056
+  rotate: true
+  xy: 2, 26
+  size: 201, 138
+  orig: 488, 496
+  offset: 42, 58
+  index: -1
+images/ef/xuanzhuan_00058
+  rotate: true
+  xy: 659, 47
+  size: 228, 94
+  orig: 488, 496
+  offset: 51, 59
+  index: -1
+images/ef/xuanzhuan_00060
+  rotate: true
+  xy: 142, 2
+  size: 235, 92
+  orig: 488, 496
+  offset: 65, 62
+  index: -1
+images/ef/xuanzhuan_00062
+  rotate: true
+  xy: 755, 48
+  size: 227, 110
+  orig: 488, 496
+  offset: 87, 64
+  index: -1
+images/ef/xuanzhuan_00064
+  rotate: false
+  xy: 867, 37
+  size: 201, 113
+  orig: 488, 496
+  offset: 115, 65
+  index: -1
+images/ef/xuanzhuan_00065
+  rotate: false
+  xy: 947, 329
+  size: 178, 111
+  orig: 488, 496
+  offset: 138, 67
+  index: -1
+images/ef/xuanzhuan_00066
+  rotate: true
+  xy: 837, 282
+  size: 158, 108
+  orig: 488, 496
+  offset: 158, 69
+  index: -1
+images/ef/yuandian
+  rotate: true
+  xy: 867, 212
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

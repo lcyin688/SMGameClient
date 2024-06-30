@@ -1,0 +1,20 @@
+
+zhongkui_tx_skill_03.png
+size: 570,456
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/fz_00000
+  rotate: true
+  xy: 2, 2
+  size: 452, 496
+  orig: 538, 538
+  offset: 43, 21
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 500, 385
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

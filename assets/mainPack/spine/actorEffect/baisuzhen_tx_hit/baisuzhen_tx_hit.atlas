@@ -1,0 +1,181 @@
+
+baisuzhen_tx_hit.png
+size: 1235,523
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/chong2
+  rotate: false
+  xy: 1115, 28
+  size: 58, 103
+  orig: 76, 123
+  offset: 9, 8
+  index: -1
+images/ef/chong3
+  rotate: false
+  xy: 1175, 30
+  size: 56, 101
+  orig: 76, 123
+  offset: 10, 9
+  index: -1
+images/ef/chong4
+  rotate: true
+  xy: 1115, 133
+  size: 57, 105
+  orig: 76, 123
+  offset: 10, 7
+  index: -1
+images/ef/chong5
+  rotate: true
+  xy: 1126, 245
+  size: 56, 107
+  orig: 76, 123
+  offset: 10, 6
+  index: -1
+images/ef/chong6
+  rotate: false
+  xy: 1073, 193
+  size: 51, 108
+  orig: 76, 123
+  offset: 9, 5
+  index: -1
+images/ef/chong7
+  rotate: true
+  xy: 1115, 303
+  size: 51, 115
+  orig: 76, 123
+  offset: 9, 6
+  index: -1
+images/ef/chong8
+  rotate: true
+  xy: 1126, 192
+  size: 51, 107
+  orig: 76, 123
+  offset: 9, 7
+  index: -1
+images/ef/piaodai2_00066
+  rotate: false
+  xy: 1013, 390
+  size: 97, 58
+  orig: 203, 410
+  offset: 106, 35
+  index: -1
+images/ef/piaodai2_00068
+  rotate: false
+  xy: 1115, 356
+  size: 117, 92
+  orig: 203, 410
+  offset: 79, 36
+  index: -1
+images/ef/piaodai2_00070
+  rotate: true
+  xy: 969, 35
+  size: 149, 144
+  orig: 203, 410
+  offset: 45, 36
+  index: -1
+images/ef/piaodai2_00072
+  rotate: true
+  xy: 739, 19
+  size: 156, 228
+  orig: 203, 410
+  offset: 38, 34
+  index: -1
+images/ef/piaodai2_00074
+  rotate: true
+  xy: 428, 5
+  size: 161, 309
+  orig: 203, 410
+  offset: 38, 35
+  index: -1
+images/ef/piaodai2_00076
+  rotate: false
+  xy: 642, 177
+  size: 156, 344
+  orig: 203, 410
+  offset: 38, 36
+  index: -1
+images/ef/piaodai2_00078
+  rotate: false
+  xy: 331, 168
+  size: 155, 353
+  orig: 203, 410
+  offset: 39, 36
+  index: -1
+images/ef/piaodai2_00080
+  rotate: true
+  xy: 2, 4
+  size: 156, 358
+  orig: 203, 410
+  offset: 39, 37
+  index: -1
+images/ef/piaodai2_00082
+  rotate: false
+  xy: 2, 162
+  size: 163, 359
+  orig: 203, 410
+  offset: 40, 38
+  index: -1
+images/ef/piaodai2_00084
+  rotate: false
+  xy: 167, 165
+  size: 162, 356
+  orig: 203, 410
+  offset: 41, 40
+  index: -1
+images/ef/piaodai2_00086
+  rotate: false
+  xy: 488, 169
+  size: 152, 352
+  orig: 203, 410
+  offset: 50, 44
+  index: -1
+images/ef/piaodai2_00088
+  rotate: false
+  xy: 800, 181
+  size: 141, 340
+  orig: 203, 410
+  offset: 53, 55
+  index: -1
+images/ef/piaodai2_00090
+  rotate: true
+  xy: 969, 450
+  size: 71, 263
+  orig: 203, 410
+  offset: 54, 98
+  index: -1
+images/ef/piaodai2_00092
+  rotate: false
+  xy: 943, 186
+  size: 68, 262
+  orig: 203, 410
+  offset: 54, 97
+  index: -1
+images/ef/piaodai2_00094
+  rotate: false
+  xy: 362, 2
+  size: 64, 164
+  orig: 203, 410
+  offset: 54, 191
+  index: -1
+images/ef/piaodai2_00096
+  rotate: false
+  xy: 1013, 191
+  size: 58, 110
+  orig: 203, 410
+  offset: 57, 242
+  index: -1
+images/ef/piaodai2_00098
+  rotate: false
+  xy: 331, 163
+  size: 2, 3
+  orig: 203, 410
+  offset: 109, 346
+  index: -1
+images/ef/yuandian3
+  rotate: true
+  xy: 1073, 322
+  size: 66, 37
+  orig: 81, 46
+  offset: 8, 3
+  index: -1

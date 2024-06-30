@@ -1,0 +1,62 @@
+
+yutu_tx_attack.png
+size: 792,792
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/ql_00008
+  rotate: false
+  xy: 2, 356
+  size: 382, 147
+  orig: 431, 180
+  offset: 30, 18
+  index: -1
+images/ef/ql_00009
+  rotate: false
+  xy: 2, 201
+  size: 378, 153
+  orig: 431, 180
+  offset: 34, 16
+  index: -1
+images/ef/ql_00010
+  rotate: false
+  xy: 382, 193
+  size: 376, 156
+  orig: 431, 180
+  offset: 36, 16
+  index: -1
+images/ef/ql_00011
+  rotate: false
+  xy: 386, 351
+  size: 373, 152
+  orig: 431, 180
+  offset: 37, 21
+  index: -1
+images/ef/ql_00012
+  rotate: false
+  xy: 363, 505
+  size: 362, 144
+  orig: 431, 180
+  offset: 43, 29
+  index: -1
+images/ef/ql_00013
+  rotate: false
+  xy: 2, 553
+  size: 359, 141
+  orig: 431, 180
+  offset: 45, 32
+  index: -1
+images/ef/ql_00014
+  rotate: false
+  xy: 436, 651
+  size: 354, 139
+  orig: 431, 180
+  offset: 49, 34
+  index: -1
+images/ef/skill2_2
+  rotate: true
+  xy: 2, 696
+  size: 94, 432
+  orig: 99, 440
+  offset: 2, 4
+  index: -1

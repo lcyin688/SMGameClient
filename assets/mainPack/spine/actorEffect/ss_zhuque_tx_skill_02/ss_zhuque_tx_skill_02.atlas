@@ -1,0 +1,20 @@
+
+ss_zhuque_tx_skill_02.png
+size: 101,72
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/mengban
+  rotate: false
+  xy: 73, 44
+  size: 26, 26
+  orig: 26, 26
+  offset: 0, 0
+  index: -1
+ef/yuandian
+  rotate: true
+  xy: 2, 2
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

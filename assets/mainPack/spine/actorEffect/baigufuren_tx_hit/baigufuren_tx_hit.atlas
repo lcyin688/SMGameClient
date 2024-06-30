@@ -1,0 +1,62 @@
+
+baigufuren_tx_hit.png
+size: 1218,1017
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/jiz1
+  rotate: false
+  xy: 818, 282
+  size: 397, 387
+  orig: 528, 546
+  offset: 64, 54
+  index: -1
+images/ef/jiz2
+  rotate: false
+  xy: 2, 73
+  size: 408, 449
+  orig: 528, 546
+  offset: 84, 42
+  index: -1
+images/ef/jiz3
+  rotate: false
+  xy: 2, 524
+  size: 441, 491
+  orig: 528, 546
+  offset: 74, 24
+  index: -1
+images/ef/jiz4
+  rotate: true
+  xy: 445, 580
+  size: 435, 371
+  orig: 528, 546
+  offset: 65, 70
+  index: -1
+images/ef/jiz5
+  rotate: true
+  xy: 412, 77
+  size: 445, 389
+  orig: 528, 546
+  offset: 64, 60
+  index: -1
+images/ef/jiz6
+  rotate: true
+  xy: 818, 671
+  size: 344, 398
+  orig: 528, 546
+  offset: 131, 54
+  index: -1
+images/ef/jiz7
+  rotate: true
+  xy: 803, 25
+  size: 255, 362
+  orig: 528, 546
+  offset: 175, 96
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 2, 2
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

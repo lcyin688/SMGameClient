@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "f9ea4056-ec73-4300-9414-b0bd527a4ba6",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1987,
+  "height": 1491,
+  "platformSettings": {},
+  "subMetas": {
+    "chiyou_tx_attack_02": {
+      "ver": "1.0.6",
+      "uuid": "ba09f38f-831e-453d-a73e-5d81dc28b1be",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "f9ea4056-ec73-4300-9414-b0bd527a4ba6",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1983,
+      "height": 1487,
+      "rawWidth": 1987,
+      "rawHeight": 1491,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

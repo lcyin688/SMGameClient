@@ -1,0 +1,579 @@
+
+nezha_lh.png
+size: 2039,2046
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fire1
+  rotate: true
+  xy: 498, 27
+  size: 347, 495
+  orig: 347, 495
+  offset: 0, 0
+  index: -1
+fire12
+  rotate: true
+  xy: 2, 96
+  size: 344, 494
+  orig: 344, 494
+  offset: 0, 0
+  index: -1
+fire2
+  rotate: true
+  xy: 1086, 345
+  size: 339, 501
+  orig: 339, 501
+  offset: 0, 0
+  index: -1
+fire5
+  rotate: true
+  xy: 565, 376
+  size: 331, 519
+  orig: 331, 519
+  offset: 0, 0
+  index: -1
+fire6
+  rotate: true
+  xy: 1112, 686
+  size: 324, 534
+  orig: 324, 534
+  offset: 0, 0
+  index: -1
+fire7
+  rotate: true
+  xy: 2, 442
+  size: 323, 561
+  orig: 323, 561
+  offset: 0, 0
+  index: -1
+fire9
+  rotate: false
+  xy: 1589, 2
+  size: 377, 484
+  orig: 377, 484
+  offset: 0, 0
+  index: -1
+nz_eduo_13
+  rotate: true
+  xy: 184, 2016
+  size: 28, 48
+  orig: 28, 48
+  offset: 0, 0
+  index: -1
+nz_fa_01
+  rotate: true
+  xy: 662, 1987
+  size: 57, 117
+  orig: 57, 119
+  offset: 0, 2
+  index: -1
+nz_fa_02
+  rotate: true
+  xy: 338, 2008
+  size: 36, 46
+  orig: 36, 46
+  offset: 0, 0
+  index: -1
+nz_fa_03
+  rotate: false
+  xy: 1825, 1852
+  size: 130, 115
+  orig: 130, 115
+  offset: 0, 0
+  index: -1
+nz_fa_04
+  rotate: true
+  xy: 498, 1899
+  size: 91, 131
+  orig: 91, 131
+  offset: 0, 0
+  index: -1
+nz_fa_05
+  rotate: false
+  xy: 520, 1993
+  size: 71, 51
+  orig: 72, 52
+  offset: 1, 0
+  index: -1
+nz_fa_06
+  rotate: true
+  xy: 47, 2023
+  size: 21, 67
+  orig: 21, 67
+  offset: 0, 0
+  index: -1
+nz_fa_15
+  rotate: true
+  xy: 915, 1980
+  size: 64, 134
+  orig: 64, 134
+  offset: 0, 0
+  index: -1
+nz_fa_16
+  rotate: false
+  xy: 1299, 1868
+  size: 186, 100
+  orig: 186, 100
+  offset: 0, 0
+  index: -1
+nz_fa_17
+  rotate: true
+  xy: 781, 1984
+  size: 60, 132
+  orig: 60, 132
+  offset: 0, 0
+  index: -1
+nz_fa_18
+  rotate: false
+  xy: 1051, 1979
+  size: 73, 65
+  orig: 73, 65
+  offset: 0, 0
+  index: -1
+nz_fa_19
+  rotate: false
+  xy: 1126, 1974
+  size: 86, 70
+  orig: 86, 70
+  offset: 0, 0
+  index: -1
+nz_fa_20
+  rotate: false
+  xy: 1107, 1872
+  size: 190, 97
+  orig: 190, 97
+  offset: 0, 0
+  index: -1
+nz_fa_21
+  rotate: false
+  xy: 748, 709
+  size: 362, 323
+  orig: 362, 323
+  offset: 0, 0
+  index: -1
+nz_fhluo_45
+  rotate: true
+  xy: 162, 1800
+  size: 115, 228
+  orig: 115, 228
+  offset: 0, 0
+  index: -1
+nz_fhluo_46
+  rotate: true
+  xy: 392, 1782
+  size: 115, 228
+  orig: 115, 228
+  offset: 0, 0
+  index: -1
+nz_fhluo_51
+  rotate: true
+  xy: 1703, 1969
+  size: 75, 143
+  orig: 75, 143
+  offset: 0, 0
+  index: -1
+nz_fhluo_52
+  rotate: true
+  xy: 1848, 1969
+  size: 75, 143
+  orig: 75, 143
+  offset: 0, 0
+  index: -1
+nz_huan_22
+  rotate: false
+  xy: 1434, 1517
+  size: 227, 214
+  orig: 227, 214
+  offset: 0, 0
+  index: -1
+nz_pdai_26
+  rotate: false
+  xy: 1652, 949
+  size: 379, 284
+  orig: 379, 284
+  offset: 0, 0
+  index: -1
+nz_pdai_31
+  rotate: false
+  xy: 2, 1147
+  size: 453, 230
+  orig: 453, 230
+  offset: 0, 0
+  index: -1
+nz_pdai_54
+  rotate: false
+  xy: 631, 1888
+  size: 347, 90
+  orig: 347, 90
+  offset: 0, 0
+  index: -1
+nz_pdai_61
+  rotate: false
+  xy: 1648, 488
+  size: 354, 459
+  orig: 354, 459
+  offset: 0, 0
+  index: -1
+nz_pdai_62
+  rotate: false
+  xy: 767, 1758
+  size: 338, 119
+  orig: 338, 119
+  offset: 0, 0
+  index: -1
+nz_shou01_63
+  rotate: true
+  xy: 395, 767
+  size: 319, 351
+  orig: 330, 351
+  offset: 11, 0
+  index: -1
+nz_shou01_64
+  rotate: false
+  xy: 2, 1415
+  size: 274, 216
+  orig: 291, 216
+  offset: 8, 0
+  index: -1
+nz_shou02_69
+  rotate: true
+  xy: 2, 859
+  size: 286, 391
+  orig: 286, 399
+  offset: 0, 8
+  index: -1
+nz_shou02_70
+  rotate: false
+  xy: 1793, 1235
+  size: 243, 264
+  orig: 252, 272
+  offset: 9, 8
+  index: -1
+nz_shou03_65
+  rotate: true
+  xy: 1663, 1501
+  size: 208, 374
+  orig: 213, 384
+  offset: 5, 10
+  index: -1
+nz_shou03_66
+  rotate: true
+  xy: 526, 1355
+  size: 225, 261
+  orig: 225, 279
+  offset: 0, 12
+  index: -1
+nz_shou04_67
+  rotate: false
+  xy: 1303, 1012
+  size: 347, 262
+  orig: 351, 275
+  offset: 4, 8
+  index: -1
+nz_shou04_68
+  rotate: false
+  xy: 1094, 1538
+  size: 338, 203
+  orig: 351, 209
+  offset: 7, 6
+  index: -1
+nz_sshen_32
+  rotate: true
+  xy: 1107, 1743
+  size: 123, 354
+  orig: 123, 354
+  offset: 0, 0
+  index: -1
+nz_sshen_34
+  rotate: true
+  xy: 1214, 1971
+  size: 73, 156
+  orig: 73, 156
+  offset: 0, 0
+  index: -1
+nz_sshen_35
+  rotate: false
+  xy: 2, 1819
+  size: 158, 117
+  orig: 158, 117
+  offset: 0, 0
+  index: -1
+nz_sshen_36
+  rotate: true
+  xy: 1372, 1970
+  size: 74, 329
+  orig: 74, 329
+  offset: 0, 0
+  index: -1
+nz_sshen_37
+  rotate: true
+  xy: 457, 1088
+  size: 253, 358
+  orig: 253, 358
+  offset: 0, 0
+  index: -1
+nz_sshen_38
+  rotate: true
+  xy: 1487, 1859
+  size: 108, 336
+  orig: 108, 336
+  offset: 0, 0
+  index: -1
+nz_sshen_39
+  rotate: false
+  xy: 2, 1945
+  size: 84, 76
+  orig: 84, 76
+  offset: 0, 0
+  index: -1
+nz_tou_07
+  rotate: false
+  xy: 116, 2017
+  size: 66, 27
+  orig: 66, 27
+  offset: 0, 0
+  index: -1
+nz_tou_08
+  rotate: false
+  xy: 2, 2029
+  size: 43, 15
+  orig: 43, 15
+  offset: 0, 0
+  index: -1
+nz_tou_09
+  rotate: false
+  xy: 386, 2006
+  size: 65, 38
+  orig: 65, 38
+  offset: 0, 0
+  index: -1
+nz_tou_10
+  rotate: false
+  xy: 234, 2009
+  size: 50, 35
+  orig: 50, 35
+  offset: 0, 0
+  index: -1
+nz_tou_11
+  rotate: false
+  xy: 453, 2006
+  size: 65, 38
+  orig: 65, 38
+  offset: 0, 0
+  index: -1
+nz_tou_12
+  rotate: false
+  xy: 286, 2009
+  size: 50, 35
+  orig: 50, 35
+  offset: 0, 0
+  index: -1
+nz_tou_14
+  rotate: true
+  xy: 2, 1657
+  size: 141, 190
+  orig: 141, 190
+  offset: 0, 0
+  index: -1
+nz_ydai_25
+  rotate: false
+  xy: 1463, 1733
+  size: 243, 124
+  orig: 243, 124
+  offset: 0, 0
+  index: -1
+nz_ydai_27
+  rotate: true
+  xy: 667, 1582
+  size: 174, 221
+  orig: 174, 221
+  offset: 0, 0
+  index: -1
+nz_ydai_28
+  rotate: false
+  xy: 301, 1917
+  size: 195, 87
+  orig: 195, 87
+  offset: 0, 0
+  index: -1
+nz_ydai_29
+  rotate: true
+  xy: 1708, 1719
+  size: 131, 134
+  orig: 131, 134
+  offset: 0, 0
+  index: -1
+nz_ydai_40
+  rotate: false
+  xy: 593, 1992
+  size: 67, 52
+  orig: 67, 52
+  offset: 0, 0
+  index: -1
+nz_yshou_55
+  rotate: true
+  xy: 622, 1769
+  size: 117, 143
+  orig: 117, 143
+  offset: 0, 0
+  index: -1
+nz_yshou_56
+  rotate: true
+  xy: 88, 1938
+  size: 76, 104
+  orig: 79, 104
+  offset: 0, 0
+  index: -1
+nz_yshou_57
+  rotate: true
+  xy: 890, 1577
+  size: 179, 202
+  orig: 179, 202
+  offset: 0, 0
+  index: -1
+nz_yshou_59
+  rotate: true
+  xy: 194, 1929
+  size: 78, 105
+  orig: 78, 105
+  offset: 0, 0
+  index: -1
+nz_ytui_48
+  rotate: false
+  xy: 1073, 1296
+  size: 321, 240
+  orig: 321, 240
+  offset: 0, 0
+  index: -1
+nz_ytui_49
+  rotate: false
+  xy: 438, 1598
+  size: 227, 169
+  orig: 227, 169
+  offset: 0, 0
+  index: -1
+nz_ytui_50
+  rotate: true
+  xy: 980, 1879
+  size: 98, 125
+  orig: 98, 125
+  offset: 0, 0
+  index: -1
+nz_zshou_23
+  rotate: false
+  xy: 1844, 1711
+  size: 152, 139
+  orig: 152, 139
+  offset: 0, 0
+  index: -1
+nz_zshou_24
+  rotate: true
+  xy: 789, 1343
+  size: 232, 282
+  orig: 232, 282
+  offset: 0, 0
+  index: -1
+nz_zshou_33
+  rotate: false
+  xy: 278, 1379
+  size: 246, 217
+  orig: 246, 217
+  offset: 0, 0
+  index: -1
+nz_ztui_42
+  rotate: true
+  xy: 1396, 1276
+  size: 223, 395
+  orig: 223, 395
+  offset: 0, 0
+  index: -1
+nz_ztui_43
+  rotate: true
+  xy: 817, 1034
+  size: 260, 484
+  orig: 260, 484
+  offset: 0, 0
+  index: -1
+nz_ztui_44
+  rotate: true
+  xy: 194, 1633
+  size: 147, 242
+  orig: 147, 242
+  offset: 0, 0
+  index: -1
+
+nezha_lh2.png
+size: 1990,1939
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fire10
+  rotate: true
+  xy: 1394, 3
+  size: 364, 511
+  orig: 364, 511
+  offset: 0, 0
+  index: -1
+fire11
+  rotate: true
+  xy: 1450, 404
+  size: 359, 485
+  orig: 359, 485
+  offset: 0, 0
+  index: -1
+fire3
+  rotate: true
+  xy: 1487, 1231
+  size: 352, 500
+  orig: 352, 500
+  offset: 0, 0
+  index: -1
+fire4
+  rotate: true
+  xy: 1487, 1585
+  size: 352, 501
+  orig: 352, 501
+  offset: 0, 0
+  index: -1
+fire8
+  rotate: true
+  xy: 836, 2
+  size: 365, 556
+  orig: 365, 556
+  offset: 0, 0
+  index: -1
+nz_guang_71
+  rotate: true
+  xy: 291, 813
+  size: 1124, 1194
+  orig: 1124, 1194
+  offset: 0, 0
+  index: -1
+nz_pdai_41
+  rotate: false
+  xy: 836, 369
+  size: 612, 442
+  orig: 612, 442
+  offset: 0, 0
+  index: -1
+nz_pdai_60
+  rotate: true
+  xy: 291, 94
+  size: 669, 543
+  orig: 669, 543
+  offset: 0, 0
+  index: -1
+nz_qbai_30
+  rotate: true
+  xy: 1487, 765
+  size: 464, 487
+  orig: 464, 487
+  offset: 0, 0
+  index: -1
+nz_wqi_58
+  rotate: false
+  xy: 2, 95
+  size: 287, 1842
+  orig: 287, 1842
+  offset: 0, 0
+  index: -1

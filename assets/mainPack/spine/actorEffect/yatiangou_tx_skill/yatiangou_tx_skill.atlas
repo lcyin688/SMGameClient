@@ -1,0 +1,174 @@
+
+yatiangou_tx_skill.png
+size: 1813,591
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/6_00000
+  rotate: false
+  xy: 1582, 44
+  size: 126, 108
+  orig: 307, 269
+  offset: 77, 22
+  index: -1
+images/ef/6_00001
+  rotate: true
+  xy: 1194, 6
+  size: 239, 181
+  orig: 307, 269
+  offset: 47, 43
+  index: -1
+images/ef/6_00002
+  rotate: false
+  xy: 539, 22
+  size: 267, 196
+  orig: 307, 269
+  offset: 19, 45
+  index: -1
+images/ef/6_00003
+  rotate: false
+  xy: 981, 260
+  size: 248, 189
+  orig: 307, 269
+  offset: 17, 42
+  index: -1
+images/ef/6_00004
+  rotate: true
+  xy: 1012, 16
+  size: 242, 180
+  orig: 307, 269
+  offset: 24, 34
+  index: -1
+images/ef/6_00005
+  rotate: true
+  xy: 788, 228
+  size: 230, 191
+  orig: 307, 269
+  offset: 27, 32
+  index: -1
+images/ef/6_00006
+  rotate: false
+  xy: 1377, 24
+  size: 203, 166
+  orig: 307, 269
+  offset: 64, 59
+  index: -1
+images/ef/6_00007
+  rotate: false
+  xy: 1377, 192
+  size: 239, 170
+  orig: 307, 269
+  offset: 47, 55
+  index: -1
+images/ef/cz1
+  rotate: false
+  xy: 1052, 451
+  size: 310, 138
+  orig: 613, 177
+  offset: 288, 19
+  index: -1
+images/ef/cz2
+  rotate: false
+  xy: 2, 452
+  size: 529, 137
+  orig: 613, 177
+  offset: 70, 20
+  index: -1
+images/ef/cz3
+  rotate: false
+  xy: 2, 330
+  size: 525, 120
+  orig: 613, 177
+  offset: 78, 27
+  index: -1
+images/ef/cz4
+  rotate: false
+  xy: 533, 497
+  size: 517, 92
+  orig: 613, 177
+  offset: 52, 41
+  index: -1
+images/ef/cz5
+  rotate: false
+  xy: 533, 460
+  size: 434, 35
+  orig: 613, 177
+  offset: 92, 70
+  index: -1
+images/ef/dg_00002
+  rotate: false
+  xy: 306, 11
+  size: 231, 317
+  orig: 424, 429
+  offset: 47, 47
+  index: -1
+images/ef/dg_00006
+  rotate: false
+  xy: 2, 80
+  size: 302, 248
+  orig: 424, 429
+  offset: 76, 50
+  index: -1
+images/ef/dg_00007
+  rotate: false
+  xy: 1364, 364
+  size: 278, 225
+  orig: 424, 429
+  offset: 102, 52
+  index: -1
+images/ef/dg_00008
+  rotate: false
+  xy: 539, 220
+  size: 247, 238
+  orig: 424, 429
+  offset: 130, 54
+  index: -1
+images/ef/dg_00009
+  rotate: false
+  xy: 808, 2
+  size: 202, 224
+  orig: 424, 429
+  offset: 173, 66
+  index: -1
+images/ef/dg_00010
+  rotate: false
+  xy: 1644, 376
+  size: 167, 213
+  orig: 424, 429
+  offset: 208, 76
+  index: -1
+images/ef/dg_00011
+  rotate: false
+  xy: 1618, 154
+  size: 157, 208
+  orig: 424, 429
+  offset: 215, 81
+  index: -1
+images/ef/dg_00012
+  rotate: false
+  xy: 1231, 247
+  size: 110, 202
+  orig: 424, 429
+  offset: 251, 86
+  index: -1
+images/ef/dg_00014
+  rotate: true
+  xy: 2, 19
+  size: 59, 175
+  orig: 424, 429
+  offset: 289, 105
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 1710, 83
+  size: 68, 69
+  orig: 100, 100
+  offset: 14, 16
+  index: -1
+images/ef/yuandian2
+  rotate: true
+  xy: 179, 10
+  size: 68, 69
+  orig: 100, 100
+  offset: 14, 16
+  index: -1

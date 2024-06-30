@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "3bdf2ad9-5f09-4c16-9f43-3813809b7219",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1127,
+  "height": 562,
+  "platformSettings": {},
+  "subMetas": {
+    "lilisi_tx_attack": {
+      "ver": "1.0.6",
+      "uuid": "685c5596-4eb8-4918-9449-8f4cba6905c1",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "3bdf2ad9-5f09-4c16-9f43-3813809b7219",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1123,
+      "height": 558,
+      "rawWidth": 1127,
+      "rawHeight": 562,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,20 @@
+
+leizhenzi_tx_attack_01.png
+size: 330,260
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/fx_smoke_05
+  rotate: false
+  xy: 2, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 260, 189
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

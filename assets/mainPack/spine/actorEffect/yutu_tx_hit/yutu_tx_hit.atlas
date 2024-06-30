@@ -1,0 +1,55 @@
+
+yutu_tx_hit.png
+size: 488,488
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/02/fx_kuromu_dokuro_star_006
+  rotate: false
+  xy: 390, 417
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1
+images/ef/02/jz1
+  rotate: false
+  xy: 230, 15
+  size: 121, 203
+  orig: 167, 317
+  offset: 22, 7
+  index: -1
+images/ef/02/jz2
+  rotate: false
+  xy: 353, 2
+  size: 130, 239
+  orig: 167, 317
+  offset: 15, 11
+  index: -1
+images/ef/02/jz3
+  rotate: false
+  xy: 98, 220
+  size: 142, 266
+  orig: 167, 317
+  offset: 7, 20
+  index: -1
+images/ef/02/jz4
+  rotate: false
+  xy: 242, 243
+  size: 146, 243
+  orig: 167, 317
+  offset: 4, 58
+  index: -1
+images/ef/02/jz5
+  rotate: false
+  xy: 98, 27
+  size: 130, 191
+  orig: 167, 317
+  offset: 12, 108
+  index: -1
+images/ef/skill2_2
+  rotate: false
+  xy: 2, 54
+  size: 94, 432
+  orig: 99, 440
+  offset: 2, 4
+  index: -1

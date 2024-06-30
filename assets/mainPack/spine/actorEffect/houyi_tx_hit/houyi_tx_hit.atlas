@@ -1,0 +1,41 @@
+
+houyi_tx_hit.png
+size: 1193,248
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/sj0015
+  rotate: true
+  xy: 800, 19
+  size: 227, 211
+  orig: 378, 374
+  offset: 85, 80
+  index: -1
+images/ef/sj0016
+  rotate: false
+  xy: 549, 17
+  size: 249, 229
+  orig: 378, 374
+  offset: 74, 73
+  index: -1
+images/ef/sj0018
+  rotate: false
+  xy: 2, 2
+  size: 277, 244
+  orig: 378, 374
+  offset: 58, 59
+  index: -1
+images/ef/sj0020
+  rotate: false
+  xy: 281, 3
+  size: 266, 243
+  orig: 378, 374
+  offset: 64, 59
+  index: -1
+images/ef/sj0022
+  rotate: true
+  xy: 1013, 55
+  size: 191, 178
+  orig: 378, 374
+  offset: 107, 82
+  index: -1

@@ -1,0 +1,111 @@
+
+weituo_tx_skill.png
+size: 869,497
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/by
+  rotate: false
+  xy: 558, 245
+  size: 56, 55
+  orig: 58, 59
+  offset: 1, 2
+  index: -1
+images/ef/by1
+  rotate: false
+  xy: 635, 325
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+images/ef/cc_00000
+  rotate: false
+  xy: 500, 162
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/ef/cc_00001
+  rotate: false
+  xy: 503, 102
+  size: 349, 77
+  orig: 915, 135
+  offset: 0, 0
+  index: -1
+images/ef/cc_00002
+  rotate: false
+  xy: 2, 231
+  size: 554, 69
+  orig: 915, 135
+  offset: 185, 5
+  index: -1
+images/ef/cc_00003
+  rotate: false
+  xy: 2, 302
+  size: 631, 50
+  orig: 915, 135
+  offset: 190, 24
+  index: -1
+images/ef/cc_00004
+  rotate: false
+  xy: 2, 354
+  size: 727, 69
+  orig: 915, 135
+  offset: 188, 27
+  index: -1
+images/ef/cc_00005
+  rotate: false
+  xy: 2, 425
+  size: 727, 70
+  orig: 915, 135
+  offset: 179, 29
+  index: -1
+images/ef/cj344
+  rotate: false
+  xy: 488, 2
+  size: 329, 98
+  orig: 354, 163
+  offset: 19, 33
+  index: -1
+images/ef/d1
+  rotate: true
+  xy: 558, 181
+  size: 56, 309
+  orig: 103, 512
+  offset: 21, 0
+  index: -1
+images/ef/d2
+  rotate: true
+  xy: 2, 107
+  size: 56, 496
+  orig: 103, 512
+  offset: 19, 0
+  index: -1
+images/ef/d3
+  rotate: true
+  xy: 2, 165
+  size: 64, 499
+  orig: 104, 512
+  offset: 14, 12
+  index: -1
+images/ef/d4
+  rotate: true
+  xy: 2, 41
+  size: 64, 484
+  orig: 103, 512
+  offset: 13, 28
+  index: -1
+images/ef/d5
+  rotate: true
+  xy: 2, 4
+  size: 35, 394
+  orig: 103, 512
+  offset: 42, 108
+  index: -1
+images/ef/da
+  rotate: true
+  xy: 731, 239
+  size: 256, 128
+  orig: 256, 128
+  offset: 0, 0
+  index: -1

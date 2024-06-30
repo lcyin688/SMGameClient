@@ -1,0 +1,27 @@
+
+sunwukong_tx_attack_02.png
+size: 837,528
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/ddd
+  rotate: false
+  xy: 2, 2
+  size: 591, 524
+  orig: 613, 536
+  offset: 14, 12
+  index: -1
+images/ef/efc_b_dilie0001
+  rotate: false
+  xy: 595, 284
+  size: 240, 242
+  orig: 256, 256
+  offset: 9, 9
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 595, 213
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

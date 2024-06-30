@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "59594b70-479e-4d5a-ae46-2c4cc50b916b",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 870,
+  "height": 870,
+  "platformSettings": {},
+  "subMetas": {
+    "daji_tx_attack_04": {
+      "ver": "1.0.6",
+      "uuid": "ffa349b4-ac0d-488b-9508-61db6c844497",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "59594b70-479e-4d5a-ae46-2c4cc50b916b",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -52.5,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 761,
+      "height": 866,
+      "rawWidth": 870,
+      "rawHeight": 870,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

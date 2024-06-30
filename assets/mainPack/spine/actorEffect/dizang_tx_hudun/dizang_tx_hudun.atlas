@@ -1,0 +1,125 @@
+
+dizang_tx_hudun.png
+size: 1477,712
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/hudun_00000
+  rotate: true
+  xy: 740, 243
+  size: 234, 244
+  orig: 269, 261
+  offset: 16, 11
+  index: -1
+images/ef/hudun_00002
+  rotate: true
+  xy: 1231, 239
+  size: 238, 244
+  orig: 269, 261
+  offset: 12, 11
+  index: -1
+images/ef/hudun_00004
+  rotate: true
+  xy: 2, 10
+  size: 238, 244
+  orig: 269, 261
+  offset: 10, 11
+  index: -1
+images/ef/hudun_00006
+  rotate: true
+  xy: 248, 8
+  size: 238, 244
+  orig: 269, 261
+  offset: 10, 11
+  index: -1
+images/ef/hudun_00008
+  rotate: true
+  xy: 2, 250
+  size: 232, 244
+  orig: 269, 261
+  offset: 12, 11
+  index: -1
+images/ef/hudun_00010
+  rotate: true
+  xy: 982, 479
+  size: 231, 243
+  orig: 269, 261
+  offset: 13, 11
+  index: -1
+images/ef/hudun_00012
+  rotate: true
+  xy: 1227, 479
+  size: 231, 243
+  orig: 269, 261
+  offset: 14, 11
+  index: -1
+images/ef/hudun_00014
+  rotate: true
+  xy: 737, 480
+  size: 230, 243
+  orig: 269, 261
+  offset: 18, 11
+  index: -1
+images/ef/hudun_00016
+  rotate: true
+  xy: 2, 485
+  size: 225, 243
+  orig: 269, 261
+  offset: 19, 11
+  index: -1
+images/ef/hudun_00018
+  rotate: true
+  xy: 247, 484
+  size: 226, 243
+  orig: 269, 261
+  offset: 18, 11
+  index: -1
+images/ef/hudun_00020
+  rotate: true
+  xy: 492, 482
+  size: 228, 243
+  orig: 269, 261
+  offset: 18, 11
+  index: -1
+images/ef/hudun_00022
+  rotate: true
+  xy: 986, 243
+  size: 234, 243
+  orig: 269, 261
+  offset: 16, 11
+  index: -1
+images/ef/hudun_00024
+  rotate: true
+  xy: 986, 2
+  size: 239, 243
+  orig: 269, 261
+  offset: 11, 11
+  index: -1
+images/ef/hudun_00026
+  rotate: true
+  xy: 494, 5
+  size: 238, 244
+  orig: 269, 261
+  offset: 12, 11
+  index: -1
+images/ef/hudun_00028
+  rotate: true
+  xy: 740, 3
+  size: 238, 244
+  orig: 269, 261
+  offset: 13, 11
+  index: -1
+images/ef/hudun_00030
+  rotate: true
+  xy: 494, 245
+  size: 233, 244
+  orig: 269, 261
+  offset: 18, 11
+  index: -1
+images/ef/hudun_00031
+  rotate: true
+  xy: 248, 248
+  size: 232, 244
+  orig: 269, 261
+  offset: 19, 11
+  index: -1

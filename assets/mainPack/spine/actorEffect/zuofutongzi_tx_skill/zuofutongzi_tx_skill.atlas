@@ -1,0 +1,62 @@
+
+zuofutongzi_tx_skill.png
+size: 744,528
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/hdg_00001
+  rotate: false
+  xy: 572, 268
+  size: 170, 258
+  orig: 458, 464
+  offset: 42, 112
+  index: -1
+images/ef/hdg_00003
+  rotate: true
+  xy: 2, 210
+  size: 316, 295
+  orig: 458, 464
+  offset: 42, 44
+  index: -1
+images/ef/hdg_00005
+  rotate: false
+  xy: 2, 2
+  size: 336, 206
+  orig: 458, 464
+  offset: 74, 44
+  index: -1
+images/ef/hdg_00007
+  rotate: true
+  xy: 299, 223
+  size: 303, 271
+  orig: 458, 464
+  offset: 113, 48
+  index: -1
+images/ef/hdg_00009
+  rotate: true
+  xy: 340, 4
+  size: 217, 250
+  orig: 458, 464
+  offset: 199, 73
+  index: -1
+images/ef/hdg_00011
+  rotate: false
+  xy: 645, 59
+  size: 92, 207
+  orig: 458, 464
+  offset: 309, 106
+  index: -1
+images/ef/hdg_00013
+  rotate: true
+  xy: 572, 239
+  size: 27, 71
+  orig: 458, 464
+  offset: 353, 239
+  index: -1
+images/ef/hdg_00015
+  rotate: false
+  xy: 592, 21
+  size: 17, 36
+  orig: 458, 464
+  offset: 355, 273
+  index: -1

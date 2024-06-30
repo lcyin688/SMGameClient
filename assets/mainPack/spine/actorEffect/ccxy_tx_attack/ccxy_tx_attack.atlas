@@ -1,0 +1,55 @@
+
+ccxy_tx_attack.png
+size: 351,559
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/liewen_00000
+  rotate: true
+  xy: 2, 191
+  size: 366, 206
+  orig: 435, 316
+  offset: 32, 64
+  index: -1
+ef/s_00001
+  rotate: false
+  xy: 179, 5
+  size: 64, 146
+  orig: 286, 290
+  offset: 32, 78
+  index: -1
+ef/s_00003
+  rotate: false
+  xy: 2, 13
+  size: 175, 176
+  orig: 286, 290
+  offset: 35, 34
+  index: -1
+ef/s_00005
+  rotate: true
+  xy: 210, 345
+  size: 212, 139
+  orig: 286, 290
+  offset: 35, 36
+  index: -1
+ef/s_00007
+  rotate: true
+  xy: 210, 153
+  size: 190, 103
+  orig: 286, 290
+  offset: 56, 39
+  index: -1
+ef/s_00009
+  rotate: false
+  xy: 245, 73
+  size: 66, 78
+  orig: 286, 290
+  offset: 170, 54
+  index: -1
+ef/yuandian
+  rotate: false
+  xy: 245, 2
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

@@ -1,0 +1,209 @@
+
+mamian_tx_attack.png
+size: 1933,532
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/1_00000
+  rotate: false
+  xy: 1134, 30
+  size: 218, 162
+  orig: 256, 256
+  offset: 2, 38
+  index: -1
+images/ef/1_00001
+  rotate: false
+  xy: 1465, 277
+  size: 227, 153
+  orig: 256, 256
+  offset: 0, 48
+  index: -1
+images/ef/1_00002
+  rotate: false
+  xy: 908, 33
+  size: 224, 158
+  orig: 256, 256
+  offset: 8, 47
+  index: -1
+images/ef/1_00003
+  rotate: false
+  xy: 625, 186
+  size: 234, 158
+  orig: 256, 256
+  offset: 1, 46
+  index: -1
+images/ef/1_00004
+  rotate: false
+  xy: 383, 161
+  size: 240, 158
+  orig: 256, 256
+  offset: 0, 47
+  index: -1
+images/ef/1_00005
+  rotate: false
+  xy: 679, 23
+  size: 227, 161
+  orig: 256, 256
+  offset: 10, 46
+  index: -1
+images/ef/1_00006
+  rotate: false
+  xy: 144, 151
+  size: 237, 162
+  orig: 256, 256
+  offset: 3, 45
+  index: -1
+images/ef/1_00007
+  rotate: false
+  xy: 1354, 69
+  size: 227, 154
+  orig: 256, 256
+  offset: 10, 46
+  index: -1
+images/ef/1_00008
+  rotate: false
+  xy: 194, 2
+  size: 240, 147
+  orig: 256, 256
+  offset: 0, 52
+  index: -1
+images/ef/1_00009
+  rotate: false
+  xy: 997, 388
+  size: 240, 142
+  orig: 256, 256
+  offset: 0, 56
+  index: -1
+images/ef/1_00010
+  rotate: false
+  xy: 751, 380
+  size: 244, 150
+  orig: 256, 256
+  offset: 1, 48
+  index: -1
+images/ef/1_00011
+  rotate: false
+  xy: 436, 3
+  size: 241, 156
+  orig: 256, 256
+  offset: 2, 44
+  index: -1
+images/ef/2c2
+  rotate: false
+  xy: 1664, 450
+  size: 160, 80
+  orig: 256, 128
+  offset: 0, 0
+  index: -1
+images/ef/2c4
+  rotate: false
+  xy: 1239, 432
+  size: 211, 98
+  orig: 256, 128
+  offset: 1, 0
+  index: -1
+images/ef/2c6
+  rotate: false
+  xy: 1452, 432
+  size: 210, 98
+  orig: 256, 128
+  offset: 9, 0
+  index: -1
+images/ef/2c9
+  rotate: true
+  xy: 1826, 341
+  size: 189, 101
+  orig: 256, 128
+  offset: 31, 0
+  index: -1
+images/ef/huoyan_00000
+  rotate: false
+  xy: 1799, 198
+  size: 132, 141
+  orig: 234, 234
+  offset: 21, 17
+  index: -1
+images/ef/huoyan_00001
+  rotate: false
+  xy: 1269, 225
+  size: 194, 205
+  orig: 234, 234
+  offset: 5, 15
+  index: -1
+images/ef/huoyan_00002
+  rotate: false
+  xy: 1583, 9
+  size: 172, 196
+  orig: 234, 234
+  offset: 7, 7
+  index: -1
+images/ef/huoyan_00003
+  rotate: false
+  xy: 861, 193
+  size: 209, 185
+  orig: 234, 234
+  offset: 9, 6
+  index: -1
+images/ef/huoyan_00004
+  rotate: true
+  xy: 144, 315
+  size: 215, 190
+  orig: 234, 234
+  offset: 9, 7
+  index: -1
+images/ef/huoyan_00005
+  rotate: false
+  xy: 532, 346
+  size: 217, 184
+  orig: 234, 234
+  offset: 11, 7
+  index: -1
+images/ef/huoyan_00006
+  rotate: true
+  xy: 336, 321
+  size: 209, 194
+  orig: 234, 234
+  offset: 18, 8
+  index: -1
+images/ef/huoyan_00007
+  rotate: true
+  xy: 1072, 194
+  size: 192, 195
+  orig: 234, 234
+  offset: 35, 9
+  index: -1
+images/ef/huoyan_00008
+  rotate: false
+  xy: 1757, 11
+  size: 166, 185
+  orig: 234, 234
+  offset: 60, 10
+  index: -1
+images/ef/huoyan_00009
+  rotate: true
+  xy: 2, 10
+  size: 121, 190
+  orig: 234, 234
+  offset: 104, 17
+  index: -1
+images/ef/huoyan_00010
+  rotate: false
+  xy: 1694, 272
+  size: 103, 176
+  orig: 234, 234
+  offset: 121, 40
+  index: -1
+images/ef/lie1
+  rotate: true
+  xy: 2, 133
+  size: 397, 140
+  orig: 397, 140
+  offset: 0, 0
+  index: -1
+images/ef/yuandian
+  rotate: true
+  xy: 1583, 207
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

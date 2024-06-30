@@ -1,0 +1,83 @@
+
+xiaofuxian_tx_skill.png
+size: 1736,1736
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/liyu_00000
+  rotate: false
+  xy: 2, 1151
+  size: 630, 583
+  orig: 755, 745
+  offset: 59, 78
+  index: -1
+images/ef/penshui1
+  rotate: false
+  xy: 423, 831
+  size: 157, 318
+  orig: 683, 683
+  offset: 30, 184
+  index: -1
+images/ef/penshui2
+  rotate: true
+  xy: 665, 122
+  size: 417, 633
+  orig: 684, 683
+  offset: 32, 21
+  index: -1
+images/ef/penshui3
+  rotate: true
+  xy: 2, 63
+  size: 412, 661
+  orig: 683, 683
+  offset: 40, 0
+  index: -1
+images/ef/penshui4
+  rotate: false
+  xy: 1320, 1064
+  size: 412, 670
+  orig: 683, 684
+  offset: 46, 0
+  index: -1
+images/ef/penshui5
+  rotate: true
+  xy: 634, 881
+  size: 425, 677
+  orig: 684, 684
+  offset: 46, 0
+  index: -1
+images/ef/penshui6
+  rotate: true
+  xy: 634, 1308
+  size: 426, 684
+  orig: 683, 684
+  offset: 48, 0
+  index: -1
+images/ef/penshui7
+  rotate: false
+  xy: 1313, 379
+  size: 421, 683
+  orig: 683, 683
+  offset: 54, 0
+  index: -1
+images/ef/penshui8
+  rotate: false
+  xy: 2, 477
+  size: 419, 672
+  orig: 684, 683
+  offset: 56, 11
+  index: -1
+images/ef/penshui9
+  rotate: true
+  xy: 582, 541
+  size: 338, 607
+  orig: 683, 683
+  offset: 58, 76
+  index: -1
+images/ef/yuandian2
+  rotate: true
+  xy: 423, 761
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

@@ -1,0 +1,153 @@
+
+yzzm_tx_skill_02.png
+size: 1657,377
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+liehen_00000
+  rotate: false
+  xy: 2, 168
+  size: 194, 207
+  orig: 238, 238
+  offset: 21, 19
+  index: -1
+liehen_00004
+  rotate: false
+  xy: 2, 168
+  size: 194, 207
+  orig: 238, 238
+  offset: 21, 19
+  index: -1
+liehen_00006
+  rotate: false
+  xy: 198, 171
+  size: 193, 204
+  orig: 238, 238
+  offset: 21, 20
+  index: -1
+liehen_00007
+  rotate: false
+  xy: 393, 173
+  size: 191, 202
+  orig: 238, 238
+  offset: 22, 21
+  index: -1
+liehen_00008
+  rotate: false
+  xy: 586, 174
+  size: 191, 201
+  orig: 238, 238
+  offset: 22, 21
+  index: -1
+liehen_00010
+  rotate: false
+  xy: 779, 178
+  size: 187, 197
+  orig: 238, 238
+  offset: 24, 23
+  index: -1
+liehen_00011
+  rotate: false
+  xy: 968, 181
+  size: 186, 194
+  orig: 238, 238
+  offset: 24, 24
+  index: -1
+liehen_00012
+  rotate: false
+  xy: 1156, 184
+  size: 183, 191
+  orig: 238, 238
+  offset: 25, 26
+  index: -1
+liehen_00014
+  rotate: true
+  xy: 1179, 3
+  size: 179, 183
+  orig: 238, 238
+  offset: 26, 30
+  index: -1
+liehen_00015
+  rotate: false
+  xy: 1341, 196
+  size: 178, 179
+  orig: 238, 238
+  offset: 26, 32
+  index: -1
+liehen_00016
+  rotate: false
+  xy: 1002, 3
+  size: 175, 176
+  orig: 238, 238
+  offset: 27, 34
+  index: -1
+liehen_00017
+  rotate: true
+  xy: 827, 2
+  size: 174, 173
+  orig: 238, 238
+  offset: 27, 36
+  index: -1
+liehen_00019
+  rotate: false
+  xy: 497, 2
+  size: 170, 169
+  orig: 238, 238
+  offset: 28, 39
+  index: -1
+liehen_00020
+  rotate: false
+  xy: 329, 3
+  size: 166, 166
+  orig: 238, 238
+  offset: 30, 40
+  index: -1
+liehen_00021
+  rotate: false
+  xy: 2, 2
+  size: 165, 164
+  orig: 238, 238
+  offset: 31, 41
+  index: -1
+liehen_00023
+  rotate: true
+  xy: 169, 5
+  size: 161, 158
+  orig: 238, 238
+  offset: 33, 44
+  index: -1
+liehen_00024
+  rotate: true
+  xy: 669, 14
+  size: 158, 156
+  orig: 238, 238
+  offset: 34, 45
+  index: -1
+liehen_00025
+  rotate: true
+  xy: 1364, 39
+  size: 155, 153
+  orig: 238, 238
+  offset: 36, 46
+  index: -1
+liehen_00027
+  rotate: false
+  xy: 1519, 56
+  size: 136, 138
+  orig: 238, 238
+  offset: 47, 54
+  index: -1
+liehen_00028
+  rotate: false
+  xy: 1521, 291
+  size: 63, 84
+  orig: 238, 238
+  offset: 62, 80
+  index: -1
+yuandian
+  rotate: false
+  xy: 1521, 220
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

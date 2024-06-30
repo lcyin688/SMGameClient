@@ -1,0 +1,90 @@
+
+yaochi_tx_attack_01.png
+size: 1645,1645
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/d1
+  rotate: false
+  xy: 2, 102
+  size: 171, 355
+  orig: 581, 661
+  offset: 175, 131
+  index: -1
+images/ef/d2
+  rotate: true
+  xy: 488, 129
+  size: 460, 584
+  orig: 581, 661
+  offset: 36, 12
+  index: -1
+images/ef/d3
+  rotate: true
+  xy: 1074, 113
+  size: 443, 555
+  orig: 581, 661
+  offset: 66, 81
+  index: -1
+images/ef/d4
+  rotate: false
+  xy: 1134, 558
+  size: 462, 552
+  orig: 581, 661
+  offset: 52, 80
+  index: -1
+images/ef/d5
+  rotate: false
+  xy: 2, 459
+  size: 484, 542
+  orig: 581, 661
+  offset: 42, 88
+  index: -1
+images/ef/d6
+  rotate: true
+  xy: 645, 1112
+  size: 531, 502
+  orig: 581, 661
+  offset: 36, 91
+  index: -1
+images/ef/d7
+  rotate: true
+  xy: 645, 591
+  size: 519, 487
+  orig: 581, 661
+  offset: 21, 96
+  index: -1
+images/ef/d8
+  rotate: true
+  xy: 1149, 1116
+  size: 527, 202
+  orig: 581, 661
+  offset: 18, 102
+  index: -1
+images/ef/d9
+  rotate: true
+  xy: 1353, 1148
+  size: 495, 220
+  orig: 581, 661
+  offset: 50, 99
+  index: -1
+images/ef/mofaz
+  rotate: false
+  xy: 2, 1003
+  size: 641, 640
+  orig: 650, 648
+  offset: 4, 4
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 1575, 1574
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1
+images/ef/yuandian2
+  rotate: false
+  xy: 1575, 1503
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

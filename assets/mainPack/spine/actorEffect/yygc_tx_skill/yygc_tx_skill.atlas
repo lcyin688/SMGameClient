@@ -1,0 +1,97 @@
+
+yygc_tx_skill.png
+size: 1020,1036
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/PG_00000
+  rotate: false
+  xy: 210, 361
+  size: 664, 319
+  orig: 800, 600
+  offset: 75, 115
+  index: -1
+ef/PG_00001
+  rotate: false
+  xy: 210, 682
+  size: 684, 352
+  orig: 800, 600
+  offset: 100, 98
+  index: -1
+ef/PG_00002
+  rotate: false
+  xy: 210, 2
+  size: 625, 357
+  orig: 800, 600
+  offset: 165, 96
+  index: -1
+ef/cj1
+  rotate: false
+  xy: 126, 88
+  size: 64, 96
+  orig: 128, 256
+  offset: 30, 0
+  index: -1
+ef/cj2
+  rotate: false
+  xy: 876, 502
+  size: 108, 178
+  orig: 128, 256
+  offset: 7, 8
+  index: -1
+ef/cj3
+  rotate: false
+  xy: 896, 842
+  size: 119, 192
+  orig: 128, 256
+  offset: 4, 32
+  index: -1
+ef/cj4
+  rotate: false
+  xy: 2, 5
+  size: 122, 179
+  orig: 128, 256
+  offset: 5, 59
+  index: -1
+ef/cj5
+  rotate: false
+  xy: 896, 684
+  size: 122, 156
+  orig: 128, 256
+  offset: 6, 91
+  index: -1
+ef/cj6
+  rotate: false
+  xy: 837, 3
+  size: 122, 137
+  orig: 128, 256
+  offset: 6, 115
+  index: -1
+ef/cj7
+  rotate: true
+  xy: 876, 380
+  size: 120, 108
+  orig: 128, 256
+  offset: 5, 147
+  index: -1
+ef/cj8
+  rotate: true
+  xy: 903, 268
+  size: 110, 87
+  orig: 128, 256
+  offset: 7, 165
+  index: -1
+ef/ddd
+  rotate: true
+  xy: 837, 142
+  size: 217, 64
+  orig: 226, 76
+  offset: 3, 6
+  index: -1
+ef/suo_00007
+  rotate: false
+  xy: 2, 186
+  size: 206, 848
+  orig: 398, 1165
+  offset: 103, 317
+  index: -1

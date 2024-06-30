@@ -1,0 +1,306 @@
+
+daji_tx_skill_02_1.png
+size: 2006,2006
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/dss_00004
+  rotate: false
+  xy: 527, 491
+  size: 522, 335
+  orig: 576, 429
+  offset: 0, 67
+  index: -1
+images/ef/dss_00007
+  rotate: false
+  xy: 1444, 678
+  size: 523, 330
+  orig: 576, 429
+  offset: 0, 75
+  index: -1
+images/ef/dss_00008
+  rotate: false
+  xy: 2, 519
+  size: 523, 330
+  orig: 576, 429
+  offset: 0, 76
+  index: -1
+images/ef/dss_00009
+  rotate: false
+  xy: 529, 828
+  size: 524, 327
+  orig: 576, 429
+  offset: 0, 79
+  index: -1
+images/ef/dss_00010
+  rotate: false
+  xy: 2, 851
+  size: 525, 326
+  orig: 576, 429
+  offset: 0, 80
+  index: -1
+images/ef/dss_00016
+  rotate: false
+  xy: 1413, 2
+  size: 531, 337
+  orig: 576, 429
+  offset: 0, 22
+  index: -1
+images/ef/dss_00017
+  rotate: false
+  xy: 1440, 341
+  size: 530, 335
+  orig: 576, 429
+  offset: 0, 25
+  index: -1
+images/ef/dss_00021
+  rotate: false
+  xy: 2, 163
+  size: 520, 354
+  orig: 576, 429
+  offset: 11, 9
+  index: -1
+images/ef/dss_00022
+  rotate: false
+  xy: 524, 132
+  size: 502, 357
+  orig: 576, 429
+  offset: 31, 7
+  index: -1
+images/ef/dss_00023
+  rotate: false
+  xy: 1055, 738
+  size: 387, 359
+  orig: 576, 429
+  offset: 144, 5
+  index: -1
+images/ef/dss_00025
+  rotate: false
+  xy: 1051, 374
+  size: 387, 362
+  orig: 576, 429
+  offset: 144, 4
+  index: -1
+images/ef/dss_00030
+  rotate: false
+  xy: 1028, 7
+  size: 383, 365
+  orig: 576, 429
+  offset: 147, 0
+  index: -1
+images/ef/dss_00037
+  rotate: false
+  xy: 2, 1184
+  size: 363, 372
+  orig: 576, 429
+  offset: 160, 0
+  index: -1
+images/ef/dss_00039
+  rotate: false
+  xy: 1117, 1099
+  size: 328, 372
+  orig: 576, 429
+  offset: 177, 2
+  index: -1
+images/ef/dss_00040
+  rotate: true
+  xy: 742, 1157
+  size: 314, 373
+  orig: 576, 429
+  offset: 177, 2
+  index: -1
+images/ef/dss_00041
+  rotate: true
+  xy: 1447, 1010
+  size: 314, 373
+  orig: 576, 429
+  offset: 177, 3
+  index: -1
+images/ef/dss_00043
+  rotate: true
+  xy: 367, 1179
+  size: 311, 373
+  orig: 576, 429
+  offset: 178, 5
+  index: -1
+images/ef/dss_00044
+  rotate: true
+  xy: 1487, 1326
+  size: 310, 371
+  orig: 576, 429
+  offset: 178, 7
+  index: -1
+images/ef/dss_00045
+  rotate: true
+  xy: 1114, 1473
+  size: 306, 371
+  orig: 576, 429
+  offset: 179, 8
+  index: -1
+images/ef/dss_00046
+  rotate: true
+  xy: 742, 1478
+  size: 304, 370
+  orig: 576, 429
+  offset: 180, 10
+  index: -1
+images/ef/dss_00048
+  rotate: true
+  xy: 372, 1492
+  size: 293, 368
+  orig: 576, 429
+  offset: 181, 13
+  index: -1
+images/ef/dss_00049
+  rotate: true
+  xy: 2, 1558
+  size: 230, 368
+  orig: 576, 429
+  offset: 182, 14
+  index: -1
+images/ef/dss_00050
+  rotate: false
+  xy: 1771, 1638
+  size: 228, 366
+  orig: 576, 429
+  offset: 183, 16
+  index: -1
+images/ef/dss_00052
+  rotate: true
+  xy: 1408, 1781
+  size: 223, 361
+  orig: 576, 429
+  offset: 186, 21
+  index: -1
+images/ef/dss_00053
+  rotate: true
+  xy: 1048, 1784
+  size: 220, 358
+  orig: 576, 429
+  offset: 187, 24
+  index: -1
+images/ef/dss_00054
+  rotate: true
+  xy: 692, 1787
+  size: 217, 354
+  orig: 576, 429
+  offset: 188, 28
+  index: -1
+images/ef/dss_00055
+  rotate: true
+  xy: 340, 1790
+  size: 214, 350
+  orig: 576, 429
+  offset: 191, 32
+  index: -1
+images/ef/dss_00056
+  rotate: true
+  xy: 2, 1798
+  size: 206, 336
+  orig: 576, 429
+  offset: 195, 42
+  index: -1
+
+daji_tx_skill_02_12.png
+size: 1810,1810
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/dss_00000
+  rotate: false
+  xy: 2, 1103
+  size: 523, 363
+  orig: 576, 429
+  offset: 0, 35
+  index: -1
+images/ef/dss_00001
+  rotate: false
+  xy: 527, 1101
+  size: 523, 363
+  orig: 576, 429
+  offset: 0, 36
+  index: -1
+images/ef/dss_00003
+  rotate: false
+  xy: 1052, 1096
+  size: 530, 364
+  orig: 576, 429
+  offset: 0, 37
+  index: -1
+images/ef/dss_00012
+  rotate: false
+  xy: 1281, 344
+  size: 527, 381
+  orig: 576, 429
+  offset: 0, 25
+  index: -1
+images/ef/dss_00013
+  rotate: false
+  xy: 536, 1466
+  size: 528, 342
+  orig: 576, 429
+  offset: 0, 62
+  index: -1
+images/ef/dss_00014
+  rotate: false
+  xy: 751, 354
+  size: 528, 371
+  orig: 576, 429
+  offset: 0, 30
+  index: -1
+images/ef/dss_00018
+  rotate: false
+  xy: 2, 1468
+  size: 532, 340
+  orig: 576, 429
+  offset: 1, 20
+  index: -1
+images/ef/dss_00019
+  rotate: false
+  xy: 1066, 1462
+  size: 529, 346
+  orig: 576, 429
+  offset: 3, 14
+  index: -1
+images/ef/dss_00027
+  rotate: false
+  xy: 2, 735
+  size: 387, 366
+  orig: 576, 429
+  offset: 145, 1
+  index: -1
+images/ef/dss_00028
+  rotate: false
+  xy: 391, 733
+  size: 384, 366
+  orig: 576, 429
+  offset: 146, 0
+  index: -1
+images/ef/dss_00031
+  rotate: false
+  xy: 777, 728
+  size: 383, 366
+  orig: 576, 429
+  offset: 148, 0
+  index: -1
+images/ef/dss_00032
+  rotate: false
+  xy: 1162, 727
+  size: 380, 367
+  orig: 576, 429
+  offset: 149, 0
+  index: -1
+images/ef/dss_00034
+  rotate: false
+  xy: 2, 364
+  size: 374, 369
+  orig: 576, 429
+  offset: 153, 0
+  index: -1
+images/ef/dss_00035
+  rotate: false
+  xy: 378, 361
+  size: 371, 370
+  orig: 576, 429
+  offset: 154, 0
+  index: -1

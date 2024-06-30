@@ -1,0 +1,139 @@
+
+anubisi_tx_attack.png
+size: 1911,546
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/hy_00002
+  rotate: false
+  xy: 1193, 245
+  size: 178, 106
+  orig: 409, 256
+  offset: 8, 45
+  index: -1
+images/ef/hy_00003
+  rotate: false
+  xy: 923, 219
+  size: 268, 132
+  orig: 409, 256
+  offset: 4, 38
+  index: -1
+images/ef/hy_00004
+  rotate: false
+  xy: 681, 23
+  size: 315, 148
+  orig: 409, 256
+  offset: 4, 39
+  index: -1
+images/ef/hy_00005
+  rotate: false
+  xy: 346, 6
+  size: 333, 162
+  orig: 409, 256
+  offset: 6, 37
+  index: -1
+images/ef/hy_00006
+  rotate: false
+  xy: 2, 2
+  size: 342, 166
+  orig: 409, 256
+  offset: 10, 38
+  index: -1
+images/ef/hy_00007
+  rotate: false
+  xy: 567, 173
+  size: 354, 174
+  orig: 409, 256
+  offset: 11, 36
+  index: -1
+images/ef/hy_00008
+  rotate: false
+  xy: 204, 170
+  size: 361, 177
+  orig: 409, 256
+  offset: 16, 35
+  index: -1
+images/ef/hy_00009
+  rotate: false
+  xy: 1334, 365
+  size: 372, 179
+  orig: 409, 256
+  offset: 14, 34
+  index: -1
+images/ef/hy_00010
+  rotate: false
+  xy: 998, 29
+  size: 375, 188
+  orig: 409, 256
+  offset: 12, 34
+  index: -1
+images/ef/hy_00011
+  rotate: false
+  xy: 581, 353
+  size: 376, 191
+  orig: 409, 256
+  offset: 15, 34
+  index: -1
+images/ef/hy_00012
+  rotate: false
+  xy: 959, 353
+  size: 373, 191
+  orig: 409, 256
+  offset: 20, 34
+  index: -1
+images/ef/hy_00013
+  rotate: false
+  xy: 204, 349
+  size: 375, 195
+  orig: 409, 256
+  offset: 23, 34
+  index: -1
+images/ef/hy_00014
+  rotate: true
+  xy: 2, 170
+  size: 374, 200
+  orig: 409, 256
+  offset: 28, 34
+  index: -1
+images/ef/hy_00015
+  rotate: true
+  xy: 1708, 235
+  size: 309, 201
+  orig: 409, 256
+  offset: 88, 33
+  index: -1
+images/ef/hy_00016
+  rotate: true
+  xy: 1375, 13
+  size: 253, 198
+  orig: 409, 256
+  offset: 140, 33
+  index: -1
+images/ef/hy_00017
+  rotate: true
+  xy: 1691, 49
+  size: 184, 196
+  orig: 409, 256
+  offset: 194, 39
+  index: -1
+images/ef/hy_00018
+  rotate: true
+  xy: 1373, 268
+  size: 95, 176
+  orig: 409, 256
+  offset: 277, 57
+  index: -1
+images/ef/hy_00019
+  rotate: false
+  xy: 1607, 198
+  size: 82, 165
+  orig: 409, 256
+  offset: 281, 66
+  index: -1
+images/ef/hy_00020
+  rotate: true
+  xy: 1551, 295
+  size: 68, 54
+  orig: 409, 256
+  offset: 285, 179
+  index: -1

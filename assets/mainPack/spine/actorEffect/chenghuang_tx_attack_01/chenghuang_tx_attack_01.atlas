@@ -1,0 +1,111 @@
+
+chenghuang_tx_attack_01.png
+size: 1899,251
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/xw_00000
+  rotate: true
+  xy: 1569, 4
+  size: 121, 258
+  orig: 299, 332
+  offset: 30, 36
+  index: -1
+images/ef/xw_00006
+  rotate: true
+  xy: 786, 127
+  size: 122, 262
+  orig: 299, 332
+  offset: 29, 35
+  index: -1
+images/ef/xw_00014
+  rotate: true
+  xy: 2, 2
+  size: 122, 259
+  orig: 299, 332
+  offset: 30, 36
+  index: -1
+images/ef/xw_00016
+  rotate: true
+  xy: 2, 126
+  size: 123, 260
+  orig: 299, 332
+  offset: 29, 35
+  index: -1
+images/ef/xw_00020
+  rotate: true
+  xy: 786, 3
+  size: 122, 260
+  orig: 299, 332
+  offset: 30, 35
+  index: -1
+images/ef/xw_00023
+  rotate: true
+  xy: 1050, 127
+  size: 122, 261
+  orig: 299, 332
+  offset: 30, 35
+  index: -1
+images/ef/xw_00028
+  rotate: true
+  xy: 263, 2
+  size: 122, 259
+  orig: 299, 332
+  offset: 30, 36
+  index: -1
+images/ef/xw_00034
+  rotate: true
+  xy: 264, 126
+  size: 123, 260
+  orig: 299, 332
+  offset: 29, 35
+  index: -1
+images/ef/xw_00042
+  rotate: true
+  xy: 1313, 127
+  size: 122, 261
+  orig: 299, 332
+  offset: 29, 35
+  index: -1
+images/ef/xw_00047
+  rotate: true
+  xy: 1576, 127
+  size: 122, 261
+  orig: 299, 332
+  offset: 29, 34
+  index: -1
+images/ef/xw_00050
+  rotate: true
+  xy: 1309, 3
+  size: 122, 258
+  orig: 299, 332
+  offset: 29, 35
+  index: -1
+images/ef/xw_00058
+  rotate: true
+  xy: 526, 126
+  size: 123, 258
+  orig: 299, 332
+  offset: 29, 35
+  index: -1
+images/ef/xw_00064
+  rotate: true
+  xy: 524, 2
+  size: 122, 259
+  orig: 299, 332
+  offset: 30, 36
+  index: -1
+images/ef/xw_00070
+  rotate: true
+  xy: 1048, 3
+  size: 122, 259
+  orig: 299, 332
+  offset: 30, 36
+  index: -1
+images/ef/yuandian2
+  rotate: false
+  xy: 1829, 56
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

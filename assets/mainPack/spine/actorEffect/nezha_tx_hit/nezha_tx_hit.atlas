@@ -1,0 +1,48 @@
+
+nezha_tx_hit.png
+size: 1484,1252
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/gj1
+  rotate: false
+  xy: 2, 572
+  size: 678, 678
+  orig: 714, 710
+  offset: 18, 8
+  index: -1
+ef/gj2
+  rotate: false
+  xy: 2, 2
+  size: 568, 568
+  orig: 714, 710
+  offset: 72, 61
+  index: -1
+ef/gj3
+  rotate: false
+  xy: 682, 622
+  size: 672, 628
+  orig: 714, 710
+  offset: 42, 34
+  index: -1
+ef/gj4
+  rotate: true
+  xy: 572, 28
+  size: 542, 516
+  orig: 714, 710
+  offset: 93, 79
+  index: -1
+ef/gj5
+  rotate: false
+  xy: 1090, 220
+  size: 392, 400
+  orig: 714, 710
+  offset: 228, 217
+  index: -1
+ef/yuandian
+  rotate: false
+  xy: 1356, 1181
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

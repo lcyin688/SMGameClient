@@ -1,0 +1,272 @@
+
+gaosiqishi_lh.png
+size: 1890,681
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gsqs_fa_07
+  rotate: false
+  xy: 1155, 13
+  size: 66, 64
+  orig: 66, 64
+  offset: 0, 0
+  index: -1
+gsqs_fa_08
+  rotate: false
+  xy: 1240, 68
+  size: 34, 67
+  orig: 34, 67
+  offset: 0, 0
+  index: -1
+gsqs_fa_09
+  rotate: false
+  xy: 1130, 64
+  size: 23, 82
+  orig: 25, 82
+  offset: 0, 0
+  index: -1
+gsqs_fa_17
+  rotate: false
+  xy: 1813, 41
+  size: 52, 93
+  orig: 52, 93
+  offset: 0, 0
+  index: -1
+gsqs_jjia_01
+  rotate: false
+  xy: 1519, 20
+  size: 129, 115
+  orig: 129, 115
+  offset: 0, 0
+  index: -1
+gsqs_jjia_18
+  rotate: false
+  xy: 1788, 260
+  size: 82, 84
+  orig: 82, 84
+  offset: 0, 0
+  index: -1
+gsqs_jjia_22
+  rotate: false
+  xy: 1155, 79
+  size: 83, 56
+  orig: 83, 56
+  offset: 0, 0
+  index: -1
+gsqs_jjia_29
+  rotate: false
+  xy: 1223, 4
+  size: 56, 62
+  orig: 56, 62
+  offset: 0, 0
+  index: -1
+gsqs_mzi_04
+  rotate: false
+  xy: 1665, 541
+  size: 216, 138
+  orig: 216, 138
+  offset: 0, 0
+  index: -1
+gsqs_mzi_05
+  rotate: false
+  xy: 1179, 137
+  size: 88, 119
+  orig: 88, 119
+  offset: 0, 0
+  index: -1
+gsqs_mzi_06
+  rotate: false
+  xy: 1818, 136
+  size: 38, 122
+  orig: 38, 122
+  offset: 0, 0
+  index: -1
+gsqs_mzi_21
+  rotate: true
+  xy: 719, 3
+  size: 148, 180
+  orig: 148, 180
+  offset: 0, 0
+  index: -1
+gsqs_qzi_30
+  rotate: true
+  xy: 454, 2
+  size: 144, 263
+  orig: 144, 263
+  offset: 0, 0
+  index: -1
+gsqs_qzi_31
+  rotate: true
+  xy: 934, 258
+  size: 222, 350
+  orig: 222, 350
+  offset: 0, 0
+  index: -1
+gsqs_qzi_32
+  rotate: true
+  xy: 908, 148
+  size: 108, 269
+  orig: 108, 269
+  offset: 0, 0
+  index: -1
+gsqs_qzi_37
+  rotate: false
+  xy: 2, 175
+  size: 530, 504
+  orig: 530, 504
+  offset: 0, 0
+  index: -1
+gsqs_sshen_20
+  rotate: true
+  xy: 1286, 270
+  size: 241, 332
+  orig: 241, 332
+  offset: 0, 0
+  index: -1
+gsqs_sshen_23
+  rotate: false
+  xy: 1286, 40
+  size: 231, 228
+  orig: 231, 228
+  offset: 0, 0
+  index: -1
+gsqs_tou_10
+  rotate: true
+  xy: 1872, 297
+  size: 47, 16
+  orig: 47, 16
+  offset: 0, 0
+  index: -1
+gsqs_tou_11
+  rotate: true
+  xy: 938, 2
+  size: 29, 13
+  orig: 29, 13
+  offset: 0, 0
+  index: -1
+gsqs_tou_12
+  rotate: false
+  xy: 1665, 513
+  size: 50, 26
+  orig: 50, 26
+  offset: 0, 0
+  index: -1
+gsqs_tou_13
+  rotate: false
+  xy: 1717, 513
+  size: 50, 26
+  orig: 50, 26
+  offset: 0, 0
+  index: -1
+gsqs_tou_14
+  rotate: false
+  xy: 901, 5
+  size: 35, 26
+  orig: 35, 26
+  offset: 0, 0
+  index: -1
+gsqs_tou_15
+  rotate: false
+  xy: 1323, 12
+  size: 35, 26
+  orig: 35, 26
+  offset: 0, 0
+  index: -1
+gsqs_tou_16
+  rotate: false
+  xy: 1519, 137
+  size: 99, 131
+  orig: 99, 131
+  offset: 0, 0
+  index: -1
+gsqs_wqi_38
+  rotate: true
+  xy: 534, 482
+  size: 197, 742
+  orig: 197, 742
+  offset: 0, 0
+  index: -1
+gsqs_xjia_19
+  rotate: false
+  xy: 1788, 440
+  size: 83, 99
+  orig: 83, 99
+  offset: 0, 0
+  index: -1
+gsqs_yshou_02
+  rotate: false
+  xy: 1620, 258
+  size: 166, 253
+  orig: 166, 253
+  offset: 0, 0
+  index: -1
+gsqs_yshou_03
+  rotate: true
+  xy: 901, 33
+  size: 113, 227
+  orig: 113, 227
+  offset: 0, 0
+  index: -1
+gsqs_ytui_33
+  rotate: true
+  xy: 1278, 513
+  size: 166, 385
+  orig: 166, 385
+  offset: 0, 0
+  index: -1
+gsqs_ytui_34
+  rotate: true
+  xy: 2, 3
+  size: 170, 450
+  orig: 170, 450
+  offset: 0, 0
+  index: -1
+gsqs_zshou_24
+  rotate: true
+  xy: 1813, 2
+  size: 37, 59
+  orig: 37, 59
+  offset: 0, 0
+  index: -1
+gsqs_zshou_25
+  rotate: false
+  xy: 1650, 23
+  size: 161, 115
+  orig: 161, 115
+  offset: 0, 0
+  index: -1
+gsqs_zshou_26
+  rotate: false
+  xy: 1788, 346
+  size: 84, 92
+  orig: 84, 92
+  offset: 0, 0
+  index: -1
+gsqs_zshou_27
+  rotate: false
+  xy: 1281, 3
+  size: 40, 35
+  orig: 40, 35
+  offset: 0, 0
+  index: -1
+gsqs_zshou_28
+  rotate: true
+  xy: 1620, 140
+  size: 116, 196
+  orig: 116, 196
+  offset: 0, 0
+  index: -1
+gsqs_ztui_35
+  rotate: true
+  xy: 534, 153
+  size: 141, 372
+  orig: 141, 372
+  offset: 0, 0
+  index: -1
+gsqs_ztui_36
+  rotate: true
+  xy: 534, 296
+  size: 184, 398
+  orig: 184, 398
+  offset: 0, 0
+  index: -1

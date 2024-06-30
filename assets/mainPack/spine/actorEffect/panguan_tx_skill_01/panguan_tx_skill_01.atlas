@@ -1,0 +1,223 @@
+
+panguan_tx_skill_01.png
+size: 1587,523
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/zhuanquan_00000
+  rotate: true
+  xy: 466, 18
+  size: 75, 55
+  orig: 290, 290
+  offset: 109, 208
+  index: -1
+images/ef/zhuanquan_00002
+  rotate: true
+  xy: 1444, 376
+  size: 145, 126
+  orig: 290, 290
+  offset: 73, 164
+  index: -1
+images/ef/zhuanquan_00005
+  rotate: true
+  xy: 856, 164
+  size: 176, 133
+  orig: 290, 290
+  offset: 31, 157
+  index: -1
+images/ef/zhuanquan_00007
+  rotate: true
+  xy: 677, 338
+  size: 183, 168
+  orig: 290, 290
+  offset: 0, 122
+  index: -1
+images/ef/zhuanquan_00009
+  rotate: false
+  xy: 704, 153
+  size: 150, 183
+  orig: 290, 290
+  offset: 0, 88
+  index: -1
+images/ef/zhuanquan_00011
+  rotate: false
+  xy: 566, 141
+  size: 136, 187
+  orig: 290, 290
+  offset: 0, 56
+  index: -1
+images/ef/zhuanquan_00013
+  rotate: false
+  xy: 528, 330
+  size: 147, 191
+  orig: 290, 290
+  offset: 0, 26
+  index: -1
+images/ef/zhuanquan_00015
+  rotate: false
+  xy: 2, 46
+  size: 185, 234
+  orig: 290, 290
+  offset: 7, 1
+  index: -1
+images/ef/zhuanquan_00017
+  rotate: false
+  xy: 2, 282
+  size: 189, 239
+  orig: 290, 290
+  offset: 29, 0
+  index: -1
+images/ef/zhuanquan_00019
+  rotate: false
+  xy: 189, 51
+  size: 192, 229
+  orig: 290, 290
+  offset: 55, 0
+  index: -1
+images/ef/zhuanquan_00021
+  rotate: true
+  xy: 193, 306
+  size: 215, 197
+  orig: 290, 290
+  offset: 64, 0
+  index: -1
+images/ef/zhuanquan_00023
+  rotate: true
+  xy: 383, 95
+  size: 209, 181
+  orig: 290, 290
+  offset: 81, 15
+  index: -1
+images/ef/zhuanquan_00025
+  rotate: false
+  xy: 392, 323
+  size: 134, 198
+  orig: 290, 290
+  offset: 156, 42
+  index: -1
+images/ef/zhuanquan_00027
+  rotate: false
+  xy: 847, 342
+  size: 130, 179
+  orig: 290, 290
+  offset: 160, 74
+  index: -1
+images/ef/zhuanquan_00029
+  rotate: false
+  xy: 979, 356
+  size: 159, 165
+  orig: 290, 290
+  offset: 127, 97
+  index: -1
+images/ef/zhuanquan_00031
+  rotate: false
+  xy: 383, 3
+  size: 81, 90
+  orig: 290, 290
+  offset: 178, 152
+  index: -1
+images/ef/zhuanquan_00033
+  rotate: true
+  xy: 2, 14
+  size: 30, 23
+  orig: 290, 290
+  offset: 204, 192
+  index: -1
+images/ef/zi_00023
+  rotate: false
+  xy: 1295, 367
+  size: 147, 154
+  orig: 201, 212
+  offset: 5, 16
+  index: -1
+images/ef/zi_00030
+  rotate: false
+  xy: 1171, 36
+  size: 147, 154
+  orig: 201, 212
+  offset: 5, 16
+  index: -1
+images/ef/zi_00032
+  rotate: false
+  xy: 1299, 211
+  size: 147, 154
+  orig: 201, 212
+  offset: 5, 16
+  index: -1
+images/ef/zi_00036
+  rotate: false
+  xy: 991, 189
+  size: 146, 165
+  orig: 201, 212
+  offset: 1, 5
+  index: -1
+images/ef/zi_00038
+  rotate: true
+  xy: 707, 2
+  size: 149, 159
+  orig: 201, 212
+  offset: 4, 3
+  index: -1
+images/ef/zi_00040
+  rotate: false
+  xy: 1140, 361
+  size: 153, 160
+  orig: 201, 212
+  offset: 5, 2
+  index: -1
+images/ef/zi_00042
+  rotate: false
+  xy: 1139, 192
+  size: 158, 162
+  orig: 201, 212
+  offset: 5, 2
+  index: -1
+images/ef/zi_00046
+  rotate: true
+  xy: 868, 2
+  size: 160, 156
+  orig: 201, 212
+  offset: 1, 14
+  index: -1
+images/ef/zi_00050
+  rotate: false
+  xy: 1026, 23
+  size: 143, 164
+  orig: 201, 212
+  offset: 32, 17
+  index: -1
+images/ef/zi_00051
+  rotate: false
+  xy: 1320, 67
+  size: 140, 142
+  orig: 201, 212
+  offset: 31, 38
+  index: -1
+images/ef/zi_00055
+  rotate: true
+  xy: 566, 5
+  size: 134, 139
+  orig: 201, 212
+  offset: 39, 52
+  index: -1
+images/ef/zi_00059
+  rotate: true
+  xy: 1462, 125
+  size: 121, 123
+  orig: 201, 212
+  offset: 52, 61
+  index: -1
+images/ef/zi_00061
+  rotate: true
+  xy: 1448, 248
+  size: 126, 117
+  orig: 201, 212
+  offset: 50, 69
+  index: -1
+images/ef/zi_00067
+  rotate: false
+  xy: 2, 3
+  size: 70, 9
+  orig: 201, 212
+  offset: 78, 90
+  index: -1

@@ -1,0 +1,251 @@
+
+heiwuchang_tx_attack.png
+size: 1793,1280
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/a/c1
+  rotate: false
+  xy: 1130, 96
+  size: 156, 72
+  orig: 172, 76
+  offset: 10, 2
+  index: -1
+images/a/c2
+  rotate: false
+  xy: 1288, 78
+  size: 123, 84
+  orig: 137, 95
+  offset: 6, 8
+  index: -1
+images/a/c3
+  rotate: true
+  xy: 370, 646
+  size: 156, 82
+  orig: 164, 88
+  offset: 6, 3
+  index: -1
+images/a/fsl
+  rotate: true
+  xy: 339, 22
+  size: 24, 193
+  orig: 32, 206
+  offset: 5, 8
+  index: -1
+images/a/yuandian
+  rotate: false
+  xy: 370, 575
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1
+images/a/yuandian2
+  rotate: true
+  xy: 709, 2
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1
+images/xa/xdg_00000
+  rotate: false
+  xy: 845, 556
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/xa/xdg_00023
+  rotate: false
+  xy: 845, 556
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/xa/xdg_00024
+  rotate: false
+  xy: 845, 556
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/xa/xdg_00025
+  rotate: false
+  xy: 845, 556
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/xa/xdg_00026
+  rotate: false
+  xy: 845, 556
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/xa/xdg_00027
+  rotate: false
+  xy: 845, 556
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/xa/xdg_00028
+  rotate: false
+  xy: 845, 556
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+images/xa/xdg_00001
+  rotate: false
+  xy: 1300, 164
+  size: 158, 365
+  orig: 582, 582
+  offset: 31, 120
+  index: -1
+images/xa/xdg_00002
+  rotate: true
+  xy: 370, 163
+  size: 394, 473
+  orig: 582, 582
+  offset: 24, 13
+  index: -1
+images/xa/xdg_00003
+  rotate: false
+  xy: 2, 804
+  size: 454, 474
+  orig: 582, 582
+  offset: 35, 13
+  index: -1
+images/xa/xdg_00004
+  rotate: false
+  xy: 966, 531
+  size: 481, 384
+  orig: 582, 582
+  offset: 60, 13
+  index: -1
+images/xa/xdg_00005
+  rotate: true
+  xy: 2, 299
+  size: 503, 366
+  orig: 582, 582
+  offset: 62, 16
+  index: -1
+images/xa/xdg_00006
+  rotate: false
+  xy: 458, 559
+  size: 506, 354
+  orig: 582, 582
+  offset: 62, 19
+  index: -1
+images/xa/xdg_00007
+  rotate: false
+  xy: 458, 915
+  size: 505, 363
+  orig: 582, 582
+  offset: 64, 25
+  index: -1
+images/xa/xdg_00008
+  rotate: false
+  xy: 965, 917
+  size: 500, 361
+  orig: 582, 582
+  offset: 69, 36
+  index: -1
+images/xa/xdg_00009
+  rotate: false
+  xy: 845, 170
+  size: 453, 359
+  orig: 582, 582
+  offset: 113, 55
+  index: -1
+images/xa/xdg_00010
+  rotate: false
+  xy: 1449, 552
+  size: 331, 363
+  orig: 582, 582
+  offset: 230, 59
+  index: -1
+images/xa/xdg_00011
+  rotate: false
+  xy: 1467, 919
+  size: 324, 359
+  orig: 582, 582
+  offset: 233, 61
+  index: -1
+images/xa/xdg_00012
+  rotate: false
+  xy: 1460, 201
+  size: 307, 349
+  orig: 582, 582
+  offset: 246, 65
+  index: -1
+images/xa/xdg_00013
+  rotate: true
+  xy: 2, 3
+  size: 294, 335
+  orig: 582, 582
+  offset: 259, 69
+  index: -1
+images/xa/xdg_00014
+  rotate: true
+  xy: 1460, 21
+  size: 178, 312
+  orig: 582, 582
+  offset: 376, 90
+  index: -1
+images/xa/xdg_00015
+  rotate: true
+  xy: 339, 48
+  size: 113, 269
+  orig: 582, 582
+  offset: 435, 132
+  index: -1
+images/xa/xdg_00016
+  rotate: true
+  xy: 610, 72
+  size: 89, 261
+  orig: 582, 582
+  offset: 446, 139
+  index: -1
+images/xa/xdg_00017
+  rotate: true
+  xy: 873, 104
+  size: 64, 255
+  orig: 582, 582
+  offset: 455, 143
+  index: -1
+images/xa/xdg_00018
+  rotate: true
+  xy: 873, 44
+  size: 58, 245
+  orig: 582, 582
+  offset: 458, 149
+  index: -1
+images/xa/xdg_00019
+  rotate: true
+  xy: 1120, 41
+  size: 53, 128
+  orig: 582, 582
+  offset: 459, 261
+  index: -1
+images/xa/xdg_00020
+  rotate: true
+  xy: 610, 24
+  size: 46, 97
+  orig: 582, 582
+  offset: 463, 286
+  index: -1
+images/xa/xdg_00021
+  rotate: false
+  xy: 1413, 96
+  size: 39, 66
+  orig: 582, 582
+  offset: 467, 313
+  index: -1
+images/xa/xdg_00022
+  rotate: false
+  xy: 370, 559
+  size: 17, 14
+  orig: 582, 582
+  offset: 478, 349
+  index: -1

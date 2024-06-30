@@ -1,0 +1,55 @@
+
+diting_tx_attack_02.png
+size: 396,447
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/be/00000
+  rotate: false
+  xy: 49, 314
+  size: 166, 131
+  orig: 229, 198
+  offset: 32, 26
+  index: -1
+images/be/00001
+  rotate: false
+  xy: 217, 303
+  size: 177, 142
+  orig: 229, 198
+  offset: 28, 20
+  index: -1
+images/be/00002
+  rotate: false
+  xy: 2, 166
+  size: 185, 146
+  orig: 229, 198
+  offset: 24, 19
+  index: -1
+images/be/00003
+  rotate: false
+  xy: 189, 155
+  size: 192, 146
+  orig: 229, 198
+  offset: 21, 24
+  index: -1
+images/be/00004
+  rotate: false
+  xy: 185, 2
+  size: 201, 151
+  orig: 229, 198
+  offset: 17, 23
+  index: -1
+images/be/00005
+  rotate: false
+  xy: 2, 8
+  size: 181, 156
+  orig: 229, 198
+  offset: 39, 20
+  index: -1
+images/gd2
+  rotate: false
+  xy: 2, 400
+  size: 45, 45
+  orig: 53, 52
+  offset: 4, 3
+  index: -1

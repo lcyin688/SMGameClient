@@ -1,0 +1,209 @@
+
+mamian_tx_skill_01.png
+size: 1792,459
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/huoyan1_00000
+  rotate: true
+  xy: 478, 146
+  size: 311, 154
+  orig: 447, 175
+  offset: 104, 11
+  index: -1
+images/ef/huoyan1_00001
+  rotate: true
+  xy: 162, 136
+  size: 321, 156
+  orig: 447, 175
+  offset: 98, 11
+  index: -1
+images/ef/huoyan1_00002
+  rotate: true
+  xy: 2, 125
+  size: 332, 158
+  orig: 447, 175
+  offset: 93, 10
+  index: -1
+images/ef/huoyan1_00003
+  rotate: true
+  xy: 320, 136
+  size: 321, 156
+  orig: 447, 175
+  offset: 94, 11
+  index: -1
+images/ef/huoyan1_00004
+  rotate: true
+  xy: 634, 142
+  size: 315, 152
+  orig: 447, 175
+  offset: 95, 12
+  index: -1
+images/ef/huoyan1_00005
+  rotate: true
+  xy: 788, 161
+  size: 296, 146
+  orig: 447, 175
+  offset: 106, 13
+  index: -1
+images/ef/huoyan1_00006
+  rotate: false
+  xy: 923, 16
+  size: 288, 143
+  orig: 447, 175
+  offset: 109, 15
+  index: -1
+images/ef/huoyan1_00007
+  rotate: false
+  xy: 664, 6
+  size: 257, 134
+  orig: 447, 175
+  offset: 136, 21
+  index: -1
+images/ef/huoyan1_00008
+  rotate: false
+  xy: 2, 12
+  size: 241, 111
+  orig: 447, 175
+  offset: 148, 37
+  index: -1
+images/ef/huoyan1_00009
+  rotate: false
+  xy: 420, 40
+  size: 242, 94
+  orig: 447, 175
+  offset: 145, 40
+  index: -1
+images/ef/huoyan1_00010
+  rotate: false
+  xy: 936, 175
+  size: 173, 84
+  orig: 447, 175
+  offset: 190, 46
+  index: -1
+images/ef/huoyan1_00011
+  rotate: false
+  xy: 1633, 94
+  size: 142, 77
+  orig: 447, 175
+  offset: 210, 59
+  index: -1
+images/ef/huoyan1_00012
+  rotate: false
+  xy: 1633, 265
+  size: 47, 50
+  orig: 447, 175
+  offset: 280, 66
+  index: -1
+images/ef/huoyan1_00013
+  rotate: true
+  xy: 2, 7
+  size: 3, 2
+  orig: 447, 175
+  offset: 303, 92
+  index: -1
+images/ef/mamianxuli_00000
+  rotate: true
+  xy: 1408, 52
+  size: 118, 93
+  orig: 220, 187
+  offset: 53, 0
+  index: -1
+images/ef/mamianxuli_00001
+  rotate: false
+  xy: 1584, 3
+  size: 108, 89
+  orig: 220, 187
+  offset: 59, 0
+  index: -1
+images/ef/mamianxuli_00002
+  rotate: true
+  xy: 1682, 173
+  size: 139, 108
+  orig: 220, 187
+  offset: 43, 1
+  index: -1
+images/ef/mamianxuli_00003
+  rotate: false
+  xy: 245, 2
+  size: 173, 132
+  orig: 220, 187
+  offset: 26, 1
+  index: -1
+images/ef/mamianxuli_00004
+  rotate: false
+  xy: 1213, 7
+  size: 193, 152
+  orig: 220, 187
+  offset: 15, 3
+  index: -1
+images/ef/mamianxuli_00005
+  rotate: true
+  xy: 936, 261
+  size: 196, 155
+  orig: 220, 187
+  offset: 13, 7
+  index: -1
+images/ef/mamianxuli_00006
+  rotate: false
+  xy: 1093, 307
+  size: 197, 150
+  orig: 220, 187
+  offset: 12, 12
+  index: -1
+images/ef/mamianxuli_00007
+  rotate: false
+  xy: 1292, 315
+  size: 197, 142
+  orig: 220, 187
+  offset: 12, 19
+  index: -1
+images/ef/mamianxuli_00008
+  rotate: false
+  xy: 1309, 172
+  size: 197, 141
+  orig: 220, 187
+  offset: 12, 24
+  index: -1
+images/ef/mamianxuli_00009
+  rotate: false
+  xy: 1111, 161
+  size: 196, 144
+  orig: 220, 187
+  offset: 13, 25
+  index: -1
+images/ef/mamianxuli_00010
+  rotate: false
+  xy: 1491, 317
+  size: 190, 140
+  orig: 220, 187
+  offset: 16, 31
+  index: -1
+images/ef/mamianxuli_00011
+  rotate: true
+  xy: 1508, 136
+  size: 179, 123
+  orig: 220, 187
+  offset: 21, 44
+  index: -1
+images/ef/mamianxuli_00012
+  rotate: true
+  xy: 1683, 314
+  size: 143, 106
+  orig: 220, 187
+  offset: 38, 48
+  index: -1
+images/ef/mamianxuli_00013
+  rotate: true
+  xy: 1503, 3
+  size: 131, 79
+  orig: 220, 187
+  offset: 42, 67
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 1694, 23
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

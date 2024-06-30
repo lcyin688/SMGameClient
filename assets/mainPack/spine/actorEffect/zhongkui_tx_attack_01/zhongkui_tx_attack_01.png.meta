@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "f37ada85-91c5-4393-89dc-8dfcc3b9347c",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 888,
+  "height": 842,
+  "platformSettings": {},
+  "subMetas": {
+    "zhongkui_tx_attack_01": {
+      "ver": "1.0.6",
+      "uuid": "46947b6f-5f5b-4196-acc6-eb4bf4d92dbe",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "f37ada85-91c5-4393-89dc-8dfcc3b9347c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 884,
+      "height": 838,
+      "rawWidth": 888,
+      "rawHeight": 842,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

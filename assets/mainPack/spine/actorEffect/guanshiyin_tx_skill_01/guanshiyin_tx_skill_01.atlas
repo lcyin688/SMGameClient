@@ -1,0 +1,600 @@
+
+guanshiyin_tx_skill_01.png
+size: 2040,2044
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/fazhen2_00000
+  rotate: false
+  xy: 252, 1709
+  size: 282, 198
+  orig: 316, 290
+  offset: 12, 32
+  index: -1
+images/ef/fazhen2_00002
+  rotate: false
+  xy: 536, 1681
+  size: 282, 198
+  orig: 316, 290
+  offset: 12, 32
+  index: -1
+images/ef/fazhen2_00004
+  rotate: false
+  xy: 820, 1634
+  size: 283, 198
+  orig: 316, 290
+  offset: 11, 32
+  index: -1
+images/ef/fazhen2_00006
+  rotate: false
+  xy: 1105, 1624
+  size: 286, 198
+  orig: 316, 290
+  offset: 8, 32
+  index: -1
+images/ef/fazhen2_00008
+  rotate: false
+  xy: 1393, 1610
+  size: 284, 198
+  orig: 316, 290
+  offset: 10, 32
+  index: -1
+images/ef/fazhen2_00010
+  rotate: false
+  xy: 1679, 1547
+  size: 285, 198
+  orig: 316, 290
+  offset: 9, 32
+  index: -1
+images/ef/fazhen2_00012
+  rotate: false
+  xy: 2, 1509
+  size: 285, 198
+  orig: 316, 290
+  offset: 9, 32
+  index: -1
+images/ef/fazhen2_00014
+  rotate: false
+  xy: 289, 1479
+  size: 284, 200
+  orig: 316, 290
+  offset: 10, 32
+  index: -1
+images/ef/fazhen2_00016
+  rotate: false
+  xy: 2, 1297
+  size: 283, 210
+  orig: 316, 290
+  offset: 11, 32
+  index: -1
+images/ef/fazhen2_00018
+  rotate: false
+  xy: 287, 1261
+  size: 285, 216
+  orig: 316, 290
+  offset: 12, 32
+  index: -1
+images/ef/fazhen2_00020
+  rotate: false
+  xy: 1671, 1336
+  size: 292, 209
+  orig: 316, 290
+  offset: 12, 32
+  index: -1
+images/ef/fazhen2_00022
+  rotate: false
+  xy: 1069, 1421
+  size: 298, 201
+  orig: 316, 290
+  offset: 12, 32
+  index: -1
+images/ef/fazhen2_00024
+  rotate: false
+  xy: 1369, 1405
+  size: 300, 203
+  orig: 316, 290
+  offset: 12, 32
+  index: -1
+images/ef/fazhen2_00026
+  rotate: false
+  xy: 534, 979
+  size: 300, 223
+  orig: 316, 290
+  offset: 12, 32
+  index: -1
+images/ef/fazhen2_00028
+  rotate: false
+  xy: 1086, 481
+  size: 301, 238
+  orig: 316, 290
+  offset: 11, 32
+  index: -1
+images/ef/fazhen2_00030
+  rotate: false
+  xy: 559, 244
+  size: 305, 246
+  orig: 316, 290
+  offset: 7, 32
+  index: -1
+images/ef/fazhen2_00032
+  rotate: false
+  xy: 2, 2
+  size: 295, 254
+  orig: 316, 290
+  offset: 5, 31
+  index: -1
+images/ef/fazhen2_00036
+  rotate: false
+  xy: 1734, 146
+  size: 304, 253
+  orig: 316, 290
+  offset: 8, 31
+  index: -1
+images/ef/fazhen2_00038
+  rotate: false
+  xy: 1668, 883
+  size: 290, 230
+  orig: 316, 290
+  offset: 10, 31
+  index: -1
+images/ef/fazhen2_00040
+  rotate: false
+  xy: 517, 743
+  size: 287, 234
+  orig: 316, 290
+  offset: 11, 31
+  index: -1
+images/ef/fazhen2_00042
+  rotate: true
+  xy: 1435, 898
+  size: 287, 231
+  orig: 316, 290
+  offset: 11, 31
+  index: -1
+images/ef/fazhen2_00044
+  rotate: false
+  xy: 806, 736
+  size: 287, 234
+  orig: 316, 290
+  offset: 11, 32
+  index: -1
+images/ef/fazhen2_00046
+  rotate: false
+  xy: 1696, 401
+  size: 290, 243
+  orig: 316, 290
+  offset: 11, 32
+  index: -1
+images/ef/fazhen2_00048
+  rotate: false
+  xy: 866, 231
+  size: 290, 248
+  orig: 316, 290
+  offset: 12, 32
+  index: -1
+images/ef/fazhen2_00050
+  rotate: false
+  xy: 1158, 155
+  size: 289, 248
+  orig: 316, 290
+  offset: 11, 32
+  index: -1
+images/ef/fazhen2_00052
+  rotate: false
+  xy: 836, 972
+  size: 290, 223
+  orig: 316, 290
+  offset: 9, 32
+  index: -1
+images/ef/fazhen2_00054
+  rotate: false
+  xy: 1067, 1197
+  size: 291, 222
+  orig: 316, 290
+  offset: 4, 32
+  index: -1
+images/ef/fazhen2_00056
+  rotate: false
+  xy: 1360, 1187
+  size: 306, 216
+  orig: 316, 290
+  offset: 4, 32
+  index: -1
+images/ef/fazhen2_00058
+  rotate: false
+  xy: 1668, 1115
+  size: 308, 219
+  orig: 316, 290
+  offset: 4, 32
+  index: -1
+images/ef/fazhen2_00060
+  rotate: false
+  xy: 1128, 957
+  size: 305, 228
+  orig: 316, 290
+  offset: 7, 32
+  index: -1
+images/ef/fazhen2_00062
+  rotate: false
+  xy: 1389, 405
+  size: 305, 239
+  orig: 316, 290
+  offset: 7, 32
+  index: -1
+images/ef/fazhen2_00064
+  rotate: false
+  xy: 251, 258
+  size: 306, 243
+  orig: 316, 290
+  offset: 6, 31
+  index: -1
+images/ef/fazhen2_00066
+  rotate: false
+  xy: 1095, 721
+  size: 301, 234
+  orig: 316, 290
+  offset: 11, 31
+  index: -1
+images/ef/fazhen2_00068
+  rotate: false
+  xy: 1656, 646
+  size: 286, 235
+  orig: 316, 290
+  offset: 10, 32
+  index: -1
+images/ef/fazhen2_00070
+  rotate: false
+  xy: 513, 503
+  size: 286, 238
+  orig: 316, 290
+  offset: 9, 32
+  index: -1
+images/ef/fazhen2_00072
+  rotate: false
+  xy: 801, 492
+  size: 283, 242
+  orig: 316, 290
+  offset: 11, 32
+  index: -1
+images/ef/fazhen2_00074
+  rotate: true
+  xy: 2, 282
+  size: 282, 247
+  orig: 316, 290
+  offset: 12, 32
+  index: -1
+images/ef/fazhen2_00076
+  rotate: false
+  xy: 1449, 147
+  size: 283, 252
+  orig: 316, 290
+  offset: 11, 32
+  index: -1
+images/ef/fazhen2_00078
+  rotate: false
+  xy: 2, 1058
+  size: 283, 237
+  orig: 316, 290
+  offset: 11, 32
+  index: -1
+images/ef/fazhen2_00080
+  rotate: false
+  xy: 869, 1834
+  size: 281, 146
+  orig: 316, 290
+  offset: 11, 33
+  index: -1
+images/ef/heye1
+  rotate: false
+  xy: 733, 1881
+  size: 134, 100
+  orig: 134, 100
+  offset: 0, 0
+  index: -1
+images/ef/heye2
+  rotate: false
+  xy: 629, 1901
+  size: 102, 81
+  orig: 102, 81
+  offset: 0, 0
+  index: -1
+images/ef/heye3
+  rotate: false
+  xy: 1152, 1833
+  size: 174, 147
+  orig: 174, 147
+  offset: 0, 0
+  index: -1
+images/ef/shui_00001
+  rotate: true
+  xy: 358, 1909
+  size: 73, 269
+  orig: 123, 302
+  offset: 26, 7
+  index: -1
+images/ef/shui_00003
+  rotate: true
+  xy: 73, 1913
+  size: 69, 283
+  orig: 123, 302
+  offset: 28, 6
+  index: -1
+images/ef/shui_00006
+  rotate: true
+  xy: 1712, 1978
+  size: 64, 286
+  orig: 123, 302
+  offset: 30, 3
+  index: -1
+images/ef/shui_00009
+  rotate: true
+  xy: 1425, 1981
+  size: 61, 285
+  orig: 123, 302
+  offset: 31, 4
+  index: -1
+images/ef/shui_00012
+  rotate: true
+  xy: 277, 1984
+  size: 58, 285
+  orig: 123, 302
+  offset: 32, 4
+  index: -1
+images/ef/shui_00014
+  rotate: true
+  xy: 564, 1984
+  size: 58, 285
+  orig: 123, 302
+  offset: 31, 4
+  index: -1
+images/ef/shui_00016
+  rotate: true
+  xy: 851, 1983
+  size: 59, 285
+  orig: 123, 302
+  offset: 31, 4
+  index: -1
+images/ef/shui_00020
+  rotate: true
+  xy: 1138, 1982
+  size: 60, 285
+  orig: 123, 302
+  offset: 31, 4
+  index: -1
+images/ef/shui_00022
+  rotate: true
+  xy: 2, 1985
+  size: 57, 273
+  orig: 123, 302
+  offset: 35, 8
+  index: -1
+images/ef/yinbo2_00012
+  rotate: false
+  xy: 1800, 1747
+  size: 234, 229
+  orig: 343, 331
+  offset: 53, 49
+  index: -1
+images/ef/yinbo2_00014
+  rotate: false
+  xy: 575, 1450
+  size: 238, 229
+  orig: 343, 331
+  offset: 52, 50
+  index: -1
+images/ef/yinbo2_00016
+  rotate: true
+  xy: 574, 1207
+  size: 241, 232
+  orig: 343, 331
+  offset: 51, 48
+  index: -1
+images/ef/yinbo2_00018
+  rotate: false
+  xy: 287, 1019
+  size: 245, 240
+  orig: 343, 331
+  offset: 50, 41
+  index: -1
+images/ef/yinbo2_00020
+  rotate: false
+  xy: 265, 774
+  size: 250, 243
+  orig: 343, 331
+  offset: 47, 38
+  index: -1
+images/ef/yinbo2_00022
+  rotate: false
+  xy: 1398, 650
+  size: 256, 246
+  orig: 343, 331
+  offset: 43, 36
+  index: -1
+images/ef/yinbo2_00024
+  rotate: false
+  xy: 2, 566
+  size: 260, 248
+  orig: 343, 331
+  offset: 41, 36
+  index: -1
+images/ef/yinbo2_00026
+  rotate: true
+  xy: 264, 510
+  size: 262, 247
+  orig: 343, 331
+  offset: 40, 37
+  index: -1
+images/ef/yinbo2_00028
+  rotate: false
+  xy: 2, 816
+  size: 261, 240
+  orig: 343, 331
+  offset: 40, 45
+  index: -1
+images/ef/yinbo2_00030
+  rotate: false
+  xy: 808, 1204
+  size: 257, 217
+  orig: 343, 331
+  offset: 43, 69
+  index: -1
+images/ef/yinbo2_00032
+  rotate: false
+  xy: 815, 1423
+  size: 252, 209
+  orig: 343, 331
+  offset: 44, 78
+  index: -1
+images/ef/yinbo2_00034
+  rotate: false
+  xy: 2, 1715
+  size: 248, 196
+  orig: 343, 331
+  offset: 45, 90
+  index: -1
+images/ef/yuandian
+  rotate: true
+  xy: 2, 1915
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1
+images/ef/z_shuiping_03
+  rotate: true
+  xy: 1328, 1824
+  size: 155, 292
+  orig: 155, 292
+  offset: 0, 0
+  index: -1
+images/ef/z_shuiping_04
+  rotate: true
+  xy: 1622, 1810
+  size: 166, 176
+  orig: 166, 176
+  offset: 0, 0
+  index: -1
+
+guanshiyin_tx_skill_012.png
+size: 1755,928
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/fazhen2_00034
+  rotate: true
+  xy: 1476, 345
+  size: 293, 257
+  orig: 316, 290
+  offset: 7, 29
+  index: -1
+images/ef/lianhua_00000
+  rotate: true
+  xy: 1476, 640
+  size: 286, 277
+  orig: 341, 341
+  offset: 26, 28
+  index: -1
+images/ef/yinbo2_00040
+  rotate: true
+  xy: 892, 614
+  size: 312, 293
+  orig: 343, 331
+  offset: 14, 17
+  index: -1
+images/ef/yinbo2_00042
+  rotate: true
+  xy: 892, 301
+  size: 311, 291
+  orig: 343, 331
+  offset: 15, 20
+  index: -1
+images/ef/yinbo2_00044
+  rotate: false
+  xy: 948, 10
+  size: 311, 289
+  orig: 343, 331
+  offset: 16, 23
+  index: -1
+images/ef/yinbo2_00046
+  rotate: true
+  xy: 1185, 301
+  size: 311, 289
+  orig: 343, 331
+  offset: 17, 24
+  index: -1
+images/ef/yinbo2_00048
+  rotate: false
+  xy: 318, 2
+  size: 313, 291
+  orig: 343, 331
+  offset: 15, 22
+  index: -1
+images/ef/yinbo2_00050
+  rotate: false
+  xy: 2, 2
+  size: 314, 290
+  orig: 343, 331
+  offset: 12, 22
+  index: -1
+images/ef/yinbo2_00052
+  rotate: true
+  xy: 1187, 614
+  size: 312, 287
+  orig: 343, 331
+  offset: 10, 24
+  index: -1
+images/ef/yinbo2_00054
+  rotate: false
+  xy: 1261, 12
+  size: 313, 287
+  orig: 343, 331
+  offset: 9, 22
+  index: -1
+images/ef/yinbo2_00056
+  rotate: false
+  xy: 633, 3
+  size: 313, 293
+  orig: 343, 331
+  offset: 9, 17
+  index: -1
+images/ef/yinbo2_00058
+  rotate: true
+  xy: 596, 613
+  size: 313, 294
+  orig: 343, 331
+  offset: 10, 15
+  index: -1
+images/ef/yinbo2_00060
+  rotate: true
+  xy: 2, 294
+  size: 315, 295
+  orig: 343, 331
+  offset: 11, 13
+  index: -1
+images/ef/yinbo2_00062
+  rotate: true
+  xy: 2, 611
+  size: 315, 296
+  orig: 343, 331
+  offset: 12, 11
+  index: -1
+images/ef/yinbo2_00064
+  rotate: true
+  xy: 300, 612
+  size: 314, 294
+  orig: 343, 331
+  offset: 12, 13
+  index: -1
+images/ef/yinbo2_00066
+  rotate: true
+  xy: 299, 295
+  size: 314, 295
+  orig: 343, 331
+  offset: 13, 13
+  index: -1
+images/ef/yinbo2_00068
+  rotate: true
+  xy: 596, 298
+  size: 313, 294
+  orig: 343, 331
+  offset: 14, 15
+  index: -1

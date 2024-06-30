@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "d4c93438-ceef-4580-b33c-dcff73a518e8",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 2033,
+  "height": 1892,
+  "platformSettings": {},
+  "subMetas": {
+    "houyi_tx_skill_02_1": {
+      "ver": "1.0.6",
+      "uuid": "e9a91913-faf4-41f9-973a-5668c7c9c4db",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "d4c93438-ceef-4580-b33c-dcff73a518e8",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 2029,
+      "height": 1888,
+      "rawWidth": 2033,
+      "rawHeight": 1892,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,97 @@
+
+mamian_tx_skill_02.png
+size: 1785,250
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/chongci_00000
+  rotate: false
+  xy: 1510, 154
+  size: 273, 94
+  orig: 447, 175
+  offset: 150, 50
+  index: -1
+images/ef/chongci_00001
+  rotate: false
+  xy: 1136, 29
+  size: 312, 92
+  orig: 447, 175
+  offset: 110, 47
+  index: -1
+images/ef/chongci_00002
+  rotate: false
+  xy: 2, 110
+  size: 392, 138
+  orig: 447, 175
+  offset: 34, 25
+  index: -1
+images/ef/chongci_00003
+  rotate: false
+  xy: 396, 120
+  size: 388, 128
+  orig: 447, 175
+  offset: 40, 28
+  index: -1
+images/ef/chongci_00004
+  rotate: false
+  xy: 751, 2
+  size: 383, 116
+  orig: 447, 175
+  offset: 47, 33
+  index: -1
+images/ef/chongci_00005
+  rotate: false
+  xy: 2, 7
+  size: 376, 101
+  orig: 447, 175
+  offset: 52, 37
+  index: -1
+images/ef/chongci_00006
+  rotate: false
+  xy: 380, 10
+  size: 369, 98
+  orig: 447, 175
+  offset: 58, 40
+  index: -1
+images/ef/chongci_00007
+  rotate: false
+  xy: 786, 157
+  size: 369, 91
+  orig: 447, 175
+  offset: 58, 43
+  index: -1
+images/ef/chongci_00008
+  rotate: false
+  xy: 1157, 163
+  size: 351, 85
+  orig: 447, 175
+  offset: 76, 45
+  index: -1
+images/ef/chongci_00009
+  rotate: false
+  xy: 1450, 78
+  size: 322, 74
+  orig: 447, 175
+  offset: 116, 51
+  index: -1
+images/ef/chongci_00010
+  rotate: false
+  xy: 1450, 17
+  size: 316, 59
+  orig: 447, 175
+  offset: 124, 56
+  index: -1
+images/ef/chongci_00011
+  rotate: false
+  xy: 786, 121
+  size: 239, 34
+  orig: 447, 175
+  offset: 195, 70
+  index: -1
+images/ef/chongci_00012
+  rotate: false
+  xy: 1027, 123
+  size: 207, 32
+  orig: 447, 175
+  offset: 227, 72
+  index: -1

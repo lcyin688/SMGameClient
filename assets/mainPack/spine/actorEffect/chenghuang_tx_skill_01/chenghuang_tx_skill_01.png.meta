@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "6df1b51f-361c-4236-b55d-9b4712c9483d",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 2001,
+  "height": 1562,
+  "platformSettings": {},
+  "subMetas": {
+    "chenghuang_tx_skill_01": {
+      "ver": "1.0.6",
+      "uuid": "be7f326a-23fa-4ab5-bb00-1e75924d905b",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "6df1b51f-361c-4236-b55d-9b4712c9483d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1997,
+      "height": 1558,
+      "rawWidth": 2001,
+      "rawHeight": 1562,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

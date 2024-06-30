@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "a784b3be-0df5-4277-ba41-cebb68f1e596",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 1743,
+  "height": 1828,
+  "platformSettings": {},
+  "subMetas": {
+    "haila_tx_skill_02_12": {
+      "ver": "1.0.6",
+      "uuid": "814a1135-3b06-41bf-922d-6aa2ff361d2e",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "a784b3be-0df5-4277-ba41-cebb68f1e596",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 1739,
+      "height": 1824,
+      "rawWidth": 1743,
+      "rawHeight": 1828,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

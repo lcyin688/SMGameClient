@@ -1,0 +1,97 @@
+
+zyhl_tx_attack.png
+size: 1906,210
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/PG_00000
+  rotate: false
+  xy: 1599, 129
+  size: 166, 79
+  orig: 200, 150
+  offset: 19, 29
+  index: -1
+ef/PG_00001
+  rotate: false
+  xy: 1426, 121
+  size: 171, 87
+  orig: 200, 150
+  offset: 25, 25
+  index: -1
+ef/PG_00002
+  rotate: false
+  xy: 1365, 30
+  size: 156, 89
+  orig: 200, 150
+  offset: 41, 24
+  index: -1
+ef/cj1
+  rotate: true
+  xy: 1757, 20
+  size: 64, 96
+  orig: 128, 256
+  offset: 30, 0
+  index: -1
+ef/cj2
+  rotate: false
+  xy: 1097, 30
+  size: 108, 178
+  orig: 128, 256
+  offset: 7, 8
+  index: -1
+ef/cj3
+  rotate: false
+  xy: 852, 16
+  size: 119, 192
+  orig: 128, 256
+  offset: 4, 32
+  index: -1
+ef/cj4
+  rotate: false
+  xy: 973, 29
+  size: 122, 179
+  orig: 128, 256
+  offset: 5, 59
+  index: -1
+ef/cj5
+  rotate: true
+  xy: 1207, 20
+  size: 122, 156
+  orig: 128, 256
+  offset: 6, 91
+  index: -1
+ef/cj6
+  rotate: true
+  xy: 1767, 86
+  size: 122, 137
+  orig: 128, 256
+  offset: 6, 115
+  index: -1
+ef/cj7
+  rotate: false
+  xy: 1523, 11
+  size: 120, 108
+  orig: 128, 256
+  offset: 5, 147
+  index: -1
+ef/cj8
+  rotate: false
+  xy: 1645, 40
+  size: 110, 87
+  orig: 128, 256
+  offset: 7, 165
+  index: -1
+ef/ddd
+  rotate: false
+  xy: 1207, 144
+  size: 217, 64
+  orig: 226, 76
+  offset: 3, 6
+  index: -1
+ef/suo_00007
+  rotate: true
+  xy: 2, 2
+  size: 206, 848
+  orig: 398, 1165
+  offset: 103, 317
+  index: -1

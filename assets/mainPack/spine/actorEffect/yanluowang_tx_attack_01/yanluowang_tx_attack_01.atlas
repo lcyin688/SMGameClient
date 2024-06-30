@@ -1,0 +1,125 @@
+
+yanluowang_tx_attack_01.png
+size: 2008,1058
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/baozha1
+  rotate: false
+  xy: 1642, 127
+  size: 301, 254
+  orig: 570, 424
+  offset: 105, 94
+  index: -1
+images/ef/baozha10
+  rotate: true
+  xy: 893, 2
+  size: 379, 231
+  orig: 570, 424
+  offset: 74, 124
+  index: -1
+images/ef/baozha11
+  rotate: false
+  xy: 2, 5
+  size: 268, 213
+  orig: 570, 424
+  offset: 138, 108
+  index: -1
+images/ef/baozha12
+  rotate: false
+  xy: 1718, 610
+  size: 198, 156
+  orig: 570, 424
+  offset: 160, 158
+  index: -1
+images/ef/baozha2
+  rotate: true
+  xy: 1126, 6
+  size: 375, 242
+  orig: 570, 424
+  offset: 70, 108
+  index: -1
+images/ef/baozha3
+  rotate: true
+  xy: 978, 585
+  size: 471, 302
+  orig: 570, 424
+  offset: 44, 95
+  index: -1
+images/ef/baozha4
+  rotate: true
+  xy: 574, 574
+  size: 482, 402
+  orig: 570, 424
+  offset: 33, 9
+  index: -1
+images/ef/baozha5
+  rotate: true
+  xy: 272, 539
+  size: 517, 300
+  orig: 570, 424
+  offset: 41, 88
+  index: -1
+images/ef/baozha6
+  rotate: true
+  xy: 584, 94
+  size: 478, 307
+  orig: 570, 424
+  offset: 37, 86
+  index: -1
+images/ef/baozha7
+  rotate: true
+  xy: 272, 43
+  size: 494, 310
+  orig: 570, 424
+  offset: 29, 91
+  index: -1
+images/ef/baozha8
+  rotate: true
+  xy: 1282, 609
+  size: 447, 204
+  orig: 570, 424
+  offset: 40, 133
+  index: -1
+images/ef/baozha9
+  rotate: true
+  xy: 1488, 676
+  size: 380, 228
+  orig: 570, 424
+  offset: 73, 132
+  index: -1
+images/ef/fffzzzs
+  rotate: false
+  xy: 1718, 768
+  size: 288, 288
+  orig: 288, 288
+  offset: 0, 0
+  index: -1
+images/ef/suo_00002
+  rotate: false
+  xy: 1370, 25
+  size: 270, 356
+  orig: 398, 1165
+  offset: 69, 809
+  index: -1
+images/ef/suo_00004
+  rotate: false
+  xy: 2, 220
+  size: 268, 836
+  orig: 398, 1165
+  offset: 70, 260
+  index: -1
+images/ef/suo_00011
+  rotate: true
+  xy: 893, 383
+  size: 189, 1101
+  orig: 398, 1165
+  offset: 112, 64
+  index: -1
+images/ef/yuandian
+  rotate: false
+  xy: 584, 23
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

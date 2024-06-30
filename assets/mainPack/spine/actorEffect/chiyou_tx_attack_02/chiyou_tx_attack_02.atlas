@@ -1,0 +1,384 @@
+
+chiyou_tx_attack_02.png
+size: 1987,1491
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/fj1
+  rotate: false
+  xy: 257, 501
+  size: 349, 260
+  orig: 454, 275
+  offset: 57, 13
+  index: -1
+images/ef/fj2
+  rotate: true
+  xy: 249, 128
+  size: 371, 261
+  orig: 454, 275
+  offset: 28, 11
+  index: -1
+images/ef/fj3
+  rotate: true
+  xy: 591, 875
+  size: 336, 260
+  orig: 454, 275
+  offset: 47, 12
+  index: -1
+images/ef/fj4
+  rotate: false
+  xy: 853, 995
+  size: 330, 255
+  orig: 454, 275
+  offset: 58, 17
+  index: -1
+images/ef/fj5
+  rotate: true
+  xy: 608, 541
+  size: 332, 246
+  orig: 454, 275
+  offset: 59, 24
+  index: -1
+images/ef/fj6
+  rotate: false
+  xy: 856, 811
+  size: 286, 182
+  orig: 454, 275
+  offset: 106, 53
+  index: -1
+images/ef/fj7
+  rotate: true
+  xy: 687, 235
+  size: 304, 168
+  orig: 454, 275
+  offset: 108, 67
+  index: -1
+images/ef/fj8
+  rotate: false
+  xy: 857, 191
+  size: 251, 166
+  orig: 454, 275
+  offset: 143, 68
+  index: -1
+images/ef/liewen1
+  rotate: false
+  xy: 249, 34
+  size: 204, 92
+  orig: 207, 92
+  offset: 1, 0
+  index: -1
+images/ef/p1
+  rotate: true
+  xy: 512, 121
+  size: 378, 173
+  orig: 666, 293
+  offset: 22, 60
+  index: -1
+images/ef/p2
+  rotate: false
+  xy: 2, 1213
+  size: 636, 276
+  orig: 666, 293
+  offset: 18, 13
+  index: -1
+images/ef/p3
+  rotate: true
+  xy: 2, 563
+  size: 648, 253
+  orig: 666, 293
+  offset: 18, 16
+  index: -1
+images/ef/p4
+  rotate: false
+  xy: 640, 1252
+  size: 629, 237
+  orig: 666, 293
+  offset: 23, 16
+  index: -1
+images/ef/p5
+  rotate: false
+  xy: 1271, 1262
+  size: 502, 227
+  orig: 666, 293
+  offset: 149, 28
+  index: -1
+images/ef/rongyan
+  rotate: true
+  xy: 257, 763
+  size: 448, 332
+  orig: 448, 332
+  offset: 0, 0
+  index: -1
+images/ef/shikuai1
+  rotate: true
+  xy: 2, 29
+  size: 532, 245
+  orig: 562, 250
+  offset: 30, 3
+  index: -1
+images/ef/sk_00001
+  rotate: false
+  xy: 1816, 1104
+  size: 169, 174
+  orig: 302, 255
+  offset: 54, 59
+  index: -1
+images/ef/sk_00002
+  rotate: false
+  xy: 1502, 693
+  size: 171, 170
+  orig: 302, 255
+  offset: 53, 66
+  index: -1
+images/ef/sk_00003
+  rotate: true
+  xy: 1290, 274
+  size: 174, 165
+  orig: 302, 255
+  offset: 52, 73
+  index: -1
+images/ef/sk_00004
+  rotate: true
+  xy: 1816, 739
+  size: 177, 166
+  orig: 302, 255
+  offset: 51, 74
+  index: -1
+images/ef/sk_00005
+  rotate: true
+  xy: 687, 53
+  size: 180, 168
+  orig: 302, 255
+  offset: 50, 74
+  index: -1
+images/ef/sk_00006
+  rotate: true
+  xy: 1816, 918
+  size: 184, 168
+  orig: 302, 255
+  offset: 48, 74
+  index: -1
+images/ef/sk_00007
+  rotate: true
+  xy: 1054, 3
+  size: 186, 170
+  orig: 302, 255
+  offset: 47, 74
+  index: -1
+images/ef/sk_00008
+  rotate: true
+  xy: 1226, 31
+  size: 188, 175
+  orig: 302, 255
+  offset: 47, 73
+  index: -1
+images/ef/sk_00009
+  rotate: true
+  xy: 1110, 221
+  size: 190, 178
+  orig: 302, 255
+  offset: 46, 72
+  index: -1
+images/ef/sk_00010
+  rotate: false
+  xy: 1144, 811
+  size: 193, 182
+  orig: 302, 255
+  offset: 45, 70
+  index: -1
+images/ef/sk_00011
+  rotate: false
+  xy: 857, 2
+  size: 195, 187
+  orig: 302, 255
+  offset: 44, 67
+  index: -1
+images/ef/sk_00012
+  rotate: false
+  xy: 1076, 413
+  size: 198, 191
+  orig: 302, 255
+  offset: 43, 63
+  index: -1
+images/ef/sk_00013
+  rotate: true
+  xy: 1279, 609
+  size: 200, 196
+  orig: 302, 255
+  offset: 42, 58
+  index: -1
+images/ef/sk_00014
+  rotate: true
+  xy: 1076, 606
+  size: 203, 201
+  orig: 302, 255
+  offset: 41, 52
+  index: -1
+images/ef/sk_00015
+  rotate: true
+  xy: 1609, 1054
+  size: 206, 205
+  orig: 302, 255
+  offset: 40, 45
+  index: -1
+images/ef/sk_00016
+  rotate: true
+  xy: 1775, 1280
+  size: 209, 210
+  orig: 302, 255
+  offset: 39, 37
+  index: -1
+images/ef/sk_00017
+  rotate: false
+  xy: 1396, 1045
+  size: 211, 215
+  orig: 302, 255
+  offset: 38, 28
+  index: -1
+images/ef/sk_00018
+  rotate: false
+  xy: 857, 359
+  size: 214, 221
+  orig: 302, 255
+  offset: 37, 17
+  index: -1
+images/ef/sk_00019
+  rotate: false
+  xy: 856, 582
+  size: 218, 227
+  orig: 302, 255
+  offset: 35, 5
+  index: -1
+images/ef/sk_00020
+  rotate: true
+  xy: 1185, 1029
+  size: 221, 209
+  orig: 302, 255
+  offset: 34, 15
+  index: -1
+images/ef/yuandian
+  rotate: true
+  xy: 1809, 198
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1
+images/ef/yw_00000
+  rotate: false
+  xy: 1815, 434
+  size: 158, 149
+  orig: 209, 184
+  offset: 20, 6
+  index: -1
+images/ef/yw_00001
+  rotate: false
+  xy: 1577, 49
+  size: 162, 148
+  orig: 209, 184
+  offset: 19, 10
+  index: -1
+images/ef/yw_00002
+  rotate: false
+  xy: 1815, 585
+  size: 170, 152
+  orig: 209, 184
+  offset: 18, 11
+  index: -1
+images/ef/yw_00003
+  rotate: false
+  xy: 1279, 450
+  size: 177, 157
+  orig: 209, 184
+  offset: 15, 12
+  index: -1
+images/ef/yw_00004
+  rotate: true
+  xy: 1339, 849
+  size: 178, 161
+  orig: 209, 184
+  offset: 15, 11
+  index: -1
+images/ef/yw_00005
+  rotate: true
+  xy: 1502, 865
+  size: 178, 163
+  orig: 209, 184
+  offset: 16, 10
+  index: -1
+images/ef/yw_00006
+  rotate: false
+  xy: 1477, 530
+  size: 175, 161
+  orig: 209, 184
+  offset: 15, 13
+  index: -1
+images/ef/yw_00007
+  rotate: true
+  xy: 1654, 516
+  size: 175, 159
+  orig: 209, 184
+  offset: 13, 12
+  index: -1
+images/ef/yw_00008
+  rotate: false
+  xy: 1458, 372
+  size: 175, 156
+  orig: 209, 184
+  offset: 10, 12
+  index: -1
+images/ef/yw_00009
+  rotate: false
+  xy: 1635, 356
+  size: 175, 158
+  orig: 209, 184
+  offset: 8, 14
+  index: -1
+images/ef/yw_00010
+  rotate: false
+  xy: 1403, 51
+  size: 172, 158
+  orig: 209, 184
+  offset: 8, 18
+  index: -1
+images/ef/yw_00011
+  rotate: false
+  xy: 1457, 211
+  size: 174, 159
+  orig: 209, 184
+  offset: 6, 21
+  index: -1
+images/ef/yw_00012
+  rotate: false
+  xy: 1633, 199
+  size: 174, 155
+  orig: 209, 184
+  offset: 6, 28
+  index: -1
+images/ef/yw_00013
+  rotate: true
+  xy: 1667, 877
+  size: 175, 147
+  orig: 209, 184
+  offset: 5, 34
+  index: -1
+images/ef/yw_00014
+  rotate: true
+  xy: 1675, 710
+  size: 165, 138
+  orig: 209, 184
+  offset: 5, 43
+  index: -1
+images/ef/yw_00015
+  rotate: false
+  xy: 1812, 347
+  size: 144, 85
+  orig: 209, 184
+  offset: 4, 96
+  index: -1
+images/ef/yw_00016
+  rotate: false
+  xy: 1809, 268
+  size: 137, 77
+  orig: 209, 184
+  offset: 12, 103
+  index: -1

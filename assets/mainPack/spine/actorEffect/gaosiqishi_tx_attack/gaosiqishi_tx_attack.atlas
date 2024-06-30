@@ -1,0 +1,62 @@
+
+gaosiqishi_tx_attack.png
+size: 810,233
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/daoguang_00001
+  rotate: true
+  xy: 2, 98
+  size: 133, 228
+  orig: 366, 371
+  offset: 48, 76
+  index: -1
+images/ef/daoguang_00003
+  rotate: true
+  xy: 232, 104
+  size: 127, 247
+  orig: 366, 371
+  offset: 49, 58
+  index: -1
+images/ef/daoguang_00004
+  rotate: true
+  xy: 481, 112
+  size: 119, 243
+  orig: 366, 371
+  offset: 52, 58
+  index: -1
+images/ef/daoguang_00005
+  rotate: true
+  xy: 481, 4
+  size: 106, 237
+  orig: 366, 371
+  offset: 53, 58
+  index: -1
+images/ef/daoguang_00006
+  rotate: true
+  xy: 232, 2
+  size: 100, 217
+  orig: 366, 371
+  offset: 53, 66
+  index: -1
+images/ef/daoguang_00007
+  rotate: true
+  xy: 2, 5
+  size: 91, 145
+  orig: 366, 371
+  offset: 58, 68
+  index: -1
+images/ef/daoguang_00008
+  rotate: false
+  xy: 726, 118
+  size: 82, 113
+  orig: 366, 371
+  offset: 65, 68
+  index: -1
+images/ef/daoguang_00009
+  rotate: false
+  xy: 726, 25
+  size: 76, 91
+  orig: 366, 371
+  offset: 66, 75
+  index: -1

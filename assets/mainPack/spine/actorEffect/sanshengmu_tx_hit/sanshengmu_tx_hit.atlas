@@ -1,0 +1,62 @@
+
+sanshengmu_tx_hit.png
+size: 186,377
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/ef/hit1
+  rotate: true
+  xy: 2, 288
+  size: 87, 153
+  orig: 171, 171
+  offset: 42, 10
+  index: -1
+images/ef/hit2
+  rotate: false
+  xy: 108, 2
+  size: 70, 54
+  orig: 172, 171
+  offset: 41, 57
+  index: -1
+images/ef/hit3
+  rotate: false
+  xy: 2, 96
+  size: 104, 89
+  orig: 171, 171
+  offset: 26, 48
+  index: -1
+images/ef/hit4
+  rotate: false
+  xy: 2, 187
+  size: 104, 99
+  orig: 171, 172
+  offset: 20, 45
+  index: -1
+images/ef/hit5
+  rotate: false
+  xy: 2, 7
+  size: 104, 87
+  orig: 172, 172
+  offset: 20, 58
+  index: -1
+images/ef/hit6
+  rotate: true
+  xy: 108, 195
+  size: 91, 76
+  orig: 171, 172
+  offset: 29, 65
+  index: -1
+images/ef/hit7
+  rotate: false
+  xy: 108, 58
+  size: 69, 65
+  orig: 171, 171
+  offset: 72, 58
+  index: -1
+images/ef/yuandian
+  rotate: true
+  xy: 108, 125
+  size: 68, 69
+  orig: 81, 81
+  offset: 7, 6
+  index: -1

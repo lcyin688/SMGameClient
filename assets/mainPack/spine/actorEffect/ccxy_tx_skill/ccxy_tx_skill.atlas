@@ -1,0 +1,55 @@
+
+ccxy_tx_skill.png
+size: 1057,629
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/z_00002
+  rotate: true
+  xy: 2, 332
+  size: 295, 397
+  orig: 492, 542
+  offset: 30, 53
+  index: -1
+ef/z_00003
+  rotate: true
+  xy: 2, 2
+  size: 328, 334
+  orig: 492, 542
+  offset: 33, 47
+  index: -1
+ef/z_00004
+  rotate: false
+  xy: 401, 306
+  size: 364, 321
+  orig: 492, 542
+  offset: 40, 46
+  index: -1
+ef/z_00005
+  rotate: true
+  xy: 767, 232
+  size: 395, 272
+  orig: 492, 542
+  offset: 44, 46
+  index: -1
+ef/z_00007
+  rotate: false
+  xy: 338, 48
+  size: 348, 256
+  orig: 492, 542
+  offset: 114, 59
+  index: -1
+ef/z_00008
+  rotate: true
+  xy: 688, 34
+  size: 196, 262
+  orig: 492, 542
+  offset: 264, 77
+  index: -1
+ef/z_00009
+  rotate: false
+  xy: 952, 57
+  size: 103, 173
+  orig: 492, 542
+  offset: 350, 180
+  index: -1

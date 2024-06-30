@@ -1,0 +1,27 @@
+
+mdms_tx_attack.png
+size: 952,695
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ef/PG_00000
+  rotate: true
+  xy: 2, 29
+  size: 664, 319
+  orig: 800, 600
+  offset: 75, 115
+  index: -1
+ef/PG_00002
+  rotate: false
+  xy: 323, 2
+  size: 625, 357
+  orig: 800, 600
+  offset: 165, 96
+  index: -1
+ef/PG_00004
+  rotate: false
+  xy: 323, 361
+  size: 627, 332
+  orig: 800, 600
+  offset: 164, 111
+  index: -1
