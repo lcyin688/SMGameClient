@@ -13,6 +13,8 @@ export default class GameLoginView extends UIViewBase {
 
     public btnStart: cc.Node;
     public btnStartButton: cc.Button = undefined;
+    public btn2048: cc.Node;
+    public btn2048Button: cc.Button = undefined;
     
 
     public onLoad() {
@@ -37,20 +39,28 @@ export default class GameLoginView extends UIViewBase {
         super.initProperty();
         this.btnStart = this.get('_btnStart_');
         this.btnStartButton = this.btnStart.getComponent(cc.Button);
+        this.btn2048 = this.get('_btn2048_');
+        this.btn2048Button = this.btn2048.getComponent(cc.Button);
         
     }
 
     private addEvent() {
         this.btnStartButton.node.on('click', this.onbtnStartButtonClick, this);
+        this.btn2048Button.node.on('click', this.onbtn2048ButtonClick, this);
 
     }
 
     private removeEvent() {
         this.btnStartButton.node.off('click', this.onbtnStartButtonClick, this);
+        this.btn2048Button.node.off('click', this.onbtn2048ButtonClick, this);
 
     }
 
     private onbtnStartButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtn2048ButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

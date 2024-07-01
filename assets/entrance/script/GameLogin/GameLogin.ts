@@ -64,6 +64,11 @@ export default class GameLogin extends UIVControlBase {
                 this.CC_onClickbtnStart();
                 break;
 
+            case this.view.btn2048Button.name:
+                this.CC_onClickbtn2048();
+                break;
+
+
 
 
             default:
@@ -78,5 +83,8 @@ export default class GameLogin extends UIVControlBase {
             c2f.gui.open(UIID.DesStarMain,)
         });
     }
-
-}
+                    
+    private CC_onClickbtn2048() {
+    }
+            
+    }
