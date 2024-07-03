@@ -1,0 +1,26 @@
+{
+    "name": "prefab-code-builder",
+    "version": "0.0.1-20230911",
+    "description": "一键生成预制体代码",
+    "author": "slin",
+    "main": "main.js",
+    "main-menu": {        
+        "i18n:MAIN_MENU.package.title/c2f工具箱/预制体代码生成[刷新目录]": {
+            "message": "prefab-code-builder:build-select",
+            "icon": "/images/coder.png",
+            "accelerator": "F8"
+        },
+        "i18n:MAIN_MENU.package.title/c2f工具箱/预制体代码生成[不刷新]": {
+            "message": "prefab-code-builder:build-select-noRef",
+            "icon": "/images/coder.png",
+            "accelerator": "F9"
+        }
+    },
+    "panel.coder": {
+        "main": "panel.coder/index.js",
+        "type": "dockable",
+        "title": "代码生成器",
+        "min-width": 350,
+        "min-height": 500
+    }
+}

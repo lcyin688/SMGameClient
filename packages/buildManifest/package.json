@@ -1,0 +1,12 @@
+{
+  "name": "build-manifest",
+  "version": "0.0.1",
+  "description": "构建生成热更文件",
+  "author": "szSXYNJ",
+  "main": "main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.package.title/构建生成热更文件": {
+      "message": "build-manifest:say-hello"
+    }
+  }
+}

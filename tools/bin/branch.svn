@@ -1,0 +1,10 @@
+
+# svn account
+SVN_USER=yangzefeng
+SVN_PWD=yangzefeng
+
+# svn gamedata url
+SVN_GAMEDATA_URL="https://172.16.36.240/svn/x1_plan/配置"
+
+# svn shared url
+SVN_SHARED_URL="https://172.16.36.240/svn/x1_shared"

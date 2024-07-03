@@ -1,0 +1,212 @@
+<ui-section folded>
+    <div class="header">脚本名称设置【字母 数字 $ _ 】</div>
+    <ui-box-container class="shadow">
+        <div class="layout horizontal start">
+
+            <div class="layout vertical start-justified">
+                <ui-button class="red transparent self-start">脚本名称[edit]</ui-button>
+                <ui-input v-el:name_script @change="onUpdateName" placeholder="填写脚本名" v-value="t_Name"></ui-input>
+            </div>
+
+            <ui-button disabled class="green transparent self-end">=?</ui-button>
+
+            <div class="layout vertical start-justified">
+                <!-- 预留游戏脚本 -->
+                <ui-button @confirm="" class="green transparent self-start">游戏脚本</ui-button>
+
+                <ui-select @change="onChange_Name" v-value="defNameGame">
+                    <option v-for="(key, i) in Script_Game_Dic" :value="i.content">
+                        {{i.name}}
+                    </option>
+                </ui-select>
+            </div>
+
+            <ui-button disabled class="green transparent self-end">=?</ui-button>
+
+            <div class="layout vertical start-justified">
+                <!-- 预留UI脚本 -->
+                <ui-button @confirm="" class="green transparent self-start">UI脚本</ui-button>
+
+                <ui-select @change="onChange_Name" v-value="defNameUI">
+                    <option v-for="(key, i) in Script_UI_Dic" :value="i.content">
+                        {{i.name}}
+                    </option>
+                </ui-select>
+            </div>
+        </div>
+    </ui-box-container>
+</ui-section>
+
+<ui-section folded>
+    <div class="header">脚本路径设置【默认路径: db://asset/Script】</div>
+    <div class="layout vertical start-justified">
+        <ui-box-container class="shadow">
+
+            <div class="layout horizontal start-justified">
+                <!-- <ui-button class="red transparent self-start">脚本路径设置</ui-button> -->
+                <ui-button class="blue transparent self-center">[ url = ]</ui-button>
+                <div class="layout vertical center-justified">
+                    <div><span v-el:res_url>db://assets/Script/UI</span></div>
+                </div>
+            </div>
+
+            <div class="layout horizontal start-justified">
+                <ui-button class="blue transparent end">db://assets/</ui-button>
+                <ui-input v-el:url_script @change="onUpdateUrl" placeholder="URL" v-value="defUrl"></ui-input>
+                <ui-button class="green transparent self-center">=</ui-button>
+
+                <ui-select @change="onChange_Url_1" v-value="defUrl_1">
+                    <option v-for="i in Url_1_Arr" :value="i.name">
+                        {{i.name}}
+                    </option>
+                </ui-select>
+
+                <ui-button class="green transparent self-center">+?</ui-button>
+                <ui-select @change="onChange_Url_2" v-value="defUrl_2">
+                    <option v-for="i in Url_2_Arr" :value="i.name">
+                        {{i.name}}
+                    </option>
+                </ui-select>
+            </div>
+
+            <div class="layout horizontal start-justified">
+                <ui-button class="blue transparent self-start">URL-I</ui-button>
+                <!-- 1级路径 值与选择框绑定了 -->
+                <ui-input v-el:url_1 @change="onUpdateUrl" placeholder="url_1" v-value="defUrl_1"></ui-input>
+                <ui-button class="blue transparent self-start">URL-II</ui-button>
+                <!-- 2级路径 值与选择框绑定了 -->
+                <ui-input v-el:url_2 @change="onUpdateUrl" placeholder="url_2" v-value="defUrl_2"></ui-input>
+            </div>
+        </ui-box-container>
+    </div>
+</ui-section>
+
+<ui-section folded>
+    <div class="header">代码继承设置【默认继承: cc.Component】</div>
+    <div class="layout vertical start-justified">
+        <ui-box-container class="shadow">
+            <!-- 父类设置 -->
+            <div class="layout horizontal start">
+
+                <div class="layout vertical start-justified">
+                    <ui-button class="red transparent self-start">父类[edit]</ui-button>
+                    <ui-input v-el:base_script_input @change="onUpdateBase" placeholder="base-class" v-value="defBase">
+                    </ui-input>
+                </div>
+
+                <div class="layout vertical start-justified">
+                    <ui-button class="blue transparent self-start">预置父类</ui-button>
+                    <ui-select v-el:base_script_select @change="onChangeBase" v-value="defBase">
+                        <option v-for="(key, item) in Script_Base_Dic" :value="item.content">
+                            {{item.name}}
+                        </option>
+                    </ui-select>
+                </div>
+
+                <div class="layout vertical start-justified">
+                    <ui-button @confirm="onCreateSingleton" class="green transparent self-start">+Singleton</ui-button>
+                </div>
+
+            </div>
+
+            <!-- 接口设置 -->
+            <div class="layout horizontal start">
+
+                <div class="layout vertical start-justified">
+                    <ui-button class="red transparent self-start">接口[edit]</ui-button>
+                    <ui-input v-el:interface_script_input @change="onUpdateInterface" placeholder="interface" v-value="t_Inter"></ui-input>
+                </div>
+
+                <div class="layout vertical start-justified">
+                    <ui-button class="blue transparent self-start">预置接口</ui-button>
+                    <ui-select v-el:interface_script_select1 @change="onChangeInterface1" v-value="defInterface">
+                        <option v-for="(key, item) in Script_Interface_Dic" :value="item.content">
+                            {{item.name}}
+                        </option>
+                    </ui-select>
+                </div>
+
+                <div class="layout vertical start-justified">
+                    <ui-button @confirm="onCreateIDrag" class="green transparent self-start">+IDrag</ui-button>
+                </div>
+
+            </div>
+        </ui-box-container>
+    </div>
+</ui-section>
+
+<ui-section folded>
+    <div class="header">代码模块设置【默认为空】</div>
+    <ui-box-container class="shadow">
+        <div class="layout horizontal start-justified">
+            <!-- 生命周期 -->
+            <div class="layout vertical">
+                <ui-button class="blue transparent self-start">生命周期函数</ui-button>
+                <ui-checkbox v-el:fun1>onLoad</ui-checkbox>
+                <ui-checkbox v-el:fun2>start</ui-checkbox>
+                <ui-checkbox v-el:fun3>update</ui-checkbox>
+                <ui-checkbox v-el:fun4>lateUpdate</ui-checkbox>
+                <ui-checkbox v-el:fun5>onDestroy</ui-checkbox>
+                <ui-checkbox v-el:fun6>onEnable</ui-checkbox>
+                <ui-checkbox v-el:fun7>onDisable</ui-checkbox>
+                <ui-checkbox v-el:funall @change="onAllFun">全选</ui-checkbox>
+            </div>
+
+            <!-- 自定函数 -->
+            <div class="layout vertical">
+                <ui-button class="blue transparent self-start">预置函数</ui-button>
+                <ui-checkbox v-el:myfun2>init</ui-checkbox>
+                <ui-checkbox v-el:myfun1>initVar</ui-checkbox>
+                <!-- <ui-checkbox v-el:myfun4>构造函数</ui-checkbox>
+                <ui-checkbox v-el:myfun5>静态单例</ui-checkbox> -->
+                <ui-checkbox v-el:myfun6>开始碰撞</ui-checkbox>
+                <ui-checkbox v-el:myfun7>结束碰撞</ui-checkbox>
+                <ui-checkbox v-el:myfun3>更新面板</ui-checkbox>
+                <ui-checkbox v-el:myfunall @change="onAllMyFun">全选</ui-checkbox>
+            </div>
+
+            <!-- 接口函数 只读 -->
+            <div class="layout vertical">
+                <ui-button class="blue transparent self-start">接口函数</ui-button>
+                <ui-checkbox readonly v-el:ifun1>开始拖拽</ui-checkbox>
+                <ui-checkbox readonly v-el:ifun2>持续拖拽</ui-checkbox>
+                <ui-checkbox readonly v-el:ifun3>结束拖拽</ui-checkbox>
+                <ui-checkbox readonly v-el:ifunall @change="onAlliFun">全选</ui-checkbox>
+                <ui-button class="blue transparent self-start">功能函数</ui-button>
+                <ui-checkbox v-el:myfun4 class="self-center">构造实现</ui-checkbox>
+                <ui-checkbox v-el:myfun5 class="self-center">单例实现</ui-checkbox>
+            </div>
+
+            <div class="layout vertical">
+                <ui-button class="blue transparent self-start">按钮事件函数</ui-button>
+                <ui-checkbox v-el:efun1>Btn_Close</ui-checkbox>
+                <ui-checkbox v-el:efun2>Btn_Start</ui-checkbox>
+                <ui-checkbox v-el:efun3>Btn_Return</ui-checkbox>
+                <ui-checkbox v-el:efun4>Btn_Restart</ui-checkbox>
+                <ui-checkbox v-el:efun5>Btn_SetUp</ui-checkbox>
+                <ui-checkbox v-el:efun6>Btn_Tech</ui-checkbox>
+                <ui-checkbox v-el:efun7>Btn_Pause</ui-checkbox>
+            </div>
+
+        </div>
+    </ui-box-container>
+</ui-section>
+
+<div class="layout horizontal justified">
+    <ui-button @confirm="onMakeDir" class="blue self-start">创建目录</ui-button>
+    <!-- 代码创建功能集 -->
+    <div class="layout horizontal center">
+        <ui-button @confirm="onClearName" class="green self-end">清空</ui-button>
+        <ui-button @confirm="onPreview" class="green self-end">预览</ui-button>
+        <ui-button @confirm="onCreate" class="red self-end">创建</ui-button>
+        <ui-button @confirm="onCreate_Str" class="red self-end">强创建</ui-button>
+        <!-- <ui-button @confirm="onRefresh" class="red self-end">刷新</ui-button> -->
+    </div>
+</div>
+
+<ui-section>
+    <div class="header">预览脚本</div>
+    <ui-text-area v-el:sript_perview id="sript_perview" resize-v placeholder="预览脚本" readonly></ui-text-area>
+</ui-section>
+
+<div>Tips: <span v-el:tip>--</span></div>

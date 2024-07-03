@@ -1,0 +1,8 @@
+import { UIModelBase } from '$IMPORT_PATH/c2f-framework/gui/layer/UIModelBase';
+
+const { ccclass, property } = cc._decorator;
+@ccclass
+export default class $CLASS_NAME extends UIModelBase {
+    /** 预制名 给实例调用 */
+    public prefabName = '$PREFAB_NAME';
+}

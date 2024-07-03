@@ -1,0 +1,17 @@
+import { UIPControlBase } from '$IMPORT_PATH/c2f-framework/gui/layer/UIPControlBase';
+import { C2FEnum } from '$IMPORT_PATH/c2f-framework/define/C2FEnum';
+import  $CLASS_NAMEModel from './$CLASS_NAMEModel';
+import  $CLASS_NAMEView from './$CLASS_NAMEView';
+
+const { ccclass, property } = cc._decorator;
+@ccclass
+export default class $CLASS_NAME extends UIPControlBase {
+    /** 预制名 给实例调用 */
+    public prefabName = '$PREFAB_NAME';
+
+    public model: $CLASS_NAMEModel = undefined;
+    public view: $CLASS_NAMEView = undefined;
+
+$CTRL_KEY_BTN_FUNCTION
+
+}

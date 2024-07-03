@@ -38,4 +38,13 @@ export namespace UIPa {
 
 
 
+    export interface Physics2048ItemArgs {
+        color: string,
+        score: number,
+        url: string,
+        radius: number,
+        /**回调 */
+        cbFun: Function
+    }
+
 }

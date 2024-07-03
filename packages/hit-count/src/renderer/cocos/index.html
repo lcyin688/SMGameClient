@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../../../lib/vue.global.prod.js" defer></script>
+</head>
+
+<body>
+    <div ref="app" id="app">
+        <div class="view">
+            <!-- 画布 -->
+            <canvas ref="canvas" class="canvas"></canvas>
+        </div>
+        <div class="content">
+            <div class="greeting"> {{ greeting }} </div>
+            <div class="properties">
+                <!-- 应用按钮 -->
+                <button class="apply-btn" @click="onApplyBtnClick">{{ i18n('apply') }}</button>
+            </div>
+            <div style="width: 100%; height: 200;margin: 0 0 0 0 ;">
+                <hr style="margin: 0 0 0 0 ;" />
+                <h2 style="margin: 0 0 0 0">日志:</h2>
+                <textarea class="content" id="logTextArea" v-model="logView"
+                    style="width: 100%; height: 180px; background: #252525;	resize: none; color: #fd942b;	border-color: #fd942b;"></textarea>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "hit-count",
+  "version": "1.2.0.20210717",
+  "description": "打击点统计",
+  "author": {
+    "name": "slin",
+    "email": "123456@qq.com",
+    "url": "https://www.baidu.com/"
+  },
+  "license": "MIT",
+  "main": "src/main.js",
+  "main-menu": {
+    "i18n:MAIN_MENU.package.title/c2f工具箱/打击点统计": {
+      "message": "hit-count:open-cocos-panel",
+      "icon": "/images/update.png"
+    }
+  },
+  "panel.cocos": {
+    "main": "src/renderer/cocos/main.js",
+    "type": "dockable",
+    "title": "打击点统计",
+    "width": 900,
+    "height": 350,
+    "min-width": 500,
+    "min-height": 350
+  },
+  "reload": {
+    "renderer": [
+      "src/renderer/cocos/**/*"
+    ],
+    "ignore": [
+      "config.json",
+      "CHANGELOG.md",
+      "README.md",
+      "README.en.md"
+    ]
+  }
+}

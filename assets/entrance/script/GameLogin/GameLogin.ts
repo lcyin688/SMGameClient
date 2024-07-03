@@ -83,8 +83,12 @@ export default class GameLogin extends UIVControlBase {
             c2f.gui.open(UIID.DesStarMain,)
         });
     }
-                    
+
+
     private CC_onClickbtn2048() {
+        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
+            c2f.gui.open(UIID.Physics2048Main,)
+        });
     }
-            
-    }
+
+}

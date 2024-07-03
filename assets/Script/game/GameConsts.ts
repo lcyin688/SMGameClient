@@ -26,13 +26,34 @@ export namespace GameConsts {
     /** 资源版本号 */
     export const ResVersion = 'SZRES_VERSION';
 
-
+    //数字缩写范围(从大到小)
+    export const ShortNum_CN = [
+        {
+            //兆
+            value: 1000000000000,
+            fixNum: 4,
+            txt: 25,
+        },
+        {
+            //亿
+            value: 100000000,
+            fixNum: 4,
+            txt: 24,
+        },
+        {
+            //万
+            value: 10000,
+            fixNum: 4,
+            txt: 23,
+        },
+    ]
 
 
     /** 资源路径 */
     export enum ResUrl {
         /** 消灭星星 */
         desStar = 'ab:mainPack/image/ui/desStar/',
+        physics2048 = 'ab:mainPack/image/ui/physics2048/',
         /** 背景音乐 */
         music = 'audio/music/',
         /** 游戏音效 */
@@ -48,6 +69,9 @@ export namespace GameConsts {
     export enum CmmPrefab {
         /** 星星单个 */
         blockItem = 'ab:mainPack/prefab/desStar/P_BlockItem',
+        /** 2048单个 */
+        physics2048Item = 'ab:mainPack/prefab/physics2048/P_Physics2048Item',
+
 
     }
 
@@ -71,7 +95,21 @@ export namespace GameConsts {
         soundBg: 'soundBg',
         /**当前关卡 */
         curLv: 'curLv',
+        /**2048 当前最大档位 */
+        curHistory2048MaxLv: "curHistory2048MaxLv",
     }
-    
 
+    /** 道具品质颜色 */
+    export const Physics2048Item = {
+        [0]: { color: '#FFFFFF', score: 2, url: ResUrl.physics2048 + "block_0", radius: 20 },
+        [1]: { color: '#FFFFFF', score: 4, url: ResUrl.physics2048 + "block_0", radius: 30 },
+        [2]: { color: '#FFFFFF', score: 8, url: ResUrl.physics2048 + "block_0", radius: 40 },
+        [3]: { color: '#FFFFFF', score: 16, url: ResUrl.physics2048 + "block_0", radius: 50 },
+        [4]: { color: '#FFFFFF', score: 32, url: ResUrl.physics2048 + "block_0", radius: 60 },
+        [5]: { color: '#FFFFFF', score: 64, url: ResUrl.physics2048 + "block_0", radius: 80 },
+        [6]: { color: '#FFFFFF', score: 128, url: ResUrl.physics2048 + "block_0", radius: 100 },
+        [7]: { color: '#FFFFFF', score: 256, url: ResUrl.physics2048 + "block_0", radius: 140 },
+        [8]: { color: '#FFFFFF', score: 512, url: ResUrl.physics2048 + "block_0", radius: 180 },
+        [9]: { color: '#FFFFFF', score: 1024, url: ResUrl.physics2048 + "block_0", radius: 300 },
+    }
 }
