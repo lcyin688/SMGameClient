@@ -11,10 +11,12 @@ export default class SoundSetView extends UIViewBase {
     /** 预制名 给实例调用 */
     public prefabName = 'V_SoundSet';
 
-    public soundEff: cc.Node;
-    public soundEffToggle: cc.Toggle = undefined;
     public soundBg: cc.Node;
-    public soundBgToggle: cc.Toggle = undefined;
+    public soundBgSprite: cc.Sprite = undefined;
+    public soundBgButton: cc.Button = undefined;
+    public soundEff: cc.Node;
+    public soundEffSprite: cc.Sprite = undefined;
+    public soundEffButton: cc.Button = undefined;
     public btnClose: cc.Node;
     public btnCloseSprite: cc.Sprite = undefined;
     public btnCloseButton: cc.Button = undefined;
@@ -40,10 +42,12 @@ export default class SoundSetView extends UIViewBase {
 
     protected initProperty() {
         super.initProperty();
-        this.soundEff = this.get('_soundEff_');
-        this.soundEffToggle = this.soundEff.getComponent(cc.Toggle);
         this.soundBg = this.get('_soundBg_');
-        this.soundBgToggle = this.soundBg.getComponent(cc.Toggle);
+        this.soundBgSprite = this.soundBg.getComponent(cc.Sprite);
+        this.soundBgButton = this.soundBg.getComponent(cc.Button);
+        this.soundEff = this.get('_soundEff_');
+        this.soundEffSprite = this.soundEff.getComponent(cc.Sprite);
+        this.soundEffButton = this.soundEff.getComponent(cc.Button);
         this.btnClose = this.get('_btnClose_');
         this.btnCloseSprite = this.btnClose.getComponent(cc.Sprite);
         this.btnCloseButton = this.btnClose.getComponent(cc.Button);
@@ -51,25 +55,25 @@ export default class SoundSetView extends UIViewBase {
     }
 
     private addEvent() {
-        this.soundEffToggle.node.on('toggle', this.onsoundEffToggleToggle, this);
-        this.soundBgToggle.node.on('toggle', this.onsoundBgToggleToggle, this);
+        this.soundBgButton.node.on('click', this.onsoundBgButtonClick, this);
+        this.soundEffButton.node.on('click', this.onsoundEffButtonClick, this);
         this.btnCloseButton.node.on('click', this.onbtnCloseButtonClick, this);
 
     }
 
     private removeEvent() {
-        this.soundEffToggle.node.off('toggle', this.onsoundEffToggleToggle, this);
-        this.soundBgToggle.node.off('toggle', this.onsoundBgToggleToggle, this);
+        this.soundBgButton.node.off('click', this.onsoundBgButtonClick, this);
+        this.soundEffButton.node.off('click', this.onsoundEffButtonClick, this);
         this.btnCloseButton.node.off('click', this.onbtnCloseButtonClick, this);
 
     }
 
-    private onsoundEffToggleToggle(component: cc.Toggle) {
-        this.emit('toggle', component);
+    private onsoundBgButtonClick(component: cc.Button) {
+        this.emit('click', component);
     }
 
-    private onsoundBgToggleToggle(component: cc.Toggle) {
-        this.emit('toggle', component);
+    private onsoundEffButtonClick(component: cc.Button) {
+        this.emit('click', component);
     }
 
     private onbtnCloseButtonClick(component: cc.Button) {

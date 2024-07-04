@@ -62,6 +62,9 @@ export namespace GameConsts {
         uiEfx = 'ab:mainPack/spine/ui/',
         /** UI根目录 */
         uiRoot = 'ab:mainPack/image/ui/',
+        entrance = 'ab:entrance/image/',
+
+
 
     }
 
@@ -99,17 +102,5 @@ export namespace GameConsts {
         curHistory2048MaxLv: "curHistory2048MaxLv",
     }
 
-    /** 道具品质颜色 */
-    export const Physics2048Item = {
-        [0]: { color: '#FFFFFF', score: 2, url: ResUrl.physics2048 + "block_0", radius: 20 },
-        [1]: { color: '#FFFFFF', score: 4, url: ResUrl.physics2048 + "block_0", radius: 30 },
-        [2]: { color: '#FFFFFF', score: 8, url: ResUrl.physics2048 + "block_0", radius: 40 },
-        [3]: { color: '#FFFFFF', score: 16, url: ResUrl.physics2048 + "block_0", radius: 50 },
-        [4]: { color: '#FFFFFF', score: 32, url: ResUrl.physics2048 + "block_0", radius: 60 },
-        [5]: { color: '#FFFFFF', score: 64, url: ResUrl.physics2048 + "block_0", radius: 80 },
-        [6]: { color: '#FFFFFF', score: 128, url: ResUrl.physics2048 + "block_0", radius: 100 },
-        [7]: { color: '#FFFFFF', score: 256, url: ResUrl.physics2048 + "block_0", radius: 140 },
-        [8]: { color: '#FFFFFF', score: 512, url: ResUrl.physics2048 + "block_0", radius: 180 },
-        [9]: { color: '#FFFFFF', score: 1024, url: ResUrl.physics2048 + "block_0", radius: 300 },
-    }
+
 }

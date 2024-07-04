@@ -20,8 +20,7 @@ export class TouchEffect extends cc.Component {
         let worldPoint = event.getLocation();
         let posInNode = this.node.convertToNodeSpaceAR(worldPoint);
         let spNode = new cc.Node()
-        spNode.x = posInNode.x;
-        spNode.y = posInNode.y;
+        spNode.setPosition(posInNode)
         spNode.scale = 1
         spNode.angle = Math.random() * 360;
         let newSpine = spNode.addComponent(sp.Skeleton)
@@ -35,6 +34,5 @@ export class TouchEffect extends cc.Component {
         newSpine.setCompleteListener(function (data) {
             spNode.destroy();
         });
-        //TODO: 添加点击音效
     }
 }

@@ -31,6 +31,15 @@ export default class SoundSet extends UIVControlBase {
     private async onButtonClick(eventType: string, component: cc.Button) {
         switch (component.name) {
 
+            case this.view.soundBgButton.name:
+                this.CC_onClicksoundBg();
+                break;
+
+            case this.view.soundEffButton.name:
+                this.CC_onClicksoundEff();
+                break;
+
+
             case this.view.btnCloseButton.name:
                 this.CC_onClickbtnClose();
                 break;
@@ -49,26 +58,31 @@ export default class SoundSet extends UIVControlBase {
     protected onViewOpen(param: any) {
         let soundEffCloseState = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff)
         let soundBgCloseState = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
-        this.view.soundEffToggle.isChecked = !soundEffCloseState;
-        this.view.soundBgToggle.isChecked = !soundBgCloseState;
-        this.view.soundEff.on('toggle', (toggle) => {
-            if (toggle.isChecked) {
-                c2f.storage.set(GameConsts.StorageKey.soundEff, false);
-            } else {
-                c2f.storage.set(GameConsts.StorageKey.soundEff, true);
-            }
-            c2f.audio.sfxPause = !toggle.isChecked
-        }, this);
-        this.view.soundBg.on('toggle', (toggle) => {
-            if (toggle.isChecked) {
-                c2f.storage.set(GameConsts.StorageKey.soundBg, false);
-            } else {
-                c2f.storage.set(GameConsts.StorageKey.soundBg, true);
-            }
-            c2f.audio.bgmPause = !toggle.isChecked
-        }, this);
+        this.setSoundBgState(soundEffCloseState)
+        this.setSoundEffState(soundBgCloseState)
+    }
+
+    private setSoundBgState(state: boolean) {
+        let url = state ? GameConsts.ResUrl.entrance + "btn_shengyin2" : GameConsts.ResUrl.entrance + "btn_shengyin1"
+        c2f.utils.view.changeSpriteFrame(this.view.soundBgSprite, url)
+    }
+
+    private setSoundEffState(state: boolean) {
+        let url = state ? GameConsts.ResUrl.entrance + "btn_shengyin2" : GameConsts.ResUrl.entrance + "btn_shengyin1"
+        c2f.utils.view.changeSpriteFrame(this.view.soundEffSprite, url)
+    }
+
+    private CC_onClicksoundBg() {
+        let soundBgCloseState = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
+        this.setSoundBgState(!soundBgCloseState)
+        c2f.storage.set(GameConsts.StorageKey.soundBg, !soundBgCloseState);
     }
 
 
+    private CC_onClicksoundEff() {
+        let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff)
+        this.setSoundBgState(!state)
+        c2f.storage.set(GameConsts.StorageKey.soundEff, !state);
+    }
 
 }

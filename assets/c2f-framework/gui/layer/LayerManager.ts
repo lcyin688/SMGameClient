@@ -7,6 +7,7 @@ import { LayerPopUp } from "./LayerPopup";
 import { LayerUI } from "./LayerUI";
 import { UIMap } from "./UIMap";
 import { LayerEffect } from "./LayerEffect";
+import { TouchEffect } from "../view/TouchEffect";
 
 export class LayerManager {
     /** 界面根节点 */
@@ -31,7 +32,7 @@ export class LayerManager {
     /** 新手引导层 */
     private guide!: LayerUI;
     /** 点击特效层 */
-    private touchEfx: LayerEffect;
+    private touchEfx: TouchEffect;
 
     /** UI配置 */
     private uiCfgs: ViewConfig = {};
@@ -77,8 +78,6 @@ export class LayerManager {
         this.system = new LayerDialog(LayerType.System);
         this.notify = new LayerNotify(LayerType.Notify);
         this.guide = new LayerUI(LayerType.Guide);
-        this.touchEfx = new LayerEffect(LayerType.TouchEfx);
-
         root.addChild(this.game);
         root.addChild(this.ui);
         root.addChild(this.popup);
@@ -86,7 +85,8 @@ export class LayerManager {
         root.addChild(this.system);
         root.addChild(this.notify);
         root.addChild(this.guide);
-        root.addChild(this.touchEfx);
+        this.touchEfx = c2f.utils.view.getFirstChildByName(this.root, 'TouchEffect').getComponent(TouchEffect)
+        this.touchEfx.node.setSiblingIndex(this.root.childrenCount);
     }
 
     /**
@@ -107,17 +107,10 @@ export class LayerManager {
     }
 
     /**
-     * 点击特效
-     */
-    public addClickEfx() {
-        this.touchEfx.addClickEfx();
-    }
-
-    /**
      * 添加水波纹特效
      */
     public addWaterWaveEfx(dur: number) {
-        this.touchEfx.addWaterWaveEfx(dur);
+        // this.touchEfx.addWaterWaveEfx(dur);
     }
 
     /**

@@ -254,23 +254,6 @@ export class UIHelper {
         return totalHitCnt;
     }
 
-    /** 获取英雄某技能总伤害次数: 动作的hit个数 x 释放特效的hit个数*/
-    static getHitTimes(atkerId: number, skillId: number, skin: number) {
-        const sklConf: csv.SkillDef = GMConf.skillConfData(skillId);
-        let totalHitCnt = 0;
-        if (GameCalc.isHero(atkerId)) {
-            const heroConf: csv.MonsterDef = GMConf.monsterConfData(atkerId);
-            const roleConf = GMConf.roleConfData(heroConf.role);
-            const actionName = sklConf.skillAnim;
-            totalHitCnt = this.getHitTimesByInfo(roleConf.spine, actionName);
-        } else if (GameCalc.isDBeast(atkerId)) {
-            const beastConf = GMConf.divineBeastConfData(atkerId);
-            const roleConf = GMConf.roleConfData(beastConf.role);
-            const actionName = sklConf.skillAnim;
-            totalHitCnt = this.getHitTimesByInfo(roleConf.spine, actionName);
-        }
-        return totalHitCnt || 1;
-    }
 
     /** 显示网络错误 */
     static showNetError(code: number) {
@@ -478,49 +461,8 @@ export class UIHelper {
         })
     }
 
-    /** 物品的名字获取 */
-    static getNameById(id: number) {
-        let name = ""
-        if (GameCalc.isHero(id)) {
-            let cfgItem = GMConf.monsterConfData(id);
-            if (cfgItem) {
-                name = cfgItem.name
-            }
-        } else if (GameCalc.isDBeast(id)) {
-            const cfgItem = GMConf.divineBeastConfData(id);
-            if (cfgItem) {
-                name = cfgItem.name
-            }
-        } else {
-            const cfgItem: csv.ItemDef = GMConf.itemConfData(id);
-            if (cfgItem) {
-                name = cfgItem.name
-            }
-        }
-        return name
-    }
 
-    /** 物品的品质获取 */
-    static getQualityById(id: number) {
-        let quality: number = 1
-        if (GameCalc.isHero(id)) {
-            let cfgItem = GMConf.monsterConfData(id);
-            if (cfgItem) {
-                quality = GameHelper.starConversionQuality(cfgItem.star)
-            }
-        } else if (GameCalc.isDBeast(id)) {
-            const cfgItem = GMConf.divineBeastConfData(id);
-            if (cfgItem) {
-                quality = cfgItem.quality
-            }
-        } else {
-            const cfgItem: csv.ItemDef = GMConf.itemConfData(id);
-            if (cfgItem) {
-                quality = cfgItem.quality
-            }
-        }
-        return quality
-    }
+
 
     static playSkeAni(skeItem: sp.Skeleton, aniName: string, callBack: Function = null, isloop: boolean = false, trackIndex: number = 0) {
         skeItem.node.active = true

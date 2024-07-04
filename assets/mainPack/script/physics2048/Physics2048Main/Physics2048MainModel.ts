@@ -1,4 +1,5 @@
 import { GameConsts } from '../../../../Script/game/GameConsts';
+import Physics2048Item from '../Physics2048Item/Physics2048Item';
 import { UIModelBase } from './../../../../c2f-framework/gui/layer/UIModelBase';
 
 const { ccclass, property } = cc._decorator;
@@ -11,6 +12,8 @@ export default class Physics2048MainModel extends UIModelBase {
     public curMaxCount: number = 0
     public visibleSize: cc.Size
     public blockItem: cc.Prefab;
+    public physics2048Item: Physics2048Item;
+    public isCanCreateNew: boolean;
     public initData() {
         this.curHistoryMaxLv = c2f.storage.getNumber(GameConsts.StorageKey.curHistory2048MaxLv)
         this.visibleSize = cc.view.getVisibleSize()
@@ -28,6 +31,7 @@ export default class Physics2048MainModel extends UIModelBase {
         } else {
             index = 3
         }
+        return index
     }
 
 }

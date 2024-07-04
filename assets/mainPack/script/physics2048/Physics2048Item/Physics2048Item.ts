@@ -15,7 +15,12 @@ export default class Physics2048Item extends UIPControlBase {
 
     public setInit(data: UIPa.Physics2048ItemArgs) {
         this.model.initData(data)
+        this.initView(data)
+    }
 
+    private initView(data: UIPa.Physics2048ItemArgs) {
+        let numStr = data.colorNum
+        this.view.txtNumRichText.string = numStr
     }
 
 }

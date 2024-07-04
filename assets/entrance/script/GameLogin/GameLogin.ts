@@ -51,7 +51,6 @@ export default class GameLogin extends UIVControlBase {
 
 
     protected start(): void {
-        c2f.gui.addClickEfx();
         UIHelper.playMusic('backMusic');
 
     }

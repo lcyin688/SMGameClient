@@ -12,8 +12,8 @@ export default class Physics2048ItemView extends UIPanelBase {
 
     public icon: cc.Node;
     public iconSprite: cc.Sprite = undefined;
-    public iconRigidBody: cc.RigidBody = undefined;
-    public iconPhysicsCircleCollider: cc.PhysicsCircleCollider = undefined;
+    public txtNum: cc.Node;
+    public txtNumRichText: cc.RichText = undefined;
     
 
     public onLoad() {
@@ -38,8 +38,8 @@ export default class Physics2048ItemView extends UIPanelBase {
         super.initProperty();
         this.icon = this.get('_icon_');
         this.iconSprite = this.icon.getComponent(cc.Sprite);
-        this.iconRigidBody = this.icon.getComponent(cc.RigidBody);
-        this.iconPhysicsCircleCollider = this.icon.getComponent(cc.PhysicsCircleCollider);
+        this.txtNum = this.get('_txtNum_');
+        this.txtNumRichText = this.txtNum.getComponent(cc.RichText);
         
     }
 

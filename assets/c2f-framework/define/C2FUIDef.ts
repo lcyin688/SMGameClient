@@ -104,8 +104,7 @@ export enum LayerType {
     Notify = "LayerNotify",
     /** 新手引导层 */
     Guide = "LayerGuide",
-    /** 点击特效 */
-    TouchEfx = "LayerTouchEfx",
+
 }
 
 export interface UIConfig {
