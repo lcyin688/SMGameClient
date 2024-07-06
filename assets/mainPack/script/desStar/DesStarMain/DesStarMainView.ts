@@ -11,13 +11,21 @@ export default class DesStarMainView extends UIViewBase {
     /** 预制名 给实例调用 */
     public prefabName = 'F_DesStarMain';
 
+    public bar: cc.Node;
+    public barSprite: cc.Sprite = undefined;
+    public barProgressBar: cc.ProgressBar = undefined;
+    public txtLv: cc.Node;
+    public txtLvLabel: cc.Label = undefined;
+    public txtLvLabelOutline: cc.LabelOutline = undefined;
+    public txtScore: cc.Node;
+    public txtScoreLabel: cc.Label = undefined;
+    public txtScoreLabelOutline: cc.LabelOutline = undefined;
     public content: cc.Node;
-    public contentSprite: cc.Sprite = undefined;
+    public reward: cc.Node;
+    public rewardSprite: cc.Sprite = undefined;
     public btnMenu: cc.Node;
     public btnMenuSprite: cc.Sprite = undefined;
     public btnMenuButton: cc.Button = undefined;
-    public txtLv: cc.Node;
-    public txtLvLabel: cc.Label = undefined;
     
 
     public onLoad() {
@@ -40,13 +48,21 @@ export default class DesStarMainView extends UIViewBase {
 
     protected initProperty() {
         super.initProperty();
+        this.bar = this.get('_bar_');
+        this.barSprite = this.bar.getComponent(cc.Sprite);
+        this.barProgressBar = this.bar.getComponent(cc.ProgressBar);
+        this.txtLv = this.get('_txtLv_');
+        this.txtLvLabel = this.txtLv.getComponent(cc.Label);
+        this.txtLvLabelOutline = this.txtLv.getComponent(cc.LabelOutline);
+        this.txtScore = this.get('_txtScore_');
+        this.txtScoreLabel = this.txtScore.getComponent(cc.Label);
+        this.txtScoreLabelOutline = this.txtScore.getComponent(cc.LabelOutline);
         this.content = this.get('_content_');
-        this.contentSprite = this.content.getComponent(cc.Sprite);
+        this.reward = this.get('_reward_');
+        this.rewardSprite = this.reward.getComponent(cc.Sprite);
         this.btnMenu = this.get('_btnMenu_');
         this.btnMenuSprite = this.btnMenu.getComponent(cc.Sprite);
         this.btnMenuButton = this.btnMenu.getComponent(cc.Button);
-        this.txtLv = this.get('_txtLv_');
-        this.txtLvLabel = this.txtLv.getComponent(cc.Label);
         
     }
 

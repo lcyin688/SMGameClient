@@ -18,15 +18,31 @@ export default class DesStarMainModel extends UIModelBase {
     public blockItem: cc.Prefab;
     /** 行  列 */
     public starItemMap: Map<number, Map<number, BlockItem>>
+    public totalShowScore: number
+    public curScore: number
+
     public initData() {
         this.blockTotalNum = 5
         this.curLv = c2f.storage.getNumber(GameConsts.StorageKey.curLv)
         this.visibleSize = cc.view.getVisibleSize()
         this.getDataByLv(this.curLv)
         // this.getCfgStr()
+
     }
     public getDataByLv(lv: number) {
+        //测试
+        lv = 20
         this.starDataArr = this.getStarDataArr(lv)
+        this.curScore = 0
+        this.totalShowScore = 0
+        let scorTotal = 0
+        this.starDataArr.forEach(vv => {
+            vv.forEach(v => {
+                let item = UIPa.StarItemData[v]
+                scorTotal += item.score
+            });
+        });
+        this.totalShowScore = Math.ceil(scorTotal * 0.8)
     }
 
     private getStarDataArr(lv: number) {

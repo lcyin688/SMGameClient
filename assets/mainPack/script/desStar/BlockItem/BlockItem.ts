@@ -51,14 +51,13 @@ export default class BlockItem extends UIPControlBase {
 
     public setInit(data: UIPa.DesStarItemArgs) {
         this.model.initData(data)
-        this.initView(data.typ)
+        this.initView(data)
     }
 
-    public initView(id: number) {
-        if (id >= 0) {
+    public initView(data: UIPa.DesStarItemArgs) {
+        if (data.typ >= 0) {
             this.node.active = true
-            let url = `${GameConsts.ResUrl.desStar}block_${id}`
-            c2f.utils.view.changeSpriteFrame(this.view.iconSprite, url)
+            c2f.utils.view.changeSpriteFrame(this.view.iconSprite, data.url)
         } else {
             this.node.active = false
         }

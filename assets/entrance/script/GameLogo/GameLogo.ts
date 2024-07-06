@@ -5,6 +5,9 @@ import GameLogoView from './GameLogoView';
 import { PlatDef } from '../platform/PlatDefine';
 import { PopViewParams } from '../../../c2f-framework/define/C2FUIDef';
 import { EntranceUI } from '../EntranceView';
+import { GameHelper } from '../../../Script/game/GameHelper';
+import { GameConsts } from '../../../Script/game/GameConsts';
+import { UIHelper } from '../../../Script/game/UIHelper';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -36,7 +39,14 @@ export default class GameLogo extends UIVControlBase {
     }
 
     protected onViewOpen(param: any) {
+        this.initAudioState()
+    }
 
+    private initAudioState() {
+        let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
+        c2f.audio.bgmOff = state;
+        let stateEff = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff)
+        c2f.audio.sfxOff = stateEff;
     }
 
     protected onLoad(): void {
@@ -70,12 +80,18 @@ export default class GameLogo extends UIVControlBase {
     }
 
     private openLoginView() {
+        UIHelper.playMusic('backMusic');
         let uic: PopViewParams = {
             onUIAdded: (node: cc.Node, params: any) => {
                 c2f.gui.remove(EntranceUI.GameLogo);
             },
         }
-        c2f.gui.open(EntranceUI.GameLogin, null, uic);
+        // c2f.gui.open(EntranceUI.GameLogin, null, uic);
+        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
+            c2f.gui.open(UIID.DesStarMain, null, uic)
+        });
+
+
     }
 
 }

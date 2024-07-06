@@ -11,17 +11,22 @@ export namespace UIPa {
         controlPoint?: cc.Vec3[],
     }
     export const DesStarGameArgs = {
-        width: 80,
-        heigh: 80,
+        width: 66,
+        heigh: 66,
         count: 10,
     }
-    export interface DesStarItemArgs {
-        /**类型 */
-        typ: number,
+    export interface DesStarItemArgs extends DesStarItemBase {
+
         column: number,
         row: number,
         /**回调 */
         cbFun: Function
+    }
+    export interface DesStarItemBase {
+        /**类型 */
+        typ: number,
+        score: number,
+        url: string
     }
 
     export interface DesStarBase {
@@ -37,6 +42,20 @@ export namespace UIPa {
         toRow: number,
         toCol: number
     }
+
+
+    /** 道具品质颜色 */
+    export const StarItemData = {
+        [0]: { score: 1, url: GameConsts.ResUrl.desStar + "block_0" },
+        [1]: { score: 2, url: GameConsts.ResUrl.desStar + "block_1" },
+        [2]: { score: 5, url: GameConsts.ResUrl.desStar + "block_2" },
+        [3]: { score: 5, url: GameConsts.ResUrl.desStar + "block_3" },
+        [4]: { score: 10, url: GameConsts.ResUrl.desStar + "block_4" },
+        [5]: { score: 10, url: GameConsts.ResUrl.desStar + "block_5" },
+        [6]: { score: 20, url: GameConsts.ResUrl.desStar + "block_6" },
+        [7]: { score: 20, url: GameConsts.ResUrl.desStar + "block_7" },
+    }
+
 
 
 

@@ -58,31 +58,40 @@ export default class SoundSet extends UIVControlBase {
     protected onViewOpen(param: any) {
         let soundEffCloseState = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff)
         let soundBgCloseState = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
-        this.setSoundBgState(soundEffCloseState)
-        this.setSoundEffState(soundBgCloseState)
+        this.setSoundBgState(soundBgCloseState)
+        this.setSoundEffState(soundEffCloseState)
     }
 
     private setSoundBgState(state: boolean) {
         let url = state ? GameConsts.ResUrl.entrance + "btn_shengyin2" : GameConsts.ResUrl.entrance + "btn_shengyin1"
         c2f.utils.view.changeSpriteFrame(this.view.soundBgSprite, url)
+        c2f.audio.bgmOff = state;
     }
 
     private setSoundEffState(state: boolean) {
         let url = state ? GameConsts.ResUrl.entrance + "btn_shengyin2" : GameConsts.ResUrl.entrance + "btn_shengyin1"
         c2f.utils.view.changeSpriteFrame(this.view.soundEffSprite, url)
+        c2f.audio.sfxOff = state;
     }
 
     private CC_onClicksoundBg() {
-        let soundBgCloseState = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
-        this.setSoundBgState(!soundBgCloseState)
-        c2f.storage.set(GameConsts.StorageKey.soundBg, !soundBgCloseState);
+        UIHelper.playEffect("betClick")
+        let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
+        this.setSoundBgState(!state)
+        c2f.storage.set(GameConsts.StorageKey.soundBg, !state);
+
+
+
     }
 
 
     private CC_onClicksoundEff() {
+        UIHelper.playEffect("betClick")
         let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff)
-        this.setSoundBgState(!state)
+        this.setSoundEffState(!state)
         c2f.storage.set(GameConsts.StorageKey.soundEff, !state);
+
+
     }
 
 }
