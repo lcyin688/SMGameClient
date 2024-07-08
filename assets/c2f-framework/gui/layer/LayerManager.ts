@@ -31,6 +31,7 @@ export class LayerManager {
     private notify!: LayerNotify;
     /** 新手引导层 */
     private guide!: LayerUI;
+
     /** UI配置 */
     private uiCfgs: ViewConfig = {};
     /** 游戏字体 */

@@ -3,12 +3,15 @@
 import { GameConsts } from "../../../../Script/game/GameConsts";
 
 export class PublicData {
-
+    public isMouseDown: boolean;
     constructor() {
         this.reset();
     }
     public reset() {
+        this.isMouseDown = false;
     }
+
+
 
 
 
