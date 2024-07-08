@@ -4,7 +4,7 @@
   "importer": "folder",
   "isBundle": true,
   "bundleName": "mainPack",
-  "priority": 4,
+  "priority": 2,
   "compressionType": {},
   "optimizeHotUpdate": {},
   "inlineSpriteFrames": {},

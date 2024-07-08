@@ -55,6 +55,8 @@ export default class BlockItem extends UIPControlBase {
     }
 
     public initView(data: UIPa.DesStarItemArgs) {
+        this.view.skeKuang.active = false
+        this.view.skeBoom.active = false
         if (data.typ >= 0) {
             this.node.active = true
             c2f.utils.view.changeSpriteFrame(this.view.iconSprite, data.url)
@@ -63,9 +65,17 @@ export default class BlockItem extends UIPControlBase {
         }
     }
     /**消除特效 */
-    public playExplode() {
-        this.node.active = false
+    public playExplode(callBack: Function) {
         UIHelper.playEffect('pop_star');
+        UIHelper.playSkeAni(this.view.skeBoomSkeleton, "boom", () => {
+            this.node.active = false
+            this.view.skeKuang.active = false
+            this.view.skeBoom.active = false
+            callBack()
+        }, false, 0, 3)
     }
 
+    public playChoose() {
+        UIHelper.playSkeAni(this.view.skeKuangSkeleton, "ani")
+    }
 }

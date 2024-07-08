@@ -20,6 +20,7 @@ export default class DesStarMainView extends UIViewBase {
     public txtScore: cc.Node;
     public txtScoreLabel: cc.Label = undefined;
     public txtScoreLabelOutline: cc.LabelOutline = undefined;
+    public endPos: cc.Node;
     public content: cc.Node;
     public reward: cc.Node;
     public rewardSprite: cc.Sprite = undefined;
@@ -57,6 +58,7 @@ export default class DesStarMainView extends UIViewBase {
         this.txtScore = this.get('_txtScore_');
         this.txtScoreLabel = this.txtScore.getComponent(cc.Label);
         this.txtScoreLabelOutline = this.txtScore.getComponent(cc.LabelOutline);
+        this.endPos = this.get('_endPos_');
         this.content = this.get('_content_');
         this.reward = this.get('_reward_');
         this.rewardSprite = this.reward.getComponent(cc.Sprite);

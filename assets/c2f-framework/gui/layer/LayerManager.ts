@@ -31,9 +31,6 @@ export class LayerManager {
     private notify!: LayerNotify;
     /** 新手引导层 */
     private guide!: LayerUI;
-    /** 点击特效层 */
-    private touchEfx: TouchEffect;
-
     /** UI配置 */
     private uiCfgs: ViewConfig = {};
     /** 游戏字体 */
@@ -85,8 +82,6 @@ export class LayerManager {
         root.addChild(this.system);
         root.addChild(this.notify);
         root.addChild(this.guide);
-        this.touchEfx = c2f.utils.view.getFirstChildByName(this.root, 'TouchEffect').getComponent(TouchEffect)
-        this.touchEfx.node.setSiblingIndex(this.root.childrenCount);
     }
 
     /**

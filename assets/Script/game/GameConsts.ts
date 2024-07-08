@@ -72,6 +72,10 @@ export namespace GameConsts {
     export enum CmmPrefab {
         /** 星星单个 */
         blockItem = 'ab:mainPack/prefab/desStar/P_BlockItem',
+        P_StartItem = 'ab:mainPack/prefab/desStar/P_StartItem',
+
+
+
         /** 2048单个 */
         physics2048Item = 'ab:mainPack/prefab/physics2048/P_Physics2048Item',
 

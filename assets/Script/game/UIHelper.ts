@@ -1,6 +1,5 @@
 /** UI相关工具函数汇总·不可引入子包文件 */
 
-import { GMConf } from "../config/GMConf";
 import { GameCalc } from "./GameCalculator";
 import { GameConsts } from "./GameConsts";
 import { GameHelper } from "./GameHelper";
@@ -255,40 +254,6 @@ export class UIHelper {
     }
 
 
-    /** 显示网络错误 */
-    static showNetError(code: number) {
-        if (cc.assetManager.getBundle(GameConsts.Bundle.mainPack)) {
-            let { QuickDisplay } = require('QuickDisplay');
-            QuickDisplay.showNetError(code);
-        } else {
-            let tips = '';
-            const isDisconnect = code == 99999 ? true : false;
-            const errConf = GMConf.errorCodeConfData(code);
-            if (errConf) {
-                tips = errConf.des;
-            }
-            if (tips.length <= 0 && isDisconnect) {
-                tips = c2f.language.words(509);
-            }
-            if (isDisconnect) {
-                c2f.gui.hideLoading(true);
-            }
-            let { EntranceUI } = require('EntranceView');
-            c2f.gui.open(
-                EntranceUI.PromptSimple,
-                {
-                    title: c2f.language.words(11),
-                    content: tips,
-                    okWord: c2f.language.words(1),
-                    okFunc: () => {
-                        if (isDisconnect) {
-                            szg.plat.sdkLogout();
-                        }
-                    },
-                });
-        }
-    }
-
 
     /** 处理技能文本颜色 */
     static getskillDes(skillDes: string, isActive: boolean) {
@@ -411,15 +376,6 @@ export class UIHelper {
     }
 
 
-    /** 提示所需XX不足 */
-    static notifyItemNotEnough(id: number) {
-        let conf = GMConf.itemConfData(id);
-        if (conf) {
-            c2f.gui.notifyTxt(c2f.language.words(500).format(conf.name));
-        } else {
-            c2f.gui.notifyTxt(c2f.language.words(500).format(id));
-        }
-    }
 
     /** 艺术字标题设置: eg. 七日狂欢|#925C41|#FFEFA6|#FBFDF4*/
     static setShaderArtLabelString(label: cc.Component, title: string) {
@@ -464,10 +420,11 @@ export class UIHelper {
 
 
 
-    static playSkeAni(skeItem: sp.Skeleton, aniName: string, callBack: Function = null, isloop: boolean = false, trackIndex: number = 0) {
+    static playSkeAni(skeItem: sp.Skeleton, aniName: string, callBack: Function = null, isloop: boolean = false, trackIndex: number = 0, timeScale: number = 1) {
         skeItem.node.active = true
         // skeItem.clearTracks()
         skeItem.setAnimation(trackIndex, aniName, isloop);
+        skeItem.timeScale = timeScale
         skeItem.setCompleteListener((data) => {
             if (callBack) {
                 callBack()

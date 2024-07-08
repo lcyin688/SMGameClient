@@ -7,6 +7,7 @@ import { UIHelper } from '../../../../Script/game/UIHelper';
 import { GameConsts } from '../../../../Script/game/GameConsts';
 import BlockItem from '../BlockItem/BlockItem';
 import { UIPa } from '../../../../Script/game/UIParam';
+import StartItem from '../StartItem/StartItem';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -21,6 +22,8 @@ export default class DesStarMain extends UIVControlBase {
         this.model.initData()
         this.resetGame()
         this.loadTabItemFirst(this.startGame.bind(this))
+        this.loadStarItem()
+        UIHelper.playEffect('ready_go');
     }
 
 
@@ -65,6 +68,12 @@ export default class DesStarMain extends UIVControlBase {
         })
     }
 
+    public async loadStarItem() {
+        await c2f.res.loadOne(GameConsts.CmmPrefab.P_StartItem, cc.Prefab).then((resItem: cc.Prefab) => {
+            this.model.startItem = resItem;
+        })
+    }
+
     private initItemArr() {
         this.model.starItemMap = new Map();
         for (let row = 0; row < 10; row++) {
@@ -89,7 +98,6 @@ export default class DesStarMain extends UIVControlBase {
         this.view.barProgressBar.progress = perNum;
     }
     private startGame() {
-        UIHelper.playEffect('ready_go');
         this.setBarView()
         this.model.isActionRunning = false
         if (!this.model.starItemMap) {
@@ -139,6 +147,7 @@ export default class DesStarMain extends UIVControlBase {
             rowAndCol = result[i];
             //播放爆炸效果  应该是要爆炸后飞星星特效
             let item = this.model.starItemMap.get(rowAndCol.row).get(rowAndCol.column);
+            item.playChoose();
             score += item.model.data.score
             starDataArr[rowAndCol.row][rowAndCol.column] = -1;
         }
@@ -147,13 +156,15 @@ export default class DesStarMain extends UIVControlBase {
         for (let i = 0; i < result.length; i++) {
             rowAndCol = result[i];
             //播放爆炸效果  应该是要爆炸后飞星星特效
+            UIHelper.playEffect('getMoney');
             let item = this.model.starItemMap.get(rowAndCol.row).get(rowAndCol.column);
             tweenItem.call(() => {
-                item.playExplode();
                 this.model.curScore += item.model.data.score
-                this.setBarView()
-
-            }).delay(0.05)
+                item.playExplode(() => {
+                    this.setBarView()
+                    this.playStartAni(item.node)
+                });
+            }).delay(0.02)
         }
         let countHave = this.getHaveCount()
         tweenItem.call(() => {
@@ -164,11 +175,31 @@ export default class DesStarMain extends UIVControlBase {
                 } else {
                     this.drawBlock(starDataArr)
                 }
-            }, 1)
+            }, 0.8)
         }).start()
 
 
     }
+
+    private playStartAni(nodeTemp: cc.Node) {
+        let itemNode = c2f.utils.view.instantiateMVCPrefab(this.model.startItem, this.view.content);
+        this.view.content.addChild(itemNode)
+        let starItem = itemNode.getComponent(StartItem)
+        starItem.playAni()
+        itemNode.setPosition(nodeTemp.position)
+
+        let worldPoint = this.view.endPos.parent.convertToWorldSpaceAR(this.view.endPos.position);
+        let endPos = this.view.content.convertToNodeSpaceAR(worldPoint);
+        let config: UIPa.MoveConfig = {
+            startPos: nodeTemp.position,
+            endPos: endPos,
+        }
+        UIHelper.createBezier(itemNode, config)
+        cc.tween(itemNode).to(0.8, {}, UIHelper.createBezier(itemNode, config)).delay(0.2).call(() => {
+            itemNode.destroy()
+        }).start()
+    }
+
 
     private showReward(score: number) {
         UIHelper.playEffect('select');
@@ -358,7 +389,12 @@ export default class DesStarMain extends UIVControlBase {
                     let typ = this.model.starDataArr[row][column]
                     let item = this.model.starItemMap.get(row).get(column);
                     if (typ > 0) {
-                        item.playExplode();
+                        this.model.curScore += item.model.data.score
+                        item.playChoose();
+                        item.playExplode(() => {
+                            this.setBarView()
+                            this.playStartAni(item.node)
+                        });
                     }
                     break;
                 }
@@ -369,10 +405,12 @@ export default class DesStarMain extends UIVControlBase {
         }
     }
     private enterNextLv() {
-        this.model.curLv++
-        c2f.storage.setNumber(GameConsts.StorageKey.curLv, this.model.curLv)
-        this.model.getDataByLv(this.model.curLv)
-        this.startGame()
+        this.scheduleOnce(() => {
+            this.model.curLv++
+            c2f.storage.setNumber(GameConsts.StorageKey.curLv, this.model.curLv)
+            this.model.getDataByLv(this.model.curLv)
+            this.startGame()
+        }, 1)
     }
 
     private resetGame() {

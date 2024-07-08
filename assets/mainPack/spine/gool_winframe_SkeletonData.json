@@ -1,0 +1,128 @@
+{
+	"skeleton": {
+		"hash": "zPKx/eacGLJ6fhaTCCj+4yRiQ9s",
+		"spine": "3.7.91",
+		"width": 206,
+		"height": 188
+	},
+	"bones": [
+		{
+			"name": "root"
+		}
+	],
+	"slots": [
+		{
+			"name": "images/winframe_00000",
+			"bone": "root",
+			"attachment": "images/winframe_00000"
+		}
+	],
+	"skins": {
+		"default": {
+			"images/winframe_00000": {
+				"images/winframe_00000": {
+					"width": 206,
+					"height": 188
+				},
+				"images/winframe_00002": {
+					"width": 206,
+					"height": 188
+				},
+				"images/winframe_00004": {
+					"width": 206,
+					"height": 188
+				},
+				"images/winframe_00006": {
+					"width": 206,
+					"height": 188
+				},
+				"images/winframe_00008": {
+					"width": 206,
+					"height": 188
+				},
+				"images/winframe_00010": {
+					"width": 206,
+					"height": 188
+				},
+				"images/winframe_00012": {
+					"width": 206,
+					"height": 188
+				},
+				"images/winframe_00014": {
+					"width": 206,
+					"height": 188
+				}
+			}
+		}
+	},
+	"animations": {
+		"ani": {
+			"slots": {
+				"images/winframe_00000": {
+					"attachment": [
+						{
+							"time": 0.0667,
+							"name": "images/winframe_00002"
+						},
+						{
+							"time": 0.1333,
+							"name": "images/winframe_00004"
+						},
+						{
+							"time": 0.2,
+							"name": "images/winframe_00006"
+						},
+						{
+							"time": 0.2667,
+							"name": "images/winframe_00008"
+						},
+						{
+							"time": 0.3333,
+							"name": "images/winframe_00010"
+						},
+						{
+							"time": 0.4,
+							"name": "images/winframe_00012"
+						},
+						{
+							"time": 0.4667,
+							"name": "images/winframe_00014"
+						},
+						{
+							"time": 0.5,
+							"name": "images/winframe_00000"
+						},
+						{
+							"time": 0.5667,
+							"name": "images/winframe_00002"
+						},
+						{
+							"time": 0.6333,
+							"name": "images/winframe_00004"
+						},
+						{
+							"time": 0.7,
+							"name": "images/winframe_00006"
+						},
+						{
+							"time": 0.7667,
+							"name": "images/winframe_00008"
+						},
+						{
+							"time": 0.8333,
+							"name": "images/winframe_00010"
+						},
+						{
+							"time": 0.9,
+							"name": "images/winframe_00012"
+						},
+						{
+							"time": 0.9667,
+							"name": "images/winframe_00014"
+						}
+					]
+				}
+			}
+		}
+	}
+}

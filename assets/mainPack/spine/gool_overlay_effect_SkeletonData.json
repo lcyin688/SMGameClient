@@ -1,0 +1,167 @@
+{
+	"skeleton": {
+		"hash": "hJ+4yFO/8QVZ6JrGB5dd0nXAACg",
+		"spine": "3.7.91",
+		"width": 558,
+		"height": 521
+	},
+	"bones": [
+		{
+			"name": "root"
+		}
+	],
+	"slots": [
+		{
+			"name": "overlay_effect_4x/overlay_effect_4x_00006",
+			"bone": "root",
+			"attachment": "overlay_effect_4x/overlay_effect_4x_00032",
+			"blend": "additive"
+		}
+	],
+	"skins": {
+		"default": {
+			"overlay_effect_4x/overlay_effect_4x_00006": {
+				"overlay_effect_4x/overlay_effect_4x_00006": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00008": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00010": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00012": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00014": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00016": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00018": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00020": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00022": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00024": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00026": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00028": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00030": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				},
+				"overlay_effect_4x/overlay_effect_4x_00032": {
+					"y": 0.5,
+					"width": 558,
+					"height": 521
+				}
+			}
+		}
+	},
+	"animations": {
+		"boom": {
+			"slots": {
+				"overlay_effect_4x/overlay_effect_4x_00006": {
+					"attachment": [
+						{
+							"time": 0,
+							"name": null
+						},
+						{
+							"time": 0.0667,
+							"name": "overlay_effect_4x/overlay_effect_4x_00008"
+						},
+						{
+							"time": 0.1333,
+							"name": "overlay_effect_4x/overlay_effect_4x_00010"
+						},
+						{
+							"time": 0.2,
+							"name": "overlay_effect_4x/overlay_effect_4x_00012"
+						},
+						{
+							"time": 0.2667,
+							"name": "overlay_effect_4x/overlay_effect_4x_00014"
+						},
+						{
+							"time": 0.3333,
+							"name": "overlay_effect_4x/overlay_effect_4x_00016"
+						},
+						{
+							"time": 0.4,
+							"name": "overlay_effect_4x/overlay_effect_4x_00018"
+						},
+						{
+							"time": 0.4667,
+							"name": "overlay_effect_4x/overlay_effect_4x_00020"
+						},
+						{
+							"time": 0.5333,
+							"name": "overlay_effect_4x/overlay_effect_4x_00022"
+						},
+						{
+							"time": 0.6,
+							"name": "overlay_effect_4x/overlay_effect_4x_00024"
+						},
+						{
+							"time": 0.6667,
+							"name": "overlay_effect_4x/overlay_effect_4x_00026"
+						},
+						{
+							"time": 0.7333,
+							"name": "overlay_effect_4x/overlay_effect_4x_00028"
+						},
+						{
+							"time": 0.8,
+							"name": "overlay_effect_4x/overlay_effect_4x_00030"
+						},
+						{
+							"time": 0.8667,
+							"name": "overlay_effect_4x/overlay_effect_4x_00032"
+						},
+						{
+							"time": 0.9333,
+							"name": null
+						}
+					]
+				}
+			}
+		}
+	}
+}

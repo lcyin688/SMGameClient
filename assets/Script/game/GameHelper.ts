@@ -1,6 +1,5 @@
 /** 游戏全域级工具类·不可引入子包文件 */
 
-import { GMConf } from "../config/GMConf";
 import { GameCalc } from "./GameCalculator";
 import { GameConsts } from "./GameConsts";
 import { UIPa } from "./UIParam";

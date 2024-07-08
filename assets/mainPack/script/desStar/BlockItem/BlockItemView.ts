@@ -12,6 +12,10 @@ export default class BlockItemView extends UIPanelBase {
 
     public icon: cc.Node;
     public iconSprite: cc.Sprite = undefined;
+    public skeBoom: cc.Node;
+    public skeBoomSkeleton: sp.Skeleton = undefined;
+    public skeKuang: cc.Node;
+    public skeKuangSkeleton: sp.Skeleton = undefined;
     public btn: cc.Node;
     public btnButton: cc.Button = undefined;
     
@@ -38,6 +42,10 @@ export default class BlockItemView extends UIPanelBase {
         super.initProperty();
         this.icon = this.get('_icon_');
         this.iconSprite = this.icon.getComponent(cc.Sprite);
+        this.skeBoom = this.get('_skeBoom_');
+        this.skeBoomSkeleton = this.skeBoom.getComponent(sp.Skeleton);
+        this.skeKuang = this.get('_skeKuang_');
+        this.skeKuangSkeleton = this.skeKuang.getComponent(sp.Skeleton);
         this.btn = this.get('_btn_');
         this.btnButton = this.btn.getComponent(cc.Button);
         

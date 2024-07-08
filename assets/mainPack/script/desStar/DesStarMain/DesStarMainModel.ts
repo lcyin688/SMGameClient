@@ -16,6 +16,9 @@ export default class DesStarMainModel extends UIModelBase {
     public isActionRunning: boolean
     public visibleSize: cc.Size
     public blockItem: cc.Prefab;
+    public startItem: cc.Prefab;
+
+
     /** 行  列 */
     public starItemMap: Map<number, Map<number, BlockItem>>
     public totalShowScore: number
@@ -30,8 +33,6 @@ export default class DesStarMainModel extends UIModelBase {
 
     }
     public getDataByLv(lv: number) {
-        //测试
-        lv = 20
         this.starDataArr = this.getStarDataArr(lv)
         this.curScore = 0
         this.totalShowScore = 0

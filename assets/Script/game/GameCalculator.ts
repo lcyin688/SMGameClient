@@ -3,7 +3,6 @@
  * 
  */
 
-import { GMConf } from "../config/GMConf";
 import { GameConsts } from "./GameConsts";
 
 
