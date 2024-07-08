@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "P_MapItem",
+    "_name": "P_MapCreatItem",
     "_objFlags": 0,
     "_parent": null,
     "_children": [

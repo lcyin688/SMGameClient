@@ -67,6 +67,11 @@ export default class GameLogin extends UIVControlBase {
                 this.CC_onClickbtn2048();
                 break;
 
+            case this.view.btnCreateMapButton.name:
+                this.CC_onClickbtnCreateMap();
+                break;
+
+
 
 
 
@@ -79,14 +84,21 @@ export default class GameLogin extends UIVControlBase {
 
     private CC_onClickbtnStart() {
         GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
-            c2f.gui.open(UIID.DesStarMain,)
+            c2f.gui.open(UIID.DesStarMain)
         });
     }
 
 
     private CC_onClickbtn2048() {
         GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
-            c2f.gui.open(UIID.Physics2048Main,)
+            c2f.gui.open(UIID.Physics2048Main)
+        });
+    }
+
+
+    private CC_onClickbtnCreateMap() {
+        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
+            c2f.gui.open(UIID.MapCreateMain)
         });
     }
 

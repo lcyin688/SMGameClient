@@ -11,6 +11,8 @@ export class PublicData {
     public reset() {
     }
 
+    public isMouseDown: boolean;
+
 
 
 }

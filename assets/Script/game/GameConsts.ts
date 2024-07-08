@@ -74,8 +74,8 @@ export namespace GameConsts {
         blockItem = 'ab:mainPack/prefab/desStar/P_BlockItem',
         /** 2048单个 */
         physics2048Item = 'ab:mainPack/prefab/physics2048/P_Physics2048Item',
-
-
+        /** 星星单个 */
+        mapCreatItem = 'ab:mainPack/prefab/mapCreate/P_MapCreatItem',
     }
 
     /** 道具品质颜色·双色 */
