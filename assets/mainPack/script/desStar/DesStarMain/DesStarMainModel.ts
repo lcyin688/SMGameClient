@@ -30,8 +30,6 @@ export default class DesStarMainModel extends UIModelBase {
 
     }
     public getDataByLv(lv: number) {
-        //测试
-        lv = 20
         this.starDataArr = this.getStarDataArr(lv)
         this.curScore = 0
         this.totalShowScore = 0
@@ -80,48 +78,6 @@ export default class DesStarMainModel extends UIModelBase {
         }
         return arr
     }
-    /**生成配置 */
-    private getCfgStr() {
-        let str = ""
-        for (let i = 1; i < 10; i++) {
-            str += this.getStarAllData(i)
-        }
-        console.log(str)
-    }
-    //读取配置中的元素
-    private getStarAllData(index: number) {
-        let str = ""
-        let arr: number[][] = [
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        ];
-        str += "[" + index + "]: [\n"
-        for (let col = 0; col < 10; col++) {
-            str += "["
-            for (let row = 0; row < 10; row++) {
-                let num = c2f.random.getRandomInt(0, this.blockTotalNum, 1)
-                arr[col][row] = num
-                str += num + ","
-            }
-            if (col < 9) {
-                str += "],\n"
-            } else {
-                str += "]\n"
-            }
-
-        }
-        str += "],\n"
-        return str
-    }
-
 
     public getStarPosition(column: number, row: number): cc.Vec3 {
         const w = UIPa.DesStarGameArgs.width;

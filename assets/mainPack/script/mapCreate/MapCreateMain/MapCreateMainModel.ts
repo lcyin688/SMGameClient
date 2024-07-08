@@ -34,9 +34,6 @@ export default class MapCreateMainModel extends UIModelBase {
     }
 
     public initData() {
-
-
-
         let curIndex = this.getCurIndex()
         this.starDataArr = this.initStarDataArr(curIndex)
     }

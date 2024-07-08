@@ -69,6 +69,7 @@ export default class GameLogo extends UIVControlBase {
 
     private initLanguage() {
         c2f.language.initLanguage(this.playLogoAnima.bind(this));
+        szg.player.initModules()
     }
 
 

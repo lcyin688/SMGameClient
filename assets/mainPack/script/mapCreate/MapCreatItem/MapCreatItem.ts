@@ -2,6 +2,7 @@ import { UIPControlBase } from './../../../../c2f-framework/gui/layer/UIPControl
 import { C2FEnum } from './../../../../c2f-framework/define/C2FEnum';
 import MapCreatItemModel from './MapCreatItemModel';
 import MapCreatItemView from './MapCreatItemView';
+import { UIPa } from '../../../../Script/game/UIParam';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -25,6 +26,11 @@ export default class MapCreatItem extends UIPControlBase {
             super.onDisable();
         }
         this.off(C2FEnum.UIEvent.ButtonClick);
+    }
+
+    protected onLoad(): void {
+        // 添加鼠标移动事件监听器
+        this.node.on(cc.Node.EventType.MOUSE_MOVE, this.onMouseMove, this);
     }
 
     private async onButtonClick(eventType: string, component: cc.Button) {
@@ -57,6 +63,14 @@ export default class MapCreatItem extends UIPControlBase {
             c2f.utils.view.changeSpriteFrame(this.view.iconSprite, data.url)
         } else {
             this.node.active = false
+        }
+    }
+
+
+    // 鼠标移动事件处理器
+    onMouseMove(event) {
+        if (szg.player.public.isMouseDown) {
+            this.CC_onClickbtn()
         }
     }
 

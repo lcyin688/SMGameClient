@@ -20,8 +20,7 @@ export default class MapCreateMain extends UIVControlBase {
         // 添加鼠标按下事件监听器
         this.node.on(cc.Node.EventType.MOUSE_DOWN, this.onMouseDown, this);
         this.node.on(cc.Node.EventType.MOUSE_UP, this.onMouseUp, this);
-        // 添加鼠标移动事件监听器
-        this.node.on(cc.Node.EventType.MOUSE_MOVE, this.onMouseMove, this);
+
 
     }
 
@@ -63,18 +62,27 @@ export default class MapCreateMain extends UIVControlBase {
     }
 
     private CC_onClickbtnSave() {
-        // var Path = require('path');
-        // var relativePath = Path.relative(__dirname, Path.join(Editor.projectInfo.path, 'assets'));
-        // console.log(relativePath);
-        // let str = this.getStarAllData(this.model.curLv)
-        // var fs = require('fs');
-        // fs.writeFile('/output.txt', str, (err) => {
-        //     if (err) throw err;
-        //     console.log('The file has been saved!');
-        // });
-
-
+        let content = this.getStarAllData(this.model.curLv)
+        const fileName = "guanQiaTest.txt";
+        this.downloadTxtFile(content, fileName);
     }
+
+    private downloadTxtFile(content, fileName) {
+        // 创建一个新的 Blob 对象，传入文件的内容和 MIME 类型
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        // 创建一个隐藏的可下载链接
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = fileName;
+        link.style.display = 'none';
+        // 将链接添加到页面中并触发点击事件
+        document.body.appendChild(link);
+        link.click();
+        // 清理
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+    }
+
 
     //读取配置中的元素
     private getStarAllData(index: number) {
@@ -204,13 +212,6 @@ export default class MapCreateMain extends UIVControlBase {
         szg.player.public.isMouseDown = false
     }
 
-    // 鼠标移动事件处理器
-    onMouseMove(event) {
-        console.log('Mouse move to:', event.getLocation());
-        // 检查鼠标是否在UI上
-        // if (this.node.contains(event.target)) {
-        //     console.log('Mouse is still over the UI');
-        // }
-    }
+
 
 }

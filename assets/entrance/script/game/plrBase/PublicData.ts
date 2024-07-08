@@ -4,14 +4,15 @@ import { GMConf } from "../../../../Script/config/GMConf";
 import { GameConsts } from "../../../../Script/game/GameConsts";
 
 export class PublicData {
-
+    public isMouseDown: boolean;
     constructor() {
         this.reset();
     }
     public reset() {
+        this.isMouseDown = false;
     }
 
-    public isMouseDown: boolean;
+
 
 
 
