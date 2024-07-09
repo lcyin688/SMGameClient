@@ -399,7 +399,7 @@
     "_animationName": "ani",
     "_animationQueue": [],
     "_headAniInfo": null,
-    "_playTimes": 1,
+    "_playTimes": 0,
     "_isAniComplete": true,
     "_N$skeletonData": {
       "__uuid__": "cb68ab0f-632c-426a-88db-34c9300d3bcd"

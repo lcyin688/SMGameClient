@@ -375,7 +375,6 @@ export default class DesStarMain extends UIVControlBase {
                 let typ = row[j]
                 if (typ >= 0) {
                     count++
-                    break
                 }
             }
         }

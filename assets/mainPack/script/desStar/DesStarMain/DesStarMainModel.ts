@@ -25,7 +25,7 @@ export default class DesStarMainModel extends UIModelBase {
     public curScore: number
 
     public initData() {
-        this.blockTotalNum = 5
+        this.blockTotalNum = 8
         this.curLv = c2f.storage.getNumber(GameConsts.StorageKey.curLv)
         this.visibleSize = cc.view.getVisibleSize()
         this.getDataByLv(this.curLv)
@@ -73,14 +73,36 @@ export default class DesStarMainModel extends UIModelBase {
 
 
     private getStarLvData(arr: number[][]) {
+        let numArr = this.getRandomInt(0, this.blockTotalNum, 2)
         for (let col = 0; col < 10; col++) {
             for (let row = 0; row < 10; row++) {
-                let num = c2f.random.getRandomInt(0, this.blockTotalNum, 1)
-                arr[col][row] = num
+                let num = c2f.random.getRandomInt(0, 10, 1)
+                if (num > 5) {
+                    arr[col][row] = numArr[0]
+                } else {
+                    arr[col][row] = numArr[1]
+                }
+
             }
         }
         return arr
     }
+
+    private getRandomInt(min: number, max: number, count: number): number[] {
+        const result: number[] = [];
+        const range = max - min + 1;
+        let usedNumbers: Map<number, number> = new Map()
+        while (result.length < count) {
+            let randomNum = Math.floor(Math.random() * range) + min;
+            if (!usedNumbers.has(randomNum)) {
+                usedNumbers.set(randomNum, randomNum)
+                result.push(randomNum);
+            }
+        }
+        return result;
+    }
+
+
 
     public getStarPosition(column: number, row: number): cc.Vec3 {
         const w = UIPa.DesStarGameArgs.width;
