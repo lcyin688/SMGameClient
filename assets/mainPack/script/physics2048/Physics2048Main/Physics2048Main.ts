@@ -21,6 +21,7 @@ export default class Physics2048Main extends UIVControlBase {
 
 
     protected onLoad(): void {
+        GameHelper.setPhysics(true)
         this.node.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
         this.node.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
         this.node.on(cc.Node.EventType.TOUCH_END, this.onTouchEnd, this);
@@ -61,7 +62,7 @@ export default class Physics2048Main extends UIVControlBase {
 
     protected onViewOpen(param: any) {
         this.model.initData()
-        GameHelper.setPhysics(true)
+
         this.loadTabItemFirst(this.startView.bind(this))
     }
 
@@ -97,6 +98,7 @@ export default class Physics2048Main extends UIVControlBase {
         // c2f.gui.open(EntranceUI.SoundSet)
 
         c2f.gui.open(EntranceUI.GameLogin)
+        this.closeView()
     }
     public async loadTabItemFirst(cb) {
         await c2f.res.loadOne(GameConsts.CmmPrefab.physics2048Item, cc.Prefab).then((resItem: cc.Prefab) => {
