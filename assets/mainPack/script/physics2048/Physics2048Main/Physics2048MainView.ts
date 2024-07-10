@@ -11,14 +11,18 @@ export default class Physics2048MainView extends UIViewBase {
     /** 预制名 给实例调用 */
     public prefabName = 'F_Physics2048Main';
 
-    public content: cc.Node;
-    public contentSprite: cc.Sprite = undefined;
     public btnMenu: cc.Node;
     public btnMenuSprite: cc.Sprite = undefined;
     public btnMenuButton: cc.Button = undefined;
-    public txtLv: cc.Node;
-    public txtLvLabel: cc.Label = undefined;
+    public iconMax: cc.Node;
+    public iconMaxSprite: cc.Sprite = undefined;
+    public txtMaxScore: cc.Node;
+    public txtMaxScoreLabel: cc.Label = undefined;
     public initPos: cc.Node;
+    public content: cc.Node;
+    public contentWidget: cc.Widget = undefined;
+    public txtTotalScore: cc.Node;
+    public txtTotalScoreLabel: cc.Label = undefined;
     
 
     public onLoad() {
@@ -41,14 +45,18 @@ export default class Physics2048MainView extends UIViewBase {
 
     protected initProperty() {
         super.initProperty();
-        this.content = this.get('_content_');
-        this.contentSprite = this.content.getComponent(cc.Sprite);
         this.btnMenu = this.get('_btnMenu_');
         this.btnMenuSprite = this.btnMenu.getComponent(cc.Sprite);
         this.btnMenuButton = this.btnMenu.getComponent(cc.Button);
-        this.txtLv = this.get('_txtLv_');
-        this.txtLvLabel = this.txtLv.getComponent(cc.Label);
+        this.iconMax = this.get('_iconMax_');
+        this.iconMaxSprite = this.iconMax.getComponent(cc.Sprite);
+        this.txtMaxScore = this.get('_txtMaxScore_');
+        this.txtMaxScoreLabel = this.txtMaxScore.getComponent(cc.Label);
         this.initPos = this.get('_initPos_');
+        this.content = this.get('_content_');
+        this.contentWidget = this.content.getComponent(cc.Widget);
+        this.txtTotalScore = this.get('_txtTotalScore_');
+        this.txtTotalScoreLabel = this.txtTotalScore.getComponent(cc.Label);
         
     }
 

@@ -94,7 +94,9 @@ export default class Physics2048Main extends UIVControlBase {
 
     private CC_onClickbtnMenu() {
         UIHelper.playEffect('betClick');
-        c2f.gui.open(EntranceUI.SoundSet)
+        // c2f.gui.open(EntranceUI.SoundSet)
+
+        c2f.gui.open(EntranceUI.GameLogin)
     }
     public async loadTabItemFirst(cb) {
         await c2f.res.loadOne(GameConsts.CmmPrefab.physics2048Item, cc.Prefab).then((resItem: cc.Prefab) => {

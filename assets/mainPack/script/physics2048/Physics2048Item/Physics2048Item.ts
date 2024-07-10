@@ -19,8 +19,8 @@ export default class Physics2048Item extends UIPControlBase {
     }
 
     private initView(data: UIPa.Physics2048ItemArgs) {
-        let numStr = data.colorNum
-        this.view.txtNumRichText.string = numStr
+        c2f.utils.view.changeSpriteFrame(this.view.iconSprite, data.url)
+        this.view
     }
 
 }
