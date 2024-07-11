@@ -29,15 +29,21 @@ export default class Physics2048Main extends UIVControlBase {
     }
 
     private onTouchStart(event) {
-        this.setBlockItemPos(event)
+        if (!this.model.isCanCreateNew) {
+            this.setBlockItemPos(event)
+        }
     }
     private onTouchMove(event) {
-        this.setBlockItemPos(event)
+        if (!this.model.isCanCreateNew) {
+            this.setBlockItemPos(event)
+        }
     }
 
     private onTouchEnd(event) {
-        this.setBlockItemPos(event)
-        // this.playFallingAni()
+        if (!this.model.isCanCreateNew) {
+            this.setBlockItemPos(event)
+            this.playFallingAni()
+        }
     }
 
     private setBlockItemPos(event) {
@@ -50,19 +56,25 @@ export default class Physics2048Main extends UIVControlBase {
 
     private playFallingAni() {
         if (this.model.physics2048Item) {
+            this.model.totalScore += this.model.physics2048Item.model.data.score
+            this.model.physics2048Item.setRigidBodyType(cc.RigidBodyType.Dynamic)
             this.model.physics2048Item = null
+            this.reflashScore()
             //表演下落
-
             this.scheduleOnce(() => {
                 this.model.isCanCreateNew = true
+                this.foreceCreateNewItem()
             }, 2)
         }
     }
 
+    private reflashScore() {
+        this.view.txtTotalScoreLabel.string = "Score:{0}".format(this.model.totalScore)
+    }
 
     protected onViewOpen(param: any) {
         this.model.initData()
-
+        this.reflashScore()
         this.loadTabItemFirst(this.startView.bind(this))
     }
 
@@ -110,9 +122,13 @@ export default class Physics2048Main extends UIVControlBase {
     }
 
     private startView() {
+        this.foreceCreateNewItem()
+
+    }
+
+    private foreceCreateNewItem() {
         this.model.isCanCreateNew = true
         this.createNewItem()
-
     }
 
     private createNewItem() {
@@ -134,7 +150,20 @@ export default class Physics2048Main extends UIVControlBase {
         let space = nodeItem.parent.convertToNodeSpaceAR(world);
         nodeItem.setPosition(space)
         let itemData = UIPa.Physics2048ItemData[index]
-        blockItem.setInit(itemData)
+        blockItem.setInit(itemData, this.callBack.bind(this))
+        blockItem.setRigidBodyType(cc.RigidBodyType.Static)
+        //设置左上角当前元素
+        c2f.utils.view.changeSpriteFrame(this.view.iconMaxSprite, itemData.url)
+        this.view.txtCurScoreLabel.string = "X{0}".format(itemData.score)
+
+
+    }
+
+    private callBack(data: UIPa.Physics2048ItemArgs) {
+        //如果是最大分数就消失并飞上去
+
+
+
     }
 
 }

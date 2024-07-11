@@ -16,13 +16,17 @@ export default class Physics2048MainView extends UIViewBase {
     public btnMenuButton: cc.Button = undefined;
     public iconMax: cc.Node;
     public iconMaxSprite: cc.Sprite = undefined;
-    public txtMaxScore: cc.Node;
-    public txtMaxScoreLabel: cc.Label = undefined;
+    public txtCurScore: cc.Node;
+    public txtCurScoreLabel: cc.Label = undefined;
     public initPos: cc.Node;
     public content: cc.Node;
     public contentWidget: cc.Widget = undefined;
     public txtTotalScore: cc.Node;
     public txtTotalScoreLabel: cc.Label = undefined;
+    public icon: cc.Node;
+    public iconSprite: cc.Sprite = undefined;
+    public iconRigidBody: cc.RigidBody = undefined;
+    public iconPhysicsCircleCollider: cc.PhysicsCircleCollider = undefined;
     
 
     public onLoad() {
@@ -50,13 +54,17 @@ export default class Physics2048MainView extends UIViewBase {
         this.btnMenuButton = this.btnMenu.getComponent(cc.Button);
         this.iconMax = this.get('_iconMax_');
         this.iconMaxSprite = this.iconMax.getComponent(cc.Sprite);
-        this.txtMaxScore = this.get('_txtMaxScore_');
-        this.txtMaxScoreLabel = this.txtMaxScore.getComponent(cc.Label);
+        this.txtCurScore = this.get('_txtCurScore_');
+        this.txtCurScoreLabel = this.txtCurScore.getComponent(cc.Label);
         this.initPos = this.get('_initPos_');
         this.content = this.get('_content_');
         this.contentWidget = this.content.getComponent(cc.Widget);
         this.txtTotalScore = this.get('_txtTotalScore_');
         this.txtTotalScoreLabel = this.txtTotalScore.getComponent(cc.Label);
+        this.icon = this.get('_icon_');
+        this.iconSprite = this.icon.getComponent(cc.Sprite);
+        this.iconRigidBody = this.icon.getComponent(cc.RigidBody);
+        this.iconPhysicsCircleCollider = this.icon.getComponent(cc.PhysicsCircleCollider);
         
     }
 

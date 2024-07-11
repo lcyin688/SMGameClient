@@ -10,8 +10,6 @@ export default class Physics2048ItemView extends UIPanelBase {
     /** 预制名 给实例调用 */
     public prefabName = 'P_Physics2048Item';
 
-    public icon: cc.Node;
-    public iconSprite: cc.Sprite = undefined;
     
 
     public onLoad() {
@@ -34,8 +32,6 @@ export default class Physics2048ItemView extends UIPanelBase {
 
     protected initProperty() {
         super.initProperty();
-        this.icon = this.get('_icon_');
-        this.iconSprite = this.icon.getComponent(cc.Sprite);
         
     }
 

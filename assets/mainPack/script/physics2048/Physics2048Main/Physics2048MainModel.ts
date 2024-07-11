@@ -14,7 +14,9 @@ export default class Physics2048MainModel extends UIModelBase {
     public blockItem: cc.Prefab;
     public physics2048Item: Physics2048Item;
     public isCanCreateNew: boolean;
+    public totalScore: number
     public initData() {
+        this.totalScore = 0
         this.curHistoryMaxLv = c2f.storage.getNumber(GameConsts.StorageKey.curHistory2048MaxLv)
         this.visibleSize = cc.view.getVisibleSize()
     }
