@@ -55,6 +55,7 @@ export default class Physics2048Main extends UIVControlBase {
     }
 
     private playFallingAni() {
+        UIHelper.playEffect('physics2048click');
         if (this.model.physics2048Item) {
             this.model.totalScore += this.model.physics2048Item.model.data.score
             this.model.physics2048Item.setRigidBodyType(cc.RigidBodyType.Dynamic)

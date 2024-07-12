@@ -3,6 +3,7 @@ import { C2FEnum } from './../../../../c2f-framework/define/C2FEnum';
 import Physics2048ItemModel from './Physics2048ItemModel';
 import Physics2048ItemView from './Physics2048ItemView';
 import { UIPa } from '../../../../Script/game/UIParam';
+import { UIHelper } from '../../../../Script/game/UIHelper';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -18,6 +19,7 @@ export default class Physics2048Item extends UIPControlBase {
     private collider: cc.PhysicsCircleCollider;
 
     private init() {
+        this.view.ske.active = false
         if (!this.isInit) {
             this.iconSprite = this.node.getComponent(cc.Sprite)
             this.rigidBody = this.node.getComponent(cc.RigidBody)
@@ -66,11 +68,14 @@ export default class Physics2048Item extends UIPControlBase {
                     if (item.model.data) {
                         //播放个爆炸效果
                         if (item.model.data.tag < UIPa.PhysicsTag.block_2048) {
-                            let itemData = UIPa.Physics2048ItemData[item.model.data.tag]
-                            item.setInit(itemData, this.model.cbFun)
-                            if (this.model.cbFun) {
-                                this.model.cbFun(itemData)
-                            }
+                            UIHelper.playSkeAni(this.view.skeSkeleton, "animation", () => {
+
+                                let itemData = UIPa.Physics2048ItemData[item.model.data.tag]
+                                item.setInit(itemData, this.model.cbFun)
+                                if (this.model.cbFun) {
+                                    this.model.cbFun(itemData)
+                                }
+                            })
                         }
                     }
                 }
