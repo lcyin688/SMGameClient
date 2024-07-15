@@ -12,6 +12,9 @@ export default class Physics2048MainModel extends UIModelBase {
     public curMaxCount: number = 0
     public visibleSize: cc.Size
     public blockItem: cc.Prefab;
+    public boomItem: cc.Prefab;
+
+
     public physics2048Item: Physics2048Item;
     public isCanCreateNew: boolean;
     public totalScore: number

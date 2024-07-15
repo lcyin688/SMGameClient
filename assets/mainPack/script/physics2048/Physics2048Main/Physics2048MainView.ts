@@ -21,6 +21,8 @@ export default class Physics2048MainView extends UIViewBase {
     public initPos: cc.Node;
     public content: cc.Node;
     public contentWidget: cc.Widget = undefined;
+    public effect: cc.Node;
+    public effectWidget: cc.Widget = undefined;
     public txtTotalScore: cc.Node;
     public txtTotalScoreLabel: cc.Label = undefined;
     public icon: cc.Node;
@@ -59,6 +61,8 @@ export default class Physics2048MainView extends UIViewBase {
         this.initPos = this.get('_initPos_');
         this.content = this.get('_content_');
         this.contentWidget = this.content.getComponent(cc.Widget);
+        this.effect = this.get('_effect_');
+        this.effectWidget = this.effect.getComponent(cc.Widget);
         this.txtTotalScore = this.get('_txtTotalScore_');
         this.txtTotalScoreLabel = this.txtTotalScore.getComponent(cc.Label);
         this.icon = this.get('_icon_');

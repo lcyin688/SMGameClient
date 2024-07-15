@@ -10,8 +10,11 @@ export default class Physics2048ItemView extends UIPanelBase {
     /** 预制名 给实例调用 */
     public prefabName = 'P_Physics2048Item';
 
-    public ske: cc.Node;
-    public skeSkeleton: sp.Skeleton = undefined;
+    public weiBa: cc.Node;
+    public weiBaSprite: cc.Sprite = undefined;
+    public weiBaAnimation: cc.Animation = undefined;
+    public icon: cc.Node;
+    public iconSprite: cc.Sprite = undefined;
     
 
     public onLoad() {
@@ -34,8 +37,11 @@ export default class Physics2048ItemView extends UIPanelBase {
 
     protected initProperty() {
         super.initProperty();
-        this.ske = this.get('_ske_');
-        this.skeSkeleton = this.ske.getComponent(sp.Skeleton);
+        this.weiBa = this.get('_weiBa_');
+        this.weiBaSprite = this.weiBa.getComponent(cc.Sprite);
+        this.weiBaAnimation = this.weiBa.getComponent(cc.Animation);
+        this.icon = this.get('_icon_');
+        this.iconSprite = this.icon.getComponent(cc.Sprite);
         
     }
 

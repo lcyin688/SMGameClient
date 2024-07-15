@@ -8,6 +8,8 @@ import { GameConsts } from '../../../../Script/game/GameConsts';
 import Physics2048Item from '../Physics2048Item/Physics2048Item';
 import { UIPa } from '../../../../Script/game/UIParam';
 import { GameHelper } from '../../../../Script/game/GameHelper';
+import BlockItem from '../../desStar/BlockItem/BlockItem';
+import BoomItem from '../BoomItem/BoomItem';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -77,6 +79,10 @@ export default class Physics2048Main extends UIVControlBase {
         this.model.initData()
         this.reflashScore()
         this.loadTabItemFirst(this.startView.bind(this))
+        c2f.res.loadOne(GameConsts.CmmPrefab.boomItem, cc.Prefab).then((resItem: cc.Prefab) => {
+            this.model.boomItem = resItem;
+        })
+
     }
 
 
@@ -160,10 +166,16 @@ export default class Physics2048Main extends UIVControlBase {
 
     }
 
-    private callBack(data: UIPa.Physics2048ItemArgs) {
-        //如果是最大分数就消失并飞上去
-
-
+    private callBack(data: UIPa.Physics2048ItemArgs, startItem: cc.Node, cbFun: Function) {
+        let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.boomItem, this.view.effect);
+        this.view.effect.addChild(nodeItem)
+        let boomItem = nodeItem.getComponent(BoomItem)
+        let world = startItem.parent.convertToWorldSpaceAR(startItem.getPosition());
+        let space = nodeItem.parent.convertToNodeSpaceAR(world);
+        nodeItem.setPosition(space)
+        boomItem.playBoom(data, () => {
+            cbFun()
+        })
 
     }
 

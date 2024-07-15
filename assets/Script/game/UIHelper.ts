@@ -501,4 +501,51 @@ export class UIHelper {
         return opts
     }
 
+
+    /**
+     * 以某点为圆心，生成圆周上等分点的坐标
+     *
+     * @param {number} r 半径
+     * @param {cc.Vec2} pos 圆心坐标
+     * @param {number} count 等分点数量
+     * @param {number} [randomScope=80] 等分点的随机波动范围
+     * @returns {cc.Vec2[]} 返回等分点坐标
+     */
+    static getCirclePoints(r: number, pos: cc.Vec3 | cc.Vec2, count: number, randomScope: number = 20): cc.Vec2[] {
+        let points = [];
+        let radians = (Math.PI / 180) * Math.round(360 / count);
+        for (let i = 0; i < count; i++) {
+            let x = pos.x + r * Math.sin(radians * i);
+            let y = pos.y + r * Math.cos(radians * i);
+            points.unshift(cc.v3(x + Math.random() * randomScope, y + Math.random() * randomScope, 0));
+        }
+        return points;
+    }
+
+
+    /**
+     * 以某点为圆心，生成圆周上等分点的坐标
+     *
+     * @param {number} r1 起点半径
+     * @param {number} r2 终点点半径
+     * @param {cc.Vec2} pos 圆心坐标
+     * @param {number} count 等分点数量
+     * @param {number} [randomScope=80] 等分点的随机波动范围
+     * @returns {cc.Vec2[]} 返回等分点坐标
+     */
+    static getCirclePointsArr(r1: number, r2: number, pos: cc.Vec3 | cc.Vec2, count: number, randomScope: number = 20): cc.Vec3[][] {
+        let points: cc.Vec3[][] = [];
+        let radians = (Math.PI / 180) * Math.round(360 / count);
+        for (let i = 0; i < count; i++) {
+            let x1 = pos.x + r1 * Math.sin(radians * i);
+            let y1 = pos.y + r1 * Math.cos(radians * i);
+            let x2 = pos.x + r2 * Math.sin(radians * i);
+            let y2 = pos.y + r2 * Math.cos(radians * i);
+            let randomX = Math.random() * randomScope
+            let randomY = Math.random() * randomScope
+            let item = [cc.v3(x1 + randomX, y1 + randomY), cc.v3(x2 + randomX, y2 + randomY)]
+            points.push(item);
+        }
+        return points;
+    }
 }
