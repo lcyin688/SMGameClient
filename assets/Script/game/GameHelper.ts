@@ -149,11 +149,15 @@ export class GameHelper {
         physicsManager.enabled = state;
         physicsManager.debugDrawFlags = 0;
         cc.PhysicsManager.DrawBits.e_jointBit | cc.PhysicsManager.DrawBits.e_shapeBit;
+        physicsManager.enabledAccumulator = true
 
         var manager = cc.director.getCollisionManager();
         manager.enabled = true;
         manager.enabledDebugDraw = true;
         manager.enabledDrawBoundingBox = true;
+
+
+
 
     }
 

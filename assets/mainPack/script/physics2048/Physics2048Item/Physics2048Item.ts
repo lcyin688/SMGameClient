@@ -2,6 +2,7 @@ import { UIPControlBase } from './../../../../c2f-framework/gui/layer/UIPControl
 import Physics2048ItemModel from './Physics2048ItemModel';
 import Physics2048ItemView from './Physics2048ItemView';
 import { UIPa } from '../../../../Script/game/UIParam';
+import { UIHelper } from '../../../../Script/game/UIHelper';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -14,6 +15,7 @@ export default class Physics2048Item extends UIPControlBase {
     private isInit = false
     private rigidBody: cc.RigidBody;
     private collider: cc.PhysicsCircleCollider;
+
 
     private init() {
         if (!this.isInit) {
@@ -32,10 +34,15 @@ export default class Physics2048Item extends UIPControlBase {
 
     private initView(data: UIPa.Physics2048ItemArgs) {
         c2f.utils.view.changeSpriteFrame(this.view.iconSprite, data.url)
-        this.collider.radius = data.width / 2
+        let radius = data.radius
+        this.collider.radius = radius
         this.collider.tag = data.tag
         this.setRigidBodyEnabledContactListener(true)
-
+        this.node.active = false
+        this.scheduleOnce(() => {
+            this.node.setContentSize(radius * 1.8, radius * 1.8)
+            this.node.active = true
+        })
     }
     public setRigidBodyEnabledContactListener(state: boolean) {
         if (this.rigidBody) {
@@ -51,8 +58,6 @@ export default class Physics2048Item extends UIPControlBase {
 
     onBeginContact(contact: cc.PhysicsContact, collider1: cc.PhysicsCollider, collider2: cc.PhysicsCollider) {
         if (collider2.tag == collider1.tag && collider2.tag >= UIPa.PhysicsTag.block_2) {
-            console.log("onBeginContact 真高兴我们碰到一起了 002")
-            //变大后回调回去
             if (collider2.node) {
                 let item2 = collider2.node.getComponent(Physics2048Item)
                 if (item2) {
@@ -61,10 +66,11 @@ export default class Physics2048Item extends UIPControlBase {
                             let item1 = collider1.node.getComponent(Physics2048Item)
                             if (item1) {
                                 //找出主动碰撞的对象移动的快的是主动碰的
+                                contact.disabled = true;
                                 if (item1.rigidBody.linearVelocity.mag() > item2.rigidBody.linearVelocity.mag()) {
-                                    this.hitFun(item2, item1)
+                                    this.hitFun(item2, item1, contact)
                                 } else {
-                                    this.hitFun(item1, item2)
+                                    this.hitFun(item1, item2, contact)
                                 }
                             }
                         }
@@ -77,7 +83,7 @@ export default class Physics2048Item extends UIPControlBase {
     /**item1 被动的需要被删除
      * item2 主动的需要保留
      */
-    private hitFun(item1: Physics2048Item, item2: Physics2048Item) {
+    private hitFun(item1: Physics2048Item, item2: Physics2048Item, contact: cc.PhysicsContact) {
 
         item1.setRigidBodyEnabledContactListener(false)
         item1.collider.enabled = false
@@ -89,19 +95,34 @@ export default class Physics2048Item extends UIPControlBase {
             item1.rigidBody.angularVelocity = 0
             item1.rigidBody.fixedRotation = true
         }
-
-        cc.tween(item1.node).to(0.1, { scale: 0.1 }).call(() => {
-            // item1.node.active = false
-            // item1.node.destroy()
-        }).start()
-
         let itemData = UIPa.Physics2048ItemData[item2.model.data.tag]
+        cc.tween(item1.node).to(0.2, { scale: 0.1 }).call(() => {
+            item1.node.active = false
+            item1.node.destroy()
+            contact.disabled = false;
+            this.playWinSound(itemData.tag)
+        }).start()
         let callFun = () => {
-
+            //如果到了2048 就需要消除掉
+            if (item2.model.data.tag == UIPa.PhysicsTag.block_2048) {
+                item2.node.active = false
+                item2.node.destroy()
+            }
         }
         item2.setInit(itemData, this.model.cbFun)
         if (this.model.cbFun) {
-            this.model.cbFun(itemData, this.node, callFun)
+            this.model.cbFun(itemData, item2.node, callFun)
+        }
+    }
+    private playWinSound(tag: number) {
+        if (tag == UIPa.PhysicsTag.block_1024) {
+            UIHelper.playEffect("physics2048binggeSuper")
+        } else if (tag == UIPa.PhysicsTag.block_512) {
+            UIHelper.playEffect("physics2048binggeBan")
+        } else if (tag == UIPa.PhysicsTag.block_256) {
+            UIHelper.playEffect("physics2048binggeCool")
+        } else if (tag == UIPa.PhysicsTag.block_128) {
+            UIHelper.playEffect("physics2048binggeNice")
         }
     }
 

@@ -15,15 +15,15 @@ export default class BoomItem extends UIPControlBase {
     public model: BoomItemModel = undefined;
     public view: BoomItemView = undefined;
     public playBoom(data: UIPa.Physics2048ItemArgs, cbFun: Function) {
-        let dis = data.width / 2
+        let dis = data.radius
         this.moveAni1(dis)
         this.scheduleOnce(() => {
             cbFun()
             this.moveAni2(dis)
-        }, 0.5)
+        }, 0.2)
         this.scheduleOnce(() => {
             this.node.destroy()
-        }, 1)
+        }, 0.5)
     }
 
     private moveAni1(dis: number) {
@@ -35,7 +35,7 @@ export default class BoomItem extends UIPControlBase {
             bubble.setPosition(positions[i][0])
             let rodomScale = Math.random() * 0.5 + 0.5
             bubble.setScale(rodomScale, rodomScale)
-            cc.tween(bubble).to(0.5, { opacity: 20, scale: 1, position: positions[i][1] }).call((sender: Node) => {
+            cc.tween(bubble).to(0.3, { opacity: 20, scale: 1, position: positions[i][1] }).call((sender: Node) => {
                 bubble.destroy()
             }).start()
         }
@@ -49,7 +49,7 @@ export default class BoomItem extends UIPControlBase {
             bubble.setPosition(positions[i][0])
             let rodomScale = Math.random() * 0.5 + 0.5
             bubble.setScale(rodomScale, rodomScale)
-            cc.tween(bubble).to(0.5, { opacity: 20, scale: 1, position: positions[i][1] }).call((sender: Node) => {
+            cc.tween(bubble).to(0.3, { opacity: 20, scale: 1, position: positions[i][1] }).call((sender: Node) => {
                 bubble.destroy()
             }).start()
         }
