@@ -19,13 +19,19 @@ export default class DesStarMain extends UIVControlBase {
     public view: DesStarMainView = undefined;
 
     protected onViewOpen(param: any) {
+        this.initAudioState()
         this.model.initData()
         this.resetGame()
         this.loadTabItemFirst(this.startGame.bind(this))
         this.loadStarItem()
         UIHelper.playEffect('ready_go');
     }
-
+    private initAudioState() {
+        let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
+        c2f.audio.bgmOff = state;
+        let stateEff = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff)
+        c2f.audio.sfxOff = stateEff;
+    }
 
     protected onEnable(): void {
         if (super.onEnable) {
@@ -367,18 +373,30 @@ export default class DesStarMain extends UIVControlBase {
     }
 
     private getHaveCount(): number {
-        let count = 0
-        //只有一个的时候也需要完成
+        let maxCount = 0
+        //最多的只有一个的时候也需要完成
+        let mapItem: Map<number, number> = new Map()
         for (let i = 0; i < this.model.starDataArr.length; i++) {
             let row = this.model.starDataArr[i]
             for (let j = 0; j < row.length; j++) {
                 let typ = row[j]
                 if (typ >= 0) {
-                    count++
+                    let item = mapItem.get(typ)
+                    if (item) {
+                        let curCount = item + 1
+                        mapItem.set(typ, curCount)
+                    } else {
+                        mapItem.set(typ, 1)
+                    }
                 }
             }
         }
-        return count
+        mapItem.forEach(v => {
+            if (v > maxCount) {
+                maxCount = v
+            }
+        });
+        return maxCount
     }
 
     private winGame(count: number) {

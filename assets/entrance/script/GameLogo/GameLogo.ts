@@ -39,15 +39,9 @@ export default class GameLogo extends UIVControlBase {
     }
 
     protected onViewOpen(param: any) {
-        this.initAudioState()
+
     }
 
-    private initAudioState() {
-        let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
-        c2f.audio.bgmOff = state;
-        let stateEff = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff)
-        c2f.audio.sfxOff = stateEff;
-    }
 
     protected onLoad(): void {
         if (super.onLoad) {
@@ -81,7 +75,6 @@ export default class GameLogo extends UIVControlBase {
     }
 
     private openLoginView() {
-        UIHelper.playMusic('backMusic');
         let uic: PopViewParams = {
             onUIAdded: (node: cc.Node, params: any) => {
                 c2f.gui.remove(EntranceUI.GameLogo);

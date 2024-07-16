@@ -23,13 +23,19 @@ export default class Physics2048Main extends UIVControlBase {
 
 
     protected onLoad(): void {
+        this.initAudioState()
         GameHelper.setPhysics(true)
         this.node.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
         this.node.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
         this.node.on(cc.Node.EventType.TOUCH_END, this.onTouchEnd, this);
         this.node['_touchListener'].swallowTouches = false;
     }
-
+    private initAudioState() {
+        let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
+        c2f.audio.bgmOff = state;
+        let stateEff = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff)
+        c2f.audio.sfxOff = stateEff;
+    }
     private onTouchStart(event) {
         if (!this.model.isCanCreateNew) {
             this.setBlockItemPos(event)
