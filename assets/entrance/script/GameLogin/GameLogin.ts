@@ -63,6 +63,11 @@ export default class GameLogin extends UIVControlBase {
                 this.CC_onClickbtnStart();
                 break;
 
+            case this.view.btnBasketBallButton.name:
+                this.CC_onClickbtnBasketBall();
+                break;
+
+
             case this.view.btn2048Button.name:
                 this.CC_onClickbtn2048();
                 break;
@@ -99,6 +104,13 @@ export default class GameLogin extends UIVControlBase {
     private CC_onClickbtnCreateMap() {
         GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
             c2f.gui.open(UIID.MapCreateMain)
+        });
+    }
+
+
+    private CC_onClickbtnBasketBall() {
+        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
+            c2f.gui.open(UIID.BasketBallMain)
         });
     }
 

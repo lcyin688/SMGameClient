@@ -73,14 +73,18 @@ export namespace GameConsts {
         /** 星星单个 */
         blockItem = 'ab:mainPack/prefab/desStar/P_BlockItem',
         P_StartItem = 'ab:mainPack/prefab/desStar/P_StartItem',
-
-
+        mapCreatItem = 'ab:mainPack/prefab/mapCreate/P_MapCreatItem',
 
         /** 2048单个 */
         physics2048Item = 'ab:mainPack/prefab/physics2048/P_Physics2048Item',
         boomItem = 'ab:mainPack/prefab/physics2048/P_BoomItem',
-        /** 星星单个 */
-        mapCreatItem = 'ab:mainPack/prefab/mapCreate/P_MapCreatItem',
+
+        /** 篮球 */
+        ball = 'ab:mainPack/prefab/basketBall/P_Ball',
+
+
+        
+
     }
 
     /** 道具品质颜色·双色 */
@@ -107,5 +111,26 @@ export namespace GameConsts {
         curHistory2048MaxLv: "curHistory2048MaxLv",
     }
 
+
+
+    /** 篮球大战 接触状态*/
+    export enum TouchStatus {
+        /** 按下 */
+        BEGEN = 1,
+        /** 按下 */
+        ENDED = 2,
+        /** 按下*/
+        CANCEL = 3,
+    }
+
+    /** 篮球大战 状态*/
+    export enum BallStatus {
+        /** 飞 */
+        FLY = 1,
+        /** 落 */
+        DOWN = 2,
+        /** 静止*/
+        NONE = 3,
+    }
 
 }

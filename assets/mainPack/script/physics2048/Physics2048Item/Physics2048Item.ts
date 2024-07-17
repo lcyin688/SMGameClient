@@ -84,7 +84,6 @@ export default class Physics2048Item extends UIPControlBase {
      * item2 主动的需要保留
      */
     private hitFun(item1: Physics2048Item, item2: Physics2048Item, contact: cc.PhysicsContact) {
-
         item1.setRigidBodyEnabledContactListener(false)
         item1.collider.enabled = false
         item1.node.group = "ui"
@@ -100,6 +99,10 @@ export default class Physics2048Item extends UIPControlBase {
             item1.node.active = false
             item1.node.destroy()
             contact.disabled = false;
+            if (item2.rigidBody.linearVelocity.y <= 0) {
+                const force = new cc.Vec2(0, -0.2)
+                item2.rigidBody.applyForceToCenter(force, true)
+            }
             this.playWinSound(itemData.tag)
         }).start()
         let callFun = () => {

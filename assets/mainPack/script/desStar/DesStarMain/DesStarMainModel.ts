@@ -1,7 +1,7 @@
 import { GameConsts } from '../../../../Script/game/GameConsts';
 import { UIPa } from '../../../../Script/game/UIParam';
-import { starCfg } from '../../../../c2f-framework/game/starCfg';
 import BlockItem from '../BlockItem/BlockItem';
+import { StarCfg } from '../StarCfg';
 import { UIModelBase } from './../../../../c2f-framework/gui/layer/UIModelBase';
 
 const { ccclass, property } = cc._decorator;
@@ -59,10 +59,10 @@ export default class DesStarMainModel extends UIModelBase {
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ];
-        if (starCfg[lv]) {
+        if (StarCfg[lv]) {
             for (let col = 0; col < 10; col++) {
                 for (let row = 0; row < 10; row++) {
-                    arr[col][row] = starCfg[lv][col][row]
+                    arr[col][row] = StarCfg[lv][col][row]
                 }
             }
             return arr

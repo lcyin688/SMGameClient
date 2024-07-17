@@ -5,11 +5,11 @@ const { ccclass, property } = cc._decorator;
 export default class BasketBallMainModel extends UIModelBase {
     /** 预制名 给实例调用 */
     public prefabName = 'F_BasketBallMain';
-
-    public startPosition: cc.Vec2
+    public ballItem: cc.Prefab;
+    public score: number;
 
     public initData() {
-        this.startPosition = cc.v2(0, -450)
+        this.score = 0
 
 
     }

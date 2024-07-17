@@ -18,7 +18,7 @@ export default class BlockItemView extends UIPanelBase {
     public skeKuangSkeleton: sp.Skeleton = undefined;
     public btn: cc.Node;
     public btnButton: cc.Button = undefined;
-    
+
 
     public onLoad() {
         super.onLoad();
@@ -36,7 +36,7 @@ export default class BlockItemView extends UIPanelBase {
             super.onDisable();
         }
         this.removeEvent();
-    } 
+    }
 
     protected initProperty() {
         super.initProperty();
@@ -48,7 +48,7 @@ export default class BlockItemView extends UIPanelBase {
         this.skeKuangSkeleton = this.skeKuang.getComponent(sp.Skeleton);
         this.btn = this.get('_btn_');
         this.btnButton = this.btn.getComponent(cc.Button);
-        
+
     }
 
     private addEvent() {

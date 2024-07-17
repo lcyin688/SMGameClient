@@ -1,4 +1,4 @@
-export const starCfg = {
+export const StarCfg = {
     [0]: [
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1,],
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1,],

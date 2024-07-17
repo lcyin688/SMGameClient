@@ -16,6 +16,17 @@ export default class BasketBallMainView extends UIViewBase {
     public btnMenuButton: cc.Button = undefined;
     public txtCount: cc.Node;
     public txtCountLabel: cc.Label = undefined;
+    public left: cc.Node;
+    public leftSprite: cc.Sprite = undefined;
+    public leftBoxCollider: cc.BoxCollider = undefined;
+    public right: cc.Node;
+    public rightSprite: cc.Sprite = undefined;
+    public rightBoxCollider: cc.BoxCollider = undefined;
+    public line: cc.Node;
+    public lineSprite: cc.Sprite = undefined;
+    public content: cc.Node;
+    public contentWidget: cc.Widget = undefined;
+    public initPos: cc.Node;
     
 
     public onLoad() {
@@ -43,6 +54,17 @@ export default class BasketBallMainView extends UIViewBase {
         this.btnMenuButton = this.btnMenu.getComponent(cc.Button);
         this.txtCount = this.get('_txtCount_');
         this.txtCountLabel = this.txtCount.getComponent(cc.Label);
+        this.left = this.get('_left_');
+        this.leftSprite = this.left.getComponent(cc.Sprite);
+        this.leftBoxCollider = this.left.getComponent(cc.BoxCollider);
+        this.right = this.get('_right_');
+        this.rightSprite = this.right.getComponent(cc.Sprite);
+        this.rightBoxCollider = this.right.getComponent(cc.BoxCollider);
+        this.line = this.get('_line_');
+        this.lineSprite = this.line.getComponent(cc.Sprite);
+        this.content = this.get('_content_');
+        this.contentWidget = this.content.getComponent(cc.Widget);
+        this.initPos = this.get('_initPos_');
         
     }
 

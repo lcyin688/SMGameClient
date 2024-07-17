@@ -8,7 +8,6 @@ import { GameConsts } from '../../../../Script/game/GameConsts';
 import Physics2048Item from '../Physics2048Item/Physics2048Item';
 import { UIPa } from '../../../../Script/game/UIParam';
 import { GameHelper } from '../../../../Script/game/GameHelper';
-import BlockItem from '../../desStar/BlockItem/BlockItem';
 import BoomItem from '../BoomItem/BoomItem';
 
 const { ccclass, property } = cc._decorator;
@@ -24,6 +23,7 @@ export default class Physics2048Main extends UIVControlBase {
 
     protected onLoad(): void {
         this.initAudioState()
+        UIHelper.playMusic('physics2048BackMusic');
         GameHelper.setPhysics(true)
         this.node.on(cc.Node.EventType.TOUCH_START, this.onTouchStart, this);
         this.node.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);

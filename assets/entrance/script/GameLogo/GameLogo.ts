@@ -2,13 +2,8 @@ import { UIVControlBase } from './../../../c2f-framework/gui/layer/UIVControlBas
 import { C2FEnum } from './../../../c2f-framework/define/C2FEnum';
 import GameLogoModel from './GameLogoModel';
 import GameLogoView from './GameLogoView';
-import { PlatDef } from '../platform/PlatDefine';
 import { PopViewParams } from '../../../c2f-framework/define/C2FUIDef';
 import { EntranceUI } from '../EntranceView';
-import { GameHelper } from '../../../Script/game/GameHelper';
-import { GameConsts } from '../../../Script/game/GameConsts';
-import { UIHelper } from '../../../Script/game/UIHelper';
-
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class GameLogo extends UIVControlBase {

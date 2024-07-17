@@ -20,6 +20,7 @@ export default class DesStarMain extends UIVControlBase {
 
     protected onViewOpen(param: any) {
         this.initAudioState()
+        UIHelper.playMusic('backMusic');
         this.model.initData()
         this.resetGame()
         this.loadTabItemFirst(this.startGame.bind(this))
