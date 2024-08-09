@@ -23,10 +23,16 @@ creator2.4.11 2D游戏框架
 在项目根目录下的 gradle.properties 文件中添加以下行：
 android.ndk.suppressMinSdkVersionError=21
 
-ndk.dir=D\:\\android\\Sdk\\ndk\\25.1.8937393
-
+  ndk.dir=D\:\\android\\Sdk\\ndk\\25.1.8937393
   classpath 'com.android.tools.build:gradle:8.2.0'
-   classpath 'com.android.tools.build:gradle:4.2.2'
+  distributionUrl=https\://services.gradle.org/distributions/gradle-8.2.0-all.zip
+
+
+//公司可用
+classpath 'com.android.tools.build:gradle:7.2.2'
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.3.3-bin.zip
+sdk.dir=D\:\\Android\\sdk\\Sdk
+ndk.dir=D\:\\Android\\android-sdk-windows\\ndk\\25.1.8937393
 
 
 #### 参与贡献

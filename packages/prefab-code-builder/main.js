@@ -9,7 +9,8 @@ const translate = (key) => Editor.T(`[${PACKAGE_NAME}]:${key}`);
 
 module.exports = {
 
-    load() { },
+    load() {
+    },
 
     unload() { },
 
@@ -36,11 +37,13 @@ module.exports = {
     },
 
     buildSelect(refreshCodePath) {
+        Editor.log(`[${refreshCodePath}]  是走这出去的吗`);
         const uuids = Editor.Selection.curSelection('asset');
         if (uuids.length === 0) {
             Editor.log(`[${EXTENSION_NAME}]`, translate('selectAssets'));
             return;
         }
+        Editor.log(` 是走这出去的吗  uuids : `, uuids);
         // 根据 uuid 查找
         for (let i = 0; i < uuids.length; i++) {
             this.buildOnce(uuids[i], refreshCodePath);
@@ -51,6 +54,7 @@ module.exports = {
     buildOnce(uuid, refreshCodePath) {
         let isValid = this.isValidPrefabByUuid(uuid);
         if (!isValid) {
+            Editor.log(' buildOnce  isValid =false');
             return;
         }
         let info = Utility.getPrefabInfoByUuid(uuid);

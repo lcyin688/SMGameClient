@@ -41,6 +41,7 @@ var Utility = {
             dbSubPath = path.substring(idxB);
         }
         let dbFullPath = `db://${dbSubPath}`.replace(new RegExp('\\' + '\\', 'g'), '/');
+        Editor.log("assetsDBRefresh dbFullPath ", dbFullPath);
         Editor.assetdb.refresh(dbFullPath, function (err, results) { });
     },
 
@@ -65,6 +66,12 @@ var Utility = {
      * @returns 
      */
     genOnePrefabClass: function (file, path, prefabName, bundleName, relativePath, refreshCodePath) {
+        Editor.log('genOnePrefabClass 001 path : ', path);
+        Editor.log('genOnePrefabClass 002 prefabName: ', prefabName);
+        Editor.log('genOnePrefabClass 003 bundleName : ', bundleName);
+        Editor.log('genOnePrefabClass 004 relativePath : ', relativePath);
+        Editor.log('genOnePrefabClass 005 refreshCodePath : ', refreshCodePath);
+
         this.checkDirectory(path);
 
         let moduleName = prefabName;
@@ -87,7 +94,12 @@ var Utility = {
             Editor.warn('nodePath is inValid!', nodePath);
             return;
         }
-        //Editor.log(nodePath);
+
+
+        // Editor.log('genOnePrefabClass 002 viewClassName: ', viewClassName);
+        // Editor.log('genOnePrefabClass 003 modulePath : ', modulePath);
+        // Editor.log('genOnePrefabClass 004 scriptPath : ', scriptPath);
+        // Editor.log('genOnePrefabClass 001 nodePath : ', nodePath);
         let components = this.genComponentInfo(nodePath);
         if (!components) {
             Editor.warn('components is inValid!', components);
@@ -148,6 +160,10 @@ var Utility = {
         // 构建Model
         let modelClassName = moduleName + 'Model'
         let modelScriptPath = modulePath + `\\${modelClassName}.ts`;
+
+        Editor.log('genOnePrefabClass 1001  scriptPath : ', scriptPath);
+        Editor.log('genOnePrefabClass 1002  modelScriptPath : ', modelScriptPath);
+
         if (!fs.existsSync(modelScriptPath)) {
             // 如果没有构建，则构建
             let modelClass = this.genModelClass(components, modelClassName, prefabName, isPanel);
@@ -173,6 +189,7 @@ var Utility = {
             controllerClass = controllerClass.replace(new RegExp('\\' + ConstT.IMPORT_PATH, 'g'), importPath.substring(0, importPath.length - 1));
             fs.writeFileSync(controllerScriptPath, controllerClass);
         }
+        Editor.log('genOnePrefabClass genViewParamDefine 准备进去 ');
 
         // 自动同步定义
         this.genViewParamDefine(path, moduleName, prefabName, bundleName, relativePath, isPanel);
@@ -181,7 +198,7 @@ var Utility = {
             //刷新文件夹
             this.assetsDBRefresh(path, false);
         }
-        Editor.log(`prefab【${prefabName}】 code build success!`);
+        Editor.log(` genOnePrefabClass prefab【${prefabName}】 code build success!`);
     },
 
     /**
@@ -666,13 +683,14 @@ var Utility = {
 
     //同步生成窗口型预制体定义
     genViewParamDefine(scriptPath, className, prefabName, bundleName, relativePath, isPanel) {
+        // Editor.log(' genViewParamDefine 准备进去 isPanel ', isPanel);
         if (isPanel) {
             return;
         }
-
+        // Editor.log(' genViewParamDefine 准备进去 isPanel 1');
         //mainPack之后的分包配置都放在mainPack之下
         let pathBundle = bundleName;
-        let singlePack = ['framework', 'entrance', 'mainPack', 'demo'];
+        let singlePack = ['framework', 'entrance', 'mainPack', 'demo', "gameYngy"];
         if (singlePack.indexOf(pathBundle) < 0) {
             pathBundle = 'mainPack';
         }
@@ -682,8 +700,13 @@ var Utility = {
         if (pathBundle != bundleName) {
             bundlePath = bundlePath.replace(bundleName, pathBundle);
         }
+        // Editor.log(' genViewParamDefine  2 realBName ', realBName);
+        // Editor.log(' genViewParamDefine  3 bundlePath ', bundlePath);
+
         let viewFile = `${bundlePath}\\${realBName}View.ts`;
+        // Editor.log(' genViewParamDefine  4 viewFile ', viewFile);
         let ctrlCode = fs.readFileSync(viewFile, 'utf-8');
+        // Editor.log(' genViewParamDefine  5 ctrlCode ', ctrlCode);
         if (ctrlCode.indexOf(className) >= 0) {
             return;
         }
@@ -696,6 +719,7 @@ var Utility = {
         ctrlCode = codeFront + `
     ${className},
 ` + codeBehin;
+        // Editor.log(' genViewParamDefine  6 ctrlCode ', ctrlCode);
         //参数定义
         let prefabFile = '';
         let relTemp = relativePath.replace(new RegExp('\\' + '\\', 'g'), '/');
@@ -707,11 +731,12 @@ var Utility = {
         let insertIdx = ctrlCode.lastIndexOf('}');
         codeFront = ctrlCode.substring(0, insertIdx - 1);
         let layerType = prefabName.startsWith('F_') ? 'UI' : 'PopUp';
-
+        // Editor.log(' genViewParamDefine  7 layerType ', layerType);
         ctrlCode = codeFront + ` 
     //description:
-    [${realBName}UI.${className}]: { layer: LayerType.${layerType}, prefab: "prefab${prefabFile}", bundle: GameConsts.Bundle.${bundleName} }, 
-}`;
+    [${realBName}UI.${className}]: { layer: LayerType.${layerType}, prefab: "prefab${prefabFile}", bundle: GameConsts.Bundle.${bundleName} }, }`;
+        // Editor.log(' genViewParamDefine  8 viewFile ', viewFile);
+        // Editor.log(' genViewParamDefine  9 ctrlCode ', ctrlCode);
         fs.writeFileSync(viewFile, ctrlCode);
 
         this.assetsDBRefresh(viewFile, false);
@@ -762,22 +787,30 @@ var Utility = {
         let lastIdx = assetInfo.path.lastIndexOf('\\');
         let prefabName = assetInfo.path.substring(lastIdx + 1);
         let nameOnly = prefabName.replace('.prefab', '');
-
         let bundleName = '';
         let relativePath = '';
         let parentPath = assetInfo.path.substring(0, idx);
         let parentInfo = Editor.assetdb.assetInfoByPath(parentPath);
         let meta = Editor.assetdb.loadMetaByPath(parentPath);
+        // Editor.log('getPrefabCodeInfo  : prefabName', prefabName);
+        // Editor.log('getPrefabCodeInfo  : nameOnly', nameOnly);
+        // Editor.log('getPrefabCodeInfo  : parentPath', parentPath);
+        // Editor.log('getPrefabCodeInfo  : meta', meta);
         if (meta.isBundle) {
             //bundle中预制体
+            // Editor.log('getPrefabCodeInfo 001 : meta.isBundle =true');
             let subPathB = parentPath.length + flag.length - 1;
             relativePath = assetInfo.path.substring(subPathB, lastIdx);
             codePath = parentPath + '\\script' + relativePath;
             bundleName = meta.bundleName || parentPath.substring(parentPath.lastIndexOf('\\') + 1);
+            // Editor.log('getPrefabCodeInfo 002 relativePath : ', relativePath);
+            // Editor.log('getPrefabCodeInfo 003 codePath: ', codePath);
+            // Editor.log('getPrefabCodeInfo 004 bundleName : ', bundleName);
         } else {
             //通用预制体
             let commonFlag = 'assets\\common\\prefab';
             idx = assetInfo.path.indexOf(commonFlag);
+            // Editor.log('getPrefabCodeInfo  : assetInfo.path', assetInfo.path, idx);
             if (idx > 0) {
                 let pathOnly = assetInfo.path.substring(0, lastIdx);
                 codePath = pathOnly.replace(commonFlag, 'assets\\Script\\common');
@@ -816,6 +849,8 @@ var Utility = {
      * @returns 
      */
     genAllPrefabClass: function (assetsPath) {
+        // Editor.log('genAllPrefabClass:', assetsPath);
+
         if (!fs.existsSync(assetsPath)) {
             console.error('目录不存在:' + assetsPath);
             return;
@@ -828,10 +863,11 @@ var Utility = {
             console.log('没有需要生成的脚本');
             return;
         }
-        Editor.log('all prefab:', fileNames);
+        // Editor.log('all prefab:', fileNames);
 
         for (let i = 0; i < fileNamesLen; i++) {
             let info = Utility.getPrefabInfoByPath(fileNames[i]);
+            // Editor.log('genAllPrefabClass: info  :', info);
             if (info) {
                 Utility.genOnePrefabClass(info.file, info.path, info.name, info.bundleName, info.relativePath);
             }

@@ -9,6 +9,7 @@ export namespace GameConsts {
         resource = 'resources',
         entrance = 'entrance',
         mainPack = 'mainPack',
+        gameYngy = 'gameYngy',
     }
 
     //平台标志:原生端设置，WEB端链接解析设置，小游戏待定
@@ -63,7 +64,7 @@ export namespace GameConsts {
         /** UI根目录 */
         uiRoot = 'ab:mainPack/image/ui/',
         entrance = 'ab:entrance/image/',
-
+        yngy = 'ab:gameYngy/image/ui/',
 
 
     }
@@ -83,7 +84,7 @@ export namespace GameConsts {
         ball = 'ab:mainPack/prefab/basketBall/P_Ball',
 
 
-        
+
 
     }
 
@@ -133,4 +134,9 @@ export namespace GameConsts {
         NONE = 3,
     }
 
+    export const YngyConst = {
+        ItemWidthHeight: 130,
+
+
+    }
 }

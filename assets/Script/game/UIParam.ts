@@ -95,9 +95,21 @@ export namespace UIPa {
         block_1024: 10,
         block_2048: 11,
     }
-
-
-
+    export enum YngyItemArgsStates {
+        Alive,
+        Dead
+    }
+    /**羊那个羊单个数据 */
+    export interface YngyItemArgs {
+        ceng: number,
+        xIndex: number,
+        YIndex: number,
+        typ: number,
+        state: YngyItemArgsStates,
+        /** 是否隐藏*/
+        hidden: boolean,
+        clickFun: Function
+    }
 
 
 
