@@ -3,6 +3,7 @@ import { C2FEnum } from './../../../c2f-framework/define/C2FEnum';
 import YngyMainModel from './YngyMainModel';
 import YngyMainView from './YngyMainView';
 import { YngyCfg } from '../YngyCfg';
+import { UIPa } from '../../../Script/game/UIParam';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -54,7 +55,7 @@ export default class YngyMain extends UIVControlBase {
  * @param lv 
  */
     loadLevel(lv: number) {
-        this.model.initDataByLv(lv)
+        this.model.initDataByLv(lv, this.clickCard.bind(this))
 
         // tmpCheckMap = {};
         // let levelData: Array<Array<[number, number, number, number, number]>> = [];
@@ -111,7 +112,7 @@ export default class YngyMain extends UIVControlBase {
         // this.levelData = levelData;
     }
 
-    clickCard(e: Event, customEventData: string) {
+    private clickCard(data: UIPa.YngyItemArgs) {
         // const width = 630;
         // const col = 7;
         // const pad = width / col;

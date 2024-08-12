@@ -101,15 +101,16 @@ export namespace UIPa {
     }
     /**羊那个羊单个数据 */
     export interface YngyItemArgs {
-        ceng: number,
+        cengIndex: number,
         xIndex: number,
         YIndex: number,
         typ: number,
         state: YngyItemArgsStates,
         /** 是否隐藏*/
-        hidden: boolean,
+        hideState: boolean,
         clickFun: Function
     }
+
 
 
 

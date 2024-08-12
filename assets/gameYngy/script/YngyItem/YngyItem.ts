@@ -42,7 +42,7 @@ export default class YngyItem extends UIPControlBase {
 
     private CC_onClickicon() {
         if (this.model.data.state == UIPa.YngyItemArgsStates.Alive) {
-            if (!this.model.data.hidden) {
+            if (!this.model.data.hideState) {
                 if (this.model.data.clickFun) {
                     this.model.data.clickFun();
                 }
