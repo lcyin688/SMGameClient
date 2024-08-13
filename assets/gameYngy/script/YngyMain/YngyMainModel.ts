@@ -14,9 +14,9 @@ export default class YngyMainModel extends UIModelBase {
     public itemMap4: Map<number, Map<number, UIPa.YngyItemArgs>> = null
     public itemMapArr: Map<number, Map<number, UIPa.YngyItemArgs>>[] = []
 
-
+    public selectedPool: UIPa.YngyItemArgs[] = []
     public initDataByLv(lv: number, clickFun: Function) {
-        let pad = GameConsts.YngyConst.ItemWidthHeight
+        this.selectedPool = []
         let totalCount = this.getAllCount(lv)
         let count = Math.floor(totalCount / 3)
         let allData = this.getRadomTypeArr(count)
@@ -34,7 +34,6 @@ export default class YngyMainModel extends UIModelBase {
         this.reflashHideStatestate()
     }
     private reflashHideStatestate() {
-
         for (let i = 0; i < this.itemMapArr.length; i++) {
             let vCeng = this.itemMapArr[i];
             vCeng.forEach((vHang, keyHang) => {
@@ -47,54 +46,41 @@ export default class YngyMainModel extends UIModelBase {
     }
     private getHideState(vItem: UIPa.YngyItemArgs) {
         let cengIndex = vItem.cengIndex
-        let keyHang = vItem.xIndex
-        let keyLie = vItem.YIndex
         let hideState = false
+        let pad = GameConsts.YngyConst.ItemWidthHeight
         for (let i = cengIndex; i < 4; i++) {
             let vCeng = this.itemMapArr[i];
-            if (cengIndex % 2 == i % 2) {
-                let mapItem1 = vCeng.get(keyHang)
-                if (mapItem1) {
-                    let vItem = mapItem1.get(keyLie)
-                    if (vItem) {
+            vCeng.forEach(vv => {
+                vv.forEach(vItemTemp => {
+                    //x,y 同时小于一个单位的时候说明被压着了
+                    if (vItemTemp.pos.x - vItem.pos.x < pad && vItemTemp.pos.y - vItem.pos.y < pad) {
                         hideState = true
-                        break
                     }
-                }
-            } else {//有一个挡住那就挡住了
-                let mapItem1 = vCeng.get(keyHang)
-                if (mapItem1) {
-                    let vItem = mapItem1.get(keyLie)
-                    if (vItem) {
-                        hideState = true
-                        break
-                    }
-                }
-            }
-
-
-
+                });
+            });
         }
-
-
-        return false
+        return hideState
     }
 
 
     private pushItemArr(data: number[][], index: number, allData: Array<number>, ceng: number, clickFun: Function) {
         let itemMap: Map<number, Map<number, UIPa.YngyItemArgs>>
+        let pad = GameConsts.YngyConst.ItemWidthHeight
+        let startPos = new cc.Vec2(0, 0)
         switch (ceng) {
             case 0:
                 itemMap = this.itemMap1
                 break;
             case 1:
                 itemMap = this.itemMap2
+                startPos = new cc.Vec2(pad / 2, pad / 2)
                 break;
             case 2:
                 itemMap = this.itemMap3
                 break;
             case 3:
                 itemMap = this.itemMap4
+                startPos = new cc.Vec2(pad / 2, pad / 2)
                 break;
         }
 
@@ -103,7 +89,11 @@ export default class YngyMainModel extends UIModelBase {
             for (let y = 0; y < v.length; y++) {
                 const vv = v[y];
                 if (vv == 1) {
+                    let posX = x * pad
+                    let posY = y * pad
+                    let pos: cc.Vec2 = new cc.Vec2(posX, posY).add(startPos)
                     let itemData: UIPa.YngyItemArgs = {
+                        pos: pos,
                         cengIndex: ceng,
                         xIndex: x,
                         YIndex: y,

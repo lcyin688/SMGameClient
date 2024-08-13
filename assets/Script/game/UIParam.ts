@@ -109,6 +109,7 @@ export namespace UIPa {
         /** 是否隐藏*/
         hideState: boolean,
         clickFun: Function
+        pos: cc.Vec2
     }
 
 

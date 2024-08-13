@@ -44,7 +44,7 @@ export default class YngyItem extends UIPControlBase {
         if (this.model.data.state == UIPa.YngyItemArgsStates.Alive) {
             if (!this.model.data.hideState) {
                 if (this.model.data.clickFun) {
-                    this.model.data.clickFun();
+                    this.model.data.clickFun(this.model.data, this.node);
                 }
             }
         }
@@ -59,7 +59,16 @@ export default class YngyItem extends UIPControlBase {
     public initView(data: UIPa.YngyItemArgs) {
         let url = GameConsts.ResUrl.yngy + "chip_" + data.typ;
         c2f.utils.view.changeSpriteFrame(this.view.iconSprite, url)
+        this.node.setPosition(data.pos)
+        this.setOpcity(data.hideState)
     }
 
+    private setOpcity(hideState: boolean, time: number = 0) {
+        cc.Tween.stopAllByTarget(this.node)
+        let opacityValue = hideState ? 100 : 255
+        cc.tween(this.node)
+            .to(time, { opacity: hideState ? 0 : opacityValue })
+            .start()
+    }
 
 }
