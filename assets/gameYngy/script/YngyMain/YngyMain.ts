@@ -82,77 +82,77 @@ export default class YngyMain extends UIVControlBase {
                 index * pad + pad / 2,
                 0
             );
-            nodeItem.parent = this.view.selectedNode;
-            cc.tween(nodeItem).stop();
-            cc.tween(nodeItem).delay(0.05).to(0.35, {
-                position: parentTransform.convertToNodeSpaceAR(this.selectedNode.getComponent(UITransform).convertToWorldSpaceAR(targetPos))
-            }, {
-                onComplete: () => {
-                    // 地图数据删除
-                    for (let i = 0; i < this.levelData[layer].length; i += 1) {
-                        if (this.levelData[layer][i][0] == nodeInfo.x && this.levelData[layer][i][1] == nodeInfo.y) {
-                            this.levelData[layer].splice(i, 1);
-                            break;
-                        }
-                    }
-                    // 已选择数据三消
-                    let cntMap: { [key: number]: number } = {};
-                    for (let i = 0; i < this.selectedPool.length; i += 1) {
-                        if (!cntMap[this.selectedPool[i][1]]) {
-                            cntMap[this.selectedPool[i][1]] = 1;
-                        } else {
-                            cntMap[this.selectedPool[i][1]] += 1;
-                        }
-                        if (cntMap[this.selectedPool[i][1]] == 3) {
-                            // 向前删除3个
-                            for (let j = 0; j < 3; j += 1) {
-                                // 动效
-                                tween(this.selectedPool[i - 3 + 1][0].node).delay(0.1).to(0.3, {
-                                    scale: new Vec3(0, 0, 1)
-                                }, {
-                                    onComplete: (target) => {
-                                        let node = target as Node;
-                                        if (j == 0) {
-                                            // 后方节点前移
-                                            for (let j = i + 1; j < this.selectedPool.length; j += 1) {
-                                                let forwardNodeInfo = this.selectedPool[j][0];
-                                                targetPos = new Vec3(
-                                                    j * pad - width / 2 + pad / 2,
-                                                    0,
-                                                    forwardNodeInfo.node.position.z
-                                                );
-                                                tween(forwardNodeInfo.node).stop();
-                                                tween(forwardNodeInfo.node).to(0.3, {
-                                                    position: parentTransform.convertToNodeSpaceAR(this.selectedNode.getComponent(UITransform).convertToWorldSpaceAR(targetPos))
-                                                }).start();
-                                            }
-                                        }
-                                    }
-                                }).start();
-                                // 数据删除
-                                this.selectedPool.splice(i - 3 + 1, 1);
-                            }
-                            i -= 3;
-                            //
-                        }
-                    }
-                    // 刷新遮挡
-                    this.cardNodes.forEach(nodeInfo => nodeInfo.refreshCoverState(0.5, this.levelData));
-                    // 判定胜负
-                    if (this.selectedPool.length > col) {
-                        log("lose");
-                        this.restartNode.active = true;
-                        this.restartNode.children[0].active = false;
-                        this.restartNode.children[1].active = true;
-                    }
-                    if (this.levelData.every(v => v.length == 0)) {
-                        log("win");
-                        this.restartNode.active = true;
-                        this.restartNode.children[0].active = true;
-                        this.restartNode.children[1].active = false;
-                    }
-                }
-            }).start();
+            // nodeItem.parent = this.view.selectedNode;
+            // cc.tween(nodeItem).stop();
+            // cc.tween(nodeItem).delay(0.05).to(0.35, {
+            //     position: parentTransform.convertToNodeSpaceAR(this.selectedNode.getComponent(UITransform).convertToWorldSpaceAR(targetPos))
+            // }, {
+            //     onComplete: () => {
+            //         // 地图数据删除
+            //         for (let i = 0; i < this.levelData[layer].length; i += 1) {
+            //             if (this.levelData[layer][i][0] == nodeInfo.x && this.levelData[layer][i][1] == nodeInfo.y) {
+            //                 this.levelData[layer].splice(i, 1);
+            //                 break;
+            //             }
+            //         }
+            //         // 已选择数据三消
+            //         let cntMap: { [key: number]: number } = {};
+            //         for (let i = 0; i < this.selectedPool.length; i += 1) {
+            //             if (!cntMap[this.selectedPool[i][1]]) {
+            //                 cntMap[this.selectedPool[i][1]] = 1;
+            //             } else {
+            //                 cntMap[this.selectedPool[i][1]] += 1;
+            //             }
+            //             if (cntMap[this.selectedPool[i][1]] == 3) {
+            //                 // 向前删除3个
+            //                 for (let j = 0; j < 3; j += 1) {
+            //                     // 动效
+            //                     tween(this.selectedPool[i - 3 + 1][0].node).delay(0.1).to(0.3, {
+            //                         scale: new Vec3(0, 0, 1)
+            //                     }, {
+            //                         onComplete: (target) => {
+            //                             let node = target as Node;
+            //                             if (j == 0) {
+            //                                 // 后方节点前移
+            //                                 for (let j = i + 1; j < this.selectedPool.length; j += 1) {
+            //                                     let forwardNodeInfo = this.selectedPool[j][0];
+            //                                     targetPos = new Vec3(
+            //                                         j * pad - width / 2 + pad / 2,
+            //                                         0,
+            //                                         forwardNodeInfo.node.position.z
+            //                                     );
+            //                                     tween(forwardNodeInfo.node).stop();
+            //                                     tween(forwardNodeInfo.node).to(0.3, {
+            //                                         position: parentTransform.convertToNodeSpaceAR(this.selectedNode.getComponent(UITransform).convertToWorldSpaceAR(targetPos))
+            //                                     }).start();
+            //                                 }
+            //                             }
+            //                         }
+            //                     }).start();
+            //                     // 数据删除
+            //                     this.selectedPool.splice(i - 3 + 1, 1);
+            //                 }
+            //                 i -= 3;
+            //                 //
+            //             }
+            //         }
+            //         // 刷新遮挡
+            //         this.cardNodes.forEach(nodeInfo => nodeInfo.refreshCoverState(0.5, this.levelData));
+            //         // 判定胜负
+            //         if (this.selectedPool.length > col) {
+            //             log("lose");
+            //             this.restartNode.active = true;
+            //             this.restartNode.children[0].active = false;
+            //             this.restartNode.children[1].active = true;
+            //         }
+            //         if (this.levelData.every(v => v.length == 0)) {
+            //             log("win");
+            //             this.restartNode.active = true;
+            //             this.restartNode.children[0].active = true;
+            //             this.restartNode.children[1].active = false;
+            //         }
+            //     }
+            // }).start();
             // 后退动效
             // for (let i = index + 1; i < this.selectedPool.length; i += 1) {
             //     let forwardNodeInfo = this.selectedPool[i][0];

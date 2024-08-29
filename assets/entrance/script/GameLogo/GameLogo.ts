@@ -4,6 +4,8 @@ import GameLogoModel from './GameLogoModel';
 import GameLogoView from './GameLogoView';
 import { PopViewParams } from '../../../c2f-framework/define/C2FUIDef';
 import { EntranceUI } from '../EntranceView';
+import { GameHelper } from '../../../Script/game/GameHelper';
+import { GameConsts } from '../../../Script/game/GameConsts';
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class GameLogo extends UIVControlBase {
@@ -75,10 +77,10 @@ export default class GameLogo extends UIVControlBase {
                 c2f.gui.remove(EntranceUI.GameLogo);
             },
         }
-        c2f.gui.open(EntranceUI.GameLogin, null, uic);
-        // GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
-        //     c2f.gui.open(UIID.DesStarMain, null, uic)
-        // });
+        // c2f.gui.open(EntranceUI.GameLogin, null, uic);
+        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
+            c2f.gui.open(UIID.DesStarMain, null, uic)
+        });
 
 
     }
