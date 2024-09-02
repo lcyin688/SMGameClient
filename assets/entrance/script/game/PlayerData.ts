@@ -1,4 +1,5 @@
 import { PublicData } from "./plrBase/PublicData";
+import { RankData } from "./rank/RankData";
 
 
 /** 玩家数据总领：具体模块数据 */
@@ -35,7 +36,11 @@ export class PlayerData {
     public get public() {
         return this._public;
     }
-
+    /** 排行榜 */
+    private _rank: RankData;
+    public get rank() {
+        return this._rank;
+    }
 
 
 
@@ -63,6 +68,7 @@ export class PlayerData {
             }
         }
         this._public = null;
+        this._rank = null;
         this.dispatchs = [];
     }
 
@@ -84,6 +90,8 @@ export class PlayerData {
         this.dispatchs = [];
         this._public = new PublicData();
         this.dispatchs.push(this._public);
+        this._rank = new RankData();
+        this.dispatchs.push(this._rank);
     }
 }
 
