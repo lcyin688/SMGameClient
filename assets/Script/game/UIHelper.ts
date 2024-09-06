@@ -548,4 +548,23 @@ export class UIHelper {
         }
         return points;
     }
+
+    /** 显示网络错误 */
+    static showNetError(code: number) {
+        if (cc.assetManager.getBundle(GameConsts.Bundle.mainPack)) {
+            const isDisconnect = code == 99999 ? true : false;
+            if (isDisconnect) {
+                c2f.gui.notifyTxt('509');
+                c2f.gui.hideLoading(true);
+            }
+        } else {
+            const isDisconnect = code == 99999 ? true : false;
+            if (isDisconnect) {
+                c2f.gui.notifyTxt('509');
+                c2f.gui.hideLoading(true);
+            }
+        }
+    }
+
+
 }

@@ -12,7 +12,7 @@ const reconnetMax = 5;
 const reconnetInterval = 6;
 
 export class WebService {
-    protected ws: WebSocket;
+    protected socket: WebSocket;
     protected state: SocketState;
     protected url: string;
 
@@ -24,7 +24,7 @@ export class WebService {
     protected reconnectTimer: number; //重连timer    
 
     constructor() {
-        this.ws = null;
+        this.socket = null;
         this.state = SocketState.Error;
         this.url = null;
 
@@ -62,7 +62,7 @@ export class WebService {
     private onError(event) {
         cc.log("WebSocket fired an error");
         let target = event.currentTarget || event.target;
-        if (this.ws && this.ws.readyState != WebSocket.CLOSED && this.url && target && target.url == this.url) {
+        if (this.socket && this.socket.readyState != WebSocket.CLOSED && this.url && target && target.url == this.url) {
             this.stateChanged(SocketState.Error);
         }
     }
@@ -79,29 +79,36 @@ export class WebService {
             this.reconnect(this.url);
         }
     }
-
     /** 连接socket */
     public tcpConnet(url: string, callback: Function) {
         this.url = url;
-        if (this.ws) {
-            this.ws.close();
-            this.ws.onopen = null;
-            this.ws.onmessage = null;
-            this.ws.onerror = null;
-            this.ws.onclose = null;
-            this.ws = null;
+        if (this.socket) {
+            this.socket.close();
+            this.socket.onopen = null;
+            this.socket.onmessage = null;
+            this.socket.onerror = null;
+            this.socket.onclose = null;
+            this.socket = null;
         }
         this.connectCb = callback;
 
         cc.log("websocket connect", url);
-        this.ws = new WebSocket(url);
-        this.ws.binaryType = "arraybuffer";
-        this.ws.onopen = this.onOpen.bind(this);
-        this.ws.onmessage = this.onMessage.bind(this);
-        this.ws.onerror = this.onError.bind(this);
-        this.ws.onclose = this.onClosed.bind(this);
-    }
+        this.socket = new WebSocket(url);
+        // this.socket.onopen = () => {
+        //     console.log('Connected to server');
+        //     this.sendMessage('Hello, server!');
+        // };
+        // this.socket.onmessage = (event) => {
+        //     console.log('Received from server:', event.data);
+        // };
 
+
+        // this.socket.binaryType = "arraybuffer";
+        this.socket.onopen = this.onOpen.bind(this);
+        this.socket.onmessage = this.onMessage.bind(this);
+        this.socket.onerror = this.onError.bind(this);
+        this.socket.onclose = this.onClosed.bind(this);
+    }
     /** 重新连接 */
     private reconnect(url: string) {
         if (!this.url) {
@@ -118,7 +125,7 @@ export class WebService {
             if (this.url) {
                 this.reconnectTimes++;
                 this.tcpConnet(url, () => {
-                    if (this.ws.readyState == WebSocket.OPEN && this.url) {
+                    if (this.socket.readyState == WebSocket.OPEN && this.url) {
                         this.wsEventCb && this.wsEventCb(SocketState.ReconnectSuc);
                     }
                 });
@@ -156,9 +163,9 @@ export class WebService {
 
     public purge() {
         this.clearReconnectTimer();
-        if (this.ws) {
-            this.ws.close();
-            this.ws = null;
+        if (this.socket) {
+            this.socket.close();
+            this.socket = null;
             this.url = null;
             this.reconnectTimes = 0;
         }

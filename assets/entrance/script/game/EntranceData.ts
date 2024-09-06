@@ -2,6 +2,7 @@ import { EntraDef } from "./EntranceDefine";
 import { GameConsts } from "../../../Script/game/GameConsts";
 import { GameCalc } from "../../../Script/game/GameCalculator";
 import { PlatDef } from "../platform/PlatDefine";
+import { msgid } from "../../../resources/proto/msgid";
 
 /** 游戏入口数据 */
 export class EntraData {
@@ -78,7 +79,23 @@ export class EntraData {
         this.customHotUrl = null;
     }
 
-
+    //重登录：先重登录sdk,再重登陆游戏
+    public reLogin(sucCb: Function, failCb: Function) {
+        if (!this.loginParam) {
+            failCb && failCb();
+            return;
+        }
+        let param: msg.C_Login = Object.copyDepth(this.loginParam);
+        param.P1 = "reconnect";
+        c2f.net.sendMsg(
+            msgid.C_Login,
+            param,
+            {
+                getErr: true,
+                ops: [msgid.GW_Login_R],
+                callback: sucCb,
+            });
+    }
 
 
 }

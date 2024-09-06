@@ -40,6 +40,9 @@ message GS_RankTop_R { // msgid: 4615
 
 
 
+message LoginData {
+    int64 Exp = 1; // 经验值
+}
 
 message Id_Int {
     int64 Id = 1;
@@ -61,6 +64,7 @@ message C_GetLoginData { // msgid: 3004
 }
 
 message GS_GetLoginData_R { // msgid: 3005
+	LoginData Data = 1;
     int64 ErrorCode = 2;
     C_GetLoginData MSGDATA = 3;
 }
@@ -73,6 +77,17 @@ message GS_ErrMsgInfo_R { // msgid: 3007
     string Str = 1;
     int64 ErrorCode = 2;
     C_ErrMsgInfo MSGDATA = 3;
+}
+
+// 登录
+message C_Login { // msgid: 1000
+	string UserName = 1;
+    string PassWord = 2; // 参数 1
+}
+
+message GW_Login_R { // msgid: 1001
+    int64 ErrorCode = 1;
+    C_Login MSGDATA = 2;
 }
 
 

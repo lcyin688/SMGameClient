@@ -1,4 +1,6 @@
 export var msgname: { [key: number]: string } = {
+    1000: "C_Login",
+    1001: "GW_Login_R",
     1200: "GW_RegisterGate",
     1201: "GS_RegisterGate_R",
     1202: "GW_UserOnline",

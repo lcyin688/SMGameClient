@@ -28,6 +28,10 @@ declare namespace msg {
         MSGDATA?: C_RankTop
     }
 
+    interface LoginData {
+        Exp?: number // 经验值
+    }
+
     interface Id_Int {
         Id?: number
         N?: number
@@ -48,6 +52,7 @@ declare namespace msg {
     }
 
     interface GS_GetLoginData_R {
+        Data?: LoginData
         ErrorCode?: number
         MSGDATA?: C_GetLoginData
     }
@@ -60,6 +65,17 @@ declare namespace msg {
         Str?: string
         ErrorCode?: number
         MSGDATA?: C_ErrMsgInfo
+    }
+
+    // 登录
+    interface C_Login {
+        UserName?: string
+        PassWord?: string // 参数 1
+    }
+
+    interface GW_Login_R {
+        ErrorCode?: number
+        MSGDATA?: C_Login
     }
 
     // 注册网关

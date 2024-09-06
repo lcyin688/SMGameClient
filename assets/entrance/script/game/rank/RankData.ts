@@ -18,12 +18,12 @@ export class RankData {
     // }
 
 
-    /** 请求排行榜信息 */
-    public reqRankRwdInfo(typ: number) {
-        let cData: msg.C_RankTop = {
-            RankId: typ,
+    public reqLogin(userName: string, passWord: string) {
+        let cData: msg.C_Login = {
+            UserName: userName,
+            PassWord: passWord
         }
-        c2f.net.sendMsg(msgid.C_RankTop, cData)
+        c2f.net.sendMsg(msgid.C_Login, cData)
     }
 
 

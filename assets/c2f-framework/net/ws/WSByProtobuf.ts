@@ -32,7 +32,7 @@ export class WSByProtobuf extends WebService {
     /** 收到消息 */
     protected onMessage(event: any) {
         let response = new Uint8Array(event.data);
-        this.decryptCb && this.decryptCb(response);
+        // this.decryptCb && this.decryptCb(response);
 
         let newMsg = new Uint8Array(this.messages.length + response.length);
         newMsg.set(this.messages, 0);
@@ -77,10 +77,13 @@ export class WSByProtobuf extends WebService {
 
     /** 发送消息 */
     public tcpSend(op: number, data: any) {
+        // if (this.socket.readyState === WebSocket.OPEN) {
+        //     this.socket.send(data);
+        // }
         if (this.state !== SocketState.Connected) {
             return false;
         }
-        if (!this.ws || this.ws.readyState != WebSocket.OPEN) {
+        if (!this.socket || this.socket.readyState != WebSocket.OPEN) {
             return false;
         }
         const msgName = msgname[op];
@@ -112,7 +115,7 @@ export class WSByProtobuf extends WebService {
         }
         let content = new Uint8Array(buffer);
         this.encryptCb && this.encryptCb(content);
-        this.ws.send(content.buffer);
+        this.socket.send(content.buffer);
 
         return true;
     }

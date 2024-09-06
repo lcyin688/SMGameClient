@@ -1,4 +1,6 @@
 export enum msgid {
+    C_Login = 1000,
+    GW_Login_R = 1001,
     GW_RegisterGate = 1200,
     GS_RegisterGate_R = 1201,
     GW_UserOnline = 1202,

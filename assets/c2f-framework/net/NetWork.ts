@@ -68,8 +68,8 @@ class NetWork {
         this.enRc4 = new RC4(rc4Key);
         this.deRc4 = new RC4(rc4Key);
 
-        this.service.setEncryptCb(this.enRc4.encrypt.bind(this.enRc4));
-        this.service.setDecryptCb(this.deRc4.decrypt.bind(this.deRc4));
+        // this.service.setEncryptCb(this.enRc4.encrypt.bind(this.enRc4));
+        // this.service.setDecryptCb(this.deRc4.decrypt.bind(this.deRc4));
     }
 
     private async loadProtoFile() {

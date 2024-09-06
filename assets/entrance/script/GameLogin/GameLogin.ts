@@ -6,6 +6,7 @@ import { GameHelper } from '../../../Script/game/GameHelper';
 import { GameConsts } from '../../../Script/game/GameConsts';
 import { UIHelper } from '../../../Script/game/UIHelper';
 import { MainPackUI } from '../../../mainPack/script/MainPackView';
+import { UINetwork } from '../../../Script/game/UINetwork';
 
 
 
@@ -19,7 +20,7 @@ export default class GameLogin extends UIVControlBase {
     public view: GameLoginView = undefined;
 
     protected onViewOpen(param: any) {
-
+        this.connetToServer()
     }
 
     protected onEnable(): void {
@@ -113,5 +114,32 @@ export default class GameLogin extends UIVControlBase {
             c2f.gui.open(UIID.BasketBallMain)
         });
     }
+
+    /** 连接服务器 */
+    private connetToServer() {
+        if (!c2f.net.toUI) {
+            c2f.net.toUI = new UINetwork();
+        }
+        let url = "ws://localhost:8080";
+        c2f.gui.showLoading();
+        c2f.net.initService().then(() => {
+            c2f.net.connect(url, (reason: string) => {
+                c2f.gui.hideLoading();
+                if (reason === "Connected") {
+                    this.loginToGame();
+                } else {
+                    c2f.gui.notifyTxt('1006');
+                    c2f.net.purge();
+                }
+            });
+        });
+    }
+    private loginToGame() {
+        c2f.gui.notifyTxt('513');
+        //发个消息给服务器
+        szg.player.rank.reqLogin("lcy", "gogogo")
+
+    }
+
 
 }
