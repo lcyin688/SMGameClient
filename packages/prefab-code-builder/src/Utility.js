@@ -690,7 +690,7 @@ var Utility = {
         // Editor.log(' genViewParamDefine 准备进去 isPanel 1');
         //mainPack之后的分包配置都放在mainPack之下
         let pathBundle = bundleName;
-        let singlePack = ['framework', 'entrance', 'mainPack', 'demo', "gameYngy"];
+        let singlePack = ['framework', 'entrance', 'mainPack', 'demo', "gameYngy", "boxGame"];
         if (singlePack.indexOf(pathBundle) < 0) {
             pathBundle = 'mainPack';
         }

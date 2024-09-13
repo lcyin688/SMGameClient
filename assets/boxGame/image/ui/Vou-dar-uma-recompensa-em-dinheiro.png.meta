@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "74f4e69c-dbe4-4e73-966d-d4b290489072",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 609,
+  "height": 51,
+  "platformSettings": {},
+  "subMetas": {
+    "Vou-dar-uma-recompensa-em-dinheiro": {
+      "ver": "1.0.6",
+      "uuid": "40cd9d68-308b-4937-92d0-fd9a4b88c652",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "74f4e69c-dbe4-4e73-966d-d4b290489072",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 605,
+      "height": 47,
+      "rawWidth": 609,
+      "rawHeight": 51,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
