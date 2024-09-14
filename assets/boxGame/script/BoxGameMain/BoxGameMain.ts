@@ -13,7 +13,26 @@ export default class BoxGameMain extends UIVControlBase {
     public view: BoxGameMainView = undefined;
 
     protected onViewOpen(param: any) {
+        this.model.initData()
+        this.loginToGame()
+
+
     }
+
+    private loginToGame() {
+        let url = this.model.baseUrl + '/pddgame/login'
+        let data = JSON.stringify({
+            ksCode: this.model.accounts[0],
+            test: !0
+        });
+        this.model.sendMsg(url, () => {
+
+        }, data, 'POST')
+
+
+    }
+
+
 
 
     protected onEnable(): void {

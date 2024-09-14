@@ -16,14 +16,6 @@ export default class BoxGameMainView extends UIViewBase {
     public btnCloseButton: cc.Button = undefined;
     public btnStart: cc.Node;
     public btnStartButton: cc.Button = undefined;
-    public lvPanel: cc.Node;
-    public lvPanelSprite: cc.Sprite = undefined;
-    public layer1: cc.Node;
-    public layer2: cc.Node;
-    public layer3: cc.Node;
-    public layer4: cc.Node;
-    public seleted: cc.Node;
-    public seletedSprite: cc.Sprite = undefined;
     
 
     public onLoad() {
@@ -51,14 +43,6 @@ export default class BoxGameMainView extends UIViewBase {
         this.btnCloseButton = this.btnClose.getComponent(cc.Button);
         this.btnStart = this.get('_btnStart_');
         this.btnStartButton = this.btnStart.getComponent(cc.Button);
-        this.lvPanel = this.get('_lvPanel_');
-        this.lvPanelSprite = this.lvPanel.getComponent(cc.Sprite);
-        this.layer1 = this.get('_layer1_');
-        this.layer2 = this.get('_layer2_');
-        this.layer3 = this.get('_layer3_');
-        this.layer4 = this.get('_layer4_');
-        this.seleted = this.get('_seleted_');
-        this.seletedSprite = this.seleted.getComponent(cc.Sprite);
         
     }
 
