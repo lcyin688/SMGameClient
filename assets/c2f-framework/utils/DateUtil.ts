@@ -228,7 +228,8 @@ class DateUtil {
      * 获取毫秒级服务器是时间
      */
     static getSerVerTime() {
-        let serverTime = szg.player.time.getServerTs() * 1000;
+        // let serverTime = szg.player.time.getServerTs() * 1000;
+        let serverTime = c2f.utils.date.getLocalTick();
         return serverTime
     };
 
@@ -639,7 +640,7 @@ class DateUtil {
      * num 上一次下线的时间戳
      */
     static getLastOnLineStr(num: number): { str: string, color: string } {
-        let serverTime = szg.player.time.getServerTs();
+        let serverTime = this.getSerVerTime();
         let data = { str: "", color: "#5D4F49" }
         if (num == -1) {
             data.str = c2f.language.words(20076)
@@ -757,7 +758,7 @@ class DateUtil {
 
     /**获取服务器 本周周一零点时间 */
     static getServerCurWeekStartSecond(): number {
-        let curTs = szg.player.time.getServerTs();
+        let curTs = this.getSerVerTime();
         let ret = this.getFirstDayOfWeekTimestamp(curTs * 1000) / 1000
         return ret
     }

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "e6e92e73-ab24-4ca8-ab7b-c69d92fcafa7",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 546,
+  "height": 69,
+  "platformSettings": {},
+  "subMetas": {
+    "wz_Registros-de-Loteria": {
+      "ver": "1.0.6",
+      "uuid": "5aceadae-35f4-4c8f-8315-47f71af59981",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "e6e92e73-ab24-4ca8-ab7b-c69d92fcafa7",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 542,
+      "height": 65,
+      "rawWidth": 546,
+      "rawHeight": 69,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

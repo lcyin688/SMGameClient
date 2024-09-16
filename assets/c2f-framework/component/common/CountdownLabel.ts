@@ -39,7 +39,7 @@ export default class CountdownLabel extends cc.Component {
     }
 
     public startCountdown(sec: number, format: CountdownFormat = "%{hh}:%{mm}:%{ss}", txtFormat: string = null, updateCall: () => void = null, completeCall: () => void = null): void {
-        this.curSverTime = szg.player.time.getServerTs();
+        this.curSverTime = c2f.utils.date.getSerVerTime()
         this.totalTime = sec;
         this._leftSec = sec;
         this._leftFloorSec = Math.floor(sec);
@@ -66,7 +66,7 @@ export default class CountdownLabel extends cc.Component {
     }
 
     private onUpdateTime(): void {
-        let floorSec = Math.floor(this.totalTime - (szg.player.time.getServerTs() - this.curSverTime))
+        let floorSec = Math.floor(this.totalTime - (c2f.utils.date.getSerVerTime() - this.curSverTime))
         this._leftSec = floorSec
         if (this.label) {
             let txtTime = c2f.utils.date.formatTimeString(floorSec, this._format);
@@ -121,7 +121,7 @@ export default class CountdownLabel extends cc.Component {
 
     protected onEnable(): void {
         if (this.curSverTime > 0) {
-            let sec = this.totalTime - (szg.player.time.getServerTs() - this.curSverTime);
+            let sec = this.totalTime - (c2f.utils.date.getSerVerTime() - this.curSverTime);
             sec = sec < 0 ? 0 : sec;
             this.startCountdown(sec, this._format, this._txtFormat, this._updateCall, this._completeCall);
         }

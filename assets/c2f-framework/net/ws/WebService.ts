@@ -11,6 +11,7 @@ const reconnetMax = 5;
 //重连间隔
 const reconnetInterval = 6;
 
+
 export class WebService {
     protected socket: WebSocket;
     protected state: SocketState;
@@ -21,8 +22,7 @@ export class WebService {
     protected wsEventCb: Function;    //网络事件回调
 
     protected reconnectTimes: number; //重连次数
-    protected reconnectTimer: number; //重连timer    
-
+    protected reconnectTimer: NodeJS.Timeout; //重连timer    
     constructor() {
         this.socket = null;
         this.state = SocketState.Error;
@@ -119,6 +119,8 @@ export class WebService {
             this.stateChanged(SocketState.Error);
             return;
         }
+
+
 
         this.reconnectTimer = setTimeout(() => {
             this.reconnectTimer = null;

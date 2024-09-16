@@ -14,8 +14,8 @@ class NetWork {
     private deRc4: RC4;
     private service: WSByProtobuf;
 
-    private waitHeartTimer: number; //心跳等待timer
-    private heartbeatTimer: number; //心跳timer
+    private waitHeartTimer: NodeJS.Timeout; //心跳等待timer
+    private heartbeatTimer: NodeJS.Timeout; //心跳timer
 
     private msgListeners: any[];
     private waitListenerCnt: number; //消息锁屏等待数量
