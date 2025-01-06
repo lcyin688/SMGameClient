@@ -20,7 +20,7 @@ export default class GameLogin extends UIVControlBase {
     public view: GameLoginView = undefined;
 
     protected onViewOpen(param: any) {
-        this.connetToServer()
+        // this.connetToServer()
     }
 
     protected onEnable(): void {

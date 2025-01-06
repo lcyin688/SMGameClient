@@ -26,8 +26,8 @@ export default class BoxGameMainModel extends UIModelBase {
     }
     public tcpConnet(url: string, callback: Function) {
         // 使用示例
-        this.client = new WebSocketClient();
-        this.client.tcpConnet(url, callback);
+        // this.client = new WebSocketClient();
+        // this.client.tcpConnet(url, callback);
     }
 
 
