@@ -19,6 +19,8 @@ export default class GameLoginView extends UIViewBase {
     public btnStartButton: cc.Button = undefined;
     public btnBasketBall: cc.Node;
     public btnBasketBallButton: cc.Button = undefined;
+    public btnLogin: cc.Node;
+    public btnLoginButton: cc.Button = undefined;
     
 
     public onLoad() {
@@ -49,6 +51,8 @@ export default class GameLoginView extends UIViewBase {
         this.btnStartButton = this.btnStart.getComponent(cc.Button);
         this.btnBasketBall = this.get('_btnBasketBall_');
         this.btnBasketBallButton = this.btnBasketBall.getComponent(cc.Button);
+        this.btnLogin = this.get('_btnLogin_');
+        this.btnLoginButton = this.btnLogin.getComponent(cc.Button);
         
     }
 
@@ -57,6 +61,7 @@ export default class GameLoginView extends UIViewBase {
         this.btnCreateMapButton.node.on('click', this.onbtnCreateMapButtonClick, this);
         this.btnStartButton.node.on('click', this.onbtnStartButtonClick, this);
         this.btnBasketBallButton.node.on('click', this.onbtnBasketBallButtonClick, this);
+        this.btnLoginButton.node.on('click', this.onbtnLoginButtonClick, this);
 
     }
 
@@ -65,6 +70,7 @@ export default class GameLoginView extends UIViewBase {
         this.btnCreateMapButton.node.off('click', this.onbtnCreateMapButtonClick, this);
         this.btnStartButton.node.off('click', this.onbtnStartButtonClick, this);
         this.btnBasketBallButton.node.off('click', this.onbtnBasketBallButtonClick, this);
+        this.btnLoginButton.node.off('click', this.onbtnLoginButtonClick, this);
 
     }
 
@@ -81,6 +87,10 @@ export default class GameLoginView extends UIViewBase {
     }
 
     private onbtnBasketBallButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnLoginButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

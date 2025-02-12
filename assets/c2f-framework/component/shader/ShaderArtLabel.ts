@@ -241,6 +241,6 @@ export default class ShaderArtLabel extends cc.Component {
 
     update(dt: number) {
         this._time += dt;
-        this.use();
+        // this.use();
     }
 }

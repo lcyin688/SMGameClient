@@ -33,10 +33,10 @@ export default class GameLoading extends UIVControlBase {
         if (!szg.plat.isAudit) {
             return;
         }
-        cc.Tween.stopAllByTarget(this.view.loadIcon);
-        cc.tween(this.view.loadIcon)
-            .by(1, { angle: -360 })
-            .repeatForever()
-            .start();
+        // cc.Tween.stopAllByTarget(this.view.loadIcon);
+        // cc.tween(this.view.loadIcon)
+        //     .by(1, { angle: -360 })
+        //     .repeatForever()
+        //     .start();
     }
 }

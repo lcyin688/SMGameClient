@@ -3,7 +3,7 @@ import { UIPa } from "../../../../Script/game/UIParam";
 import { msgid } from "../../../../resources/proto/msgid";
 
 
-export class RankData {
+export class LoginData {
 
 
     constructor() {

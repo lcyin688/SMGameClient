@@ -68,6 +68,10 @@ export default class GameLogin extends UIVControlBase {
                 this.CC_onClickbtnBasketBall();
                 break;
 
+            case this.view.btnLoginButton.name:
+                this.CC_onClickbtnLogin();
+                break;
+
 
             case this.view.btn2048Button.name:
                 this.CC_onClickbtn2048();
@@ -141,5 +145,11 @@ export default class GameLogin extends UIVControlBase {
 
     }
 
+                    
+    private CC_onClickbtnLogin() {
+        
 
-}
+
+    }
+            
+    }
