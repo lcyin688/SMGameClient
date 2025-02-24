@@ -1,0 +1,7 @@
+{
+  "__type__": "cc.TextAsset",
+  "_name": "crypto-js.d",
+  "_objFlags": 0,
+  "_native": "",
+  "text": "export const global: any;\ndeclare global {\n\n    class WordArray { }\n\n    namespace CryptoJS {\n\n        // SHA256 声明\n        interface HashStatic {\n            (message: string | WordArray, key?: string | WordArray, options?: any): WordArray;\n        }\n        const SHA256: HashStatic;\n\n        namespace AES {\n            export function encrypt(message: string, key: string, cfg: { iv: string, mode: mode, padding: pad }): WordArray;\n\n            export function decrypt(text: string, key: string, cfg: { iv: string, mode: mode, padding: pad }): WordArray;\n        }\n\n        namespace enc {\n            namespace Utf8 {\n                export function parse(key: WordArray): string;\n                export function stringify(word: WordArray): string;\n            }\n        }\n\n        export enum mode {\n            CBC\n        }\n\n        export enum pad {\n            Pkcs7\n        }\n    }\n}"
+}

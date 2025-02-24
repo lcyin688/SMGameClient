@@ -1,0 +1,26 @@
+{
+  "__type__": "cc.JsonAsset",
+  "_name": "gameCfg",
+  "_objFlags": 0,
+  "_native": "",
+  "json": {
+    "config": {
+      "version": "1.0.0",
+      "package": "com.c2f.game",
+      "localDataKey": "c2f",
+      "localDataIv": "framework",
+      "httpServer": "http://192.168.0.150/main/",
+      "httpTimeout": 10000,
+      "frameRate": 60
+    },
+    "language": {
+      "file": "languageRes",
+      "type": [
+        "cn",
+        "tw"
+      ],
+      "base": "cn",
+      "default": "cn"
+    }
+  }
+}

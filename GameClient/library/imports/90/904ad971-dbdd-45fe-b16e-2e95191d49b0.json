@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btm_rechalle",
+    "texture": "bb43c639-f5fc-476d-a601-e35cdd357992",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      491,
+      105
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      491,
+      105
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

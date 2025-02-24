@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "truco_stars",
+    "texture": "7702bff8-5195-4ed7-a98a-6ff3c0bbfdfc",
+    "atlas": "",
+    "rect": [
+      2,
+      6,
+      228,
+      254
+    ],
+    "offset": [
+      -15,
+      -2
+    ],
+    "originalSize": [
+      262,
+      262
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

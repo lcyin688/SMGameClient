@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "ann_gb",
+    "texture": "4945ccaa-e5df-444e-a1e7-89f931a828d6",
+    "atlas": "",
+    "rect": [
+      2,
+      0,
+      83,
+      87
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      87,
+      89
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

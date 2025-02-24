@@ -1,0 +1,8 @@
+{
+  "__type__": "cc.AudioClip",
+  "_name": "physics2048BackMusic",
+  "_objFlags": 0,
+  "_native": ".mp3",
+  "duration": 76.608,
+  "loadMode": 0
+}

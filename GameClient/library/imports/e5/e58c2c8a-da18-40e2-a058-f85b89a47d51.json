@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wz_time-tips",
+    "texture": "da19bb19-3f6e-4854-b57d-8e965c149042",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      157,
+      17
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      157,
+      17
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

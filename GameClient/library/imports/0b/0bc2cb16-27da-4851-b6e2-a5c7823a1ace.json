@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btn_shengyin1",
+    "texture": "86d0a30f-296b-425e-b6b4-41ff29318fde",
+    "atlas": "",
+    "rect": [
+      12,
+      20,
+      144,
+      72
+    ],
+    "offset": [
+      0,
+      -3
+    ],
+    "originalSize": [
+      168,
+      106
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

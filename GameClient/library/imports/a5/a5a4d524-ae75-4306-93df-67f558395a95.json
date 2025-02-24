@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "imgEffSound",
+    "texture": "eed0dcac-97a5-486f-b594-f74ad42cffa1",
+    "atlas": "",
+    "rect": [
+      11,
+      16,
+      76,
+      66
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      98,
+      98
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

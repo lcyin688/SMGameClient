@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "weiba",
+    "texture": "9be663bf-7bf8-4600-8c76-d395d30f211b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      214,
+      83
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      214,
+      83
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

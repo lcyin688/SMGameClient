@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/c2f-framework/C2F.ts"],"names":[],"mappings":"","file":"","sourceRoot":"/","sourcesContent":["declare global {\n    interface IUtil { }\n    interface IGame { }\n\n    interface IC2F {\n        utils: IUtil;\n        game: IGame;\n        initFW: () => void;\n    }\n\n    const c2f: IC2F;\n}\n\nexport { };"]}

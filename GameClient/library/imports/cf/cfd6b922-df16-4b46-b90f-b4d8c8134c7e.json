@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gool_overlay_effect_Material",
+    "texture": "0191f24f-6a04-4926-88c8-824f7da56d01",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      1981,
+      1027
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      1981,
+      1027
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

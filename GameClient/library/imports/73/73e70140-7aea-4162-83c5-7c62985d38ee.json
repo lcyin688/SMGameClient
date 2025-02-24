@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "效果图2",
+    "texture": "d1ae45a5-c652-448d-8b74-e951c086d38d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      750,
+      1280
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      750,
+      1280
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

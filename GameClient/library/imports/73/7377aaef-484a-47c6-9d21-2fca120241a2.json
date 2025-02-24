@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "desStar2",
+    "texture": "1c424586-7c3d-4d06-879b-b1abd3d21b73",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      666,
+      154
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      668,
+      154
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

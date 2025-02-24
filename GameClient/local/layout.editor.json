@@ -1,0 +1,97 @@
+{
+  "version": "1.1.1",
+  "windows": {
+    "main": {
+      "main": true,
+      "url": "app://editor/index.html",
+      "windowType": "dockable",
+      "x": 1920,
+      "y": 104,
+      "width": 1728,
+      "height": 1079,
+      "layout": {
+        "type": "dock-h",
+        "children": [
+          {
+            "width": 421.21875,
+            "height": 895,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "hierarchy"
+            ]
+          },
+          {
+            "width": 504,
+            "height": 895,
+            "type": "dock-v",
+            "children": [
+              {
+                "width": 504,
+                "height": 446,
+                "type": "panel",
+                "active": 0,
+                "children": [
+                  "scene"
+                ]
+              },
+              {
+                "width": 504,
+                "height": 446,
+                "type": "panel",
+                "active": 0,
+                "children": [
+                  "console",
+                  "timeline",
+                  "game-window"
+                ]
+              }
+            ]
+          },
+          {
+            "width": 489.78125,
+            "height": 895,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "assets"
+            ]
+          },
+          {
+            "width": 304,
+            "height": 895,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "inspector"
+            ]
+          }
+        ]
+      },
+      "panels": [
+        "hierarchy",
+        "scene",
+        "console",
+        "timeline",
+        "game-window",
+        "assets",
+        "inspector"
+      ]
+    }
+  },
+  "panels": {
+    "project-settings": {
+      "x": 768,
+      "y": 247,
+      "width": 584,
+      "height": 554
+    },
+    "preferences": {
+      "x": 886,
+      "y": 209,
+      "width": 584,
+      "height": 554
+    }
+  },
+  "panelLabelWidth": {}
+}

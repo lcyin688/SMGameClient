@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wz_lessGold2",
+    "texture": "30df559a-5a2b-4142-aeb2-2f69b22aa808",
+    "atlas": "",
+    "rect": [
+      41,
+      1,
+      284,
+      28
+    ],
+    "offset": [
+      19.5,
+      0.5
+    ],
+    "originalSize": [
+      327,
+      31
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

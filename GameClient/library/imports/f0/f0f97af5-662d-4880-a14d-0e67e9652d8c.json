@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lessWz3",
+    "texture": "712e9694-751b-47e1-8862-1445d010ea39",
+    "atlas": "",
+    "rect": [
+      2,
+      0,
+      344,
+      27
+    ],
+    "offset": [
+      0,
+      1
+    ],
+    "originalSize": [
+      348,
+      29
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

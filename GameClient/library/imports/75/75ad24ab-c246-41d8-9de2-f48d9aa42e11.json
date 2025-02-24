@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "zi_yaoq",
+    "texture": "71a16f3f-aa89-49d9-b6f4-595a33450b1c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      512,
+      192
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      512,
+      192
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

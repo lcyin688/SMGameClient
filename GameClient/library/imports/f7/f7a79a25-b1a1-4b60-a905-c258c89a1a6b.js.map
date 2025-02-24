@@ -1,0 +1,1 @@
+{"version":3,"sources":["assets/entrance/script/_szg.ts"],"names":[],"mappings":";;;;;;AACA,iBAAe;AACf,6BAA2B","file":"","sourceRoot":"/","sourcesContent":["\nimport './SZG';\nimport \"./game/GameConfig\";"]}

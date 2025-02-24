@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gool_winframe_Material",
+    "texture": "f914500a-8172-4148-a642-82793ae28d97",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      726,
+      393
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      726,
+      393
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "basketBall_line",
+    "texture": "7390a66a-78b2-4a05-915f-d78cc500b3c1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      195,
+      21
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      195,
+      21
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

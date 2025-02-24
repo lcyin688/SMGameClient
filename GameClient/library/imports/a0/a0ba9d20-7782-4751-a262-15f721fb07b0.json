@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btn_caidan",
+    "texture": "e08228c3-bfac-4705-88e0-1fbd44c1ea50",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      84,
+      84
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      86,
+      86
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

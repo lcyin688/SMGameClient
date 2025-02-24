@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "邀请",
+    "texture": "abf44b92-aa69-4dee-8738-8572398d9c7c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      750,
+      1280
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      750,
+      1280
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

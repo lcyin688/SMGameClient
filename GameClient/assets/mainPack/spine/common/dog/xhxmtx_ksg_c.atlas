@@ -1,0 +1,41 @@
+
+xhxmtx_ksg_c.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+xhxmg_b_00000
+  rotate: true
+  xy: 1558, 283
+  size: 308, 310
+  orig: 867, 566
+  offset: 290, 127
+  index: -1
+xhxmg_b_00001
+  rotate: false
+  xy: 1558, 593
+  size: 457, 426
+  orig: 867, 566
+  offset: 211, 69
+  index: -1
+xhxmg_b_00002
+  rotate: false
+  xy: 2, 2
+  size: 585, 527
+  orig: 867, 566
+  offset: 147, 19
+  index: -1
+xhxmg_b_00003
+  rotate: false
+  xy: 843, 453
+  size: 713, 566
+  orig: 867, 566
+  offset: 83, 0
+  index: -1
+xhxmg_b_00004
+  rotate: false
+  xy: 2, 531
+  size: 839, 488
+  orig: 867, 566
+  offset: 20, 78
+  index: -1
