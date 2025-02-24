@@ -1,7 +1,6 @@
 import { RC4 } from "../libs/rc4/RC4";
 import { WSByProtobuf } from "./ws/WSByProtobuf";
 import { SocketState } from "./ws/WebService";
-import { msgid } from "../../resources/proto/msgid";
 import { msgname } from "../../resources/proto/msgname";
 import { INetToUI } from "./INetToUI";
 import { C2FConst } from "../define/C2FConst";
@@ -220,16 +219,16 @@ class NetWork {
             }
         }
         const rate = 6000;
-        const heartMsgId = msgid.C_TimeSync;
-        const heartRetId = msgid.GS_TimeSync_R;
+        // const heartMsgId = msgid.C_TimeSync;
+        // const heartRetId = msgid.GS_TimeSync_R;
         let sendHeartMsg = () => {
-            this.sendMsg(
-                heartMsgId,
-                {},
-                {
-                    ops: [heartRetId],
-                    callback: this.clearWaitHeartTimer.bind(this)
-                });
+            // this.sendMsg(
+            //     heartMsgId,
+            //     {},
+            //     {
+            //         ops: [heartRetId],
+            //         callback: this.clearWaitHeartTimer.bind(this)
+            //     });
             if (!this.waitHeartTimer) {
                 this.waitHeartTimer = setTimeout(heartWaitTimeout, rate * 5);
             }

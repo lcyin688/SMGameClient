@@ -5,7 +5,6 @@ cc._RF.push(module, 'ef0b9TEEkVLeaMr14rQDH9Z', 'LoginData');
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LoginData = void 0;
-var msgid_1 = require("../../../../resources/proto/msgid");
 var LoginData = /** @class */ (function () {
     function LoginData() {
         this.reset();
@@ -20,7 +19,12 @@ var LoginData = /** @class */ (function () {
             UserName: userName,
             PassWord: passWord
         };
-        c2f.net.sendMsg(msgid_1.msgid.C_Login, cData);
+        // c2f.net.sendMsg(msgid.C_Login, cData)
+        // let playerInfo = {} as msg.player.PlayerInfo; 
+        // playerInfo.userId = 10;
+        // playerInfo.gender = 1;
+        // playerInfo.nickName="111";
+        // console.log( "亲亲我的宝贝 002 ",JSON.stringify(playerInfo) );
     };
     return LoginData;
 }());

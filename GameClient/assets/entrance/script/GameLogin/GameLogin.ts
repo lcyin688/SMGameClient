@@ -10,6 +10,7 @@ import { UINetwork } from '../../../Script/game/UINetwork';
 
 
 
+
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class GameLogin extends UIVControlBase {
@@ -18,6 +19,8 @@ export default class GameLogin extends UIVControlBase {
 
     public model: GameLoginModel = undefined;
     public view: GameLoginView = undefined;
+
+
 
     protected onViewOpen(param: any) {
         // this.connetToServer()
@@ -147,9 +150,27 @@ export default class GameLogin extends UIVControlBase {
 
                     
     private CC_onClickbtnLogin() {
-        
+        console.error('CC_onClickbtnLogin test 002');
+    
+        // 创建玩家登录信息
+        const playerInfo: msg.player.LoginReq = {
+            account: "test2025",
+            password: "p@ssw0rd",
+            serverId: 1001
+        };
 
 
+         let ws = new WebSocket("ws://127.0.0.1/ws");
+        //  let url = "ws://127.0.0.1:8080/ws";
+        // c2f.webSocket.connect(url)
+        // c2f.webSocket.send(playerInfo)
     }
+
+
+
+      
+
+
+
             
     }

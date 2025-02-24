@@ -5,7 +5,6 @@ cc._RF.push(module, '8c4aflMClBOML84dx3w7EBZ', 'EntranceData');
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EntraData = void 0;
-var msgid_1 = require("../../../resources/proto/msgid");
 /** 游戏入口数据 */
 var EntraData = /** @class */ (function () {
     //---------DEV相关-----------
@@ -94,13 +93,16 @@ var EntraData = /** @class */ (function () {
             failCb && failCb();
             return;
         }
-        var param = Object.copyDepth(this.loginParam);
-        param.P1 = "reconnect";
-        c2f.net.sendMsg(msgid_1.msgid.C_Login, param, {
-            getErr: true,
-            ops: [msgid_1.msgid.GW_Login_R],
-            callback: sucCb,
-        });
+        // let param: msg.C_Login = Object.copyDepth(this.loginParam);
+        // param.P1 = "reconnect";
+        // c2f.net.sendMsg(
+        //     msgid.C_Login,
+        //     param,
+        //     {
+        //         getErr: true,
+        //         ops: [msgid.GW_Login_R],
+        //         callback: sucCb,
+        //     });
     };
     EntraData._ins = null;
     return EntraData;

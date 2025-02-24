@@ -18,7 +18,6 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WSByProtobuf = void 0;
-var msgid_1 = require("../../../resources/proto/msgid");
 var msgname_1 = require("../../../resources/proto/msgname");
 var WebService_1 = require("./WebService");
 var WSByProtobuf = /** @class */ (function (_super) {
@@ -68,15 +67,14 @@ var WSByProtobuf = /** @class */ (function (_super) {
                 return;
             }
             var rep = proto.decode(data);
-            if (CC_DEV && op != msgid_1.msgid.GS_TimeSync_R) {
-                var noCpyIds = [msgid_1.msgid.GS_GetLoginData_R];
-                if (noCpyIds.indexOf(op) >= 0 || data.byteLength > 3000) {
-                    cc.log(op, name, rep);
-                }
-                else {
-                    cc.log(op, name, Object.copyDepth(rep));
-                }
-            }
+            // if (CC_DEV && op != msgid.GS_TimeSync_R) {
+            //     let noCpyIds = [msgid.GS_GetLoginData_R];
+            //     if (noCpyIds.indexOf(op) >= 0 || data.byteLength > 3000) {
+            //         cc.log(op, name, rep);
+            //     } else {
+            //         cc.log(op, name, Object.copyDepth(rep));
+            //     }
+            // }
             this.messageCb && this.messageCb(op, rep);
             //this.dispatchMsg(op, rep);
             this.messages = this.messages.subarray(len);
@@ -98,10 +96,10 @@ var WSByProtobuf = /** @class */ (function (_super) {
             cc.warn("don't find msg for id:" + op);
             return false;
         }
-        if (CC_DEV && op != msgid_1.msgid.C_TimeSync) {
-            cc.log("network.tcpSend msgid = " + op);
-            cc.log(Object.copyDepth(data));
-        }
+        // if (CC_DEV && op != msgid.C_TimeSync) {
+        //     cc.log("network.tcpSend msgid = " + op);
+        //     cc.log(Object.copyDepth(data));
+        // }
         var name = "msg." + msgName;
         var message = this.root.build(name);
         var msg = new message();

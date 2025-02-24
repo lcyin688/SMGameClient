@@ -1,6 +1,5 @@
 import { GameConsts } from "../../../../Script/game/GameConsts";
 import { UIPa } from "../../../../Script/game/UIParam";
-import { msgid } from "../../../../resources/proto/msgid";
 
 
 export class LoginData {
@@ -23,7 +22,13 @@ export class LoginData {
             UserName: userName,
             PassWord: passWord
         }
-        c2f.net.sendMsg(msgid.C_Login, cData)
+        // c2f.net.sendMsg(msgid.C_Login, cData)
+        // let playerInfo = {} as msg.player.PlayerInfo; 
+        // playerInfo.userId = 10;
+        // playerInfo.gender = 1;
+        // playerInfo.nickName="111";
+        // console.log( "亲亲我的宝贝 002 ",JSON.stringify(playerInfo) );
+
     }
 
 

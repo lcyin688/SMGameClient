@@ -2,7 +2,6 @@ import { EntraDef } from "./EntranceDefine";
 import { GameConsts } from "../../../Script/game/GameConsts";
 import { GameCalc } from "../../../Script/game/GameCalculator";
 import { PlatDef } from "../platform/PlatDefine";
-import { msgid } from "../../../resources/proto/msgid";
 
 /** 游戏入口数据 */
 export class EntraData {
@@ -85,16 +84,16 @@ export class EntraData {
             failCb && failCb();
             return;
         }
-        let param: msg.C_Login = Object.copyDepth(this.loginParam);
-        param.P1 = "reconnect";
-        c2f.net.sendMsg(
-            msgid.C_Login,
-            param,
-            {
-                getErr: true,
-                ops: [msgid.GW_Login_R],
-                callback: sucCb,
-            });
+        // let param: msg.C_Login = Object.copyDepth(this.loginParam);
+        // param.P1 = "reconnect";
+        // c2f.net.sendMsg(
+        //     msgid.C_Login,
+        //     param,
+        //     {
+        //         getErr: true,
+        //         ops: [msgid.GW_Login_R],
+        //         callback: sucCb,
+        //     });
     }
 
 

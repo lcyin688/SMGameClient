@@ -43,7 +43,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var RC4_1 = require("../libs/rc4/RC4");
 var WSByProtobuf_1 = require("./ws/WSByProtobuf");
 var WebService_1 = require("./ws/WebService");
-var msgid_1 = require("../../resources/proto/msgid");
 var msgname_1 = require("../../resources/proto/msgname");
 var C2FConst_1 = require("../define/C2FConst");
 var msgpack = require('msgpack');
@@ -250,13 +249,16 @@ var NetWork = /** @class */ (function () {
             }
         };
         var rate = 6000;
-        var heartMsgId = msgid_1.msgid.C_TimeSync;
-        var heartRetId = msgid_1.msgid.GS_TimeSync_R;
+        // const heartMsgId = msgid.C_TimeSync;
+        // const heartRetId = msgid.GS_TimeSync_R;
         var sendHeartMsg = function () {
-            _this.sendMsg(heartMsgId, {}, {
-                ops: [heartRetId],
-                callback: _this.clearWaitHeartTimer.bind(_this)
-            });
+            // this.sendMsg(
+            //     heartMsgId,
+            //     {},
+            //     {
+            //         ops: [heartRetId],
+            //         callback: this.clearWaitHeartTimer.bind(this)
+            //     });
             if (!_this.waitHeartTimer) {
                 _this.waitHeartTimer = setTimeout(heartWaitTimeout, rate * 5);
             }

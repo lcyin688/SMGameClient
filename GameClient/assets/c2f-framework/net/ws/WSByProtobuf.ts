@@ -1,4 +1,3 @@
-import { msgid } from "../../../resources/proto/msgid";
 import { msgname } from "../../../resources/proto/msgname";
 import { SocketState, WebService } from "./WebService";
 
@@ -61,14 +60,14 @@ export class WSByProtobuf extends WebService {
                 return;
             }
             let rep = proto.decode(data);
-            if (CC_DEV && op != msgid.GS_TimeSync_R) {
-                let noCpyIds = [msgid.GS_GetLoginData_R];
-                if (noCpyIds.indexOf(op) >= 0 || data.byteLength > 3000) {
-                    cc.log(op, name, rep);
-                } else {
-                    cc.log(op, name, Object.copyDepth(rep));
-                }
-            }
+            // if (CC_DEV && op != msgid.GS_TimeSync_R) {
+            //     let noCpyIds = [msgid.GS_GetLoginData_R];
+            //     if (noCpyIds.indexOf(op) >= 0 || data.byteLength > 3000) {
+            //         cc.log(op, name, rep);
+            //     } else {
+            //         cc.log(op, name, Object.copyDepth(rep));
+            //     }
+            // }
             this.messageCb && this.messageCb(op, rep);
             //this.dispatchMsg(op, rep);
             this.messages = this.messages.subarray(len);
@@ -92,10 +91,10 @@ export class WSByProtobuf extends WebService {
             return false;
         }
 
-        if (CC_DEV && op != msgid.C_TimeSync) {
-            cc.log("network.tcpSend msgid = " + op);
-            cc.log(Object.copyDepth(data));
-        }
+        // if (CC_DEV && op != msgid.C_TimeSync) {
+        //     cc.log("network.tcpSend msgid = " + op);
+        //     cc.log(Object.copyDepth(data));
+        // }
 
         let name = "msg." + msgName;
         let message = this.root.build(name);

@@ -5370,7 +5370,7 @@ cc._RF.push(module, 'bdb28IdKRVNA4M4+3Vsav8v', 'protobuf');
 
 cc._RF.pop();
 
-}).call(this,require("../../../../../../../../../../../../Applications/Cocos/Creator/2.4.13/CocosCreator.app/Contents/Resources/app.asar/node_modules/process/browser.js"))
+}).call(this,require("../../../../../../../../../../../../../Applications/Cocos/Creator/2.4.13/CocosCreator.app/Contents/Resources/app.asar/node_modules/process/browser.js"))
                     }
                     if (nodeEnv) {
                         __define(__module.exports, __require, __module);

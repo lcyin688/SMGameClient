@@ -1,0 +1,134 @@
+{
+    "env": {
+        "node": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        /**
+         * eslint
+         * https://eslint.bootcss.com/docs/rules/
+         * "off" or 0 - 关闭规则
+         * "warn" or 1 - 将规则视为一个警告（不会影响退出码）
+         * "error" or 2 - 将规则视为一个错误 (退出码为1)
+         */
+        /** Possible Errors */
+        "no-await-in-loop": 2, // 禁止在循环中出现 await
+        "no-console": 0, // 禁用 console
+        "no-control-regex": 0, // 禁止在正则表达式中使用控制字符
+        "no-debugger": 2, // 禁用 debugger
+        "no-empty": 0, // 禁止出现空语句块
+        /** Best Practices */
+        "default-case": 1, // 要求 switch 语句中有 default 分支
+        "no-case-declarations": 1, //不允许在 case 子句中使用词法声明
+        "no-sequences": 2, // 禁用逗号操作符
+        "no-multi-spaces": [
+            1,
+            {
+                "ignoreEOLComments": true
+            }
+        ],
+        "no-useless-escape": 0,
+        /** Stylistic Issues */
+        "array-bracket-spacing": 1,
+        "block-spacing": 0,
+        "brace-style": 1,
+        "camelcase": 0,
+        "comma-dangle": [
+            1,
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "never",
+                "exports": "never",
+                "functions": "never"
+            }
+        ],
+        "comma-spacing": 1,
+        "comma-style": 1,
+        "computed-property-spacing": 1,
+        "consistent-this": [
+            0,
+            "that"
+        ],
+        "eol-last": 1,
+        "func-call-spacing": 1,
+        "indent": [
+            0,
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "key-spacing": 1,
+        "keyword-spacing": 1,
+        "linebreak-style": [
+            0,
+            "unix"
+        ],
+        "no-trailing-spaces": 0,
+        "no-whitespace-before-property": 2,
+        "object-curly-spacing": 0,
+        "quotes": [
+            1,
+            "single",
+            {
+                "avoidEscape": true,
+                "allowTemplateLiterals": true
+            }
+        ],
+        "semi": 1,
+        "semi-spacing": 1,
+        "semi-style": 1,
+        "space-before-blocks": 1,
+        "space-in-parens": 1,
+        "space-infix-ops": 1,
+        "space-unary-ops": 1,
+        "spaced-comment": 1,
+        "switch-colon-spacing": 1,
+        /** ECMAScript 6 */
+        "arrow-body-style": [
+            1,
+            "always"
+        ],
+        "arrow-parens": [
+            1,
+            "always"
+        ],
+        "arrow-spacing": 1,
+        "no-var": 1,
+        "prefer-arrow-callback": 1,
+        "prefer-const": 0,
+        "rest-spread-spacing": 1,
+        "template-curly-spacing": 1,
+        /**
+         * typescript-eslint
+         * https://typescript-eslint.io/rules/
+         */
+        "@typescript-eslint/ban-ts-comment": 0,
+        "@typescript-eslint/explicit-function-return-type": 0, // 需要函数和类方法的显式返回类型
+        "@typescript-eslint/explicit-member-accessibility": 0, // 要求对类属性和方法进行显式可访问性修饰符
+        "@typescript-eslint/ban-types": 0,
+        "@typescript-eslint/no-empty-interface": 0,
+        "@typescript-eslint/no-explicit-any": 0,
+        "@typescript-eslint/no-inferrable-types": 0, // 不允许对初始化为数字、字符串或布尔值的变量或参数进行显式类型声明
+        "@typescript-eslint/no-namespace": 0,
+        "@typescript-eslint/no-this-alias": 1,
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/no-empty-function": 0,
+        "@typescript-eslint/no-extra-semi": 1,
+        "@typescript-eslint/no-unused-vars": 0,
+        "@typescript-eslint/type-annotation-spacing": 1
+    }
+}

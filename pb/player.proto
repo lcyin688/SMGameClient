@@ -6,3 +6,15 @@ message PlayerInfo {
     string userName = 3;
     string nickName = 4;
 }
+
+message LoginReq {
+    string account = 1;
+    string password = 2;
+    int32 server_id = 3;
+}
+message LoginRes {
+    int32 code = 1;
+    string token = 2;
+}
+
+
