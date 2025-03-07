@@ -16,6 +16,9 @@ export default class GameLogo extends UIVControlBase {
     public view: GameLogoView = undefined;
 
     onEnable() {
+        cc.view.setOrientation(cc.macro.ORIENTATION_LANDSCAPE); 
+        cc.view.setFrameSize(720, 1280);
+
         if (super.onEnable) {
             super.onEnable();
         }

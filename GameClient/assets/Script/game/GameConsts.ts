@@ -11,6 +11,7 @@ export namespace GameConsts {
         mainPack = 'mainPack',
         gameYngy = 'gameYngy',
         boxGame = 'boxGame',
+        snake2048 = 'snake2048',
     }
 
     //平台标志:原生端设置，WEB端链接解析设置，小游戏待定

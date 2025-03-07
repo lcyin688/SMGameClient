@@ -75,6 +75,10 @@ export default class GameLogin extends UIVControlBase {
                 this.CC_onClickbtnLogin();
                 break;
 
+            case this.view.btnSnak2048Button.name:
+                this.CC_onClickbtnSnak2048();
+                break;
+
 
             case this.view.btn2048Button.name:
                 this.CC_onClickbtn2048();
@@ -106,6 +110,13 @@ export default class GameLogin extends UIVControlBase {
         GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
             c2f.gui.open(UIID.Physics2048Main)
         });
+    }
+
+    private CC_onClickbtnSnak2048() {
+        GameHelper.loadBundle(GameConsts.Bundle.snake2048).then(UIID => {
+            c2f.gui.open(UIID.SnakLoading)
+        });
+    
     }
 
 
@@ -169,6 +180,9 @@ export default class GameLogin extends UIVControlBase {
       
 
 
+
+            
+                       
 
             
     }

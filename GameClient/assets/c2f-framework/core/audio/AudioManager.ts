@@ -362,6 +362,29 @@ class AudioManager {
     }
 
     /**
+     * 播放bgmURL
+     */
+    public playBgmURLbyBuddle(buddleName:string,url: string, callback?: Function) {
+        if (this.bgmDelayTimer) {
+            clearTimeout(this.bgmDelayTimer);
+        }
+        this.bgmDelayTimer = setTimeout(() => {
+            this.bgmDelayTimer = null;
+
+            this.addMusicUrlToList(url);
+            if (this.bgmOff) {
+                return;
+            }
+            c2f.res.load(buddleName,url, cc.AudioClip, (err: Error | null, data: cc.AudioClip) => {
+                if (err) {
+                    cc.error(err);
+                }
+                this.playBgm({ clip: data, loop: true, finishCall: callback })
+            })
+        }, 300);
+    }
+
+    /**
      * 结束当前背景音乐·播放前一首
      */
     public endCurMusic() {
@@ -431,7 +454,20 @@ class AudioManager {
         })
     }
 
-
+    /**
+     * 播放sfxURL
+     */
+    public playSfxURLByBuddle(bundleName:string,url: string, callback?: Function) {
+        if (this.sfxOff) {
+            return;
+        }
+        c2f.res.load(bundleName, url, cc.AudioClip, (err: Error | null, data: cc.AudioClip) => {
+            if (err) {
+                cc.error(err);
+            }
+            this.playSfx({ clip: data, loop: false, finishCall: callback })
+        })
+    }
 
     /**
      * 设置音效数据（用于限制某些短时间内同时大量播放的音效）

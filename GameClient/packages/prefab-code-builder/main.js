@@ -43,7 +43,7 @@ module.exports = {
             Editor.log(`[${EXTENSION_NAME}]`, translate('selectAssets'));
             return;
         }
-        Editor.log(` 是走这出去的吗  uuids : `, uuids);
+        Editor.log(` 是走这出去的吗  uuids ------ : `, uuids);
         // 根据 uuid 查找
         for (let i = 0; i < uuids.length; i++) {
             this.buildOnce(uuids[i], refreshCodePath);
@@ -52,12 +52,16 @@ module.exports = {
 
     /**为某文件生成代码 */
     buildOnce(uuid, refreshCodePath) {
+        Editor.log(' buildOnce  0000000 ');
+
         let isValid = this.isValidPrefabByUuid(uuid);
+        
         if (!isValid) {
             Editor.log(' buildOnce  isValid =false');
             return;
         }
         let info = Utility.getPrefabInfoByUuid(uuid);
+        Editor.log(` buildOnce  info  `+info);
         if (info) {
             Utility.genOnePrefabClass(info.file, info.path, info.name, info.bundleName, info.relativePath, refreshCodePath);
         }

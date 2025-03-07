@@ -21,6 +21,8 @@ export default class GameLoginView extends UIViewBase {
     public btnBasketBallButton: cc.Button = undefined;
     public btnLogin: cc.Node;
     public btnLoginButton: cc.Button = undefined;
+    public btnSnak2048: cc.Node;
+    public btnSnak2048Button: cc.Button = undefined;
     
 
     public onLoad() {
@@ -53,6 +55,8 @@ export default class GameLoginView extends UIViewBase {
         this.btnBasketBallButton = this.btnBasketBall.getComponent(cc.Button);
         this.btnLogin = this.get('_btnLogin_');
         this.btnLoginButton = this.btnLogin.getComponent(cc.Button);
+        this.btnSnak2048 = this.get('_btnSnak2048_');
+        this.btnSnak2048Button = this.btnSnak2048.getComponent(cc.Button);
         
     }
 
@@ -62,6 +66,7 @@ export default class GameLoginView extends UIViewBase {
         this.btnStartButton.node.on('click', this.onbtnStartButtonClick, this);
         this.btnBasketBallButton.node.on('click', this.onbtnBasketBallButtonClick, this);
         this.btnLoginButton.node.on('click', this.onbtnLoginButtonClick, this);
+        this.btnSnak2048Button.node.on('click', this.onbtnSnak2048ButtonClick, this);
 
     }
 
@@ -71,6 +76,7 @@ export default class GameLoginView extends UIViewBase {
         this.btnStartButton.node.off('click', this.onbtnStartButtonClick, this);
         this.btnBasketBallButton.node.off('click', this.onbtnBasketBallButtonClick, this);
         this.btnLoginButton.node.off('click', this.onbtnLoginButtonClick, this);
+        this.btnSnak2048Button.node.off('click', this.onbtnSnak2048ButtonClick, this);
 
     }
 
@@ -91,6 +97,10 @@ export default class GameLoginView extends UIViewBase {
     }
 
     private onbtnLoginButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnSnak2048ButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

@@ -66,11 +66,11 @@ var Utility = {
      * @returns 
      */
     genOnePrefabClass: function (file, path, prefabName, bundleName, relativePath, refreshCodePath) {
-        // Editor.log('genOnePrefabClass 001 path : ', path);
-        // Editor.log('genOnePrefabClass 002 prefabName: ', prefabName);
-        // Editor.log('genOnePrefabClass 003 bundleName : ', bundleName);
-        // Editor.log('genOnePrefabClass 004 relativePath : ', relativePath);
-        // Editor.log('genOnePrefabClass 005 refreshCodePath : ', refreshCodePath);
+        Editor.log('genOnePrefabClass 001 path : ', path);
+        Editor.log('genOnePrefabClass 002 prefabName: ', prefabName);
+        Editor.log('genOnePrefabClass 003 bundleName : ', bundleName);
+        Editor.log('genOnePrefabClass 004 relativePath : ', relativePath);
+        Editor.log('genOnePrefabClass 005 refreshCodePath : ', refreshCodePath);
 
         this.checkDirectory(path);
 
@@ -687,14 +687,16 @@ var Utility = {
 
     //同步生成窗口型预制体定义
     genViewParamDefine(scriptPath, className, prefabName, bundleName, relativePath, isPanel) {
-        // Editor.log(' genViewParamDefine 准备进去 isPanel ', isPanel);
+        Editor.log(' genViewParamDefine 准备进去 isPanel ', isPanel);
         if (isPanel) {
             return;
         }
-        // Editor.log(' genViewParamDefine 准备进去 isPanel 1');
+        Editor.log(' genViewParamDefine 准备进去 isPanel 1');
         //mainPack之后的分包配置都放在mainPack之下
         let pathBundle = bundleName;
-        let singlePack = ['framework', 'entrance', 'mainPack', 'demo', "gameYngy", "boxGame"];
+        let singlePack = ['framework', 'entrance', 'mainPack', 'demo', "gameYngy", "boxGame",
+            "snake2048"
+        ];
         if (singlePack.indexOf(pathBundle) < 0) {
             pathBundle = 'mainPack';
         }
@@ -704,13 +706,13 @@ var Utility = {
         if (pathBundle != bundleName) {
             bundlePath = bundlePath.replace(bundleName, pathBundle);
         }
-        // Editor.log(' genViewParamDefine  2 realBName ', realBName);
-        // Editor.log(' genViewParamDefine  3 bundlePath ', bundlePath);
+        Editor.log(' genViewParamDefine  2 realBName ', realBName);
+        Editor.log(' genViewParamDefine  3 bundlePath ', bundlePath);
 
         let viewFile = this.getCurNeedStr(`${bundlePath}\\${realBName}View.ts`);
-        // Editor.log(' genViewParamDefine  4 viewFile ', viewFile);
+        Editor.log(' genViewParamDefine  4 viewFile ', viewFile);
         let ctrlCode = fs.readFileSync(viewFile, 'utf-8');
-        // Editor.log(' genViewParamDefine  5 ctrlCode ', ctrlCode);
+        Editor.log(' genViewParamDefine  5 ctrlCode ', ctrlCode);
         if (ctrlCode.indexOf(className) >= 0) {
             return;
         }
@@ -742,7 +744,6 @@ var Utility = {
         Editor.log(' genViewParamDefine  8 viewFile ', viewFile);
         Editor.log(' genViewParamDefine  9 ctrlCode ', ctrlCode);
         fs.writeFileSync(viewFile, ctrlCode);
-
         this.assetsDBRefresh(viewFile, false);
     },
 
