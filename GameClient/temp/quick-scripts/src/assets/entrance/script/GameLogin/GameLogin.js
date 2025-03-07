@@ -178,16 +178,15 @@ var GameLogin = /** @class */ (function (_super) {
         szg.player.rank.reqLogin("lcy", "gogogo");
     };
     GameLogin.prototype.CC_onClickbtnLogin = function () {
-        console.error('CC_onClickbtnLogin test 002');
+        console.error('CC_onClickbtnLogin test 004');
+        var url = "ws://127.0.0.1:8999";
+        c2f.webSocket.connect(url);
         // 创建玩家登录信息
-        var playerInfo = {
-            account: "test2025",
-            password: "p@ssw0rd",
-            serverId: 1001
-        };
-        var ws = new WebSocket("ws://127.0.0.1/ws");
-        //  let url = "ws://127.0.0.1:8080/ws";
-        // c2f.webSocket.connect(url)
+        // const playerInfo: msg.player.LoginReq = {
+        //     account: "test2025",
+        //     password: "p@ssw0rd",
+        //     serverId: 1001
+        // };
         // c2f.webSocket.send(playerInfo)
     };
     GameLogin = __decorate([

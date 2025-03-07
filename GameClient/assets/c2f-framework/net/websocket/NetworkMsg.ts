@@ -22,6 +22,7 @@ export class NetworkMsg {
         
         this.ws.onopen = (event) => {
             console.log("连接成功", event);
+            this.sendHello();
             // this.dispatchEvent(new Event('connected'));
         };
 
@@ -38,7 +39,7 @@ export class NetworkMsg {
 
         this.ws.onerror = (error) => {
             console.error("连接错误", error);
-            this.scheduleReconnect();
+            // this.scheduleReconnect();
         };
 
         this.ws.onclose = (event) => {
@@ -65,6 +66,15 @@ export class NetworkMsg {
     public close() {
         this.ws?.close();
     }
+
+    sendHello() {
+        const message = {
+            type: 2, // 根据你的协议定义消息类型
+            content: 'Hello, server!'
+        };
+        this.send(message)
+    }
+
 }
 declare global {
     interface IC2F {

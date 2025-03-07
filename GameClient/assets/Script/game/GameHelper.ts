@@ -145,18 +145,20 @@ export class GameHelper {
 
     /**设置物理引擎状态 */
     static setPhysics(state: boolean) {
-        let physicsManager = cc.director.getPhysicsManager();
-        physicsManager.enabled = state;
-        physicsManager.debugDrawFlags = 0;
-        cc.PhysicsManager.DrawBits.e_jointBit | cc.PhysicsManager.DrawBits.e_shapeBit;
-        physicsManager.enabledAccumulator = true
+        // let physicsManager = cc.director.getPhysicsManager();
+        // physicsManager.enabled = state;
+        // physicsManager.debugDrawFlags = 0;
+        // cc.PhysicsManager.DrawBits.e_jointBit | cc.PhysicsManager.DrawBits.e_shapeBit;
+        // physicsManager.enabledAccumulator = true
 
-        var manager = cc.director.getCollisionManager();
-        manager.enabled = true;
-        manager.enabledDebugDraw = true;
-        manager.enabledDrawBoundingBox = true;
+        // var manager = cc.director.getCollisionManager();
+        // manager.enabled = true;
+        // manager.enabledDebugDraw = true;
+        // manager.enabledDrawBoundingBox = true;
 
 
+        cc.director.getPhysicsManager().enabled = state;  
+        cc.director.getCollisionManager().enabled = state;
 
 
     }

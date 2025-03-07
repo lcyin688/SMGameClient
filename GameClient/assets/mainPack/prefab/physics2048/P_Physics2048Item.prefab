@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "P_YngyItem",
+    "_name": "P_Physics2048Item",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -107,8 +107,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 131,
-      "height": 131
+      "width": 96,
+      "height": 98
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -160,7 +160,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "82a18309-6c0c-4c56-b948-68f9251aec84@6c48a"
+      "__uuid__": "0d03a974-3dcd-40b9-9148-972baf918235"
     },
     "_type": 0,
     "_sizeMode": 1,

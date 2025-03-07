@@ -44,6 +44,7 @@ var NetworkMsg = /** @class */ (function () {
         this.ws = new WebSocket(url);
         this.ws.onopen = function (event) {
             console.log("连接成功", event);
+            _this.sendHello();
             // this.dispatchEvent(new Event('connected'));
         };
         this.ws.onmessage = function (event) {
@@ -57,7 +58,7 @@ var NetworkMsg = /** @class */ (function () {
         };
         this.ws.onerror = function (error) {
             console.error("连接错误", error);
-            _this.scheduleReconnect();
+            // this.scheduleReconnect();
         };
         this.ws.onclose = function (event) {
             console.log("连接关闭", event);
@@ -78,6 +79,13 @@ var NetworkMsg = /** @class */ (function () {
     NetworkMsg.prototype.close = function () {
         var _a;
         (_a = this.ws) === null || _a === void 0 ? void 0 : _a.close();
+    };
+    NetworkMsg.prototype.sendHello = function () {
+        var message = {
+            type: 2,
+            content: 'Hello, server!'
+        };
+        this.send(message);
     };
     var NetworkMsg_1;
     NetworkMsg._instance = null;

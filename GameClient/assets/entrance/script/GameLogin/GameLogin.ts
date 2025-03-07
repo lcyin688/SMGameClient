@@ -150,19 +150,17 @@ export default class GameLogin extends UIVControlBase {
 
                     
     private CC_onClickbtnLogin() {
-        console.error('CC_onClickbtnLogin test 002');
-    
+        console.error('CC_onClickbtnLogin test 004');
+        let url = "ws://127.0.0.1:8999";
+        c2f.webSocket.connect(url)
         // 创建玩家登录信息
-        const playerInfo: msg.player.LoginReq = {
-            account: "test2025",
-            password: "p@ssw0rd",
-            serverId: 1001
-        };
+        // const playerInfo: msg.player.LoginReq = {
+        //     account: "test2025",
+        //     password: "p@ssw0rd",
+        //     serverId: 1001
+        // };
 
 
-         let ws = new WebSocket("ws://127.0.0.1/ws");
-        //  let url = "ws://127.0.0.1:8080/ws";
-        // c2f.webSocket.connect(url)
         // c2f.webSocket.send(playerInfo)
     }
 

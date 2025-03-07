@@ -1,1 +1,0 @@
-{"version":3,"sources":["assets/c2f-framework/net/ws/protobuf/_process.js"],"names":["module","exports","Nooooon"],"mappings":";;;;;;AAAAA,MAAM,CAACC,OAAP,GAAiB;EAChBC,OAAO,EAAC;AADQ,CAAjB","sourceRoot":"/","sourcesContent":["module.exports = {\n\tNooooon:0,\n};"]}

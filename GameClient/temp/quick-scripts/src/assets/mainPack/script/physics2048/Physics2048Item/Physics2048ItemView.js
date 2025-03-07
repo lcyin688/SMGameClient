@@ -34,8 +34,6 @@ var Physics2048ItemView = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         /** 预制名 给实例调用 */
         _this.prefabName = 'P_Physics2048Item';
-        _this.weiBaSprite = undefined;
-        _this.weiBaAnimation = undefined;
         _this.iconSprite = undefined;
         return _this;
     }
@@ -56,9 +54,6 @@ var Physics2048ItemView = /** @class */ (function (_super) {
     };
     Physics2048ItemView.prototype.initProperty = function () {
         _super.prototype.initProperty.call(this);
-        this.weiBa = this.get('_weiBa_');
-        this.weiBaSprite = this.weiBa.getComponent(cc.Sprite);
-        this.weiBaAnimation = this.weiBa.getComponent(cc.Animation);
         this.icon = this.get('_icon_');
         this.iconSprite = this.icon.getComponent(cc.Sprite);
     };

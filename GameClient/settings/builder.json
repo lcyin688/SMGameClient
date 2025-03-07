@@ -1,13 +1,13 @@
 {
-  "title": "SMGameClient",
+  "title": "GameClient",
   "packageName": "org.cocos2d.demo",
   "startScene": "b7a1df9b-0f52-46e7-a4f9-ff8d773f8139",
   "excludeScenes": [],
   "orientation": {
     "landscapeRight": true,
     "landscapeLeft": true,
-    "portrait": true,
-    "upsideDown": true
+    "portrait": false,
+    "upsideDown": false
   },
   "webOrientation": "auto",
   "inlineSpriteFrames": true,
@@ -17,12 +17,12 @@
   "optimizeHotUpdate": false,
   "md5Cache": true,
   "nativeMd5Cache": true,
-  "encryptJs": false,
-  "xxteaKey": "38c6fc89-e90e-45",
+  "encryptJs": true,
+  "xxteaKey": "1d752046-8d47-47",
   "zipCompressJs": true,
   "fb-instant-games": {},
   "android": {
-    "packageName": "org.testGame.cy1",
+    "packageName": "org.cocos2d.demo",
     "REMOTE_SERVER_ROOT": ""
   },
   "ios": {
@@ -49,10 +49,6 @@
     "host": "",
     "skipRecord": false,
     "recordPath": ""
-  },
-  "openharmony": {
-    "packageName": "com.cocos.openharmony",
-    "REMOTE_SERVER_ROOT": ""
   },
   "appBundle": false,
   "agreements": {}

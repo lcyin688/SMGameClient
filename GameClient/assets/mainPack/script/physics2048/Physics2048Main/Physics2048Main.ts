@@ -78,7 +78,7 @@ export default class Physics2048Main extends UIVControlBase {
     }
 
     private reflashScore() {
-        this.view.txtTotalScoreLabel.string = "Score:{0}".format(this.model.totalScore)
+        this.view.txtTotalScoreLabel.string = "Score:"+this.model.totalScore
     }
 
     protected onViewOpen(param: any) {
@@ -167,7 +167,7 @@ export default class Physics2048Main extends UIVControlBase {
         blockItem.setRigidBodyType(cc.RigidBodyType.Static)
         //设置左上角当前元素
         c2f.utils.view.changeSpriteFrame(this.view.iconMaxSprite, itemData.url)
-        this.view.txtCurScoreLabel.string = "X{0}".format(itemData.score)
+        this.view.txtCurScoreLabel.string = "X"+itemData.score
 
 
     }

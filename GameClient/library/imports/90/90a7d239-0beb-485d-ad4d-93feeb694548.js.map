@@ -1,1 +1,0 @@
-{"version":3,"sources":["assets/c2f-framework/redDot/_redDot.ts"],"names":[],"mappings":";;;;;;AACA,6BAA0B;AAC1B,qBAAkB;AAClB,wBAAqB;AACrB,uBAAoB","file":"","sourceRoot":"/","sourcesContent":["\nimport \"./_IRedDotDeclare\"\nimport \"./RedDot/\"\nimport \"./RedDotComp\"\nimport \"./RedDotMgr\""]}
