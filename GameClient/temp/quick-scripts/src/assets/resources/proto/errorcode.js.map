@@ -1,1 +1,0 @@
-{"version":3,"sources":["assets/resources/proto/errorcode.ts"],"names":[],"mappings":";;;;;;;AAAA,IAAY,OAIX;AAJD,WAAY,OAAO;IACf,iCAAM,CAAA;IACN,yCAAU,CAAA;IACV,iEAAsB,CAAA;AAC1B,CAAC,EAJW,OAAO,GAAP,eAAO,KAAP,eAAO,QAIlB","file":"","sourceRoot":"/","sourcesContent":["export enum errCode {\n    OK = 0, // 没问题\n    Failed = 1, // 未知错误\n    Common_InvalidTeam = 2, // 无效的阵容\n}\n"]}
