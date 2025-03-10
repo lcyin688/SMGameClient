@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "headAI",
+    "_name": "HeadAI",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -37,10 +37,13 @@
       },
       {
         "__id__": 12
+      },
+      {
+        "__id__": 13
       }
     ],
     "_prefab": {
-      "__id__": 13
+      "__id__": 14
     },
     "_opacity": 255,
     "_color": {
@@ -427,6 +430,16 @@
       "width": 50,
       "height": 50
     },
+    "_id": ""
+  },
+  {
+    "__type__": "84852P/RR9GjrW0GVfx2r9F",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
     "_id": ""
   },
   {

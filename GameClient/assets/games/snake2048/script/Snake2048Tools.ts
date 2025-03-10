@@ -9,7 +9,7 @@ export class Snake2048Tools {
         if (!name) {
             return;
         }
-        let url = Snake2048Cfg.music + name;
+        let url = Snake2048Cfg.musicPath + name;
         c2f.audio.playBgmURLbyBuddle(GameConsts.Bundle.snake2048,url, cb);
     }
 

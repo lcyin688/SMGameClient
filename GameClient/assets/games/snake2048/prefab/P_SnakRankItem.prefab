@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "rankItem",
+    "_name": "P_SnakRankItem",
     "_objFlags": 0,
     "_parent": null,
     "_children": [

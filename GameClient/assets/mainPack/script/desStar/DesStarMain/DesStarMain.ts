@@ -97,7 +97,7 @@ export default class DesStarMain extends UIVControlBase {
 
 
     private setBarView() {
-        this.view.txtScoreLabel.string = "{0}/{1}".format(this.model.curScore, this.model.totalShowScore)
+        this.view.txtScoreLabel.string = (this.model.curScore+"/"+ this.model.totalShowScore)
         let perNum = this.model.curScore / this.model.totalShowScore;
         if (perNum > 1) {
             perNum = 1

@@ -558,8 +558,13 @@ class ViewUtil {
      * @param sprite 
      * @param url 
      */
-    static changeSpriteFrame(sprite: cc.Sprite, url: string, endCb?: Function) {
-        sprite.changeSpriteFrame(url, endCb);
+    static  changeSpriteFrame(sprite: cc.Sprite, url: string, endCb?: Function) {
+        c2f.res.loadOne(url, cc.SpriteFrame).then((res: cc.SpriteFrame) => {
+            sprite.spriteFrame = res;
+            if (endCb) {
+                endCb();
+            }
+        })
     }
 
     /**

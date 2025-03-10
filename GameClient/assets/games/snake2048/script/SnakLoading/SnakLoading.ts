@@ -18,7 +18,7 @@ export default class SnakLoading extends UIVControlBase {
     private loadingTime: number = 1;
     private countTime: number = 0;
     private isNeedload: boolean = true; //防止多次加载
-
+ 
     protected onLoad(): void {
 
 
@@ -68,8 +68,6 @@ export default class SnakLoading extends UIVControlBase {
     } 
     
     private CC_onClickbtnPlay(){
-        cc.log(11111);
-
          Snake2048Tools.playEffect(Snake2048Cfg.effect.click);
          this.node.active = false;
         c2f.gui.open(Snake2048UI.SnakMain)

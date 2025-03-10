@@ -141,4 +141,14 @@ export namespace GameConsts {
 
 
     }
+
+    export  class ProjectConfig {
+        /** 客户端设计分辨率 */
+        public static designResolution = cc.size(1280, 720);
+        /** 是否刘海屏 */
+        public static isNotch = false;
+    
+
+    }
+
 }

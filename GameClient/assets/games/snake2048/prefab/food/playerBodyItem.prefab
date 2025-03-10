@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "playerBodyItem",
+    "_name": "PlayerBodyItem",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -28,10 +28,13 @@
       },
       {
         "__id__": 7
+      },
+      {
+        "__id__": 8
       }
     ],
     "_prefab": {
-      "__id__": 8
+      "__id__": 9
     },
     "_opacity": 255,
     "_color": {
@@ -260,6 +263,16 @@
       "width": 50,
       "height": 50
     },
+    "_id": ""
+  },
+  {
+    "__type__": "9ea83SlFZRG95ylafk3qv8C",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
     "_id": ""
   },
   {

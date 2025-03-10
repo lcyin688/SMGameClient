@@ -1,48 +1,78 @@
 {
   "group-list": [
     "default",
-    "buzhid",
-    "ShuiGuo",
+    "Food",
+    "Wall",
     "UI",
-    "qiguai",
-    "Wall"
+    "AI",
+    "Player",
+    "Prop",
+    "Fruit"
   ],
   "collision-matrix": [
     [
+      false
+    ],
+    [
+      false,
+      false,
+      null,
+      null,
+      true,
       true
     ],
     [
       false,
+      false,
+      false,
+      null,
+      true,
+      true,
+      null,
+      true
+    ],
+    [
+      false,
+      false,
+      false,
+      false
+    ],
+    [
+      false,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true
+    ],
+    [
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    [
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
       false
     ],
     [
       false,
       false,
       true,
-      null,
-      null,
+      false,
+      false,
+      false,
+      false,
       true
-    ],
-    [
-      false,
-      false,
-      false,
-      false
-    ],
-    [
-      false,
-      false,
-      false,
-      false,
-      false
-    ],
-    [
-      false,
-      false,
-      true,
-      false,
-      false,
-      false
     ]
   ],
   "excluded-modules": [

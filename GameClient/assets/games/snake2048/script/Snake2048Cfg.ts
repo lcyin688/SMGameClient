@@ -109,5 +109,37 @@ export namespace Snake2048Cfg {
          error : 'error'
     }
 
+
+
+    /** 常用预制体 */
+    export enum Prefab {
+        FoodItem = "ab:snake2048/prefab/food/FoodItem",
+        playerBodyItem = "ab:snake2048/prefab/food/PlayerBodyItem",
+        aiBodyItem = "ab:snake2048/prefab/food/AiBodyItem",
+        SnakeHead = "ab:snake2048/prefab/snakeHead/Head",
+        SnakeAIHead = "ab:snake2048/prefab/snakeHead/HeadAI",
+        Countdown = "ab:snake2048/prefab/countdown/Countdown",
+        AddSpeedProp = "ab:snake2048/prefab/prop/AddSpeed",
+        DoubleProp = "ab:snake2048/prefab/prop/Double",
+    }
+
+    /** 资源路径 */
+    export enum ResUrl {
+         FoodSp = "ab:snake2048/image/item/"
+    }
+    export const Speed: number = 3;
+    export const numFoods: number = 500; // 食物数量
+    export const PropSize ={
+        /** 加速道具 */
+        addSpeedPropSize:cc.size(116,116),
+        /** 翻倍道具 */
+        doubledPropSize:cc.size(116,116),
+        /** 减半道具 */
+        halvedPropSize:cc.size(116,116)
+    }
+    export const Screen ={
+        Width:12800 - 1200 * 2,
+        Height: 10800 - 1200 * 2,
+    }
     
 }
