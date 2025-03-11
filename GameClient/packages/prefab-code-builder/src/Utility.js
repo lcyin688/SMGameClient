@@ -695,7 +695,7 @@ var Utility = {
         //mainPack之后的分包配置都放在mainPack之下
         let pathBundle = bundleName;
         let singlePack = ['framework', 'entrance', 'mainPack', 'demo', "gameYngy", "boxGame",
-            "snake2048"
+            "snake2048","nhwc",
         ];
         if (singlePack.indexOf(pathBundle) < 0) {
             pathBundle = 'mainPack';

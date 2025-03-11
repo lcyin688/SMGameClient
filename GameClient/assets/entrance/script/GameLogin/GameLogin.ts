@@ -79,6 +79,10 @@ export default class GameLogin extends UIVControlBase {
                 this.CC_onClickbtnSnak2048();
                 break;
 
+            case this.view.btnSnakNhwcButton.name:
+                this.CC_onClickbtnSnakNhwc();
+                break;
+
 
             case this.view.btn2048Button.name:
                 this.CC_onClickbtn2048();
@@ -97,7 +101,11 @@ export default class GameLogin extends UIVControlBase {
         }
     }
 
-
+    private CC_onClickbtnSnakNhwc() {
+        GameHelper.loadBundle(GameConsts.Bundle.nhwc).then(UIID => {
+            c2f.gui.open(UIID.NhwcLogin)
+        });
+    }
 
     private CC_onClickbtnStart() {
         GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
@@ -180,6 +188,9 @@ export default class GameLogin extends UIVControlBase {
       
 
 
+
+            
+                       
 
             
                        
