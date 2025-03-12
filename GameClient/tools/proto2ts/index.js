@@ -252,6 +252,24 @@ function renameSpace(dtsStr) {
     }
 
 }
+
+/** 如果有哪洗消息头定义的枚举 给摘出来 单独存放到  GameMsgId.ts 文件 */
+function renameEnumToGameMsgId(dtsStr){
+    const regex = /enum\s+(\w+)/;
+    const match = dtsStr.match(regex);
+    if (match) {
+        const startIndex = match.index;
+        //找到 enum 后边的一个“}”的下标
+        const endIndex = dtsStr.indexOf('}', startIndex)+1;
+      let strNeedChange = dtsStr.substring(startIndex, endIndex);
+      dtsStr = dtsStr.replace(strNeedChange, "");
+      reWriteEnumToGameMsgId(strNeedChange)
+      return dtsStr;
+    } else {
+      return dtsStr;
+    }
+}
+
 /**
  * 是否是文件
  * @param {string} strPath
@@ -264,6 +282,30 @@ function isFile(strPath) {
 
     return false;
 }
+
+/** 写入枚举到 GameMsgId.ts */
+function reWriteEnumToGameMsgId(newStr){
+      //定义的枚举写入  GameMsgId.ts
+      let gameMsgIdPath = path.join(projectPath, 'assets/Script/GameMsgId.ts');
+    if (fs.existsSync(gameMsgIdPath)) {
+        let msgStr = fs.readFileSync(gameMsgIdPath, { encoding: 'utf-8' });
+        const endIndex = newStr.indexOf('{', 0);
+        const curEnumStr = newStr.substring(0, endIndex);
+        const startIndexFinal = msgStr.indexOf(curEnumStr, 0);
+        const endIndexFinal = msgStr.indexOf('}', startIndexFinal)+1;
+        const strNeedChange = msgStr.substring(startIndexFinal, endIndexFinal);
+        msgStr = msgStr.replace(strNeedChange, newStr);
+        fs.writeFileSync(gameMsgIdPath, msgStr);
+    }else{
+        let msgStr = "export namespace GameMsgId { \n export "+newStr+"\n }"
+        fs.writeFileSync(gameMsgIdPath, msgStr);
+    }
+
+      
+
+    
+}
+
 /**
  * 生成声明
  */
@@ -348,6 +390,8 @@ function generateProtoDts() {
             dtsStr = dtsStr.replace(/\n{3,}/g, '\n\n');
             // declare namespace msg.player { 添加msg 前缀
             dtsStr= renameSpace(dtsStr);
+            //如果有哪洗消息头定义的枚举 给摘出来 单独存放到  GameMsgId.ts 文件
+            dtsStr= renameEnumToGameMsgId(dtsStr);
 
             // class 替换为interface
             // dtsStr = dtsStr.replace(/class/g, 'interface');
@@ -357,6 +401,7 @@ function generateProtoDts() {
             // dtsStr = dtsStr.replace(new RegExp('public ', 'g'), '');
             // dtsStr = dtsStr.replace(new RegExp(moduleName, 'g'), `${targetModuleName}Proto`);
             
+
            
             fs.writeFileSync(path.join(curPath, 'proto', `${moduleName}.d.ts`), dtsStr);
             rm(path.join(curPath, 'proto', `${moduleName}.proto`));

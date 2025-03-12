@@ -2,15 +2,15 @@ syntax="proto3";                // Version of protobuf
 package pb;                     // Current package name
 option go_package = "./msg";  // Go 服务器端代码的包路径
 
-enum MSG {
+enum MsgId {
   MSG_Default = 0;  
   MSG_Ping = 1;  // 心跳请求tiao
   MSG_Pong = 2;  // 心跳响应
 
   MSG_LoginReq = 101;  // 登录请求
   MSG_LoginResponse = 102;  // 登录响应
-  // 其他消息按需添加
 }
+
 
 
 message PlayerInfo {

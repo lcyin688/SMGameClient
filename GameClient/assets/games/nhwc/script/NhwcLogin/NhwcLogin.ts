@@ -2,6 +2,9 @@ import { UIVControlBase } from './../../../../c2f-framework/gui/layer/UIVControl
 import { C2FEnum } from './../../../../c2f-framework/define/C2FEnum';
 import  NhwcLoginModel from './NhwcLoginModel';
 import  NhwcLoginView from './NhwcLoginView';
+import { GameConsts } from '../../../../Script/game/GameConsts';
+import { GameMsgId } from '../../../../Script/GameMsgId';
+import { UIHelper } from '../../../../Script/game/UIHelper';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -15,7 +18,12 @@ export default class NhwcLogin extends UIVControlBase {
     protected onViewOpen(param: any) {
         let url = "ws://127.0.0.1:9000";
         c2f.webSocket.connect(url)
-
+        // let url = GameConsts.Bundle.snake2048+"/wokanjianle"
+        // cc.log(" ~~~ GameConsts.AppBundleName == ",url)
+        // let temp = GameMsgId.MsgId.MSG_LoginReq+"/woc"
+        // cc.log(" ~~~ ameMsgId.MsgId.MSG_LoginReq == ",temp)
+        cc.log(" ~~~ GameMsgId.MsgId.MSG_LoginReq== ",GameMsgId.MsgId.MSG_LoginReq)
+        
     }
 
 

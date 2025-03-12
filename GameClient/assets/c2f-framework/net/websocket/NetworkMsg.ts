@@ -162,7 +162,7 @@ export class NetworkMsg {
     private startHeartbeat() {
         this.clearHeartbeatTimer()
         this.heartbeatTimer = setInterval(() => {
-            this.send(msg.MSG.MSG_Ping);
+            // this.send(msg.MSG.MSG_Ping);
         }, this.reconnetInterval * 1000);
     }
     /** 清除心跳timer */
@@ -174,29 +174,18 @@ export class NetworkMsg {
     }
     /** 发送消息: 子类具体实现 */
     public send(msgId: number, value?: any) {
-  
         console.log("发送消息失败   this.ws?.readyState  " ,this.ws?.readyState);
-        let data = {
-            msgId: msgId,
-            value: value
-        };
-        let jsonStr = JSON.stringify(data);
-        this.ws.send(jsonStr)
-
+        if (this.ws?.readyState === WebSocket.OPEN||this.ws?.readyState === WebSocket.CONNECTING) {
+            let data = {
+                msgId: msgId,
+                value: value
+            };
+            let jsonStr = JSON.stringify(data);
+            this.ws.send(jsonStr)
+            return 
+        }
+        console.log("发送消息失败   this.ws?.readyState  " ,this.ws?.readyState);
     }
-
-    // // 发送结构化数据
-    // public send(data: object) {
-    //     if (this.ws?.readyState === WebSocket.OPEN||this.ws?.readyState === WebSocket.CONNECTING) {
-    //         this.ws.send(JSON.stringify({
-    //             protocol: 1.2,
-    //             timestamp: Date.now(),
-    //             ...data
-    //         }));
-    //         return 
-    //     }
-    //     console.log("发送消息失败   this.ws?.readyState  " ,this.ws?.readyState);
-    // }
 
 }
 declare global {
