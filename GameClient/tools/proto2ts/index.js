@@ -18,7 +18,7 @@ const curPath = path.dirname(process.argv[1]);
 const projectPath = path.join(curPath, '..', '..');
 console.log(`ceshi  002 : ${projectPath}`);
 
-let moduleNameTemp ="player";
+let moduleNameTemp ="msg";
 let moduleName = '';
 let modulePath = '';
 /** proto文件根路径 */
@@ -237,11 +237,14 @@ function renameSpace(dtsStr) {
     const regex = /declare\s+namespace\s+(\w+)/;
     const match = dtsStr.match(regex);
     if (match) {
-      const namespaceName = match[1]; // 获取 'player'
-      const startIndex = match.index + match[0].indexOf(namespaceName); // 计算 'player' 的起始索引
+      const namespaceName = match[1]; 
+      const startIndex = match.index + match[0].indexOf(namespaceName);
       let str1 = dtsStr.substring(match.index, startIndex);
       let strNeedChange =match[0]
       let finalStr = str1 + `msg.${namespaceName}`;
+      if (namespaceName=='msg') {
+        finalStr = str1 + namespaceName;
+      }
       dtsStr = dtsStr.replace(strNeedChange, finalStr);
       return dtsStr;
     } else {

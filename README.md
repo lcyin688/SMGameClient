@@ -6,17 +6,9 @@
 
 
 #### 使用说明
+  1. 在pb 路径下运行 build.sh 生成服务器Go 需要的协议文件 生成的目标路径 pb/msg/
+  2. 在GameClient/tools/proto2ts 下运行build.sh 生成客户端ts文件 生成的目标路径 GameClient/tools/proto2ts/proto/
 
-    1.下载安装 protobufjs
-        npm i -g protobufjs或者cnpm i -g protobufjs
-        npm install -g protobufjs或者cnpm install -g protobufjs
-    2. 需要注意的是protobufjs7需要单独安装protobufjs-cli <protobufjs6.x版本无需安装>
-    npm i --g protobufjs-cli
-
-    3.先执行 sh buildClientJs.sh 生成客户端的js文件
-    4.在执行 sh buildClientTs.sh 生成客户端的Ts文件
-    
-    5.也可以合并执行 sh buildClientFinal.sh  多个 proto 文件合并成一个js 和Ts 文件
 
 #### 参与贡献
 // 学习参考网站

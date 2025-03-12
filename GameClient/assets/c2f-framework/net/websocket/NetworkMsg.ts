@@ -162,7 +162,7 @@ export class NetworkMsg {
     private startHeartbeat() {
         this.clearHeartbeatTimer()
         this.heartbeatTimer = setInterval(() => {
-            this.send(msg.player.MSG.MSG_Ping);
+            this.send(msg.MSG.MSG_Ping);
         }, this.reconnetInterval * 1000);
     }
     /** 清除心跳timer */
