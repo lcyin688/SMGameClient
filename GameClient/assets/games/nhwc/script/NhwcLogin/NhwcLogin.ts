@@ -22,7 +22,7 @@ export default class NhwcLogin extends UIVControlBase {
         // cc.log(" ~~~ GameConsts.AppBundleName == ",url)
         // let temp = GameMsgId.MsgId.MSG_LoginReq+"/woc"
         // cc.log(" ~~~ ameMsgId.MsgId.MSG_LoginReq == ",temp)
-        cc.log(" ~~~ GameMsgId.MsgId.MSG_LoginReq== ",GameMsgId.MsgId.MSG_LoginReq)
+        // cc.log(" ~~~ GameMsgId.MsgId.MSG_LoginReq== ",GameMsgId.MsgId.MSG_LoginReq)
         
     }
 
