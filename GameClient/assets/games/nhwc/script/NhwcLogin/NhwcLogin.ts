@@ -13,7 +13,7 @@ export default class NhwcLogin extends UIVControlBase {
     public view: NhwcLoginView = undefined;
     
     protected onViewOpen(param: any) {
-        let url = "ws://127.0.0.1:8999";
+        let url = "ws://127.0.0.1:9000";
         c2f.webSocket.connect(url)
 
     }

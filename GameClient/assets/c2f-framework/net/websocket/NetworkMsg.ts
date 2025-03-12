@@ -61,85 +61,67 @@ export class NetworkMsg {
 
         cc.log("websocket connect", url);
         this.ws = new WebSocket(url);
-        // this.socket.binaryType = "arraybuffer";
-        this.ws.onopen = this.onOpen.bind(this);
-        this.ws.onmessage = this.onMessage.bind(this);
-        this.ws.onerror = this.onError.bind(this);
-        this.ws.onclose = this.onClosed.bind(this);
-
-        
-        // this.ws = new WebSocket(url);
-        
-        // this.ws.onopen = (event) => {
-        //     console.log("连接成功", event);
-        //     this.sendHello();
-        //     // this.dispatchEvent(new Event('connected'));
-        // };
-
-        // this.ws.onmessage = (event) => {
-        //     try {
-        //         const data = JSON.parse(event.data);
-        //         console.log("  收到 消息  onmessage", data);
-
-
-        //     } catch (e) {
-        //         console.error("消息解析失败", e);
-        //     }
-        // };
-
-        // this.ws.onerror = (error) => {
-        //     console.error("连接错误", error);
-        //     // this.scheduleReconnect();
-        // };
-
-        // this.ws.onclose = (event) => {
-        //     console.log("连接关闭", event);
-        //     // this.scheduleReconnect();
-        // };
+        this.ws.onopen = this.onopen.bind(this);
+        this.ws.onmessage = this.onmessage.bind(this);
+        this.ws.onerror = this.onerror.bind(this);
+        this.ws.onclose = this.onclose.bind(this);
     }
 
     /** socket连接成功 */
-    private onOpen(event: any) {
-        cc.log(" WebSocketClient  Send Text WS was opened.");
+    private onopen(event: any) {
+        console.log("连接成功", event);
         this.reconnectTimes = 0;
         this.stateChanged(SocketState.Connected);
         this.startHeartbeat()
     }
     /** 收到消息：子类具体实现 */
-    protected onMessage(event: any) {
-        console.log(' WebSocketClient Received from server:', event.data);
-        let e = event.data.replace(String.fromCharCode(30), "")
-        let data = JSON.parse(e);
-        if (1 === data.type) {
-            switch (data.target) {
-                case "PushMessage":
-                    console.log("收到服务器内容：" + JSON.stringify(data.arguments[0]));
-                    break
-            }
+    protected onmessage(event: any) {
+        try {
+            const data = JSON.parse(event.data);
+            console.log("  收到 消息  onmessage", data);
+
+
+        } catch (e) {
+            console.error("消息解析失败", e);
         }
+
+
+        // let e = event.data.replace(String.fromCharCode(30), "")
+        // let data = JSON.parse(e);
+        // if (1 === data.type) {
+        //     switch (data.target) {
+        //         case "PushMessage":
+        //             console.log("收到服务器内容：" + JSON.stringify(data.arguments[0]));
+        //             break
+        //     }
+        // }
 
     }
 
     /** 网络错误 */
-    private onError(event) {
+    private onerror(error) {
         cc.log("WebSocketClient fired an error");
-        let target = event.currentTarget || event.target;
-        if (this.ws && this.ws.readyState != WebSocket.CLOSED && this.url && target && target.url == this.url) {
-            this.stateChanged(SocketState.Error);
-        }
+        console.error("连接错误", error);
+
+
+        
+        // let target = event.currentTarget || event.target;
+        // if (this.ws && this.ws.readyState != WebSocket.CLOSED && this.url && target && target.url == this.url) {
+        //     this.stateChanged(SocketState.Error);
+        // }
     }
 
     /** 网络断开 */
-    private onClosed(event) {
-        cc.log("WebSocketClient instance closed.");
-        let target = event.currentTarget || event.target;
-        if (this.url && target && target.url == this.url) {
-            if (target) {
-                cc.log("WebSocketClient instance closed:" + target.readyState);
-            }
-            this.stateChanged(SocketState.ConnectTimeOut);
-            // this.reconnect(this.url);
-        }
+    private onclose(event) {
+        console.log("连接关闭", event);
+        // let target = event.currentTarget || event.target;
+        // if (this.url && target && target.url == this.url) {
+        //     if (target) {
+        //         cc.log("WebSocketClient instance closed:" + target.readyState);
+        //     }
+        //     this.stateChanged(SocketState.ConnectTimeOut);
+        //     // this.reconnect(this.url);
+        // }
     }
 
     public stateChanged(state: SocketState) {
@@ -180,12 +162,7 @@ export class NetworkMsg {
     private startHeartbeat() {
         this.clearHeartbeatTimer()
         this.heartbeatTimer = setInterval(() => {
-            // let data = "".concat(JSON.stringify({
-            //     arguments: [],
-            //     target: "Heartbeat",
-            //     type: 1
-            // })).concat(String.fromCharCode(30))
-            this.send(data);
+            this.send(msg.player.MSG.MSG_Ping);
         }, this.reconnetInterval * 1000);
     }
     /** 清除心跳timer */
@@ -196,12 +173,15 @@ export class NetworkMsg {
         }
     }
     /** 发送消息: 子类具体实现 */
-    public send(data: string) {
+    public send(msgId: number, value?: any) {
   
         console.log("发送消息失败   this.ws?.readyState  " ,this.ws?.readyState);
-
-        let dataTemp = data.concat(String.fromCharCode(30))
-        this.ws.send(dataTemp)
+        let data = {
+            msgId: msgId,
+            value: value
+        };
+        let jsonStr = JSON.stringify(data);
+        this.ws.send(jsonStr)
 
     }
 
