@@ -1,3 +1,4 @@
+import { GameMsgId } from "../../../../resources/proto/GameMsgId";
 import { GameConsts } from "../../../../Script/game/GameConsts";
 import { UIPa } from "../../../../Script/game/UIParam";
 
@@ -12,23 +13,20 @@ export class LoginData {
     }
 
     // //----->网络消息同步
-    // public GS_LoginData(data: msg.GW_LogoutPlayer) {
+    public SC_Register(data: msg.SC_Register) {
 
-    // }
+        cc.log("LoginData  注册 消息回来",data)
+
+    }
 
 
     public reqLogin(userName: string, passWord: string) {
-        let cData: msg.C_Login = {
-            UserName: userName,
-            PassWord: passWord
+        let cData: msg.CS_Login = {
+            account: userName,
+            password: passWord,
+            serverId: 1,
         }
-        // c2f.net.sendMsg(msgid.C_Login, cData)
-        // let playerInfo = {} as msg.player.PlayerInfo; 
-        // playerInfo.userId = 10;
-        // playerInfo.gender = 1;
-        // playerInfo.nickName="111";
-        // console.log( "亲亲我的宝贝 002 ",JSON.stringify(playerInfo) );
-
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData)
     }
 
 

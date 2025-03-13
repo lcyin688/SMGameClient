@@ -146,15 +146,16 @@ export default class GameLogin extends UIVControlBase {
         if (!c2f.net.toUI) {
             c2f.net.toUI = new UINetwork();
         }
-        let url = "ws://localhost:8080";
+        let url = "ws://127.0.0.1:9000";
         c2f.gui.showLoading();
         c2f.net.initService().then(() => {
             c2f.net.connect(url, (reason: string) => {
                 c2f.gui.hideLoading();
+                cc.log( "connetToServer  reason  ==  "+reason)
                 if (reason === "Connected") {
                     this.loginToGame();
                 } else {
-                    c2f.gui.notifyTxt('1006');
+                    c2f.gui.notifyTxt('1006');8
                     c2f.net.purge();
                 }
             });
@@ -163,22 +164,24 @@ export default class GameLogin extends UIVControlBase {
     private loginToGame() {
         c2f.gui.notifyTxt('513');
         //发个消息给服务器
-        szg.player.rank.reqLogin("lcy", "gogogo")
+        // szg.player.login.reqLogin("lcy", "gogogo")
 
     }
 
                     
     private CC_onClickbtnLogin() {
         console.error('CC_onClickbtnLogin test 004');
+        this.connetToServer()
+
+
         // let url = "ws://127.0.0.1:8999";
         // c2f.webSocket.connect(url)
         // 创建玩家登录信息
-        const playerInfo: msg.LoginReq = {
-            account: "test2025",
-            password: "p@ssw0rd",
-            serverId: 1001
-        };
-        console.error('CC_onClickbtnLogin playerInfo  ',playerInfo);
+        // const playerInfo: msg.CS_Ping = {
+
+
+        // };
+        // console.error('CC_onClickbtnLogin playerInfo  ',playerInfo);
 
         // c2f.webSocket.send(playerInfo)
     }

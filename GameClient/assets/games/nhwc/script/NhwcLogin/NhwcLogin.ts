@@ -3,8 +3,10 @@ import { C2FEnum } from './../../../../c2f-framework/define/C2FEnum';
 import  NhwcLoginModel from './NhwcLoginModel';
 import  NhwcLoginView from './NhwcLoginView';
 import { GameConsts } from '../../../../Script/game/GameConsts';
-import { GameMsgId } from '../../../../Script/GameMsgId';
 import { UIHelper } from '../../../../Script/game/UIHelper';
+import { GameMsgId } from '../../../../resources/proto/GameMsgId';
+import { errCode } from '../../../../resources/proto/errorcode';
+import { NhwcUI, NhwcView } from '../NhwcView';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -16,13 +18,20 @@ export default class NhwcLogin extends UIVControlBase {
     public view: NhwcLoginView = undefined;
     
     protected onViewOpen(param: any) {
+        szg.player.initPlayer();
         let url = "ws://127.0.0.1:9000";
-        c2f.webSocket.connect(url)
-        // let url = GameConsts.Bundle.snake2048+"/wokanjianle"
-        // cc.log(" ~~~ GameConsts.AppBundleName == ",url)
-        // let temp = GameMsgId.MsgId.MSG_LoginReq+"/woc"
-        // cc.log(" ~~~ ameMsgId.MsgId.MSG_LoginReq == ",temp)
-        // cc.log(" ~~~ GameMsgId.MsgId.MSG_LoginReq== ",GameMsgId.MsgId.MSG_LoginReq)
+        c2f.gui.showLoading();
+        c2f.webSocket.initService().then(() => {
+            c2f.webSocket.connect(url, (reason: string) => {
+                c2f.gui.hideLoading();
+                if (reason === "Connected") {
+                    cc.log(" ~~~ c2f.webSocket.connect 链接成功 可以尝试登录")
+                } else {
+                    c2f.gui.notifyTxt('1006');
+                    c2f.net.purge();
+                }
+            });
+        });
         
     }
 
@@ -58,7 +67,6 @@ export default class NhwcLogin extends UIVControlBase {
     } 
     
     private CC_onClickbtnLogin(){
-
         let username = this.view.userNameEditBox.string;
         let password = this.view.passWordEditBox.string;
         if (!username) {
@@ -69,17 +77,30 @@ export default class NhwcLogin extends UIVControlBase {
             c2f.gui.notifyTxt('7003');
             return;
         }
-        // const playerInfo: msg.player.LoginReq = {
-        //     account: username,
-        //     password: password,
-        //     serverId: 1001
-        // };
-        // c2f.webSocket.send(playerInfo)
+
+        let cData: msg.CS_Login = {
+                account: username,
+                password: password,
+                serverId: 1,
+        }
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData,{
+            view: this.view,
+            ops: [GameMsgId.MsgId.MSG_SC_Login],
+            waitNet:false,
+            getErr:false,
+            callback: (code: number, data: msg.SC_Login) => {
+
+                cc.log(" 登录 消息回来",data)
+                c2f.gui.notifyTxt('1515');
+                //todo 登录成功逻辑
+            }
+        })
+        
 
     }
             
     private CC_onClickbtnRegister(){
-
+        c2f.gui.open(NhwcUI.NhwcRegister);
     }
             
 

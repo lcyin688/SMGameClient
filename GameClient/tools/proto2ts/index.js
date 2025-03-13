@@ -264,6 +264,8 @@ function renameEnumToGameMsgId(dtsStr){
       let strNeedChange = dtsStr.substring(startIndex, endIndex);
       dtsStr = dtsStr.replace(strNeedChange, "");
       reWriteEnumToGameMsgId(strNeedChange)
+      reWriteToGameMsgName(strNeedChange)
+
       return dtsStr;
     } else {
       return dtsStr;
@@ -286,7 +288,7 @@ function isFile(strPath) {
 /** 写入枚举到 GameMsgId.ts */
 function reWriteEnumToGameMsgId(newStr){
       //定义的枚举写入  GameMsgId.ts
-      let gameMsgIdPath = path.join(projectPath, 'assets/Script/GameMsgId.ts');
+      let gameMsgIdPath = path.join(projectPath, 'assets/resources/proto/GameMsgId.ts');
     if (fs.existsSync(gameMsgIdPath)) {
         let msgStr = fs.readFileSync(gameMsgIdPath, { encoding: 'utf-8' });
         const endIndex = newStr.indexOf('{', 0);
@@ -300,11 +302,102 @@ function reWriteEnumToGameMsgId(newStr){
         let msgStr = "export namespace GameMsgId { \n export "+newStr+"\n }"
         fs.writeFileSync(gameMsgIdPath, msgStr);
     }
-
-      
-
-    
 }
+
+/** 写入协议抬头配置  msgName.ts */
+function reWriteToGameMsgName(newStr){
+    const regex = /enum\s+(\w+)/;
+    const match = newStr.match(regex);
+    if (match) {
+      const enumName = match[1]; 
+      if (enumName=='MsgId') {
+            //定义的枚举写入  GameMsgId.ts
+            let pathTemp =   path.join(projectPath, 'assets/resources/proto/msgName.ts');
+            // 转换并输出
+            let result = transformEnumToKeyValue(newStr);
+        if (fs.existsSync(pathTemp)) {
+            let newMap = strChangeGetMapData(newStr)
+            //在把旧的数据 转化成 map
+            let msgStr = fs.readFileSync(pathTemp, { encoding: 'utf-8' });
+            const startIndexFinal = msgStr.indexOf('= {', 0)+4;
+            const endIndexFinal = msgStr.indexOf('}', startIndexFinal);
+            let str = msgStr.substring(startIndexFinal, endIndexFinal);
+            let oldMap = stringToMap(str)
+            for (const [key, value] of newMap) {
+                oldMap.set(key, value);
+            }
+            //map 转化成数组排序
+            let newArr = Array.from(oldMap.entries()).sort((a, b) => a[0] - b[0]);
+            result = arrToStrValue(newArr);
+        }
+        let msgStr = "export var msgName: { [key: number]: string } = { \n "+result+"\n }"
+        fs.writeFileSync(pathTemp, msgStr);
+      }
+    }
+
+
+
+
+}
+
+/** 文字转化格式 */
+function transformEnumToKeyValue(enumStr) {
+    // 提取枚举内容
+    const enumContent = enumStr.match(/\{(.*)\}/s)[1].trim();
+    const lines = enumContent.split('\n').map(line => line.trim()).filter(line => line);
+    // 生成键值对
+    const keyValuePairs = lines.map(line => {
+        const [key, value] = line.split('=').map(part => part.trim());
+        const formattedValue = value.replace(/,/g, ''); // 去掉前缀
+        return `      ${formattedValue}: "${key}",`;
+    });
+    let  strFinal = keyValuePairs.join('\n')
+    return strFinal
+}
+
+/** 转化成 map 数据 */
+function strChangeGetMapData(enumStr) {
+    // 提取枚举内容
+    const enumContent = enumStr.match(/\{(.*)\}/s)[1].trim();
+    const lines = enumContent.split('\n').map(line => line.trim()).filter(line => line);
+    // 生成键值对
+    let mapTemp =new Map()
+    lines.map(line => {
+        let [key, value] = line.split('=').map(part => part.trim());
+        const formattedValue = value.replace(/,/g, ''); // 去掉前缀
+        key = key.replace(/MSG_/g, ''); // 去掉 MSG_
+        mapTemp.set(Number(formattedValue),key)
+
+    });
+    return mapTemp
+}
+
+/** 转化成 map 数据 */
+function stringToMap(str) {
+    const lines = str.split('\n').map(line => line.trim()).filter(line => line);
+    let mapTemp =new Map()
+    lines.map(line => {
+        // console.log(" test final " ,line)
+        let [key, value] = line.split(':').map(part => part.trim());
+        let formattedValue = value.replace(/,/g, ''); // 去掉 ,
+        formattedValue = formattedValue.replace(/MSG_/g, ''); // 去掉 MSG_
+        mapTemp.set(Number(key),formattedValue)
+    });
+    return mapTemp
+}
+
+
+/** 文字转化格式 */
+function arrToStrValue(arr) {
+    let str =""
+    for (let i = 0; i < arr.length; i++) {
+        const v = arr[i];
+        str+=`      ${v[0]}: "${v[1]}",\n`
+    }
+    return str
+}
+
+
 
 /**
  * 生成声明
@@ -405,6 +498,10 @@ function generateProtoDts() {
            
             fs.writeFileSync(path.join(curPath, 'proto', `${moduleName}.d.ts`), dtsStr);
             rm(path.join(curPath, 'proto', `${moduleName}.proto`));
+            //复制源文件 proto  到  项目
+            let tartPath = path.join(projectPath, 'assets/resources/proto/', `${moduleName}.proto`)
+            cp(protoRootPath, tartPath);
+
             console.log('------------------------- 成功 -------------------------');
         });
 }

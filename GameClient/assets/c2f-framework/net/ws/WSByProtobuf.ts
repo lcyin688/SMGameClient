@@ -1,4 +1,4 @@
-import { msgname } from "../../../resources/proto/msgname";
+import { msgName } from "../../../resources/proto/msgName";
 import { SocketState, WebService } from "./WebService";
 
 export class WSByProtobuf extends WebService {
@@ -48,7 +48,7 @@ export class WSByProtobuf extends WebService {
             }
 
             let data = this.messages.subarray(8, len);
-            let opName = msgname[op];
+            let opName = msgName[op];
             if (!opName) {
                 cc.log("can not find op:", op);
                 return;
@@ -85,18 +85,13 @@ export class WSByProtobuf extends WebService {
         if (!this.socket || this.socket.readyState != WebSocket.OPEN) {
             return false;
         }
-        const msgName = msgname[op];
-        if (!msgName) {
+        const msgNameTemp = msgName[op];
+        if (!msgNameTemp) {
             cc.warn(`don't find msg for id:${op}`);
             return false;
         }
 
-        // if (CC_DEV && op != msgid.C_TimeSync) {
-        //     cc.log("network.tcpSend msgid = " + op);
-        //     cc.log(Object.copyDepth(data));
-        // }
-
-        let name = "msg." + msgName;
+        let name = "msg." + msgNameTemp;
         let message = this.root.build(name);
         let msg = new message();
         for (const p in data) {

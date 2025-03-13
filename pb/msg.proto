@@ -1,35 +1,161 @@
 syntax="proto3";                // Version of protobuf
-package pb;                     // Current package name
+package msg;                     // Current package name
 option go_package = "./msg";  // Go 服务器端代码的包路径
 
 enum MsgId {
   MSG_Default = 0;  
-  MSG_Ping = 1;  // 心跳请求tiao
-  MSG_Pong = 2;  // 心跳响应
+  MSG_CS_Ping = 1;  // 心跳请求
+  MSG_SC_Pong = 2;  // 心跳响应
 
-  MSG_LoginReq = 101;  // 登录请求
-  MSG_LoginResponse = 102;  // 登录响应
+  MSG_CS_Login = 101;  // 登录请求
+  MSG_SC_Login = 102;  // 登录响应
+
+  MSG_CS_Register = 103;  // 注册请求
+  MSG_SC_Register = 104;  // 注册响应
+
 }
 
+enum RoomState {
+	None   = 0 ; // 未开始
+	Ready  = 1 ; // 准备
+	Draw   = 2 ; // 画画
+	Result = 3 ; // 结果
+	Over   = 4 ; // 结束
+}
+
+
+
+
+message CS_Ping {
+  int64 Timestamp = 1;
+}
+message SC_Pong {
+  int64 Timestamp = 1;
+}
 
 
 message PlayerInfo {
-    int32 userId = 1;
-    int32 gender = 2;
-    string userName = 3;
-    string nickName = 4;
+    int32 headId = 1;
+    string account = 2;
+    string nickName = 3;
+}
+
+message RoomInfo {
+    // 房间id
+    int32 rid = 1;
+    //房间人数
+    int32 gameNum = 2;
+    //房间最大座位数
+    int32 max = 3;
+    //房间状态
+    int32 state = 4;
+    //房间创建时间
+    int32 createTime = 5;
+    //开始时间
+	int32 startTime = 6;
+    //结果时间guo
+	int32 resultTime = 7;
+    //提示
+	string hint = 8;
+    //单词
+	string word = 9;
+    // 单词索引
+	string wordIndex = 10;
+    //画师
+    int32 painter = 11;
+    //房间所有玩家
+    map<int32, PlayerInfo> mapPlayerInfo = 12;
 }
 
 
-
-message LoginReq {
+/**
+ * 登录请求
+ */
+message CS_Login {
     string account = 1;
     string password = 2;
-    int32 server_id = 3;
+    int32 serverId = 3;
+}
+
+/**
+ * 登录响应
+ */
+message SC_Login {
+    int32 code = 1;
+    string token = 2;
+    PlayerInfo PlayerInfo = 3;
+}
+
+/**
+ * 注册请求
+ */
+message CS_Register {
+    string account = 1;
+    string password = 2;  
+    int32 headId=3;
+}
+
+/**
+ * 注册响应
+ */
+message SC_Register {
+    int32 code = 1;
 }
 
 
-message LoginResponse {
+/**
+ * 大厅数据请求
+ */
+message CS_HallInfo {
+
+}
+
+/**
+ * 大厅数据响应 repeated 数据写法
+ */
+message SC_HallInfo {
+   repeated RoomInfo roomArr = 1;
+}
+
+
+/**
+ * 创建房间请求
+ */
+message CS_CreateRoom {
+    string id = 1;
+}
+
+/**
+ * 创建房间响应
+ */
+message SC_CreateRoom {
     int32 code = 1;
-    string token = 2;
+}
+
+/**
+ * 加入房间请求
+ */
+message CS_JoinRoom {
+    string id = 1;
+}
+
+/**
+ * 加入房间响应
+ */
+message SC_JoinRoom {
+    int32 code = 1;
+}
+
+/**
+ * 匹配房间请求
+ */
+message CS_MatchRoom {
+    string id = 1;
+}
+
+/**
+ * 匹配房间响应
+ */
+message SC_MatchRoom {
+    int32 code = 1;
 }

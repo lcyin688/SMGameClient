@@ -29,18 +29,18 @@ export class UINetwork implements INetToUI {
     /** 显示重新登录界面 */
     public showReloginView() {
         c2f.gui.hideLoading(true);
-        szg.entrance.reLogin(
-            (op: number, data: msg.GW_Login_R) => {
-                let isSuccess = data.ErrorCode === undefined || data.ErrorCode === 0;
-                if (isSuccess) {
-                    c2f.gui.notifyTxt('511');
-                    c2f.net.startHeartbeat();
-                } else {
-                    UIHelper.showNetError(data.ErrorCode);
-                }
-            },
-            () => {
-                c2f.gui.notifyTxt('512');
-            });
+        // szg.entrance.reLogin(
+        //     (op: number, data: msg.GW_Login) => {
+        //         let isSuccess = data.ErrorCode === undefined || data.ErrorCode === 0;
+        //         if (isSuccess) {
+        //             c2f.gui.notifyTxt('511');
+        //             c2f.net.startHeartbeat();
+        //         } else {
+        //             UIHelper.showNetError(data.ErrorCode);
+        //         }
+        //     },
+        //     () => {
+        //         c2f.gui.notifyTxt('512');
+        //     });
     }
 }

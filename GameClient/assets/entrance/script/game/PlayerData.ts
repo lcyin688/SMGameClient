@@ -1,6 +1,6 @@
-import { PublicData } from "./plrBase/PublicData";
-import { LoginData } from "./login/LoginData";
-
+import { PublicData } from './plrBase/PublicData';
+import { LoginData } from './login/LoginData';
+import { GameMsgId } from '../../../resources/proto/GameMsgId';
 
 /** 玩家数据总领：具体模块数据 */
 export class PlayerData {
@@ -29,20 +29,17 @@ export class PlayerData {
         }
     }
 
-
     /** 公用数据 */
     private _public: PublicData;
     /** 公用数据 */
     public get public() {
         return this._public;
     }
-    /** 排行榜 */
-    private _rank: LoginData;
-    public get rank() {
-        return this._rank;
+    /** 登录数据 */
+    private _login: LoginData;
+    public get login() {
+        return this._login;
     }
-
-
 
     /** 消息分发列表 */
     private dispatchs: any[];
@@ -53,9 +50,8 @@ export class PlayerData {
 
     /** 初始化 */
     public initPlayer() {
+        c2f.webSocket.setPlrMsgHandle(this.handleMsg.bind(this))
     }
-
-
 
     /** 清空模块数据 */
     private clearModules() {
@@ -64,11 +60,11 @@ export class PlayerData {
                 one.reset();
             }
             if (one.release) {
-                one.release()
+                one.release();
             }
         }
         this._public = null;
-        this._rank = null;
+        this._login = null;
         this.dispatchs = [];
     }
 
@@ -81,17 +77,32 @@ export class PlayerData {
             this.beforeLoadCfg[op] = data;
         }
     }
-
     private dispatchMsg(op: number, data: any) {
-
+        if (GameMsgId.MsgId.MSG_SC_Login == op) {
+            this.initModules();
+        }
+        //跨天推送玩家信息消息从这里转换分发
+        let msgName = c2f.net.getMsgName(op);
+        if (GameMsgId.MsgId.MSG_SC_Login == op) {
+            msgName = c2f.net.getMsgName(GameMsgId.MsgId.MSG_SC_Login)
+        }
+        for (let one of this.dispatchs) {
+            if (one[msgName]) {
+                one[msgName](data);
+            }
+        }
+        // if (this.redDot) {
+        //     this.redDot.handleMsg(op, data);
+        // }
     }
+
 
     public initModules() {
         this.dispatchs = [];
         this._public = new PublicData();
         this.dispatchs.push(this._public);
-        this._rank = new LoginData();
-        this.dispatchs.push(this._rank);
+        this._login = new LoginData();
+        this.dispatchs.push(this._login);
     }
 }
 
@@ -102,4 +113,4 @@ declare global {
 }
 
 szg.player = PlayerData.ins;
-export { };
+export {};

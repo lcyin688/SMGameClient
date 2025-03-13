@@ -1,9 +1,9 @@
 import { RC4 } from "../libs/rc4/RC4";
 import { WSByProtobuf } from "./ws/WSByProtobuf";
 import { SocketState } from "./ws/WebService";
-import { msgname } from "../../resources/proto/msgname";
 import { INetToUI } from "./INetToUI";
 import { C2FConst } from "../define/C2FConst";
+import { msgName } from "../../resources/proto/msgName";
 var msgpack = require('msgpack');
 
 const rc4Key = [37, 19, 8, 169, 132, 244, 222, 112, 172, 185, 164, 69, 131, 210, 85, 37];
@@ -154,8 +154,8 @@ class NetWork {
     /** 网络消息回调 */
     private onWSMsg(op: number, data: any) {
         let success = data.ErrorCode === undefined || data.ErrorCode === 0;
-        const msgName = msgname[op];
-        if (msgName === undefined) {
+        const msgNameTemp = msgName[op];
+        if (msgNameTemp === undefined) {
             cc.log("network.dispatch msgName is nil: op = " + op);
         }
 
@@ -264,7 +264,7 @@ class NetWork {
 
     /** 获得消息ID名称 */
     public getMsgName(id: number) {
-        return msgname[id];
+        return msgName[id];
     }
 
     /** 解码二进制数据 */

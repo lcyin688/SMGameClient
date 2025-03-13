@@ -120,8 +120,6 @@ export class WebService {
             return;
         }
 
-
-
         this.reconnectTimer = setTimeout(() => {
             this.reconnectTimer = null;
             if (this.url) {

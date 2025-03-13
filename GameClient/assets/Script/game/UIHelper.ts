@@ -556,14 +556,17 @@ export class UIHelper {
             if (isDisconnect) {
                 c2f.gui.notifyTxt('509');
                 c2f.gui.hideLoading(true);
+                return
             }
         } else {
             const isDisconnect = code == 99999 ? true : false;
             if (isDisconnect) {
                 c2f.gui.notifyTxt('509');
                 c2f.gui.hideLoading(true);
+                return 
             }
         }
+        c2f.gui.notifyTxt(code.toString());
     }
 
 

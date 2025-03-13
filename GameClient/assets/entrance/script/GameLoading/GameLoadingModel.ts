@@ -3,7 +3,7 @@ import { C2FEnum } from '../../../c2f-framework/define/C2FEnum';
 import { UIModelBase } from './../../../c2f-framework/gui/layer/UIModelBase';
 
 interface InputData {
-    type: GameConsts.LoadingType;
+    type: any;
     endCb: Function;
     param: any;
 }
@@ -44,14 +44,16 @@ export default class GameLoadingModel extends UIModelBase {
     }
 
     public loadTask() {
-        switch (this.input.type) {
-            case GameConsts.LoadingType.home:
-                this.loadCfgFiles(this.updateProgInfo.bind(this), this.onConfigLoadEnd.bind(this));
-                break;
-            case GameConsts.LoadingType.battle:
-                this.loadBattleRes(this.input.param, this.updateProgInfo.bind(this), this.onTaskEnd.bind(this));
-                break;
-        }
+        this.loadCfgFiles(this.updateProgInfo.bind(this), this.onConfigLoadEnd.bind(this));
+
+        // switch (this.input.type) {
+        //     case GameConsts.LoadingType.home:
+        //         this.loadCfgFiles(this.updateProgInfo.bind(this), this.onConfigLoadEnd.bind(this));
+        //         break;
+        //     case GameConsts.LoadingType.battle:
+        //         this.loadBattleRes(this.input.param, this.updateProgInfo.bind(this), this.onTaskEnd.bind(this));
+        //         break;
+        // }
     }
 
     private updateProgInfo(prog: number, tips: string = '') {
@@ -197,16 +199,16 @@ export default class GameLoadingModel extends UIModelBase {
 
     //具体实现·加载配置
     private loadCSV(data: any, progCb: Function) {
-        szg.cfg.loadAllCSV((cur: number, total: number) => {
-            progCb && progCb(cur, total);
-        });
+        // szg.cfg.loadAllCSV((cur: number, total: number) => {
+        //     progCb && progCb(cur, total);
+        // });
     }
 
     //具体实现·加载配置
     private loadJSON(data: any, progCb: Function) {
-        szg.cfg.loadAllJson((cur: number, total: number) => {
-            progCb && progCb(cur, total);
-        });
+        // szg.cfg.loadAllJson((cur: number, total: number) => {
+        //     progCb && progCb(cur, total);
+        // });
     }
 
     //具体实现·加载主界面预制
@@ -221,7 +223,7 @@ export default class GameLoadingModel extends UIModelBase {
     private initRedDot(data: any, progCb: Function) {
         let { ResidentResMgr } = require('ResidentResMgr');
         ResidentResMgr.ins.loadRedDotPrefab((prefab: cc.Prefab) => {
-            szg.player.redDot.initRedDot(prefab);
+            // szg.player.redDot.initRedDot(prefab);
             progCb && progCb(1, 1);
         })
     }
