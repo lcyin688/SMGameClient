@@ -1,4 +1,5 @@
-import { GameMsgId } from "../../../Script/GameMsgId";
+import { GameMsgId } from "../../../resources/proto/GameMsgId";
+import { msgname } from "../../../resources/proto/msgname";
 import { SocketState } from "../ws/WebService";
 
 // 网络管理类 NetworkMgr.ts
@@ -24,9 +25,6 @@ export class NetworkMsg {
     protected connectCb: Function;    //连接成功回调
     protected messageCb: Function;    //收到消息回调
     protected wsEventCb: Function;    //网络事件回调
-    
-
-
     constructor() {
         this.ws = null;
         this.state = SocketState.Error;
@@ -173,19 +171,66 @@ export class NetworkMsg {
             this.heartbeatTimer = null;
         }
     }
+
+
+
     /** 发送消息: 子类具体实现 */
-    public send(msgId: number, value?: any) {
+    public send(msgId: number, msgData: any) {
         console.log("发送消息   this.ws?.readyState  " ,this.ws?.readyState);
-        if (this.ws?.readyState === WebSocket.OPEN||this.ws?.readyState === WebSocket.CONNECTING) {
-            let data = {
-                msgId: msgId,
-                value: value
-            };
-            let jsonStr = JSON.stringify(data);
-            this.ws.send(jsonStr)
-            return 
+        if (this.state !== SocketState.Connected) {
+            return false;
         }
+        if (!this.ws || this.ws.readyState != WebSocket.OPEN) {
+            return false;
+        }
+        this.tcpSend(msgId,msgData);
+        // if (this.ws?.readyState === WebSocket.OPEN||this.ws?.readyState === WebSocket.CONNECTING) {
+        //     // let data = {
+        //     //     msgId: msgId,
+        //     //     value: value
+        //     // };
+        //     // let jsonStr = JSON.stringify(data);
+        //     // this.ws.send(jsonStr)
+        //     return 
+        // }
         console.log("发送消息失败   this.ws?.readyState  " ,this.ws?.readyState);
+    }
+
+
+    /** 发送消息 */
+    public tcpSend(op: number, data: any) {
+        const msgName = msgname[op];
+        if (!msgName) {
+            cc.warn(`don't find msg for id:${op}`);
+            return false;
+        }
+
+        // if (CC_DEV && op != msgid.C_TimeSync) {
+        //     cc.log("network.tcpSend msgid = " + op);
+        //     cc.log(Object.copyDepth(data));
+        // }
+
+        let name = "msg." + msgName;
+        let message = this.root.build(name);
+        let msg = new message();
+        for (const p in data) {
+            if (data.hasOwnProperty(p)) {
+                msg.set(p, data[p], false);
+            }
+        }
+        let bytes = new Uint8Array(msg.encode().toBuffer());
+        let buffer = new ArrayBuffer(bytes.byteLength + 8);
+        let dv = new DataView(buffer);
+        dv.setUint32(0, bytes.byteLength + 8, false);
+        dv.setUint32(4, op, false);
+        for (var i = 0, length = bytes.byteLength; i < length; i++) {
+            dv.setUint8(i + 8, bytes[i]);
+        }
+        let content = new Uint8Array(buffer);
+        this.encryptCb && this.encryptCb(content);
+        this.socket.send(content.buffer);
+
+        return true;
     }
 
 }

@@ -12,6 +12,13 @@ enum MsgId {
 }
 
 
+message PlayerInfo {
+    int32 userId = 1;
+    int32 gender = 2;
+    string userName = 3;
+    string nickName = 4;
+}
+
 
 message PlayerInfo {
     int32 userId = 1;
@@ -22,7 +29,7 @@ message PlayerInfo {
 
 
 
-message LoginReq {
+message CS_Login { // msgid: 101
     string account = 1;
     string password = 2;
     int32 server_id = 3;
