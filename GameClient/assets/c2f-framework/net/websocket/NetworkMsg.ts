@@ -1,5 +1,5 @@
 import { GameMsgId } from "../../../resources/proto/GameMsgId";
-import { msgname } from "../../../resources/proto/msgname";
+import { msgName } from "../../../resources/proto/msgName";
 import { SocketState } from "../ws/WebService";
 
 // 网络管理类 NetworkMgr.ts
@@ -53,7 +53,7 @@ export class NetworkMsg {
     }
     // 连接配置
     public connect(url: string,callback?: Function) {
-        console.error('connect 001');
+        console.log('connect 001');
         if (this.ws) this.close();
 
 
@@ -179,7 +179,7 @@ export class NetworkMsg {
             let cData: msg.CS_Ping = {
                 Timestamp: new Date().getTime(),
             }
-            this.sendMsg(cData);
+            this.send(GameMsgId.MsgId.MSG_CS_Ping,cData);
         }, this.reconnetInterval * 1000);
     }
     /** 清除心跳timer */
@@ -194,7 +194,7 @@ export class NetworkMsg {
     public sendMsg(op: number, data: any, params?: any) {
 
 
-        
+
         // let result = this.service.tcpSend(op, data);
         // if (!result) {
         //     if (params && params.callback) {
@@ -245,18 +245,12 @@ export class NetworkMsg {
 
     /** 发送消息 */
     public tcpSend(op: number, data: any) {
-        const msgName = msgname[op];
-        if (!msgName) {
+        const msgNameTemp = msgName[op];
+        if (!msgNameTemp) {
             cc.warn(`don't find msg for id:${op}`);
             return false;
         }
-
-        // if (CC_DEV && op != msgid.C_TimeSync) {
-        //     cc.log("network.tcpSend msgid = " + op);
-        //     cc.log(Object.copyDepth(data));
-        // }
-
-        let name = "msg." + msgName;
+        let name = "msg." + msgNameTemp;
         let message = this.root.build(name);
         let msg = new message();
         for (const p in data) {
@@ -372,8 +366,8 @@ export class NetworkMsg {
     /** 网络消息回调 */
     private onWSMsg(op: number, data: any) {
         let success = data.ErrorCode === undefined || data.ErrorCode === 0;
-        const msgName = msgname[op];
-        if (msgName === undefined) {
+        const msgNameTemp = msgName[op];
+        if (msgNameTemp === undefined) {
             cc.log("network.dispatch msgName is nil: op = " + op);
         }
 

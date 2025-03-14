@@ -1,3 +1,4 @@
+import { GameMsgId } from "../../../../resources/proto/GameMsgId";
 import { GameConsts } from "../../../../Script/game/GameConsts";
 import { UIPa } from "../../../../Script/game/UIParam";
 
@@ -18,11 +19,11 @@ export class LoginData {
 
 
     public reqLogin(userName: string, passWord: string) {
-        // let cData: msg.C_Login = {
-        //     UserName: userName,
-        //     PassWord: passWord
-        // }
-        // c2f.net.sendMsg(msgid.C_Login, cData)
+        let cData: msg.CS_Ping = {
+            Timestamp: new Date().getTime(),
+        }
+        // this.send(GameMsgId.MsgId.MSG_CS_Ping,cData);
+        c2f.net.sendMsg(GameMsgId.MsgId.MSG_CS_Ping, cData)
         // let playerInfo = {} as msg.player.PlayerInfo; 
         // playerInfo.userId = 10;
         // playerInfo.gender = 1;

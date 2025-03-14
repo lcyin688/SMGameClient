@@ -146,11 +146,12 @@ export default class GameLogin extends UIVControlBase {
         if (!c2f.net.toUI) {
             c2f.net.toUI = new UINetwork();
         }
-        let url = "ws://localhost:8080";
+        let url = "ws://127.0.0.1:9000";
         c2f.gui.showLoading();
         c2f.net.initService().then(() => {
             c2f.net.connect(url, (reason: string) => {
                 c2f.gui.hideLoading();
+                cc.log( "connetToServer  reason  ==  "+reason)
                 if (reason === "Connected") {
                     this.loginToGame();
                 } else {
@@ -170,6 +171,9 @@ export default class GameLogin extends UIVControlBase {
                     
     private CC_onClickbtnLogin() {
         console.error('CC_onClickbtnLogin test 004');
+        this.connetToServer()
+
+
         // let url = "ws://127.0.0.1:8999";
         // c2f.webSocket.connect(url)
         // 创建玩家登录信息

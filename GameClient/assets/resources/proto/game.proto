@@ -3,7 +3,12 @@ package msg;
 
 
 
-
+message CS_Ping {
+  int64 Timestamp = 1;
+}
+message SC_Pong {
+  int64 Timestamp = 1;
+}
 
 message Str_Int {
     string Str = 1;
