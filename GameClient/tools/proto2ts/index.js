@@ -405,6 +405,10 @@ function generateProtoDts() {
            
             fs.writeFileSync(path.join(curPath, 'proto', `${moduleName}.d.ts`), dtsStr);
             rm(path.join(curPath, 'proto', `${moduleName}.proto`));
+            //复制源文件 proto  到  项目
+            let tartPath = path.join(projectPath, 'assets/resources/proto/', `${moduleName}.proto`)
+            cp(protoRootPath, tartPath);
+
             console.log('------------------------- 成功 -------------------------');
         });
 }

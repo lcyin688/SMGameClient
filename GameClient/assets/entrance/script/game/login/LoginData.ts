@@ -18,10 +18,10 @@ export class LoginData {
 
 
     public reqLogin(userName: string, passWord: string) {
-        let cData: msg.C_Login = {
-            UserName: userName,
-            PassWord: passWord
-        }
+        // let cData: msg.C_Login = {
+        //     UserName: userName,
+        //     PassWord: passWord
+        // }
         // c2f.net.sendMsg(msgid.C_Login, cData)
         // let playerInfo = {} as msg.player.PlayerInfo; 
         // playerInfo.userId = 10;

@@ -3,7 +3,6 @@ import { C2FEnum } from './../../../../c2f-framework/define/C2FEnum';
 import  NhwcLoginModel from './NhwcLoginModel';
 import  NhwcLoginView from './NhwcLoginView';
 import { GameConsts } from '../../../../Script/game/GameConsts';
-import { GameMsgId } from '../../../../Script/GameMsgId';
 import { UIHelper } from '../../../../Script/game/UIHelper';
 
 const { ccclass, property } = cc._decorator;
@@ -16,8 +15,24 @@ export default class NhwcLogin extends UIVControlBase {
     public view: NhwcLoginView = undefined;
     
     protected onViewOpen(param: any) {
+
         let url = "ws://127.0.0.1:9000";
-        c2f.webSocket.connect(url)
+        c2f.gui.showLoading();
+        c2f.webSocket.initService().then(() => {
+            c2f.webSocket.connect(url, (reason: string) => {
+                c2f.gui.hideLoading();
+                if (reason === "Connected") {
+                    cc.log(" ~~~ c2f.webSocket.connect 链接成功 可以尝试登录")
+                } else {
+                    c2f.gui.notifyTxt('1006');
+                    c2f.net.purge();
+                }
+            });
+        });
+
+
+
+
         // let url = GameConsts.Bundle.snake2048+"/wokanjianle"
         // cc.log(" ~~~ GameConsts.AppBundleName == ",url)
         // let temp = GameMsgId.MsgId.MSG_LoginReq+"/woc"

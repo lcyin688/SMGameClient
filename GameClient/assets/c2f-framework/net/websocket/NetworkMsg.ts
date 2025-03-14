@@ -24,7 +24,13 @@ export class NetworkMsg {
 
     protected connectCb: Function;    //连接成功回调
     protected messageCb: Function;    //收到消息回调
-    protected wsEventCb: Function;    //网络事件回调
+
+    protected messages: any;
+    protected root: any;
+    protected encryptCb: Function;    //消息加密回调
+    protected decryptCb: Function;    //消息解码回调
+
+
     constructor() {
         this.ws = null;
         this.state = SocketState.Error;
@@ -33,6 +39,10 @@ export class NetworkMsg {
         this.reconnectTimes = 0;
         this.reconnectTimer = null;
         this.connectCb = null;
+
+        this.messages = new Uint8Array(0);
+        this.root = undefined;
+    
     }
 
     static getInst(): NetworkMsg {
@@ -72,6 +82,10 @@ export class NetworkMsg {
         this.reconnectTimes = 0;
         this.stateChanged(SocketState.Connected);
         this.startHeartbeat()
+        if (this.connectCb) {
+            this.connectCb("Connected")
+        }
+
     }
     /** 收到消息：子类具体实现 */
     protected onmessage(event: any) {
@@ -113,6 +127,7 @@ export class NetworkMsg {
     /** 网络断开 */
     private onclose(event) {
         console.log("连接关闭", event);
+        
         // let target = event.currentTarget || event.target;
         // if (this.url && target && target.url == this.url) {
         //     if (target) {
@@ -143,7 +158,7 @@ export class NetworkMsg {
                     break;
             }
 
-            this.wsEventCb && this.wsEventCb(state);
+            this.onWSEvent(state);
             if (this.connectCb) {
                 this.connectCb(reason);
                 this.connectCb = null;
@@ -161,7 +176,10 @@ export class NetworkMsg {
     private startHeartbeat() {
         this.clearHeartbeatTimer()
         this.heartbeatTimer = setInterval(() => {
-            this.send(GameMsgId.MsgId.MSG_Ping);
+            let cData: msg.CS_Ping = {
+                Timestamp: new Date().getTime(),
+            }
+            this.sendMsg(cData);
         }, this.reconnetInterval * 1000);
     }
     /** 清除心跳timer */
@@ -172,7 +190,37 @@ export class NetworkMsg {
         }
     }
 
+    /** 请求消息 */
+    public sendMsg(op: number, data: any, params?: any) {
 
+
+        
+        // let result = this.service.tcpSend(op, data);
+        // if (!result) {
+        //     if (params && params.callback) {
+        //         params.callback(op, { ErrorCode: C2FConst.NetErrOffline })
+        //     }
+        //     return;
+        // }
+        // if (params === undefined) {
+        //     params = {};
+        // }
+        // this.msgListeners.push(
+        //     {
+        //         view: params.view,
+        //         ops: params.ops,
+        //         callback: params.callback,
+        //         waitNet: params.waitNet,
+        //         getErr: params.getErr,
+        //         type: "once"
+        //     });
+        // if (params.waitNet) {
+        //     this.waitListenerCnt += 1;
+        //     if (this.waitListenerCnt > 0) {
+        //         this.toUI.showWaitUI();
+        //     }
+        // }
+    }
 
     /** 发送消息: 子类具体实现 */
     public send(msgId: number, msgData: any) {
@@ -184,7 +232,6 @@ export class NetworkMsg {
             return false;
         }
         this.tcpSend(msgId,msgData);
-        // if (this.ws?.readyState === WebSocket.OPEN||this.ws?.readyState === WebSocket.CONNECTING) {
         //     // let data = {
         //     //     msgId: msgId,
         //     //     value: value
@@ -192,7 +239,6 @@ export class NetworkMsg {
         //     // let jsonStr = JSON.stringify(data);
         //     // this.ws.send(jsonStr)
         //     return 
-        // }
         console.log("发送消息失败   this.ws?.readyState  " ,this.ws?.readyState);
     }
 
@@ -228,10 +274,157 @@ export class NetworkMsg {
         }
         let content = new Uint8Array(buffer);
         this.encryptCb && this.encryptCb(content);
-        this.socket.send(content.buffer);
+        this.ws.send(content.buffer);
 
         return true;
     }
+
+
+    public async initService() {
+        if (this.ws) {
+            this.purge();
+        } else {
+            let result = await this.loadProtoFile();
+            if (result) {
+                // this.initMsgIds();
+            } else {
+                c2f.log.logNet('failed to load proto!');
+            }
+        }
+    }
+
+    // private initMsgIds(){
+    //     this.messageCb(this.onWSMsg.bind(this));
+
+
+    // }
+
+    public purge() {
+        if (this.ws) {
+            this.ws.close();
+            this.ws = null;
+            this.url = null;
+            this.reconnectTimes = 0;
+        }
+        this.clearReconnectTimer();
+    }
+
+    private clearReconnectTimer() {
+        if (this.reconnectTimer) {
+            clearTimeout(this.reconnectTimer);
+            this.reconnectTimes = null;
+        }
+    }
+
+
+    private async loadProtoFile() {
+        return new Promise<boolean>((resolve, reject) => {
+            let protobuf = require('protobuf');
+            protobuf.loadProtoFile("proto/msg", (err, result) => {
+                if (err) {
+                    cc.log(err);
+                    resolve(false);
+                } else {
+                    this.setRoot(result);
+                    resolve(true);
+                }
+            });
+        });
+    }
+
+    public setRoot(root: any) {
+        this.root = root;
+    }
+
+    /** 加密消息回调 */
+    public setEncryptCb(cb: Function) {
+        this.encryptCb = cb;
+    }
+
+    /** 解密消息回调 */
+    public setDecryptCb(cb: Function) {
+        this.decryptCb = cb;
+    }
+
+    /** 网络事件 */
+    private onWSEvent(state: SocketState) {
+        // switch (state) {
+        //     case SocketState.Connected:
+        //         this.reInitRc4();
+        //         break;
+        //     case SocketState.Error:
+        //         this.toUI.hideWaitUI();
+        //         this.toUI.showErrorMsg(C2FConst.NetErrOffline);
+        //         break;
+        //     case SocketState.ConnectTimeOut:
+        //         this.toUI.showWaitUI();
+        //         break;
+        //     case SocketState.ReconnectSuc:
+        //         this.toUI.hideWaitUI();
+        //         this.toUI.showReloginView();
+        //         break;
+        //     default:
+        //         break;
+        // }
+    }
+
+
+    /** 网络消息回调 */
+    private onWSMsg(op: number, data: any) {
+        let success = data.ErrorCode === undefined || data.ErrorCode === 0;
+        const msgName = msgname[op];
+        if (msgName === undefined) {
+            cc.log("network.dispatch msgName is nil: op = " + op);
+        }
+
+        // if (success) {
+        //     this.plrMsgHandle && this.plrMsgHandle(op, data);
+        // }
+
+        // let needRemove = [];
+        // let count = this.msgListeners.length;
+
+        // //倒序遍历，也就是说在最直接请求的地方最先响应，其他均获取刷新
+        // for (let idx = count - 1; idx >= 0; idx--) {
+        //     const info = this.msgListeners[idx];
+        //     if (info.view !== undefined && info.view.node == null) {
+        //         needRemove.push(idx);
+        //         continue;
+        //     }
+        //     if (info.ops === undefined || info.ops === null) {
+        //         needRemove.push(idx);
+        //         continue;
+        //     }
+        //     let ops = info.ops;
+        //     for (let index = 0; index < ops.length; index++) {
+        //         let val = ops[index];
+        //         if (val === op) {
+        //             if (success || info.getErr) {
+        //                 info.callback && info.callback(op, data);
+        //             }
+        //             if (info.type == "once") {
+        //                 needRemove.push(idx);
+        //             }
+        //             break;
+        //         }
+        //     }
+        // }
+
+        // //let quickDisplay = this.getQuickDisPlay();
+        // for (let idx = 0; idx < needRemove.length; idx++) {
+        //     const listenerIndex = needRemove[idx];
+        //     if (this.msgListeners[listenerIndex] && this.msgListeners[listenerIndex].waitNet) {
+        //         this.waitListenerCnt -= 1;
+        //         this.toUI.hideWaitUI();
+        //     }
+        //     this.msgListeners.splice(listenerIndex, 1);
+        // }
+        // if (!success) {
+        //     this.toUI.showErrorMsg(data.ErrorCode)
+        // }
+    }
+
+
 
 }
 declare global {

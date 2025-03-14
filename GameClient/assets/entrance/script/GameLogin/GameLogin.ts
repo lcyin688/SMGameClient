@@ -154,7 +154,7 @@ export default class GameLogin extends UIVControlBase {
                 if (reason === "Connected") {
                     this.loginToGame();
                 } else {
-                    c2f.gui.notifyTxt('1006');
+                    c2f.gui.notifyTxt('1006');8
                     c2f.net.purge();
                 }
             });
@@ -173,12 +173,11 @@ export default class GameLogin extends UIVControlBase {
         // let url = "ws://127.0.0.1:8999";
         // c2f.webSocket.connect(url)
         // 创建玩家登录信息
-        const playerInfo: msg.LoginReq = {
-            account: "test2025",
-            password: "p@ssw0rd",
-            serverId: 1001
-        };
-        console.error('CC_onClickbtnLogin playerInfo  ',playerInfo);
+        // const playerInfo: msg.CS_Ping = {
+
+
+        // };
+        // console.error('CC_onClickbtnLogin playerInfo  ',playerInfo);
 
         // c2f.webSocket.send(playerInfo)
     }
