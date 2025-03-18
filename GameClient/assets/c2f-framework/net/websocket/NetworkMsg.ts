@@ -5,6 +5,7 @@ import { SocketState } from "../ws/WebService";
 // 网络管理类 NetworkMgr.ts
 const { ccclass } = cc._decorator;
 
+
 @ccclass
 export class NetworkMsg {
     private static _instance: NetworkMsg | null = null;
@@ -23,13 +24,13 @@ export class NetworkMsg {
     protected url: string;
 
     protected connectCb: Function;    //连接成功回调
-    protected messageCb: Function;    //收到消息回调
 
-    protected messages: any;
     protected root: any;
     protected encryptCb: Function;    //消息加密回调
     protected decryptCb: Function;    //消息解码回调
 
+    private buffer: Uint8Array = new Uint8Array(0);
+    // protected messages: Uint8Array;
 
     constructor() {
         this.ws = null;
@@ -40,7 +41,8 @@ export class NetworkMsg {
         this.reconnectTimer = null;
         this.connectCb = null;
 
-        this.messages = new Uint8Array(0);
+        this.buffer = new Uint8Array(0);
+        // this.messages = new Uint8Array(0);
         this.root = undefined;
     
     }
@@ -70,6 +72,7 @@ export class NetworkMsg {
 
         cc.log("websocket connect", url);
         this.ws = new WebSocket(url);
+        this.ws.binaryType = "arraybuffer";
         this.ws.onopen = this.onopen.bind(this);
         this.ws.onmessage = this.onmessage.bind(this);
         this.ws.onerror = this.onerror.bind(this);
@@ -87,29 +90,118 @@ export class NetworkMsg {
         }
 
     }
-    /** 收到消息：子类具体实现 */
+    /** 收到消息 */
     protected onmessage(event: any) {
-        try {
-            const data = JSON.parse(event.data);
-            console.log("  收到 消息  onmessage", data);
+        const newData = new Uint8Array(event.data);
+        this.buffer = this.concatBuffer(this.buffer, newData);
+        // 处理完整消息
+        this.processBuffer();
+    }
+   // 合并二进制数据
+   private concatBuffer(a: Uint8Array, b: Uint8Array): Uint8Array {
+        const result = new Uint8Array(a.length + b.length);
+        result.set(a, 0);
+        result.set(b, a.length);
+        return result;
+    }
+    
+    /** 处理缓冲区 */
+    private processBuffer() {
+        while (this.buffer.length >= 8) { // 8字节头部
+            // 读取消息头（小端序）
+            const msgId = new DataView(this.buffer.buffer).getUint32(0, true);
+            const dataLen = new DataView(this.buffer.buffer).getUint32(4, true);
+            
+            // 检查数据是否完整
+            if (this.buffer.length < 8 + dataLen) break;
+
+            // 提取数据体
+            const body = this.buffer.subarray(8, 8 + dataLen);
+            cc.log("msgId  ========   :", msgId);
+
+            this.parseMessage(msgId, body);
+
+            // 移除已处理的数据
+            this.buffer = this.buffer.subarray(8 + dataLen);
+        }
+    
+    }
 
 
-        } catch (e) {
-            console.error("消息解析失败", e);
+    // 根据消息ID反序列化
+    private parseMessage(msgId: number, data: ArrayBuffer) {
+        let opName = msgName[msgId];
+        if (!opName) {
+            cc.log("can not find op:", msgId);
+            return;
+        }
+        let name = "msg." + opName;
+        let proto = this.root.build(name);
+        if (!proto) {
+            cc.log("can not find proto:", name);
+            return;
+        }
+        let rep = proto.decode(data);
+        console.log('收到响应  rep  :', rep);
+        this.onWSMsg(msgId, rep);
+    }
+
+
+    /** 网络消息回调 */
+    private onWSMsg(op: number, data: any) {
+        let success = data.ErrorCode === undefined || data.ErrorCode === 0;
+        const msgNameTemp = msgName[op];
+        if (msgNameTemp === undefined) {
+            cc.log("network.dispatch msgName is nil: op = " + op);
         }
 
+        // if (success) {
+        //     this.plrMsgHandle && this.plrMsgHandle(op, data);
+        // }
 
-        // let e = event.data.replace(String.fromCharCode(30), "")
-        // let data = JSON.parse(e);
-        // if (1 === data.type) {
-        //     switch (data.target) {
-        //         case "PushMessage":
-        //             console.log("收到服务器内容：" + JSON.stringify(data.arguments[0]));
-        //             break
+        // let needRemove = [];
+        // let count = this.msgListeners.length;
+
+        //倒序遍历，也就是说在最直接请求的地方最先响应，其他均获取刷新
+        // for (let idx = count - 1; idx >= 0; idx--) {
+        //     const info = this.msgListeners[idx];
+        //     if (info.view !== undefined && info.view.node == null) {
+        //         needRemove.push(idx);
+        //         continue;
+        //     }
+        //     if (info.ops === undefined || info.ops === null) {
+        //         needRemove.push(idx);
+        //         continue;
+        //     }
+        //     let ops = info.ops;
+        //     for (let index = 0; index < ops.length; index++) {
+        //         let val = ops[index];
+        //         if (val === op) {
+        //             if (success || info.getErr) {
+        //                 info.callback && info.callback(op, data);
+        //             }
+        //             if (info.type == "once") {
+        //                 needRemove.push(idx);
+        //             }
+        //             break;
+        //         }
         //     }
         // }
 
+        // for (let idx = 0; idx < needRemove.length; idx++) {
+        //     const listenerIndex = needRemove[idx];
+        //     if (this.msgListeners[listenerIndex] && this.msgListeners[listenerIndex].waitNet) {
+        //         this.waitListenerCnt -= 1;
+        //         this.toUI.hideWaitUI();
+        //     }
+        //     this.msgListeners.splice(listenerIndex, 1);
+        // }
+        // if (!success) {
+        //     this.toUI.showErrorMsg(data.ErrorCode)
+        // }
     }
+
+
 
     /** 网络错误 */
     private onerror(error) {
@@ -190,38 +282,6 @@ export class NetworkMsg {
         }
     }
 
-    /** 请求消息 */
-    public sendMsg(op: number, data: any, params?: any) {
-
-
-
-        // let result = this.service.tcpSend(op, data);
-        // if (!result) {
-        //     if (params && params.callback) {
-        //         params.callback(op, { ErrorCode: C2FConst.NetErrOffline })
-        //     }
-        //     return;
-        // }
-        // if (params === undefined) {
-        //     params = {};
-        // }
-        // this.msgListeners.push(
-        //     {
-        //         view: params.view,
-        //         ops: params.ops,
-        //         callback: params.callback,
-        //         waitNet: params.waitNet,
-        //         getErr: params.getErr,
-        //         type: "once"
-        //     });
-        // if (params.waitNet) {
-        //     this.waitListenerCnt += 1;
-        //     if (this.waitListenerCnt > 0) {
-        //         this.toUI.showWaitUI();
-        //     }
-        // }
-    }
-
     /** 发送消息: 子类具体实现 */
     public send(msgId: number, msgData: any) {
         console.log("发送消息   this.ws?.readyState  " ,this.ws?.readyState);
@@ -231,48 +291,34 @@ export class NetworkMsg {
         if (!this.ws || this.ws.readyState != WebSocket.OPEN) {
             return false;
         }
-        this.tcpSend(msgId,msgData);
-        //     // let data = {
-        //     //     msgId: msgId,
-        //     //     value: value
-        //     // };
-        //     // let jsonStr = JSON.stringify(data);
-        //     // this.ws.send(jsonStr)
-        //     return 
-        console.log("发送消息失败   this.ws?.readyState  " ,this.ws?.readyState);
-    }
-
-
-    /** 发送消息 */
-    public tcpSend(op: number, data: any) {
-        const msgNameTemp = msgName[op];
+        const msgNameTemp = msgName[msgId];
         if (!msgNameTemp) {
-            cc.warn(`don't find msg for id:${op}`);
+            cc.warn(`don't find msg for id:${msgId}`);
             return false;
         }
         let name = "msg." + msgNameTemp;
         let message = this.root.build(name);
         let msg = new message();
-        for (const p in data) {
-            if (data.hasOwnProperty(p)) {
-                msg.set(p, data[p], false);
+        for (const p in msgData) {
+            if (msgData.hasOwnProperty(p)) {
+                msg.set(p, msgData[p], false);
             }
         }
         let bytes = new Uint8Array(msg.encode().toBuffer());
-        let buffer = new ArrayBuffer(bytes.byteLength + 8);
-        let dv = new DataView(buffer);
-        dv.setUint32(0, bytes.byteLength + 8, false);
-        dv.setUint32(4, op, false);
-        for (var i = 0, length = bytes.byteLength; i < length; i++) {
-            dv.setUint8(i + 8, bytes[i]);
-        }
-        let content = new Uint8Array(buffer);
-        this.encryptCb && this.encryptCb(content);
-        this.ws.send(content.buffer);
-
-        return true;
+        this.sendMessage(msgId, bytes)
     }
+   // 通用消息发送方法
+   private sendMessage(msgId: number, data: Uint8Array) {
+    const buffer = new ArrayBuffer(8 + data.length);
+    const dv = new DataView(buffer);
+    // 大端序写入
+    dv.setUint32(0, msgId, false);     // 消息ID
+    dv.setUint32(4, data.length, false); // 数据长度
+    const bytes = new Uint8Array(buffer);
+    bytes.set(data, 8); // 填充protobuf数据
 
+    this.ws.send(bytes.buffer);
+}
 
     public async initService() {
         if (this.ws) {
@@ -286,12 +332,6 @@ export class NetworkMsg {
             }
         }
     }
-
-    // private initMsgIds(){
-    //     this.messageCb(this.onWSMsg.bind(this));
-
-
-    // }
 
     public purge() {
         if (this.ws) {
@@ -361,64 +401,6 @@ export class NetworkMsg {
         //         break;
         // }
     }
-
-
-    /** 网络消息回调 */
-    private onWSMsg(op: number, data: any) {
-        let success = data.ErrorCode === undefined || data.ErrorCode === 0;
-        const msgNameTemp = msgName[op];
-        if (msgNameTemp === undefined) {
-            cc.log("network.dispatch msgName is nil: op = " + op);
-        }
-
-        // if (success) {
-        //     this.plrMsgHandle && this.plrMsgHandle(op, data);
-        // }
-
-        // let needRemove = [];
-        // let count = this.msgListeners.length;
-
-        // //倒序遍历，也就是说在最直接请求的地方最先响应，其他均获取刷新
-        // for (let idx = count - 1; idx >= 0; idx--) {
-        //     const info = this.msgListeners[idx];
-        //     if (info.view !== undefined && info.view.node == null) {
-        //         needRemove.push(idx);
-        //         continue;
-        //     }
-        //     if (info.ops === undefined || info.ops === null) {
-        //         needRemove.push(idx);
-        //         continue;
-        //     }
-        //     let ops = info.ops;
-        //     for (let index = 0; index < ops.length; index++) {
-        //         let val = ops[index];
-        //         if (val === op) {
-        //             if (success || info.getErr) {
-        //                 info.callback && info.callback(op, data);
-        //             }
-        //             if (info.type == "once") {
-        //                 needRemove.push(idx);
-        //             }
-        //             break;
-        //         }
-        //     }
-        // }
-
-        // //let quickDisplay = this.getQuickDisPlay();
-        // for (let idx = 0; idx < needRemove.length; idx++) {
-        //     const listenerIndex = needRemove[idx];
-        //     if (this.msgListeners[listenerIndex] && this.msgListeners[listenerIndex].waitNet) {
-        //         this.waitListenerCnt -= 1;
-        //         this.toUI.hideWaitUI();
-        //     }
-        //     this.msgListeners.splice(listenerIndex, 1);
-        // }
-        // if (!success) {
-        //     this.toUI.showErrorMsg(data.ErrorCode)
-        // }
-    }
-
-
 
 }
 declare global {
