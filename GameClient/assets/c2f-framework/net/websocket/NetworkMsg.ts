@@ -1,10 +1,15 @@
 import { GameMsgId } from "../../../resources/proto/GameMsgId";
 import { msgName } from "../../../resources/proto/msgName";
+import { C2FConst } from "../../define/C2FConst";
+import { INetToUI } from "../INetToUI";
 import { SocketState } from "../ws/WebService";
 
 // 网络管理类 NetworkMgr.ts
 const { ccclass } = cc._decorator;
-
+//重连最大次数
+const reconnetMax = 5;
+//重连间隔
+const reconnetInterval = 6;
 
 @ccclass
 export class NetworkMsg {
@@ -16,10 +21,8 @@ export class NetworkMsg {
     protected state: SocketState;
     protected reconnectTimes: number; //重连次数
     protected reconnectTimer: NodeJS.Timeout; //重连timer    
-    //重连最大次数
-    reconnetMax = 5;
-    //重连间隔
-    reconnetInterval = 6;
+
+
 
     protected url: string;
 
@@ -30,7 +33,19 @@ export class NetworkMsg {
     protected decryptCb: Function;    //消息解码回调
 
     private buffer: Uint8Array = new Uint8Array(0);
-    // protected messages: Uint8Array;
+
+
+    /** UI交互接口 */
+    private _toUI: INetToUI;
+    public get toUI(): INetToUI {
+        return this._toUI;
+    }
+    public set toUI(v: INetToUI) {
+        this._toUI = v;
+    }
+
+    /** 模块消息分发 */
+    private plrMsgHandle: Function;
 
     constructor() {
         this.ws = null;
@@ -95,6 +110,7 @@ export class NetworkMsg {
         const newData = new Uint8Array(event.data);
         this.buffer = this.concatBuffer(this.buffer, newData);
         // 处理完整消息
+        // this.buffer = event.data
         this.processBuffer();
     }
    // 合并二进制数据
@@ -109,8 +125,8 @@ export class NetworkMsg {
     private processBuffer() {
         while (this.buffer.length >= 8) { // 8字节头部
             // 读取消息头（小端序）
-            const msgId = new DataView(this.buffer.buffer).getUint32(0, true);
-            const dataLen = new DataView(this.buffer.buffer).getUint32(4, true);
+            const msgId = new DataView(this.buffer.buffer).getUint32(0, false);
+            const dataLen = new DataView(this.buffer.buffer).getUint32(4, false);
             
             // 检查数据是否完整
             if (this.buffer.length < 8 + dataLen) break;
@@ -118,9 +134,11 @@ export class NetworkMsg {
             // 提取数据体
             const body = this.buffer.subarray(8, 8 + dataLen);
             cc.log("msgId  ========   :", msgId);
-
-            this.parseMessage(msgId, body);
-
+            if (msgId==GameMsgId.MsgId.MSG_SC_Pong) { 
+                
+            }else{
+                this.parseMessage(msgId, body); 
+            }
             // 移除已处理的数据
             this.buffer = this.buffer.subarray(8 + dataLen);
         }
@@ -146,6 +164,9 @@ export class NetworkMsg {
         this.onWSMsg(msgId, rep);
     }
 
+    public setPlrMsgHandle(handle: Function) {
+        this.plrMsgHandle = handle;
+    }
 
     /** 网络消息回调 */
     private onWSMsg(op: number, data: any) {
@@ -155,9 +176,9 @@ export class NetworkMsg {
             cc.log("network.dispatch msgName is nil: op = " + op);
         }
 
-        // if (success) {
-        //     this.plrMsgHandle && this.plrMsgHandle(op, data);
-        // }
+        if (success) {
+            this.plrMsgHandle && this.plrMsgHandle(op, data);
+        }
 
         // let needRemove = [];
         // let count = this.msgListeners.length;
@@ -220,16 +241,37 @@ export class NetworkMsg {
     private onclose(event) {
         console.log("连接关闭", event);
         
-        // let target = event.currentTarget || event.target;
-        // if (this.url && target && target.url == this.url) {
-        //     if (target) {
-        //         cc.log("WebSocketClient instance closed:" + target.readyState);
-        //     }
-        //     this.stateChanged(SocketState.ConnectTimeOut);
-        //     // this.reconnect(this.url);
-        // }
+        let target = event.currentTarget || event.target;
+        if (this.url && target && target.url == this.url) {
+            if (target) {
+                cc.log("WebSocketClient instance closed:" + target.readyState);
+            }
+            this.stateChanged(SocketState.ConnectTimeOut);
+            this.reconnect(this.url);
+        }
     }
-
+    /** 重新连接 */
+    private reconnect(url: string) {
+        if (!this.url) {
+            return;
+        }
+        //最大重连次数5次
+        if (this.reconnectTimes > reconnetMax) {
+            this.stateChanged(SocketState.Error);
+            return;
+        }
+        this.reconnectTimer = setTimeout(() => {
+            this.reconnectTimer = null;
+            if (this.url) {
+                this.reconnectTimes++;
+                this.connect(url, () => {
+                    if (this.state == WebSocket.OPEN && this.url) {
+                      cc.log(" ~~~ reconnect success");
+                    }
+                });
+            }
+        }, reconnetInterval * 1000);
+    }
     public stateChanged(state: SocketState) {
         this.state = state;
         if (state === SocketState.Connecting) {
@@ -272,7 +314,7 @@ export class NetworkMsg {
                 Timestamp: new Date().getTime(),
             }
             this.send(GameMsgId.MsgId.MSG_CS_Ping,cData);
-        }, this.reconnetInterval * 1000);
+        }, reconnetInterval * 1000);
     }
     /** 清除心跳timer */
     private clearHeartbeatTimer() {
@@ -382,24 +424,23 @@ export class NetworkMsg {
 
     /** 网络事件 */
     private onWSEvent(state: SocketState) {
-        // switch (state) {
-        //     case SocketState.Connected:
-        //         this.reInitRc4();
-        //         break;
-        //     case SocketState.Error:
-        //         this.toUI.hideWaitUI();
-        //         this.toUI.showErrorMsg(C2FConst.NetErrOffline);
-        //         break;
-        //     case SocketState.ConnectTimeOut:
-        //         this.toUI.showWaitUI();
-        //         break;
-        //     case SocketState.ReconnectSuc:
-        //         this.toUI.hideWaitUI();
-        //         this.toUI.showReloginView();
-        //         break;
-        //     default:
-        //         break;
-        // }
+        switch (state) {
+            case SocketState.Connected:
+                break;
+            case SocketState.Error:
+                this.toUI.hideWaitUI();
+                this.toUI.showErrorMsg(C2FConst.NetErrOffline);
+                break;
+            case SocketState.ConnectTimeOut:
+                this.toUI.showWaitUI();
+                break;
+            case SocketState.ReconnectSuc:
+                this.toUI.hideWaitUI();
+                this.toUI.showReloginView();
+                break;
+            default:
+                break;
+        }
     }
 
 }
