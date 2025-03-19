@@ -4,6 +4,7 @@ import  NhwcLoginModel from './NhwcLoginModel';
 import  NhwcLoginView from './NhwcLoginView';
 import { GameConsts } from '../../../../Script/game/GameConsts';
 import { UIHelper } from '../../../../Script/game/UIHelper';
+import { GameMsgId } from '../../../../resources/proto/GameMsgId';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -84,12 +85,24 @@ export default class NhwcLogin extends UIVControlBase {
             c2f.gui.notifyTxt('7003');
             return;
         }
-        // const playerInfo: msg.player.LoginReq = {
-        //     account: username,
-        //     password: password,
-        //     serverId: 1001
-        // };
-        // c2f.webSocket.send(playerInfo)
+
+        let cData: msg.CS_Login = {
+                account: username,
+                password: password,
+                serverId: 1,
+        }
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData,{
+            view: this.view,
+            ops: [GameMsgId.MsgId.MSG_SC_Login],
+            waitNet:false,
+            getErr:true,
+            callback: (op: number, data: msg.SC_Login) => {
+
+                cc.log(" 登录 消息回来",data)
+
+            }
+        })
+        
 
     }
             

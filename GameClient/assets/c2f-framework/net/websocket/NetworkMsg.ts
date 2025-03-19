@@ -47,6 +47,9 @@ export class NetworkMsg {
     /** 模块消息分发 */
     private plrMsgHandle: Function;
 
+    private msgListeners: any[];
+    private waitListenerCnt: number; //消息锁屏等待数量
+
     constructor() {
         this.ws = null;
         this.state = SocketState.Error;
@@ -57,9 +60,13 @@ export class NetworkMsg {
         this.connectCb = null;
 
         this.buffer = new Uint8Array(0);
-        // this.messages = new Uint8Array(0);
         this.root = undefined;
     
+        this.msgListeners = [];
+        this.waitListenerCnt = 0;
+
+        this.plrMsgHandle = null;
+
     }
 
     static getInst(): NetworkMsg {
@@ -133,10 +140,11 @@ export class NetworkMsg {
 
             // 提取数据体
             const body = this.buffer.subarray(8, 8 + dataLen);
-            cc.log("msgId  ========   :", msgId);
+           
             if (msgId==GameMsgId.MsgId.MSG_SC_Pong) { 
                 
             }else{
+                cc.log("msgId  ========   :", msgId);
                 this.parseMessage(msgId, body); 
             }
             // 移除已处理的数据
@@ -180,46 +188,46 @@ export class NetworkMsg {
             this.plrMsgHandle && this.plrMsgHandle(op, data);
         }
 
-        // let needRemove = [];
-        // let count = this.msgListeners.length;
+        let needRemove = [];
+        let count = this.msgListeners.length;
 
-        //倒序遍历，也就是说在最直接请求的地方最先响应，其他均获取刷新
-        // for (let idx = count - 1; idx >= 0; idx--) {
-        //     const info = this.msgListeners[idx];
-        //     if (info.view !== undefined && info.view.node == null) {
-        //         needRemove.push(idx);
-        //         continue;
-        //     }
-        //     if (info.ops === undefined || info.ops === null) {
-        //         needRemove.push(idx);
-        //         continue;
-        //     }
-        //     let ops = info.ops;
-        //     for (let index = 0; index < ops.length; index++) {
-        //         let val = ops[index];
-        //         if (val === op) {
-        //             if (success || info.getErr) {
-        //                 info.callback && info.callback(op, data);
-        //             }
-        //             if (info.type == "once") {
-        //                 needRemove.push(idx);
-        //             }
-        //             break;
-        //         }
-        //     }
-        // }
+       // 倒序遍历，也就是说在最直接请求的地方最先响应，其他均获取刷新
+        for (let idx = count - 1; idx >= 0; idx--) {
+            const info = this.msgListeners[idx];
+            if (info.view !== undefined && info.view.node == null) {
+                needRemove.push(idx);
+                continue;
+            }
+            if (info.ops === undefined || info.ops === null) {
+                needRemove.push(idx);
+                continue;
+            }
+            let ops = info.ops;
+            for (let index = 0; index < ops.length; index++) {
+                let val = ops[index];
+                if (val === op) {
+                    if (success || info.getErr) {
+                        info.callback && info.callback(op, data);
+                    }
+                    if (info.type == "once") {
+                        needRemove.push(idx);
+                    }
+                    break;
+                }
+            }
+        }
 
-        // for (let idx = 0; idx < needRemove.length; idx++) {
-        //     const listenerIndex = needRemove[idx];
-        //     if (this.msgListeners[listenerIndex] && this.msgListeners[listenerIndex].waitNet) {
-        //         this.waitListenerCnt -= 1;
-        //         this.toUI.hideWaitUI();
-        //     }
-        //     this.msgListeners.splice(listenerIndex, 1);
-        // }
-        // if (!success) {
-        //     this.toUI.showErrorMsg(data.ErrorCode)
-        // }
+        for (let idx = 0; idx < needRemove.length; idx++) {
+            const listenerIndex = needRemove[idx];
+            if (this.msgListeners[listenerIndex] && this.msgListeners[listenerIndex].waitNet) {
+                this.waitListenerCnt -= 1;
+                this.toUI.hideWaitUI();
+            }
+            this.msgListeners.splice(listenerIndex, 1);
+        }
+        if (!success) {
+            this.toUI.showErrorMsg(data.ErrorCode)
+        }
     }
 
 
@@ -325,8 +333,8 @@ export class NetworkMsg {
     }
 
     /** 发送消息: 子类具体实现 */
-    public send(msgId: number, msgData: any) {
-        console.log("发送消息   this.ws?.readyState  " ,this.ws?.readyState);
+    public send(msgId: number, msgData: any,params?:any) {
+        // console.log("发送消息   this.ws?.readyState  " ,this.ws?.readyState);
         if (this.state !== SocketState.Connected) {
             return false;
         }
@@ -348,6 +356,32 @@ export class NetworkMsg {
         }
         let bytes = new Uint8Array(msg.encode().toBuffer());
         this.sendMessage(msgId, bytes)
+        //单独去注册回调的监听
+        if (params) {
+            if (!this.msgListeners) {
+                this.msgListeners=[]
+            }
+            this.msgListeners.push(
+                {
+                    view: params.view,
+                    ops: params.ops,
+                    callback: params.callback,
+                    waitNet: params.waitNet,
+                    getErr: params.getErr,
+                    type: "once"
+                });
+            if (params.waitNet) {
+                this.waitListenerCnt += 1;
+                if (this.waitListenerCnt > 0) {
+                    this.toUI.showWaitUI();
+                }
+            }
+        }
+
+
+
+
+
     }
    // 通用消息发送方法
    private sendMessage(msgId: number, data: Uint8Array) {
@@ -358,7 +392,6 @@ export class NetworkMsg {
     dv.setUint32(4, data.length, false); // 数据长度
     const bytes = new Uint8Array(buffer);
     bytes.set(data, 8); // 填充protobuf数据
-
     this.ws.send(bytes.buffer);
 }
 

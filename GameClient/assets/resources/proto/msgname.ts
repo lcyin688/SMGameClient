@@ -4,5 +4,7 @@ export var msgName: { [key: number]: string } = {
       2: "SC_Pong",
       101: "CS_Login",
       102: "SC_Login",
+      103: "CS_Register",
+      104: "SC_Register",
 
  }
