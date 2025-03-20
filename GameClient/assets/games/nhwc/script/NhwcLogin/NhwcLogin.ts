@@ -5,6 +5,8 @@ import  NhwcLoginView from './NhwcLoginView';
 import { GameConsts } from '../../../../Script/game/GameConsts';
 import { UIHelper } from '../../../../Script/game/UIHelper';
 import { GameMsgId } from '../../../../resources/proto/GameMsgId';
+import { errCode } from '../../../../resources/proto/errorcode';
+import { NhwcUI, NhwcView } from '../NhwcView';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -30,15 +32,6 @@ export default class NhwcLogin extends UIVControlBase {
                 }
             });
         });
-
-
-
-
-        // let url = GameConsts.Bundle.snake2048+"/wokanjianle"
-        // cc.log(" ~~~ GameConsts.AppBundleName == ",url)
-        // let temp = GameMsgId.MsgId.MSG_LoginReq+"/woc"
-        // cc.log(" ~~~ ameMsgId.MsgId.MSG_LoginReq == ",temp)
-        // cc.log(" ~~~ GameMsgId.MsgId.MSG_LoginReq== ",GameMsgId.MsgId.MSG_LoginReq)
         
     }
 
@@ -74,7 +67,6 @@ export default class NhwcLogin extends UIVControlBase {
     } 
     
     private CC_onClickbtnLogin(){
-
         let username = this.view.userNameEditBox.string;
         let password = this.view.passWordEditBox.string;
         if (!username) {
@@ -96,10 +88,15 @@ export default class NhwcLogin extends UIVControlBase {
             ops: [GameMsgId.MsgId.MSG_SC_Login],
             waitNet:false,
             getErr:true,
-            callback: (op: number, data: msg.SC_Login) => {
+            callback: (code: number, data: msg.SC_Login) => {
 
                 cc.log(" 登录 消息回来",data)
+                if (code==errCode.OK) {
+                    c2f.gui.notifyTxt('515');
+                    //todo 登录成功逻辑
 
+
+                }
             }
         })
         
@@ -107,7 +104,7 @@ export default class NhwcLogin extends UIVControlBase {
     }
             
     private CC_onClickbtnRegister(){
-
+        c2f.gui.open(NhwcUI.NhwcRegister);
     }
             
 

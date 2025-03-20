@@ -25,6 +25,12 @@ export default class NhwcRegisterView extends UIViewBase {
     public btnReturnButton: cc.Button = undefined;
     public head: cc.Node;
     public headSprite: cc.Sprite = undefined;
+    public btnLeft: cc.Node;
+    public btnLeftSprite: cc.Sprite = undefined;
+    public btnLeftButton: cc.Button = undefined;
+    public btnRight: cc.Node;
+    public btnRightSprite: cc.Sprite = undefined;
+    public btnRightButton: cc.Button = undefined;
     
 
     public onLoad() {
@@ -61,6 +67,12 @@ export default class NhwcRegisterView extends UIViewBase {
         this.btnReturnButton = this.btnReturn.getComponent(cc.Button);
         this.head = this.get('_head_');
         this.headSprite = this.head.getComponent(cc.Sprite);
+        this.btnLeft = this.get('_btnLeft_');
+        this.btnLeftSprite = this.btnLeft.getComponent(cc.Sprite);
+        this.btnLeftButton = this.btnLeft.getComponent(cc.Button);
+        this.btnRight = this.get('_btnRight_');
+        this.btnRightSprite = this.btnRight.getComponent(cc.Sprite);
+        this.btnRightButton = this.btnRight.getComponent(cc.Button);
         
     }
 
@@ -79,6 +91,8 @@ export default class NhwcRegisterView extends UIViewBase {
         this.passWordConfirmEditBox.node.on('text-changed', this.onpassWordConfirmEditBoxTextChanged, this);
         this.btnConfirmButton.node.on('click', this.onbtnConfirmButtonClick, this);
         this.btnReturnButton.node.on('click', this.onbtnReturnButtonClick, this);
+        this.btnLeftButton.node.on('click', this.onbtnLeftButtonClick, this);
+        this.btnRightButton.node.on('click', this.onbtnRightButtonClick, this);
 
     }
 
@@ -97,6 +111,8 @@ export default class NhwcRegisterView extends UIViewBase {
         this.passWordConfirmEditBox.node.off('text-changed', this.onpassWordConfirmEditBoxTextChanged, this);
         this.btnConfirmButton.node.off('click', this.onbtnConfirmButtonClick, this);
         this.btnReturnButton.node.off('click', this.onbtnReturnButtonClick, this);
+        this.btnLeftButton.node.off('click', this.onbtnLeftButtonClick, this);
+        this.btnRightButton.node.off('click', this.onbtnRightButtonClick, this);
 
     }
 
@@ -153,6 +169,14 @@ export default class NhwcRegisterView extends UIViewBase {
     }
 
     private onbtnReturnButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnLeftButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnRightButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

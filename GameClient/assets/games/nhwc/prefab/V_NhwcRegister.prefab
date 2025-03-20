@@ -2241,7 +2241,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "btnLeft",
+    "_name": "_btnLeft_",
     "_objFlags": 0,
     "_parent": {
       "__id__": 58
@@ -2421,7 +2421,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "btnRight",
+    "_name": "_btnRight_",
     "_objFlags": 0,
     "_parent": {
       "__id__": 58
