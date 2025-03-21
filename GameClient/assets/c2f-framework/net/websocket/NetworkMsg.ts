@@ -1,7 +1,7 @@
 import { GameMsgId } from "../../../resources/proto/GameMsgId";
 import { msgName } from "../../../resources/proto/msgName";
+import { UIHelper } from "../../../Script/game/UIHelper";
 import { C2FConst } from "../../define/C2FConst";
-import { INetToUI } from "../INetToUI";
 import { SocketState } from "../ws/WebService";
 
 // 网络管理类 NetworkMgr.ts
@@ -33,16 +33,6 @@ export class NetworkMsg {
     protected decryptCb: Function;    //消息解码回调
 
     private buffer: Uint8Array = new Uint8Array(0);
-
-
-    /** UI交互接口 */
-    private _toUI: INetToUI;
-    public get toUI(): INetToUI {
-        return this._toUI;
-    }
-    public set toUI(v: INetToUI) {
-        this._toUI = v;
-    }
 
     /** 模块消息分发 */
     private plrMsgHandle: Function;
@@ -178,9 +168,9 @@ export class NetworkMsg {
 
     /** 网络消息回调 */
     private onWSMsg(op: number, data: any) {
-        let success = data.ErrorCode === undefined || data.ErrorCode === 0;
+        let success = data.code === undefined || data.code === 0;
         const msgNameTemp = msgName[op];
-        if (msgNameTemp === undefined) {
+         if (msgNameTemp === undefined) { 
             cc.log("network.dispatch msgName is nil: op = " + op);
         }
 
@@ -221,12 +211,12 @@ export class NetworkMsg {
             const listenerIndex = needRemove[idx];
             if (this.msgListeners[listenerIndex] && this.msgListeners[listenerIndex].waitNet) {
                 this.waitListenerCnt -= 1;
-                this.toUI.hideWaitUI();
+                c2f.gui.hideLoading();
             }
             this.msgListeners.splice(listenerIndex, 1);
         }
         if (!success) {
-            this.toUI.showErrorMsg(data.ErrorCode)
+             UIHelper.showNetError(data.code);
         }
     }
 
@@ -373,7 +363,7 @@ export class NetworkMsg {
             if (params.waitNet) {
                 this.waitListenerCnt += 1;
                 if (this.waitListenerCnt > 0) {
-                    this.toUI.showWaitUI();
+                    c2f.gui.showLoading();
                 }
             }
         }
@@ -461,19 +451,37 @@ export class NetworkMsg {
             case SocketState.Connected:
                 break;
             case SocketState.Error:
-                this.toUI.hideWaitUI();
-                this.toUI.showErrorMsg(C2FConst.NetErrOffline);
+                c2f.gui.hideLoading();
+                UIHelper.showNetError(C2FConst.NetErrOffline)
                 break;
             case SocketState.ConnectTimeOut:
-                this.toUI.showWaitUI();
+                c2f.gui.showLoading();
                 break;
             case SocketState.ReconnectSuc:
-                this.toUI.hideWaitUI();
-                this.toUI.showReloginView();
+                c2f.gui.hideLoading();
+                this.showReloginView();
                 break;
             default:
                 break;
         }
+    }
+
+    /** 显示重新登录界面 */
+    private showReloginView() {
+        c2f.gui.hideLoading(true);
+        // szg.entrance.reLogin(
+        //     (op: number, data: msg.GW_Login) => {
+        //         let isSuccess = data.ErrorCode === undefined || data.ErrorCode === 0;
+        //         if (isSuccess) {
+        //             c2f.gui.notifyTxt('511');
+        //             c2f.net.startHeartbeat();
+        //         } else {
+        //             UIHelper.showNetError(data.ErrorCode);
+        //         }
+        //     },
+        //     () => {
+        //         c2f.gui.notifyTxt('512');
+        //     });
     }
 
 }

@@ -93,7 +93,7 @@ export default class NhwcRegister extends UIVControlBase {
         }
         c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Register,cData,{
             view: this.view,
-            ops: [GameMsgId.MsgId.MSG_CS_Register],
+            ops: [GameMsgId.MsgId.MSG_SC_Register],
             waitNet:false,
             getErr:false,
             callback: (code: number, data: msg.SC_Register) => {

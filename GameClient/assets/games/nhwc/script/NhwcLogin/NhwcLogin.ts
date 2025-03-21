@@ -87,16 +87,12 @@ export default class NhwcLogin extends UIVControlBase {
             view: this.view,
             ops: [GameMsgId.MsgId.MSG_SC_Login],
             waitNet:false,
-            getErr:true,
+            getErr:false,
             callback: (code: number, data: msg.SC_Login) => {
 
                 cc.log(" 登录 消息回来",data)
-                if (code==errCode.OK) {
-                    c2f.gui.notifyTxt('515');
-                    //todo 登录成功逻辑
-
-
-                }
+                c2f.gui.notifyTxt('1515');
+                //todo 登录成功逻辑
             }
         })
         
