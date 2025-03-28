@@ -6,6 +6,7 @@ export enum NhwcUI {
     Start = 4000,
     NhwcLogin,
     NhwcRegister,
+    NhwcHall,
 }
 
 
@@ -14,5 +15,6 @@ export const NhwcView: { [key: number]: UIConfig } = {
     //description:
     [NhwcUI.NhwcLogin]: { layer: LayerType.UI, prefab: "prefab/F_NhwcLogin", bundle: GameConsts.Bundle.nhwc }, 
     //description:
-    [NhwcUI.NhwcRegister]: { layer: LayerType.PopUp, prefab: "prefab/V_NhwcRegister", bundle: GameConsts.Bundle.nhwc }, 
-}
+    [NhwcUI.NhwcRegister]: { layer: LayerType.PopUp, prefab: "prefab/V_NhwcRegister", bundle: GameConsts.Bundle.nhwc },  
+    //description:
+    [NhwcUI.NhwcHall]: { layer: LayerType.UI, prefab: "prefab/hall/F_NhwcHall", bundle: GameConsts.Bundle.nhwc }, }

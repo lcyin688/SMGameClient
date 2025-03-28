@@ -12,6 +12,9 @@ enum MsgId {
 
   MSG_CS_Register = 103;  // 注册请求
   MSG_SC_Register = 104;  // 注册响应
+
+
+
   
 }
 
@@ -61,5 +64,72 @@ message CS_Register {
  * 注册响应
  */
 message SC_Register {
+    int32 code = 1;
+}
+
+
+/**
+ * 大厅数据请求
+ */
+message CS_HallInfo {
+
+}
+
+message RoomInfo {
+    // 房间id
+    int32 rid = 1;
+    //房间人数
+    int32 num = 2;
+    //房间最大座位数
+    int32 max = 3;
+}
+
+/**
+ * 大厅数据响应
+ */
+message SC_HallInfo {
+      info RoomInfo[] = 1;
+}
+
+
+/**
+ * 创建房间请求
+ */
+message CS_CreateRoom {
+    string id = 1;
+}
+
+/**
+ * 创建房间响应
+ */
+message SC_CreateRoom {
+    int32 code = 1;
+}
+
+/**
+ * 加入房间请求
+ */
+message CS_JoinRoom {
+    string id = 1;
+}
+
+/**
+ * 加入房间响应
+ */
+message SC_JoinRoom {
+    int32 code = 1;
+}
+
+/**
+ * 匹配房间请求
+ */
+message CS_MatchRoom {
+    string id = 1;
+}
+
+/**
+ * 匹配房间响应
+ */
+message SC_MatchRoom {
     int32 code = 1;
 }
