@@ -1,5 +1,5 @@
 #!/bin/bash
-protoc --go_out=. *.proto
+protoc --go_out=. *.proto 
 # protoc --go_out=. --go_opt=paths=source_relative msg.proto
 # 延迟 2秒后 把msg.proto 文件和.msg/msg.pb.go 文件复制到对应目录
 sleep 2
