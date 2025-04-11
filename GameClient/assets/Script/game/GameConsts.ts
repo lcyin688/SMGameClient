@@ -15,6 +15,8 @@ export namespace GameConsts {
         snake2048 = 'snake2048',
         /**你画我猜 */
         nhwc = 'nhwc',
+        /**消灭星星                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             */
+        desStar = 'desStar',
     }
 
     //平台标志:原生端设置，WEB端链接解析设置，小游戏待定
@@ -58,7 +60,7 @@ export namespace GameConsts {
     /** 资源路径 */
     export enum ResUrl {
         /** 消灭星星 */
-        desStar = 'ab:mainPack/image/ui/desStar/',
+        desStar = 'ab:desStar/image/ui/',
         physics2048 = 'ab:mainPack/image/ui/physics2048/',
         /** 背景音乐 */
         music = 'audio/music/',
@@ -77,8 +79,8 @@ export namespace GameConsts {
     /** 常用预制体 */
     export enum CmmPrefab {
         /** 星星单个 */
-        blockItem = 'ab:mainPack/prefab/desStar/P_BlockItem',
-        P_StartItem = 'ab:mainPack/prefab/desStar/P_StartItem',
+        blockItem = 'ab:desStar/prefab/P_BlockItem',
+        P_StartItem = 'ab:desStar/prefab/P_StartItem',
         mapCreatItem = 'ab:mainPack/prefab/mapCreate/P_MapCreatItem',
 
         /** 2048单个 */

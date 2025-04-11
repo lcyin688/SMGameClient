@@ -1,8 +1,8 @@
 {
   "ver": "1.1.3",
-  "uuid": "93eb42ce-60a8-4465-b407-df52e1b53c21",
+  "uuid": "cdffb73e-2a6e-499b-80be-d079b95a3b4d",
   "importer": "folder",
-  "isBundle": false,
+  "isBundle": true,
   "bundleName": "",
   "priority": 1,
   "compressionType": {},

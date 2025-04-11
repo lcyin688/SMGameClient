@@ -108,7 +108,7 @@ export default class GameLogin extends UIVControlBase {
     }
 
     private CC_onClickbtnStart() {
-        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
+        GameHelper.loadBundle(GameConsts.Bundle.desStar).then(UIID => {
             c2f.gui.open(UIID.DesStarMain)
         });
     }
