@@ -5,6 +5,7 @@ import BlockItemView from './BlockItemView';
 import { GameConsts } from '../../../../Script/game/GameConsts';
 import { UIPa } from '../../../../Script/game/UIParam';
 import { UIHelper } from '../../../../Script/game/UIHelper';
+import { DesStarTools } from '../DesStarTools';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -66,7 +67,7 @@ export default class BlockItem extends UIPControlBase {
     }
     /**消除特效 */
     public playExplode(callBack: Function) {
-        UIHelper.playEffect('pop_star');
+        DesStarTools.playEffect('pop_star');
         UIHelper.playSkeAni(this.view.skeBoomSkeleton, "boom", () => {
             this.node.active = false
             this.view.skeKuang.active = false

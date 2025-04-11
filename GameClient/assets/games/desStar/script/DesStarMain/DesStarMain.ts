@@ -8,6 +8,8 @@ import { GameConsts } from '../../../../Script/game/GameConsts';
 import BlockItem from '../BlockItem/BlockItem';
 import { UIPa } from '../../../../Script/game/UIParam';
 import StartItem from '../StartItem/StartItem';
+import { DesStarConsts } from './DesStarConsts';
+import { DesStarTools } from '../DesStarTools';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -20,12 +22,13 @@ export default class DesStarMain extends UIVControlBase {
 
     protected onViewOpen(param: any) {
         this.initAudioState()
-        UIHelper.playMusic('backMusic');
+        DesStarTools.playMusic('backMusic');
         this.model.initData()
         this.resetGame()
         this.loadTabItemFirst(this.startGame.bind(this))
         this.loadStarItem()
-        UIHelper.playEffect('ready_go');
+        DesStarTools.playEffect('ready_go');
+        this.view.gameWin.active=false
     }
     private initAudioState() {
         let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
@@ -224,7 +227,7 @@ export default class DesStarMain extends UIVControlBase {
     }
 
     private playWinByIndex(index: number) {
-        UIHelper.playEffect('reward_' + index);
+        DesStarTools.playEffect('reward_' + index);
         this.view.reward.active = true;
         this.view.reward.setScale(0.8)
         this.view.reward.opacity = 120
@@ -238,7 +241,7 @@ export default class DesStarMain extends UIVControlBase {
 
     private clickItemCb(data: UIPa.DesStarItemArgs) {
         if (!this.model.isActionRunning) {
-            UIHelper.playEffect('select');
+            DesStarTools.playEffect('select');
             this.model.isActionRunning = true;
             const result = this.model.findSameStarIndex(data.row, data.column);
             if (result.length > 1) {
@@ -424,11 +427,24 @@ export default class DesStarMain extends UIVControlBase {
     }
     private enterNextLv() {
         this.scheduleOnce(() => {
+            this.view.gameWin.active=false
             this.model.curLv++
-            c2f.storage.setNumber(GameConsts.StorageKey.curLv, this.model.curLv)
-            this.model.getDataByLv(this.model.curLv)
-            this.startGame()
+            if (DesStarConsts.myBabyCfg.isMySon&&this.model.curLv>DesStarConsts.myBabyCfg.maxLv) {
+                this.gameWin()
+            }else{
+                c2f.storage.setNumber(GameConsts.StorageKey.curLv, this.model.curLv)
+                this.model.getDataByLv(this.model.curLv)
+                this.startGame()
+            }
         }, 1)
+    }
+
+    private gameWin() { 
+        this.model.curLv=0
+        this.view.gameWin.active=true
+        //展示生活图片
+        DesStarTools.playEffect("gameWin")
+
     }
 
     private resetGame() {

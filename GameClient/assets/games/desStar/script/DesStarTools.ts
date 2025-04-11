@@ -1,16 +1,18 @@
-import { GameConsts } from "../../../Script/game/GameConsts";
-import { Snake2048Cfg } from "./Snake2048Cfg";
+/** UI相关工具函数汇总·不可引入子包文件 */
 
-   
-export class Snake2048Tools {
-   
+import { GameConsts } from "../../../Script/game/GameConsts";
+
+
+
+export class DesStarTools {
+
    /** 播放背景音乐 */
     static playMusic(name: string, cb: Function = null) {
         if (!name) {
             return;
         }
         let url = GameConsts.ResUrl.music + name;
-        c2f.audio.playBgmURLbyBuddle(GameConsts.Bundle.snake2048,url, cb);
+        c2f.audio.playBgmURLbyBuddle(GameConsts.Bundle.desStar,url, cb);
     }
 
     /** 播放音效 */
@@ -19,6 +21,12 @@ export class Snake2048Tools {
             return;
         }
         let url = GameConsts.ResUrl.soundEft + name;
-        c2f.audio.playSfxURLByBuddle(GameConsts.Bundle.snake2048,url);
+        c2f.audio.playSfxURLByBuddle(GameConsts.Bundle.desStar,url);
     }
+
+
+
+
+
+
 }

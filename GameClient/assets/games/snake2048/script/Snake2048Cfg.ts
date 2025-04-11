@@ -98,8 +98,6 @@ export namespace Snake2048Cfg {
         tag: cc.Node
     }
 
-    export const soundPath = 'audio/effect/'
-    export const musicPath = 'audio/music/'
 
     export const music = {
           bgm : 'bgm'

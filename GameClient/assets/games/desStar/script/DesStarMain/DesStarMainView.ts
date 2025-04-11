@@ -27,6 +27,9 @@ export default class DesStarMainView extends UIViewBase {
     public btnMenu: cc.Node;
     public btnMenuSprite: cc.Sprite = undefined;
     public btnMenuButton: cc.Button = undefined;
+    public gameWin: cc.Node;
+    public winAni: cc.Node;
+    public winAniSprite: cc.Sprite = undefined;
     
 
     public onLoad() {
@@ -65,6 +68,9 @@ export default class DesStarMainView extends UIViewBase {
         this.btnMenu = this.get('_btnMenu_');
         this.btnMenuSprite = this.btnMenu.getComponent(cc.Sprite);
         this.btnMenuButton = this.btnMenu.getComponent(cc.Button);
+        this.gameWin = this.get('_gameWin_');
+        this.winAni = this.get('_winAni_');
+        this.winAniSprite = this.winAni.getComponent(cc.Sprite);
         
     }
 
