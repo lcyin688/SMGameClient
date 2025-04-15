@@ -6,4 +6,5 @@ export enum errCode {
 	RegisterPassWord = 4, //注册密码不合法
 	LoginPassWord    = 5, //登录密码错误
 	LoginName        = 6, //登录账号不存在
+	EnterRoomFull    = 7, //房间已满
 }
