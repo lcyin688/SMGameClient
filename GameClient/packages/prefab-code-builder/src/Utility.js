@@ -703,6 +703,16 @@ var Utility = {
         //包名首字母大写  
         let realBName = bundleName.substring(0, 1).toUpperCase() + bundleName.substring(1);
         let bundlePath = scriptPath.replace(relativePath, '');
+        Editor.log(' genViewParamDefine   11 ', scriptPath);
+        Editor.log(' genViewParamDefine   12 ', relativePath);
+        Editor.log(' genViewParamDefine   13 ', bundlePath);
+
+
+
+        Editor.log(' genViewParamDefine   001 ', pathBundle);
+        Editor.log(' genViewParamDefine   002 ', bundleName);
+        Editor.log(' genViewParamDefine   003 ', bundlePath);
+
         if (pathBundle != bundleName) {
             bundlePath = bundlePath.replace(bundleName, pathBundle);
         }

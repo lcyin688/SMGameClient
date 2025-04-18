@@ -14,5 +14,18 @@ export var msgName: { [key: number]: string } = {
       124: "SC_JoinRoom",
       125: "CS_MatchRoom",
       126: "SC_MatchRoom",
+      1001: "CS_ReadyNHWC",
+      1002: "SC_ReadyNHWC",
+      1004: "SC_StartNHWC",
+      1008: "SC_ResultNHWC",
+      1010: "SC_OverNHWC",
+      1011: "CS_NHWCDrawClear",
+      1012: "SC_NHWCDrawClear",
+      1013: "CS_NHWCDrawWidth",
+      1014: "SC_NHWCDrawWidth",
+      1015: "CS_NHWCDrawColor",
+      1016: "SC_NHWCDrawColor",
+      1017: "CS_NHWCDrawPath",
+      1018: "SC_NHWCDrawPath",
 
  }

@@ -1,6 +1,7 @@
 import { PublicData } from './plrBase/PublicData';
 import { LoginData } from './login/LoginData';
 import { GameMsgId } from '../../../resources/proto/GameMsgId';
+import { NHWCData } from './nhwc/NhwcData';
 
 /** 玩家数据总领：具体模块数据 */
 export class PlayerData {
@@ -37,8 +38,17 @@ export class PlayerData {
     }
     /** 登录数据 */
     private _login: LoginData;
+
+    /** 你画我猜小游戏数据 */
+    private _nhwcData: NHWCData;
+    
+
     public get login() {
         return this._login;
+    }
+
+    public get nhwcData() {
+        return this._nhwcData;
     }
 
     /** 消息分发列表 */
@@ -65,6 +75,7 @@ export class PlayerData {
         }
         this._public = null;
         this._login = null;
+        this._nhwcData = null;
         this.dispatchs = [];
     }
 
@@ -103,6 +114,7 @@ export class PlayerData {
         this.dispatchs.push(this._public);
         this._login = new LoginData();
         this.dispatchs.push(this._login);
+        this.dispatchs.push(this._nhwcData);
     }
 }
 

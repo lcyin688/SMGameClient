@@ -14,6 +14,19 @@ export namespace GameMsgId {
         MSG_CS_JoinRoom = 123,
         MSG_SC_JoinRoom = 124,
         MSG_CS_MatchRoom = 125,
-        MSG_SC_MatchRoom = 126
+        MSG_SC_MatchRoom = 126,
+        MSG_CS_ReadyNHWC = 1001,
+        MSG_SC_ReadyNHWC = 1002,
+        MSG_SC_StartNHWC = 1004,
+        MSG_SC_ResultNHWC = 1008,
+        MSG_SC_OverNHWC = 1010,
+        MSG_CS_NHWCDrawClear = 1011,
+        MSG_SC_NHWCDrawClear = 1012,
+        MSG_CS_NHWCDrawWidth = 1013,
+        MSG_SC_NHWCDrawWidth = 1014,
+        MSG_CS_NHWCDrawColor = 1015,
+        MSG_SC_NHWCDrawColor = 1016,
+        MSG_CS_NHWCDrawPath = 1017,
+        MSG_SC_NHWCDrawPath = 1018
     }
  }

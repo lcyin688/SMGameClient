@@ -7,6 +7,7 @@ export enum NhwcUI {
     NhwcLogin,
     NhwcRegister,
     NhwcHall,
+    NhwcMain,
 }
 
 
@@ -17,4 +18,6 @@ export const NhwcView: { [key: number]: UIConfig } = {
     //description:
     [NhwcUI.NhwcRegister]: { layer: LayerType.PopUp, prefab: "prefab/V_NhwcRegister", bundle: GameConsts.Bundle.nhwc },  
     //description:
-    [NhwcUI.NhwcHall]: { layer: LayerType.UI, prefab: "prefab/hall/F_NhwcHall", bundle: GameConsts.Bundle.nhwc }, }
+    [NhwcUI.NhwcHall]: { layer: LayerType.UI, prefab: "prefab/hall/F_NhwcHall", bundle: GameConsts.Bundle.nhwc }, 
+    //description:
+    [NhwcUI.NhwcMain]: { layer: LayerType.UI, prefab: "prefab/common/F_NhwcMain", bundle: GameConsts.Bundle.nhwc }, }

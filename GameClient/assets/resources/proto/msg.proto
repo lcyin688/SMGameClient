@@ -25,6 +25,30 @@ enum MsgId {
   MSG_CS_MatchRoom = 125;  // 匹配房间请求
   MSG_SC_MatchRoom = 126;  // 匹配房间响应
 
+  MSG_CS_ReadyNHWC = 1001;  // 你画我猜准备请求
+  MSG_SC_ReadyNHWC = 1002;  // 你画我猜准备相应
+
+  MSG_SC_StartNHWC = 1004;  // 你画我猜游戏开始
+
+
+
+
+  MSG_SC_ResultNHWC = 1008;  // 你画我猜游戏单轮游戏结束
+
+  MSG_SC_OverNHWC = 1010;  // 你画我猜游戏结束
+
+  MSG_CS_NHWCDrawClear = 1011;  // 绘画清理请求
+  MSG_SC_NHWCDrawClear = 1012;  // 绘画清理响应
+
+  MSG_CS_NHWCDrawWidth = 1013;  // 绘画宽度请求
+  MSG_SC_NHWCDrawWidth = 1014;  // 绘画宽度响应
+
+  MSG_CS_NHWCDrawColor = 1015;  // 绘画颜色请求
+  MSG_SC_NHWCDrawColor = 1016;  // 绘画颜色响应
+
+  MSG_CS_NHWCDrawPath = 1017;  // 绘画路径请求
+  MSG_SC_NHWCDrawPath = 1018;  // 绘画路径响应
+
 }
 
 enum RoomState {
@@ -55,19 +79,19 @@ message PlayerInfo {
 message RoomInfo {
     // 房间id
     int32 rid = 1;
-    //房间人数
+    //房间当前轮次
     int32 gameNum = 2;
     //房间最大座位数
     int32 max = 3;
     //房间状态
     int32 state = 4;
     //房间创建时间
-    int32 createTime = 5;
+    int64 createTime = 5;
     //开始时间
-	int32 startTime = 6;
+	int64 startTime = 6;
     //结果时间
-	int32 resultTime = 7;
-    //提示
+	int64 resultTime = 7;
+    //提示z
 	string hint = 8;
     //单词
 	string word = 9;
@@ -76,9 +100,23 @@ message RoomInfo {
     //画师
     int32 painter = 11;
     //房间所有玩家
-    map<int32, PlayerInfo> mapPlayerInfo = 12;
+    map<int32, GameUserItem> mapPlayerInfo = 12;
 }
 
+
+/**
+ * 房间某个玩家信息
+ */
+message GameUserItem {
+    PlayerInfo plyer = 1;
+    // 房间id
+    int32 rid = 2;
+    // 房间id
+    int32 seat = 3;
+    // 分数
+    int32 score = 4;
+    bool isReady = 5;
+}
 
 /**
  * 登录请求
@@ -95,7 +133,7 @@ message CS_Login {
 message SC_Login {
     int32 code = 1;
     string token = 2;
-    PlayerInfo PlayerInfo = 3;
+    PlayerInfo playerInfo = 3;
 }
 
 /**
@@ -134,7 +172,8 @@ message SC_HallInfo {
  * 创建房间请求
  */
 message CS_CreateRoom {
-    string id = 1;
+
+
 }
 
 /**
@@ -142,13 +181,14 @@ message CS_CreateRoom {
  */
 message SC_CreateRoom {
     int32 code = 1;
+    RoomInfo roomInfo = 2;
 }
 
 /**
  * 加入房间请求
  */
 message CS_JoinRoom {
-    string id = 1;
+    int32 roomId = 1;
 }
 
 /**
@@ -156,13 +196,14 @@ message CS_JoinRoom {
  */
 message SC_JoinRoom {
     int32 code = 1;
+    RoomInfo roomInfo = 2;
 }
 
 /**
  * 匹配房间请求
  */
 message CS_MatchRoom {
-    string id = 1;
+
 }
 
 /**
@@ -170,4 +211,117 @@ message CS_MatchRoom {
  */
 message SC_MatchRoom {
     int32 code = 1;
+    RoomInfo roomInfo = 2;
+}
+
+
+/**
+ * 准备请求
+ */
+message CS_ReadyNHWC {
+
+}
+
+/**
+ * 准备响应
+ */
+message SC_ReadyNHWC {
+    int32 code = 1;
+    RoomInfo roomInfo = 2;
+}
+
+
+/**
+ * 游戏开始
+ */
+message SC_StartNHWC {
+    RoomInfo roomInfo = 1;
+}
+
+/**
+ * 小聚游戏结束 */
+message SC_ResultNHWC {
+    string word = 1;
+}
+
+/**
+ * 全部游戏结束 */
+message SC_OverNHWC {
+    string word = 1;
+}
+
+
+/**
+ * 游戏绘画清理请求
+ */
+message CS_NHWCDrawClear {
+
+
+}
+
+/**
+ * 游戏绘画清理响应
+ */
+message SC_NHWCDrawClear {
+
+
+}
+
+/**
+ * 游戏绘画width请求
+ */
+message CS_NHWCDrawWidth {
+
+    int32 width = 1;
+
+}
+
+/**
+ * 游戏绘画width响应
+ */
+message SC_NHWCDrawWidth {
+
+    int32 width = 1;
+}
+
+/**
+ * 游戏绘画color请求
+ */
+message CS_NHWCDrawColor {
+
+    string color = 1;
+
+}
+
+/**
+ * 游戏绘画color响应
+ */
+message SC_NHWCDrawColor {
+
+    string color = 1;
+}
+
+message Vec2 {
+  float x = 1;
+  float y = 2;
+}
+
+message NHWCPoint {
+    bool isStart = 1;
+    Vec2 v2 = 2;
+}
+
+
+/**
+ * 游戏绘画path请求
+ */
+message CS_NHWCDrawPath {
+    repeated NHWCPoint pointArr = 1;
+}
+
+/**
+ * 游戏绘画path响应
+ */
+message SC_NHWCDrawPath {
+    repeated NHWCPoint pointArr = 1;
 }

@@ -7,4 +7,7 @@ export enum errCode {
 	LoginPassWord    = 5, //登录密码错误
 	LoginName        = 6, //登录账号不存在
 	EnterRoomFull    = 7, //房间已满
+	NoRoom           = 8, //不存在该房间
+	PlayerReadyed    = 9, //玩家已经准备过了
+	NoRoomNotStart   = 10, //没有可以开始游戏的房间
 }
