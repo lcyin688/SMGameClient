@@ -53,4 +53,46 @@ errorcode 服务器回的code 和 本地定义的 报错内容联系起来
 
 
 //网络回调  监听的demo
+
+    protected onLoad(): void {
+        c2f.net.addListener(this, [
+            msgid.GS_RankRwdInfo_R,
+            msgid.GS_RankRwd_R,
+        ], this.msgReceive.bind(this));
+
+    }
+    private msgReceive(op: number, data: any) {
+        switch (op) {
+            case msgid.GS_RankRwdInfo_R:
+                this.onRankRwdInfo(data)
+                break;
+            case msgid.GS_RankRwd_R://领取奖励
+                this.onRankRwd(data)
+                break;
+            default:
+                break;
+        }
+    }
+
+
 //倒计时demo
+
+    private setTimeView() {
+        let endTs = szg.player.act.getActEndTs(this.model.curSeq, GameConsts.ActivityTime.end);
+        let tsNow = szg.player.time.getServerTs()
+        let sec = endTs - tsNow;
+        this.setTimeCountDownScore(this.view.timeCountdownLabel, sec)
+    }
+
+
+    /**倒计时显示 */
+    private setTimeCountDownScore(countdownLabel: CountdownLabel, interval: number) {
+        let dayStr = "%{d}" + c2f.language.words(2504) + "%{hh}:%{mm}:%{ss}";
+        countdownLabel.startCountdown(interval, {
+            S: "%{ss}",
+            M: "%{mm}:%{ss}",
+            H: "%{hh}:%{mm}:%{ss}",
+            D: dayStr
+        }, c2f.language.words(39110), null, () => {
+        });
+    }
