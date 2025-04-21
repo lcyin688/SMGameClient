@@ -367,12 +367,14 @@ export class NetworkMsg {
                 }
             }
         }
-
-
-
-
-
     }
+
+    /** 添加监听 */
+    public addListener(view, ops, callback, getErr = false) {
+        this.msgListeners.push({ view: view, ops: ops, callback: callback, type: "persist", getErr: getErr });
+    }
+
+
    // 通用消息发送方法
    private sendMessage(msgId: number, data: Uint8Array) {
     const buffer = new ArrayBuffer(8 + data.length);

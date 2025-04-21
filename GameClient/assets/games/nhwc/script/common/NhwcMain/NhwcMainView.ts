@@ -3,6 +3,8 @@
 // If you need add data, please write in NhwcMainViewModel.ts .
 
 import { UIViewBase } from './../../../../../c2f-framework/gui/layer/UIViewBase';
+import CountdownLabel from "./../../../../../c2f-framework/component/common/CountdownLabel";
+
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -13,8 +15,9 @@ export default class NhwcMainView extends UIViewBase {
 
     public alarmClock: cc.Node;
     public alarmClockSprite: cc.Sprite = undefined;
-    public timeCount: cc.Node;
-    public timeCountLabel: cc.Label = undefined;
+    public time: cc.Node;
+    public timeLabel: cc.Label = undefined;
+    public timeCountdownLabel: CountdownLabel = undefined;
     public roomId: cc.Node;
     public roomIdLabel: cc.Label = undefined;
     public exitBtn: cc.Node;
@@ -79,8 +82,9 @@ export default class NhwcMainView extends UIViewBase {
         super.initProperty();
         this.alarmClock = this.get('_alarmClock_');
         this.alarmClockSprite = this.alarmClock.getComponent(cc.Sprite);
-        this.timeCount = this.get('_timeCount_');
-        this.timeCountLabel = this.timeCount.getComponent(cc.Label);
+        this.time = this.get('_time_');
+        this.timeLabel = this.time.getComponent(cc.Label);
+        this.timeCountdownLabel = this.time.getComponent(CountdownLabel);
         this.roomId = this.get('_roomId_');
         this.roomIdLabel = this.roomId.getComponent(cc.Label);
         this.exitBtn = this.get('_exitBtn_');

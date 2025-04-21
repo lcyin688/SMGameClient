@@ -5,6 +5,7 @@ import { UIPa } from "../../../../Script/game/UIParam";
 
 
 export class NHWCData {
+
     /** 玩家信息 */
     public selfInfo:msg.PlayerInfo=null
     /** 房间列表 */
@@ -40,6 +41,16 @@ export class NHWCData {
         this.selfGameUserItem=null
     }
 
+    public SC_ReadyNHWC(data: msg.SC_ReadyNHWC) {
+        this.roomInfo =data.roomInfo
+
+        let item = this.getGameUserItemById(this.selfInfo.account)
+        if (item) {
+            this.selfGameUserItem=item
+        }
+
+    }
+
 
 
     /**大厅信息 */
@@ -64,6 +75,15 @@ export class NHWCData {
         }
         c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_HallInfo,cData)
     }
+    /**请求准备 */
+    public reqReady() {
+        let cData: msg.CS_ReadyNHWC = {
+
+        }
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_ReadyNHWC,cData)
+    }
+
+
 
     /**通过玩家唯一id 获取游戏房间玩家的信息 */
     private getGameUserItemById(id:string) {

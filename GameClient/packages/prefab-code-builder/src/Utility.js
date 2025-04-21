@@ -28,11 +28,11 @@ var Utility = {
      */
     assetsDBRefresh: function (path, refreshParent) {
         //刷新文件，生成meta
-        let idxB = path.indexOf('assets\\');
+        let idxB = path.indexOf(this.getCurNeedStr('assets\\'));
         let dbSubPath = '';
         if (refreshParent) {
             //刷新父文件夹
-            let idxE = path.lastIndexOf('\\')
+            let idxE = path.lastIndexOf(this.getCurNeedStr('\\'))
             if (idxB > 0) {
                 dbSubPath = path.substring(idxB, idxE);
             }
@@ -40,9 +40,16 @@ var Utility = {
             //刷新当前文件夹
             dbSubPath = path.substring(idxB);
         }
-        let dbFullPath = `db://${dbSubPath}`.replace(new RegExp('\\' + '\\', 'g'), '/');
-        Editor.log("assetsDBRefresh dbFullPath ", dbFullPath);
-        Editor.assetdb.refresh(dbFullPath, function (err, results) { });
+        // 获取资源数据库路径（db://）
+        let dbPath = `db://${dbSubPath}`.replace(new RegExp('\\' + '\\', 'g'), '/');
+        // 刷新目录
+        Editor.assetdb.refresh(dbPath, function (err, results) {
+            if (err) {
+                Editor.log('刷新目录失败:', err);
+            } else {
+                Editor.log('刷新目录成功:', results);
+            }
+        });
     },
 
     /**
@@ -67,9 +74,9 @@ var Utility = {
      */
     genOnePrefabClass: function (file, path, prefabName, bundleName, relativePath, refreshCodePath) {
         Editor.log('genOnePrefabClass 001 path : ', path);
-        Editor.log('genOnePrefabClass 002 prefabName: ', prefabName);
-        Editor.log('genOnePrefabClass 003 bundleName : ', bundleName);
-        Editor.log('genOnePrefabClass 004 relativePath : ', relativePath);
+        // Editor.log('genOnePrefabClass 002 prefabName: ', prefabName);
+        // Editor.log('genOnePrefabClass 003 bundleName : ', bundleName);
+        // Editor.log('genOnePrefabClass 004 relativePath : ', relativePath);
         Editor.log('genOnePrefabClass 005 refreshCodePath : ', refreshCodePath);
 
         this.checkDirectory(path);
@@ -122,11 +129,16 @@ var Utility = {
         for (let i = 0; i < floor; i++) {
             importPath += '../'
         }
+        // Editor.log('genOnePrefabClass 1001   000    viewInfo.view : ', viewInfo.view);
+
         viewInfo.view = viewInfo.view.replace(new RegExp('\\' + ConstT.IMPORT_PATH, 'g'), importPath.substring(0, importPath.length - 1));
+        
+        // Editor.log('genOnePrefabClass 1001   001    viewInfo.view : ', viewInfo.view);
+        
         //添加引入文件
         let importTxt = '';
         for (let ii = 0; ii < viewInfo.importFile.length; ii++) {
-            let importFolder = viewInfo.importFile[ii].split('\\');
+            let importFolder = viewInfo.importFile[ii].split(this.getCurNeedStr('\\'));
             let minFloor = Math.min(folder.length, importFolder.length - 1);
             let imIdx = 0;
             for (; imIdx < minFloor; imIdx++) {
@@ -136,7 +148,10 @@ var Utility = {
             }
 
             let className = this.getFileName(viewInfo.importFile[ii]);
+            // Editor.log('genOnePrefabClass msd 001  className ',className);
             let imPath = `import ${className} from "./`;
+            // Editor.log('genOnePrefabClass msd 002 imPath ',imPath);
+
             let revTms = folder.length - imIdx - 1;
             if (revTms > 0) {
                 for (let jj = 0; jj < revTms; jj++) {
@@ -151,12 +166,17 @@ var Utility = {
             }
             imPath += className + '";';
             importTxt += imPath + '\r\n';
+            // Editor.log('genOnePrefabClass 1001 imPath ',imPath);
         }
         if (importTxt.length > 0) {
             let flagIdx = viewInfo.view.indexOf(';');
             viewInfo.view = this.insertStrToText(viewInfo.view, '\r\n' + importTxt, flagIdx);
+            // Editor.log('genOnePrefabClass 1001   002    viewInfo.view : ', viewInfo.view);
         }
         this.checkDirectory(modulePath);
+        // Editor.log('genOnePrefabClass 1001       scriptPath : ', scriptPath);
+        // Editor.log('genOnePrefabClass 1001   003    viewInfo.view : ', viewInfo.view);
+
         // 写入View文件
         fs.writeFileSync(scriptPath, viewInfo.view);
 
@@ -164,11 +184,11 @@ var Utility = {
         let modelClassName = moduleName + 'Model'
         let modelScriptPath = modulePath + this.getCurNeedStr(`\\${modelClassName}.ts`);
 
-        Editor.log('genOnePrefabClass 1001  scriptPath : ', scriptPath);
-        Editor.log('genOnePrefabClass 1002  modelScriptPath : ', modelScriptPath);
+
+        // Editor.log('genOnePrefabClass 1002  modelScriptPath : ', modelScriptPath);
 
         if (!fs.existsSync(modelScriptPath)) {
-            Editor.log('genOnePrefabClass modelScriptPath 路径 ');
+            // Editor.log('genOnePrefabClass modelScriptPath 路径 不存在构建');
             // 如果没有构建，则构建
             let modelClass = this.genModelClass(components, modelClassName, prefabName, isPanel);
             if (!modelClass) {
@@ -181,6 +201,8 @@ var Utility = {
         // 构建Controller
         let controllerClassName = moduleName;
         let controllerScriptPath = modulePath + this.getCurNeedStr(`\\${controllerClassName}.ts`);
+        // Editor.log('genOnePrefabClass 1003  controllerScriptPath : ', controllerScriptPath);
+
         if (fs.existsSync(controllerScriptPath)) {
             this.modifyControllerClass(controllerScriptPath, controllerClassName, isPanel, viewInfo.btns);
         } else {
@@ -193,11 +215,10 @@ var Utility = {
             controllerClass = controllerClass.replace(new RegExp('\\' + ConstT.IMPORT_PATH, 'g'), importPath.substring(0, importPath.length - 1));
             fs.writeFileSync(controllerScriptPath, controllerClass);
         }
-        Editor.log('genOnePrefabClass genViewParamDefine 准备进去 ');
+        // Editor.log('genOnePrefabClass genViewParamDefine 准备进去 ');
 
         // 自动同步定义
         this.genViewParamDefine(path, moduleName, prefabName, bundleName, relativePath, isPanel);
-
         if (refreshCodePath) {
             //刷新文件夹
             this.assetsDBRefresh(path, false);
@@ -315,7 +336,8 @@ var Utility = {
 
     /** 根据脚本文件名获得类名 */
     getFileName: function (path) {
-        let lastIdx = path.lastIndexOf('\\');
+        // Editor.log('getFileName  path  ======    ` : ',    path);
+        let lastIdx = path.lastIndexOf(this.getCurNeedStr('\\'));
         let fullName = path.substring(lastIdx + 1);
         let dotIdx = fullName.indexOf('.');
         let name = fullName.substring(0, dotIdx);
@@ -340,6 +362,8 @@ var Utility = {
         let prefabType = isPanel ? 'Entity' : 'UI';
         let viewTemplate = fs.readFileSync(ConstT.TEMPLATE_PATH + '/' + ConstT.TEMPLATE_FILE_CONFIG[prefabType]['View'], 'utf-8');
 
+        // Editor.log('genViewClass  001 : ');
+
         let className = clsName;
         let variableDeclarations = '';
         let variableAssignment = '';
@@ -358,6 +382,8 @@ var Utility = {
             let path = componentInfo.path;
             let variableName = `${name}`;
 
+            // Editor.log('genViewClass  name : ',name,i);
+
             variableDeclarations += `public ${variableName}: cc.Node;\n    `;
             if (path === '') {
                 // 如果没有路径，则代表是根节点，则直接等于this.node
@@ -365,6 +391,7 @@ var Utility = {
             } else {
                 variableAssignment += `this.${variableName} = this.get('_${variableName}_');\n        `;
             }
+            // Editor.log('genViewClass  variableDeclarations : ',variableDeclarations);
 
             // 存在只有Node没有其他组件的情况
             if (components) {
@@ -393,6 +420,11 @@ var Utility = {
                         btnNames.push(`${variableName}${sortComptType}`);
                     }
 
+                    // Editor.log('genViewClass variableName ======    ` : ',    variableName);
+                    // Editor.log('genViewClass sortComptType ======    ` : ',    sortComptType);
+                    // Editor.log('genViewClass componentType ======    ` : ',    componentType);
+
+
                     variableDeclarations += `public ${variableName}${sortComptType}: ${componentType} = undefined;\n    `;
                     variableAssignment += `this.${variableName}${sortComptType} = this.${variableName}.getComponent(${componentType});\n        `;
 
@@ -408,7 +440,7 @@ var Utility = {
                             let prefabAbout = this.getPrefabCodeInfo(realAsset);
                             let codeFile = '';
 
-                            //Editor.log('link sub:', realName);
+                            Editor.log('link sub:', realName);
                             if (realName.startsWith('C_')) {
                                 realName = realName.substring(2);
                                 //-同一组件不同UI变种时，以_加后缀命名，如：C_CcyItem_Big
@@ -416,7 +448,7 @@ var Utility = {
                                 if (isMult >= 0) {
                                     realName = realName.substring(0, isMult);
                                 }
-                                //Editor.log('link sub00:', realName);
+                                Editor.log('link sub00:', realName);
                                 codeFile = prefabAbout.path + this.getCurNeedStr(`\\${realName}.ts`);
                             } else {
                                 //-同一组件不同UI变种时，以_加后缀命名，如：C_CcyItem_Big
@@ -424,7 +456,7 @@ var Utility = {
                                 if (isMult >= 0) {
                                     realName = realName.substring(0, isMult);
                                 }
-                                //Editor.log('link sub11:', realName);
+                                Editor.log('link sub11:', realName);
                                 codeFile = prefabAbout.path + this.getCurNeedStr(`\\${realName}\\${realName}.ts`);
                             }
                             variableDeclarations += `public ${variableName}${realName}: ${realName} = undefined;\n    `;
@@ -687,7 +719,7 @@ var Utility = {
 
     //同步生成窗口型预制体定义
     genViewParamDefine(scriptPath, className, prefabName, bundleName, relativePath, isPanel) {
-        Editor.log(' genViewParamDefine 准备进去 isPanel ', isPanel);
+        // Editor.log(' genViewParamDefine 准备进去 isPanel ', isPanel);
         if (isPanel) {
             return;
         }
@@ -703,26 +735,26 @@ var Utility = {
         //包名首字母大写  
         let realBName = bundleName.substring(0, 1).toUpperCase() + bundleName.substring(1);
         let bundlePath = scriptPath.replace(relativePath, '');
-        Editor.log(' genViewParamDefine   11 ', scriptPath);
-        Editor.log(' genViewParamDefine   12 ', relativePath);
-        Editor.log(' genViewParamDefine   13 ', bundlePath);
+        // Editor.log(' genViewParamDefine   11 ', scriptPath);
+        // Editor.log(' genViewParamDefine   12 ', relativePath);
+        // Editor.log(' genViewParamDefine   13 ', bundlePath);
 
 
 
-        Editor.log(' genViewParamDefine   001 ', pathBundle);
-        Editor.log(' genViewParamDefine   002 ', bundleName);
-        Editor.log(' genViewParamDefine   003 ', bundlePath);
+        // Editor.log(' genViewParamDefine   001 ', pathBundle);
+        // Editor.log(' genViewParamDefine   002 ', bundleName);
+        // Editor.log(' genViewParamDefine   003 ', bundlePath);
 
         if (pathBundle != bundleName) {
             bundlePath = bundlePath.replace(bundleName, pathBundle);
         }
-        Editor.log(' genViewParamDefine  2 realBName ', realBName);
-        Editor.log(' genViewParamDefine  3 bundlePath ', bundlePath);
+        // Editor.log(' genViewParamDefine  2 realBName ', realBName);
+        // Editor.log(' genViewParamDefine  3 bundlePath ', bundlePath);
 
         let viewFile = this.getCurNeedStr(`${bundlePath}\\${realBName}View.ts`);
-        Editor.log(' genViewParamDefine  4 viewFile ', viewFile);
+        // Editor.log(' genViewParamDefine  4 viewFile ', viewFile);
         let ctrlCode = fs.readFileSync(viewFile, 'utf-8');
-        Editor.log(' genViewParamDefine  5 ctrlCode ', ctrlCode);
+        // Editor.log(' genViewParamDefine  5 ctrlCode ', ctrlCode);
         if (ctrlCode.indexOf(className) >= 0) {
             return;
         }

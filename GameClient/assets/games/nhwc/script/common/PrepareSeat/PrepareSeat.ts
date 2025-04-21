@@ -4,6 +4,7 @@ import  PrepareSeatModel from './PrepareSeatModel';
 import  PrepareSeatView from './PrepareSeatView';
 import { NHWCConsts } from '../../NHWCConsts';
 import { HHWCParam } from '../../HHWCParam';
+import { GameConsts } from '../../../../../Script/game/GameConsts';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -14,15 +15,30 @@ export default class PrepareSeat extends UIPControlBase {
 
     public model: PrepareSeatModel = undefined;
     public view: PrepareSeatView = undefined;
+    private headList: cc.SpriteAtlas = null;
+
 
     public  reflash(data:msg.GameUserItem) {
         if (!data) {
-            this.view.headIcon.active =false
-            // this.view.re.active =false
+            this.view.head.active =false
+            this.view.state.active =false
             this.view.userName.active =false
         }else{
-            
+            this.setHeadSprite(data.plyer.headId)
+            this.view.state.active =data.isReady
+            this.view.userName.active =true
+            this.view.userNameLabel.string =data.plyer.nickName
+        }
+    }
 
+    private setHeadSprite(headId:number) {
+        if (this.headList) {
+            this.view.headSprite.spriteFrame = this.headList.getSpriteFrame(headId + "");
+        }else{
+            c2f.res.load(GameConsts.Bundle.nhwc, 'image/head/head', cc.SpriteAtlas, (err: Error | null, res: cc.SpriteAtlas) => {
+                this.headList = res;
+                this.setHeadSprite(headId)
+            })
         }
     }
 

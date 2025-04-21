@@ -55,7 +55,7 @@ errorcode 服务器回的code 和 本地定义的 报错内容联系起来
 //网络回调  监听的demo
 
     protected onLoad(): void {
-        c2f.net.addListener(this, [
+        c2f.webSocket.addListener(this, [
             msgid.GS_RankRwdInfo_R,
             msgid.GS_RankRwd_R,
         ], this.msgReceive.bind(this));

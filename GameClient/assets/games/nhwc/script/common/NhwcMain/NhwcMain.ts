@@ -7,6 +7,7 @@ import { NhwcUI } from '../../NhwcView';
 import { GameConsts } from '../../../../../Script/game/GameConsts';
 import { NHWCConsts } from '../../NHWCConsts';
 import PrepareSeat from '../PrepareSeat/PrepareSeat';
+import CountdownLabel from '../../../../../c2f-framework/component/common/CountdownLabel';
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class NhwcMain extends UIVControlBase {
@@ -16,10 +17,30 @@ export default class NhwcMain extends UIVControlBase {
     public model: NhwcMainModel = undefined;
     public view: NhwcMainView = undefined;
 
-    private headList: cc.SpriteAtlas = null;
+
     protected onLoad(): void {
+        c2f.webSocket.addListener(this, [
+            GameMsgId.MsgId.MSG_SC_ReadyNHWC,
+        ], this.msgReceive.bind(this));
         this.loadSeatItemFirst(this.preLoadGame.bind(this))
+
+
+
     }
+
+    private msgReceive(op: number, data: any) {
+        switch (op) {
+            case GameMsgId.MsgId.MSG_SC_ReadyNHWC:
+                this.onReadyNHWC(data)
+                break;
+            default:
+                break;
+        }
+    }
+
+
+
+
     public async loadSeatItemFirst(cb) {
         await c2f.res.loadOne(NHWCConsts.CmmPrefab.prepareSeat, cc.Prefab).then((resItem: cc.Prefab) => {
             this.model.seatItem = resItem;
@@ -33,6 +54,11 @@ export default class NhwcMain extends UIVControlBase {
         if (!this.model.prepareSeatArr) {
             this.initPrepareSeatItemArr()
         }
+        this.reflashPrepareSeatArr()
+    }
+
+    /** 刷新准备状态 */
+    private reflashPrepareSeatArr() {
         for (let i = 0; i < this.model.prepareSeatArr.length; i++) {
             let item = this.model.prepareSeatArr[i];
             item.name = `prepareSeat${i}`
@@ -51,11 +77,11 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     protected onViewOpen(param: any) {
+        this.setTimeCountDownScore(this.view.timeCountdownLabel, 10)
         
-
-
+        this.view.timeCountdownLabel.stopCountdown
         this.view.alarmClock.active =false
-        this.setRoomInfo()
+        this.reflashRoomInfo()
 
         
 
@@ -125,7 +151,7 @@ export default class NhwcMain extends UIVControlBase {
     }
             
     private CC_onClickprepareBtn(){
-
+        szg.player.nhwcData.reqReady()
     }
             
     private CC_onClicktipConfirmBtn(){
@@ -144,7 +170,7 @@ export default class NhwcMain extends UIVControlBase {
 
     }
             
-    private setRoomInfo(){
+    private reflashRoomInfo(){
         this.view.roomIdLabel.string = szg.player.nhwcData.roomInfo?.rid.toString()
         if (szg.player.nhwcData.roomInfo?.state <= msg.RoomState.Ready){
             this.view.prepare.active = true
@@ -156,16 +182,21 @@ export default class NhwcMain extends UIVControlBase {
         }
     }
 
-    private setHeadSprite() {
-        if (this.headList) {
-            let headId =szg.player.login.selfInfo.headId
-            // this.view.headSprite.spriteFrame = this.headList.getSpriteFrame(headId + "");
-        }else{
-            c2f.res.load(GameConsts.Bundle.nhwc, 'image/head/head', cc.SpriteAtlas, (err: Error | null, res: cc.SpriteAtlas) => {
-                this.headList = res;
-                this.setHeadSprite()
-            })
-        }
+    /**准备的广播消息 */
+    private onReadyNHWC(data: msg.SC_ReadyNHWC) {
+        this.reflashRoomInfo()
+
     }
 
+    /**倒计时显示 */
+    private setTimeCountDownScore(countdownLabel: CountdownLabel, interval: number) {
+        let dayStr = "%{d}" + c2f.language.words(2504) + "%{hh}:%{mm}:%{ss}";
+        countdownLabel.startCountdown(interval, {
+            S: "%{ss}",
+            M: "%{mm}:%{ss}",
+            H: "%{hh}:%{mm}:%{ss}",
+            D: dayStr
+        }, c2f.language.words(39110), null, () => {
+        });
+    }
 }
