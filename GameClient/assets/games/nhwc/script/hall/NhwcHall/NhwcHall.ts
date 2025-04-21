@@ -5,6 +5,7 @@ import  NhwcHallView from './NhwcHallView';
 import { GameConsts } from '../../../../../Script/game/GameConsts';
 import { GameMsgId } from '../../../../../resources/proto/GameMsgId';
 import { NhwcUI, NhwcView } from '../../NhwcView';
+import { EventName } from '../../../../../Script/game/EventName';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -28,7 +29,7 @@ export default class NhwcHall extends UIVControlBase {
             super.onEnable();
         }
         this.on(C2FEnum.UIEvent.ButtonClick, this.onButtonClick, this);
-        // cc.director.on('gameOverFinal', this.gameOverFinal, this);
+        // cc.director.on(EventName.EName.newBall, this.gameOverFinal, this);
     }
 
     protected onDisable(): void {

@@ -14,6 +14,8 @@ export var msgName: { [key: number]: string } = {
       124: "SC_JoinRoom",
       125: "CS_MatchRoom",
       126: "SC_MatchRoom",
+      127: "CS_ExitRoom",
+      128: "SC_ExitRoom",
       1001: "CS_ReadyNHWC",
       1002: "SC_ReadyNHWC",
       1004: "SC_StartNHWC",

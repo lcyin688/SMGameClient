@@ -15,6 +15,8 @@ export namespace GameMsgId {
         MSG_SC_JoinRoom = 124,
         MSG_CS_MatchRoom = 125,
         MSG_SC_MatchRoom = 126,
+        MSG_CS_ExitRoom = 127,
+        MSG_SC_ExitRoom = 128,
         MSG_CS_ReadyNHWC = 1001,
         MSG_SC_ReadyNHWC = 1002,
         MSG_SC_StartNHWC = 1004,

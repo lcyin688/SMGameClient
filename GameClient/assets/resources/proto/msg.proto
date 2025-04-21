@@ -25,6 +25,9 @@ enum MsgId {
   MSG_CS_MatchRoom = 125;  // 匹配房间请求
   MSG_SC_MatchRoom = 126;  // 匹配房间响应
 
+  MSG_CS_ExitRoom = 127;  // 退出房间请求
+  MSG_SC_ExitRoom = 128;  // 退出房间请求
+
   MSG_CS_ReadyNHWC = 1001;  // 你画我猜准备请求
   MSG_SC_ReadyNHWC = 1002;  // 你画我猜准备相应
 
@@ -100,7 +103,8 @@ message RoomInfo {
     //画师
     int32 painter = 11;
     //房间所有玩家
-    map<int32, GameUserItem> mapPlayerInfo = 12;
+    //map<int32, GameUserItem> mapPlayerInfo1 = 12;
+    repeated GameUserItem arrPlayerInfo = 12;
 }
 
 
@@ -111,10 +115,11 @@ message GameUserItem {
     PlayerInfo plyer = 1;
     // 房间id
     int32 rid = 2;
-    // 房间id
+    // 座位
     int32 seat = 3;
     // 分数
     int32 score = 4;
+    //是否准备
     bool isReady = 5;
 }
 
@@ -324,4 +329,20 @@ message CS_NHWCDrawPath {
  */
 message SC_NHWCDrawPath {
     repeated NHWCPoint pointArr = 1;
+}
+
+
+/**
+ * 退出房间请求
+ */
+message CS_ExitRoom {
+
+
+}
+
+/**
+ * 退出房间响应
+ */
+message SC_ExitRoom {
+
 }

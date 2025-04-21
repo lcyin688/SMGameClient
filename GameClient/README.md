@@ -49,7 +49,7 @@ JDK 11
 
 errorcode 服务器回的code 和 本地定义的 报错内容联系起来
 
-
+//事件注册参考  EventName 
 
 
 //网络回调  监听的demo

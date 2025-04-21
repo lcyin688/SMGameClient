@@ -980,7 +980,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "preparePanel",
+    "_name": "_prepare_",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1

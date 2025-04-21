@@ -1,7 +1,8 @@
 import { PublicData } from './plrBase/PublicData';
 import { LoginData } from './login/LoginData';
 import { GameMsgId } from '../../../resources/proto/GameMsgId';
-import { NHWCData } from './nhwc/NhwcData';
+import { NHWCData } from './nhwc/NHWCData';
+
 
 /** 玩家数据总领：具体模块数据 */
 export class PlayerData {

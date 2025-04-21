@@ -19,6 +19,8 @@ export default class NhwcMainView extends UIViewBase {
     public roomIdLabel: cc.Label = undefined;
     public exitBtn: cc.Node;
     public exitBtnButton: cc.Button = undefined;
+    public prepare: cc.Node;
+    public prepareWidget: cc.Widget = undefined;
     public prepareBtn: cc.Node;
     public prepareBtnSprite: cc.Sprite = undefined;
     public prepareBtnButton: cc.Button = undefined;
@@ -83,6 +85,8 @@ export default class NhwcMainView extends UIViewBase {
         this.roomIdLabel = this.roomId.getComponent(cc.Label);
         this.exitBtn = this.get('_exitBtn_');
         this.exitBtnButton = this.exitBtn.getComponent(cc.Button);
+        this.prepare = this.get('_prepare_');
+        this.prepareWidget = this.prepare.getComponent(cc.Widget);
         this.prepareBtn = this.get('_prepareBtn_');
         this.prepareBtnSprite = this.prepareBtn.getComponent(cc.Sprite);
         this.prepareBtnButton = this.prepareBtn.getComponent(cc.Button);
