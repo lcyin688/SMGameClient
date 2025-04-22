@@ -1,6 +1,6 @@
 // This script is automatic generation, please do not edit.
-// If you need add logic, please write in PrepareSeatView.ts .
-// If you need add data, please write in PrepareSeatViewModel.ts .
+// If you need add logic, please write in SeatPrepareItemView.ts .
+// If you need add data, please write in SeatPrepareItemViewModel.ts .
 
 import { UIPanelBase } from './../../../../../c2f-framework/gui/layer/UIPanelBase';
 import CountdownLabel from "./../../../../../c2f-framework/component/common/CountdownLabel";
@@ -8,9 +8,9 @@ import CountdownLabel from "./../../../../../c2f-framework/component/common/Coun
 
 const { ccclass, property } = cc._decorator;
 @ccclass
-export default class PrepareSeatView extends UIPanelBase {
+export default class SeatPrepareItemView extends UIPanelBase {
     /** 预制名 给实例调用 */
-    public prefabName = 'P_PrepareSeat';
+    public prefabName = 'P_SeatPrepareItem';
 
     public head: cc.Node;
     public headSprite: cc.Sprite = undefined;

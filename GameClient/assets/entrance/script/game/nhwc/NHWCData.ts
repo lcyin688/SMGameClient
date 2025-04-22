@@ -5,7 +5,6 @@ import { UIPa } from "../../../../Script/game/UIParam";
 
 
 export class NHWCData {
-
     /** 玩家信息 */
     public selfInfo:msg.PlayerInfo=null
     /** 房间列表 */
@@ -29,19 +28,23 @@ export class NHWCData {
         cc.log("LoginData  注册 消息回来",data)
 
     }
+    /**登录 */
     public SC_Login(data: msg.SC_Login) {
         cc.log("LoginData  登录 消息回来",data)
         this.selfInfo=data.playerInfo
     }
 
-
+    /**退出 */
     public SC_ExitRoom(data: msg.SC_ExitRoom) {
         cc.log("退出房间 消息回来",data)
         this.roomInfo=null
         this.selfGameUserItem=null
     }
-
-    public SC_ReadyNHWC(data: msg.SC_ReadyNHWC) {
+    /**
+     * 
+     * 准备
+     */
+    public SC_ReadyNHWC(data: msg.SC_NHWCReady) {
         this.roomInfo =data.roomInfo
 
         let item = this.getGameUserItemById(this.selfInfo.account)
@@ -50,8 +53,16 @@ export class NHWCData {
         }
 
     }
+    /**游戏开始 */
+    public SC_StartNHWC(data: msg.SC_NHWCStart) {
+        this.roomInfo =data.roomInfo
 
+        let item = this.getGameUserItemById(this.selfInfo.account)
+        if (item) {
+            this.selfGameUserItem=item
+        }
 
+    }
 
     /**大厅信息 */
     public SC_HallInfo(data:msg.SC_HallInfo) {
@@ -66,9 +77,17 @@ export class NHWCData {
             this.selfGameUserItem=item
         }
     }
+    /** 答题 */
+    public SC_NHWCAnswer(data:msg.SC_NHWCAnswer) {
+        if (data.isRight) {
+            data.arrPlayerInfo.forEach(v => {
+                let item = this.getGameUserItemById(v.plyer.account)
+                item.score=v.score
+            });
+        }
+    }
     
-
-
+    /**请求大厅 */
     public reqHall() {
         let cData: msg.CS_HallInfo = {
 
@@ -77,10 +96,18 @@ export class NHWCData {
     }
     /**请求准备 */
     public reqReady() {
-        let cData: msg.CS_ReadyNHWC = {
+        let cData: msg.CS_NHWCReady = {
 
         }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_ReadyNHWC,cData)
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_NHWCReady,cData)
+    }
+
+    /**请求路径 */
+    public reqNHWCDrawPath(arr: msg.NHWCPoint[]) {
+        let cData: msg.CS_NHWCDrawPath = {
+            pointArr: arr
+        }
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_NHWCDrawPath,cData)
     }
 
 

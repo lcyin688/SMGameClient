@@ -17,11 +17,11 @@ export namespace GameMsgId {
         MSG_SC_MatchRoom = 126,
         MSG_CS_ExitRoom = 127,
         MSG_SC_ExitRoom = 128,
-        MSG_CS_ReadyNHWC = 1001,
-        MSG_SC_ReadyNHWC = 1002,
-        MSG_SC_StartNHWC = 1004,
-        MSG_SC_ResultNHWC = 1008,
-        MSG_SC_OverNHWC = 1010,
+        MSG_CS_NHWCReady = 1001,
+        MSG_SC_NHWCReady = 1002,
+        MSG_SC_NHWCStart = 1004,
+        MSG_SC_NHWCResult = 1008,
+        MSG_SC_NHWCOver = 1010,
         MSG_CS_NHWCDrawClear = 1011,
         MSG_SC_NHWCDrawClear = 1012,
         MSG_CS_NHWCDrawWidth = 1013,
@@ -29,6 +29,8 @@ export namespace GameMsgId {
         MSG_CS_NHWCDrawColor = 1015,
         MSG_SC_NHWCDrawColor = 1016,
         MSG_CS_NHWCDrawPath = 1017,
-        MSG_SC_NHWCDrawPath = 1018
+        MSG_SC_NHWCDrawPath = 1018,
+        MSG_CS_NHWCAnswer = 1019,
+        MSG_SC_NHWCAnswer = 1020
     }
  }

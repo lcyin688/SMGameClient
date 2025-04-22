@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "P_PrepareSeat",
+    "_name": "P_SeatPrepareItem",
     "_objFlags": 0,
     "_parent": null,
     "_children": [

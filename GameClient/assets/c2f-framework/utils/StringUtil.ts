@@ -203,6 +203,47 @@ class StringUtil {
         return regex.test(str);
     }
 
+    /**
+     * 字符串格式化
+     * @param format 要格式化的字符串
+     * @param args 参数
+     * @example
+     * //我叫美男子,性别男,今年20岁
+     * stringFormat('我叫{0},性别{1},今年{2}岁', '美男子', '男', 20);
+     * stringFormat('我叫{name},性别{sex},今年{age}岁', { name: '美男子', sex: '男', age: 20 });
+     */
+    public static stringFormat(format: string, ...args: any[]): string {
+        if (typeof format != 'string') {
+            console.log('Utility stringFormat format is invalid');
+            return '';
+        }
+
+        if (args.length == 0) {
+            return format;
+        }
+
+        let result = format;
+        if (args.length == 1 && typeof args[0] == 'object') {
+            let params: Object = args[0];
+            for (let key in params) {
+                let value = params[key];
+                const reg = new RegExp(`\\{${key}\\}`, 'g');
+                if (typeof value == 'string' || (typeof value == 'number' && !isNaN(value))) {
+                    result = result.replace(reg, value.toString());
+                }
+            }
+        } else {
+            for (let i = 0; i < args.length; i++) {
+                let value = args[i];
+                if (typeof value == 'string' || (typeof value == 'number' && !isNaN(value))) {
+                    result = result.replace('{' + i + '}', value.toString());
+                }
+            }
+        }
+
+        return result;
+    }
+
 }
 
 declare global {

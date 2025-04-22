@@ -7,11 +7,13 @@ export namespace NHWCConsts {
 
 
         /** 座位Item */
-        prepareSeat = 'ab:nhwc/prefab/common/P_PrepareSeat',
+        seatPrepareItem = 'ab:nhwc/prefab/common/P_SeatPrepareItem',
 
+        /** 座位Item */
+        seatDeskItem = 'ab:nhwc/prefab/common/P_SeatDeskItem',
 
-
-
+        /** 画笔 🖌️ */
+        sketchpad = 'ab:nhwc/prefab/common/P_Sketchpad',
     }
 
 

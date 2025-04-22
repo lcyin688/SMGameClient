@@ -71,7 +71,7 @@ export default class CountdownLabel extends cc.Component {
         if (this.label) {
             let txtTime = c2f.utils.date.formatTimeString(floorSec, this._format);
             if (this._txtFormat) {
-                txtTime = this._txtFormat.format(txtTime);
+                txtTime = c2f.utils.str.stringFormat(this._txtFormat,txtTime);
             }
             this.label.string = txtTime;
         }
@@ -99,7 +99,7 @@ export default class CountdownLabel extends cc.Component {
         if (this.label) {
             let txtTime = c2f.utils.date.formatTimeString(this._leftFloorSec, this._format);
             if (this._txtFormat) {
-                txtTime = this._txtFormat.format(txtTime);
+                txtTime = c2f.utils.str.stringFormat(this._txtFormat,txtTime)
             }
             this.label.string = txtTime;
         }

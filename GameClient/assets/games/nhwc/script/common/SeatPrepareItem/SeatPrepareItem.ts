@@ -1,20 +1,17 @@
 import { UIPControlBase } from './../../../../../c2f-framework/gui/layer/UIPControlBase';
 import { C2FEnum } from './../../../../../c2f-framework/define/C2FEnum';
-import  PrepareSeatModel from './PrepareSeatModel';
-import  PrepareSeatView from './PrepareSeatView';
-import { NHWCConsts } from '../../NHWCConsts';
-import { HHWCParam } from '../../HHWCParam';
+import  SeatPrepareItemModel from './SeatPrepareItemModel';
+import  SeatPrepareItemView from './SeatPrepareItemView';
 import { GameConsts } from '../../../../../Script/game/GameConsts';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
-export default class PrepareSeat extends UIPControlBase {
-
+export default class SeatPrepareItem extends UIPControlBase {
     /** 预制名 给实例调用 */
-    public prefabName = 'P_PrepareSeat';
+    public prefabName = 'P_SeatPrepareItem';
 
-    public model: PrepareSeatModel = undefined;
-    public view: PrepareSeatView = undefined;
+    public model: SeatPrepareItemModel = undefined;
+    public view: SeatPrepareItemView = undefined;
     private headList: cc.SpriteAtlas = null;
 
 
@@ -41,5 +38,6 @@ export default class PrepareSeat extends UIPControlBase {
             })
         }
     }
+
 
 }

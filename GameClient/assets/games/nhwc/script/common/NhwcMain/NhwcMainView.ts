@@ -13,13 +13,16 @@ export default class NhwcMainView extends UIViewBase {
     /** 预制名 给实例调用 */
     public prefabName = 'F_NhwcMain';
 
+    public board: cc.Node;
+    public boardSprite: cc.Sprite = undefined;
+    public boardWidget: cc.Widget = undefined;
     public alarmClock: cc.Node;
     public alarmClockSprite: cc.Sprite = undefined;
     public time: cc.Node;
     public timeLabel: cc.Label = undefined;
     public timeCountdownLabel: CountdownLabel = undefined;
-    public roomId: cc.Node;
-    public roomIdLabel: cc.Label = undefined;
+    public centerLabel: cc.Node;
+    public centerLabelLabel: cc.Label = undefined;
     public exitBtn: cc.Node;
     public exitBtnButton: cc.Button = undefined;
     public prepare: cc.Node;
@@ -29,11 +32,18 @@ export default class NhwcMainView extends UIViewBase {
     public prepareBtnButton: cc.Button = undefined;
     public preparedBtn: cc.Node;
     public preparedBtnSprite: cc.Sprite = undefined;
-    public seatLayout: cc.Node;
-    public seatLayoutLayout: cc.Layout = undefined;
+    public seatLayPrepare: cc.Node;
+    public seatLayPrepareLayout: cc.Layout = undefined;
     public desk: cc.Node;
     public deskSprite: cc.Sprite = undefined;
     public deskWidget: cc.Widget = undefined;
+    public seatLayDesk: cc.Node;
+    public seatLayDeskSprite: cc.Sprite = undefined;
+    public seatLayDeskLayout: cc.Layout = undefined;
+    public seatLayDeskWidget: cc.Widget = undefined;
+    public answerBtn: cc.Node;
+    public answerBtnSprite: cc.Sprite = undefined;
+    public answerBtnButton: cc.Button = undefined;
     public tips: cc.Node;
     public tipsSprite: cc.Sprite = undefined;
     public tipInput: cc.Node;
@@ -80,13 +90,16 @@ export default class NhwcMainView extends UIViewBase {
 
     protected initProperty() {
         super.initProperty();
+        this.board = this.get('_board_');
+        this.boardSprite = this.board.getComponent(cc.Sprite);
+        this.boardWidget = this.board.getComponent(cc.Widget);
         this.alarmClock = this.get('_alarmClock_');
         this.alarmClockSprite = this.alarmClock.getComponent(cc.Sprite);
         this.time = this.get('_time_');
         this.timeLabel = this.time.getComponent(cc.Label);
         this.timeCountdownLabel = this.time.getComponent(CountdownLabel);
-        this.roomId = this.get('_roomId_');
-        this.roomIdLabel = this.roomId.getComponent(cc.Label);
+        this.centerLabel = this.get('_centerLabel_');
+        this.centerLabelLabel = this.centerLabel.getComponent(cc.Label);
         this.exitBtn = this.get('_exitBtn_');
         this.exitBtnButton = this.exitBtn.getComponent(cc.Button);
         this.prepare = this.get('_prepare_');
@@ -96,11 +109,18 @@ export default class NhwcMainView extends UIViewBase {
         this.prepareBtnButton = this.prepareBtn.getComponent(cc.Button);
         this.preparedBtn = this.get('_preparedBtn_');
         this.preparedBtnSprite = this.preparedBtn.getComponent(cc.Sprite);
-        this.seatLayout = this.get('_seatLayout_');
-        this.seatLayoutLayout = this.seatLayout.getComponent(cc.Layout);
+        this.seatLayPrepare = this.get('_seatLayPrepare_');
+        this.seatLayPrepareLayout = this.seatLayPrepare.getComponent(cc.Layout);
         this.desk = this.get('_desk_');
         this.deskSprite = this.desk.getComponent(cc.Sprite);
         this.deskWidget = this.desk.getComponent(cc.Widget);
+        this.seatLayDesk = this.get('_seatLayDesk_');
+        this.seatLayDeskSprite = this.seatLayDesk.getComponent(cc.Sprite);
+        this.seatLayDeskLayout = this.seatLayDesk.getComponent(cc.Layout);
+        this.seatLayDeskWidget = this.seatLayDesk.getComponent(cc.Widget);
+        this.answerBtn = this.get('_answerBtn_');
+        this.answerBtnSprite = this.answerBtn.getComponent(cc.Sprite);
+        this.answerBtnButton = this.answerBtn.getComponent(cc.Button);
         this.tips = this.get('_tips_');
         this.tipsSprite = this.tips.getComponent(cc.Sprite);
         this.tipInput = this.get('_tipInput_');
@@ -131,6 +151,7 @@ export default class NhwcMainView extends UIViewBase {
     private addEvent() {
         this.exitBtnButton.node.on('click', this.onexitBtnButtonClick, this);
         this.prepareBtnButton.node.on('click', this.onprepareBtnButtonClick, this);
+        this.answerBtnButton.node.on('click', this.onanswerBtnButtonClick, this);
         this.tipInputEditBox.node.on('editing-did-began', this.ontipInputEditBoxEditingBegan, this);
         this.tipInputEditBox.node.on('editing-did-ended', this.ontipInputEditBoxEditingEnded, this);
         this.tipInputEditBox.node.on('editing-return', this.ontipInputEditBoxEditingReturn, this);
@@ -145,6 +166,7 @@ export default class NhwcMainView extends UIViewBase {
     private removeEvent() {
         this.exitBtnButton.node.off('click', this.onexitBtnButtonClick, this);
         this.prepareBtnButton.node.off('click', this.onprepareBtnButtonClick, this);
+        this.answerBtnButton.node.off('click', this.onanswerBtnButtonClick, this);
         this.tipInputEditBox.node.off('editing-did-began', this.ontipInputEditBoxEditingBegan, this);
         this.tipInputEditBox.node.off('editing-did-ended', this.ontipInputEditBoxEditingEnded, this);
         this.tipInputEditBox.node.off('editing-return', this.ontipInputEditBoxEditingReturn, this);
@@ -161,6 +183,10 @@ export default class NhwcMainView extends UIViewBase {
     }
 
     private onprepareBtnButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onanswerBtnButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

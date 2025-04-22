@@ -2,7 +2,7 @@ import { UIModelBase } from './../../../../../c2f-framework/gui/layer/UIModelBas
 
 const { ccclass, property } = cc._decorator;
 @ccclass
-export default class PrepareSeatModel extends UIModelBase {
+export default class SeatDeskItemModel extends UIModelBase {
     /** 预制名 给实例调用 */
-    public prefabName = 'P_PrepareSeat';
+    public prefabName = 'P_SeatDeskItem';
 }
