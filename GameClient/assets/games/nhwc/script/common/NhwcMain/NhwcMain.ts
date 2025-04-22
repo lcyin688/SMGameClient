@@ -345,8 +345,13 @@ export default class NhwcMain extends UIVControlBase {
 
     /**退出房间 */
     private onExitRoom(){
-        c2f.gui.open(NhwcUI.NhwcHall);
-        this.closeView()
+        this.view.answerBtn.active =false
+        this.view.overPanel.active =true
+        setTimeout(() => {
+            c2f.gui.open(NhwcUI.NhwcHall);
+            this.closeView()
+        }, 5000);
+
     }
 
     /** 小局游戏结束 */
