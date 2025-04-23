@@ -1,4 +1,4 @@
-import { GameMsgId } from "../../../resources/proto/GameMsgId";
+import { EnumSpace } from "../../../resources/proto/GameMsgId";
 import { msgName } from "../../../resources/proto/msgName";
 import { UIHelper } from "../../../Script/game/UIHelper";
 import { C2FConst } from "../../define/C2FConst";
@@ -131,7 +131,7 @@ export class NetworkMsg {
             // 提取数据体
             const body = this.buffer.subarray(8, 8 + dataLen);
            
-            if (msgId==GameMsgId.MsgId.MSG_SC_Pong) { 
+            if (msgId==MsgId.MSG_SC_Pong) { 
                 
             }else{
                 cc.log("msgId  ========   :", msgId);
@@ -158,7 +158,7 @@ export class NetworkMsg {
             return;
         }
         let rep = proto.decode(data);
-        console.log('收到响应  rep  :', rep);
+        // console.log('收到响应  rep  :', rep);
         this.onWSMsg(msgId, rep);
     }
 
@@ -173,7 +173,7 @@ export class NetworkMsg {
          if (msgNameTemp === undefined) { 
             cc.log("network.dispatch msgName is nil: op = " + op);
         }
-
+        cc.log(' onWSMsg 收到响应  op  :',msgNameTemp, data );
         if (success) {
             this.plrMsgHandle && this.plrMsgHandle(op, data);
         }
@@ -311,7 +311,7 @@ export class NetworkMsg {
             let cData: msg.CS_Ping = {
                 Timestamp: new Date().getTime(),
             }
-            this.send(GameMsgId.MsgId.MSG_CS_Ping,cData);
+            this.send(MsgId.MSG_CS_Ping,cData);
         }, reconnetInterval * 1000);
     }
     /** 清除心跳timer */
@@ -324,7 +324,9 @@ export class NetworkMsg {
 
     /** 发送消息: 子类具体实现 */
     public send(msgId: number, msgData: any,params?:any) {
-        // console.log("发送消息   this.ws?.readyState  " ,this.ws?.readyState);
+        if (msgId!==EnumSpace.MsgId.MSG_CS_Ping) {
+            console.log("发送消息   msgId  " ,msgId);
+        }
         if (this.state !== SocketState.Connected) {
             return false;
         }

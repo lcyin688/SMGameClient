@@ -2,7 +2,6 @@ import { UIVControlBase } from './../../../../../c2f-framework/gui/layer/UIVCont
 import { C2FEnum } from './../../../../../c2f-framework/define/C2FEnum';
 import  NhwcMainModel from './NhwcMainModel';
 import  NhwcMainView from './NhwcMainView';
-import { GameMsgId } from '../../../../../resources/proto/GameMsgId';
 import { NhwcUI } from '../../NhwcView';
 import { GameConsts } from '../../../../../Script/game/GameConsts';
 import { NHWCConsts } from '../../NHWCConsts';
@@ -23,16 +22,16 @@ export default class NhwcMain extends UIVControlBase {
 
     protected onLoad(): void {
         c2f.webSocket.addListener(this, [
-            GameMsgId.MsgId.MSG_SC_NHWCReady,
-            GameMsgId.MsgId.MSG_SC_NHWCStart,
-            GameMsgId.MsgId.MSG_SC_ExitRoom,
-            GameMsgId.MsgId.MSG_SC_NHWCResult,
-            GameMsgId.MsgId.MSG_SC_NHWCOver,
-            GameMsgId.MsgId.MSG_SC_NHWCDrawClear,
-            GameMsgId.MsgId.MSG_SC_NHWCDrawWidth,
-            GameMsgId.MsgId.MSG_SC_NHWCDrawColor,
-            GameMsgId.MsgId.MSG_SC_NHWCDrawPath,
-            GameMsgId.MsgId.MSG_SC_NHWCAnswer,
+            MsgId.MSG_SC_NHWCReady,
+            MsgId.MSG_SC_NHWCStart,
+            MsgId.MSG_SC_ExitRoom,
+            MsgId.MSG_SC_NHWCResult,
+            MsgId.MSG_SC_NHWCOver,
+            MsgId.MSG_SC_NHWCDrawClear,
+            MsgId.MSG_SC_NHWCDrawWidth,
+            MsgId.MSG_SC_NHWCDrawColor,
+            MsgId.MSG_SC_NHWCDrawPath,
+            MsgId.MSG_SC_NHWCAnswer,
         ], this.msgReceive.bind(this));
         this.loadSeatItemPrepare(this.preLoadGame.bind(this))
         this.loadSeatItemDesk()
@@ -47,34 +46,34 @@ export default class NhwcMain extends UIVControlBase {
 
     private msgReceive(op: number, data: any) {
         switch (op) {
-            case GameMsgId.MsgId.MSG_SC_NHWCReady:
+            case MsgId.MSG_SC_NHWCReady:
                 this.onReadyNHWC(data)
                 break;
-            case GameMsgId.MsgId.MSG_SC_NHWCStart:
+            case MsgId.MSG_SC_NHWCStart:
                 this.onStartNHWC(data)
                 break;
-            case GameMsgId.MsgId.MSG_SC_ExitRoom:
-                this.onExitRoom()
+            case MsgId.MSG_SC_ExitRoom:
+                this.onExitRoom(data)
                 break;
-            case GameMsgId.MsgId.MSG_SC_NHWCResult:
+            case MsgId.MSG_SC_NHWCResult:
                 this.onNHWCResult(data)
                 break;
-            case GameMsgId.MsgId.MSG_SC_NHWCOver:
+            case MsgId.MSG_SC_NHWCOver:
                 this.onRNHWCOver(data)
                 break;     
-            case GameMsgId.MsgId.MSG_SC_NHWCDrawClear:
+            case MsgId.MSG_SC_NHWCDrawClear:
                 this.onNHWCDrawClear(data)
                 break;
-            case GameMsgId.MsgId.MSG_SC_NHWCDrawWidth:
+            case MsgId.MSG_SC_NHWCDrawWidth:
                 this.onNHWCDrawWidth(data)
                 break;                                
-            case GameMsgId.MsgId.MSG_SC_NHWCDrawColor:
+            case MsgId.MSG_SC_NHWCDrawColor:
                 this.onNHWCDrawColor(data)
                 break;  
-            case GameMsgId.MsgId.MSG_SC_NHWCDrawPath:
+            case MsgId.MSG_SC_NHWCDrawPath:
                 this.onNHWCDrawPath(data)
                 break;  
-            case GameMsgId.MsgId.MSG_SC_NHWCAnswer:
+            case MsgId.MSG_SC_NHWCAnswer:
                 this.onNHWCAnswer(data)
                 break;  
             default:
@@ -227,7 +226,7 @@ export default class NhwcMain extends UIVControlBase {
     private CC_onClickexitBtn(){
         let cData: msg.CS_CreateRoom = {
         }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_ExitRoom,cData)
+        c2f.webSocket.send(MsgId.MSG_CS_ExitRoom,cData)
     }
             
     private CC_onClickprepareBtn(){
@@ -251,7 +250,7 @@ export default class NhwcMain extends UIVControlBase {
     }
             
     private reflashRoomInfo(){
-        if (szg.player.nhwcData.roomInfo?.state <= msg.RoomState.Ready){
+        if (szg.player.nhwcData.roomInfo?.state <= RoomState.Ready){
             this.view.prepare.active = true
             //获取到自己的状态
             this.view.prepareBtn.active = !szg.player.nhwcData.selfGameUserItem.isReady
@@ -344,25 +343,40 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     /**退出房间 */
-    private onExitRoom(){
-        this.view.answerBtn.active =false
-        this.view.overPanel.active =true
-        setTimeout(() => {
-            c2f.gui.open(NhwcUI.NhwcHall);
-            this.closeView()
-        }, 5000);
-
+    private onExitRoom(data:msg.SC_ExitRoom){
+        let item =  szg.player.nhwcData.getGameUserItemById(data.account)
+        if (item) {
+            if (item.plyer.account==szg.player.nhwcData.selfInfo.account) {
+                c2f.gui.open(NhwcUI.NhwcHall);
+                this.closeView()
+            } else {
+                this.model.seatPrepareArr[item.seat].reflash(null)
+                this.model.SeatItemDeskArr[item.seat].reflash(null)
+            }
+        }
     }
 
     /** 小局游戏结束 */
     private onNHWCResult(data: msg.SC_NHWCResult){
-
+        this.showTicker(this.view.timeCountdownLabel,szg.player.nhwcData.roomInfo.resultTime)
+        this.view.answerBtn.active =false
+        let str = c2f.utils.str.stringFormat(c2f.language.words(7012),szg.player.nhwcData.roomInfo.word)
+        this.view.centerLabelLabel.string =str
+        this.model.sketchpad.disableDraw()
+        this.view.messagePanel.active =true
+        this.view.toolPanel.active =false
 
     }
        
     /** 游戏结束 */
     private onRNHWCOver(data: msg.SC_NHWCOver){
-
+        this.view.answerBtn.active =false
+        this.view.overPanel.active =true
+        this.view.centerLabelLabel.string =c2f.language.words(7013)
+        setTimeout(() => {
+            c2f.gui.open(NhwcUI.NhwcHall);
+            this.closeView()
+        }, 5000);
 
     }
 

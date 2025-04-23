@@ -96,3 +96,22 @@ errorcode 服务器回的code 和 本地定义的 报错内容联系起来
         }, c2f.language.words(39110), null, () => {
         });
     }
+
+//请求网络消息
+        let cData: msg.CS_Login = {
+                account: username,
+                password: password,
+                serverId: 1,
+        }
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData,{
+            view: this.view,
+            ops: [GameMsgId.MsgId.MSG_SC_Login],
+            waitNet:false,
+            getErr:false,
+            callback: (code: number, data: msg.SC_Login) => {
+
+                cc.log(" 登录 消息回来",data)
+                c2f.gui.notifyTxt('1515');
+                //todo 登录成功逻辑
+            }
+        })

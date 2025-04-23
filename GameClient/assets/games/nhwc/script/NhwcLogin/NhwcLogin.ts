@@ -2,10 +2,6 @@ import { UIVControlBase } from './../../../../c2f-framework/gui/layer/UIVControl
 import { C2FEnum } from './../../../../c2f-framework/define/C2FEnum';
 import  NhwcLoginModel from './NhwcLoginModel';
 import  NhwcLoginView from './NhwcLoginView';
-import { GameConsts } from '../../../../Script/game/GameConsts';
-import { UIHelper } from '../../../../Script/game/UIHelper';
-import { GameMsgId } from '../../../../resources/proto/GameMsgId';
-import { errCode } from '../../../../resources/proto/errorcode';
 import { NhwcUI, NhwcView } from '../NhwcView';
 
 const { ccclass, property } = cc._decorator;
@@ -83,16 +79,17 @@ export default class NhwcLogin extends UIVControlBase {
                 password: password,
                 serverId: 1,
         }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData,{
+        c2f.webSocket.send(MsgId.MSG_CS_Login,cData,{
             view: this.view,
-            ops: [GameMsgId.MsgId.MSG_SC_Login],
+            ops: [MsgId.MSG_SC_Login],
             waitNet:false,
             getErr:false,
             callback: (code: number, data: msg.SC_Login) => {
 
-                cc.log(" 登录 消息回来",data)
+                cc.log(" 登录 成功")
                 c2f.gui.notifyTxt('1515');
                 //todo 登录成功逻辑
+                c2f.gui.open(NhwcUI.NhwcHall);
             }
         })
         

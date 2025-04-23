@@ -264,8 +264,7 @@ class NetWork {
 
     /** 获得消息ID名称 */
     public getMsgName(id: number) {
-        // return msgName[id];
-        return "";
+        return msgName[id];
     }
 
     /** 解码二进制数据 */

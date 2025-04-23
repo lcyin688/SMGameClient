@@ -1,5 +1,4 @@
 
-import { GameMsgId } from "../../../../resources/proto/GameMsgId";
 import { GameConsts } from "../../../../Script/game/GameConsts";
 import { UIPa } from "../../../../Script/game/UIParam";
 
@@ -30,15 +29,28 @@ export class NHWCData {
     }
     /**登录 */
     public SC_Login(data: msg.SC_Login) {
-        cc.log("LoginData  登录 消息回来",data)
+        // cc.log("LoginData  登录 消息回来",data)
         this.selfInfo=data.playerInfo
     }
+    /**匹配房间 */
+    public SC_MatchRoom(data: msg.SC_MatchRoom) {
+        this.roomInfo=data.roomInfo
+    }
+
 
     /**退出 */
     public SC_ExitRoom(data: msg.SC_ExitRoom) {
         cc.log("退出房间 消息回来",data)
-        this.roomInfo=null
-        this.selfGameUserItem=null
+
+        let item =  szg.player.nhwcData.getGameUserItemById(data.account)
+        if (item) {
+            if (item.plyer.account==szg.player.nhwcData.selfInfo.account) {
+                this.roomInfo=null
+                this.selfGameUserItem=null
+            } else {
+                item=null
+            }
+        }
     }
     /**
      * 
@@ -92,14 +104,24 @@ export class NHWCData {
         let cData: msg.CS_HallInfo = {
 
         }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_HallInfo,cData)
+        c2f.webSocket.send(MsgId.MSG_CS_HallInfo,cData)
     }
+
+    /**请求匹配房间 */
+    public reqMatchRoom() {
+        let cData: msg.CS_MatchRoom = {
+
+        }
+        c2f.webSocket.send(MsgId.MSG_CS_MatchRoom,cData)
+    }
+
+
     /**请求准备 */
     public reqReady() {
         let cData: msg.CS_NHWCReady = {
 
         }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_NHWCReady,cData)
+        c2f.webSocket.send(MsgId.MSG_CS_NHWCReady,cData)
     }
 
     /**请求路径 */
@@ -107,13 +129,13 @@ export class NHWCData {
         let cData: msg.CS_NHWCDrawPath = {
             pointArr: arr
         }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_NHWCDrawPath,cData)
+        c2f.webSocket.send(MsgId.MSG_CS_NHWCDrawPath,cData)
     }
 
 
 
     /**通过玩家唯一id 获取游戏房间玩家的信息 */
-    private getGameUserItemById(id:string) {
+    public getGameUserItemById(id:string) {
         if (!this.roomInfo) {
             return null
         }

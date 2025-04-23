@@ -94,10 +94,10 @@ message RoomInfo {
     int32 state = 4;
     //房间创建时间
     int64 createTime = 5;
-    //开始时间
-	int64 startTime = 6;
-    //倒计时结束时间
-	int64 gameTime = 7;
+    //倒计时 开始小局时长
+	int64 gameTime = 6;
+    //倒计时 小局游戏结束到下一局时长
+	int64 resultTime = 7;
     //提示z
 	string hint = 8;
     //单词
@@ -348,7 +348,7 @@ message CS_ExitRoom {
  * 退出房间响应
  */
 message SC_ExitRoom {
-
+    string account = 1;
 }
 
 /**

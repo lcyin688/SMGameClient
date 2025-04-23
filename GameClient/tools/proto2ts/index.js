@@ -73,6 +73,9 @@ function readConfig() {
     targetModuleName = moduleName.substring(0, 1).toUpperCase() + moduleName.substring(1);
 
 }
+
+
+
 readConfig();
 // generateProtoFile();
 generateProtoJs()
@@ -253,22 +256,23 @@ function renameSpace(dtsStr) {
 
 }
 
-/** 如果有哪洗消息头定义的枚举 给摘出来 单独存放到  GameMsgId.ts 文件 */
-function renameEnumToGameMsgId(dtsStr){
+/** 如果有消息头定义的枚举 给摘出来 单独存放到  .ts 文件 */
+function renameEnumToGameTs(dtsStr,enumName){
     const regex = /enum\s+(\w+)/;
     const match = dtsStr.match(regex);
     if (match) {
         const startIndex = match.index;
         //找到 enum 后边的一个“}”的下标
         const endIndex = dtsStr.indexOf('}', startIndex)+1;
-      let strNeedChange = dtsStr.substring(startIndex, endIndex);
-      dtsStr = dtsStr.replace(strNeedChange, "");
-      reWriteEnumToGameMsgId(strNeedChange)
-      reWriteToGameMsgName(strNeedChange)
-
-      return dtsStr;
+        let strNeedChange = dtsStr.substring(startIndex, endIndex);
+        dtsStr = dtsStr.replace(strNeedChange, "");
+        reWriteEnumToGameTs(strNeedChange,enumName)
+        if ("GameMsgId"==enumName) {
+            reWriteToGameMsgName(strNeedChange)
+        }
+       return dtsStr;
     } else {
-      return dtsStr;
+       return dtsStr;
     }
 }
 
@@ -286,26 +290,26 @@ function isFile(strPath) {
 }
 
 /** 写入枚举到 GameMsgId.ts */
-function reWriteEnumToGameMsgId(newStr){
+function reWriteEnumToGameTs(newStr,enumName){
       //定义的枚举写入  GameMsgId.ts
-      let gameMsgIdPath = path.join(projectPath, 'assets/resources/proto/GameMsgId.ts');
-    if (fs.existsSync(gameMsgIdPath)) {
-        let msgStr = fs.readFileSync(gameMsgIdPath, { encoding: 'utf-8' });
+    let tsFilePath = path.join(projectPath, `assets/resources/proto/${enumName}.ts`);
+    if (fs.existsSync(tsFilePath)) {
+        let msgStr = fs.readFileSync(tsFilePath, { encoding: 'utf-8' });
         const endIndex = newStr.indexOf('{', 0);
         const curEnumStr = newStr.substring(0, endIndex);
         const startIndexFinal = msgStr.indexOf(curEnumStr, 0);
         const endIndexFinal = msgStr.indexOf('}', startIndexFinal)+1;
         const strNeedChange = msgStr.substring(startIndexFinal, endIndexFinal);
         msgStr = msgStr.replace(strNeedChange, newStr);
-        fs.writeFileSync(gameMsgIdPath, msgStr);
+        fs.writeFileSync(tsFilePath, msgStr);
     }else{
-        let msgStr = "export namespace GameMsgId { \n export "+newStr+"\n }"
-        fs.writeFileSync(gameMsgIdPath, msgStr);
+        let msgStr = `export namespace ${enumName} { \n export ${newStr}\n }`
+        fs.writeFileSync(tsFilePath, msgStr);
     }
 }
 
 /** 写入协议抬头配置  msgName.ts */
-function reWriteToGameMsgName(newStr){
+function reWriteToGameMsgName(newStr,enumName){
     const regex = /enum\s+(\w+)/;
     const match = newStr.match(regex);
     if (match) {
@@ -403,6 +407,14 @@ function arrToStrValue(arr) {
  * 生成声明
  */
 function generateProtoJs() {
+    if (!mkdir(path.join(projectPath, `assets/resources/proto`))) {// 如果文件夹不存在，则不执行
+        //延迟一秒
+        setTimeout(() => {
+            generateProtoJs()
+        }, 1000);
+        return
+    }
+
     // 修正文件格式
     let protoStr = fs.readFileSync(protoRootPath, { encoding: 'utf-8' });
     protoStr = swapAndMoveComment(protoStr);
@@ -483,8 +495,9 @@ function generateProtoDts() {
             dtsStr = dtsStr.replace(/\n{3,}/g, '\n\n');
             // declare namespace msg.player { 添加msg 前缀
             dtsStr= renameSpace(dtsStr);
-            //如果有哪洗消息头定义的枚举 给摘出来 单独存放到  GameMsgId.ts 文件
-            dtsStr= renameEnumToGameMsgId(dtsStr);
+            //如果有哪洗消息头定义的枚举 给摘出来 单独存放到  .ts 文件
+            dtsStr= renameEnumToGameTs(dtsStr,"GameMsgId");
+            dtsStr= renameEnumToGameTs(dtsStr,"RoomState");
 
             // class 替换为interface
             // dtsStr = dtsStr.replace(/class/g, 'interface');

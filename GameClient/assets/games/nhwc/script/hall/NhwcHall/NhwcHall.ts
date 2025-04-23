@@ -3,7 +3,6 @@ import { C2FEnum } from './../../../../../c2f-framework/define/C2FEnum';
 import  NhwcHallModel from './NhwcHallModel';
 import  NhwcHallView from './NhwcHallView';
 import { GameConsts } from '../../../../../Script/game/GameConsts';
-import { GameMsgId } from '../../../../../resources/proto/GameMsgId';
 import { NhwcUI, NhwcView } from '../../NhwcView';
 import { EventName } from '../../../../../Script/game/EventName';
 
@@ -17,9 +16,27 @@ export default class NhwcHall extends UIVControlBase {
     public view: NhwcHallView = undefined;
     private headList: cc.SpriteAtlas = null;
     
+    protected onLoad(): void {
+        c2f.webSocket.addListener(this, [
+            MsgId.MSG_SC_MatchRoom,
+        ], this.msgReceive.bind(this));
+
+    }
+
+    private msgReceive(op: number, data: any) {
+        switch (op) {
+            case MsgId.MSG_SC_MatchRoom:
+                this.onMatchRoom(data)
+                break;
+            default:
+                break;
+        }
+    }
+
+
     protected onViewOpen(param: any) {
         this.setHeadSprite()
-        this.view.usernameLabelLabel.string = szg.player.login.selfInfo.nickName
+        this.view.usernameLabelLabel.string = szg.player.nhwcData.selfInfo.nickName
         szg.player.nhwcData.reqHall()
     }
 
@@ -61,34 +78,17 @@ export default class NhwcHall extends UIVControlBase {
     } 
     
     private CC_onClickmatchBtn(){
-        //
+        szg.player.nhwcData.reqMatchRoom()
 
-        // let cData: msg.CS_Login = {
-        //         account: username,
-        //         password: password,
-        //         serverId: 1,
-        // }
-        // c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData,{
-        //     view: this.view,
-        //     ops: [GameMsgId.MsgId.MSG_SC_Login],
-        //     waitNet:false,
-        //     getErr:false,
-        //     callback: (code: number, data: msg.SC_Login) => {
-
-        //         cc.log(" 登录 消息回来",data)
-        //         c2f.gui.notifyTxt('1515');
-        //         //todo 登录成功逻辑
-        //     }
-        // })
     }
             
     private CC_onClickcreateBtn(){
         //网络回调  监听的demo
         let cData: msg.CS_CreateRoom = {
         }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_CreateRoom,cData,{
+        c2f.webSocket.send(MsgId.MSG_CS_CreateRoom,cData,{
             view: this.view,
-            ops: [GameMsgId.MsgId.MSG_SC_CreateRoom],
+            ops: [MsgId.MSG_SC_CreateRoom],
             waitNet:false,
             getErr:false,
             callback: (code: number, data: msg.SC_CreateRoom) => {
@@ -99,7 +99,7 @@ export default class NhwcHall extends UIVControlBase {
     }
             
     private CC_onClickjoinBtn(){
-
+        this.CC_onClickmatchBtn()
     }
             
     /**初始化UI */
@@ -109,7 +109,7 @@ export default class NhwcHall extends UIVControlBase {
     }
     private setHeadSprite() {
         if (this.headList) {
-            let headId =szg.player.login.selfInfo.headId
+            let headId =szg.player.nhwcData.selfInfo.headId
             this.view.headSprite.spriteFrame = this.headList.getSpriteFrame(headId + "");
         }else{
             c2f.res.load(GameConsts.Bundle.nhwc, 'image/head/head', cc.SpriteAtlas, (err: Error | null, res: cc.SpriteAtlas) => {
@@ -119,6 +119,9 @@ export default class NhwcHall extends UIVControlBase {
         }
     }
 
-
+    /**匹配房间 */
+    private onMatchRoom(data:msg.SC_MatchRoom){
+        c2f.gui.open(NhwcUI.NhwcMain);
+    }
 
 }

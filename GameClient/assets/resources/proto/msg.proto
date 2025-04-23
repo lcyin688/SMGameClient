@@ -49,8 +49,8 @@ enum MsgId {
   MSG_CS_NHWCDrawColor = 1015;  // 绘画颜色请求
   MSG_SC_NHWCDrawColor = 1016;  // 绘画颜色响应
 
-  MSG_CS_NHWCDrawPath = 1017;  // 绘画路径请求
-  MSG_SC_NHWCDrawPath = 1018;  // 绘画路径响应
+  MSG_CS_NHWCDrawPath = 1017;  // 游戏绘画path请求
+  MSG_SC_NHWCDrawPath = 1018;  // 游戏绘画path响应
 
   MSG_CS_NHWCAnswer = 1019;  // 猜答案请求
   MSG_SC_NHWCAnswer = 1020;  // 猜答案响应
@@ -94,10 +94,10 @@ message RoomInfo {
     int32 state = 4;
     //房间创建时间
     int64 createTime = 5;
-    //开始时间
-	int64 startTime = 6;
-    //倒计时结束时间
-	int64 gameTime = 7;
+    //倒计时 开始小局时长
+	int64 gameTime = 6;
+    //倒计时 小局游戏结束到下一局时长
+	int64 resultTime = 7;
     //提示z
 	string hint = 8;
     //单词
@@ -348,7 +348,7 @@ message CS_ExitRoom {
  * 退出房间响应
  */
 message SC_ExitRoom {
-
+    string account = 1;
 }
 
 /**
