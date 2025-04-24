@@ -10,6 +10,8 @@ import SeatPrepareItem from '../SeatPrepareItem/SeatPrepareItem';
 import SeatDeskItem from '../SeatDeskItem/SeatDeskItem';
 import Sketchpad from '../Sketchpad/Sketchpad';
 import { format } from 'path';
+import { RoomState } from '../../../../../resources/proto/RoomState';
+import { GameMsgId } from '../../../../../resources/proto/GameMsgId';
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class NhwcMain extends UIVControlBase {
@@ -19,19 +21,19 @@ export default class NhwcMain extends UIVControlBase {
     public model: NhwcMainModel = undefined;
     public view: NhwcMainView = undefined;
     private intervalId: NodeJS.Timeout;
-
     protected onLoad(): void {
         c2f.webSocket.addListener(this, [
-            MsgId.MSG_SC_NHWCReady,
-            MsgId.MSG_SC_NHWCStart,
-            MsgId.MSG_SC_ExitRoom,
-            MsgId.MSG_SC_NHWCResult,
-            MsgId.MSG_SC_NHWCOver,
-            MsgId.MSG_SC_NHWCDrawClear,
-            MsgId.MSG_SC_NHWCDrawWidth,
-            MsgId.MSG_SC_NHWCDrawColor,
-            MsgId.MSG_SC_NHWCDrawPath,
-            MsgId.MSG_SC_NHWCAnswer,
+            GameMsgId.MsgId.MSG_SC_NHWCReady,
+            GameMsgId.MsgId.MSG_SC_MatchRoom,
+            GameMsgId.MsgId.MSG_SC_NHWCStart,
+            GameMsgId.MsgId.MSG_SC_ExitRoom,
+            GameMsgId.MsgId.MSG_SC_NHWCResult,
+            GameMsgId.MsgId.MSG_SC_NHWCOver,
+            GameMsgId.MsgId.MSG_SC_NHWCDrawClear,
+            GameMsgId.MsgId.MSG_SC_NHWCDrawWidth,
+            GameMsgId.MsgId.MSG_SC_NHWCDrawColor,
+            GameMsgId.MsgId.MSG_SC_NHWCDrawPath,
+            GameMsgId.MsgId.MSG_SC_NHWCAnswer,
         ], this.msgReceive.bind(this));
         this.loadSeatItemPrepare(this.preLoadGame.bind(this))
         this.loadSeatItemDesk()
@@ -46,34 +48,37 @@ export default class NhwcMain extends UIVControlBase {
 
     private msgReceive(op: number, data: any) {
         switch (op) {
-            case MsgId.MSG_SC_NHWCReady:
-                this.onReadyNHWC(data)
+            case GameMsgId.MsgId.MSG_SC_NHWCReady:
+                this.onNHWCReady(data)
                 break;
-            case MsgId.MSG_SC_NHWCStart:
-                this.onStartNHWC(data)
+            case GameMsgId.MsgId.MSG_SC_MatchRoom:
+                    this.onMatchRoom(data)
+                    break;
+            case GameMsgId.MsgId.MSG_SC_NHWCStart:
+                this.onNHWCStart(data)
                 break;
-            case MsgId.MSG_SC_ExitRoom:
+            case GameMsgId.MsgId.MSG_SC_ExitRoom:
                 this.onExitRoom(data)
                 break;
-            case MsgId.MSG_SC_NHWCResult:
+            case GameMsgId.MsgId.MSG_SC_NHWCResult:
                 this.onNHWCResult(data)
                 break;
-            case MsgId.MSG_SC_NHWCOver:
+            case GameMsgId.MsgId.MSG_SC_NHWCOver:
                 this.onRNHWCOver(data)
                 break;     
-            case MsgId.MSG_SC_NHWCDrawClear:
+            case GameMsgId.MsgId.MSG_SC_NHWCDrawClear:
                 this.onNHWCDrawClear(data)
                 break;
-            case MsgId.MSG_SC_NHWCDrawWidth:
+            case GameMsgId.MsgId.MSG_SC_NHWCDrawWidth:
                 this.onNHWCDrawWidth(data)
                 break;                                
-            case MsgId.MSG_SC_NHWCDrawColor:
+            case GameMsgId.MsgId.MSG_SC_NHWCDrawColor:
                 this.onNHWCDrawColor(data)
                 break;  
-            case MsgId.MSG_SC_NHWCDrawPath:
+            case GameMsgId.MsgId.MSG_SC_NHWCDrawPath:
                 this.onNHWCDrawPath(data)
                 break;  
-            case MsgId.MSG_SC_NHWCAnswer:
+            case GameMsgId.MsgId.MSG_SC_NHWCAnswer:
                 this.onNHWCAnswer(data)
                 break;  
             default:
@@ -86,7 +91,7 @@ export default class NhwcMain extends UIVControlBase {
 
     public async loadSeatItemPrepare(cb) {
         await c2f.res.loadOne(NHWCConsts.CmmPrefab.seatPrepareItem, cc.Prefab).then((resItem: cc.Prefab) => {
-            this.model.seatItemPrepare = resItem;
+            this.model.seatPrepareItem = resItem;
             if (cb) {
                 cb();
             }
@@ -94,9 +99,9 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     public async loadSeatItemDesk() {
-        await c2f.res.loadOne(NHWCConsts.CmmPrefab.seatPrepareItem, cc.Prefab).then((resItem: cc.Prefab) => {
-            this.model.seatItemDesk = resItem;
-            if (!this.model.SeatItemDeskArr) {
+        await c2f.res.loadOne(NHWCConsts.CmmPrefab.seatDeskItem, cc.Prefab).then((resItem: cc.Prefab) => {
+            this.model.seatDeskItem = resItem;
+            if (!this.model.SeatDeskItemArr) {
                 this.initSeatDeskItemArr()
             }
             this.reflashSeatDeskArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
@@ -104,18 +109,21 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     private initSeatDeskItemArr() {
-        this.model.SeatItemDeskArr = [];
+        this.model.SeatDeskItemArr = [];
         for (let row = 0; row < this.model.seatCount; row++) {
-            let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.seatItemDesk, this.view.seatLayDesk);
+            let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.seatDeskItem, this.view.seatLayDesk);
             this.view.seatLayDesk.addChild(nodeItem)
             let item = nodeItem.getComponent(SeatDeskItem)
-            this.model.SeatItemDeskArr.push(item)
+            this.model.SeatDeskItemArr.push(item)
         }
     }
     /** 刷新玩家答题状态 */
     private reflashSeatDeskArr(arr: msg.GameUserItem[]) {
-        for (let i = 0; i < this.model.SeatItemDeskArr.length; i++) {
-            let item = this.model.SeatItemDeskArr[i];
+        for (let i = 0; i < this.model.SeatDeskItemArr.length; i++) {
+            if (!this.model.SeatDeskItemArr[i]) {
+                continue;
+            }
+            let item = this.model.SeatDeskItemArr[i];
             item.name = `seatDeskItem${i}`
             if (arr&&arr.length>i) {
                 item.reflash(arr[i]);
@@ -126,7 +134,7 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     private preLoadGame() {
-        if (!this.model.seatPrepareArr) {
+        if (!this.model.seatPrepareItemArr) {
             this.initPrepareSeatItemArr()
         }
         this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
@@ -134,8 +142,8 @@ export default class NhwcMain extends UIVControlBase {
 
     /** 刷新准备状态 */
     private reflashPrepareSeatArr(arr: msg.GameUserItem[]) {
-        for (let i = 0; i < this.model.seatPrepareArr.length; i++) {
-            let item = this.model.seatPrepareArr[i];
+        for (let i = 0; i < this.model.seatPrepareItemArr.length; i++) {
+            let item = this.model.seatPrepareItemArr[i];
             item.name = `prepareSeat${i}`
             if (arr&&arr.length>i) {
                 item.reflash(arr[i]);
@@ -146,12 +154,12 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     private initPrepareSeatItemArr() {
-        this.model.seatPrepareArr = [];
+        this.model.seatPrepareItemArr = [];
         for (let row = 0; row < this.model.seatCount; row++) {
-            let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.seatItemPrepare, this.view.seatLayPrepare);
+            let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.seatPrepareItem, this.view.seatLayPrepare);
             this.view.seatLayPrepare.addChild(nodeItem)
             let item = nodeItem.getComponent(SeatPrepareItem)
-            this.model.seatPrepareArr.push(item)
+            this.model.seatPrepareItemArr.push(item)
         }
     }
 
@@ -185,6 +193,7 @@ export default class NhwcMain extends UIVControlBase {
             super.onDisable();
         }
         this.off(C2FEnum.UIEvent.ButtonClick);
+        clearInterval(this.intervalId);
     }
 
     private async onButtonClick(eventType: string, component: cc.Button) {
@@ -226,7 +235,7 @@ export default class NhwcMain extends UIVControlBase {
     private CC_onClickexitBtn(){
         let cData: msg.CS_CreateRoom = {
         }
-        c2f.webSocket.send(MsgId.MSG_CS_ExitRoom,cData)
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_ExitRoom,cData)
     }
             
     private CC_onClickprepareBtn(){
@@ -250,7 +259,7 @@ export default class NhwcMain extends UIVControlBase {
     }
             
     private reflashRoomInfo(){
-        if (szg.player.nhwcData.roomInfo?.state <= RoomState.Ready){
+        if (szg.player.nhwcData.roomInfo?.state <= RoomState.RoomState.Ready){
             this.view.prepare.active = true
             //获取到自己的状态
             this.view.prepareBtn.active = !szg.player.nhwcData.selfGameUserItem.isReady
@@ -261,11 +270,21 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     /**准备的广播消息 */
-    private onReadyNHWC(data: msg.SC_NHWCReady) {
+    private onNHWCReady(data: msg.SC_NHWCReady) {
         this.reflashRoomInfo()
         this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
 
     }
+
+    /**房间内其他玩家的匹配广播消息 */
+    private onMatchRoom(data: msg.SC_MatchRoom) {
+        this.reflashRoomInfo()
+        this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
+
+    }
+
+    
+
 
     private showTicker(countdownLabel: CountdownLabel,interval: number){
         countdownLabel.startCountdown(interval, null, null, null, () => {
@@ -297,7 +316,7 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     /**游戏开始消息 */
-    private onStartNHWC(data: msg.SC_NHWCStart) {
+    private onNHWCStart(data: msg.SC_NHWCStart) {
         this.view.prepare.active =false
         this.view.desk.active =true
         //如果是画师就告诉他答案 然后画师去画画
@@ -331,8 +350,8 @@ export default class NhwcMain extends UIVControlBase {
     }
     
     public hideAllTip() {
-        for(let i in this.model.SeatItemDeskArr){
-            this.model.SeatItemDeskArr[i].hideTip();
+        for(let i in this.model.SeatDeskItemArr){
+            this.model.SeatDeskItemArr[i].hideTip();
         }
     }
 
@@ -350,10 +369,12 @@ export default class NhwcMain extends UIVControlBase {
                 c2f.gui.open(NhwcUI.NhwcHall);
                 this.closeView()
             } else {
-                this.model.seatPrepareArr[item.seat].reflash(null)
-                this.model.SeatItemDeskArr[item.seat].reflash(null)
+                this.model.seatPrepareItemArr[item.seat].reflash(null)
+                this.model.SeatDeskItemArr[item.seat].reflash(null)
             }
         }
+
+        szg.player.nhwcData.onExitRoom(data)
     }
 
     /** 小局游戏结束 */
@@ -421,11 +442,11 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     private answerWrong(seat:number){
-        this.model.SeatItemDeskArr[seat].showTip(c2f.language.words(7010))
+        this.model.SeatDeskItemArr[seat].showTip(c2f.language.words(7010))
     }
     
     private answerRight(seat:number,score:number){
-        this.model.SeatItemDeskArr[seat].showTip(c2f.utils.str.formatWithObj(c2f.language.words(7011),score))
+        this.model.SeatDeskItemArr[seat].showTip(c2f.utils.str.formatWithObj(c2f.language.words(7011),score))
     }
     
     private CC_onClickanswerBtn() {
@@ -434,6 +455,9 @@ export default class NhwcMain extends UIVControlBase {
 
     // 同步绘画信息
     syncPath() {
+        if (!this.model.sketchpad) {
+            return;
+        }
         if (this.model.sketchpad.model.isDrawing && this.model.sketchpad.model.path.length > 0) {
             let path = this.model.sketchpad.popPath();
             szg.player.nhwcData.reqNHWCDrawPath(path);

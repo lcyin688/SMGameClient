@@ -8,12 +8,12 @@ const { ccclass, property } = cc._decorator;
 export default class NhwcMainModel extends UIModelBase {
     /** 预制名 给实例调用 */
     public prefabName = 'F_NhwcMain';
-    public seatItemPrepare: cc.Prefab;
-    public seatPrepareArr: SeatPrepareItem [] = null;
+    public seatPrepareItem: cc.Prefab;
+    public seatPrepareItemArr: SeatPrepareItem [] = null;
     public seatCount = 6;
 
-    public seatItemDesk: cc.Prefab;
-    public SeatItemDeskArr: SeatDeskItem [] = null;
+    public seatDeskItem: cc.Prefab;
+    public SeatDeskItemArr: SeatDeskItem [] = null;
 
     public sketchpad:Sketchpad  = null;
 

@@ -3,6 +3,8 @@ import { C2FEnum } from './../../../../c2f-framework/define/C2FEnum';
 import  NhwcLoginModel from './NhwcLoginModel';
 import  NhwcLoginView from './NhwcLoginView';
 import { NhwcUI, NhwcView } from '../NhwcView';
+import { GameMsgId } from '../../../../resources/proto/GameMsgId';
+
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -79,9 +81,9 @@ export default class NhwcLogin extends UIVControlBase {
                 password: password,
                 serverId: 1,
         }
-        c2f.webSocket.send(MsgId.MSG_CS_Login,cData,{
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData,{
             view: this.view,
-            ops: [MsgId.MSG_SC_Login],
+            ops: [GameMsgId.MsgId.MSG_SC_Login],
             waitNet:false,
             getErr:false,
             callback: (code: number, data: msg.SC_Login) => {

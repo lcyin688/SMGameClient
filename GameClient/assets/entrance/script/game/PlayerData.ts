@@ -1,6 +1,7 @@
 import { PublicData } from './plrBase/PublicData';
 import { LoginData } from './login/LoginData';
 import { NHWCData } from './nhwc/NHWCData';
+import { GameMsgId } from '../../../resources/proto/GameMsgId';
 
 
 /** 玩家数据总领：具体模块数据 */
@@ -89,13 +90,13 @@ export class PlayerData {
         }
     }
     private dispatchMsg(op: number, data: any) {
-        if (MsgId.MSG_SC_Login == op) {
+        if (GameMsgId.MsgId.MSG_SC_Login == op) {
             this.initModules();
         }
         //跨天推送玩家信息消息从这里转换分发
         let msgName = c2f.net.getMsgName(op);
-        if (MsgId.MSG_SC_Login == op) {
-            msgName = c2f.net.getMsgName(MsgId.MSG_SC_Login)
+        if (GameMsgId.MsgId.MSG_SC_Login == op) {
+            msgName = c2f.net.getMsgName(GameMsgId.MsgId.MSG_SC_Login)
         }
         for (let one of this.dispatchs) {
             if (one[msgName]) {

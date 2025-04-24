@@ -3,7 +3,7 @@ import { C2FEnum } from './../../../../c2f-framework/define/C2FEnum';
 import  NhwcRegisterModel from './NhwcRegisterModel';
 import  NhwcRegisterView from './NhwcRegisterView';
 import { GameConsts } from '../../../../Script/game/GameConsts';
-import { errCode } from '../../../../resources/proto/errorcode';
+import { GameMsgId } from '../../../../resources/proto/GameMsgId';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -90,9 +90,9 @@ export default class NhwcRegister extends UIVControlBase {
                 password: password,
                 headId: this.headId,
         }
-        c2f.webSocket.send(MsgId.MSG_CS_Register,cData,{
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Register,cData,{
             view: this.view,
-            ops: [MsgId.MSG_SC_Register],
+            ops: [GameMsgId.MsgId.MSG_SC_Register],
             waitNet:false,
             getErr:false,
             callback: (code: number, data: msg.SC_Register) => {

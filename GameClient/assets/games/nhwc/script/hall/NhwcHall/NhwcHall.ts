@@ -5,6 +5,7 @@ import  NhwcHallView from './NhwcHallView';
 import { GameConsts } from '../../../../../Script/game/GameConsts';
 import { NhwcUI, NhwcView } from '../../NhwcView';
 import { EventName } from '../../../../../Script/game/EventName';
+import { GameMsgId } from '../../../../../resources/proto/GameMsgId';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -18,14 +19,14 @@ export default class NhwcHall extends UIVControlBase {
     
     protected onLoad(): void {
         c2f.webSocket.addListener(this, [
-            MsgId.MSG_SC_MatchRoom,
+            GameMsgId.MsgId.MSG_SC_MatchRoom,
         ], this.msgReceive.bind(this));
 
     }
 
     private msgReceive(op: number, data: any) {
         switch (op) {
-            case MsgId.MSG_SC_MatchRoom:
+            case GameMsgId.MsgId.MSG_SC_MatchRoom:
                 this.onMatchRoom(data)
                 break;
             default:
@@ -86,9 +87,9 @@ export default class NhwcHall extends UIVControlBase {
         //网络回调  监听的demo
         let cData: msg.CS_CreateRoom = {
         }
-        c2f.webSocket.send(MsgId.MSG_CS_CreateRoom,cData,{
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_CreateRoom,cData,{
             view: this.view,
-            ops: [MsgId.MSG_SC_CreateRoom],
+            ops: [GameMsgId.MsgId.MSG_SC_CreateRoom],
             waitNet:false,
             getErr:false,
             callback: (code: number, data: msg.SC_CreateRoom) => {
@@ -121,7 +122,13 @@ export default class NhwcHall extends UIVControlBase {
 
     /**匹配房间 */
     private onMatchRoom(data:msg.SC_MatchRoom){
-        c2f.gui.open(NhwcUI.NhwcMain);
+        // let viewPa = c2f.gui.getViewParam(NhwcUI.NhwcMain);
+        // if (!viewPa) {
+        //     c2f.gui.open(NhwcUI.NhwcMain);
+        // }
+        if (!c2f.gui.has(NhwcUI.NhwcMain)) {
+            c2f.gui.open(NhwcUI.NhwcMain);
+        }
     }
 
 }

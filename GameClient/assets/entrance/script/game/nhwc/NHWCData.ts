@@ -1,4 +1,5 @@
 
+import { GameMsgId } from "../../../../resources/proto/GameMsgId";
 import { GameConsts } from "../../../../Script/game/GameConsts";
 import { UIPa } from "../../../../Script/game/UIParam";
 
@@ -34,45 +35,22 @@ export class NHWCData {
     }
     /**匹配房间 */
     public SC_MatchRoom(data: msg.SC_MatchRoom) {
-        this.roomInfo=data.roomInfo
-    }
-
-
-    /**退出 */
-    public SC_ExitRoom(data: msg.SC_ExitRoom) {
-        cc.log("退出房间 消息回来",data)
-
-        let item =  szg.player.nhwcData.getGameUserItemById(data.account)
-        if (item) {
-            if (item.plyer.account==szg.player.nhwcData.selfInfo.account) {
-                this.roomInfo=null
-                this.selfGameUserItem=null
-            } else {
-                item=null
-            }
-        }
+        this.reflashRoomInfo(data.roomInfo)
+        this.reflashSelfInfo()
     }
     /**
      * 
      * 准备
      */
-    public SC_ReadyNHWC(data: msg.SC_NHWCReady) {
-        this.roomInfo =data.roomInfo
-
-        let item = this.getGameUserItemById(this.selfInfo.account)
-        if (item) {
-            this.selfGameUserItem=item
-        }
+    public SC_NHWCReady(data: msg.SC_NHWCReady) {
+        this.reflashRoomInfo(data.roomInfo)
+        this.reflashSelfInfo()
 
     }
     /**游戏开始 */
-    public SC_StartNHWC(data: msg.SC_NHWCStart) {
-        this.roomInfo =data.roomInfo
-
-        let item = this.getGameUserItemById(this.selfInfo.account)
-        if (item) {
-            this.selfGameUserItem=item
-        }
+    public SC_NHWCStart(data: msg.SC_NHWCStart) {
+        this.reflashRoomInfo(data.roomInfo)
+        this.reflashSelfInfo()
 
     }
 
@@ -83,7 +61,7 @@ export class NHWCData {
 
     /**创建房间 */
     public SC_CreateRoom(data:msg.SC_CreateRoom) {
-        this.roomInfo=data.roomInfo
+        this.reflashRoomInfo(data.roomInfo)
         let item = this.getGameUserItemById(this.selfInfo.account)
         if (item) {
             this.selfGameUserItem=item
@@ -104,7 +82,7 @@ export class NHWCData {
         let cData: msg.CS_HallInfo = {
 
         }
-        c2f.webSocket.send(MsgId.MSG_CS_HallInfo,cData)
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_HallInfo,cData)
     }
 
     /**请求匹配房间 */
@@ -112,7 +90,7 @@ export class NHWCData {
         let cData: msg.CS_MatchRoom = {
 
         }
-        c2f.webSocket.send(MsgId.MSG_CS_MatchRoom,cData)
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_MatchRoom,cData)
     }
 
 
@@ -121,7 +99,7 @@ export class NHWCData {
         let cData: msg.CS_NHWCReady = {
 
         }
-        c2f.webSocket.send(MsgId.MSG_CS_NHWCReady,cData)
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_NHWCReady,cData)
     }
 
     /**请求路径 */
@@ -129,9 +107,22 @@ export class NHWCData {
         let cData: msg.CS_NHWCDrawPath = {
             pointArr: arr
         }
-        c2f.webSocket.send(MsgId.MSG_CS_NHWCDrawPath,cData)
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_NHWCDrawPath,cData)
     }
 
+
+    /**退出 */
+    public onExitRoom(data: msg.SC_ExitRoom) {
+        let item =  szg.player.nhwcData.getGameUserItemById(data.account)
+        if (item) {
+            if (item.plyer.account==szg.player.nhwcData.selfInfo.account) {
+                this.roomInfo=null
+                this.selfGameUserItem=null
+            } else {
+                item=null
+            }
+        }
+    }
 
 
     /**通过玩家唯一id 获取游戏房间玩家的信息 */
@@ -147,6 +138,22 @@ export class NHWCData {
 
         }
         return null
+    }
+
+    private reflashRoomInfo(roomInfo: msg.RoomInfo){
+        if (roomInfo&&roomInfo.arrPlayerInfo&&roomInfo.arrPlayerInfo.length>0) {
+            roomInfo.arrPlayerInfo.sort((a,b)=>{
+                return a.seat-b.seat
+            })
+        }
+        this.roomInfo=roomInfo
+    }
+
+    private reflashSelfInfo(){
+        let item = this.getGameUserItemById(this.selfInfo.account)
+        if (item) {
+            this.selfGameUserItem=item
+        }
     }
 
 

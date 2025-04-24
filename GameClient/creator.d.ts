@@ -18423,6 +18423,11 @@ declare namespace cc {
 			FILLED = 0,
 			MESH = 0,		
 		}	
+
+
+        export function changeSFWithAtlas(url: string, subFile: string, endCb: Function) {
+            throw new Error("Function not implemented.");
+        }
 	}
 		
 	/****************************************************

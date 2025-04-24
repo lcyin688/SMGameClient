@@ -416,7 +416,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 12
@@ -428,9 +428,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 255,
+      "g": 125,
+      "b": 46,
       "a": 255
     },
     "_contentSize": {
@@ -448,7 +448,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        0,
+        68.509,
         0,
         0,
         0,
@@ -526,7 +526,7 @@
       "__id__": 1
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 15
@@ -541,9 +541,9 @@
     "_opacity": 255,
     "_color": {
       "__type__": "cc.Color",
-      "r": 0,
-      "g": 0,
-      "b": 0,
+      "r": 52,
+      "g": 196,
+      "b": 127,
       "a": 255
     },
     "_contentSize": {
