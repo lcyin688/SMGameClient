@@ -12,7 +12,6 @@ export default class SeatPrepareItem extends UIPControlBase {
 
     public model: SeatPrepareItemModel = undefined;
     public view: SeatPrepareItemView = undefined;
-    private headList: cc.SpriteAtlas = null;
 
 
     public  reflash(data:msg.GameUserItem) {
@@ -29,14 +28,9 @@ export default class SeatPrepareItem extends UIPControlBase {
     }
 
     private setHeadSprite(headId:number) {
-        if (this.headList) {
-            this.view.headSprite.spriteFrame = this.headList.getSpriteFrame(headId + "");
-        }else{
-            c2f.res.load(GameConsts.Bundle.nhwc, 'image/head/head', cc.SpriteAtlas, (err: Error | null, res: cc.SpriteAtlas) => {
-                this.headList = res;
-                this.setHeadSprite(headId)
-            })
-        }
+        c2f.res.load(GameConsts.Bundle.nhwc, 'image/head/head', cc.SpriteAtlas, (err: Error | null, res: cc.SpriteAtlas) => {
+            this.view.headSprite.spriteFrame = res.getSpriteFrame(headId.toString());
+        })
     }
 
 
