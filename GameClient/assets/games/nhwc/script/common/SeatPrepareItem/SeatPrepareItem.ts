@@ -20,9 +20,10 @@ export default class SeatPrepareItem extends UIPControlBase {
             this.view.state.active =false
             this.view.userName.active =false
         }else{
-            this.setHeadSprite(data.plyer.headId)
-            this.view.state.active =data.isReady
+            this.view.head.active =true
             this.view.userName.active =true
+            this.view.state.active =data.isReady
+            this.setHeadSprite(data.plyer.headId)
             this.view.userNameLabel.string =data.plyer.nickName
         }
     }
