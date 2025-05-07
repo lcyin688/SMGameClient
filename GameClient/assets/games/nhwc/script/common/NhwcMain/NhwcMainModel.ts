@@ -10,8 +10,6 @@ export default class NhwcMainModel extends UIModelBase {
     public prefabName = 'F_NhwcMain';
     public seatPrepareItem: cc.Prefab;
     public seatPrepareItemArr: SeatPrepareItem [] = null;
-    public seatCount = 6;
-
     public seatDeskItem: cc.Prefab;
     public SeatDeskItemArr: SeatDeskItem [] = null;
 

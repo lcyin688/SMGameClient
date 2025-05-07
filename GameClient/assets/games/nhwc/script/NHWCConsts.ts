@@ -4,8 +4,6 @@
 export namespace NHWCConsts {
     /** 常用预制体 */
     export enum CmmPrefab {
-
-
         /** 座位Item */
         seatPrepareItem = 'ab:nhwc/prefab/common/P_SeatPrepareItem',
 
@@ -16,5 +14,8 @@ export namespace NHWCConsts {
         sketchpad = 'ab:nhwc/prefab/common/P_Sketchpad',
     }
 
-
+    /**默认座位上几个人就开 */
+    export const SeatCount = 2
+    
+    
 }

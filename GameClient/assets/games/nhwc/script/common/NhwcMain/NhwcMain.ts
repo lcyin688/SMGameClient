@@ -110,7 +110,7 @@ export default class NhwcMain extends UIVControlBase {
 
     private initSeatDeskItemArr() {
         this.model.SeatDeskItemArr = [];
-        for (let row = 0; row < this.model.seatCount; row++) {
+        for (let row = 0; row < NHWCConsts.SeatCount; row++) {
             let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.seatDeskItem, this.view.seatLayDesk);
             this.view.seatLayDesk.addChild(nodeItem)
             let item = nodeItem.getComponent(SeatDeskItem)
@@ -155,7 +155,7 @@ export default class NhwcMain extends UIVControlBase {
 
     private initPrepareSeatItemArr() {
         this.model.seatPrepareItemArr = [];
-        for (let row = 0; row < this.model.seatCount; row++) {
+        for (let row = 0; row < NHWCConsts.SeatCount; row++) {
             let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.seatPrepareItem, this.view.seatLayPrepare);
             this.view.seatLayPrepare.addChild(nodeItem)
             let item = nodeItem.getComponent(SeatPrepareItem)
