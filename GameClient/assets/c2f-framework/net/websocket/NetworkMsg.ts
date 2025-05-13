@@ -132,7 +132,7 @@ export class NetworkMsg {
             const body = this.buffer.subarray(8, 8 + dataLen);
            
             if (msgId==GameMsgId.MsgId.MSG_SC_Pong) { 
-                cc.log("msgId  SC_Pong  ==============   ");
+                // cc.log("msgId  SC_Pong  ==============   ");
             }else{
                 cc.log("msgId  ========   :", msgId);
                 this.parseMessage(msgId, body); 
