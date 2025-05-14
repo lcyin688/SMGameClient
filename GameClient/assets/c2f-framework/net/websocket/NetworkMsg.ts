@@ -173,7 +173,7 @@ export class NetworkMsg {
          if (msgNameTemp === undefined) { 
             cc.log("network.dispatch msgName is nil: op = " + op);
         }
-        cc.log(' onWSMsg 收到响应  op  :',msgNameTemp, data );
+        cc.log(' onWSMsg 收到响应  op  :',msgNameTemp, data ,success);
         if (success) {
             this.plrMsgHandle && this.plrMsgHandle(op, data);
         }

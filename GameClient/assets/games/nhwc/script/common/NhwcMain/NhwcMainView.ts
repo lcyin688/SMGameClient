@@ -4,6 +4,7 @@
 
 import { UIViewBase } from './../../../../../c2f-framework/gui/layer/UIViewBase';
 import CountdownLabel from "./../../../../../c2f-framework/component/common/CountdownLabel";
+import LanguageLabel from "./../../../../../c2f-framework/component/language/LanguageLabel";
 
 
 const { ccclass, property } = cc._decorator;
@@ -46,6 +47,9 @@ export default class NhwcMainView extends UIViewBase {
     public answerBtnButton: cc.Button = undefined;
     public tips: cc.Node;
     public tipsSprite: cc.Sprite = undefined;
+    public titleTips: cc.Node;
+    public titleTipsLabel: cc.Label = undefined;
+    public titleTipsLanguageLabel: LanguageLabel = undefined;
     public tipInput: cc.Node;
     public tipInputEditBox: cc.EditBox = undefined;
     public tipConfirmBtn: cc.Node;
@@ -123,6 +127,9 @@ export default class NhwcMainView extends UIViewBase {
         this.answerBtnButton = this.answerBtn.getComponent(cc.Button);
         this.tips = this.get('_tips_');
         this.tipsSprite = this.tips.getComponent(cc.Sprite);
+        this.titleTips = this.get('_titleTips_');
+        this.titleTipsLabel = this.titleTips.getComponent(cc.Label);
+        this.titleTipsLanguageLabel = this.titleTips.getComponent(LanguageLabel);
         this.tipInput = this.get('_tipInput_');
         this.tipInputEditBox = this.tipInput.getComponent(cc.EditBox);
         this.tipConfirmBtn = this.get('_tipConfirmBtn_');

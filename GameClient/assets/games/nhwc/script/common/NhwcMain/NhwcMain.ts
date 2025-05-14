@@ -287,7 +287,7 @@ export default class NhwcMain extends UIVControlBase {
 
 
     private showTicker(countdownLabel: CountdownLabel,interval: number){
-        countdownLabel.startCountdown(interval, null, null, null, () => {
+        countdownLabel.startCountdown(interval,  "%{hh}:%{mm}:%{ss}", null, null, () => {
             
         });
     }
@@ -350,7 +350,7 @@ export default class NhwcMain extends UIVControlBase {
     }
     
     public hideAllTip() {
-        for(let i in this.model.SeatDeskItemArr){
+        for (let i = 0; i < this.model.SeatDeskItemArr.length; i++) {
             this.model.SeatDeskItemArr[i].hideTip();
         }
     }
