@@ -266,6 +266,7 @@ export default class NhwcMain extends UIVControlBase {
             this.view.preparedBtn.active = szg.player.nhwcData.selfGameUserItem.isReady
         }else{
             this.view.prepare.active = false
+            //如果游戏已经开始了就刷新到最新状态
         }
     }
 
@@ -280,6 +281,7 @@ export default class NhwcMain extends UIVControlBase {
     private onMatchRoom(data: msg.SC_MatchRoom) {
         this.reflashRoomInfo()
         this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
+
 
     }
 
