@@ -1,7 +1,7 @@
 import { UIVControlBase } from './../../../../../c2f-framework/gui/layer/UIVControlBase';
 import { C2FEnum } from './../../../../../c2f-framework/define/C2FEnum';
-import  NhwcMainModel from './NhwcMainModel';
-import  NhwcMainView from './NhwcMainView';
+import NhwcMainModel from './NhwcMainModel';
+import NhwcMainView from './NhwcMainView';
 import { NhwcUI } from '../../NhwcView';
 import { GameConsts } from '../../../../../Script/game/GameConsts';
 import { NHWCConsts } from '../../NHWCConsts';
@@ -22,72 +22,86 @@ export default class NhwcMain extends UIVControlBase {
     public view: NhwcMainView = undefined;
     private intervalId: NodeJS.Timeout;
     protected onLoad(): void {
-        c2f.webSocket.addListener(this, [
-            GameMsgId.MsgId.MSG_SC_NHWCReady,
-            GameMsgId.MsgId.MSG_SC_MatchRoom,
-            GameMsgId.MsgId.MSG_SC_NHWCStart,
-            GameMsgId.MsgId.MSG_SC_ExitRoom,
-            GameMsgId.MsgId.MSG_SC_NHWCResult,
-            GameMsgId.MsgId.MSG_SC_NHWCOver,
-            GameMsgId.MsgId.MSG_SC_NHWCDrawClear,
-            GameMsgId.MsgId.MSG_SC_NHWCDrawWidth,
-            GameMsgId.MsgId.MSG_SC_NHWCDrawColor,
-            GameMsgId.MsgId.MSG_SC_NHWCDrawPath,
-            GameMsgId.MsgId.MSG_SC_NHWCAnswer,
-        ], this.msgReceive.bind(this));
-        this.loadSeatItemPrepare(this.preLoadGame.bind(this))
-        this.loadSeatItemDesk()
-        
+        c2f.webSocket.addListener(
+            this,
+            [
+                GameMsgId.MsgId.MSG_SC_NHWCReady,
+                GameMsgId.MsgId.MSG_SC_MatchRoom,
+                GameMsgId.MsgId.MSG_SC_NHWCStart,
+                GameMsgId.MsgId.MSG_SC_ExitRoom,
+                GameMsgId.MsgId.MSG_SC_NHWCResult,
+                GameMsgId.MsgId.MSG_SC_NHWCOver,
+                GameMsgId.MsgId.MSG_SC_NHWCDrawClear,
+                GameMsgId.MsgId.MSG_SC_NHWCDrawWidth,
+                GameMsgId.MsgId.MSG_SC_NHWCDrawColor,
+                GameMsgId.MsgId.MSG_SC_NHWCDrawPath,
+                GameMsgId.MsgId.MSG_SC_NHWCAnswer,
+            ],
+            this.msgReceive.bind(this)
+        );
+        this.loadSeatItemPrepare(this.preLoadGame.bind(this));
+        this.loadSeatItemDesk();
+
         c2f.res.loadOne(NHWCConsts.CmmPrefab.sketchpad, cc.Prefab).then((resItem: cc.Prefab) => {
             let nodeItem = c2f.utils.view.instantiateMVCPrefab(resItem, this.view.board);
-            this.view.board.addChild(nodeItem)
-            this.model.sketchpad = nodeItem.getComponent(Sketchpad)
-        })
+            this.view.board.addChild(nodeItem);
+            this.model.sketchpad = nodeItem.getComponent(Sketchpad);
+        });
+    }
 
+    private getIsInit() {
+        let isInit = false;
+        if (this.model.sketchpad && this.model.seatPrepareItem && this.model.seatDeskItem) {
+            isInit = true;
+        }
+        return isInit;
     }
 
     private msgReceive(op: number, data: any) {
+        if (!this.getIsInit()) {
+            this.scheduleOnce(() => {
+                this.msgReceive(op, data);
+            });
+            return;
+        }
         switch (op) {
             case GameMsgId.MsgId.MSG_SC_NHWCReady:
-                this.onNHWCReady(data)
+                this.onNHWCReady(data);
                 break;
             case GameMsgId.MsgId.MSG_SC_MatchRoom:
-                    this.onMatchRoom(data)
-                    break;
+                this.onMatchRoom(data);
+                break;
             case GameMsgId.MsgId.MSG_SC_NHWCStart:
-                this.onNHWCStart(data)
+                this.onNHWCStart(data);
                 break;
             case GameMsgId.MsgId.MSG_SC_ExitRoom:
-                this.onExitRoom(data)
+                this.onExitRoom(data);
                 break;
             case GameMsgId.MsgId.MSG_SC_NHWCResult:
-                this.onNHWCResult(data)
+                this.onNHWCResult(data);
                 break;
             case GameMsgId.MsgId.MSG_SC_NHWCOver:
-                this.onRNHWCOver(data)
-                break;     
+                this.onRNHWCOver(data);
+                break;
             case GameMsgId.MsgId.MSG_SC_NHWCDrawClear:
-                this.onNHWCDrawClear(data)
+                this.onNHWCDrawClear(data);
                 break;
             case GameMsgId.MsgId.MSG_SC_NHWCDrawWidth:
-                this.onNHWCDrawWidth(data)
-                break;                                
+                this.onNHWCDrawWidth(data);
+                break;
             case GameMsgId.MsgId.MSG_SC_NHWCDrawColor:
-                this.onNHWCDrawColor(data)
-                break;  
+                this.onNHWCDrawColor(data);
+                break;
             case GameMsgId.MsgId.MSG_SC_NHWCDrawPath:
-                this.onNHWCDrawPath(data)
-                break;  
+                this.onNHWCDrawPath(data);
+                break;
             case GameMsgId.MsgId.MSG_SC_NHWCAnswer:
-                this.onNHWCAnswer(data)
-                break;  
+                this.onNHWCAnswer(data);
+                break;
             default:
                 break;
         }
     }
-
-
-
 
     public async loadSeatItemPrepare(cb) {
         await c2f.res.loadOne(NHWCConsts.CmmPrefab.seatPrepareItem, cc.Prefab).then((resItem: cc.Prefab) => {
@@ -95,26 +109,26 @@ export default class NhwcMain extends UIVControlBase {
             if (cb) {
                 cb();
             }
-        })
+        });
     }
 
     public async loadSeatItemDesk() {
         await c2f.res.loadOne(NHWCConsts.CmmPrefab.seatDeskItem, cc.Prefab).then((resItem: cc.Prefab) => {
             this.model.seatDeskItem = resItem;
             if (!this.model.SeatDeskItemArr) {
-                this.initSeatDeskItemArr()
+                this.initSeatDeskItemArr();
             }
-            this.reflashSeatDeskArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
-        })
+            this.reflashSeatDeskArr(szg.player.nhwcData.roomInfo.arrPlayerInfo);
+        });
     }
 
     private initSeatDeskItemArr() {
         this.model.SeatDeskItemArr = [];
         for (let row = 0; row < NHWCConsts.SeatCount; row++) {
             let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.seatDeskItem, this.view.seatLayDesk);
-            this.view.seatLayDesk.addChild(nodeItem)
-            let item = nodeItem.getComponent(SeatDeskItem)
-            this.model.SeatDeskItemArr.push(item)
+            this.view.seatLayDesk.addChild(nodeItem);
+            let item = nodeItem.getComponent(SeatDeskItem);
+            this.model.SeatDeskItemArr.push(item);
         }
     }
     /** 刷新玩家答题状态 */
@@ -124,10 +138,10 @@ export default class NhwcMain extends UIVControlBase {
                 continue;
             }
             let item = this.model.SeatDeskItemArr[i];
-            item.name = `seatDeskItem${i}`
-            if (arr&&arr.length>i) {
+            item.name = `seatDeskItem${i}`;
+            if (arr && arr.length > i) {
                 item.reflash(arr[i]);
-            }else{
+            } else {
                 item.reflash(null);
             }
         }
@@ -135,19 +149,19 @@ export default class NhwcMain extends UIVControlBase {
 
     private preLoadGame() {
         if (!this.model.seatPrepareItemArr) {
-            this.initPrepareSeatItemArr()
+            this.initPrepareSeatItemArr();
         }
-        this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
+        this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo);
     }
 
     /** 刷新准备状态 */
     private reflashPrepareSeatArr(arr: msg.GameUserItem[]) {
         for (let i = 0; i < this.model.seatPrepareItemArr.length; i++) {
             let item = this.model.seatPrepareItemArr[i];
-            item.name = `prepareSeat${i}`
-            if (arr&&arr.length>i) {
+            item.name = `prepareSeat${i}`;
+            if (arr && arr.length > i) {
                 item.reflash(arr[i]);
-            }else{
+            } else {
                 item.reflash(null);
             }
         }
@@ -157,25 +171,27 @@ export default class NhwcMain extends UIVControlBase {
         this.model.seatPrepareItemArr = [];
         for (let row = 0; row < NHWCConsts.SeatCount; row++) {
             let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.seatPrepareItem, this.view.seatLayPrepare);
-            this.view.seatLayPrepare.addChild(nodeItem)
-            let item = nodeItem.getComponent(SeatPrepareItem)
-            this.model.seatPrepareItemArr.push(item)
+            this.view.seatLayPrepare.addChild(nodeItem);
+            let item = nodeItem.getComponent(SeatPrepareItem);
+            this.model.seatPrepareItemArr.push(item);
         }
     }
 
     protected onViewOpen(param: any) {
-        
-        this.resetView()
-        this.view.alarmClock.active =false
-        this.reflashRoomInfo()
-        this.view.messagePanel.active =true
-        let str = c2f.utils.str.stringFormat(c2f.language.words(7006),szg.player.nhwcData.roomInfo.rid)
-        this.view.centerLabelLabel.string =str
-        
+        if (!this.getIsInit()) {
+            this.resetView();
+            this.view.alarmClock.active = false;
+            this.view.messagePanel.active = true;
+            let str = c2f.utils.str.stringFormat(c2f.language.words(7006), szg.player.nhwcData.roomInfo.rid);
+            this.view.centerLabelLabel.string = str;
+            this.scheduleOnce(() => {
+                this.onViewOpen(param);
+            });
+            return;
+        }
 
-
+        this.reflashRoomInfo();
     }
-
 
     protected onEnable(): void {
         if (super.onEnable) {
@@ -197,12 +213,11 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     private async onButtonClick(eventType: string, component: cc.Button) {
-        switch (component.name){
-            
+        switch (component.name) {
             case this.view.exitBtnButton.name:
                 this.CC_onClickexitBtn();
                 break;
-                
+
             case this.view.prepareBtnButton.name:
                 this.CC_onClickprepareBtn();
                 break;
@@ -210,117 +225,127 @@ export default class NhwcMain extends UIVControlBase {
             case this.view.answerBtnButton.name:
                 this.CC_onClickanswerBtn();
                 break;
-                
+
             case this.view.tipConfirmBtnButton.name:
                 this.CC_onClicktipConfirmBtn();
                 break;
-                
+
             case this.view.tipCloseBtnButton.name:
                 this.CC_onClicktipCloseBtn();
                 break;
-                
+
             case this.view.switchButton.name:
                 this.CC_onClickswitch();
                 break;
-                
+
             case this.view.toolSwitchButton.name:
                 this.CC_onClicktoolSwitch();
                 break;
-                
+
             default:
                 break;
         }
-    } 
-    
-    private CC_onClickexitBtn(){
-        let cData: msg.CS_CreateRoom = {
-        }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_ExitRoom,cData)
     }
-            
-    private CC_onClickprepareBtn(){
-        szg.player.nhwcData.reqReady()
-    }
-            
-    private CC_onClicktipConfirmBtn(){
 
+    private CC_onClickexitBtn() {
+        let cData: msg.CS_CreateRoom = {};
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_ExitRoom, cData);
     }
-            
-    private CC_onClicktipCloseBtn(){
 
+    private CC_onClickprepareBtn() {
+        szg.player.nhwcData.reqReady();
     }
-            
-    private CC_onClickswitch(){
 
-    }
-            
-    private CC_onClicktoolSwitch(){
+    private CC_onClicktipConfirmBtn() {}
 
-    }
-            
-    private reflashRoomInfo(){
-        if (szg.player.nhwcData.roomInfo?.state <= RoomState.RoomState.Ready){
-            this.view.prepare.active = true
+    private CC_onClicktipCloseBtn() {}
+
+    private CC_onClickswitch() {}
+
+    private CC_onClicktoolSwitch() {}
+
+    private reflashRoomInfo() {
+        if (szg.player.nhwcData.roomInfo?.state <= RoomState.RoomState.Ready) {
+            this.view.prepare.active = true;
             //获取到自己的状态
-            this.view.prepareBtn.active = !szg.player.nhwcData.selfGameUserItem.isReady
-            this.view.preparedBtn.active = szg.player.nhwcData.selfGameUserItem.isReady
-        }else{
-            this.view.prepare.active = false
+            this.view.prepareBtn.active = !szg.player.nhwcData.selfGameUserItem.isReady;
+            this.view.preparedBtn.active = szg.player.nhwcData.selfGameUserItem.isReady;
+        } else {
+            this.view.prepare.active = false;
             //如果游戏已经开始了就刷新到最新状态
+            this.onGameStart();
+            if (szg.player.nhwcData.selfGameUserItem.seat == szg.player.nhwcData.roomInfo.painter) {
+                //自己是画师的时候
+                this.view.messagePanel.active = false;
+                this.view.answerBtn.active = false;
+                let str = szg.player.nhwcData.roomInfo.word;
+                this.view.centerLabelLabel.string = str;
+
+                this.model.sketchpad.enableDraw();
+                this.view.tips.active = false;
+                this.view.toolPanel.active = true;
+                this.view.answerBtn.active = false;
+            } else {
+                this.view.answerBtn.active = true;
+                this.view.tips.active = false;
+                let str = szg.player.nhwcData.roomInfo.hint;
+                this.view.centerLabelLabel.string = str;
+                this.model.sketchpad.disableDraw();
+                this.view.toolPanel.active = false;
+                //答题按钮
+                this.view.answerBtn.active = true;
+            }
         }
     }
 
     /**准备的广播消息 */
     private onNHWCReady(data: msg.SC_NHWCReady) {
-        this.reflashRoomInfo()
-        this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
-
+        this.reflashRoomInfo();
+        this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo);
     }
 
     /**房间内其他玩家的匹配广播消息 */
     private onMatchRoom(data: msg.SC_MatchRoom) {
-        this.reflashRoomInfo()
-        this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
-
-
+        this.reflashRoomInfo();
+        this.reflashPrepareSeatArr(szg.player.nhwcData.roomInfo.arrPlayerInfo);
     }
 
-    
-
-
-    private showTicker(countdownLabel: CountdownLabel,interval: number){
-        countdownLabel.startCountdown(interval,  "%{hh}:%{mm}:%{ss}", null, null, () => {
-            
-        });
+    private showTicker(countdownLabel: CountdownLabel, interval: number) {
+        countdownLabel.startCountdown(interval, '%{hh}:%{mm}:%{ss}', null, null, () => {});
     }
     public hideTicker() {
-        this.view.timeCountdownLabel.stopCountdown()
-        this.view.timeLabel.string= "-";
+        this.view.timeCountdownLabel.stopCountdown();
+        this.view.timeLabel.string = '-';
     }
     /**倒计时显示 */
     private setTimeCountDownScore(countdownLabel: CountdownLabel, interval: number) {
-        let dayStr = "%{d}" + c2f.language.words(2504) + "%{hh}:%{mm}:%{ss}";
-        countdownLabel.startCountdown(interval, {
-            S: "%{ss}",
-            M: "%{mm}:%{ss}",
-            H: "%{hh}:%{mm}:%{ss}",
-            D: dayStr
-        }, c2f.language.words(39110), null, () => {
-        });
+        let dayStr = '%{d}' + c2f.language.words(2504) + '%{hh}:%{mm}:%{ss}';
+        countdownLabel.startCountdown(
+            interval,
+            {
+                S: '%{ss}',
+                M: '%{mm}:%{ss}',
+                H: '%{hh}:%{mm}:%{ss}',
+                D: dayStr,
+            },
+            c2f.language.words(39110),
+            null,
+            () => {}
+        );
     }
 
-    private resetView(){
-        this.view.prepare.active =false
-        this.view.desk.active =false
-        this.view.toolPanel.active =false
-        this.view.messagePanel.active =false
-        this.view.overPanel.active =false
+    private resetView() {
+        this.view.prepare.active = false;
+        this.view.desk.active = false;
+        this.view.toolPanel.active = false;
+        this.view.messagePanel.active = false;
+        this.view.overPanel.active = false;
     }
 
     /**游戏开始消息 */
     private onNHWCStart(data: msg.SC_NHWCStart) {
-        this.view.prepare.active =false
-        this.view.desk.active =true
+        this.view.prepare.active = false;
+        this.view.desk.active = true;
         //如果是画师就告诉他答案 然后画师去画画
 
         if (szg.player.nhwcData.roomInfo.gameNum === 1) {
@@ -328,132 +353,123 @@ export default class NhwcMain extends UIVControlBase {
         }
         this.model.sketchpad.clear();
 
+        if (szg.player.nhwcData.selfGameUserItem.seat == szg.player.nhwcData.roomInfo.painter) {
+            //自己是画师的时候
+            this.view.messagePanel.active = false;
+            this.view.answerBtn.active = false;
+            let str = c2f.utils.str.stringFormat(c2f.language.words(7008), szg.player.nhwcData.roomInfo.word);
+            this.view.centerLabelLabel.string = str;
 
-        if (szg.player.nhwcData.selfGameUserItem.seat==szg.player.nhwcData.roomInfo.painter) {//自己是画师的时候
-            this.view.messagePanel.active =false;
-            this.view.answerBtn.active =false;    
-            let str = c2f.utils.str.stringFormat(c2f.language.words(7008),szg.player.nhwcData.roomInfo.word)
-            this.view.centerLabelLabel.string =str
-  
             this.model.sketchpad.enableDraw();
-            this.view.tips.active =false
-            this.view.toolPanel.active =true
-
-        }else{
-            this.view.answerBtn.active =true;   
-            this.view.tips.active =true
-            let str = c2f.utils.str.stringFormat(c2f.language.words(7009),szg.player.nhwcData.roomInfo.hint)
-            this.view.centerLabelLabel.string =str
+            this.view.tips.active = false;
+            this.view.toolPanel.active = true;
+        } else {
+            this.view.answerBtn.active = true;
+            this.view.tips.active = true;
+            let str = c2f.utils.str.stringFormat(c2f.language.words(7009), szg.player.nhwcData.roomInfo.hint);
+            this.view.centerLabelLabel.string = str;
             this.model.sketchpad.disableDraw();
-            this.view.toolPanel.active =false
+            this.view.toolPanel.active = false;
         }
-        this.showTicker(this.view.timeCountdownLabel,szg.player.nhwcData.roomInfo.gameTime)
-        this.hideAllTip()
+        this.showTicker(this.view.timeCountdownLabel, szg.player.nhwcData.roomInfo.gameTime);
+        this.hideAllTip();
     }
-    
+
     public hideAllTip() {
         for (let i = 0; i < this.model.SeatDeskItemArr.length; i++) {
             this.model.SeatDeskItemArr[i].hideTip();
         }
     }
 
-
     private onGameStart() {
-        this.view.desk.active =true
-        this.reflashSeatDeskArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
+        this.view.desk.active = true;
+        this.reflashSeatDeskArr(szg.player.nhwcData.roomInfo.arrPlayerInfo);
     }
 
     /**退出房间 */
-    private onExitRoom(data:msg.SC_ExitRoom){
-        let item =  szg.player.nhwcData.getGameUserItemById(data.account)
+    private onExitRoom(data: msg.SC_ExitRoom) {
+        let item = szg.player.nhwcData.getGameUserItemById(data.account);
         if (item) {
-            if (item.plyer.account==szg.player.nhwcData.selfInfo.account) {
+            if (item.plyer.account == szg.player.nhwcData.selfInfo.account) {
                 c2f.gui.open(NhwcUI.NhwcHall);
-                this.closeView()
+                this.closeView();
             } else {
-                this.model.seatPrepareItemArr[item.seat].reflash(null)
-                this.model.SeatDeskItemArr[item.seat].reflash(null)
+                this.model.seatPrepareItemArr[item.seat].reflash(null);
+                this.model.SeatDeskItemArr[item.seat].reflash(null);
             }
         }
 
-        szg.player.nhwcData.onExitRoom(data)
+        szg.player.nhwcData.onExitRoom(data);
     }
 
     /** 小局游戏结束 */
-    private onNHWCResult(data: msg.SC_NHWCResult){
-        this.showTicker(this.view.timeCountdownLabel,szg.player.nhwcData.roomInfo.resultTime)
-        this.view.answerBtn.active =false
-        let str = c2f.utils.str.stringFormat(c2f.language.words(7012),szg.player.nhwcData.roomInfo.word)
-        this.view.centerLabelLabel.string =str
-        this.model.sketchpad.disableDraw()
-        this.view.messagePanel.active =true
-        this.view.toolPanel.active =false
-
+    private onNHWCResult(data: msg.SC_NHWCResult) {
+        this.showTicker(this.view.timeCountdownLabel, szg.player.nhwcData.roomInfo.resultTime);
+        this.view.answerBtn.active = false;
+        let str = c2f.utils.str.stringFormat(c2f.language.words(7012), szg.player.nhwcData.roomInfo.word);
+        this.view.centerLabelLabel.string = str;
+        this.model.sketchpad.disableDraw();
+        this.view.messagePanel.active = true;
+        this.view.toolPanel.active = false;
     }
-       
+
     /** 游戏结束 */
-    private onRNHWCOver(data: msg.SC_NHWCOver){
-        this.view.answerBtn.active =false
-        this.view.overPanel.active =true
-        this.view.centerLabelLabel.string =c2f.language.words(7013)
+    private onRNHWCOver(data: msg.SC_NHWCOver) {
+        this.view.answerBtn.active = false;
+        this.view.overPanel.active = true;
+        this.view.centerLabelLabel.string = c2f.language.words(7013);
         setTimeout(() => {
             c2f.gui.open(NhwcUI.NhwcHall);
-            this.closeView()
+            this.closeView();
         }, 5000);
-
     }
 
     /** 游戏绘画清理 */
-    private onNHWCDrawClear(data: msg.SC_NHWCDrawClear){
+    private onNHWCDrawClear(data: msg.SC_NHWCDrawClear) {
         this.model.sketchpad.clear();
-
     }
 
     /** 游戏绘画Width */
-    private onNHWCDrawWidth(data: msg.SC_NHWCDrawWidth){
+    private onNHWCDrawWidth(data: msg.SC_NHWCDrawWidth) {
         this.model.sketchpad.setLineWidth(data.width);
     }
 
-
     /** 游戏绘画颜色 */
-    private onNHWCDrawColor(data: msg.SC_NHWCDrawColor){
+    private onNHWCDrawColor(data: msg.SC_NHWCDrawColor) {
         this.model.sketchpad.setPenColor(data.color);
     }
-    
-    /** 游戏绘画path */
-    private onNHWCDrawPath(data: msg.SC_NHWCDrawPath){
-        this.model.sketchpad.drawByPath(data.pointArr);
 
+    /** 游戏绘画path */
+    private onNHWCDrawPath(data: msg.SC_NHWCDrawPath) {
+        this.model.sketchpad.drawByPath(data.pointArr);
     }
 
     /** 回答结果 */
-    private onNHWCAnswer(data: msg.SC_NHWCAnswer){
+    private onNHWCAnswer(data: msg.SC_NHWCAnswer) {
         if (data.isRight) {
-            data.arrPlayerInfo.forEach(v => {
-                if(v.seat != szg.player.nhwcData.selfGameUserItem.seat ){
-                    this.view.answerBtn.active =false
+            data.arrPlayerInfo.forEach((v) => {
+                if (v.seat != szg.player.nhwcData.selfGameUserItem.seat) {
+                    this.view.answerBtn.active = false;
                 }
-                if(v.seat != szg.player.nhwcData.roomInfo.painter ){
-                    this.answerRight(v.seat,v.score);
+                if (v.seat != szg.player.nhwcData.roomInfo.painter) {
+                    this.answerRight(v.seat, v.score);
                 }
             });
-            this.reflashSeatDeskArr(szg.player.nhwcData.roomInfo.arrPlayerInfo)
-        }else{
-            this.answerWrong(data.seat)
+            this.reflashSeatDeskArr(szg.player.nhwcData.roomInfo.arrPlayerInfo);
+        } else {
+            this.answerWrong(data.seat);
         }
     }
 
-    private answerWrong(seat:number){
-        this.model.SeatDeskItemArr[seat].showTip(c2f.language.words(7010))
-    }
-    
-    private answerRight(seat:number,score:number){
-        this.model.SeatDeskItemArr[seat].showTip(c2f.utils.str.formatWithObj(c2f.language.words(7011),score))
-    }
-    
-    private CC_onClickanswerBtn() {
+    private answerWrong(seat: number) {
+        this.model.SeatDeskItemArr[seat].showTip(c2f.language.words(7010));
     }
 
+    private answerRight(seat: number, score: number) {
+        this.model.SeatDeskItemArr[seat].showTip(c2f.utils.str.formatWithObj(c2f.language.words(7011), score));
+    }
+
+    private CC_onClickanswerBtn() {}
 
     // 同步绘画信息
     syncPath() {
@@ -465,8 +481,4 @@ export default class NhwcMain extends UIVControlBase {
             szg.player.nhwcData.reqNHWCDrawPath(path);
         }
     }
-
-
-
-            
-    }
+}
