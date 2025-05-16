@@ -11,6 +11,8 @@ export default class Physics2048MainView extends UIViewBase {
     /** 预制名 给实例调用 */
     public prefabName = 'F_Physics2048Main';
 
+    public ske: cc.Node;
+    public skeSkeleton: sp.Skeleton = undefined;
     public btnMenu: cc.Node;
     public btnMenuSprite: cc.Sprite = undefined;
     public btnMenuButton: cc.Button = undefined;
@@ -51,6 +53,8 @@ export default class Physics2048MainView extends UIViewBase {
 
     protected initProperty() {
         super.initProperty();
+        this.ske = this.get('_ske_');
+        this.skeSkeleton = this.ske.getComponent(sp.Skeleton);
         this.btnMenu = this.get('_btnMenu_');
         this.btnMenuSprite = this.btnMenu.getComponent(cc.Sprite);
         this.btnMenuButton = this.btnMenu.getComponent(cc.Button);

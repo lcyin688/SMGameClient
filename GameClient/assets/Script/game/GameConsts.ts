@@ -1,5 +1,5 @@
 /** 游戏常量定义：
- * 
+ *
  */
 export namespace GameConsts {
     //分包
@@ -17,6 +17,8 @@ export namespace GameConsts {
         nhwc = 'nhwc',
         /**消灭星星                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             */
         desStar = 'desStar',
+        /**水果2048 */
+        physics2048 = 'physics2048',
     }
 
     //平台标志:原生端设置，WEB端链接解析设置，小游戏待定
@@ -54,14 +56,13 @@ export namespace GameConsts {
             fixNum: 4,
             txt: 23,
         },
-    ]
-
+    ];
 
     /** 资源路径 */
     export enum ResUrl {
         /** 消灭星星 */
         desStar = 'ab:desStar/image/ui/',
-        physics2048 = 'ab:mainPack/image/ui/physics2048/',
+        physics2048 = 'ab:physics2048/image/ui/',
         /** 背景音乐 */
         music = 'audio/music/',
         /** 游戏音效 */
@@ -72,8 +73,6 @@ export namespace GameConsts {
         uiRoot = 'ab:mainPack/image/ui/',
         entrance = 'ab:entrance/image/',
         yngy = 'ab:gameYngy/image/ui/',
-
-
     }
 
     /** 常用预制体 */
@@ -83,22 +82,14 @@ export namespace GameConsts {
         P_StartItem = 'ab:desStar/prefab/P_StartItem',
         mapCreatItem = 'ab:mainPack/prefab/mapCreate/P_MapCreatItem',
 
-        /** 2048单个 */
-        physics2048Item = 'ab:mainPack/prefab/physics2048/P_Physics2048Item',
-        boomItem = 'ab:mainPack/prefab/physics2048/P_BoomItem',
-
         /** 篮球 */
         ball = 'ab:mainPack/prefab/basketBall/P_Ball',
-
-
-
-
     }
 
     /** 道具品质颜色·双色 */
     export const QualityDoubClr = {
         [7]: ['#FF8FFE', '#BDFBFF'],
-    }
+    };
 
     /** 道具品质颜色 */
     export const QualityColor = {
@@ -109,17 +100,15 @@ export namespace GameConsts {
         [5]: '#FFE57C',
         [6]: '#FF7C7C',
         [7]: '#6FFDFF',
-    }
+    };
     export const StorageKey = {
         soundEff: 'soundEff',
         soundBg: 'soundBg',
         /**当前关卡 */
         curLv: 'curLv',
         /**2048 当前最大档位 */
-        curHistory2048MaxLv: "curHistory2048MaxLv",
-    }
-
-
+        curHistory2048MaxLv: 'curHistory2048MaxLv',
+    };
 
     /** 篮球大战 接触状态*/
     export enum TouchStatus {
@@ -143,17 +132,12 @@ export namespace GameConsts {
 
     export const YngyConst = {
         ItemWidthHeight: 130,
+    };
 
-
-    }
-
-    export  class ProjectConfig {
+    export class ProjectConfig {
         /** 客户端设计分辨率 */
         public static designResolution = cc.size(1280, 720);
         /** 是否刘海屏 */
         public static isNotch = false;
-    
-
     }
-
 }

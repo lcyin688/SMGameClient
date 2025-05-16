@@ -6,7 +6,8 @@
     "UI",
     "AI",
     "Player",
-    "Prop"
+    "Prop",
+    "Fruit"
   ],
   "collision-matrix": [
     [
@@ -26,6 +27,8 @@
       false,
       null,
       true,
+      true,
+      null,
       true
     ],
     [
@@ -60,6 +63,16 @@
       true,
       true,
       false
+    ],
+    [
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      true
     ]
   ],
   "excluded-modules": [

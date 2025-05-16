@@ -8,9 +8,6 @@ import { UIHelper } from '../../../Script/game/UIHelper';
 import { MainPackUI } from '../../../mainPack/script/MainPackView';
 import { UINetwork } from '../../../Script/game/UINetwork';
 
-
-
-
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class GameLogin extends UIVControlBase {
@@ -19,8 +16,6 @@ export default class GameLogin extends UIVControlBase {
 
     public model: GameLoginModel = undefined;
     public view: GameLoginView = undefined;
-
-
 
     protected onViewOpen(param: any) {
         // this.connetToServer()
@@ -52,17 +47,12 @@ export default class GameLogin extends UIVControlBase {
         }
     }
 
-
-
     protected start(): void {
         UIHelper.playMusic('backMusic');
-
     }
-
 
     private async onButtonClick(eventType: string, component: cc.Button) {
         switch (component.name) {
-
             case this.view.btnStartButton.name:
                 this.CC_onClickbtnStart();
                 break;
@@ -83,7 +73,6 @@ export default class GameLogin extends UIVControlBase {
                 this.CC_onClickbtnSnakNhwc();
                 break;
 
-
             case this.view.btn2048Button.name:
                 this.CC_onClickbtn2048();
                 break;
@@ -92,52 +81,44 @@ export default class GameLogin extends UIVControlBase {
                 this.CC_onClickbtnCreateMap();
                 break;
 
-
-
-
-
             default:
                 break;
         }
     }
 
     private CC_onClickbtnSnakNhwc() {
-        GameHelper.loadBundle(GameConsts.Bundle.nhwc).then(UIID => {
-            c2f.gui.open(UIID.NhwcLogin)
+        GameHelper.loadBundle(GameConsts.Bundle.nhwc).then((UIID) => {
+            c2f.gui.open(UIID.NhwcLogin);
         });
     }
 
     private CC_onClickbtnStart() {
-        GameHelper.loadBundle(GameConsts.Bundle.desStar).then(UIID => {
-            c2f.gui.open(UIID.DesStarMain)
+        GameHelper.loadBundle(GameConsts.Bundle.desStar).then((UIID) => {
+            c2f.gui.open(UIID.DesStarMain);
         });
     }
 
-
     private CC_onClickbtn2048() {
-        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
-            c2f.gui.open(UIID.Physics2048Main)
+        GameHelper.loadBundle(GameConsts.Bundle.physics2048).then((UIID) => {
+            c2f.gui.open(UIID.Physics2048Main);
         });
     }
 
     private CC_onClickbtnSnak2048() {
-        GameHelper.loadBundle(GameConsts.Bundle.snake2048).then(UIID => {
-            c2f.gui.open(UIID.SnakLoading)
+        GameHelper.loadBundle(GameConsts.Bundle.snake2048).then((UIID) => {
+            c2f.gui.open(UIID.SnakLoading);
         });
-    
     }
-
 
     private CC_onClickbtnCreateMap() {
-        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
-            c2f.gui.open(UIID.MapCreateMain)
+        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then((UIID) => {
+            c2f.gui.open(UIID.MapCreateMain);
         });
     }
 
-
     private CC_onClickbtnBasketBall() {
-        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
-            c2f.gui.open(UIID.BasketBallMain)
+        GameHelper.loadBundle(GameConsts.Bundle.mainPack).then((UIID) => {
+            c2f.gui.open(UIID.BasketBallMain);
         });
     }
 
@@ -146,16 +127,17 @@ export default class GameLogin extends UIVControlBase {
         if (!c2f.net.toUI) {
             c2f.net.toUI = new UINetwork();
         }
-        let url = "ws://127.0.0.1:9000";
+        let url = 'ws://127.0.0.1:9000';
         c2f.gui.showLoading();
         c2f.net.initService().then(() => {
             c2f.net.connect(url, (reason: string) => {
                 c2f.gui.hideLoading();
-                cc.log( "connetToServer  reason  ==  "+reason)
-                if (reason === "Connected") {
+                cc.log('connetToServer  reason  ==  ' + reason);
+                if (reason === 'Connected') {
                     this.loginToGame();
                 } else {
-                    c2f.gui.notifyTxt('1006');8
+                    c2f.gui.notifyTxt('1006');
+                    8;
                     c2f.net.purge();
                 }
             });
@@ -165,38 +147,20 @@ export default class GameLogin extends UIVControlBase {
         c2f.gui.notifyTxt('513');
         //发个消息给服务器
         // szg.player.login.reqLogin("lcy", "gogogo")
-
     }
 
-                    
     private CC_onClickbtnLogin() {
         console.error('CC_onClickbtnLogin test 004');
-        this.connetToServer()
-
+        this.connetToServer();
 
         // let url = "ws://127.0.0.1:8999";
         // c2f.webSocket.connect(url)
         // 创建玩家登录信息
         // const playerInfo: msg.CS_Ping = {
 
-
         // };
         // console.error('CC_onClickbtnLogin playerInfo  ',playerInfo);
 
         // c2f.webSocket.send(playerInfo)
     }
-
-
-
-      
-
-
-
-            
-                       
-
-            
-                       
-
-            
-    }
+}
