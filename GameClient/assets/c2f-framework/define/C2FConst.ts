@@ -1,5 +1,4 @@
 export module C2FConst {
-
     /** 弹窗黑底背景透明度 */
     export const UIBgOpacity = 193;
 
@@ -10,15 +9,15 @@ export module C2FConst {
 
     /**  */
     export enum LanguageKey {
-        zh = 'cn',  //中文
-        en = 'us',  //英语
-        ru = 'ru',  //俄语
-        th = 'th',  //泰语
-        tw = 'tw',  //繁体
-        ms = 'ms',  //马来西亚
-        vi = 'vi',  //越南语
-        jp = 'jp',  //日语
-        kr = 'kr',  //韩语
+        zh = 'cn', //中文
+        en = 'us', //英语
+        ru = 'ru', //俄语
+        th = 'th', //泰语
+        tw = 'tw', //繁体
+        ms = 'ms', //马来西亚
+        vi = 'vi', //越南语
+        jp = 'jp', //日语
+        kr = 'kr', //韩语
     }
 
     /** 离线 */
@@ -53,31 +52,26 @@ export module C2FConst {
         'popView' = 106,
     }
 
-
-
     /** 关闭返回按钮名称列表 */
     export const closeBtnNames = ['backBtn', 'btnClose', 'btnBack', 'btnReturn'];
 
     /** UI背景音乐配置 */
     export const UIBgmNames: { [key: string]: string } = {
-        'GodsCompeteMain': 'bgm6',
-        'SpaceTimeMain': 'bgm7',
-        'MindTrainMain': 'bgm8',
-        'MysteryMain': 'bgm9',
-        'ArenaEnterMain': 'bgm10',
-        'ClimbingTowerMain': 'bgm11',
-    }
+        GodsCompeteMain: 'bgm6',
+        SpaceTimeMain: 'bgm7',
+        MindTrainMain: 'bgm8',
+        MysteryMain: 'bgm9',
+        ArenaEnterMain: 'bgm10',
+        ClimbingTowerMain: 'bgm11',
+    };
 
     /** UI弹窗音效配置 */
     export const UIViewEftName: { [key: string]: string } = {
-        'GetReward': 'awards',
-        'PromptSimple': '',
-        'PromptDialog': '',
-        'EquipRefineSuccess': 'awards',
-        'StepUpSuccess': 'awards',
-        'UpStarSuccess': 'awards',
-
-    }
-
-
+        GetReward: 'awards',
+        PromptSimple: '',
+        PromptDialog: '',
+        EquipRefineSuccess: 'awards',
+        StepUpSuccess: 'awards',
+        UpStarSuccess: 'awards',
+    };
 }

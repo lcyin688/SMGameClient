@@ -117,7 +117,6 @@ export default class Physics2048Main extends UIVControlBase {
     private CC_onClickbtnMenu() {
         UIHelper.playEffect('betClick');
         // c2f.gui.open(EntranceUI.SoundSet)
-
         c2f.gui.open(EntranceUI.GameLogin);
         this.closeView();
     }

@@ -1,3 +1,5 @@
+import { C2FConst } from '../../define/C2FConst';
+
 enum LogType {
     /** 网络层日志 */
     Net = 1,
@@ -14,19 +16,19 @@ enum LogType {
     /** SDK */
     SDK = 64,
     /** 战斗 */
-    BAT = 128
+    BAT = 128,
 }
 
 var names = {
-    "1": "网络日志",
-    "2": "数据日志",
-    "4": "业务日志",
-    "8": "视图日志",
-    "16": "配置日志",
-    "32": "标准日志",
-    "64": "SDK日志",
-    "128": "战斗日志",
-}
+    '1': '网络日志',
+    '2': '数据日志',
+    '4': '业务日志',
+    '8': '视图日志',
+    '16': '配置日志',
+    '32': '标准日志',
+    '64': 'SDK日志',
+    '128': '战斗日志',
+};
 
 /** 
  * 日志管理 
@@ -42,15 +44,7 @@ class Logger {
     private static tags: number = 0;
 
     static init(): void {
-        this.tags =
-            LogType.Net |
-            LogType.Model |
-            LogType.Business |
-            LogType.View |
-            LogType.Config |
-            LogType.Trace |
-            LogType.SDK |
-            LogType.BAT;
+        this.tags = LogType.Net | LogType.Model | LogType.Business | LogType.View | LogType.Config | LogType.Trace | LogType.SDK | LogType.BAT;
     }
 
     /** 
@@ -74,7 +68,7 @@ class Logger {
         ...
         c2f.log.end();
      */
-    static start(describe: string = "Time"): void {
+    static start(describe: string = 'Time'): void {
         console.time(describe);
     }
 
@@ -88,7 +82,7 @@ class Logger {
         ...
         c2f.log.end();
      */
-    static end(describe: string = "Time"): void {
+    static end(describe: string = 'Time'): void {
         console.timeEnd(describe);
     }
 
@@ -172,32 +166,44 @@ class Logger {
 
     // 橙色
     private static orange(tag: LogType, msg: any, describe?: string) {
-        this.print(tag, msg, "color:#ee7700;", describe)
+        this.print(tag, msg, 'color:#ee7700;', describe);
     }
 
     // 紫色
     private static violet(tag: LogType, msg: any, describe?: string) {
-        this.print(tag, msg, "color:Violet;", describe)
+        this.print(tag, msg, 'color:Violet;', describe);
     }
 
     // 蓝色
     private static blue(tag: LogType, msg: any, describe?: string) {
-        this.print(tag, msg, "color:#3a5fcd;", describe)
+        this.print(tag, msg, 'color:#3a5fcd;', describe);
     }
 
     // 绿色
     private static green(tag: LogType, msg: any, describe?: string) {
-        this.print(tag, msg, "color:green;", describe)
+        this.print(tag, msg, 'color:green;', describe);
     }
 
     // 灰色
     private static gray(tag: LogType, msg: any, describe?: string) {
-        this.print(tag, msg, "color:gray;", describe)
+        this.print(tag, msg, 'color:gray;', describe);
     }
 
     // 青色
     private static cyan(tag: LogType, msg: any, describe?: string) {
-        this.print(tag, msg, "color:#09CBD7;", describe)
+        this.print(tag, msg, 'color:#09CBD7;', describe);
+    }
+
+    public static warn(describe: string) {
+        if (c2f.core.projectConfig.commonConfig.logPrintSwitch.warn) {
+            console.warn(describe);
+        }
+    }
+
+    public static log(describe: string) {
+        if (c2f.core.projectConfig.commonConfig.logPrintSwitch.debug) {
+            console.log(describe);
+        }
     }
 
     private static isOpen(tag: LogType): boolean {
@@ -215,29 +221,26 @@ class Logger {
         // 标记没有打开，不打印该日志
         if (!this.isOpen(tag)) {
             return;
-
         }
         var backLog = console.log || cc.log;
         var type = names[tag];
         if (describe) {
-            backLog.call(null, "%c%s%s%s:\n%s%o", color, this.getDateString(), '[' + type + ']', this.stack(5), describe, msg);
-        }
-        else {
-            backLog.call(null, "%c%s%s%s:\n%o", color, this.getDateString(), '[' + type + ']', this.stack(5), msg);
+            backLog.call(null, '%c%s%s%s:\n%s%o', color, this.getDateString(), '[' + type + ']', this.stack(5), describe, msg);
+        } else {
+            backLog.call(null, '%c%s%s%s:\n%o', color, this.getDateString(), '[' + type + ']', this.stack(5), msg);
         }
     }
 
     private static stack(index: number): string {
         var e = new Error();
-        var lines = e.stack!.split("\n");
+        var lines = e.stack!.split('\n');
         var result: Array<any> = [];
         lines.forEach((line) => {
             line = line.substring(7);
-            var lineBreak = line.split(" ");
+            var lineBreak = line.split(' ');
             if (lineBreak.length < 2) {
                 result.push(lineBreak[0]);
-            }
-            else {
+            } else {
                 result.push({ [lineBreak[0]]: lineBreak[1] });
             }
         });
@@ -247,20 +250,18 @@ class Logger {
         if (index < result.length - 1) {
             var value: string;
             for (var a in result[index]) {
-                var splitList = a.split(".");
+                var splitList = a.split('.');
 
                 if (splitList.length == 2) {
                     list = splitList.concat();
-                }
-                else {
+                } else {
                     value = result[index][a];
-                    var start = value!.lastIndexOf("/");
-                    var end = value!.lastIndexOf(".");
+                    var start = value!.lastIndexOf('/');
+                    var end = value!.lastIndexOf('.');
                     if (start > -1 && end > -1) {
                         var r = value!.substring(start + 1, end);
                         list.push(r);
-                    }
-                    else {
+                    } else {
                         list.push(value);
                     }
                 }
@@ -268,29 +269,28 @@ class Logger {
         }
 
         if (list.length == 1) {
-            return "[" + list[0] + ".ts]";
+            return '[' + list[0] + '.ts]';
+        } else if (list.length == 2) {
+            return '[' + list[0] + '.ts->' + list[1] + ']';
         }
-        else if (list.length == 2) {
-            return "[" + list[0] + ".ts->" + list[1] + "]";
-        }
-        return "";
+        return '';
     }
 
     private static getDateString(): string {
         let d = new Date();
         let str = d.getHours().toString();
-        let timeStr = "";
-        timeStr += (str.length == 1 ? "0" + str : str) + ":";
+        let timeStr = '';
+        timeStr += (str.length == 1 ? '0' + str : str) + ':';
         str = d.getMinutes().toString();
-        timeStr += (str.length == 1 ? "0" + str : str) + ":";
+        timeStr += (str.length == 1 ? '0' + str : str) + ':';
         str = d.getSeconds().toString();
-        timeStr += (str.length == 1 ? "0" + str : str) + ":";
+        timeStr += (str.length == 1 ? '0' + str : str) + ':';
         str = d.getMilliseconds().toString();
-        if (str.length == 1) str = "00" + str;
-        if (str.length == 2) str = "0" + str;
+        if (str.length == 1) str = '00' + str;
+        if (str.length == 2) str = '0' + str;
         timeStr += str;
 
-        timeStr = "[" + timeStr + "]";
+        timeStr = '[' + timeStr + ']';
         return timeStr;
     }
 }
@@ -305,4 +305,4 @@ declare global {
 }
 
 c2f.log = Logger;
-export { };
+export {};

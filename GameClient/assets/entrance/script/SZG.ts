@@ -1,5 +1,5 @@
 declare global {
-    interface ISZG { }
+    interface ISZG {}
     const szg: ISZG;
 }
-export { };
+export {};
