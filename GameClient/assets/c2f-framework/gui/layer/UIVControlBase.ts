@@ -6,7 +6,6 @@ import { C2FEnum } from '../../define/C2FEnum';
 const { ccclass, property } = cc._decorator;
 @ccclass
 export class UIVControlBase extends UIBase {
-
     //数据对象
     public model: UIModelBase;
     //视图对象
@@ -30,7 +29,7 @@ export class UIVControlBase extends UIBase {
     }
 
     /** 关闭本窗口 */
-    public closeView(releaseAll: boolean = true) {
+    public closeView(releaseAll: boolean = false) {
         c2f.gui.removeByNode(this.node);
         if (releaseAll) {
             c2f.res.delayReleaseAll();
@@ -38,7 +37,5 @@ export class UIVControlBase extends UIBase {
     }
 
     /** 入场动画完成 */
-    public onInAnimaComplete() {
-
-    }
+    public onInAnimaComplete() {}
 }
