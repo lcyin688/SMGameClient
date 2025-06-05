@@ -7,17 +7,38 @@ export module C2FConst {
     /** 多语言包名前缀 */
     export const mulBundlePre = 'language_';
 
-    /**  */
+    /** 语言代码 */
     export enum LanguageKey {
-        zh = 'cn', //中文
-        en = 'us', //英语
-        ru = 'ru', //俄语
-        th = 'th', //泰语
-        tw = 'tw', //繁体
-        ms = 'ms', //马来西亚
-        vi = 'vi', //越南语
-        jp = 'jp', //日语
-        kr = 'kr', //韩语
+        /** 中文 */
+        zh = 'zh',
+        /** 繁体 */
+        tw = 'tw',
+        /** 英语 */
+        en = 'en',
+        /** 印尼语 */
+        id = 'id',
+        /** 西班牙语-墨西哥 */
+        es = 'es-mx',
+        /** 泰语 */
+        th = 'th',
+        /** 葡萄牙语-巴西 */
+        pt = 'pt-BR',
+        /** 印地语 */
+        hi = 'hi',
+        /** 越南语 */
+        vi = 'vi',
+        /** 乌尔都语 */
+        ur = 'ur',
+        /** 孟加拉语 */
+        bn = 'bn',
+        /** 俄语 */
+        ru = 'ru',
+        /** 马来西亚 */
+        ms = 'ms',
+        /** 日语 */
+        jp = 'jp',
+        /** 韩语 */
+        kr = 'kr',
     }
 
     /** 离线 */
