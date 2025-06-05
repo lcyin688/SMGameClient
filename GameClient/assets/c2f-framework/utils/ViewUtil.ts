@@ -37,16 +37,16 @@ class ViewUtil {
             ViewUtil.findNodes(reg, items[i], ns);
         }
         return ns;
-    };
+    }
 
     /**
      * 获取组件名称
      * @param target 组件对象
      */
     static getComponentName(target: cc.Component) {
-        const regex = /<([^>]*)>/g; // 正则表达式匹配尖括号内的字符串  
-        const matches = target.name.match(regex); // 获取匹配结果  
-        const result = matches ? matches.map(match => match.replace(/<|>/g, '')) : [''];
+        const regex = /<([^>]*)>/g; // 正则表达式匹配尖括号内的字符串
+        const matches = target.name.match(regex); // 获取匹配结果
+        const result = matches ? matches.map((match) => match.replace(/<|>/g, '')) : [''];
         const name = result[0];
         return name;
     }
@@ -191,7 +191,7 @@ class ViewUtil {
      */
     static getNodeDistance(node1: cc.Node, node2: cc.Node) {
         let distance = 0;
-        let direction = cc.v3(0, 0, 0)
+        let direction = cc.v3(0, 0, 0);
         let posW1 = c2f.utils.node.getNodeWorldPosition(node1);
         let posW2 = c2f.utils.node.getNodeWorldPosition(node2);
         distance = c2f.utils.vec.distance(posW1, posW2);
@@ -314,24 +314,28 @@ class ViewUtil {
         }
 
         // 播放完成后恢复播放默认动画
-        anim.once(cc.Animation.EventType.FINISHED, () => {
-            if (anim!.defaultClip) {
-                anim!.play();
-            }
-        }, this);
+        anim.once(
+            cc.Animation.EventType.FINISHED,
+            () => {
+                if (anim!.defaultClip) {
+                    anim!.play();
+                }
+            },
+            this
+        );
 
         if (anim.getAnimationState(clip!.name)) {
             anim.play(clip!.name);
-            return
+            return;
         }
         //anim.createaState(clip, clip!.name);
         anim.play(clip!.name);
     }
 
     /**
-    * 给按钮添加监听
-    * @param node 目标节点
-    */
+     * 给按钮添加监听
+     * @param node 目标节点
+     */
     static addButtonListen(node: cc.Node, caller: any, func: Function) {
         let button = node.getComponent(cc.Button);
         if (button) {
@@ -357,7 +361,7 @@ class ViewUtil {
 
     /**
      * 移除所有子节点
-     * @param node 
+     * @param node
      */
     static clearChildren(node: cc.Node) {
         if (node != null && node.children.length > 0) {
@@ -373,10 +377,10 @@ class ViewUtil {
     /** 图片置灰 */
     static setSpriteGray(icon: cc.Sprite, isGray: boolean) {
         if (isGray) {
-            let matGray = cc.Material.getBuiltinMaterial("2d-gray-sprite");
+            let matGray = cc.Material.getBuiltinMaterial('2d-gray-sprite');
             icon.setMaterial(0, matGray);
         } else {
-            let matDef = cc.Material.getBuiltinMaterial("2d-sprite");
+            let matDef = cc.Material.getBuiltinMaterial('2d-sprite');
             icon.setMaterial(0, matDef);
         }
     }
@@ -450,11 +454,11 @@ class ViewUtil {
         return box;
     }
 
-    /** 自动调整弹出页面位置，保证其在可视界面内 
+    /** 自动调整弹出页面位置，保证其在可视界面内
      * popNode: 弹出节点
      * clickPos2World： 点击位置
      * alignType：对齐方式(1:左对齐， 2：右对齐， 3：上对齐， 4：下对齐， 5：自动, 6:居中下对齐)
-    */
+     */
     static autoAdjustPopWinPos(popNode: cc.Node, clickPos2World: cc.Vec2, alignType: number = 5) {
         if (popNode == null || clickPos2World == null) {
             return;
@@ -492,7 +496,7 @@ class ViewUtil {
                         //以layout_bg右侧目标点，对齐clickPos
                         willPosX += width * popNode.anchorX;
                     } else {
-                        //以layout_bg左侧为目标点，对齐clickPos            
+                        //以layout_bg左侧为目标点，对齐clickPos
                         willPosX -= width * (1 - popNode.anchorX);
                     }
                     let willPosY = clickPos2World.y + height * popNode.anchorY;
@@ -530,13 +534,10 @@ class ViewUtil {
                 willPos.y -= edge2Bottom;
             }
         }
-        let pos = popNode.parent.convertToNodeSpaceAR(willPos)
-        cc.log(pos, popNode.name)
+        let pos = popNode.parent.convertToNodeSpaceAR(willPos);
+        cc.log(pos, popNode.name);
         popNode.setPosition(pos);
     }
-
-
-
 
     /**
      * 子节点递归处理
@@ -547,41 +548,45 @@ class ViewUtil {
     static nodeRecursive(node: cc.Node | cc.Node[], cb: (n: cc.Node) => void, thisArg: any = undefined): void {
         if (node instanceof cc.Node) {
             cb.call(thisArg, node);
-            node.children.forEach((n: cc.Node) => { this.nodeRecursive(n, cb, thisArg); });
+            node.children.forEach((n: cc.Node) => {
+                this.nodeRecursive(n, cb, thisArg);
+            });
         } else if (Array.isArray(node)) {
-            node.forEach((n: cc.Node) => { this.nodeRecursive(n, cb, thisArg); });
+            node.forEach((n: cc.Node) => {
+                this.nodeRecursive(n, cb, thisArg);
+            });
         }
     }
 
     /**
      * 更改spriteframe
-     * @param sprite 
-     * @param url 
+     * @param sprite
+     * @param url
      */
-    static  changeSpriteFrame(sprite: cc.Sprite, url: string, endCb?: Function) {
+    static changeSpriteFrame(sprite: cc.Sprite, url: string, endCb?: Function) {
         c2f.res.loadOne(url, cc.SpriteFrame).then((res: cc.SpriteFrame) => {
             sprite.spriteFrame = res;
             if (endCb) {
                 endCb();
             }
-        })
+        });
     }
 
     /**
      * 更改spriteframe
-     * @param sprite 
-     * @param url 
+     * @param sprite
+     * @param url
      */
     static changeSFWithAtlas(sprite: cc.Sprite, url: string, subFile: string, endCb?: Function) {
         sprite.changeSFWithAtlas(url, subFile, endCb);
     }
     /**
      * 更改spine
-     * @param sprite 
-     * @param url 
+     * @param sprite
+     * @param url
      */
     static changeSkeletonData(spine: sp.Skeleton, url: string, endCb?: Function) {
-        spine.changeSkeletonData(url, endCb);
+        // spine.changeSkeletonData(url, endCb);
     }
 
     /** 重置Ctrl中的view和model对象 */
@@ -645,4 +650,4 @@ declare global {
     }
 }
 c2f.utils.view = ViewUtil;
-export { };
+export {};

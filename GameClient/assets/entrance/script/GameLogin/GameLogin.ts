@@ -73,6 +73,10 @@ export default class GameLogin extends UIVControlBase {
                 this.CC_onClickbtnSnakNhwc();
                 break;
 
+            case this.view.btnWheelListButton.name:
+                this.CC_onClickbtnWheelList();
+                break;
+
             case this.view.btn2048Button.name:
                 this.CC_onClickbtn2048();
                 break;
@@ -162,5 +166,10 @@ export default class GameLogin extends UIVControlBase {
         // console.error('CC_onClickbtnLogin playerInfo  ',playerInfo);
 
         // c2f.webSocket.send(playerInfo)
+    }
+    private CC_onClickbtnWheelList() {
+        GameHelper.loadBundle(GameConsts.Bundle.smallToolDemo).then((UIID) => {
+            c2f.gui.open(UIID.WheelGame);
+        });
     }
 }

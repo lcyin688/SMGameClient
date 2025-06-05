@@ -69,4 +69,66 @@ export namespace UIPa {
         clickFun: Function;
         pos: cc.Vec2;
     }
+
+    /** 转盘记录Item */
+    export interface RodaHistory {
+        /** 玩家名称 */
+        name: string;
+
+        /** 头像 */
+        avatar: string;
+
+        /** 性别 */
+        gender: number;
+
+        /** 获奖金额 */
+        award: number;
+
+        /** 获奖时间 */
+        time: number;
+
+        /** 获奖金额 */
+        award_64: number;
+
+        /** 获奖时间 */
+        time_64: number;
+    }
+
+    /** 三方分享链接配置 */
+    export interface ThirdLinkConf {
+        linkIconArr: string[];
+        /** 标识当前配置 */
+        name: string;
+    }
+
+    /** banner */
+    export interface BannerConf {
+        /** 多语言banner图 */
+        banner: string;
+    }
+
+    /** 转盘配置数据 */
+    export interface RodaConf {
+        /** 配置ID */
+        id: number;
+        /** 奖励金额 */
+        award: number;
+    }
+
+    export interface RodaActivityAwardResp {
+        /** 状态码 */
+        status: number;
+
+        /** 转到的转盘块ID */
+        awardId: number;
+
+        /** 领取奖励金额 */
+        awardNum: number;
+
+        /** 剩余可用次数 */
+        remainNum: number;
+
+        /** 领取奖励金额 */
+        awardNum_64: number;
+    }
 }

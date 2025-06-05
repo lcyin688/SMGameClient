@@ -25,6 +25,8 @@ export default class GameLoginView extends UIViewBase {
     public btnSnak2048Button: cc.Button = undefined;
     public btnSnakNhwc: cc.Node;
     public btnSnakNhwcButton: cc.Button = undefined;
+    public btnWheelList: cc.Node;
+    public btnWheelListButton: cc.Button = undefined;
     
 
     public onLoad() {
@@ -61,6 +63,8 @@ export default class GameLoginView extends UIViewBase {
         this.btnSnak2048Button = this.btnSnak2048.getComponent(cc.Button);
         this.btnSnakNhwc = this.get('_btnSnakNhwc_');
         this.btnSnakNhwcButton = this.btnSnakNhwc.getComponent(cc.Button);
+        this.btnWheelList = this.get('_btnWheelList_');
+        this.btnWheelListButton = this.btnWheelList.getComponent(cc.Button);
         
     }
 
@@ -72,6 +76,7 @@ export default class GameLoginView extends UIViewBase {
         this.btnLoginButton.node.on('click', this.onbtnLoginButtonClick, this);
         this.btnSnak2048Button.node.on('click', this.onbtnSnak2048ButtonClick, this);
         this.btnSnakNhwcButton.node.on('click', this.onbtnSnakNhwcButtonClick, this);
+        this.btnWheelListButton.node.on('click', this.onbtnWheelListButtonClick, this);
 
     }
 
@@ -83,6 +88,7 @@ export default class GameLoginView extends UIViewBase {
         this.btnLoginButton.node.off('click', this.onbtnLoginButtonClick, this);
         this.btnSnak2048Button.node.off('click', this.onbtnSnak2048ButtonClick, this);
         this.btnSnakNhwcButton.node.off('click', this.onbtnSnakNhwcButtonClick, this);
+        this.btnWheelListButton.node.off('click', this.onbtnWheelListButtonClick, this);
 
     }
 
@@ -111,6 +117,10 @@ export default class GameLoginView extends UIViewBase {
     }
 
     private onbtnSnakNhwcButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnWheelListButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

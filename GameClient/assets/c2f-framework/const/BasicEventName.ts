@@ -100,3 +100,4 @@ export default class BasicEventName {
     /** facebook 分享成功 */
     static FACEBOOK_SHARE_SUCCESS: string = `FACEBOOK_SHARE_SUCCESS`;
 }
+c2f.core.EventName = BasicEventName;

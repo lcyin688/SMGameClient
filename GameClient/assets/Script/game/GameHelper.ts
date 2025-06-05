@@ -1,13 +1,10 @@
 /** 游戏全域级工具类·不可引入子包文件 */
 
-import { GameCalc } from "./GameCalculator";
-import { GameConsts } from "./GameConsts";
-import { UIPa } from "./UIParam";
+import { GameCalc } from './GameCalculator';
+import { GameConsts } from './GameConsts';
+import { UIPa } from './UIParam';
 
 export class GameHelper {
-
-
-
     /** 加载子包，并且将子包中的UI配置加入界面管理配置中 */
     static async loadBundle(bundle: GameConsts.Bundle | string) {
         await c2f.res.loadBundle(bundle);
@@ -62,19 +59,19 @@ export class GameHelper {
 
     /**一星=白色，二星=绿色，三星=蓝色，四星=紫色，五星=橙色，六星—十星=红 */
     static starConversionQuality(star: number): number {
-        let data = star
+        let data = star;
         if (star > 5) {
-            data = 6
+            data = 6;
         }
-        return data
+        return data;
     }
     /** map to object */
     static protoMapToObject(map: Map<any, any>) {
         if (map == null) {
-            return {}
+            return {};
         }
         if (map.forEach == null) {
-            return map
+            return map;
         }
         let obj = {};
         if (map.forEach) {
@@ -96,9 +93,8 @@ export class GameHelper {
         return obj;
     }
 
-
     /** IDN->idn */
-    static convertIdNToidn(arrIdN: { Id?: number, N?: number }[]) {
+    static convertIdNToidn(arrIdN: { Id?: number; N?: number }[]) {
         let ret: csv.Idn_NN[] = [];
         for (let one of arrIdN) {
             ret.push({ id: one.Id, n: one.N });
@@ -106,7 +102,7 @@ export class GameHelper {
         return ret;
     }
     /** IdNum->idn */
-    static convertIdNumToidn(arrIdNum: { Id?: number, Num?: number }[]) {
+    static convertIdNumToidn(arrIdNum: { Id?: number; Num?: number }[]) {
         let ret: csv.Idn_NN[] = [];
         for (let one of arrIdNum) {
             ret.push({ id: one.Id, n: one.Num });
@@ -114,33 +110,31 @@ export class GameHelper {
         return ret;
     }
 
-
     /** 数字转大写 */
     static conversionUppercase(num: number): string {
-        return c2f.language.words(2400 + num)
+        return c2f.language.words(2400 + num);
     }
 
     /** 周几数字转大写 */
     static conversionUppercaseWeek(num: number): string {
-        let str = ""
+        let str = '';
         if (num <= 6) {
-            str = c2f.language.words(2400 + num)
+            str = c2f.language.words(2400 + num);
         } else {
-            str = c2f.language.words(30040)
+            str = c2f.language.words(30040);
         }
-        return str
+        return str;
     }
-
 
     /**获取数组里边有几个相同的数字 */
     static getArrHaveCount(arr: number[], num: number) {
-        let count = 0
-        arr.forEach(v => {
+        let count = 0;
+        arr.forEach((v) => {
             if (v == num) {
-                count++
+                count++;
             }
         });
-        return count
+        return count;
     }
 
     /**设置物理引擎状态 */
@@ -156,15 +150,7 @@ export class GameHelper {
         // manager.enabledDebugDraw = true;
         // manager.enabledDrawBoundingBox = true;
 
-
-        cc.director.getPhysicsManager().enabled = state;  
+        cc.director.getPhysicsManager().enabled = state;
         cc.director.getCollisionManager().enabled = state;
-
-
     }
-
-
-
-
-
 }

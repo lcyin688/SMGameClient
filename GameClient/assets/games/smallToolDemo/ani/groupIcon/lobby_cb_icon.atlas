@@ -1,0 +1,146 @@
+
+lobby_cb_icon.png
+size: 993,780
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+boo/boo_00
+  rotate: true
+  xy: 499, 3
+  size: 91, 96
+  orig: 400, 405
+  offset: 150, 146
+  index: -1
+boo/boo_01
+  rotate: true
+  xy: 689, 8
+  size: 109, 119
+  orig: 400, 405
+  offset: 145, 130
+  index: -1
+boo/boo_02
+  rotate: false
+  xy: 853, 158
+  size: 136, 153
+  orig: 400, 405
+  offset: 131, 115
+  index: -1
+boo/boo_03
+  rotate: false
+  xy: 689, 119
+  size: 162, 177
+  orig: 400, 405
+  offset: 119, 99
+  index: -1
+boo/boo_04
+  rotate: false
+  xy: 499, 96
+  size: 188, 200
+  orig: 400, 405
+  offset: 106, 84
+  index: -1
+boo/boo_05
+  rotate: true
+  xy: 739, 313
+  size: 215, 229
+  orig: 400, 405
+  offset: 93, 68
+  index: -1
+boo/boo_06
+  rotate: false
+  xy: 265, 0
+  size: 232, 239
+  orig: 400, 405
+  offset: 78, 66
+  index: -1
+boo/boo_07
+  rotate: true
+  xy: 739, 530
+  size: 250, 254
+  orig: 400, 405
+  offset: 64, 64
+  index: -1
+boo/boo_08
+  rotate: false
+  xy: 491, 515
+  size: 246, 265
+  orig: 400, 405
+  offset: 65, 62
+  index: -1
+boo/boo_09
+  rotate: false
+  xy: 245, 512
+  size: 244, 268
+  orig: 400, 405
+  offset: 68, 60
+  index: -1
+boo/boo_10
+  rotate: false
+  xy: 0, 240
+  size: 243, 268
+  orig: 400, 405
+  offset: 72, 58
+  index: -1
+boo/boo_11
+  rotate: false
+  xy: 245, 241
+  size: 242, 269
+  orig: 400, 405
+  offset: 73, 56
+  index: -1
+boo/boo_12
+  rotate: false
+  xy: 0, 510
+  size: 243, 270
+  orig: 400, 405
+  offset: 76, 55
+  index: -1
+boo/boo_13
+  rotate: true
+  xy: 0, 2
+  size: 236, 263
+  orig: 400, 405
+  offset: 80, 56
+  index: -1
+boo/boo_14
+  rotate: true
+  xy: 491, 298
+  size: 215, 227
+  orig: 400, 405
+  offset: 103, 84
+  index: -1
+ic2
+  rotate: false
+  xy: 597, 18
+  size: 30, 28
+  orig: 32, 30
+  offset: 1, 1
+  index: -1
+ic3
+  rotate: false
+  xy: 629, 18
+  size: 30, 28
+  orig: 32, 30
+  offset: 1, 1
+  index: -1
+ic4
+  rotate: true
+  xy: 810, 5
+  size: 112, 39
+  orig: 115, 41
+  offset: 2, 1
+  index: -1
+ic5
+  rotate: false
+  xy: 597, 48
+  size: 72, 46
+  orig: 74, 48
+  offset: 1, 1
+  index: -1
+ic6
+  rotate: false
+  xy: 853, 30
+  size: 126, 126
+  orig: 129, 129
+  offset: 1, 2
+  index: -1

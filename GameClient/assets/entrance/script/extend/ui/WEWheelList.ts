@@ -112,6 +112,9 @@ export default class WEWheelList extends cc.Component {
     }
     protected onDestroy(): void {
         this.unregisterEvent();
+        for (let i = 0; i < this.buttons.length; i++) {
+            this.unregisterBtnItemEvent(this.buttons[i], i);
+        }
         // 清理对象池
         this._pool.clear();
     }
@@ -144,7 +147,14 @@ export default class WEWheelList extends cc.Component {
         item.on(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
     }
 
-    unregisterBtnItemEvent(item: cc.Node) {
+    unregisterBtnItemEvent(item: cc.Node, i: number) {
+        item.off(
+            'click',
+            () => {
+                this.rotateToIndex(i);
+            },
+            this
+        );
         item.off(cc.Node.EventType.TOUCH_START, this.onTouchBegan, this, true);
         item.off(cc.Node.EventType.TOUCH_END, this.onTouchEnded, this, true);
         item.off(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
@@ -153,24 +163,24 @@ export default class WEWheelList extends cc.Component {
 
     private _validateConfig(): boolean {
         if (!this.buttonPrefab) {
-            CC_EDITOR && c2f.log.warn('[WEWheelList] buttonPrefab must not be empty!');
+            CC_EDITOR && cc.warn('[WEWheelList] buttonPrefab must not be empty!');
             return false;
         }
         if (!this.areaNode) {
-            CC_EDITOR && c2f.log.warn('[WEWheelList] areaNode must not be empty!');
+            CC_EDITOR && cc.warn('[WEWheelList] areaNode must not be empty!');
             return false;
         }
 
         // 验证 maxShowCount
         if (this.maxShowCount < 1) {
-            CC_EDITOR && c2f.log.warn('[WEWheelList] maxShowCount must be greater than 0!');
+            CC_EDITOR && cc.warn('[WEWheelList] maxShowCount must be greater than 0!');
 
             return false;
         }
 
         // 验证 fixedAngleStep
         if (this.fixedAngleStep < 1) {
-            CC_EDITOR && c2f.log.warn('[WEWheelList] fixedAngleStep must be greater than 0!');
+            CC_EDITOR && cc.warn('[WEWheelList] fixedAngleStep must be greater than 0!');
             return false;
         }
 
@@ -191,13 +201,13 @@ export default class WEWheelList extends cc.Component {
      * 初始化菜单项数量
      */
     public init(totalCount: number, curGroupIndex: number, callBack: Function) {
-        if (!this._validateConfig() || totalCount <= 0) {
+        if (!this._validateConfig()) {
             return;
         }
         // 检查是否超出最大数量
         this.maxCount = this.getMaxButtonCount();
         if (totalCount > this.maxCount) {
-            c2f.log.log(`[WEWheelList] Warning: totalCount(${totalCount}) exceeds maximum allowed count(${this.maxCount})!`);
+            cc.log(`[WEWheelList] Warning: totalCount(${totalCount}) exceeds maximum allowed count(${this.maxCount})!`);
             totalCount = this.maxCount;
         }
 
@@ -227,7 +237,7 @@ export default class WEWheelList extends cc.Component {
 
             btn = this._pool.size() > 0 ? this._pool.get() : cc.instantiate(this.buttonPrefab);
             if (!btn) {
-                c2f.log.log('[WEWheelList] Failed to create button from prefab!');
+                cc.log('[WEWheelList] Failed to create button from prefab!');
                 return;
             }
             btn.parent = this.node;

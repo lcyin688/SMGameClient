@@ -10,12 +10,12 @@
  * size         : 当前层上显示的所有Node节点数。
  * clear        : 清除所有Node节点，队列当中未创建的任务也会被清除。
  */
-import BlurScreen from "../../component/common/BlurScreen";
-import { C2FConst } from "../../define/C2FConst";
-import { LayerType, UICallbacks, UIConfig, ViewParams } from "../../define/C2FUIDef";
-import { DelegateComponent } from "./DelegateComponent";
-import { UIModelBase } from "./UIModelBase";
-import { UIViewBase } from "./UIViewBase";
+import BlurScreen from '../../component/common/BlurScreen';
+import { C2FConst } from '../../define/C2FConst';
+import { LayerType, UICallbacks, UIConfig, ViewParams } from '../../define/C2FUIDef';
+import { DelegateComponent } from './DelegateComponent';
+import { UIModelBase } from './UIModelBase';
+import { UIViewBase } from './UIViewBase';
 
 /** 界面层对象 */
 export class LayerUI extends cc.Node {
@@ -66,7 +66,7 @@ export class LayerUI extends cc.Node {
     /** 构造一个唯一标识UUID */
     protected getUuid(prefabPath: string): string {
         let uuid = `${this.name}_${prefabPath}`;
-        return uuid.replace(/\//g, "_");
+        return uuid.replace(/\//g, '_');
     }
 
     /** 获得窗口参数 */
@@ -104,7 +104,7 @@ export class LayerUI extends cc.Node {
                     comp['onViewRefresh'](params);
                 }
             }
-            return "";
+            return '';
         }
         if (viewParams == null) {
             viewParams = new ViewParams();
@@ -119,7 +119,7 @@ export class LayerUI extends cc.Node {
         viewParams.callbacks = callbacks || {};
         viewParams.valid = true;
 
-        this.load(viewParams, config.bundle)
+        this.load(viewParams, config.bundle);
 
         return uuid;
     }
@@ -133,13 +133,12 @@ export class LayerUI extends cc.Node {
         let vp: ViewParams = this.ui_nodes.get(viewPa.uuid)!;
         if (vp && vp.node) {
             this.createNode(vp);
-        }
-        else {
+        } else {
             //由于异步，加载完成后在此列表中的界面才加进游戏
             this.addingView.push(viewPa.prefabPath);
 
             // 获取预制件资源
-            bundle = bundle || "resources";
+            bundle = bundle || 'resources';
             c2f.res.load(bundle, viewPa.prefabPath, this.afterLoadPrefab.bind(this, viewPa));
         }
     }
@@ -154,7 +153,7 @@ export class LayerUI extends cc.Node {
             let comp: DelegateComponent = childNode.addComponent(DelegateComponent);
             comp.viewParams = viewPa;
             //
-            this.addMVCComponet(childNode, viewPa.prefabPath)
+            this.addMVCComponet(childNode, viewPa.prefabPath);
             this.createNode(viewPa);
             //
             c2f.utils.arr.fastRemove(this.addingView, viewPa.prefabPath);
@@ -255,7 +254,7 @@ export class LayerUI extends cc.Node {
             }
             //当前为最上层显示界面时，当前为全屏界面则后面全部隐藏，当前为非全屏时，创建模糊背景后全部隐藏。
             if (one.node.active) {
-                let blurEnable = true;
+                let blurEnable = false;
                 if (viewPa.uiCfg) {
                     blurEnable = !viewPa.uiCfg.noBlurScn;
                 }
@@ -268,7 +267,7 @@ export class LayerUI extends cc.Node {
                             if (i > 1) {
                                 preFloorW = children[i - 1].node.name;
                             }
-                            this.blurScn.addBlurBg(one.node.name, () => { }, preFloorW);
+                            this.blurScn.addBlurBg(one.node.name, () => {}, preFloorW);
                             this.blurScn.node.zIndex = one.node.zIndex - 1;
                         }
                     }
@@ -299,8 +298,7 @@ export class LayerUI extends cc.Node {
                 if (isDestroy) {
                     // 直接释放界面
                     this.ui_nodes.delete(viewPa.uuid);
-                }
-                else {
+                } else {
                     // 不释放界面，缓存起来待下次使用
                     this.ui_cache.set(viewPa.prefabPath, viewPa);
                 }
@@ -342,8 +340,7 @@ export class LayerUI extends cc.Node {
     protected removeByUuid(uuid: string, isDestroy: boolean): void {
         let viewPa = this.ui_nodes.get(uuid);
         if (viewPa) {
-            if (isDestroy)
-                this.ui_nodes.delete(viewPa.uuid);
+            if (isDestroy) this.ui_nodes.delete(viewPa.uuid);
 
             let childNode = viewPa.node;
             if (childNode && childNode.isValid) {
@@ -354,7 +351,7 @@ export class LayerUI extends cc.Node {
         }
     }
 
-    /** 
+    /**
      * 删除缓存的界面，当缓存界面被移除舞台时，可通过此方法删除缓存界面
      */
     private removeCache(prefabPath: string) {
@@ -362,7 +359,7 @@ export class LayerUI extends cc.Node {
         if (viewPa) {
             if (viewPa.node && viewPa.node.isValid) {
                 let childNode = viewPa.node;
-                let comp = childNode.getComponent(DelegateComponent)!
+                let comp = childNode.getComponent(DelegateComponent)!;
                 comp.remove(true);
             } else {
                 cc.warn('removeCache: dst node is invalid!');
@@ -374,7 +371,7 @@ export class LayerUI extends cc.Node {
     }
 
     /**
-     * 根据唯一标识获取节点，如果节点不存在或者还在队列中，则返回null 
+     * 根据唯一标识获取节点，如果节点不存在或者还在队列中，则返回null
      * @param uuid  唯一标识
      */
     public getByUuid(uuid: string): cc.Node {
@@ -389,7 +386,7 @@ export class LayerUI extends cc.Node {
 
     /**
      * 根据预制件路径获取当前显示的该预制件的所有Node节点数组
-     * @param prefabPath 
+     * @param prefabPath
      */
     public get(prefabPath: string): Array<cc.Node> {
         let arr: Array<cc.Node> = [];
@@ -523,7 +520,7 @@ export class LayerUI extends cc.Node {
             if (!viewPa.valid) {
                 continue;
             }
-            let prefComp = dstComp.node.getComponent(UIViewBase)
+            let prefComp = dstComp.node.getComponent(UIViewBase);
             if (prefComp && prefComp.animaPlaying) {
                 dstComp.node.active = false;
                 this.arrPlayingView.push(dstComp.node);

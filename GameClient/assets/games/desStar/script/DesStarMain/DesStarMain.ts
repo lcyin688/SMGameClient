@@ -21,19 +21,19 @@ export default class DesStarMain extends UIVControlBase {
     public view: DesStarMainView = undefined;
 
     protected onViewOpen(param: any) {
-        this.initAudioState()
+        this.initAudioState();
         DesStarTools.playMusic('backMusic');
-        this.model.initData()
-        this.resetGame()
-        this.loadTabItemFirst(this.startGame.bind(this))
-        this.loadStarItem()
+        this.model.initData();
+        this.resetGame();
+        this.loadTabItemFirst(this.startGame.bind(this));
+        this.loadStarItem();
         DesStarTools.playEffect('ready_go');
-        this.view.gameWin.active=false
+        this.view.gameWin.active = false;
     }
     private initAudioState() {
-        let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg)
+        let state = c2f.storage.getBoolean(GameConsts.StorageKey.soundBg);
         c2f.audio.bgmOff = state;
-        let stateEff = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff)
+        let stateEff = c2f.storage.getBoolean(GameConsts.StorageKey.soundEff);
         c2f.audio.sfxOff = stateEff;
     }
 
@@ -53,21 +53,18 @@ export default class DesStarMain extends UIVControlBase {
 
     private async onButtonClick(eventType: string, component: cc.Button) {
         switch (component.name) {
-
             case this.view.btnMenuButton.name:
                 this.CC_onClickbtnMenu();
                 break;
-
 
             default:
                 break;
         }
     }
 
-
     private CC_onClickbtnMenu() {
         UIHelper.playEffect('betClick');
-        c2f.gui.open(EntranceUI.SoundSet)
+        c2f.gui.open(EntranceUI.SoundSet);
     }
     public async loadTabItemFirst(cb) {
         await c2f.res.loadOne(GameConsts.CmmPrefab.blockItem, cc.Prefab).then((resItem: cc.Prefab) => {
@@ -75,63 +72,62 @@ export default class DesStarMain extends UIVControlBase {
             if (cb) {
                 cb();
             }
-        })
+        });
     }
 
     public async loadStarItem() {
         await c2f.res.loadOne(GameConsts.CmmPrefab.P_StartItem, cc.Prefab).then((resItem: cc.Prefab) => {
             this.model.startItem = resItem;
-        })
+        });
     }
 
     private initItemArr() {
         this.model.starItemMap = new Map();
         for (let row = 0; row < 10; row++) {
-            let mapItem: Map<number, BlockItem> = new Map()
+            let mapItem: Map<number, BlockItem> = new Map();
             for (let column = 0; column < 10; column++) {
                 let nodeItem = c2f.utils.view.instantiateMVCPrefab(this.model.blockItem, this.view.content);
-                this.view.content.addChild(nodeItem)
-                let blockItem = nodeItem.getComponent(BlockItem)
-                mapItem.set(column, blockItem)
+                this.view.content.addChild(nodeItem);
+                let blockItem = nodeItem.getComponent(BlockItem);
+                mapItem.set(column, blockItem);
             }
-            this.model.starItemMap.set(row, mapItem)
+            this.model.starItemMap.set(row, mapItem);
         }
     }
 
-
     private setBarView() {
-        this.view.txtScoreLabel.string = (this.model.curScore+"/"+ this.model.totalShowScore)
+        this.view.txtScoreLabel.string = this.model.curScore + '/' + this.model.totalShowScore;
         let perNum = this.model.curScore / this.model.totalShowScore;
         if (perNum > 1) {
-            perNum = 1
+            perNum = 1;
         }
         this.view.barProgressBar.progress = perNum;
     }
     private startGame() {
-        this.setBarView()
-        this.model.isActionRunning = false
+        this.setBarView();
+        this.model.isActionRunning = false;
         if (!this.model.starItemMap) {
-            this.initItemArr()
+            this.initItemArr();
         }
-        this.view.txtLvLabel.string = (this.model.curLv + 1).toString()
+        this.view.txtLvLabel.string = (this.model.curLv + 1).toString();
         let actionDelay = 0;
         for (let row = 0; row < 10; row++) {
             actionDelay = 0.02 * row;
             for (let column = 0; column < 10; column++) {
-                actionDelay += 0.02
+                actionDelay += 0.02;
                 let initPosition = this.model.getStarPosition(row, column);
                 initPosition.y += this.model.visibleSize.height;
                 let item = this.model.starItemMap.get(row).get(column);
-                let nodeItem = item.node
-                nodeItem.name = `block${column}_${row}`
+                let nodeItem = item.node;
+                nodeItem.name = `block${column}_${row}`;
                 nodeItem.setPosition(initPosition);
-                let typ = this.model.starDataArr[row][column]
-                let itemData = UIPa.StarItemData[typ]
-                let score = 0
-                let url = ""
+                let typ = this.model.starDataArr[row][column];
+                let itemData = UIPa.StarItemData[typ];
+                let score = 0;
+                let url = '';
                 if (itemData) {
-                    score = itemData.score
-                    url = itemData.url
+                    score = itemData.score;
+                    url = itemData.url;
                 }
                 let dataItem: UIPa.DesStarItemArgs = {
                     typ: typ,
@@ -140,103 +136,111 @@ export default class DesStarMain extends UIVControlBase {
                     column: column,
                     row: row,
                     cbFun: this.clickItemCb.bind(this),
-                }
+                };
                 item.setInit(dataItem);
                 cc.tween(nodeItem)
                     .to(0.2 + actionDelay, { position: this.model.getStarPosition(row, column) })
-                    .start()
+                    .start();
             }
         }
-
     }
 
     private judgeFinal(result: UIPa.DesStarBase[], starDataArr: number[][]) {
-        let rowAndCol: UIPa.DesStarBase
-        let score = 0
+        let rowAndCol: UIPa.DesStarBase;
+        let score = 0;
         for (let i = 0; i < result.length; i++) {
             rowAndCol = result[i];
             //播放爆炸效果  应该是要爆炸后飞星星特效
             let item = this.model.starItemMap.get(rowAndCol.row).get(rowAndCol.column);
             item.playChoose();
-            score += item.model.data.score
+            score += item.model.data.score;
             starDataArr[rowAndCol.row][rowAndCol.column] = -1;
         }
 
-        let tweenItem = cc.tween(this.node)
+        let tweenItem = cc.tween(this.node);
         for (let i = 0; i < result.length; i++) {
             rowAndCol = result[i];
             //播放爆炸效果  应该是要爆炸后飞星星特效
             UIHelper.playEffect('getMoney');
             let item = this.model.starItemMap.get(rowAndCol.row).get(rowAndCol.column);
-            tweenItem.call(() => {
-                this.model.curScore += item.model.data.score
-                item.playExplode(() => {
-                    this.setBarView()
-                    this.playStartAni(item.node)
-                });
-            }).delay(0.02)
+            tweenItem
+                .call(() => {
+                    this.model.curScore += item.model.data.score;
+                    item.playExplode(() => {
+                        this.setBarView();
+                        this.playStartAni(item.node);
+                    });
+                })
+                .delay(0.02);
         }
-        let countHave = this.getHaveCount()
-        tweenItem.call(() => {
-            this.showReward(score)
-            this.scheduleOnce(() => {
-                if (countHave <= 1) {//如果完成了游戏
-                    this.winGame(countHave)
-                } else {
-                    this.drawBlock(starDataArr)
-                }
-            }, 0.8)
-        }).start()
-
-
+        let countHave = this.getHaveCount();
+        tweenItem
+            .call(() => {
+                this.showReward(score);
+                this.scheduleOnce(() => {
+                    if (countHave <= 1) {
+                        //如果完成了游戏
+                        this.winGame(countHave);
+                    } else {
+                        this.drawBlock(starDataArr);
+                    }
+                }, 0.8);
+            })
+            .start();
     }
 
     private playStartAni(nodeTemp: cc.Node) {
         let itemNode = c2f.utils.view.instantiateMVCPrefab(this.model.startItem, this.view.content);
-        this.view.content.addChild(itemNode)
-        let starItem = itemNode.getComponent(StartItem)
-        starItem.playAni()
-        itemNode.setPosition(nodeTemp.position)
+        this.view.content.addChild(itemNode);
+        let starItem = itemNode.getComponent(StartItem);
+        starItem.playAni();
+        itemNode.setPosition(nodeTemp.position);
 
         let worldPoint = this.view.endPos.parent.convertToWorldSpaceAR(this.view.endPos.position);
         let endPos = this.view.content.convertToNodeSpaceAR(worldPoint);
         let config: UIPa.MoveConfig = {
             startPos: nodeTemp.position,
             endPos: endPos,
-        }
-        UIHelper.createBezier(itemNode, config)
-        cc.tween(itemNode).to(0.8, {}, UIHelper.createBezier(itemNode, config)).delay(0.2).call(() => {
-            itemNode.destroy()
-        }).start()
+        };
+        UIHelper.createBezier(itemNode, config);
+        cc.tween(itemNode)
+            .to(0.8, {}, UIHelper.createBezier(itemNode, config))
+            .delay(0.2)
+            .call(() => {
+                itemNode.destroy();
+            })
+            .start();
     }
 
-
     private showReward(score: number) {
-        UIHelper.playEffect('select');
+        DesStarTools.playEffect('select');
         if (score > 400) {
-            this.playWinByIndex(5)
+            this.playWinByIndex(5);
         } else if (score > 200) {
-            this.playWinByIndex(4)
+            this.playWinByIndex(4);
         } else if (score > 100) {
-            this.playWinByIndex(3)
+            this.playWinByIndex(3);
         } else if (score > 50) {
-            this.playWinByIndex(2)
+            this.playWinByIndex(2);
         } else if (score > 20) {
-            this.playWinByIndex(1)
+            this.playWinByIndex(1);
         }
     }
 
     private playWinByIndex(index: number) {
         DesStarTools.playEffect('reward_' + index);
         this.view.reward.active = true;
-        this.view.reward.setScale(0.8)
-        this.view.reward.opacity = 120
-        c2f.utils.view.changeSpriteFrame(this.view.rewardSprite, GameConsts.ResUrl.desStar + 'reward_' + index)
-        cc.Tween.stopAllByTarget(this.view.reward)
-        cc.tween(this.view.reward).to(0.3, { scale: 1.8 }).start()
-        cc.tween(this.view.reward).to(0.3, { opacity: 255 }).call(() => {
-            this.view.reward.active = false
-        }).start()
+        this.view.reward.setScale(0.8);
+        this.view.reward.opacity = 120;
+        c2f.utils.view.changeSpriteFrame(this.view.rewardSprite, GameConsts.ResUrl.desStar + 'reward_' + index);
+        cc.Tween.stopAllByTarget(this.view.reward);
+        cc.tween(this.view.reward).to(0.3, { scale: 1.8 }).start();
+        cc.tween(this.view.reward)
+            .to(0.3, { opacity: 255 })
+            .call(() => {
+                this.view.reward.active = false;
+            })
+            .start();
     }
 
     private clickItemCb(data: UIPa.DesStarItemArgs) {
@@ -246,7 +250,7 @@ export default class DesStarMain extends UIVControlBase {
             const result = this.model.findSameStarIndex(data.row, data.column);
             if (result.length > 1) {
                 const starDataArr = this.model.starDataArr;
-                this.judgeFinal(result, starDataArr)
+                this.judgeFinal(result, starDataArr);
             } else {
                 this.model.isActionRunning = false;
             }
@@ -270,8 +274,8 @@ export default class DesStarMain extends UIVControlBase {
                             fromRow: rowTop,
                             fromCol: c,
                             toRow: r,
-                            toCol: c
-                        }
+                            toCol: c,
+                        };
                         starMoveData.push(moveDataItem);
                     }
                 }
@@ -308,7 +312,7 @@ export default class DesStarMain extends UIVControlBase {
                                     fromRow: r,
                                     fromCol: newCol,
                                     toRow: r,
-                                    toCol: newCol - 1
+                                    toCol: newCol - 1,
                                 });
                             }
                         }
@@ -329,33 +333,31 @@ export default class DesStarMain extends UIVControlBase {
                         if (--actionCount == 0) {
                             //所有元素重置下位置
                             this.model.isActionRunning = false;
-                            this.resetView()
+                            this.resetView();
                         }
                     })
-                    .start()
+                    .start();
             }
         } else {
             this.model.isActionRunning = false;
         }
     }
 
-
-
     private resetView() {
         for (let row = 0; row < 10; row++) {
             for (let column = 0; column < 10; column++) {
                 let initPosition = this.model.getStarPosition(row, column);
                 let item = this.model.starItemMap.get(row).get(column);
-                let nodeItem = item.node
-                nodeItem.name = `block${column}_${row}`
+                let nodeItem = item.node;
+                nodeItem.name = `block${column}_${row}`;
                 nodeItem.setPosition(initPosition);
-                let typ = this.model.starDataArr[row][column]
-                let itemData = UIPa.StarItemData[typ]
-                let score = 0
-                let url = ""
+                let typ = this.model.starDataArr[row][column];
+                let itemData = UIPa.StarItemData[typ];
+                let score = 0;
+                let url = '';
                 if (itemData) {
-                    score = itemData.score
-                    url = itemData.url
+                    score = itemData.score;
+                    url = itemData.url;
                 }
                 let dataItem: UIPa.DesStarItemArgs = {
                     typ: typ,
@@ -364,91 +366,90 @@ export default class DesStarMain extends UIVControlBase {
                     column: column,
                     row: row,
                     cbFun: this.clickItemCb.bind(this),
-                }
+                };
                 item.setInit(dataItem);
             }
         }
-        let countHave = this.getHaveCount()
-        if (countHave <= 1) {//如果完成了游戏
-            this.winGame(countHave)
-            return
+        let countHave = this.getHaveCount();
+        if (countHave <= 1) {
+            //如果完成了游戏
+            this.winGame(countHave);
+            return;
         }
-
     }
 
     private getHaveCount(): number {
-        let maxCount = 0
+        let maxCount = 0;
         //最多的只有一个的时候也需要完成
-        let mapItem: Map<number, number> = new Map()
+        let mapItem: Map<number, number> = new Map();
         for (let i = 0; i < this.model.starDataArr.length; i++) {
-            let row = this.model.starDataArr[i]
+            let row = this.model.starDataArr[i];
             for (let j = 0; j < row.length; j++) {
-                let typ = row[j]
+                let typ = row[j];
                 if (typ >= 0) {
-                    let item = mapItem.get(typ)
+                    let item = mapItem.get(typ);
                     if (item) {
-                        let curCount = item + 1
-                        mapItem.set(typ, curCount)
+                        let curCount = item + 1;
+                        mapItem.set(typ, curCount);
                     } else {
-                        mapItem.set(typ, 1)
+                        mapItem.set(typ, 1);
                     }
                 }
             }
         }
-        mapItem.forEach(v => {
+        mapItem.forEach((v) => {
             if (v > maxCount) {
-                maxCount = v
+                maxCount = v;
             }
         });
-        return maxCount
+        return maxCount;
     }
 
     private winGame(count: number) {
-        if (count == 1) {//单独爆炸
+        if (count == 1) {
+            //单独爆炸
             for (let row = 0; row < 10; row++) {
                 for (let column = 0; column < 10; column++) {
-                    let typ = this.model.starDataArr[row][column]
+                    let typ = this.model.starDataArr[row][column];
                     let item = this.model.starItemMap.get(row).get(column);
                     if (typ > 0) {
-                        this.model.curScore += item.model.data.score
+                        this.model.curScore += item.model.data.score;
                         item.playChoose();
                         item.playExplode(() => {
-                            this.setBarView()
-                            this.playStartAni(item.node)
+                            this.setBarView();
+                            this.playStartAni(item.node);
                         });
                     }
                     break;
                 }
             }
-            this.enterNextLv()
+            this.enterNextLv();
         } else {
-            this.enterNextLv()
+            this.enterNextLv();
         }
     }
     private enterNextLv() {
         this.scheduleOnce(() => {
-            this.view.gameWin.active=false
-            this.model.curLv++
-            if (DesStarConsts.myBabyCfg.isMySon&&this.model.curLv>DesStarConsts.myBabyCfg.maxLv) {
-                this.gameWin()
-            }else{
-                c2f.storage.setNumber(GameConsts.StorageKey.curLv, this.model.curLv)
-                this.model.getDataByLv(this.model.curLv)
-                this.startGame()
+            this.view.gameWin.active = false;
+            this.model.curLv++;
+            if (DesStarConsts.myBabyCfg.isMySon && this.model.curLv > DesStarConsts.myBabyCfg.maxLv) {
+                this.gameWin();
+            } else {
+                c2f.storage.setNumber(GameConsts.StorageKey.curLv, this.model.curLv);
+                this.model.getDataByLv(this.model.curLv);
+                this.startGame();
             }
-        }, 1)
+        }, 1);
     }
 
-    private gameWin() { 
-        this.model.curLv=0
-        this.view.gameWin.active=true
+    private gameWin() {
+        this.model.curLv = 0;
+        this.view.gameWin.active = true;
         //展示生活图片
-        DesStarTools.playEffect("gameWin")
-
+        DesStarTools.playEffect('gameWin');
     }
 
     private resetGame() {
-        this.view.reward.active = false
+        this.view.reward.active = false;
     }
-
 }

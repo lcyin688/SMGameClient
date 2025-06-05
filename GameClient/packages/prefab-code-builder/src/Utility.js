@@ -720,7 +720,7 @@ var Utility = {
         Editor.log(' genViewParamDefine 准备进去 isPanel 1');
         //mainPack之后的分包配置都放在mainPack之下
         let pathBundle = bundleName;
-        let singlePack = ['framework', 'entrance', 'mainPack', 'demo', 'gameYngy', 'boxGame', 'snake2048', 'nhwc', 'desStar', 'physics2048'];
+        let singlePack = ['framework', 'entrance', 'mainPack', 'demo', 'gameYngy', 'boxGame', 'snake2048', 'nhwc', 'desStar', 'physics2048', 'smallToolDemo'];
         if (singlePack.indexOf(pathBundle) < 0) {
             pathBundle = 'mainPack';
         }
@@ -742,9 +742,9 @@ var Utility = {
         // Editor.log(' genViewParamDefine  3 bundlePath ', bundlePath);
 
         let viewFile = this.getCurNeedStr(`${bundlePath}\\${realBName}View.ts`);
-        // Editor.log(' genViewParamDefine  4 viewFile ', viewFile);
+        Editor.log(' genViewParamDefine  4 viewFile ', viewFile);
         let ctrlCode = fs.readFileSync(viewFile, 'utf-8');
-        // Editor.log(' genViewParamDefine  5 ctrlCode ', ctrlCode);
+        Editor.log(' genViewParamDefine  5 ctrlCode ', ctrlCode);
         if (ctrlCode.indexOf(className) >= 0) {
             return;
         }

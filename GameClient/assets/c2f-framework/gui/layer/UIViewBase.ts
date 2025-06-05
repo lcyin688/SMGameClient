@@ -2,12 +2,10 @@ import { C2FConst } from '../../define/C2FConst';
 import { C2FEnum } from '../../define/C2FEnum';
 import { UIPrefabBase } from './UIPrefabBase';
 
-
 const { ccclass, property } = cc._decorator;
 @ccclass
 export class UIViewBase extends UIPrefabBase {
-
-    //--------------UI对象-------------    
+    //--------------UI对象-------------
     /** 黑色底板 */
     private blackBg: cc.Node = null;
     /** 界面根节点 */
@@ -56,13 +54,10 @@ export class UIViewBase extends UIPrefabBase {
         this.animaPlaying = true;
 
         if (this.blackBg) {
-            cc.tween(this.blackBg)
-                .delay(delayDur)
-                .set({ opacity: 127 })
-                .to(duration, { opacity: C2FConst.UIBgOpacity })
-                .start()
+            cc.tween(this.blackBg).delay(delayDur).set({ opacity: 127 }).to(duration, { opacity: C2FConst.UIBgOpacity }).start();
         }
         if (this.nodeUI) {
+            cc.tween(this.nodeUI).set({ scale: 0.3 }).to(0.3, { scale: 1 }, { easing: 'backOut' }).start();
             cc.tween(this.nodeUI)
                 .delay(delayDur)
                 .call(() => {
@@ -79,7 +74,7 @@ export class UIViewBase extends UIPrefabBase {
         if (this.blackBg || this.nodeUI) {
             this.scheduleOnce(() => {
                 this.animaPlaying = false;
-            }, duration + delayDur)
+            }, duration + delayDur);
         } else {
             this.animaPlaying = false;
         }
@@ -96,16 +91,14 @@ export class UIViewBase extends UIPrefabBase {
                 .start();
         }
         if (this.blackBg) {
-            cc.tween(this.blackBg)
-                .to(duration, { opacity: 0 })
-                .start()
+            cc.tween(this.blackBg).to(duration, { opacity: 0 }).start();
         }
         let animaEnd = () => {
             this.animaPlaying = false;
             nextFunc && nextFunc();
-        }
+        };
         if (this.nodeUI || this.blackBg) {
-            this.scheduleOnce(animaEnd, duration)
+            this.scheduleOnce(animaEnd, duration);
         } else {
             animaEnd && animaEnd();
         }
@@ -126,7 +119,7 @@ export class UIViewBase extends UIPrefabBase {
     }
 
     /**
-     * 
+     *
      * @param msgType 消息类型
      * @param varName 变量名
      * @param cb 处理函数

@@ -17,6 +17,14 @@ declare global {
         }
     }
 }
+// 确保c2f对象存在
+if (typeof c2f === 'undefined') {
+    (window as any).c2f = {};
+}
+if (typeof c2f.core === 'undefined') {
+    // @ts-ignore
+    c2f.core = {};
+}
 
 /** 屏幕方向 */
 export enum ScreenOrientation {
@@ -29,8 +37,7 @@ export enum ScreenOrientation {
     /** 横屏 home在左  */
     LANDSCAPE_LEFT = 3,
 }
-
-// c2f.core.ScreenOrientation = ScreenOrientation;
+c2f.core.ScreenOrientation = ScreenOrientation;
 
 /** 加载类型 */
 export enum LOAD_TYPE {
@@ -56,7 +63,6 @@ export interface AudioResConfig {
 export default class ProjectConfig {
     /** 屏幕方向 */
     public static orientation: ScreenOrientation = cc.sys.isNative ? jsb.device.getDeviceRotation() : null;
-
     /** 客户端设计分辨率 */
     public static designResolution = cc.size(1280, 720);
     /** 是否刘海屏 */
@@ -128,4 +134,4 @@ export default class ProjectConfig {
     }
 }
 
-// c2f.core.projectConfig = ProjectConfig;
+c2f.core.projectConfig = ProjectConfig;

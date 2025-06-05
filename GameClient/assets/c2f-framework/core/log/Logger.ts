@@ -194,15 +194,15 @@ class Logger {
         this.print(tag, msg, 'color:#09CBD7;', describe);
     }
 
-    public static warn(describe: string) {
+    public static warn(describe: string, ...optionalParams: any[]) {
         if (c2f.core.projectConfig.commonConfig.logPrintSwitch.warn) {
-            console.warn(describe);
+            console.warn(describe, optionalParams);
         }
     }
 
-    public static log(describe: string) {
+    public static log(describe: string, ...optionalParams: any[]) {
         if (c2f.core.projectConfig.commonConfig.logPrintSwitch.debug) {
-            console.log(describe);
+            console.log(describe, optionalParams);
         }
     }
 

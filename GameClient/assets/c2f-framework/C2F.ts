@@ -3,6 +3,7 @@ declare global {
     interface IGame {}
 
     interface IC2F {
+        c2f: {};
         utils: IUtil;
         game: IGame;
         initFW: () => void;

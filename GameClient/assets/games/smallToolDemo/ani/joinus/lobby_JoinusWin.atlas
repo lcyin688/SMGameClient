@@ -1,0 +1,174 @@
+
+lobby_JoinusWin.png
+size: 1894,765
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cd1
+  rotate: false
+  xy: 264, 47
+  size: 36, 51
+  orig: 36, 51
+  offset: 0, 0
+  index: -1
+cd2
+  rotate: true
+  xy: 368, 159
+  size: 25, 15
+  orig: 25, 15
+  offset: 0, 0
+  index: -1
+cd3
+  rotate: false
+  xy: 164, 37
+  size: 15, 22
+  orig: 15, 22
+  offset: 0, 0
+  index: -1
+den
+  rotate: true
+  xy: 0, 0
+  size: 59, 162
+  orig: 59, 162
+  offset: 0, 0
+  index: -1
+jb1
+  rotate: false
+  xy: 285, 105
+  size: 81, 79
+  orig: 81, 79
+  offset: 0, 0
+  index: -1
+jb2
+  rotate: false
+  xy: 195, 100
+  size: 88, 84
+  orig: 88, 84
+  offset: 0, 0
+  index: -1
+jb3
+  rotate: false
+  xy: 0, 61
+  size: 193, 123
+  orig: 193, 123
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_001
+  rotate: false
+  xy: 386, 521
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_003
+  rotate: false
+  xy: 386, 275
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_005
+  rotate: false
+  xy: 688, 521
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_007
+  rotate: false
+  xy: 688, 275
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_009
+  rotate: false
+  xy: 990, 521
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_011
+  rotate: false
+  xy: 990, 275
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_013
+  rotate: false
+  xy: 1292, 521
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_015
+  rotate: false
+  xy: 1292, 275
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_017
+  rotate: false
+  xy: 1594, 521
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_019
+  rotate: false
+  xy: 1594, 275
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_021
+  rotate: false
+  xy: 386, 29
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_023
+  rotate: false
+  xy: 688, 29
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_025
+  rotate: false
+  xy: 990, 29
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_027
+  rotate: false
+  xy: 1292, 29
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+ptclxx/ptclxx_029
+  rotate: false
+  xy: 1594, 29
+  size: 300, 244
+  orig: 300, 244
+  offset: 0, 0
+  index: -1
+rn00
+  rotate: false
+  xy: 0, 186
+  size: 384, 579
+  orig: 384, 579
+  offset: 0, 0
+  index: -1
+xg4
+  rotate: true
+  xy: 195, 32
+  size: 66, 67
+  orig: 66, 67
+  offset: 0, 0
+  index: -1
