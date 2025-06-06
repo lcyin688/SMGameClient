@@ -1,36 +1,36 @@
-import { C2FConst } from "../../define/C2FConst";
+import { GameConsts } from '../../../Script/game/GameConsts';
+import { C2FConst } from '../../define/C2FConst';
 
 const { ccclass, requireComponent, menu, property } = cc._decorator;
 @ccclass
 @menu('c2f/shader/ShaderCyclicRLabel')
 @requireComponent(cc.Label)
 export default class ShaderCyclicRLabel extends cc.Component {
-
-    @property({ tooltip: "文本显示的宽度阈值" })
+    @property({ tooltip: '文本显示的宽度阈值' })
     maxWidth: number = 0;
 
-    @property({ tooltip: "滑动显示" })
+    @property({ tooltip: '滑动显示' })
     moveTxt: boolean = true;
 
-    @property({ tooltip: "缩放匹配" })
+    @property({ tooltip: '缩放匹配' })
     scaleMatch: boolean = false;
 
     @property({
-        tooltip: "滑动显示移动速度",
+        tooltip: '滑动显示移动速度',
         visible() {
             return this.moveTxt;
-        }
+        },
     })
     moveSpeed: number = 100;
 
-    @property({ tooltip: "将单字单行显示转为竖直水平的语言种类，以|分隔" })
+    @property({ tooltip: '将单字单行显示转为竖直水平的语言种类，以|分隔' })
     vTransH: boolean = false;
 
     @property({
-        tooltip: "转为竖直水平的语言种类，以|分隔",
+        tooltip: '转为竖直水平的语言种类，以|分隔',
         visible() {
             return this.vTransH;
-        }
+        },
     })
     transLG: string = `${C2FConst.LanguageKey.en}|${C2FConst.LanguageKey.th}`;
 
@@ -99,7 +99,7 @@ export default class ShaderCyclicRLabel extends cc.Component {
             txtLabel.cacheMode = cc.Label.CacheMode.NONE;
         }
         let resUrl = 'commonRes/shader/materials/cyclicRollingTxt';
-        c2f.res.load(C2FConst.fwBundleName, resUrl, cc.Material, null, (err: Error | null, res: cc.Material) => {
+        c2f.res.load(GameConsts.Bundle.framework, resUrl, cc.Material, null, (err: Error | null, res: cc.Material) => {
             if (err) {
                 cc.error(err);
                 return;

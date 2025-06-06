@@ -14,29 +14,29 @@ interface ILoadResArgs<T extends cc.Asset> {
 
 /** 资源缓存基础数据结构 */
 interface CacheData {
-    asset: cc.Asset,
+    asset: cc.Asset;
     /** 资源是否需要释放 */
-    release: boolean,
+    release: boolean;
     /** 资源最后一次被加载的时间点（秒） */
-    lastLoadTime: number,
+    lastLoadTime: number;
 }
 
 /** 预制体资源缓存数据 */
 interface PrefabCacheData extends CacheData {
     /** 此prefab关联的实例节点 */
-    nodes?: cc.Node[],
+    nodes?: cc.Node[];
 }
 
 /** asset bundle路径校验 */
-const BUNDLE_CHECK = "ab:";
+const BUNDLE_CHECK = 'ab:';
 
 /**
  * 资源管理类
- * 
+ *
  * 资源加载:
  * 1. 如果加载resources内的资源，直接写明resources内的路径即可
  * 2. 如果加载路径以ab:开头，则会加载对应bundle内的资源。例：ab:bundleA/xxx/a表示bundle名为bundleA，资源路径为xxx/a
- * 
+ *
  * 引用计数管理：
  * 1. 尽量使用此类的接口加载所有资源、instantiate节点实例，否则需要自行管理引用计数
  * 2. Res.instantiate不要对动态生成的节点使用，尽量只instantiate prefab上预设好的节点，否则有可能会导致引用计数的管理出错
@@ -60,12 +60,11 @@ class ResLoader {
     /** 预备释放 */
     private willRelease: boolean = false;
 
-
     /**
      * 资源管理中的全局Url
-     * @param bundle 
-     * @param url 
-     * @returns 
+     * @param bundle
+     * @param url
+     * @returns
      */
     public getFullUrl(bundle: string, url: string) {
         let keyUrl = `${BUNDLE_CHECK}${bundle}/${url}`;
@@ -74,12 +73,12 @@ class ResLoader {
 
     /**
      * 资源路径解析
-     * @param url 
+     * @param url
      */
-    public parseUrl(url: string): { bundle?: string, loadUrl: string } {
+    public parseUrl(url: string): { bundle?: string; loadUrl: string } {
         if (url.startsWith(BUNDLE_CHECK)) {
             let loadUrl = url.substring(BUNDLE_CHECK.length);
-            let idx = loadUrl.indexOf("/");
+            let idx = loadUrl.indexOf('/');
             let bundle = loadUrl.substring(0, idx);
             loadUrl = loadUrl.substring(idx + 1);
             return { bundle: bundle, loadUrl: loadUrl };
@@ -90,15 +89,15 @@ class ResLoader {
 
     /**
      * 通过节点或预制查找已缓存prefab路径
-     * @param target 
+     * @param target
      */
     private getCachePrefabUrl(target: cc.Node | cc.Prefab): string {
-        let url = "";
+        let url = '';
         if (target instanceof cc.Node) {
             let cur = target;
             while (cur) {
-                if (cur["_prefab"] && cur["_prefab"]["root"]) {
-                    url = this._nodePath.get(cur["_prefab"]["root"]) || "";
+                if (cur['_prefab'] && cur['_prefab']['root']) {
+                    url = this._nodePath.get(cur['_prefab']['root']) || '';
                     if (url) {
                         break;
                     }
@@ -106,7 +105,7 @@ class ResLoader {
                 cur = cur.parent;
             }
         } else if (target instanceof cc.Prefab) {
-            url = this._prefabPath.get(target) || "";
+            url = this._prefabPath.get(target) || '';
         }
         return url;
     }
@@ -132,7 +131,7 @@ class ResLoader {
             let cacheData: CacheData = {
                 asset: asset,
                 release: release,
-                lastLoadTime: Date.now() / 1000
+                lastLoadTime: Date.now() / 1000,
             };
             map.set(url, cacheData);
         };
@@ -197,8 +196,6 @@ class ResLoader {
         }
         return cache;
     }
-
-
 
     /**
      * 加载资源包
@@ -265,8 +262,7 @@ class ResLoader {
         if (args.length == 2) {
             options = args[0];
             onComplete = args[1];
-        }
-        else {
+        } else {
             onComplete = args[0];
         }
 
@@ -310,14 +306,13 @@ class ResLoader {
         paths?: string | string[] | AssetType<T> | ProgressCallback | CompleteCallback | null,
         type?: AssetType<T> | ProgressCallback | CompleteCallback | null,
         onProgress?: ProgressCallback | CompleteCallback | null,
-        onComplete?: CompleteCallback | null,
+        onComplete?: CompleteCallback | null
     ) {
         let args: ILoadResArgs<T> | null = null;
-        if (typeof paths === "string" || paths instanceof Array) {
+        if (typeof paths === 'string' || paths instanceof Array) {
             args = this.parseLoadResArgs(paths, type, onProgress, onComplete);
             args.bundle = bundleName;
-        }
-        else {
+        } else {
             args = this.parseLoadResArgs(bundleName, paths, type, onProgress);
         }
         this.loadByArgs(args);
@@ -355,14 +350,13 @@ class ResLoader {
         dir?: string | AssetType<T> | ProgressCallback | CompleteCallback | null,
         type?: AssetType<T> | ProgressCallback | CompleteCallback | null,
         onProgress?: ProgressCallback | CompleteCallback | null,
-        onComplete?: CompleteCallback | null,
+        onComplete?: CompleteCallback | null
     ) {
         let args: ILoadResArgs<T> | null = null;
-        if (typeof dir === "string") {
+        if (typeof dir === 'string') {
             args = this.parseLoadResArgs(dir, type, onProgress, onComplete);
             args.bundle = bundleName;
-        }
-        else {
+        } else {
             args = this.parseLoadResArgs(bundleName, dir, type, onProgress);
         }
         args.dir = args.paths as string;
@@ -446,13 +440,13 @@ class ResLoader {
             endCb && endCb(null, null);
         } else {
             //多语言适配
-            this.getLGResInfoAsync(loadUrl, bundle, (info: { lgUrl: string, lgBundle: cc.AssetManager.Bundle }) => {
+            this.getLGResInfoAsync(loadUrl, bundle, (info: { lgUrl: string; lgBundle: cc.AssetManager.Bundle }) => {
                 if (info) {
                     endCb && endCb(info.lgBundle, info.lgUrl);
                 } else {
                     endCb && endCb(bundle, loadUrl);
                 }
-            })
+            });
         }
     }
 
@@ -476,11 +470,11 @@ class ResLoader {
             if (realBundle) {
                 this.loadResAsync(url, type, release, realBundle, realUrl, (res: T) => {
                     endCb && endCb(res);
-                })
+                });
             } else {
                 endCb && endCb(null);
             }
-        })
+        });
     }
 
     /**
@@ -514,7 +508,9 @@ class ResLoader {
                     resolve([]);
                 } else {
                     let infos = bundle.getDirWithPath(url, type);
-                    resource.forEach((asset, i) => { this.cacheAsset(infos[i].path, asset, release); });
+                    resource.forEach((asset, i) => {
+                        this.cacheAsset(infos[i].path, asset, release);
+                    });
                     resolve(resource);
                 }
             });
@@ -523,7 +519,7 @@ class ResLoader {
 
     /** 多语言文件替换 */
     private async getLGResInfo(url: string, bundle: cc.AssetManager.Bundle) {
-        let lgInfo: { lgUrl: string, lgBundle: cc.AssetManager.Bundle } = null;
+        let lgInfo: { lgUrl: string; lgBundle: cc.AssetManager.Bundle } = null;
         let info = bundle.getInfoWithPath(url);
         if (info) {
             let mulLgUuid = c2f.language.getLGResUuid(info.uuid);
@@ -546,7 +542,7 @@ class ResLoader {
 
     /** 异步·多语言文件替换 */
     private getLGResInfoAsync(url: string, bundle: cc.AssetManager.Bundle, endCb: Function) {
-        let lgInfo: { lgUrl: string, lgBundle: cc.AssetManager.Bundle } = null;
+        let lgInfo: { lgUrl: string; lgBundle: cc.AssetManager.Bundle } = null;
         let info = bundle.getInfoWithPath(url);
         if (!info) {
             endCb && endCb(lgInfo);
@@ -573,7 +569,7 @@ class ResLoader {
                     lgInfo = { lgUrl, lgBundle };
                 }
                 endCb && endCb(lgInfo);
-            })
+            });
         }
     }
 
@@ -581,14 +577,14 @@ class ResLoader {
      * 获取节点实例，并建立新节点与prefab资源的联系
      * @param original 用于实例化节点的prefab或node
      * @param related 如果original不是动态加载的prefab，则需传入与original相关联的动态加载的prefab或node，以便资源释放的管理
-     * @example 
+     * @example
      * // 1.original为动态加载的prefab，无需传related参数
      * Res.instantiate(original)
-     * 
+     *
      * // 2.aPrefab为动态加载的prefab，aNode为aPrefab的实例节点（aNode = Res.instantiate(aPrefab)），original为被aPrefab静态引用的prefab，则调用时需要用如下方式才能保证引用关系正确
      * Res.instantiate(original, aPrefab)
      * Res.instantiate(original, aNode)
-     * 
+     *
      * // 3.aPrefab为动态加载的prefab，aNode为aPrefab的实例节点（aNode = Res.instantiate(aPrefab)），original为aNode的某个子节点，则如下方式均可保证引用关系正确
      * Res.instantiate(original)
      * Res.instantiate(original, aPrefab)
@@ -596,7 +592,7 @@ class ResLoader {
      */
     public instantiate(original: cc.Node | cc.Prefab, related?: cc.Node | cc.Prefab): cc.Node {
         if (!original) {
-            cc.error("[Res.instantiate] original is null");
+            cc.error('[Res.instantiate] original is null');
             return null;
         }
 
@@ -682,11 +678,11 @@ class ResLoader {
      */
     public static getNativeUrlByResources(url: string, ext: string, isNative: boolean = true): string {
         try {
-            let nativeUrl = cc.assetManager["_transform"]({ path: url, bundle: cc.AssetManager.BuiltinBundleName.RESOURCES, __isNative__: isNative, ext: ext });
+            let nativeUrl = cc.assetManager['_transform']({ path: url, bundle: cc.AssetManager.BuiltinBundleName.RESOURCES, __isNative__: isNative, ext: ext });
             return nativeUrl;
         } catch (error) {
             cc.error(`[Res.getNativeUrlByResources] error url: ${url}`);
-            return "";
+            return '';
         }
     }
 
@@ -695,7 +691,7 @@ class ResLoader {
      * @param path          资源路径
      * @param bundleName    远程资源包名
      */
-    release(path: string, type: typeof cc.Asset, bundleName: string = "resources") {
+    release(path: string, type: typeof cc.Asset, bundleName: string = 'resources') {
         let nowSec = Date.now() / 1000;
         let keyUrl = path;
         if (!path.startsWith(BUNDLE_CHECK)) {
@@ -756,14 +752,14 @@ class ResLoader {
      * @param path          资源文件夹路径
      * @param bundleName    远程资源包名
      */
-    releaseDir(path: string, bundleName: string = "resources") {
+    releaseDir(path: string, bundleName: string = 'resources') {
         let bundle: cc.AssetManager.Bundle | null = cc.assetManager.getBundle(bundleName);
         if (bundle) {
             let infos = bundle.getDirWithPath(path);
             if (infos) {
                 infos.map((info) => {
                     let url = info.path;
-                    this.release(url, null, bundleName)
+                    this.release(url, null, bundleName);
                 });
             }
         }
@@ -776,7 +772,7 @@ class ResLoader {
 
         if (asset instanceof cc.Prefab) {
             let uuids: string[] = cc.assetManager.dependUtil.getDepsRecursively(uuid)!;
-            uuids.forEach(uuid => {
+            uuids.forEach((uuid) => {
                 let asset = cc.assetManager.assets.get(uuid)!;
                 asset.decRef();
             });
@@ -789,7 +785,7 @@ class ResLoader {
      * @param type          资源类型
      * @param bundleName    远程资源包名
      */
-    get<T extends cc.Asset>(path: string, type?: AssetType<T> | null, bundleName: string = "resources"): T | null {
+    get<T extends cc.Asset>(path: string, type?: AssetType<T> | null, bundleName: string = 'resources'): T | null {
         let bundle: cc.AssetManager.Bundle | null = cc.assetManager.getBundle(bundleName);
         return bundle!.get(path, type);
     }
@@ -798,7 +794,7 @@ class ResLoader {
     dump() {
         cc.assetManager.assets.forEach((value: cc.Asset, key: string) => {
             console.log(cc.assetManager.assets.get(key));
-        })
+        });
         console.log(`当前资源总数:${cc.assetManager.assets.count}`);
     }
 
@@ -819,8 +815,7 @@ class ResLoader {
                 if (isValidType) {
                     onProgressOut = null;
                 }
-            }
-            else if (onProgress === undefined && !isValidType) {
+            } else if (onProgress === undefined && !isValidType) {
                 onCompleteOut = type as CompleteCallback;
                 onProgressOut = null;
                 typeOut = null;
@@ -841,12 +836,13 @@ class ResLoader {
                     cc.error(`[Res.loadDir] load error: ${err}`);
                 } else {
                     let infos = bundle.getDirWithPath(dirUrl, args.type as any);
-                    data.forEach((asset, i) => { this.cacheAsset(infos[i].path, asset); });
+                    data.forEach((asset, i) => {
+                        this.cacheAsset(infos[i].path, asset);
+                    });
                 }
                 args.onComplete && args.onComplete(err, data as any);
             });
-        }
-        else {
+        } else {
             if (typeof args.paths == 'string') {
                 let keyUrl = args.paths;
                 if (args.bundle) {
@@ -856,7 +852,7 @@ class ResLoader {
                 if (asset) {
                     args.onComplete && args.onComplete(null, asset);
                 } else {
-                    let existRes = bundle.get(args.paths, args.type)
+                    let existRes = bundle.get(args.paths, args.type);
                     if (existRes) {
                         this.cacheAsset(keyUrl, existRes, true);
                         args.onComplete && args.onComplete(null, existRes);
@@ -877,14 +873,19 @@ class ResLoader {
                     if (err) {
                         cc.error(`[Res.loadDir] load error: ${err}`);
                     } else {
-                        arrUrl.forEach((asset, i) => { this.cacheAsset(arrUrl[i], data[i]); });
+                        arrUrl.forEach((asset, i) => {
+                            this.cacheAsset(arrUrl[i], data[i]);
+                        });
                     }
                     args.onComplete && args.onComplete(err, data as any);
                 });
             }
         }
     }
-
+    /**
+     * 通过 uuid 获取 url
+     * @param uuid 资源 uuid
+     */
     private async loadByArgs<T extends cc.Asset>(args: ILoadResArgs<T>) {
         let bundle: cc.AssetManager.Bundle = cc.resources;
         if (args.bundle) {
@@ -907,8 +908,104 @@ class ResLoader {
         this.loadByBundleAndArgs(bundle!, args);
     }
 
+    public getUrlByUuid(uuid: string): string {
+        if (!(uuid && typeof uuid == 'string')) {
+            cc.warn(`AssetManager getUrlByUuid, params err, uuid: ${uuid}`);
+            return '';
+        }
+
+        const options: Record<string, any> = { bundle: '' };
+        cc.assetManager.utils.getUrlWithUuid(uuid, options);
+
+        const info = cc.assetManager.getBundle(options.bundle)?.getAssetInfo(uuid);
+        const url = `${options.bundle}/` + info?.path;
+
+        return url;
+    }
+
+    /**
+     * 资源是否存在
+     * @param url 资源 url
+     * @param type 资源类型
+     */
+    public isAssetExist(url: string, type?: typeof cc.Asset): boolean {
+        if (!(url && typeof url == 'string')) {
+            cc.warn(`AssetManager isAssetExist, params err, url: ${url}`);
+            return false;
+        }
+
+        const bundleName = this.getBundleName(url);
+        const path = this.getRelativePath(url);
+        const info = cc.assetManager.getBundle(bundleName)?.getInfoWithPath?.(path, type);
+
+        return info != null;
+    }
+
+    /**
+     * 获取相对路径
+     * @param url 资源定义路径 bundleName/sta/xxx
+     * @returns 完整相对路径 skin/${skinCode}/sta/xxx
+     */
+    private getRelativePath(url: string): string {
+        if (!(url && typeof url == 'string')) {
+            cc.warn(`AssetManager getRelativePath, params err, url: ${url}`);
+            return '';
+        }
+
+        // url 以 bundleName 开头不能带 /
+        if (url.startsWith('/')) {
+            url = url.slice(1);
+            cc.warn(`AssetManager getRelativePath, startsWith / err, url: ${url}`);
+        }
+
+        /**
+         * 1、文件路径结尾不能带 /
+         * 2、bundle 目录结尾不能带 /
+         * 3、普通目录结尾带不带 / 都可以, 统一规范结尾都不带 /
+         */
+        if (url.endsWith('/')) {
+            url = url.slice(0, -1);
+            cc.warn(`AssetManager getRelativePath, endsWith / err, url: ${url}`);
+        }
+
+        let relativePath = url.slice(url.indexOf('/') + 1);
+        const bundleName = this.getBundleName(url);
+
+        // 通用目录: 配置文件、皮肤共享资源
+        const commonDir = ['config', 'share'].some((dir) => {
+            return url.startsWith(`${bundleName}/${dir}/`);
+        });
+
+        // if (!commonDir) {
+        //     let skinPath = this.getSkinPath(bundleName);
+        //     if (!relativePath.includes(skinPath)) {
+        //         relativePath = skinPath + '/' + relativePath;
+        //     }
+        // }
+
+        return relativePath;
+    }
+    /**
+     * 获取分包名称
+     * @param url 资源 url
+     */
+    private getBundleName(url: string): string {
+        if (!(url && typeof url == 'string')) {
+            cc.warn(`AssetManager getBundleName, params err, url: ${url}`);
+            return '';
+        }
+
+        const bundleName = url.split('/')[0];
+        if (!(bundleName && typeof bundleName == 'string')) {
+            cc.warn(`AssetManager getBundleName, bundleName err, url: ${url}`);
+            return '';
+        }
+
+        return bundleName;
+    }
+
     /** 静态成员 */
-    private static _instance: ResLoader = null
+    private static _instance: ResLoader = null;
     public static getInstance(): ResLoader {
         if (!this._instance) {
             this._instance = new ResLoader();
@@ -924,4 +1021,4 @@ declare global {
 }
 
 c2f.res = ResLoader.getInstance();
-export { };
+export {};

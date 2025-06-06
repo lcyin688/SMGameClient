@@ -1,8 +1,9 @@
-import { Notify } from "../view/Notify";
-import { ViewParams } from "../../define/C2FUIDef";
-import { DelegateComponent } from "./DelegateComponent";
-import { LayerUI } from "./LayerUI";
-import { C2FConst } from "../../define/C2FConst";
+import { Notify } from '../view/Notify';
+import { ViewParams } from '../../define/C2FUIDef';
+import { DelegateComponent } from './DelegateComponent';
+import { LayerUI } from './LayerUI';
+import { C2FConst } from '../../define/C2FConst';
+import { GameConsts } from '../../../Script/game/GameConsts';
 
 enum PrefabPath {
     notify = 'commonRes/prefab/Notify',
@@ -13,7 +14,6 @@ enum PrefabPath {
  * 消息提示层
  */
 export class LayerNotify extends LayerUI {
-
     private loadingCnt: number = 0;
 
     /**
@@ -35,7 +35,7 @@ export class LayerNotify extends LayerUI {
 
     /**
      * 显示loading界面
-     * @param tips 
+     * @param tips
      */
     public showLoading(tips: string) {
         this.loadingCnt++;
@@ -70,7 +70,7 @@ export class LayerNotify extends LayerUI {
 
     // 获取预制件资源
     protected loadSpecial(viewParams: ViewParams) {
-        c2f.res.load(C2FConst.fwBundleName, viewParams.prefabPath, (err: Error | null, res: cc.Prefab) => {
+        c2f.res.load(GameConsts.Bundle.framework, viewParams.prefabPath, (err: Error | null, res: cc.Prefab) => {
             if (err) {
                 cc.error(err);
             }

@@ -10,9 +10,8 @@ export enum UIAnimaType {
     delay = 6,
 }
 
-@ccclass("UIAnimaFunc")
+@ccclass('UIAnimaFunc')
 export class UIAnimaFunc {
-
     @property(cc.Node)
     tarNode: cc.Node = null;
 
@@ -23,25 +22,36 @@ export class UIAnimaFunc {
     funcName: string = '';
 }
 
-
-@ccclass("UIAnimaParam")
+@ccclass('UIAnimaParam')
 export class UIAnimaParam {
     @property({ type: cc.Enum(UIAnimaType) })
     animaTp = UIAnimaType.none;
 
-    @property({ visible() { return this.animaTp === UIAnimaType.move || this.animaTp === UIAnimaType.scale; } })
+    @property({
+        visible() {
+            return this.animaTp === UIAnimaType.move || this.animaTp === UIAnimaType.scale;
+        },
+    })
     byVec2: cc.Vec2 = cc.v2(0, 0);
 
-    @property({ visible() { return this.animaTp === UIAnimaType.opacity || this.animaTp === UIAnimaType.ratation } })
+    @property({
+        visible() {
+            return this.animaTp === UIAnimaType.opacity || this.animaTp === UIAnimaType.ratation;
+        },
+    })
     byNum: number = 0;
 
-    @property({ type: UIAnimaFunc, visible() { return this.animaTp === UIAnimaType.function; } })
+    @property({
+        type: UIAnimaFunc,
+        visible() {
+            return this.animaTp === UIAnimaType.function;
+        },
+    })
     cbHandler: UIAnimaFunc = new UIAnimaFunc();
 }
 
-@ccclass("UIAnimaOnce")
+@ccclass('UIAnimaOnce')
 export class UIAnimaOnce {
-
     @property()
     duration: number = 0;
 
@@ -49,9 +59,8 @@ export class UIAnimaOnce {
     animaList: UIAnimaParam[] = [];
 }
 
-@ccclass("UIAnimaTarget")
+@ccclass('UIAnimaTarget')
 export class UIAnimaTarget {
-
     @property(cc.Node)
     tarNode: cc.Node = null;
 

@@ -55,6 +55,14 @@ export default class WheelGame extends UIVControlBase {
                 this.CC_onClickbtnTurnTable();
                 break;
 
+            case this.view.btnGameListButton.name:
+                this.CC_onClickbtnGameList();
+                break;
+
+            case this.view.btnSwitchLangButton.name:
+                this.CC_onClickbtnSwitchLang();
+                break;
+
             case this.view.shopButton.name:
                 this.CC_onClickshop();
                 break;
@@ -135,5 +143,10 @@ export default class WheelGame extends UIVControlBase {
         c2f.log.log(' 点击了转盘按钮 001 ', Date.now());
         await new Promise((resolve) => setTimeout(resolve, 5000));
         c2f.log.log(' 点击了转盘按钮 002 ', Date.now());
+    }
+    private CC_onClickbtnGameList() {}
+
+    private CC_onClickbtnSwitchLang() {
+        c2f.gui.open(SmallToolDemoUI.SwitchLang);
     }
 }

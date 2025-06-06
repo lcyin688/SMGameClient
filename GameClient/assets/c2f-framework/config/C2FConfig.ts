@@ -1,6 +1,7 @@
-import { C2FConst } from "../define/C2FConst";
-import { GlobalConfig } from "./GlobalConfig";
-import { WebQueryConfig } from "./WebQueryConfig";
+import { GameConsts } from '../../Script/game/GameConsts';
+import { C2FConst } from '../define/C2FConst';
+import { GlobalConfig } from './GlobalConfig';
+import { WebQueryConfig } from './WebQueryConfig';
 
 /** 游戏配置静态访问类 */
 class C2FConfig {
@@ -14,7 +15,7 @@ class C2FConfig {
     }
 
     public async initCfg() {
-        let configUrl = c2f.res.getFullUrl(C2FConst.fwBundleName, 'gameCfg');
+        let configUrl = c2f.res.getFullUrl(GameConsts.Bundle.framework, 'gameCfg');
         let cfg = await c2f.res.loadOne(configUrl, cc.JsonAsset);
         this.game = new GlobalConfig(cfg);
         c2f.res.release(configUrl, cc.JsonAsset);
@@ -27,7 +28,7 @@ class C2FConfig {
     }
 
     /** 静态成员 */
-    private static _instance: C2FConfig = null
+    private static _instance: C2FConfig = null;
     public static getInstance(): C2FConfig {
         if (!this._instance) {
             this._instance = new C2FConfig();
@@ -43,4 +44,4 @@ declare global {
 }
 
 c2f.config = C2FConfig.getInstance();
-export { };
+export {};

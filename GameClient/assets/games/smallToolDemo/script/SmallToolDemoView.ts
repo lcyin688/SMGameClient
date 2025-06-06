@@ -8,6 +8,7 @@ export enum SmallToolDemoUI {
     ListCircularMove,
     JoinUs,
     Turntable,
+    SwitchLang,
 }
 
 /** 打开界面方式的配置数据 */
@@ -19,4 +20,6 @@ export const SmallToolDemoView: { [key: number]: UIConfig } = {
     //description:
     [SmallToolDemoUI.JoinUs]: { layer: LayerType.PopUp, prefab: 'prefab/joinus/V_JoinUs', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true }, 
     //description:
-    [SmallToolDemoUI.Turntable]: { layer: LayerType.PopUp, prefab: "prefab/turntable/V_Turntable", bundle: GameConsts.Bundle.smallToolDemo }, }
+    [SmallToolDemoUI.Turntable]: { layer: LayerType.PopUp, prefab: "prefab/turntable/V_Turntable", bundle: GameConsts.Bundle.smallToolDemo }, 
+    //description:
+    [SmallToolDemoUI.SwitchLang]: { layer: LayerType.PopUp, prefab: "prefab/switchLang/V_SwitchLang", bundle: GameConsts.Bundle.smallToolDemo }, }

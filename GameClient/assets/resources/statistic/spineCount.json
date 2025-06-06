@@ -1,1 +1,1592 @@
-{"anubisi":{"attack":{"act":[["anubisi_tx_attack"]],"actEnd":1},"skill":{"act":[["anubisi_tx_skill_01","anubisi_tx_skill_02"]],"actEnd":1}},"baigufuren":{"attack":{"act":[["baigufuren_tx_attack"]],"actEnd":1},"skill":{"act":[["baigufuren_tx_skill"]],"actEnd":1}},"baisuzhen":{"attack":{"act":[["baisuzhen_tx_attack_01"]],"actEnd":1},"skill":{"act":[["baisuzhen_tx_skill_03","baisuzhen_tx_skill_04"]],"actEnd":1}},"baiwuchang":{"attack":{"act":[["baiwuchang_tx_attack"]],"actEnd":1},"skill":{"act":[["baiwuchang_tx_skill"]],"actEnd":1}},"change":{"attack":{"act":[["change_tx_attack_01"]],"actEnd":1},"skill":{"act":[["change_tx_skill_02"]],"actEnd":1}},"chenghuang":{"attack":{"act":[["chenghuang_tx_attack_02"]],"actEnd":1},"skill":{"act":[["chenghuang_tx_skill_01","chenghuang_tx_skill_02"]],"actEnd":1}},"chiyou":{"attack":{"act":[["chiyou_tx_attack_02"]],"actEnd":1},"skill":{"act":[["chiyou_tx_skill_02","chiyou_tx_skill_03"]]}},"daji":{"attack":{"act":[["daji_tx_attack_03","daji_tx_attack_04"]],"actEnd":1},"skill":{"act":[["daji_tx_skill_02_1","daji_tx_skill_02_2"]],"actEnd":1}},"diting":{"attack":{"act":[["diting_tx_attack_01"]],"actEnd":1},"skill":{"act":[["diting_tx_skill"]],"actEnd":1}},"dizang":{"attack":{"act":[["dizang_tx_attack_01","dizang_tx_attack_02"]],"actEnd":1},"skill":{"act":[["dizang_tx_skill_01","dizang_tx_skill_02"]],"actEnd":1}},"gaosiqishi":{"attack":{"act":[["gaosiqishi_tx_attack"]],"actEnd":1},"skill":{"act":[["gaosiqishi_tx_skill"]],"actEnd":1}},"guanshiyin":{"attack":{"act":[["guanshiyin_tx_attack_01","guanshiyin_tx_attack_02"]],"actEnd":1},"skill":{"act":[["guanshiyin_tx_skill_01"]],"actEnd":1}},"haila":{"attack":{"act":[["haila_tx_attack_01","haila_tx_attack_02"]],"actEnd":1},"skill":{"act":[["haila_tx_skill_02_1","haila_tx_skill_02_2"]],"actEnd":1}},"hanba":{"attack":{"act":[["hanba_tx_attack"]],"actEnd":1},"skill":{"act":[["hanba_tx_skill"]],"actEnd":1}},"heishanlaoyao":{"attack":{"act":[["heishanlaoyao_tx_attack"]],"actEnd":1},"skill":{"act":[["heishanlaoyao_tx_skill_02"]],"actEnd":1}},"heiwuchang":{"attack":{"act":[["heiwuchang_tx_attack"]],"actEnd":1},"skill":{"act":[["heiwuchang_tx_skill"]],"actEnd":1}},"houyi":{"attack":{"act":[["houyi_tx_attack_02"]],"actEnd":1},"skill":{"act":[["houyi_tx_skill_02_1","houyi_tx_skill_02_2"]],"actEnd":1}},"jinjiao":{"attack":{"act":[["jinjiao_tx_attack_01","jinjiao_tx_attack_02"]],"actEnd":1},"skill":{"act":[["jinjiao_tx_skill"]],"actEnd":1}},"leizhenzi":{"attack":{"act":[["leizhenzi_tx_attack_01"]],"actEnd":1},"skill":{"act":[["leizhenzi_tx_skill_02"]],"actEnd":1}},"lilisi":{"attack":{"act":[["lilisi_tx_attack"]]},"skill":{"act":[["lilisi_tx_skill"]],"actEnd":1}},"longnv":{"attack":{"hitCnt":2},"skill":{"act":[["longnv_tx_skill_02","longnv_tx_skill_03"]],"actEnd":1}},"mamian":{"attack":{"act":[["mamian_tx_attack"]],"actEnd":1},"skill":{"act":[["mamian_tx_skill_01","mamian_tx_skill_02"]],"actEnd":1}},"mengpo":{"attack":{"act":[["mengpo_tx_attack_03"]],"actEnd":1},"skill":{"act":[["mengpo_tx_skill_01","mengpo_tx_skill_02"]],"actEnd":1}},"mofeisituo":{"attack":{"act":[["mofeisituo_tx_attack_01","mofeisituo_tx_attack_02"]],"actEnd":1},"skill":{"act":[["mofeisituo_tx_skill_02_1","mofeisituo_tx_skill_02_2"]],"actEnd":1}},"nezha":{"attack":{"act":[["nezha_tx_attack_01","nezha_tx_attack_02"]],"actEnd":1},"skill":{"act":[["nezha_tx_skill"]],"actEnd":1}},"niumowang":{"attack":{"act":[["niumowang_tx_attack"]],"actEnd":1},"skill":{"act":[["niumowang_tx_skill"]],"actEnd":1}},"niutou":{"attack":{"act":[["niutou_tx_attack"]],"actEnd":1},"skill":{"act":[["niutou_tx_skill_01","niutou_tx_skill_02"]],"actEnd":1}},"panguan":{"attack":{"act":[["panguan_tx_attack_02"]],"actEnd":1},"skill":{"act":[["panguan_tx_skill_02"]],"actEnd":1}},"sanshengmu":{"attack":{"act":[["sanshengmu_tx_attack_01","sanshengmu_tx_attack_02"]],"actEnd":1},"skill":{"act":[["sanshengmu_tx_skill"]],"actEnd":1}},"ss_baihu":{"skill":{"act":[["ss_baihu_tx_skill_01","ss_baihu_tx_skill_02"]],"actEnd":1}},"ss_qinglong":{"skill":{"act":[["ss_qinglong_tx_skill_01","ss_qinglong_tx_skill_02"]],"actEnd":1}},"ss_xuanwu":{"skill":{"act":[["ss_xuanwu_tx_skill_01","ss_xuanwu_tx_skill_02"]],"actEnd":1}},"ss_zhuque":{"skill":{"act":[["ss_zhuque_tx_skill_03"]],"actEnd":1}},"sunwukong":{"attack":{"act":[["sunwukong_tx_attack_01","sunwukong_tx_attack_02"]],"actEnd":1},"skill":{"act":[["sunwukong_tx_skill_01","sunwukong_tx_skill_02","sunwukong_tx_skill_03"]],"actEnd":1}},"weituo":{"attack":{"act":[["weituo_tx_attack"]],"actEnd":1},"skill":{"act":[["weituo_tx_skill"]],"actEnd":1}},"wenzhong":{"attack":{"act":[["wenzhong_tx_attack"]],"actEnd":1},"skill":{"act":[["wenzhong_tx_skill"]],"actEnd":1}},"xiaofuxian":{"attack":{"act":[["xiaofuxian_tx_attack"]],"actEnd":1},"skill":{"act":[["xiaofuxian_tx_skill"]],"actEnd":1}},"xuenv":{"attack":{"act":[["xuenv_tx_attack_02"]],"actEnd":1},"skill":{"act":[["xuenv_tx_skill_02"]],"actEnd":1}},"yanluowang":{"attack":{"act":[["yanluowang_tx_attack_01","yanluowang_tx_attack_02"]],"actEnd":1},"skill":{"act":[["yanluowang_tx_skill_01","yanluowang_tx_skill_02"]],"actEnd":1}},"yaochi":{"attack":{"act":[["yaochi_tx_attack_01","yaochi_tx_attack_02"]],"actEnd":1},"skill":{"act":[["yaochi_tx_skill_02","yaochi_tx_skill_03"]],"actEnd":1}},"yatiangou":{"attack":{"act":[["yatiangou_tx_attack"]],"actEnd":1},"skill":{"act":[["yatiangou_tx_skill"]],"actEnd":1}},"yinjiao":{"attack":{"act":[["yinjiao_tx_attack"]],"actEnd":1},"skill":{"act":[["yinjiao_tx_skill"]],"actEnd":1}},"yutu":{"attack":{"act":[["yutu_tx_attack"]],"actEnd":1},"skill":{"act":[["yutu_tx_skill_02"]],"actEnd":1}},"zhaocaimao":{},"zhongkui":{"attack":{"act":[["zhongkui_tx_attack_01","zhongkui_tx_attack_02"]],"actEnd":1},"skill":{"act":[["zhongkui_tx_skill_01"]],"actEnd":1}},"zixiaxianzi":{"attack":{"act":[["zixiaxianzi_tx_attack"]],"actEnd":1},"skill":{"act":[["zixiaxianzi_tx_skill"]],"actEnd":1}},"zuofutongzi":{"attack":{"act":[["zuofutongzi_tx_attack"]],"actEnd":1},"skill":{"act":[["zuofutongzi_tx_skill"]],"actEnd":1}},"anubisi_tx_attack":{"play":{"hitCnt":4}},"anubisi_tx_attack_hit":{},"anubisi_tx_skill_01":{"play":{"hitCnt":9}},"anubisi_tx_skill_02":{"play":{}},"anubisi_tx_skill_03":{"play":{}},"anubisi_tx_skill_04":{"play":{}},"anubisi_tx_skill_hit":{},"baigufuren_tx_attack":{"play":{"hitCnt":1}},"baigufuren_tx_hit":{},"baigufuren_tx_skill":{"play":{"hitCnt":7}},"baisuzhen_tx_attack_01":{"play":{"hitCnt":3}},"baisuzhen_tx_hit":{"play":{}},"baisuzhen_tx_skill_01":{"play":{}},"baisuzhen_tx_skill_02":{"play":{}},"baisuzhen_tx_skill_03":{"play":{"hitCnt":4}},"baisuzhen_tx_skill_04":{"play":{}},"baiwuchang_tx_attack":{"play":{"hitCnt":2}},"baiwuchang_tx_skill":{"play":{"hitCnt":4}},"buff_tx_cf":{"play":{}},"buff_tx_cm":{"play":{}},"buff_tx_fh1":{"play":{}},"buff_tx_fh2":{"play":{}},"buff_tx_hd1":{"play":{}},"buff_tx_hd2":{"play":{}},"buff_tx_jx":{"play":{}},"buff_tx_mb":{"play":{}},"buff_tx_ms1":{"play":{}},"buff_tx_ms2":{"play":{}},"buff_tx_rs":{"play":{}},"buff_tx_sf":{"play":{}},"buff_tx_wd":{"play":{}},"buff_tx_xy":{"play":{}},"buff_tx_zd":{"play":{}},"change_tx_attack_01":{"play":{"hitCnt":1}},"change_tx_attack_02":{"play":{}},"change_tx_skill_01":{"play":{}},"change_tx_skill_02":{"play":{"hitCnt":5}},"change_tx_skill_03":{},"chenghuang_tx_attack_01":{},"chenghuang_tx_attack_02":{"play":{"hitCnt":1}},"chenghuang_tx_skill_01":{"play":{"hitCnt":2}},"chenghuang_tx_skill_02":{"play":{}},"chiyou_tx_attack_01":{"play":{}},"chiyou_tx_attack_02":{"play":{"hitCnt":2}},"chiyou_tx_hit":{"play":{}},"chiyou_tx_skill_01":{"play":{}},"chiyou_tx_skill_02":{"play":{"hitCnt":15}},"chiyou_tx_skill_03":{"play":{}},"daji_tx_attack_01":{"play":{}},"daji_tx_attack_02":{"play":{}},"daji_tx_attack_03":{"play":{"hitCnt":3}},"daji_tx_attack_04":{"play":{}},"daji_tx_skill_01_1":{"play":{}},"daji_tx_skill_01_2":{"play":{}},"daji_tx_skill_02_1":{"play":{}},"daji_tx_skill_02_2":{"play":{"hitCnt":1}},"daji_tx_skill_03":{"play":{}},"diting_tx_attack_01":{"play":{"hitCnt":1}},"diting_tx_attack_02":{"play":{}},"diting_tx_skill":{"play":{"hitCnt":3}},"dizang_tx_attack_01":{"play":{"hitCnt":4}},"dizang_tx_attack_02":{"play":{}},"dizang_tx_hudun":{"play":{}},"dizang_tx_skill_01":{"play":{"hitCnt":9}},"dizang_tx_skill_02":{"play":{}},"dizang_tx_zhiliao":{"play":{}},"gaosiqishi_tx_attack":{"play":{"hitCnt":1}},"gaosiqishi_tx_hit":{},"gaosiqishi_tx_skill":{"play":{"hitCnt":3}},"guanshiyin_tx_attack_01":{"play":{"hitCnt":2}},"guanshiyin_tx_attack_02":{"play":{}},"guanshiyin_tx_skill_01":{"play":{"hitCnt":5}},"guanshiyin_tx_skill_02":{"play":{}},"haila_tx_attack_01":{"play":{"hitCnt":2}},"haila_tx_attack_02":{"play":{}},"haila_tx_hit":{},"haila_tx_skill_01":{"play":{}},"haila_tx_skill_02_1":{"play":{"hitCnt":5}},"haila_tx_skill_02_2":{"play":{}},"hanba_tx_attack":{"play":{"hitCnt":1}},"hanba_tx_hit":{},"hanba_tx_skill":{"play":{"hitCnt":4}},"heishanlaoyao_tx_attack":{"play":{"hitCnt":1}},"heishanlaoyao_tx_hit":{},"heishanlaoyao_tx_skill_01":{"play":{}},"heishanlaoyao_tx_skill_02":{"play":{"hitCnt":6}},"heiwuchang_tx_attack":{"play":{"hitCnt":1}},"heiwuchang_tx_hit":{},"heiwuchang_tx_skill":{"play":{"hitCnt":3}},"houyi_tx_attack_01":{"play":{}},"houyi_tx_attack_02":{"play":{"hitCnt":3}},"houyi_tx_hit":{},"houyi_tx_skill_01":{"play":{}},"houyi_tx_skill_02_1":{"play":{"hitCnt":5}},"houyi_tx_skill_02_2":{"play":{}},"jinjiao_tx_attack":{"play":{"hitCnt":2}},"jinjiao_tx_attack_01":{"play":{"hitCnt":2}},"jinjiao_tx_attack_02":{"play":{}},"jinjiao_tx_skill":{"play":{"hitCnt":4}},"leizhenzi_tx_attack_01":{"play":{"hitCnt":2}},"leizhenzi_tx_attack_02":{"play":{}},"leizhenzi_tx_attack_03":{"play":{}},"leizhenzi_tx_attack_04":{"play":{}},"leizhenzi_tx_skill_01":{"play":{}},"leizhenzi_tx_skill_02":{"play":{"hitCnt":7}},"lilisi_tx_attack":{"play":{"hitCnt":3}},"lilisi_tx_hit":{},"lilisi_tx_skill":{"play":{"hitCnt":9}},"longnv_tx_attack":{"play":{}},"longnv_tx_hit":{},"longnv_tx_skill_01":{"play":{}},"longnv_tx_skill_02":{"play":{}},"longnv_tx_skill_03":{"play":{"hitCnt":4}},"mamian_tx_attack":{"play":{"hitCnt":4}},"mamian_tx_hit":{},"mamian_tx_skill_01":{"play":{"hitCnt":6}},"mamian_tx_skill_02":{"play":{}},"mengpo_attack_01":{"play":{"hitCnt":1}},"mengpo_attack_02":{"play":{}},"mengpo_tx_attack_01":{"play":{}},"mengpo_tx_attack_02":{"play":{}},"mengpo_tx_attack_03":{"play":{"hitCnt":1}},"mengpo_tx_skill_01":{"play":{"hitCnt":5}},"mengpo_tx_skill_02":{"play":{}},"mofeisituo_tx_attack_01":{"play":{"hitCnt":2}},"mofeisituo_tx_attack_02":{"play":{}},"mofeisituo_tx_hit":{},"mofeisituo_tx_skill_01":{"play":{}},"mofeisituo_tx_skill_02_1":{"play":{"hitCnt":7}},"mofeisituo_tx_skill_02_2":{"play":{}},"nezha_tx_attack_01":{"play":{"hitCnt":4}},"nezha_tx_attack_02":{"play":{}},"nezha_tx_hit":{},"nezha_tx_skill":{"play":{"hitCnt":22}},"niumowang_tx_attack":{"play":{"hitCnt":1}},"niumowang_tx_skill":{"play":{"hitCnt":3}},"niutou_tx_attack":{"play":{"hitCnt":7}},"niutou_tx_hit":{},"niutou_tx_skill_01":{"play":{"hitCnt":4}},"niutou_tx_skill_02":{"play":{}},"panguan_tx_attack_01":{"play":{}},"panguan_tx_attack_02":{"play":{"hitCnt":1}},"panguan_tx_hit":{"play":{}},"panguan_tx_skill_01":{"play":{}},"panguan_tx_skill_02":{"play":{"hitCnt":3}},"sanshengmu_tx_attack_01":{"play":{"hitCnt":4}},"sanshengmu_tx_attack_02":{"play":{}},"sanshengmu_tx_hit":{"play":{}},"sanshengmu_tx_skill":{"play":{"hitCnt":3}},"skeleton":{},"ss_baihu_tx_skill_01":{"play":{"hitCnt":8}},"ss_baihu_tx_skill_02":{"play":{}},"ss_baihu_tx_skill_03":{"play":{}},"ss_qinglong_tx_skill_01":{"play":{"hitCnt":5}},"ss_qinglong_tx_skill_02":{"play":{}},"ss_xuanwu_tx_skill_01":{"play":{"hitCnt":4}},"ss_xuanwu_tx_skill_02":{"play":{}},"ss_zhuque_tx_skill_01":{"play":{}},"ss_zhuque_tx_skill_02":{"play":{}},"ss_zhuque_tx_skill_03":{"play":{"hitCnt":7}},"sunwukong_tx_attack_01":{"play":{"hitCnt":4}},"sunwukong_tx_attack_02":{"play":{}},"sunwukong_tx_hit":{},"sunwukong_tx_skill_01":{"play":{"hitCnt":7}},"sunwukong_tx_skill_02":{"play":{}},"sunwukong_tx_skill_03":{"play":{}},"s_baihu_tx_skill_01":{"play":{"hitCnt":8}},"s_baihu_tx_skill_02":{"play":{}},"s_baihu_tx_skill_03":{"play":{}},"weituo_tx_attack":{"play":{"hitCnt":1}},"weituo_tx_hit":{},"weituo_tx_skill":{"play":{"hitCnt":4}},"wenzhong_tx_attack":{"play":{"hitCnt":2}},"wenzhong_tx_hit":{},"wenzhong_tx_skill":{"play":{"hitCnt":3}},"xiaofuxian_tx_attack":{"play":{"hitCnt":2}},"xiaofuxian_tx_skill":{"play":{"hitCnt":3}},"xuenv_tx_attack_01":{"play":{}},"xuenv_tx_attack_02":{"play":{"hitCnt":2}},"xuenv_tx_skill_01":{"play":{}},"xuenv_tx_skill_02":{"play":{"hitCnt":3}},"yanluowang_tx_attack_01":{"play":{"hitCnt":5}},"yanluowang_tx_attack_02":{"play":{}},"yanluowang_tx_hit":{},"yanluowang_tx_skill_01":{"play":{"hitCnt":1}},"yanluowang_tx_skill_02":{"play":{}},"yaochi_tx_attack_01":{"play":{"hitCnt":2}},"yaochi_tx_attack_02":{"play":{}},"yaochi_tx_hit":{},"yaochi_tx_skill_01":{"play":{}},"yaochi_tx_skill_02":{"play":{"hitCnt":4}},"yaochi_tx_skill_03":{"play":{}},"yatiangou_tx_attack":{"play":{"hitCnt":2}},"yatiangou_tx_hit":{},"yatiangou_tx_skill":{"play":{"hitCnt":11}},"yinjiao_tx_attack":{"play":{"hitCnt":1}},"yinjiao_tx_hit":{"play":{}},"yinjiao_tx_skill":{"play":{"hitCnt":3}},"yutu_tx_attack":{"play":{"hitCnt":1}},"yutu_tx_hit":{},"yutu_tx_skill_01":{"play":{}},"yutu_tx_skill_02":{"play":{"hitCnt":3}},"zhongkui_tx_attack_01":{"play":{}},"zhongkui_tx_attack_02":{"play":{"hitCnt":2}},"zhongkui_tx_hit":{"play":{}},"zhongkui_tx_skill_01":{"play":{"hitCnt":9}},"zhongkui_tx_skill_02":{"play":{}},"zhongkui_tx_skill_03":{"play":{}},"zixiaxianzi_tx_attack":{"play":{"hitCnt":1}},"zixiaxianzi_tx_hit":{},"zixiaxianzi_tx_skill":{"play":{"hitCnt":3}},"zuofutongzi_tx_attack":{"play":{"hitCnt":1}},"zuofutongzi_tx_hit":{},"zuofutongzi_tx_skill":{"play":{"hitCnt":2}}}
+{
+    "anubisi": {
+        "attack": {
+            "act": [
+                [
+                    "anubisi_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "anubisi_tx_skill_01",
+                    "anubisi_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "baigufuren": {
+        "attack": {
+            "act": [
+                [
+                    "baigufuren_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "baigufuren_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "baisuzhen": {
+        "attack": {
+            "act": [
+                [
+                    "baisuzhen_tx_attack_01"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "baisuzhen_tx_skill_03",
+                    "baisuzhen_tx_skill_04"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "baiwuchang": {
+        "attack": {
+            "act": [
+                [
+                    "baiwuchang_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "baiwuchang_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "change": {
+        "attack": {
+            "act": [
+                [
+                    "change_tx_attack_01"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "change_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "chenghuang": {
+        "attack": {
+            "act": [
+                [
+                    "chenghuang_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "chenghuang_tx_skill_01",
+                    "chenghuang_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "chiyou": {
+        "attack": {
+            "act": [
+                [
+                    "chiyou_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "chiyou_tx_skill_02",
+                    "chiyou_tx_skill_03"
+                ]
+            ]
+        }
+    },
+    "daji": {
+        "attack": {
+            "act": [
+                [
+                    "daji_tx_attack_03",
+                    "daji_tx_attack_04"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "daji_tx_skill_02_1",
+                    "daji_tx_skill_02_2"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "diting": {
+        "attack": {
+            "act": [
+                [
+                    "diting_tx_attack_01"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "diting_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "dizang": {
+        "attack": {
+            "act": [
+                [
+                    "dizang_tx_attack_01",
+                    "dizang_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "dizang_tx_skill_01",
+                    "dizang_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "gaosiqishi": {
+        "attack": {
+            "act": [
+                [
+                    "gaosiqishi_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "gaosiqishi_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "guanshiyin": {
+        "attack": {
+            "act": [
+                [
+                    "guanshiyin_tx_attack_01",
+                    "guanshiyin_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "guanshiyin_tx_skill_01"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "haila": {
+        "attack": {
+            "act": [
+                [
+                    "haila_tx_attack_01",
+                    "haila_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "haila_tx_skill_02_1",
+                    "haila_tx_skill_02_2"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "hanba": {
+        "attack": {
+            "act": [
+                [
+                    "hanba_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "hanba_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "heishanlaoyao": {
+        "attack": {
+            "act": [
+                [
+                    "heishanlaoyao_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "heishanlaoyao_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "heiwuchang": {
+        "attack": {
+            "act": [
+                [
+                    "heiwuchang_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "heiwuchang_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "houyi": {
+        "attack": {
+            "act": [
+                [
+                    "houyi_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "houyi_tx_skill_02_1",
+                    "houyi_tx_skill_02_2"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "jinjiao": {
+        "attack": {
+            "act": [
+                [
+                    "jinjiao_tx_attack_01",
+                    "jinjiao_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "jinjiao_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "leizhenzi": {
+        "attack": {
+            "act": [
+                [
+                    "leizhenzi_tx_attack_01"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "leizhenzi_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "lilisi": {
+        "attack": {
+            "act": [
+                [
+                    "lilisi_tx_attack"
+                ]
+            ]
+        },
+        "skill": {
+            "act": [
+                [
+                    "lilisi_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "longnv": {
+        "attack": {
+            "hitCnt": 2
+        },
+        "skill": {
+            "act": [
+                [
+                    "longnv_tx_skill_02",
+                    "longnv_tx_skill_03"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "mamian": {
+        "attack": {
+            "act": [
+                [
+                    "mamian_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "mamian_tx_skill_01",
+                    "mamian_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "mengpo": {
+        "attack": {
+            "act": [
+                [
+                    "mengpo_tx_attack_03"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "mengpo_tx_skill_01",
+                    "mengpo_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "mofeisituo": {
+        "attack": {
+            "act": [
+                [
+                    "mofeisituo_tx_attack_01",
+                    "mofeisituo_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "mofeisituo_tx_skill_02_1",
+                    "mofeisituo_tx_skill_02_2"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "nezha": {
+        "attack": {
+            "act": [
+                [
+                    "nezha_tx_attack_01",
+                    "nezha_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "nezha_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "niumowang": {
+        "attack": {
+            "act": [
+                [
+                    "niumowang_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "niumowang_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "niutou": {
+        "attack": {
+            "act": [
+                [
+                    "niutou_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "niutou_tx_skill_01",
+                    "niutou_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "panguan": {
+        "attack": {
+            "act": [
+                [
+                    "panguan_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "panguan_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "sanshengmu": {
+        "attack": {
+            "act": [
+                [
+                    "sanshengmu_tx_attack_01",
+                    "sanshengmu_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "sanshengmu_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "ss_baihu": {
+        "skill": {
+            "act": [
+                [
+                    "ss_baihu_tx_skill_01",
+                    "ss_baihu_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "ss_qinglong": {
+        "skill": {
+            "act": [
+                [
+                    "ss_qinglong_tx_skill_01",
+                    "ss_qinglong_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "ss_xuanwu": {
+        "skill": {
+            "act": [
+                [
+                    "ss_xuanwu_tx_skill_01",
+                    "ss_xuanwu_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "ss_zhuque": {
+        "skill": {
+            "act": [
+                [
+                    "ss_zhuque_tx_skill_03"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "sunwukong": {
+        "attack": {
+            "act": [
+                [
+                    "sunwukong_tx_attack_01",
+                    "sunwukong_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "sunwukong_tx_skill_01",
+                    "sunwukong_tx_skill_02",
+                    "sunwukong_tx_skill_03"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "weituo": {
+        "attack": {
+            "act": [
+                [
+                    "weituo_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "weituo_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "wenzhong": {
+        "attack": {
+            "act": [
+                [
+                    "wenzhong_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "wenzhong_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "xiaofuxian": {
+        "attack": {
+            "act": [
+                [
+                    "xiaofuxian_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "xiaofuxian_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "xuenv": {
+        "attack": {
+            "act": [
+                [
+                    "xuenv_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "xuenv_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "yanluowang": {
+        "attack": {
+            "act": [
+                [
+                    "yanluowang_tx_attack_01",
+                    "yanluowang_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "yanluowang_tx_skill_01",
+                    "yanluowang_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "yaochi": {
+        "attack": {
+            "act": [
+                [
+                    "yaochi_tx_attack_01",
+                    "yaochi_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "yaochi_tx_skill_02",
+                    "yaochi_tx_skill_03"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "yatiangou": {
+        "attack": {
+            "act": [
+                [
+                    "yatiangou_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "yatiangou_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "yinjiao": {
+        "attack": {
+            "act": [
+                [
+                    "yinjiao_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "yinjiao_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "yutu": {
+        "attack": {
+            "act": [
+                [
+                    "yutu_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "yutu_tx_skill_02"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "zhaocaimao": {},
+    "zhongkui": {
+        "attack": {
+            "act": [
+                [
+                    "zhongkui_tx_attack_01",
+                    "zhongkui_tx_attack_02"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "zhongkui_tx_skill_01"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "zixiaxianzi": {
+        "attack": {
+            "act": [
+                [
+                    "zixiaxianzi_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "zixiaxianzi_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "zuofutongzi": {
+        "attack": {
+            "act": [
+                [
+                    "zuofutongzi_tx_attack"
+                ]
+            ],
+            "actEnd": 1
+        },
+        "skill": {
+            "act": [
+                [
+                    "zuofutongzi_tx_skill"
+                ]
+            ],
+            "actEnd": 1
+        }
+    },
+    "anubisi_tx_attack": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "anubisi_tx_attack_hit": {},
+    "anubisi_tx_skill_01": {
+        "play": {
+            "hitCnt": 9
+        }
+    },
+    "anubisi_tx_skill_02": {
+        "play": {}
+    },
+    "anubisi_tx_skill_03": {
+        "play": {}
+    },
+    "anubisi_tx_skill_04": {
+        "play": {}
+    },
+    "anubisi_tx_skill_hit": {},
+    "baigufuren_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "baigufuren_tx_hit": {},
+    "baigufuren_tx_skill": {
+        "play": {
+            "hitCnt": 7
+        }
+    },
+    "baisuzhen_tx_attack_01": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "baisuzhen_tx_hit": {
+        "play": {}
+    },
+    "baisuzhen_tx_skill_01": {
+        "play": {}
+    },
+    "baisuzhen_tx_skill_02": {
+        "play": {}
+    },
+    "baisuzhen_tx_skill_03": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "baisuzhen_tx_skill_04": {
+        "play": {}
+    },
+    "baiwuchang_tx_attack": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "baiwuchang_tx_skill": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "buff_tx_cf": {
+        "play": {}
+    },
+    "buff_tx_cm": {
+        "play": {}
+    },
+    "buff_tx_fh1": {
+        "play": {}
+    },
+    "buff_tx_fh2": {
+        "play": {}
+    },
+    "buff_tx_hd1": {
+        "play": {}
+    },
+    "buff_tx_hd2": {
+        "play": {}
+    },
+    "buff_tx_jx": {
+        "play": {}
+    },
+    "buff_tx_mb": {
+        "play": {}
+    },
+    "buff_tx_ms1": {
+        "play": {}
+    },
+    "buff_tx_ms2": {
+        "play": {}
+    },
+    "buff_tx_rs": {
+        "play": {}
+    },
+    "buff_tx_sf": {
+        "play": {}
+    },
+    "buff_tx_wd": {
+        "play": {}
+    },
+    "buff_tx_xy": {
+        "play": {}
+    },
+    "buff_tx_zd": {
+        "play": {}
+    },
+    "change_tx_attack_01": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "change_tx_attack_02": {
+        "play": {}
+    },
+    "change_tx_skill_01": {
+        "play": {}
+    },
+    "change_tx_skill_02": {
+        "play": {
+            "hitCnt": 5
+        }
+    },
+    "change_tx_skill_03": {},
+    "chenghuang_tx_attack_01": {},
+    "chenghuang_tx_attack_02": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "chenghuang_tx_skill_01": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "chenghuang_tx_skill_02": {
+        "play": {}
+    },
+    "chiyou_tx_attack_01": {
+        "play": {}
+    },
+    "chiyou_tx_attack_02": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "chiyou_tx_hit": {
+        "play": {}
+    },
+    "chiyou_tx_skill_01": {
+        "play": {}
+    },
+    "chiyou_tx_skill_02": {
+        "play": {
+            "hitCnt": 15
+        }
+    },
+    "chiyou_tx_skill_03": {
+        "play": {}
+    },
+    "daji_tx_attack_01": {
+        "play": {}
+    },
+    "daji_tx_attack_02": {
+        "play": {}
+    },
+    "daji_tx_attack_03": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "daji_tx_attack_04": {
+        "play": {}
+    },
+    "daji_tx_skill_01_1": {
+        "play": {}
+    },
+    "daji_tx_skill_01_2": {
+        "play": {}
+    },
+    "daji_tx_skill_02_1": {
+        "play": {}
+    },
+    "daji_tx_skill_02_2": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "daji_tx_skill_03": {
+        "play": {}
+    },
+    "diting_tx_attack_01": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "diting_tx_attack_02": {
+        "play": {}
+    },
+    "diting_tx_skill": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "dizang_tx_attack_01": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "dizang_tx_attack_02": {
+        "play": {}
+    },
+    "dizang_tx_hudun": {
+        "play": {}
+    },
+    "dizang_tx_skill_01": {
+        "play": {
+            "hitCnt": 9
+        }
+    },
+    "dizang_tx_skill_02": {
+        "play": {}
+    },
+    "dizang_tx_zhiliao": {
+        "play": {}
+    },
+    "gaosiqishi_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "gaosiqishi_tx_hit": {},
+    "gaosiqishi_tx_skill": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "guanshiyin_tx_attack_01": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "guanshiyin_tx_attack_02": {
+        "play": {}
+    },
+    "guanshiyin_tx_skill_01": {
+        "play": {
+            "hitCnt": 5
+        }
+    },
+    "guanshiyin_tx_skill_02": {
+        "play": {}
+    },
+    "haila_tx_attack_01": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "haila_tx_attack_02": {
+        "play": {}
+    },
+    "haila_tx_hit": {},
+    "haila_tx_skill_01": {
+        "play": {}
+    },
+    "haila_tx_skill_02_1": {
+        "play": {
+            "hitCnt": 5
+        }
+    },
+    "haila_tx_skill_02_2": {
+        "play": {}
+    },
+    "hanba_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "hanba_tx_hit": {},
+    "hanba_tx_skill": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "heishanlaoyao_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "heishanlaoyao_tx_hit": {},
+    "heishanlaoyao_tx_skill_01": {
+        "play": {}
+    },
+    "heishanlaoyao_tx_skill_02": {
+        "play": {
+            "hitCnt": 6
+        }
+    },
+    "heiwuchang_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "heiwuchang_tx_hit": {},
+    "heiwuchang_tx_skill": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "houyi_tx_attack_01": {
+        "play": {}
+    },
+    "houyi_tx_attack_02": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "houyi_tx_hit": {},
+    "houyi_tx_skill_01": {
+        "play": {}
+    },
+    "houyi_tx_skill_02_1": {
+        "play": {
+            "hitCnt": 5
+        }
+    },
+    "houyi_tx_skill_02_2": {
+        "play": {}
+    },
+    "jinjiao_tx_attack": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "jinjiao_tx_attack_01": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "jinjiao_tx_attack_02": {
+        "play": {}
+    },
+    "jinjiao_tx_skill": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "leizhenzi_tx_attack_01": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "leizhenzi_tx_attack_02": {
+        "play": {}
+    },
+    "leizhenzi_tx_attack_03": {
+        "play": {}
+    },
+    "leizhenzi_tx_attack_04": {
+        "play": {}
+    },
+    "leizhenzi_tx_skill_01": {
+        "play": {}
+    },
+    "leizhenzi_tx_skill_02": {
+        "play": {
+            "hitCnt": 7
+        }
+    },
+    "lilisi_tx_attack": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "lilisi_tx_hit": {},
+    "lilisi_tx_skill": {
+        "play": {
+            "hitCnt": 9
+        }
+    },
+    "longnv_tx_attack": {
+        "play": {}
+    },
+    "longnv_tx_hit": {},
+    "longnv_tx_skill_01": {
+        "play": {}
+    },
+    "longnv_tx_skill_02": {
+        "play": {}
+    },
+    "longnv_tx_skill_03": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "mamian_tx_attack": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "mamian_tx_hit": {},
+    "mamian_tx_skill_01": {
+        "play": {
+            "hitCnt": 6
+        }
+    },
+    "mamian_tx_skill_02": {
+        "play": {}
+    },
+    "mengpo_attack_01": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "mengpo_attack_02": {
+        "play": {}
+    },
+    "mengpo_tx_attack_01": {
+        "play": {}
+    },
+    "mengpo_tx_attack_02": {
+        "play": {}
+    },
+    "mengpo_tx_attack_03": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "mengpo_tx_skill_01": {
+        "play": {
+            "hitCnt": 5
+        }
+    },
+    "mengpo_tx_skill_02": {
+        "play": {}
+    },
+    "mofeisituo_tx_attack_01": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "mofeisituo_tx_attack_02": {
+        "play": {}
+    },
+    "mofeisituo_tx_hit": {},
+    "mofeisituo_tx_skill_01": {
+        "play": {}
+    },
+    "mofeisituo_tx_skill_02_1": {
+        "play": {
+            "hitCnt": 7
+        }
+    },
+    "mofeisituo_tx_skill_02_2": {
+        "play": {}
+    },
+    "nezha_tx_attack_01": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "nezha_tx_attack_02": {
+        "play": {}
+    },
+    "nezha_tx_hit": {},
+    "nezha_tx_skill": {
+        "play": {
+            "hitCnt": 22
+        }
+    },
+    "niumowang_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "niumowang_tx_skill": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "niutou_tx_attack": {
+        "play": {
+            "hitCnt": 7
+        }
+    },
+    "niutou_tx_hit": {},
+    "niutou_tx_skill_01": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "niutou_tx_skill_02": {
+        "play": {}
+    },
+    "panguan_tx_attack_01": {
+        "play": {}
+    },
+    "panguan_tx_attack_02": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "panguan_tx_hit": {
+        "play": {}
+    },
+    "panguan_tx_skill_01": {
+        "play": {}
+    },
+    "panguan_tx_skill_02": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "sanshengmu_tx_attack_01": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "sanshengmu_tx_attack_02": {
+        "play": {}
+    },
+    "sanshengmu_tx_hit": {
+        "play": {}
+    },
+    "sanshengmu_tx_skill": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "skeleton": {},
+    "ss_baihu_tx_skill_01": {
+        "play": {
+            "hitCnt": 8
+        }
+    },
+    "ss_baihu_tx_skill_02": {
+        "play": {}
+    },
+    "ss_baihu_tx_skill_03": {
+        "play": {}
+    },
+    "ss_qinglong_tx_skill_01": {
+        "play": {
+            "hitCnt": 5
+        }
+    },
+    "ss_qinglong_tx_skill_02": {
+        "play": {}
+    },
+    "ss_xuanwu_tx_skill_01": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "ss_xuanwu_tx_skill_02": {
+        "play": {}
+    },
+    "ss_zhuque_tx_skill_01": {
+        "play": {}
+    },
+    "ss_zhuque_tx_skill_02": {
+        "play": {}
+    },
+    "ss_zhuque_tx_skill_03": {
+        "play": {
+            "hitCnt": 7
+        }
+    },
+    "sunwukong_tx_attack_01": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "sunwukong_tx_attack_02": {
+        "play": {}
+    },
+    "sunwukong_tx_hit": {},
+    "sunwukong_tx_skill_01": {
+        "play": {
+            "hitCnt": 7
+        }
+    },
+    "sunwukong_tx_skill_02": {
+        "play": {}
+    },
+    "sunwukong_tx_skill_03": {
+        "play": {}
+    },
+    "s_baihu_tx_skill_01": {
+        "play": {
+            "hitCnt": 8
+        }
+    },
+    "s_baihu_tx_skill_02": {
+        "play": {}
+    },
+    "s_baihu_tx_skill_03": {
+        "play": {}
+    },
+    "weituo_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "weituo_tx_hit": {},
+    "weituo_tx_skill": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "wenzhong_tx_attack": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "wenzhong_tx_hit": {},
+    "wenzhong_tx_skill": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "xiaofuxian_tx_attack": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "xiaofuxian_tx_skill": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "xuenv_tx_attack_01": {
+        "play": {}
+    },
+    "xuenv_tx_attack_02": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "xuenv_tx_skill_01": {
+        "play": {}
+    },
+    "xuenv_tx_skill_02": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "yanluowang_tx_attack_01": {
+        "play": {
+            "hitCnt": 5
+        }
+    },
+    "yanluowang_tx_attack_02": {
+        "play": {}
+    },
+    "yanluowang_tx_hit": {},
+    "yanluowang_tx_skill_01": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "yanluowang_tx_skill_02": {
+        "play": {}
+    },
+    "yaochi_tx_attack_01": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "yaochi_tx_attack_02": {
+        "play": {}
+    },
+    "yaochi_tx_hit": {},
+    "yaochi_tx_skill_01": {
+        "play": {}
+    },
+    "yaochi_tx_skill_02": {
+        "play": {
+            "hitCnt": 4
+        }
+    },
+    "yaochi_tx_skill_03": {
+        "play": {}
+    },
+    "yatiangou_tx_attack": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "yatiangou_tx_hit": {},
+    "yatiangou_tx_skill": {
+        "play": {
+            "hitCnt": 11
+        }
+    },
+    "yinjiao_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "yinjiao_tx_hit": {
+        "play": {}
+    },
+    "yinjiao_tx_skill": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "yutu_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "yutu_tx_hit": {},
+    "yutu_tx_skill_01": {
+        "play": {}
+    },
+    "yutu_tx_skill_02": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "zhongkui_tx_attack_01": {
+        "play": {}
+    },
+    "zhongkui_tx_attack_02": {
+        "play": {
+            "hitCnt": 2
+        }
+    },
+    "zhongkui_tx_hit": {
+        "play": {}
+    },
+    "zhongkui_tx_skill_01": {
+        "play": {
+            "hitCnt": 9
+        }
+    },
+    "zhongkui_tx_skill_02": {
+        "play": {}
+    },
+    "zhongkui_tx_skill_03": {
+        "play": {}
+    },
+    "zixiaxianzi_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "zixiaxianzi_tx_hit": {},
+    "zixiaxianzi_tx_skill": {
+        "play": {
+            "hitCnt": 3
+        }
+    },
+    "zuofutongzi_tx_attack": {
+        "play": {
+            "hitCnt": 1
+        }
+    },
+    "zuofutongzi_tx_hit": {},
+    "zuofutongzi_tx_skill": {
+        "play": {
+            "hitCnt": 2
+        }
+    }
+}

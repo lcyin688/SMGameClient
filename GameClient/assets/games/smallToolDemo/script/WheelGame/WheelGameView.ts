@@ -23,6 +23,10 @@ export default class WheelGameView extends UIViewBase {
     public btnJoinUsButton: cc.Button = undefined;
     public btnTurnTable: cc.Node;
     public btnTurnTableButton: cc.Button = undefined;
+    public btnGameList: cc.Node;
+    public btnGameListButton: cc.Button = undefined;
+    public btnSwitchLang: cc.Node;
+    public btnSwitchLangButton: cc.Button = undefined;
     public bottom: cc.Node;
     public bottomWidget: cc.Widget = undefined;
     public bottomWELayoutUpdate: WELayoutUpdate = undefined;
@@ -64,6 +68,10 @@ export default class WheelGameView extends UIViewBase {
         this.btnJoinUsButton = this.btnJoinUs.getComponent(cc.Button);
         this.btnTurnTable = this.get('_btnTurnTable_');
         this.btnTurnTableButton = this.btnTurnTable.getComponent(cc.Button);
+        this.btnGameList = this.get('_btnGameList_');
+        this.btnGameListButton = this.btnGameList.getComponent(cc.Button);
+        this.btnSwitchLang = this.get('_btnSwitchLang_');
+        this.btnSwitchLangButton = this.btnSwitchLang.getComponent(cc.Button);
         this.bottom = this.get('_bottom_');
         this.bottomWidget = this.bottom.getComponent(cc.Widget);
         this.bottomWELayoutUpdate = this.bottom.getComponent(WELayoutUpdate);
@@ -81,6 +89,8 @@ export default class WheelGameView extends UIViewBase {
         this.btnCircularMoveButton.node.on('click', this.onbtnCircularMoveButtonClick, this);
         this.btnJoinUsButton.node.on('click', this.onbtnJoinUsButtonClick, this);
         this.btnTurnTableButton.node.on('click', this.onbtnTurnTableButtonClick, this);
+        this.btnGameListButton.node.on('click', this.onbtnGameListButtonClick, this);
+        this.btnSwitchLangButton.node.on('click', this.onbtnSwitchLangButtonClick, this);
         this.shopButton.node.on('click', this.onshopButtonClick, this);
 
     }
@@ -89,6 +99,8 @@ export default class WheelGameView extends UIViewBase {
         this.btnCircularMoveButton.node.off('click', this.onbtnCircularMoveButtonClick, this);
         this.btnJoinUsButton.node.off('click', this.onbtnJoinUsButtonClick, this);
         this.btnTurnTableButton.node.off('click', this.onbtnTurnTableButtonClick, this);
+        this.btnGameListButton.node.off('click', this.onbtnGameListButtonClick, this);
+        this.btnSwitchLangButton.node.off('click', this.onbtnSwitchLangButtonClick, this);
         this.shopButton.node.off('click', this.onshopButtonClick, this);
 
     }
@@ -102,6 +114,14 @@ export default class WheelGameView extends UIViewBase {
     }
 
     private onbtnTurnTableButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnGameListButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnSwitchLangButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

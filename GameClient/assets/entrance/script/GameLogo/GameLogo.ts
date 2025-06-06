@@ -16,7 +16,7 @@ export default class GameLogo extends UIVControlBase {
     public view: GameLogoView = undefined;
 
     onEnable() {
-        cc.view.setOrientation(cc.macro.ORIENTATION_LANDSCAPE); 
+        cc.view.setOrientation(cc.macro.ORIENTATION_LANDSCAPE);
         cc.view.setFrameSize(720, 1280);
 
         if (super.onEnable) {
@@ -38,10 +38,7 @@ export default class GameLogo extends UIVControlBase {
         }
     }
 
-    protected onViewOpen(param: any) {
-
-    }
-
+    protected onViewOpen(param: any) {}
 
     protected onLoad(): void {
         if (super.onLoad) {
@@ -62,16 +59,19 @@ export default class GameLogo extends UIVControlBase {
     }
 
     private initLanguage() {
+        this.view.barProgressBar.progress = 0.1;
         c2f.language.initLanguage(this.playLogoAnima.bind(this));
-        szg.player.initModules()
+        szg.player.initModules();
     }
 
-
     private playLogoAnima() {
-        this.view.barProgressBar.progress = 0.1
-        cc.tween(this.view.barProgressBar).to(0.3, { progress: 1 }).call(() => {
-            this.openLoginView()
-        }).start()
+        this.view.barProgressBar.progress = 0.1;
+        cc.tween(this.view.barProgressBar)
+            .to(0.3, { progress: 1 })
+            .call(() => {
+                this.openLoginView();
+            })
+            .start();
     }
 
     private openLoginView() {
@@ -79,13 +79,10 @@ export default class GameLogo extends UIVControlBase {
             onUIAdded: (node: cc.Node, params: any) => {
                 c2f.gui.remove(EntranceUI.GameLogo);
             },
-        }
+        };
         c2f.gui.open(EntranceUI.GameLogin, null, uic);
         // GameHelper.loadBundle(GameConsts.Bundle.mainPack).then(UIID => {
         //     c2f.gui.open(UIID.DesStarMain, null, uic)
         // });
-
-
     }
-
 }

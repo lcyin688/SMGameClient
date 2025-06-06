@@ -1,11 +1,6 @@
-export module C2FConst {
+export namespace C2FConst {
     /** 弹窗黑底背景透明度 */
     export const UIBgOpacity = 193;
-
-    /** 框架包名 */
-    export const fwBundleName = 'framework';
-    /** 多语言包名前缀 */
-    export const mulBundlePre = 'language_';
 
     /** 语言代码 */
     export enum LanguageKey {
@@ -17,12 +12,8 @@ export module C2FConst {
         en = 'en',
         /** 印尼语 */
         id = 'id',
-        /** 西班牙语-墨西哥 */
-        es = 'es-mx',
         /** 泰语 */
         th = 'th',
-        /** 葡萄牙语-巴西 */
-        pt = 'pt-BR',
         /** 印地语 */
         hi = 'hi',
         /** 越南语 */

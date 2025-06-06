@@ -9,12 +9,12 @@
         "frameRate": 60
     },
     "language": {
-        "file":"languageRes",
+        "file": "languageRes",
         "type": [
-            "cn",
+            "zh",
             "tw"
         ],
-        "base":"cn",
-        "default":"cn"
+        "base": "zh",
+        "default": "zh"
     }
 }

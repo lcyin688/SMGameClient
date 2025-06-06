@@ -1,34 +1,33 @@
-import LanguageLabel from "../../component/language/LanguageLabel";
-
+import { WEI18nLabelFull } from '../../component/ui/i18n/WEI18nLabelFull';
 
 /** 公共提示窗口 */
 const { ccclass, property } = cc._decorator;
 @ccclass
 export class CmmPromptDlg extends cc.Component {
     /** 窗口标题多语言组件 */
-    @property(LanguageLabel)
-    private lab_title: LanguageLabel | null = null;
+    @property(WEI18nLabelFull)
+    private lab_title: WEI18nLabelFull | null = null;
 
     /** 提示内容多语言组件 */
-    @property(LanguageLabel)
-    private lab_content: LanguageLabel | null = null;
+    @property(WEI18nLabelFull)
+    private lab_content: WEI18nLabelFull | null = null;
 
     /** 确认按钮文本多语言组件 */
-    @property(LanguageLabel)
-    private lab_ok: LanguageLabel | null = null
+    @property(WEI18nLabelFull)
+    private lab_ok: WEI18nLabelFull | null = null;
 
     /** 取消按钮文本多语言组件 */
-    @property(LanguageLabel)
-    private lab_cancel: LanguageLabel | null = null;
+    @property(WEI18nLabelFull)
+    private lab_cancel: WEI18nLabelFull | null = null;
 
     private config: any = {};
 
     private onTouchEnd(event: cc.Event.EventTouch, data: any) {
         switch (event.target.name) {
-            case "btn_ok":
+            case 'btn_ok':
                 this.onOk();
                 break;
-            case "btn_cancel":
+            case 'btn_cancel':
                 this.onCancel();
                 break;
             default:
@@ -37,9 +36,9 @@ export class CmmPromptDlg extends cc.Component {
     }
 
     /**
-     * 
-     * 
-     * @param params 参数 
+     *
+     *
+     * @param params 参数
      * {
      *     title:      标题
      *     content:    内容
@@ -60,38 +59,38 @@ export class CmmPromptDlg extends cc.Component {
     }
 
     private setTitle() {
-        this.lab_title!.dataID = this.config.title;
+        this.lab_title!.resId = this.config.title;
     }
 
     private setContent() {
-        this.lab_content!.dataID = this.config.content;
+        this.lab_content!.resId = this.config.content;
     }
 
     private setBtnOkLabel() {
-        this.lab_ok!.dataID = this.config.okWord;
+        this.lab_ok!.resId = this.config.okWord;
     }
 
     private setBtnCancelLabel() {
-        this.lab_cancel!.dataID = this.config.cancelWord;
+        this.lab_cancel!.resId = this.config.cancelWord;
         this.lab_cancel!.node!.parent!.active = this.config.needCancel || false;
     }
 
     private onOk() {
-        if (typeof this.config.okFunc == "function") {
+        if (typeof this.config.okFunc == 'function') {
             this.config.okFunc();
         }
         this.close();
     }
 
     private onClose() {
-        if (typeof this.config.closeFunc == "function") {
+        if (typeof this.config.closeFunc == 'function') {
             this.config.closeFunc();
         }
         this.close();
     }
 
     private onCancel() {
-        if (typeof this.config.cancelFunc == "function") {
+        if (typeof this.config.cancelFunc == 'function') {
             this.config.cancelFunc();
         }
         this.close();

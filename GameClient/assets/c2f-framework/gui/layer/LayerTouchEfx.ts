@@ -1,7 +1,8 @@
-import { ViewParams } from "../../define/C2FUIDef";
-import { DelegateComponent } from "./DelegateComponent";
-import { LayerUI } from "./LayerUI";
-import { C2FConst } from "../../define/C2FConst";
+import { ViewParams } from '../../define/C2FUIDef';
+import { DelegateComponent } from './DelegateComponent';
+import { LayerUI } from './LayerUI';
+import { C2FConst } from '../../define/C2FConst';
+import { GameConsts } from '../../../Script/game/GameConsts';
 
 enum PrefabPath {
     touchEfx = 'commonRes/prefab/TouchEffect',
@@ -11,7 +12,6 @@ enum PrefabPath {
  * 点击特效层
  */
 export class LayerTouchEfx extends LayerUI {
-
     /**
      * 添加点击特效
      */
@@ -32,7 +32,7 @@ export class LayerTouchEfx extends LayerUI {
 
     // 获取预制件资源
     protected load(viewParams: ViewParams) {
-        c2f.res.load(C2FConst.fwBundleName, viewParams.prefabPath, (err: Error | null, res: cc.Prefab) => {
+        c2f.res.load(GameConsts.Bundle.framework, viewParams.prefabPath, (err: Error | null, res: cc.Prefab) => {
             if (err) {
                 cc.error(err);
             }

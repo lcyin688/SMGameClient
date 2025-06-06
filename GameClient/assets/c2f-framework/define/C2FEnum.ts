@@ -1,4 +1,4 @@
-export module C2FEnum {
+export namespace C2FEnum {
     export enum Event {
         /** 改变视图的值 */
         ChangeViewValue = 'ChangeViewValue',
@@ -55,7 +55,6 @@ export module C2FEnum {
         PageViewPageTurning = 'page-turning',
     }
 
-
     export enum ExtEvent {
         /** 语言切换 */
         SwitchLanguage = 'switch-language',
@@ -64,5 +63,4 @@ export module C2FEnum {
         /** */
         NodeActiveChanged = 'active-changed',
     }
-
 }

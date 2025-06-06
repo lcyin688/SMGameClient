@@ -1,5 +1,3 @@
-import LanguageLabel from "../../component/language/LanguageLabel";
-
 const { ccclass, property } = cc._decorator;
 
 /** 滚动消息提示组件  */
@@ -12,8 +10,7 @@ export class Notify extends cc.Component {
     private animation: cc.Animation | null = null;
 
     onLoad() {
-        if (this.animation)
-            this.animation.on(cc.Animation.EventType.FINISHED, this.onFinished, this);
+        if (this.animation) this.animation.on(cc.Animation.EventType.FINISHED, this.onFinished, this);
     }
 
     private onFinished() {
@@ -28,7 +25,7 @@ export class Notify extends cc.Component {
     toast(msg: string, useI18n: boolean) {
         let realMsg = msg;
         if (c2f.utils.str.isAllDigits(msg)) {
-            let words = c2f.language.words(Number(msg));
+            let words = c2f.language.words(msg);
             if (words) {
                 realMsg = words;
             }

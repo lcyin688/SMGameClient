@@ -3,14 +3,11 @@
 // If you need add data, please write in NhwcMainViewModel.ts .
 
 import { UIViewBase } from './../../../../../c2f-framework/gui/layer/UIViewBase';
-import CountdownLabel from "./../../../../../c2f-framework/component/common/CountdownLabel";
-import LanguageLabel from "./../../../../../c2f-framework/component/language/LanguageLabel";
-
+import CountdownLabel from './../../../../../c2f-framework/component/common/CountdownLabel';
 
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class NhwcMainView extends UIViewBase {
-
     /** 预制名 给实例调用 */
     public prefabName = 'F_NhwcMain';
 
@@ -49,7 +46,6 @@ export default class NhwcMainView extends UIViewBase {
     public tipsSprite: cc.Sprite = undefined;
     public titleTips: cc.Node;
     public titleTipsLabel: cc.Label = undefined;
-    public titleTipsLanguageLabel: LanguageLabel = undefined;
     public tipInput: cc.Node;
     public tipInputEditBox: cc.EditBox = undefined;
     public tipConfirmBtn: cc.Node;
@@ -72,7 +68,6 @@ export default class NhwcMainView extends UIViewBase {
     public toolSwitchButton: cc.Button = undefined;
     public toolSwitchWidget: cc.Widget = undefined;
     public overPanel: cc.Node;
-    
 
     public onLoad() {
         super.onLoad();
@@ -90,7 +85,7 @@ export default class NhwcMainView extends UIViewBase {
             super.onDisable();
         }
         this.removeEvent();
-    } 
+    }
 
     protected initProperty() {
         super.initProperty();
@@ -129,7 +124,6 @@ export default class NhwcMainView extends UIViewBase {
         this.tipsSprite = this.tips.getComponent(cc.Sprite);
         this.titleTips = this.get('_titleTips_');
         this.titleTipsLabel = this.titleTips.getComponent(cc.Label);
-        this.titleTipsLanguageLabel = this.titleTips.getComponent(LanguageLabel);
         this.tipInput = this.get('_tipInput_');
         this.tipInputEditBox = this.tipInput.getComponent(cc.EditBox);
         this.tipConfirmBtn = this.get('_tipConfirmBtn_');
@@ -152,7 +146,6 @@ export default class NhwcMainView extends UIViewBase {
         this.toolSwitchButton = this.toolSwitch.getComponent(cc.Button);
         this.toolSwitchWidget = this.toolSwitch.getComponent(cc.Widget);
         this.overPanel = this.get('_overPanel_');
-        
     }
 
     private addEvent() {
@@ -167,7 +160,6 @@ export default class NhwcMainView extends UIViewBase {
         this.tipCloseBtnButton.node.on('click', this.ontipCloseBtnButtonClick, this);
         this.switchButton.node.on('click', this.onswitchButtonClick, this);
         this.toolSwitchButton.node.on('click', this.ontoolSwitchButtonClick, this);
-
     }
 
     private removeEvent() {
@@ -182,7 +174,6 @@ export default class NhwcMainView extends UIViewBase {
         this.tipCloseBtnButton.node.off('click', this.ontipCloseBtnButtonClick, this);
         this.switchButton.node.off('click', this.onswitchButtonClick, this);
         this.toolSwitchButton.node.off('click', this.ontoolSwitchButtonClick, this);
-
     }
 
     private onexitBtnButtonClick(component: cc.Button) {
@@ -228,6 +219,4 @@ export default class NhwcMainView extends UIViewBase {
     private ontoolSwitchButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
-
-
 }

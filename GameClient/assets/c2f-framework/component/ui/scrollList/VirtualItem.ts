@@ -1,4 +1,4 @@
-import { UIPControlBase } from "../../../gui/layer/UIPControlBase";
+import { UIPControlBase } from '../../../gui/layer/UIPControlBase';
 
 const { ccclass, disallowMultiple } = cc._decorator;
 
@@ -25,22 +25,19 @@ export default class VirtualItem extends UIPControlBase {
      * 根据数据刷新item显示
      * @virtual
      */
-    public onRefresh(args: any): void {
-    }
+    public onRefresh(args: any): void {}
 
     /**
      * 在onRefresh之后调用，参数为分层显示的节点，参数顺序为Others数组的顺序
      * @virtual
      */
-    public onRefreshOthers(...nodes: cc.Node[]): void {
-    }
+    public onRefreshOthers(...nodes: cc.Node[]): void {}
 
     /**
      * 回收item时重置内部状态
      * @virtual
      */
-    public onReset(): void {
-    }
+    public onReset(): void {}
 
     /**
      * 获取item显示当前数据所需的真实大小（若节点size会根据数据改变，请在此函数内返回准确的size）
