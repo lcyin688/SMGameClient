@@ -24,6 +24,9 @@ class LanguageManager extends EventDispatcher {
     public get current(): string {
         return LanguageData.current;
     }
+    public getDefaultLangCode() {
+        return C2FConst.LanguageKey.zh;
+    }
 
     /** 获取支持的多语种数组 */
     public get languages(): string[] {
@@ -97,7 +100,7 @@ class LanguageManager extends EventDispatcher {
                 if (lgSet in C2FConst.LanguageKey) {
                     LanguageData.current = lgSet;
                 } else {
-                    lgSet = C2FConst.LanguageKey.zh;
+                    lgSet = this.getDefaultLangCode();
                 }
             } else {
                 LanguageData.current = c2f.config.game.languageDefault;
