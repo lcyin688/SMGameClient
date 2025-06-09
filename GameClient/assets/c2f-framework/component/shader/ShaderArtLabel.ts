@@ -5,13 +5,13 @@ const Gradient = cc.Enum({
     OneColor: 1,
     TwoColor: 2,
     TriColor: 3,
-})
+});
 const GlowLevel = cc.Enum({
     None: 0,
     Lowp: 1,
     Mediump: 2,
     Highp: 3,
-})
+});
 
 /**
  * 字体效果
@@ -23,12 +23,11 @@ const GlowLevel = cc.Enum({
  * - 外发光
  */
 @ccclass
-@menu('c2f/gui/ShaderArtLabel')
+@menu('c2f/render/ShaderArtLabel')
 @requireComponent(cc.Label)
 @disallowMultiple()
 @executeInEditMode()
 export default class ShaderArtLabel extends cc.Component {
-
     //-----------------------阴影
     @property({
         tooltip: '是否使用阴影',
@@ -38,14 +37,14 @@ export default class ShaderArtLabel extends cc.Component {
         tooltip: '阴影偏移（像素）',
         visible: function () {
             return this.shadowUse;
-        }
+        },
     })
     shadowOffset: cc.Vec2 = cc.v2(1, 1);
     @property({
         tooltip: '阴影颜色',
         visible: function () {
             return this.shadowUse;
-        }
+        },
     })
     shadowColor: cc.Color = cc.color(0, 0, 0, 150);
 
@@ -59,14 +58,14 @@ export default class ShaderArtLabel extends cc.Component {
         min: 1,
         visible: function () {
             return this.outlineUse;
-        }
+        },
     })
     outlineWidth: number = 1;
     @property({
         tooltip: '描边颜色',
         visible: function () {
             return this.outlineUse;
-        }
+        },
     })
     outlineColor: cc.Color = cc.color(0, 0, 0, 255);
 
@@ -75,21 +74,21 @@ export default class ShaderArtLabel extends cc.Component {
         tooltip: '是否使用描边阴影',
         visible: function () {
             return this.outlineUse;
-        }
+        },
     })
     olShadowUse: boolean = false;
     @property({
         tooltip: '描边阴影偏移（像素）',
         visible: function () {
             return this.outlineUse && this.olShadowUse;
-        }
+        },
     })
     olShadowOffset: cc.Vec2 = cc.v2(1, 1);
     @property({
         tooltip: '描边阴影颜色',
         visible: function () {
             return this.outlineUse && this.olShadowUse;
-        }
+        },
     })
     olShadowColor: cc.Color = cc.color(0, 0, 0, 150);
 
@@ -102,14 +101,14 @@ export default class ShaderArtLabel extends cc.Component {
         tooltip: '扫光动效速度（像素）',
         visible: function () {
             return this.flowLightUse;
-        }
+        },
     })
     flSpeed: number = 1;
     @property({
         tooltip: '扫光动效旋转角度',
         visible: function () {
             return this.flowLightUse;
-        }
+        },
     })
     flRot: number = 0;
     @property({
@@ -117,14 +116,14 @@ export default class ShaderArtLabel extends cc.Component {
         min: 1,
         visible: function () {
             return this.flowLightUse;
-        }
+        },
     })
     flWidth: number = 15;
     @property({
         tooltip: '扫光效果颜色',
         visible: function () {
             return this.flowLightUse;
-        }
+        },
     })
     flColor: cc.Color = cc.color(255, 255, 255, 255);
 
@@ -137,19 +136,19 @@ export default class ShaderArtLabel extends cc.Component {
     @property({
         visible: function () {
             return this.gradient > Gradient.None;
-        }
+        },
     })
     color1: cc.Color = cc.color(255, 0, 0, 255);
     @property({
         visible: function () {
             return this.gradient > Gradient.OneColor;
-        }
+        },
     })
     color2: cc.Color = cc.color(0, 255, 0, 255);
     @property({
         visible: function () {
             return this.gradient > Gradient.TwoColor;
-        }
+        },
     })
     color3: cc.Color = cc.color(0, 0, 255, 255);
 
@@ -164,7 +163,7 @@ export default class ShaderArtLabel extends cc.Component {
         min: 1,
         visible: function () {
             return this.glow > GlowLevel.None;
-        }
+        },
     })
     glowWidth: number = 10;
     @property({
@@ -173,14 +172,14 @@ export default class ShaderArtLabel extends cc.Component {
         max: 32,
         visible: function () {
             return this.glow > GlowLevel.None;
-        }
+        },
     })
     glowDepth: number = 2;
     @property({
         tooltip: '外发光颜色',
         visible: function () {
             return this.glow > GlowLevel.None;
-        }
+        },
     })
     glowColor: cc.Color = cc.color(255, 255, 255, 255);
 
@@ -229,8 +228,8 @@ export default class ShaderArtLabel extends cc.Component {
                 break;
         }
         this._mtl.setProperty('i_flowLight', this.flowLightUse ? 1 : 0);
-        this._mtl.setProperty('i_flTime', this.flSpeed * this._time * 60 / this.node.width);
-        this._mtl.setProperty('i_flRot', Math.atan(Math.tan(Math.PI * this.flRot / 180.) * this.node.height / this.node.width) * 180. / Math.PI);
+        this._mtl.setProperty('i_flTime', (this.flSpeed * this._time * 60) / this.node.width);
+        this._mtl.setProperty('i_flRot', (Math.atan((Math.tan((Math.PI * this.flRot) / 180) * this.node.height) / this.node.width) * 180) / Math.PI);
         this._mtl.setProperty('i_flWidth', this.flWidth / this.node.width);
         this._mtl.setProperty('i_flColor', [this.flColor.r / 255, this.flColor.g / 255, this.flColor.b / 255, this.flColor.a / 255]);
         this._mtl.setProperty('i_glow', this.glow);

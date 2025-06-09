@@ -1,4 +1,3 @@
-
 const { ccclass, property, menu, requireComponent, executeInEditMode } = cc._decorator;
 
 /** 渐变方向 */
@@ -11,15 +10,13 @@ enum GradientDir {
     FourDot = 3,
 }
 
-
 @ccclass
-@menu('c2f/gui/GradientLabel')
+@menu('c2f/render/GradientLabel')
 @executeInEditMode
 export default class GradientLabel extends cc.Component {
-
-    @property({ type: cc.Enum(GradientDir), tooltip: "渐变方向" })
+    @property({ type: cc.Enum(GradientDir), tooltip: '渐变方向' })
     _director = GradientDir.horizontal;
-    @property({ type: cc.Enum(GradientDir), tooltip: "渐变方向" })
+    @property({ type: cc.Enum(GradientDir), tooltip: '渐变方向' })
     set director(val: GradientDir) {
         this._director = val;
         this.transBEToArr();
@@ -30,7 +27,13 @@ export default class GradientLabel extends cc.Component {
 
     @property()
     _beginColor: cc.Color = cc.Color.WHITE;
-    @property({ type: cc.Color, visible: function () { return this.director != GradientDir.FourDot; }, tooltip: "左(上)侧颜色" })
+    @property({
+        type: cc.Color,
+        visible: function () {
+            return this.director != GradientDir.FourDot;
+        },
+        tooltip: '左(上)侧颜色',
+    })
     set beginColor(clr: cc.Color) {
         this._beginColor = clr;
         this.transBEToArr();
@@ -41,7 +44,13 @@ export default class GradientLabel extends cc.Component {
 
     @property()
     _endColor: cc.Color = cc.Color.WHITE;
-    @property({ type: cc.Color, visible: function () { return this.director != GradientDir.FourDot; }, tooltip: "右(下)侧颜色" })
+    @property({
+        type: cc.Color,
+        visible: function () {
+            return this.director != GradientDir.FourDot;
+        },
+        tooltip: '右(下)侧颜色',
+    })
     set endColor(clr: cc.Color) {
         this._endColor = clr;
         this.transBEToArr();
@@ -51,13 +60,14 @@ export default class GradientLabel extends cc.Component {
     }
 
     @property({ type: cc.Color })
-    _verColors: cc.Color[] = [
-        cc.color(255, 255, 255),
-        cc.color(255, 255, 255),
-        cc.color(255, 255, 255),
-        cc.color(255, 255, 255)
-    ];
-    @property({ type: cc.Color, visible: function () { return this.director == GradientDir.FourDot; }, tooltip: "四角颜色：0：左下角，1：右下角，2：左上角，3：右上角" })
+    _verColors: cc.Color[] = [cc.color(255, 255, 255), cc.color(255, 255, 255), cc.color(255, 255, 255), cc.color(255, 255, 255)];
+    @property({
+        type: cc.Color,
+        visible: function () {
+            return this.director == GradientDir.FourDot;
+        },
+        tooltip: '四角颜色：0：左下角，1：右下角，2：左上角，3：右上角',
+    })
     set verColors(vColors: cc.Color[]) {
         this._verColors = vColors;
         this._updateColors();

@@ -12,7 +12,7 @@ class PageViewNodeInfo {
  * 如果不是循环分页，请将scrollview view content的x锚点设置为0，item的锚点设置为0
  */
 @ccclass
-@menu('we/scroll/WEPageView(页面分页控件)')
+@menu('c2f/scroll/WEPageView(页面分页控件)')
 export class WEPageView extends cc.Component {
     @property(cc.ScrollView)
     public scrollView: cc.ScrollView = null;

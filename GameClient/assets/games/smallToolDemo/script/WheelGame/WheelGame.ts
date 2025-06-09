@@ -63,6 +63,10 @@ export default class WheelGame extends UIVControlBase {
                 this.CC_onClickbtnSwitchLang();
                 break;
 
+            case this.view.btnSevenDayButton.name:
+                this.CC_onClickbtnSevenDay();
+                break;
+
             case this.view.shopButton.name:
                 this.CC_onClickshop();
                 break;
@@ -148,5 +152,8 @@ export default class WheelGame extends UIVControlBase {
 
     private CC_onClickbtnSwitchLang() {
         c2f.gui.open(SmallToolDemoUI.SwitchLang);
+    }
+    private CC_onClickbtnSevenDay() {
+        c2f.gui.open(SmallToolDemoUI.SevenDayMain);
     }
 }

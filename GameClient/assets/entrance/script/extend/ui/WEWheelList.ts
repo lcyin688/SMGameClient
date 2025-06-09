@@ -21,7 +21,7 @@ enum WheelListEventType {
 }
 
 @ccclass
-@menu('c2f/ui/WEWheelList)')
+@menu('c2f/UI/WEWheelList)')
 export default class WEWheelList extends cc.Component {
     @property({ type: cc.Prefab, tooltip: CC_DEV && '按钮预制体' })
     buttonPrefab: cc.Prefab = null;
@@ -605,5 +605,8 @@ export default class WEWheelList extends cc.Component {
         }
     }
 }
-
-// c2f.ui.WEWheelList = WEWheelList;
+if (typeof c2f.ui === 'undefined') {
+    // @ts-ignore
+    c2f.ui = {};
+}
+c2f.ui.WEWheelList = WEWheelList;

@@ -1,13 +1,11 @@
 /** UI相关工具函数汇总·不可引入子包文件 */
 
-import { GameCalc } from "./GameCalculator";
-import { GameConsts } from "./GameConsts";
-import { GameHelper } from "./GameHelper";
-import { UIPa } from "./UIParam";
-
+import { GameCalc } from './GameCalculator';
+import { GameConsts } from './GameConsts';
+import { GameHelper } from './GameHelper';
+import { UIPa } from './UIParam';
 
 export class UIHelper {
-
     /** 播放背景音乐 */
     static playMusic(name: string, cb: Function = null) {
         if (!name) {
@@ -26,17 +24,10 @@ export class UIHelper {
         c2f.audio.playSfxURL(url);
     }
 
-
-
-
-
-
-
-
     static setItemNameWithInfo(txtLabel: cc.Label, txtName: string, quality: number, applyColor: boolean = true) {
         txtLabel.string = txtName;
         if (applyColor) {
-            let shaderLabel = txtLabel.node.getComponent("ShaderArtLabel");
+            let shaderLabel = txtLabel.node.getComponent('ShaderArtLabel');
             if (shaderLabel) {
                 let doubClr = GameConsts.QualityDoubClr[quality];
                 if (doubClr) {
@@ -54,10 +45,6 @@ export class UIHelper {
         }
     }
 
-
-
-
-
     /** 逐字显示文本 */
     static showTxtBySingleWord(txt: cc.Label, str: string, totalTime: number, cb: Function) {
         let len = str.length;
@@ -65,34 +52,30 @@ export class UIHelper {
         let idx = 0;
 
         cc.Tween.stopAllByTarget(txt.node);
-        let twSub1 = cc.tween(txt.node)
-            .call(() => {
-                if (idx == len - 1) {
-                    cc.Tween.stopAllByTarget(txt.node);
-                    cb && cb();
-                }
-                txt.string = str.slice(0, idx + 1);
-                idx++;
-            })
+        let twSub1 = cc.tween(txt.node).call(() => {
+            if (idx == len - 1) {
+                cc.Tween.stopAllByTarget(txt.node);
+                cb && cb();
+            }
+            txt.string = str.slice(0, idx + 1);
+            idx++;
+        });
         let twSub2 = cc.tween(txt.node).delay(eachTime);
-        cc.tween(txt.node)
-            .sequence(twSub1, twSub2)
-            .repeatForever()
-            .start()
+        cc.tween(txt.node).sequence(twSub1, twSub2).repeatForever().start();
     }
 
     /** 逐字显示富文本 */
     static showRichTxtWithSingleWord(richTxt: cc.RichText, str: string, interDur: number, cb: Function) {
         const regex = /<.+?\/?>/g; // 匹配尖括号标签
         const matchArr = str.match(regex);
-        const specialChar = "│";
+        const specialChar = '│';
         const replaceStr = str.replace(regex, specialChar); // 标签数组
         const textArr: string[] = replaceStr.split(specialChar); // 文字数组
         const strArr: string[] = []; // 存放处理过的文字数组
         let paraNum = 0; // 待替换参数个数
         for (let text of textArr) {
             // 非空字符替换成类似 $[0-n] 参数
-            if (text !== "") {
+            if (text !== '') {
                 text = `$[${paraNum}]`;
                 paraNum += 1;
             }
@@ -101,7 +84,7 @@ export class UIHelper {
         let templetStr: string = strArr.join(specialChar); // 数组转成待替换字符串
         for (let index = 0; index < textArr.length; index++) {
             // 转换代替换字符串之后, 删除文字数组多余空字符
-            if (textArr[index] === "") {
+            if (textArr[index] === '') {
                 textArr.splice(index, 1);
                 index = index - 1;
             }
@@ -112,12 +95,12 @@ export class UIHelper {
                 templetStr = templetStr.replace(specialChar, matchArr[0].toString());
                 matchArr.splice(0, 1);
             } else {
-                templetStr = templetStr.replace(specialChar, "");// 空字符串替换,防止死循环
-                console.warn("matchArr not enough");
+                templetStr = templetStr.replace(specialChar, ''); // 空字符串替换,防止死循环
+                console.warn('matchArr not enough');
             }
         }
         const lastStrArr: string[] = []; // 转换后富文本数组
-        const arrayParm: string[] = new Array(paraNum).fill(""); // 替换参数数组
+        const arrayParm: string[] = new Array(paraNum).fill(''); // 替换参数数组
         for (let i = 0; i < textArr.length; i++) {
             for (const text of textArr[i]) {
                 arrayParm[i] = arrayParm[i] + text;
@@ -132,22 +115,18 @@ export class UIHelper {
         let len = lastStrArr.length;
         let idx = 0;
         cc.Tween.stopAllByTarget(richTxt.node);
-        let twSub1 = cc.tween(richTxt.node)
-            .call(() => {
-                if (idx >= len - 1) {
-                    richTxt.string = str;
-                    cc.Tween.stopAllByTarget(richTxt.node);
-                    cb && cb();
-                } else {
-                    richTxt.string = lastStrArr[idx];
-                    idx++;
-                }
-            })
+        let twSub1 = cc.tween(richTxt.node).call(() => {
+            if (idx >= len - 1) {
+                richTxt.string = str;
+                cc.Tween.stopAllByTarget(richTxt.node);
+                cb && cb();
+            } else {
+                richTxt.string = lastStrArr[idx];
+                idx++;
+            }
+        });
         let twSub2 = cc.tween(richTxt.node).delay(interDur);
-        cc.tween(richTxt.node)
-            .sequence(twSub1, twSub2)
-            .repeatForever()
-            .start()
+        cc.tween(richTxt.node).sequence(twSub1, twSub2).repeatForever().start();
     }
 
     /** 滚动显示数字
@@ -161,8 +140,8 @@ export class UIHelper {
         } else {
             let step = 1;
             let minEach = 1 / cc.game.getFrameRate();
-            let totalCount = duration / minEach
-            step = count / totalCount
+            let totalCount = duration / minEach;
+            step = count / totalCount;
             // let step = 1;
             // const minEach = 1 / cc.game.getFrameRate();
             // let eachTime = duration / count;
@@ -171,29 +150,23 @@ export class UIHelper {
             //     eachTime = minEach;
             // }
             let curNum = beginNum;
-            let twSub1 = cc.tween(txt.node)
-                .call(() => {
-                    if (curNum >= dstNum) {
-                        curNum = dstNum
-                        cc.Tween.stopAllByTarget(txt.node);
-                        cb && cb();
-                    }
-                    if (cbEve) {
-                        cbEve(Math.ceil(curNum))
-                    } else {
-                        txt.string = Math.ceil(curNum).toString();
-                    }
-                    curNum += step;
-                })
+            let twSub1 = cc.tween(txt.node).call(() => {
+                if (curNum >= dstNum) {
+                    curNum = dstNum;
+                    cc.Tween.stopAllByTarget(txt.node);
+                    cb && cb();
+                }
+                if (cbEve) {
+                    cbEve(Math.ceil(curNum));
+                } else {
+                    txt.string = Math.ceil(curNum).toString();
+                }
+                curNum += step;
+            });
             let twSub2 = cc.tween(txt.node).delay(0);
-            cc.tween(txt.node)
-                .sequence(twSub1, twSub2)
-                .repeatForever()
-                .start()
+            cc.tween(txt.node).sequence(twSub1, twSub2).repeatForever().start();
         }
     }
-
-
 
     /** 给richText加上黑色描边 */
     static formatRichTextOutline(txt: string, width: number = 2) {
@@ -208,10 +181,7 @@ export class UIHelper {
     /** 自旋转动画 */
     static playRotateEfx(node: cc.Node, onceDur: number = 5) {
         cc.Tween.stopAllByTarget(node);
-        cc.tween(node)
-            .by(onceDur, { angle: -360 })
-            .repeatForever()
-            .start();
+        cc.tween(node).by(onceDur, { angle: -360 }).repeatForever().start();
     }
 
     /** 呼吸动画 */
@@ -221,10 +191,7 @@ export class UIHelper {
             let twSub1 = cc.tween(node).by(1, { scaleX: scale, scaleY: scale });
             let twSub2 = cc.tween(node).by(0.8, { scaleX: -scale, scaleY: -scale });
             let twsub3 = cc.tween(node).delay(0.5);
-            cc.tween(node)
-                .sequence(twSub1, twSub2, twsub3)
-                .repeatForever()
-                .start();
+            cc.tween(node).sequence(twSub1, twSub2, twsub3).repeatForever().start();
         }
     }
 
@@ -253,30 +220,28 @@ export class UIHelper {
         return totalHitCnt;
     }
 
-
-
     /** 处理技能文本颜色 */
     static getskillDes(skillDes: string, isActive: boolean) {
-        let colorStr = isActive ? "<color=#40953c>" : "<color=#B77474>"
-        return this.getStrReplace(skillDes, colorStr)
+        let colorStr = isActive ? '<color=#40953c>' : '<color=#B77474>';
+        return this.getStrReplace(skillDes, colorStr);
     }
 
     /** 处理技能文本颜色 */
     static getStrReplace(skillDes: string, colorStr: string) {
-        skillDes = skillDes.replace(/<color=/gi, colorStr)
+        skillDes = skillDes.replace(/<color=/gi, colorStr);
         for (let i = 0; i < 6; i++) {
-            skillDes = skillDes.replace("{" + i + "}>", "")
+            skillDes = skillDes.replace('{' + i + '}>', '');
         }
-        return skillDes
+        return skillDes;
     }
 
     /**筛选敏感文本   */
     static filterSensitiveWords(text: string): boolean {
-        let sensitiveWords: string[] = []
+        let sensitiveWords: string[] = [];
         for (let c = 21000; c < 21999; c++) {
-            let itemStr = c2f.language.words(c)
-            if (itemStr && itemStr != "" && !Number(itemStr)) {
-                sensitiveWords.push(itemStr)
+            let itemStr = c2f.language.words(c.toString());
+            if (itemStr && itemStr != '' && !Number(itemStr)) {
+                sensitiveWords.push(itemStr);
             }
         }
         for (let word of sensitiveWords) {
@@ -288,32 +253,31 @@ export class UIHelper {
     }
     /**筛选特殊字符文本 */
     static filterSpecialCharacters(input: string): boolean {
-        let str = input
-        let strTemp = this.filterChineseCharacters(str)
+        let str = input;
+        let strTemp = this.filterChineseCharacters(str);
         let specialCharacters = strTemp.match(/\W+/g);
-        let ishave = false
+        let ishave = false;
         if (specialCharacters && specialCharacters.length > 0) {
-            ishave = true
+            ishave = true;
         }
-        return ishave
+        return ishave;
     }
     /**过滤掉所有中文 */
     static filterChineseCharacters(str: string): string {
         const chineseRegex = /[\u4e00-\u9fa5]/g;
-        return str.replace(chineseRegex, "");
+        return str.replace(chineseRegex, '');
     }
     /**筛选出中英文 */
-    static splitChineseAndEnglish(str: string): { chinese: string, english: string } {
+    static splitChineseAndEnglish(str: string): { chinese: string; english: string } {
         const chineseRegex = /[\u4e00-\u9fa5]/g;
         const englishRegex = /[a-zA-Z]/g;
         const chinese = str.match(chineseRegex);
         const english = str.match(englishRegex);
         return {
-            chinese: chinese ? chinese.join("") : "",
-            english: english ? english.join("") : ""
+            chinese: chinese ? chinese.join('') : '',
+            english: english ? english.join('') : '',
         };
     }
-
 
     /** 显示文件中的长文本 */
     static showLongTxtByFile(title: string, bundle: GameConsts.Bundle, fileUrl: string) {
@@ -337,45 +301,45 @@ export class UIHelper {
     static setCutdownWithDayMini(comp: cc.Component, restDur: number, endCb: () => void = null, txtFormat: string = null) {
         let cutDownComp = comp.getComponent('CountdownLabel');
         if (cutDownComp) {
-            let dayStr = "%{d}" + c2f.language.words(2504) + "%{hh}:%{mm}:%{mm}";
+            let dayStr = '%{d}' + c2f.language.words('2504') + '%{hh}:%{mm}:%{mm}';
             cutDownComp.startCountdown(
                 restDur,
                 {
-                    S: "%{ss}",
-                    M: "%{mm}:%{ss}",
-                    H: "%{hh}:%{mm}:%{ss}",
-                    D: dayStr
+                    S: '%{ss}',
+                    M: '%{mm}:%{ss}',
+                    H: '%{hh}:%{mm}:%{ss}',
+                    D: dayStr,
                 },
                 txtFormat,
                 null,
-                endCb);
+                endCb
+            );
         }
     }
 
-    /** 设置带天数的倒计时(固定模式) 
+    /** 设置带天数的倒计时(固定模式)
      * eg. >1天：dd天hh:mm
      * eg. <1天: hh:mm:ss
-    */
+     */
     static setCutdownWithDayFixed(comp: cc.Component, restDur: number, endCb: () => void = null, txtFormat: string = null) {
         let cutDownComp = comp.getComponent('CountdownLabel');
         if (cutDownComp) {
-            let hms = "%{hh}:%{mm}:%{ss}"
-            let dayStr = "%{d}" + c2f.language.words(2504) + "%{hh}:%{mm}";
+            let hms = '%{hh}:%{mm}:%{ss}';
+            let dayStr = '%{d}' + c2f.language.words('2504') + '%{hh}:%{mm}';
             cutDownComp.startCountdown(
                 restDur,
                 {
                     S: hms,
                     M: hms,
                     H: hms,
-                    D: dayStr
+                    D: dayStr,
                 },
                 txtFormat,
                 null,
-                endCb);
+                endCb
+            );
         }
     }
-
-
 
     /** 艺术字标题设置: eg. 七日狂欢|#925C41|#FFEFA6|#FBFDF4*/
     static setShaderArtLabelString(label: cc.Component, title: string) {
@@ -408,41 +372,37 @@ export class UIHelper {
             } else if (ev.data.name == 'sound') {
                 // UIHelper.playEffect(ev.stringValue);
             }
-        })
+        });
         let url = GameConsts.ResUrl.uiEfx + `${efxName}/${efxName}`;
         c2f.utils.view.changeSkeletonData(skeleton, url, () => {
             if (skeleton && skeleton.isValid) {
                 skeleton.setAnimation(0, action, isLoop);
             }
-        })
+        });
     }
 
-
-
-
     static playSkeAni(skeItem: sp.Skeleton, aniName: string, callBack: Function = null, isloop: boolean = false, trackIndex: number = 0, timeScale: number = 1) {
-        skeItem.node.active = true
+        skeItem.node.active = true;
         // skeItem.clearTracks()
         skeItem.setAnimation(trackIndex, aniName, isloop);
-        skeItem.timeScale = timeScale
+        skeItem.timeScale = timeScale;
         skeItem.setCompleteListener((data) => {
             if (callBack) {
-                callBack()
-                callBack = null
+                callBack();
+                callBack = null;
             }
         });
     }
 
     /**
-     * n阶贝塞尔曲线 
-     * @param target 
+     * n阶贝塞尔曲线
+     * @param target
      * @param config 控制点
-     * @param opts 
+     * @param opts
      * @returns to(time, {}, ExternalFun.createBezier(node, config))
      */
     static createBezier(target: cc.Node, config: UIPa.MoveConfig, opts?: any) {
         opts = opts || Object.create(null);
-
 
         let factorial: Function = (n: number): number => {
             let result = 1;
@@ -450,57 +410,45 @@ export class UIHelper {
                 result *= i;
             }
             return result;
-        }
-
+        };
 
         /**
-         * 
+         *
          * @param controlPoints 控制点
          * @param progressRatio 比例系数
-         * @returns 
+         * @returns
          */
-        let calculateBezierPoint: Function = (
-            controlPoints: { x: number, y: number }[],
-            progressRatio: number
-        ): { x: number, y: number } => {
+        let calculateBezierPoint: Function = (controlPoints: { x: number; y: number }[], progressRatio: number): { x: number; y: number } => {
             const n = controlPoints.length - 1;
             const t = progressRatio;
 
-
             const bernstein = (i: number, n: number, t: number): number => {
-                const coefficient =
-                    factorial(n) / (factorial(i) * factorial(n - i));
+                const coefficient = factorial(n) / (factorial(i) * factorial(n - i));
                 return coefficient * Math.pow(t, i) * Math.pow(1 - t, n - i);
             };
 
-
-
-
-            const point: { x: number, y: number } = { x: 0, y: 0 };
+            const point: { x: number; y: number } = { x: 0, y: 0 };
             for (let i = 0; i <= n; i++) {
                 const b = bernstein(i, n, t);
                 point.x += controlPoints[i].x * b;
                 point.y += controlPoints[i].y * b;
             }
 
-
             return point;
-        }
-        let points: { x: number, y: number }[] = []
+        };
+        let points: { x: number; y: number }[] = [];
         if (config.controlPoint) {
-            points.push(...config.controlPoint)
+            points.push(...config.controlPoint);
         }
-        points.splice(0, 0, config.startPos)
-        points.push(config.endPos)
-
+        points.splice(0, 0, config.startPos);
+        points.push(config.endPos);
 
         opts.onUpdate = (arg: cc.Vec3, ratio: number) => {
-            let point: { x: number, y: number } = calculateBezierPoint(points, ratio);
-            target.setPosition(point.x, point.y)
+            let point: { x: number; y: number } = calculateBezierPoint(points, ratio);
+            target.setPosition(point.x, point.y);
         };
-        return opts
+        return opts;
     }
-
 
     /**
      * 以某点为圆心，生成圆周上等分点的坐标
@@ -522,7 +470,6 @@ export class UIHelper {
         return points;
     }
 
-
     /**
      * 以某点为圆心，生成圆周上等分点的坐标
      *
@@ -541,9 +488,9 @@ export class UIHelper {
             let y1 = pos.y + r1 * Math.cos(radians * i);
             let x2 = pos.x + r2 * Math.sin(radians * i);
             let y2 = pos.y + r2 * Math.cos(radians * i);
-            let randomX = Math.random() * randomScope
-            let randomY = Math.random() * randomScope
-            let item = [cc.v3(x1 + randomX, y1 + randomY), cc.v3(x2 + randomX, y2 + randomY)]
+            let randomX = Math.random() * randomScope;
+            let randomY = Math.random() * randomScope;
+            let item = [cc.v3(x1 + randomX, y1 + randomY), cc.v3(x2 + randomX, y2 + randomY)];
             points.push(item);
         }
         return points;
@@ -556,18 +503,16 @@ export class UIHelper {
             if (isDisconnect) {
                 c2f.gui.notifyTxt('509');
                 c2f.gui.hideLoading(true);
-                return
+                return;
             }
         } else {
             const isDisconnect = code == 99999 ? true : false;
             if (isDisconnect) {
                 c2f.gui.notifyTxt('509');
                 c2f.gui.hideLoading(true);
-                return 
+                return;
             }
         }
         c2f.gui.notifyTxt(code.toString());
     }
-
-
 }

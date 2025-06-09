@@ -7,4 +7,20 @@ export namespace SmallToolDemoUIPa {
         /** 回调函数 */
         callBackFun: Function;
     }
+
+    export interface SevenDayMenuItemArg {
+        /** 是否激活 */
+        active: boolean;
+        /**  标题 */
+        title: string;
+        /** 描述 */
+        tips?: string;
+        /** 奖励 */
+        bonus?: string;
+        index: number;
+        /** 回调函数 */
+        callBackFun: Function;
+        /**是否处于选中状态 */
+        state: boolean;
+    }
 }

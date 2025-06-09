@@ -9,6 +9,8 @@ export enum SmallToolDemoUI {
     JoinUs,
     Turntable,
     SwitchLang,
+    SevenDayMain,
+    SevenDaySignItemOne,
 }
 
 /** 打开界面方式的配置数据 */
@@ -18,8 +20,13 @@ export const SmallToolDemoView: { [key: number]: UIConfig } = {
     //description:
     [SmallToolDemoUI.ListCircularMove]: { layer: LayerType.PopUp, prefab: 'prefab/V_ListCircularMove', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
     //description:
-    [SmallToolDemoUI.JoinUs]: { layer: LayerType.PopUp, prefab: 'prefab/joinus/V_JoinUs', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true }, 
+    [SmallToolDemoUI.JoinUs]: { layer: LayerType.PopUp, prefab: 'prefab/joinus/V_JoinUs', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
     //description:
-    [SmallToolDemoUI.Turntable]: { layer: LayerType.PopUp, prefab: "prefab/turntable/V_Turntable", bundle: GameConsts.Bundle.smallToolDemo }, 
+    [SmallToolDemoUI.Turntable]: { layer: LayerType.PopUp, prefab: 'prefab/turntable/V_Turntable', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
-    [SmallToolDemoUI.SwitchLang]: { layer: LayerType.PopUp, prefab: "prefab/switchLang/V_SwitchLang", bundle: GameConsts.Bundle.smallToolDemo }, }
+    [SmallToolDemoUI.SwitchLang]: { layer: LayerType.PopUp, prefab: 'prefab/switchLang/V_SwitchLang', bundle: GameConsts.Bundle.smallToolDemo },
+    //description:
+    [SmallToolDemoUI.SevenDayMain]: { layer: LayerType.PopUp, prefab: 'prefab/sevenDay/V_SevenDayMain', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
+    //description:
+    [SmallToolDemoUI.SevenDaySignItemOne]: { layer: LayerType.PopUp, prefab: 'prefab/sevenDay/SevenDaySignItemOne', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
+};

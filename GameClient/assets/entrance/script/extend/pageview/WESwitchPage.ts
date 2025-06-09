@@ -2,7 +2,7 @@ const { ccclass, property, executeInEditMode, menu } = cc._decorator;
 @ccclass
 @executeInEditMode
 @menu('c2f/scroll/WESwitchPage(切页-页面试图)')
-export class WESwitchPage extends cc.Component {
+export default class WESwitchPage extends cc.Component {
     /** 是否循环页面 */
     @property
     isLoopPage: boolean = false;

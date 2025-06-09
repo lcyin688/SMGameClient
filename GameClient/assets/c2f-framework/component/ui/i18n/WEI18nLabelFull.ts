@@ -104,7 +104,7 @@ export class WEI18nLabelFull extends WEI18nBase<string> {
             // await c2f.language.loadLangJsonModule();
             let text = LanguageData.getLangByID(this.resId, this.formatV);
             this.label.string = text;
-            cc.log('  setRes ===== text  ', text);
+            // cc.log('  setRes ===== text  ', text);
         }
     }
 

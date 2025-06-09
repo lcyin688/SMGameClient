@@ -1,4 +1,4 @@
-import { WESwitchPage } from './WESwitchPage';
+import WESwitchPage from './WESwitchPage';
 
 const { ccclass, property, menu } = cc._decorator;
 
@@ -208,4 +208,5 @@ declare global {
         }
     }
 }
+export default WESwitchMenu;
 c2f.ui.WESwitchMenu = WESwitchMenu;

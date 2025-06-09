@@ -1,4 +1,3 @@
-import { StringHelper } from '../../../core/helper/StringHelper';
 import { WEI18nBase } from './WEI18nBase';
 
 const { ccclass, requireComponent, menu, property } = cc._decorator;
@@ -63,7 +62,7 @@ export class WEI18nSprite extends WEI18nBase<cc.SpriteFrame> {
             this._resId = c2f.res.getUrlByUuid(this.spUUID);
         }
 
-        if (StringHelper.isNullOrEmpty(this.resId)) {
+        if (c2f.core.StringHelper.isNullOrEmpty(this.resId)) {
             cc.warn('WEI18nSprite getRes, resId not config');
             return;
         }
@@ -78,7 +77,7 @@ export class WEI18nSprite extends WEI18nBase<cc.SpriteFrame> {
             }
         }
 
-        this._resId = resUrl;
+        this._resId = 'ab:' + resUrl;
 
         return await c2f.res.loadOne(this.resId, cc.SpriteFrame);
     }
@@ -136,6 +135,10 @@ export class WEI18nSprite extends WEI18nBase<cc.SpriteFrame> {
         this.spUUID = this.sprite.spriteFrame?.['_uuid'];
         this.defaultSprite = this.sprite.spriteFrame;
     }
+}
+if (typeof c2f.ui === 'undefined') {
+    // @ts-ignore
+    c2f.ui = {};
 }
 
 c2f.ui.WEI18nSprite = WEI18nSprite;

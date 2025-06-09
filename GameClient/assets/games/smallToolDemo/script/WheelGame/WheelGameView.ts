@@ -27,6 +27,8 @@ export default class WheelGameView extends UIViewBase {
     public btnGameListButton: cc.Button = undefined;
     public btnSwitchLang: cc.Node;
     public btnSwitchLangButton: cc.Button = undefined;
+    public btnSevenDay: cc.Node;
+    public btnSevenDayButton: cc.Button = undefined;
     public bottom: cc.Node;
     public bottomWidget: cc.Widget = undefined;
     public bottomWELayoutUpdate: WELayoutUpdate = undefined;
@@ -72,6 +74,8 @@ export default class WheelGameView extends UIViewBase {
         this.btnGameListButton = this.btnGameList.getComponent(cc.Button);
         this.btnSwitchLang = this.get('_btnSwitchLang_');
         this.btnSwitchLangButton = this.btnSwitchLang.getComponent(cc.Button);
+        this.btnSevenDay = this.get('_btnSevenDay_');
+        this.btnSevenDayButton = this.btnSevenDay.getComponent(cc.Button);
         this.bottom = this.get('_bottom_');
         this.bottomWidget = this.bottom.getComponent(cc.Widget);
         this.bottomWELayoutUpdate = this.bottom.getComponent(WELayoutUpdate);
@@ -91,6 +95,7 @@ export default class WheelGameView extends UIViewBase {
         this.btnTurnTableButton.node.on('click', this.onbtnTurnTableButtonClick, this);
         this.btnGameListButton.node.on('click', this.onbtnGameListButtonClick, this);
         this.btnSwitchLangButton.node.on('click', this.onbtnSwitchLangButtonClick, this);
+        this.btnSevenDayButton.node.on('click', this.onbtnSevenDayButtonClick, this);
         this.shopButton.node.on('click', this.onshopButtonClick, this);
 
     }
@@ -101,6 +106,7 @@ export default class WheelGameView extends UIViewBase {
         this.btnTurnTableButton.node.off('click', this.onbtnTurnTableButtonClick, this);
         this.btnGameListButton.node.off('click', this.onbtnGameListButtonClick, this);
         this.btnSwitchLangButton.node.off('click', this.onbtnSwitchLangButtonClick, this);
+        this.btnSevenDayButton.node.off('click', this.onbtnSevenDayButtonClick, this);
         this.shopButton.node.off('click', this.onshopButtonClick, this);
 
     }
@@ -122,6 +128,10 @@ export default class WheelGameView extends UIViewBase {
     }
 
     private onbtnSwitchLangButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnSevenDayButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

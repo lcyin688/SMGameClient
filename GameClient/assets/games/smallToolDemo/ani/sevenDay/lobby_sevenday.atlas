@@ -1,0 +1,167 @@
+
+lobby_sevenday.png
+size: 1899,736
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dl01
+  rotate: false
+  xy: 1822, 296
+  size: 67, 87
+  orig: 67, 87
+  offset: 0, 0
+  index: -1
+dl02
+  rotate: false
+  xy: 1835, 124
+  size: 63, 83
+  orig: 63, 83
+  offset: 0, 0
+  index: -1
+dl03
+  rotate: false
+  xy: 1755, 11
+  size: 71, 92
+  orig: 71, 92
+  offset: 0, 0
+  index: -1
+particle/particle_000
+  rotate: false
+  xy: 0, 492
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_001
+  rotate: false
+  xy: 0, 246
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_002
+  rotate: false
+  xy: 0, 0
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_003
+  rotate: false
+  xy: 351, 492
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_004
+  rotate: false
+  xy: 351, 246
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_005
+  rotate: false
+  xy: 351, 0
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_006
+  rotate: false
+  xy: 702, 492
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_007
+  rotate: false
+  xy: 702, 246
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_008
+  rotate: false
+  xy: 702, 0
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_009
+  rotate: false
+  xy: 1053, 492
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_010
+  rotate: false
+  xy: 1053, 246
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_011
+  rotate: false
+  xy: 1053, 0
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_012
+  rotate: false
+  xy: 1404, 492
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_013
+  rotate: false
+  xy: 1404, 246
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+particle/particle_014
+  rotate: false
+  xy: 1404, 0
+  size: 349, 244
+  orig: 349, 244
+  offset: 0, 0
+  index: -1
+yh01
+  rotate: true
+  xy: 1822, 209
+  size: 85, 75
+  orig: 85, 75
+  offset: 0, 0
+  index: -1
+yh02
+  rotate: false
+  xy: 1755, 385
+  size: 117, 180
+  orig: 117, 180
+  offset: 0, 0
+  index: -1
+yh03
+  rotate: false
+  xy: 1755, 203
+  size: 65, 180
+  orig: 65, 180
+  offset: 0, 0
+  index: -1
+zh1
+  rotate: false
+  xy: 1755, 567
+  size: 144, 169
+  orig: 144, 169
+  offset: 0, 0
+  index: -1
+zh2
+  rotate: true
+  xy: 1755, 105
+  size: 96, 78
+  orig: 96, 78
+  offset: 0, 0
+  index: -1
