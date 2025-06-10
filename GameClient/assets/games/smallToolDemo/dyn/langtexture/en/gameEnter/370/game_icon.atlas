@@ -1,0 +1,90 @@
+
+game_icon.png
+size: 746,651
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+da1m
+  rotate: true
+  xy: 674, 258
+  size: 196, 72
+  orig: 196, 72
+  offset: 0, 0
+  index: -1
+da2yyy
+  rotate: true
+  xy: 0, 0
+  size: 205, 411
+  orig: 205, 411
+  offset: 0, 0
+  index: -1
+da3
+  rotate: true
+  xy: 614, 102
+  size: 110, 111
+  orig: 110, 111
+  offset: 0, 0
+  index: -1
+da5
+  rotate: true
+  xy: 413, 35
+  size: 206, 199
+  orig: 206, 199
+  offset: 0, 0
+  index: -1
+da6dd
+  rotate: false
+  xy: 278, 243
+  size: 202, 408
+  orig: 202, 408
+  offset: 0, 0
+  index: -1
+da7
+  rotate: true
+  xy: 482, 262
+  size: 192, 190
+  orig: 192, 190
+  offset: 0, 0
+  index: -1
+da9
+  rotate: false
+  xy: 0, 207
+  size: 276, 444
+  orig: 276, 444
+  offset: 0, 0
+  index: -1
+jb1
+  rotate: false
+  xy: 614, 214
+  size: 47, 46
+  orig: 47, 46
+  offset: 0, 0
+  index: -1
+jb2
+  rotate: false
+  xy: 663, 214
+  size: 50, 42
+  orig: 50, 42
+  offset: 0, 0
+  index: -1
+jb3
+  rotate: false
+  xy: 614, 39
+  size: 59, 61
+  orig: 59, 61
+  offset: 0, 0
+  index: -1
+xi1m
+  rotate: true
+  xy: 679, 465
+  size: 186, 62
+  orig: 186, 62
+  offset: 0, 0
+  index: -1
+xi2dd
+  rotate: false
+  xy: 482, 456
+  size: 195, 195
+  orig: 195, 195
+  offset: 0, 0
+  index: -1

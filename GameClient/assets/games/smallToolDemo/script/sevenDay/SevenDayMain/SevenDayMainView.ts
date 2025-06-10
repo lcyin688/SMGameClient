@@ -3,14 +3,16 @@
 // If you need add data, please write in SevenDayMainViewModel.ts .
 
 import { UIViewBase } from './../../../../../c2f-framework/gui/layer/UIViewBase';
-import VirtualList from './../../../../../c2f-framework/component/ui/scrollList/VirtualList';
-import WESwitchMenu from './../../../../../entrance/script/extend/pageview/WESwitchMenu';
-import WESwitchPage from './../../../../../entrance/script/extend/pageview/WESwitchPage';
-import VirtualLayout from './../../../../../c2f-framework/component/ui/scrollList/VirtualLayout';
+import VirtualList from "./../../../../../c2f-framework/component/ui/scrollList/VirtualList";
+import WESwitchMenu from "./../../../../../entrance/script/extend/pageview/WESwitchMenu";
+import WESwitchPage from "./../../../../../entrance/script/extend/pageview/WESwitchPage";
+import VirtualLayout from "./../../../../../c2f-framework/component/ui/scrollList/VirtualLayout";
+
 
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class SevenDayMainView extends UIViewBase {
+
     /** 预制名 给实例调用 */
     public prefabName = 'V_SevenDayMain';
 
@@ -30,6 +32,7 @@ export default class SevenDayMainView extends UIViewBase {
     public listTaskVirtualList: VirtualList = undefined;
     public lab_award: cc.Node;
     public lab_awardLabel: cc.Label = undefined;
+    
 
     public onLoad() {
         super.onLoad();
@@ -47,7 +50,7 @@ export default class SevenDayMainView extends UIViewBase {
             super.onDisable();
         }
         this.removeEvent();
-    }
+    } 
 
     protected initProperty() {
         super.initProperty();
@@ -67,6 +70,7 @@ export default class SevenDayMainView extends UIViewBase {
         this.listTaskVirtualList = this.listTask.getComponent(VirtualList);
         this.lab_award = this.get('_lab_award_');
         this.lab_awardLabel = this.lab_award.getComponent(cc.Label);
+        
     }
 
     private addEvent() {
@@ -95,6 +99,7 @@ export default class SevenDayMainView extends UIViewBase {
         this.listTaskScrollView.node.on('scroll-ended', this.onlistTaskScrollViewScrollEnded, this);
         this.listTaskScrollView.node.on('touch-up', this.onlistTaskScrollViewTouchUp, this);
         this.listTaskScrollView.node.on('scroll-began', this.onlistTaskScrollViewScrollBegan, this);
+
     }
 
     private removeEvent() {
@@ -123,6 +128,7 @@ export default class SevenDayMainView extends UIViewBase {
         this.listTaskScrollView.node.off('scroll-ended', this.onlistTaskScrollViewScrollEnded, this);
         this.listTaskScrollView.node.off('touch-up', this.onlistTaskScrollViewTouchUp, this);
         this.listTaskScrollView.node.off('scroll-began', this.onlistTaskScrollViewScrollBegan, this);
+
     }
 
     private onbtnCloseButtonClick(component: cc.Button) {
@@ -224,4 +230,6 @@ export default class SevenDayMainView extends UIViewBase {
     private onlistTaskScrollViewScrollBegan(component: cc.ScrollView) {
         this.emit('scroll-began', component);
     }
+
+
 }

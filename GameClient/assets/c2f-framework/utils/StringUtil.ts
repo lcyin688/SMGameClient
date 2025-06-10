@@ -2,12 +2,11 @@
 class StringUtil {
     /** 获取一个唯一标识的字符串 */
     static guid() {
-        let guid: string = "";
+        let guid: string = '';
         for (let i = 1; i <= 32; i++) {
             let n = Math.floor(Math.random() * 16.0).toString(16);
             guid += n;
-            if ((i == 8) || (i == 12) || (i == 16) || (i == 20))
-                guid += "-";
+            if (i == 8 || i == 12 || i == 16 || i == 20) guid += '-';
         }
         return guid;
     }
@@ -22,7 +21,7 @@ class StringUtil {
         return value.toLocaleString();
     }
 
-    /** 
+    /**
      * 转英文单位计数
      * @param value 数字
      * @param fixed 保留小数位数
@@ -34,15 +33,14 @@ class StringUtil {
         var sizes = ['', 'K', 'M', 'G'];
         if (value < k) {
             return value.toString();
-        }
-        else {
+        } else {
             var i = Math.floor(Math.log(value) / Math.log(k));
-            var r = ((value / Math.pow(k, i)));
+            var r = value / Math.pow(k, i);
             return r.toFixed(fixed) + sizes[i];
         }
     }
 
-    /** 
+    /**
      * 转中文单位计数
      * @param value 数字
      * @param fixed 保留小数位数
@@ -54,10 +52,9 @@ class StringUtil {
         var sizes = ['', '万', '亿', '万亿'];
         if (value < k) {
             return value.toString();
-        }
-        else {
+        } else {
             var i = Math.floor(Math.log(value) / Math.log(k));
-            return ((value / Math.pow(k, i))).toFixed(fixed) + sizes[i];
+            return (value / Math.pow(k, i)).toFixed(fixed) + sizes[i];
         }
     }
 
@@ -66,43 +63,43 @@ class StringUtil {
      * @param str 字符串
      */
     static stringToArray1(str: string) {
-        if (str == "") {
+        if (str == '') {
             return [];
         }
-        return str.split(",");
+        return str.split(',');
     }
 
-    /** 
-     * "|" 分割字符串成数组 
+    /**
+     * "|" 分割字符串成数组
      * @param str 字符串
      */
     static stringToArray2(str: string) {
-        if (str == "") {
+        if (str == '') {
             return [];
         }
-        return str.split("|");
+        return str.split('|');
     }
 
-    /** 
+    /**
      * ":" 分割字符串成数组
      * @param str 字符串
      */
     static stringToArray3(str: string) {
-        if (str == "") {
+        if (str == '') {
             return [];
         }
-        return str.split(":");
+        return str.split(':');
     }
 
-    /** 
-     * ";" 分割字符串成数组 
+    /**
+     * ";" 分割字符串成数组
      * @param str 字符串
      */
     static stringToArray4(str: string) {
-        if (str == "") {
+        if (str == '') {
             return [];
         }
-        return str.split(";");
+        return str.split(';');
     }
 
     /**
@@ -113,12 +110,14 @@ class StringUtil {
      */
     static sub(str: string, n: number, showdot: boolean = false) {
         var r = /[^\x00-\xff]/g;
-        if (str.replace(r, "mm").length <= n) { return str; }
+        if (str.replace(r, 'mm').length <= n) {
+            return str;
+        }
         var m = Math.floor(n / 2);
         for (var i = m; i < str.length; i++) {
-            if (str.substring(0, i).replace(r, "mm").length >= n) {
+            if (str.substring(0, i).replace(r, 'mm').length >= n) {
                 if (showdot) {
-                    return str.substring(0, i) + "...";
+                    return str.substring(0, i) + '...';
                 } else {
                     return str.substring(0, i);
                 }
@@ -132,13 +131,13 @@ class StringUtil {
      * @param str 字符串
      */
     static stringLen(str: string) {
-        var realLength = 0, len = str.length, charCode = -1;
+        var realLength = 0,
+            len = str.length,
+            charCode = -1;
         for (var i = 0; i < len; i++) {
             charCode = str.charCodeAt(i);
-            if (charCode >= 0 && charCode <= 128)
-                realLength += 1;
-            else
-                realLength += 2;
+            if (charCode >= 0 && charCode <= 128) realLength += 1;
+            else realLength += 2;
         }
         return realLength;
     }
@@ -154,27 +153,27 @@ class StringUtil {
         let fromUI = params == 'UIV_Null' ? true : false;
         let arrPa = this.stringToArray2(params);
         let result = str.replace(/\{(\w+)\}/g, function (s, i) {
-            return fromUI ? "" : arrPa[i];
+            return fromUI ? '' : arrPa[i];
         });
         return result;
     }
 
     /**
-         * 根据参数返回格式化字符串
-         * @param text 源字符串
-         * @param option 用于格式化源字符串的数据，可以是键值对，也可以按顺序传参
-         * @example
-         * // 可使用以下两种调用方式，返回结果都是"测试字符串111--abc..."
-         * c2f.utils.date.formatWithObj("测试字符串%{a1}--%{a2}...", {a1: 111, a2: "abc"});
-         * c2f.utils.date.formatWithObj("测试字符串%{a1}--%{a2}...", 111, "abc");
-         */
+     * 根据参数返回格式化字符串
+     * @param text 源字符串
+     * @param option 用于格式化源字符串的数据，可以是键值对，也可以按顺序传参
+     * @example
+     * // 可使用以下两种调用方式，返回结果都是"测试字符串111--abc..."
+     * c2f.utils.date.formatWithObj("测试字符串%{a1}--%{a2}...", {a1: 111, a2: "abc"});
+     * c2f.utils.date.formatWithObj("测试字符串%{a1}--%{a2}...", 111, "abc");
+     */
     static formatWithObj(text: string, ...option: [Record<string, string | number>] | Array<string | number>): string {
         let result = text;
-        if (option.length === 1 && Object.prototype.toString.call(option[0]) === "[object Object]") {
+        if (option.length === 1 && Object.prototype.toString.call(option[0]) === '[object Object]') {
             // 参数为键值对
-            for (let arg in (option[0] as Record<string, string | number>)) {
+            for (let arg in option[0] as Record<string, string | number>) {
                 if (option[0].hasOwnProperty(arg)) {
-                    let reg = new RegExp(`%{${arg}}`, "g");
+                    let reg = new RegExp(`%{${arg}}`, 'g');
                     result = result.replace(reg, `${option[0][arg]}`);
                 }
             }
@@ -185,6 +184,10 @@ class StringUtil {
             });
         }
         return result;
+    }
+
+    static formatString(str: string, ...args: any[]) {
+        return str.replace(/\{(\d+)\}/g, (match, index) => args[index]);
     }
 
     /** 首字母大写 */
@@ -243,7 +246,6 @@ class StringUtil {
 
         return result;
     }
-
 }
 
 declare global {
@@ -252,4 +254,4 @@ declare global {
     }
 }
 c2f.utils.str = StringUtil;
-export { };
+export {};

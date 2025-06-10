@@ -1,0 +1,216 @@
+
+game_icon.png
+size: 948,683
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01
+  rotate: false
+  xy: 409, 314
+  size: 172, 175
+  orig: 175, 178
+  offset: 2, 2
+  index: -1
+02
+  rotate: true
+  xy: 880, 130
+  size: 74, 60
+  orig: 76, 62
+  offset: 1, 1
+  index: -1
+03
+  rotate: false
+  xy: 540, 2
+  size: 45, 47
+  orig: 47, 49
+  offset: 1, 1
+  index: -1
+04
+  rotate: false
+  xy: 587, 16
+  size: 32, 33
+  orig: 36, 36
+  offset: 2, 1
+  index: -1
+05
+  rotate: false
+  xy: 601, 455
+  size: 126, 97
+  orig: 130, 101
+  offset: 2, 2
+  index: -1
+06
+  rotate: false
+  xy: 601, 554
+  size: 144, 127
+  orig: 148, 131
+  offset: 2, 1
+  index: -1
+07
+  rotate: false
+  xy: 865, 21
+  size: 81, 83
+  orig: 84, 85
+  offset: 2, 1
+  index: -1
+08
+  rotate: false
+  xy: 197, 9
+  size: 100, 104
+  orig: 102, 106
+  offset: 1, 1
+  index: -1
+09
+  rotate: false
+  xy: 299, 27
+  size: 84, 91
+  orig: 86, 94
+  offset: 1, 2
+  index: -1
+ak1
+  rotate: false
+  xy: 2, 272
+  size: 203, 409
+  orig: 205, 411
+  offset: 1, 1
+  index: -1
+ak2
+  rotate: false
+  xy: 2, 77
+  size: 193, 193
+  orig: 195, 195
+  offset: 1, 1
+  index: -1
+bg1
+  rotate: false
+  xy: 207, 275
+  size: 200, 406
+  orig: 202, 408
+  offset: 1, 1
+  index: -1
+bg2
+  rotate: false
+  xy: 409, 491
+  size: 190, 190
+  orig: 192, 192
+  offset: 1, 1
+  index: -1
+bk1
+  rotate: false
+  xy: 747, 611
+  size: 194, 70
+  orig: 196, 72
+  offset: 1, 1
+  index: -1
+bk2
+  rotate: false
+  xy: 2, 15
+  size: 184, 60
+  orig: 186, 62
+  offset: 1, 1
+  index: -1
+particle/particle_000
+  rotate: false
+  xy: 738, 307
+  size: 154, 99
+  orig: 175, 122
+  offset: 10, 5
+  index: -1
+particle/particle_001
+  rotate: false
+  xy: 738, 206
+  size: 154, 99
+  orig: 175, 122
+  offset: 10, 5
+  index: -1
+particle/particle_002
+  rotate: false
+  xy: 583, 250
+  size: 153, 100
+  orig: 175, 122
+  offset: 11, 5
+  index: -1
+particle/particle_003
+  rotate: true
+  xy: 295, 120
+  size: 153, 100
+  orig: 175, 122
+  offset: 11, 5
+  index: -1
+particle/particle_004
+  rotate: false
+  xy: 385, 10
+  size: 153, 100
+  orig: 175, 122
+  offset: 10, 6
+  index: -1
+particle/particle_005
+  rotate: false
+  xy: 397, 112
+  size: 154, 99
+  orig: 175, 122
+  offset: 10, 7
+  index: -1
+particle/particle_006
+  rotate: false
+  xy: 747, 510
+  size: 155, 99
+  orig: 175, 122
+  offset: 9, 8
+  index: -1
+particle/particle_007
+  rotate: false
+  xy: 409, 213
+  size: 155, 99
+  orig: 175, 122
+  offset: 9, 8
+  index: -1
+particle/particle_008
+  rotate: false
+  xy: 566, 150
+  size: 155, 98
+  orig: 175, 122
+  offset: 9, 9
+  index: -1
+particle/particle_009
+  rotate: false
+  xy: 723, 106
+  size: 155, 98
+  orig: 175, 122
+  offset: 9, 10
+  index: -1
+particle/particle_010
+  rotate: false
+  xy: 553, 51
+  size: 154, 97
+  orig: 175, 122
+  offset: 9, 11
+  index: -1
+particle/particle_011
+  rotate: true
+  xy: 197, 115
+  size: 155, 96
+  orig: 175, 122
+  offset: 9, 12
+  index: -1
+particle/particle_012
+  rotate: false
+  xy: 738, 408
+  size: 154, 100
+  orig: 175, 122
+  offset: 9, 8
+  index: -1
+particle/particle_013
+  rotate: false
+  xy: 583, 352
+  size: 153, 101
+  orig: 175, 122
+  offset: 10, 6
+  index: -1
+particle/particle_014
+  rotate: false
+  xy: 709, 6
+  size: 154, 98
+  orig: 175, 122
+  offset: 10, 5
+  index: -1

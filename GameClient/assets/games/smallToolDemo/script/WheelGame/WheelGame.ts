@@ -67,6 +67,14 @@ export default class WheelGame extends UIVControlBase {
                 this.CC_onClickbtnSevenDay();
                 break;
 
+            case this.view.btnVipButton.name:
+                this.CC_onClickbtnVip();
+                break;
+
+            case this.view.btnBorderRadiusMaskButton.name:
+                this.CC_onClickbtnBorderRadiusMask();
+                break;
+
             case this.view.shopButton.name:
                 this.CC_onClickshop();
                 break;
@@ -155,5 +163,11 @@ export default class WheelGame extends UIVControlBase {
     }
     private CC_onClickbtnSevenDay() {
         c2f.gui.open(SmallToolDemoUI.SevenDayMain);
+    }
+    private CC_onClickbtnVip() {
+        c2f.gui.open(SmallToolDemoUI.VipMain);
+    }
+    private CC_onClickbtnBorderRadiusMask() {
+        c2f.gui.open(SmallToolDemoUI.MonthSignRule);
     }
 }

@@ -27,12 +27,14 @@ enum LangDiffType {
 /** 当前差异类型 */
 let curDiffType = LangDiffType.NONE;
 
-@ccclass('LangNodeCfg')
-class LangNodeCfg {
+@ccclass('LangNodeCfg') // 必须提供类名
+export default class LangNodeCfg {
     bShowLang: boolean = true;
-
-    constructor(b: boolean = true) {
-        this.bShowLang = b;
+    constructor() {
+        // 保留无参构造
+    }
+    init(bShowLang: boolean = true) {
+        this.bShowLang = bShowLang;
     }
 
     @property({
@@ -142,16 +144,16 @@ export class WEI18nCustom extends cc.Component {
     // ///////////////////////////////////////////////////// 默认值配置 /////////////////////////////////////////////////////
 
     @property({ type: LangNodeCfg })
-    _defaultCfg = new LangNodeCfg(false);
+    _defaultCfg = new LangNodeCfg();
 
     @property({ displayName: CC_DEV && '默认配置', type: LangNodeCfg })
     get defaultCfg(): LangNodeCfg {
-        this._defaultCfg.bShowLang = false;
+        this._defaultCfg.init(false);
         return this._defaultCfg;
     }
 
     set defaultCfg(value: LangNodeCfg) {
-        this._defaultCfg.bShowLang = false;
+        this._defaultCfg.init(false);
         this._defaultCfg = value;
         this.init();
     }

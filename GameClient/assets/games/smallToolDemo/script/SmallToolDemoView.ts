@@ -11,6 +11,8 @@ export enum SmallToolDemoUI {
     SwitchLang,
     SevenDayMain,
     SevenDaySignItemOne,
+    VipMain,
+    MonthSignRule,
 }
 
 /** 打开界面方式的配置数据 */
@@ -29,4 +31,7 @@ export const SmallToolDemoView: { [key: number]: UIConfig } = {
     [SmallToolDemoUI.SevenDayMain]: { layer: LayerType.PopUp, prefab: 'prefab/sevenDay/V_SevenDayMain', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
     //description:
     [SmallToolDemoUI.SevenDaySignItemOne]: { layer: LayerType.PopUp, prefab: 'prefab/sevenDay/SevenDaySignItemOne', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
-};
+    //description:
+    [SmallToolDemoUI.VipMain]: { layer: LayerType.PopUp, prefab: 'prefab/vipinfo/V_VipMain', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true }, 
+    //description:
+    [SmallToolDemoUI.MonthSignRule]: { layer: LayerType.PopUp, prefab: "prefab/V_MonthSignRule", bundle: GameConsts.Bundle.smallToolDemo }, }

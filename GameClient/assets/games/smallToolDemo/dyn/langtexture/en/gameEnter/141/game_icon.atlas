@@ -1,0 +1,160 @@
+
+game_icon.png
+size: 940,409
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+da10
+  rotate: false
+  xy: 744, 31
+  size: 73, 120
+  orig: 73, 120
+  offset: 0, 0
+  index: -1
+da11
+  rotate: false
+  xy: 804, 165
+  size: 88, 60
+  orig: 88, 60
+  offset: 0, 0
+  index: -1
+da12
+  rotate: true
+  xy: 819, 2
+  size: 30, 43
+  orig: 30, 43
+  offset: 0, 0
+  index: -1
+da13
+  rotate: false
+  xy: 894, 164
+  size: 38, 61
+  orig: 38, 61
+  offset: 0, 0
+  index: -1
+da14
+  rotate: false
+  xy: 891, 114
+  size: 46, 48
+  orig: 46, 48
+  offset: 0, 0
+  index: -1
+da15
+  rotate: false
+  xy: 819, 95
+  size: 70, 68
+  orig: 70, 68
+  offset: 0, 0
+  index: -1
+da16
+  rotate: false
+  xy: 787, 12
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+da17
+  rotate: true
+  xy: 744, 0
+  size: 29, 41
+  orig: 29, 41
+  offset: 0, 0
+  index: -1
+da18
+  rotate: true
+  xy: 606, 0
+  size: 151, 136
+  orig: 151, 136
+  offset: 0, 0
+  index: -1
+da19
+  rotate: false
+  xy: 804, 227
+  size: 132, 182
+  orig: 132, 182
+  offset: 0, 0
+  index: -1
+da1yy
+  rotate: true
+  xy: 0, 204
+  size: 205, 411
+  orig: 205, 411
+  offset: 0, 0
+  index: -1
+da20dd
+  rotate: true
+  xy: 0, 0
+  size: 202, 408
+  orig: 202, 408
+  offset: 0, 0
+  index: -1
+da3
+  rotate: false
+  xy: 864, 1
+  size: 33, 31
+  orig: 33, 31
+  offset: 0, 0
+  index: -1
+da4
+  rotate: false
+  xy: 879, 40
+  size: 37, 36
+  orig: 37, 36
+  offset: 0, 0
+  index: -1
+da5
+  rotate: false
+  xy: 899, 3
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+da6
+  rotate: false
+  xy: 891, 78
+  size: 49, 34
+  orig: 49, 34
+  offset: 0, 0
+  index: -1
+da7
+  rotate: true
+  xy: 918, 44
+  size: 32, 18
+  orig: 32, 18
+  offset: 0, 0
+  index: -1
+da8
+  rotate: false
+  xy: 819, 34
+  size: 58, 59
+  orig: 58, 59
+  offset: 0, 0
+  index: -1
+da9
+  rotate: true
+  xy: 413, 28
+  size: 184, 191
+  orig: 184, 191
+  offset: 0, 0
+  index: -1
+x1yy
+  rotate: false
+  xy: 610, 153
+  size: 186, 62
+  orig: 186, 62
+  offset: 0, 0
+  index: -1
+x6yy2
+  rotate: false
+  xy: 413, 214
+  size: 195, 195
+  orig: 195, 195
+  offset: 0, 0
+  index: -1
+x7dd
+  rotate: false
+  xy: 610, 217
+  size: 192, 192
+  orig: 192, 192
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,129 @@
+{
+"skeleton": {
+	"hash": "9m0odlEptfHx/46u6nQ8vJn7G9s",
+	"spine": "3.8.99",
+	"x": -73.73,
+	"y": -72.72,
+	"width": 150,
+	"height": 162,
+	"images": "./images/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root" },
+	{ "name": "btx", "parent": "root", "x": 1.27, "y": 8.28 },
+	{ "name": "gx", "parent": "root", "scaleX": 0.2339, "scaleY": 0.2339 },
+	{ "name": "n1", "parent": "root" }
+],
+"slots": [
+	{ "name": "Newyy", "bone": "bone", "attachment": "Newyy" },
+	{ "name": "nyy/nyy_00", "bone": "btx", "attachment": "nyy/nyy_00", "blend": "additive" },
+	{ "name": "New2", "bone": "bone", "attachment": "New" },
+	{ "name": "gq", "bone": "gx", "attachment": "gq", "blend": "additive" },
+	{ "name": "font_hot", "bone": "n1", "attachment": "font_hot" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"New2": {
+				"New": { "x": 0.62, "y": 8.87, "width": 51, "height": 55 }
+			},
+			"Newyy": {
+				"Newyy": { "x": 1.62, "y": 6.87, "width": 53, "height": 57 }
+			},
+			"font_hot": {
+				"font_hot": { "width": 40, "height": 21 }
+			},
+			"gq": {
+				"gq": { "width": 81, "height": 81 }
+			},
+			"nyy/nyy_00": {
+				"nyy/nyy_00": { "width": 150, "height": 162 },
+				"nyy/nyy_02": { "width": 150, "height": 162 },
+				"nyy/nyy_04": { "width": 150, "height": 162 },
+				"nyy/nyy_06": { "width": 150, "height": 162 },
+				"nyy/nyy_08": { "width": 150, "height": 162 },
+				"nyy/nyy_10": { "width": 150, "height": 162 },
+				"nyy/nyy_12": { "width": 150, "height": 162 },
+				"nyy/nyy_14": { "width": 150, "height": 162 },
+				"nyy/nyy_16": { "width": 150, "height": 162 },
+				"nyy/nyy_18": { "width": 150, "height": 162 },
+				"nyy/nyy_20": { "width": 150, "height": 162 },
+				"nyy/nyy_22": { "width": 150, "height": 162 },
+				"nyy/nyy_24": { "width": 150, "height": 162 },
+				"nyy/nyy_26": { "width": 150, "height": 162 },
+				"nyy/nyy_28": { "width": 150, "height": 162 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"gq": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff" },
+					{ "time": 1, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.0333, "color": "ffffff00" },
+					{ "time": 1.3333, "color": "ffffffff" },
+					{ "time": 2, "color": "ffffff00" }
+				]
+			},
+			"nyy/nyy_00": {
+				"attachment": [
+					{ "name": "nyy/nyy_00" },
+					{ "time": 0.0667, "name": "nyy/nyy_02" },
+					{ "time": 0.1333, "name": "nyy/nyy_04" },
+					{ "time": 0.2, "name": "nyy/nyy_06" },
+					{ "time": 0.2667, "name": "nyy/nyy_08" },
+					{ "time": 0.3333, "name": "nyy/nyy_10" },
+					{ "time": 0.4, "name": "nyy/nyy_12" },
+					{ "time": 0.4667, "name": "nyy/nyy_14" },
+					{ "time": 0.5333, "name": "nyy/nyy_16" },
+					{ "time": 0.6, "name": "nyy/nyy_18" },
+					{ "time": 0.6667, "name": "nyy/nyy_20" },
+					{ "time": 0.7333, "name": "nyy/nyy_22" },
+					{ "time": 0.8, "name": "nyy/nyy_24" },
+					{ "time": 0.8667, "name": "nyy/nyy_26" },
+					{ "time": 0.9333, "name": "nyy/nyy_28" },
+					{ "time": 1, "name": "nyy/nyy_00" },
+					{ "time": 1.0667, "name": "nyy/nyy_02" },
+					{ "time": 1.1333, "name": "nyy/nyy_04" },
+					{ "time": 1.2, "name": "nyy/nyy_06" },
+					{ "time": 1.2667, "name": "nyy/nyy_08" },
+					{ "time": 1.3333, "name": "nyy/nyy_10" },
+					{ "time": 1.4, "name": "nyy/nyy_12" },
+					{ "time": 1.4667, "name": "nyy/nyy_14" },
+					{ "time": 1.5333, "name": "nyy/nyy_16" },
+					{ "time": 1.6, "name": "nyy/nyy_18" },
+					{ "time": 1.6667, "name": "nyy/nyy_20" },
+					{ "time": 1.7333, "name": "nyy/nyy_22" },
+					{ "time": 1.8, "name": "nyy/nyy_24" },
+					{ "time": 1.8667, "name": "nyy/nyy_26" },
+					{ "time": 1.9333, "name": "nyy/nyy_28" }
+				]
+			}
+		},
+		"bones": {
+			"gx": {
+				"scale": [
+					{},
+					{ "time": 1, "x": 3.887, "y": 3.887, "curve": "stepped" },
+					{ "time": 1.0333 },
+					{ "time": 2, "x": 3.887, "y": 3.887 }
+				]
+			},
+			"n1": {
+				"scale": [
+					{ "curve": 0.25, "c3": 0.75 },
+					{ "time": 1, "x": 1.191, "y": 1.191, "curve": 0.25, "c3": 0.75 },
+					{ "time": 2 }
+				]
+			}
+		}
+	}
+}
+}

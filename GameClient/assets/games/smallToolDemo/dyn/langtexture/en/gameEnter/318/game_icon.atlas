@@ -1,0 +1,146 @@
+
+game_icon.png
+size: 907,645
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ak1
+  rotate: false
+  xy: 2, 234
+  size: 203, 409
+  orig: 205, 411
+  offset: 1, 1
+  index: -1
+ak2
+  rotate: false
+  xy: 395, 450
+  size: 193, 193
+  orig: 195, 195
+  offset: 1, 1
+  index: -1
+bg1
+  rotate: true
+  xy: 2, 32
+  size: 200, 406
+  orig: 202, 408
+  offset: 1, 1
+  index: -1
+bg2
+  rotate: false
+  xy: 590, 453
+  size: 190, 190
+  orig: 192, 192
+  offset: 1, 1
+  index: -1
+bk1
+  rotate: true
+  xy: 825, 162
+  size: 194, 70
+  orig: 196, 72
+  offset: 1, 1
+  index: -1
+bk2
+  rotate: false
+  xy: 207, 243
+  size: 184, 60
+  orig: 186, 62
+  offset: 1, 1
+  index: -1
+fort_0
+  rotate: true
+  xy: 393, 234
+  size: 69, 75
+  orig: 75, 80
+  offset: 3, 3
+  index: -1
+fort_1
+  rotate: true
+  xy: 782, 581
+  size: 62, 69
+  orig: 66, 74
+  offset: 2, 1
+  index: -1
+fort_11
+  rotate: false
+  xy: 610, 310
+  size: 213, 141
+  orig: 216, 143
+  offset: 2, 1
+  index: -1
+fort_12
+  rotate: false
+  xy: 470, 234
+  size: 199, 70
+  orig: 201, 72
+  offset: 1, 1
+  index: -1
+fort_13
+  rotate: true
+  xy: 2, 2
+  size: 28, 166
+  orig: 32, 167
+  offset: 0, 1
+  index: -1
+fort_14
+  rotate: true
+  xy: 170, 2
+  size: 28, 166
+  orig: 32, 167
+  offset: 4, 1
+  index: -1
+fort_2
+  rotate: true
+  xy: 782, 508
+  size: 71, 40
+  orig: 73, 42
+  offset: 1, 1
+  index: -1
+fort_3
+  rotate: false
+  xy: 395, 306
+  size: 213, 142
+  orig: 215, 144
+  offset: 1, 1
+  index: -1
+fort_4
+  rotate: true
+  xy: 825, 358
+  size: 221, 80
+  orig: 223, 82
+  offset: 1, 1
+  index: -1
+fort_5
+  rotate: true
+  xy: 671, 170
+  size: 138, 150
+  orig: 143, 156
+  offset: 3, 4
+  index: -1
+fort_6
+  rotate: true
+  xy: 618, 24
+  size: 144, 139
+  orig: 147, 141
+  offset: 2, 1
+  index: -1
+fort_7
+  rotate: false
+  xy: 759, 21
+  size: 144, 139
+  orig: 147, 141
+  offset: 1, 1
+  index: -1
+fort_8
+  rotate: false
+  xy: 410, 26
+  size: 206, 206
+  orig: 223, 222
+  offset: 8, 8
+  index: -1
+fort_9
+  rotate: false
+  xy: 207, 305
+  size: 186, 338
+  orig: 188, 348
+  offset: 1, 8
+  index: -1

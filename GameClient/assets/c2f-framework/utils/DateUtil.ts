@@ -3,7 +3,7 @@ enum TimeUnit {
     S,
     M,
     H,
-    D
+    D,
 }
 
 class DateUtil {
@@ -14,21 +14,21 @@ class DateUtil {
      */
     static format(fmtStr: string, date: Date): string {
         let o: any = {
-            "M+": date.getMonth() + 1,                      // month 
-            "d+": date.getDate(),                           // day 
-            "h+": date.getHours(),                          // hour 
-            "m+": date.getMinutes(),                        // minute 
-            "s+": date.getSeconds(),                        // second 
-            "q+": Math.floor((date.getMonth() + 3) / 3),    // quarter 
-            "S": date.getMilliseconds()                     // millisecond 
-        }
+            'M+': date.getMonth() + 1, // month
+            'd+': date.getDate(), // day
+            'h+': date.getHours(), // hour
+            'm+': date.getMinutes(), // minute
+            's+': date.getSeconds(), // second
+            'q+': Math.floor((date.getMonth() + 3) / 3), // quarter
+            S: date.getMilliseconds(), // millisecond
+        };
         if (/(y+)/.test(fmtStr)) {
-            fmtStr = fmtStr.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+            fmtStr = fmtStr.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
         }
 
         for (let k in o) {
-            if (new RegExp("(" + k + ")").test(fmtStr)) {
-                fmtStr = fmtStr.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substring(("" + o[k]).length));
+            if (new RegExp('(' + k + ')').test(fmtStr)) {
+                fmtStr = fmtStr.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substring(('' + o[k]).length));
             }
         }
         return fmtStr;
@@ -43,7 +43,7 @@ class DateUtil {
      * c2f.utils.date.formatTimeString(3601, "%{m}:%{s}"); // 60:1
      * c2f.utils.date.formatTimeString(3601, "%{mm}:%{ss}"); // 60:01
      * c2f.utils.date.formatTimeString(3601, "%{hh}:%{mm}:%{ss}"); // 01:00:01
-     * 
+     *
      * // 当format为object时，会以传入的sec计算最大的时间单位，并选择format对应的字符串进行格式化
      * c2f.utils.date.formatTimeString(100, {
      *     S: "%{s}秒",
@@ -58,16 +58,16 @@ class DateUtil {
      *     D: "%{d}天%{h}时%{m}分%{s}秒"
      * }); // 1天3时46分40秒
      */
-    public static formatTimeString(sec: number, format: string | { "S": string; "M": string; "H": string; "D": string } = "%{hh}:%{mm}:%{ss}"): string {
+    public static formatTimeString(sec: number, format: string | { S: string; M: string; H: string; D: string } = '%{hh}:%{mm}:%{ss}'): string {
         let seconds: number = Math.floor(sec);
         let minutes: number = Math.floor(seconds / 60);
         let hours: number = Math.floor(seconds / 3600);
         let days: number = Math.floor(seconds / 86400);
 
         let maxUnit: TimeUnit = TimeUnit.S;
-        let result: string = "";
+        let result: string = '';
 
-        if (typeof format === "string") {
+        if (typeof format === 'string') {
             // 查询格式化字符串中最大的单位
             result = format;
             if (/%\{d+\}/.test(format)) {
@@ -112,7 +112,7 @@ class DateUtil {
             mm: minutes < 10 ? `0${minutes}` : `${minutes}`,
             m: `${minutes}`,
             ss: seconds < 10 ? `0${seconds}` : `${seconds}`,
-            s: `${seconds}`
+            s: `${seconds}`,
         };
         result = c2f.utils.str.formatWithObj(result, data);
         return result;
@@ -127,7 +127,7 @@ class DateUtil {
      * c2f.utils.date.formatDateString(0, "%{YYYY}-%{MM}-%{dd} %{hh}:%{mm}:%{ss}", true); // "1970-01-01 00:00:00"
      * c2f.utils.date.formatDateString(0, "%{dd}/%{MM}/%{YY}", true); // "01/01/70"
      */
-    public static formatDateString(date: number | Date, format: string = "%{YYYY}-%{MM}-%{dd} %{hh}:%{mm}:%{ss}", isUTC: boolean = false): string {
+    public static formatDateString(date: number | Date, format: string = '%{YYYY}-%{MM}-%{dd} %{hh}:%{mm}:%{ss}', isUTC: boolean = false): string {
         let src = date instanceof Date ? date : new Date(date);
         let year = isUTC ? src.getUTCFullYear() : src.getFullYear();
         let month = isUTC ? src.getUTCMonth() + 1 : src.getMonth() + 1;
@@ -148,8 +148,8 @@ class DateUtil {
             mm: minutes < 10 ? `0${minutes}` : `${minutes}`,
             m: `${minutes}`,
             ss: seconds < 10 ? `0${seconds}` : `${seconds}`,
-            s: `${seconds}`
-        }
+            s: `${seconds}`,
+        };
         let result = c2f.utils.str.formatWithObj(format, data);
         return result;
     }
@@ -163,43 +163,43 @@ class DateUtil {
     static isSameDay(ts1: number, ts2: number) {
         let isSame: boolean = false;
         if (ts1 != null && ts2 != null) {
-            let time_a = moment(ts1 * 1000).format("YYYYMMDD");
-            let time_b = moment(ts2 * 1000).format("YYYYMMDD");
-            isSame = time_a == time_b
+            let time_a = moment(ts1 * 1000).format('YYYYMMDD');
+            let time_b = moment(ts2 * 1000).format('YYYYMMDD');
+            isSame = time_a == time_b;
         }
         return isSame;
     }
 
-    /** 判断2个时间戳是否是同一周 
+    /** 判断2个时间戳是否是同一周
      * ts1 现在的
      * ts2 之前的
-    */
+     */
     static isSameWeek(ts1: number, ts2: number) {
         let isSame: boolean = false;
         if (ts1 != null && ts2 != null) {
             let secondsDiff = Math.abs(ts2 - ts1);
-            if (secondsDiff < 604800) {//7天内
+            if (secondsDiff < 604800) {
+                //7天内
                 let date1 = new Date(ts1 * 1000);
                 let date2 = new Date(ts2 * 1000);
                 let day1 = date1.getDay();
                 let day2 = date2.getDay();
                 //周末是0 单独处理
                 if (day1 == 0) {
-                    day1 = 7
+                    day1 = 7;
                 }
                 if (day2 == 0) {
-                    day2 = 7
+                    day2 = 7;
                 }
                 //还需要每周1重置 比如 一个是周2一个周末
                 //现在的礼拜几 一定要大于之前的礼拜
                 if (day1 >= day2) {
-                    isSame = true
+                    isSame = true;
                 }
             }
         }
         return isSame;
     }
-
 
     /** 是否为是今天 */
     static isToday(ts: number) {
@@ -213,14 +213,14 @@ class DateUtil {
     static setDefTimeZone(zone: number) {
         if (zone != null && zone >= -12 && zone <= 12) {
             this.timeZone = zone;
-            let name = "Etc/GMT";
+            let name = 'Etc/GMT';
             if (zone >= 0) {
-                name += "+"
+                name += '+';
             }
             name += zone;
             moment.tz.setDefault(name);
         } else {
-            cc.log("修改时区错误 ==>" + zone);
+            cc.log('修改时区错误 ==>' + zone);
         }
     }
 
@@ -230,8 +230,8 @@ class DateUtil {
     static getSerVerTime() {
         // let serverTime = szg.player.time.getServerTs() * 1000;
         let serverTime = c2f.utils.date.getLocalTick();
-        return serverTime
-    };
+        return serverTime;
+    }
 
     /**
      * 获取某时间0时时间戳
@@ -239,7 +239,7 @@ class DateUtil {
     static getDayStartTS(ts: number) {
         //转换成毫秒级
         let time = ts * 1000;
-        let startTime = moment(time).startOf("day").format("x");
+        let startTime = moment(time).startOf('day').format('x');
         return Math.floor(startTime / 1000);
     }
 
@@ -248,7 +248,7 @@ class DateUtil {
      */
     static getTodayEndTS() {
         let serverTime = this.getSerVerTime();
-        let endTime = moment(serverTime).endOf("day").format("x");
+        let endTime = moment(serverTime).endOf('day').format('x');
         return Math.floor(endTime / 1000);
     }
 
@@ -257,7 +257,7 @@ class DateUtil {
      */
     static getTodayStartTS() {
         let serverTime = this.getSerVerTime();
-        let startTime = moment(serverTime).startOf("day").format("x");
+        let startTime = moment(serverTime).startOf('day').format('x');
         return Math.floor(startTime / 1000);
     }
 
@@ -266,8 +266,8 @@ class DateUtil {
      */
     static getTodayRestDur() {
         let serverTime = this.getSerVerTime();
-        let endTime = moment(serverTime).endOf("day").format("x");
-        let time = (endTime - serverTime) >= 0 ? endTime - serverTime : 0;
+        let endTime = moment(serverTime).endOf('day').format('x');
+        let time = endTime - serverTime >= 0 ? endTime - serverTime : 0;
         return Math.floor(time / 1000);
     }
 
@@ -276,13 +276,13 @@ class DateUtil {
      */
     static getTodayPassDur() {
         let serverTime = this.getSerVerTime();
-        let startTime = moment(serverTime).startOf("day").format("x");
-        let time = (serverTime - startTime) >= 0 ? serverTime - startTime : 0;
+        let startTime = moment(serverTime).startOf('day').format('x');
+        let time = serverTime - startTime >= 0 ? serverTime - startTime : 0;
         return Math.floor(time / 1000);
     }
 
-    /** 
-     * 获取今天按秒偏移后的时间戳 
+    /**
+     * 获取今天按秒偏移后的时间戳
      */
     static getTodayTsByOffset(offSecond: number) {
         let startTime = this.getTodayStartTS();
@@ -294,7 +294,7 @@ class DateUtil {
      * 获取格式化时间
      * @fmtStr "YYYY/MM/DD HH:mm:ss"
      */
-    static formatServerTime(fmtStr: string = "YYYY-MM-DD HH:mm:ss") {
+    static formatServerTime(fmtStr: string = 'YYYY-MM-DD HH:mm:ss') {
         let serverTime = this.getSerVerTime();
         let time = moment(serverTime).format(fmtStr);
         return time;
@@ -304,12 +304,12 @@ class DateUtil {
      * 获取添加了时区的格式时间
      * @fmtStr "YYYY/MM/DD HH:mm:ss"
      */
-    static getDateStrWithZone(fmtStr: string = "YYYY/MM/DD HH:mm:ss") {
+    static getDateStrWithZone(fmtStr: string = 'YYYY/MM/DD HH:mm:ss') {
         let time = this.formatServerTime(fmtStr);
         if (this.timeZone >= 0) {
-            time += " GMT(+" + this.timeZone + ")";
+            time += ' GMT(+' + this.timeZone + ')';
         } else {
-            time += " GMT(" + this.timeZone + ")";
+            time += ' GMT(' + this.timeZone + ')';
         }
         return time;
     }
@@ -331,7 +331,7 @@ class DateUtil {
      * eg. c2f.utils.date.getTimeBySting("2023-10-11 15:35:59");
      */
     static getTsBySting(timeString: string) {
-        let time = moment(timeString).format("X");
+        let time = moment(timeString).format('X');
         return Math.floor(time / 1000);
     }
 
@@ -341,7 +341,7 @@ class DateUtil {
      */
     static getMonthForTime(time?: number) {
         let timeValue = time || this.getSerVerTime();
-        let month = moment(timeValue).format("M");
+        let month = moment(timeValue).format('M');
         return month;
     }
 
@@ -351,7 +351,7 @@ class DateUtil {
      */
     static getDayForTime(time?: number) {
         let timeValue = time || this.getSerVerTime();
-        let day = moment(timeValue).format("D");
+        let day = moment(timeValue).format('D');
         return day;
     }
 
@@ -361,7 +361,7 @@ class DateUtil {
      */
     static getHourForTime(time?: number) {
         let timeValue = time || this.getSerVerTime();
-        let hour = moment(timeValue).format("HH");
+        let hour = moment(timeValue).format('HH');
         return hour;
     }
 
@@ -371,7 +371,7 @@ class DateUtil {
      */
     static getMinuteForTime(time?: number) {
         let timeValue = time || this.getSerVerTime();
-        let minute = moment(timeValue).format("mm");
+        let minute = moment(timeValue).format('mm');
         return minute;
     }
 
@@ -381,7 +381,7 @@ class DateUtil {
      */
     static getSecondForTime(time?: number) {
         let timeValue = time || this.getSerVerTime();
-        let second = moment(timeValue).format("ss");
+        let second = moment(timeValue).format('ss');
         return second;
     }
 
@@ -391,7 +391,7 @@ class DateUtil {
      */
     static getYearForTime(time?: number) {
         let timeValue = time || this.getSerVerTime();
-        let year = moment(timeValue).format("YYYY");
+        let year = moment(timeValue).format('YYYY');
         return year;
     }
 
@@ -400,7 +400,7 @@ class DateUtil {
      */
     static getWeekForTime(time?: number) {
         let timeValue = time || this.getSerVerTime();
-        let week = moment(timeValue).format("E");
+        let week = moment(timeValue).format('E');
         return week;
     }
 
@@ -413,17 +413,17 @@ class DateUtil {
         let serverTime = this.getSerVerTime();
         switch (type) {
             case 's':
-                return parseInt("" + (time - serverTime) / 1000);
+                return parseInt('' + (time - serverTime) / 1000);
             case 'n':
-                return parseInt("" + (time - serverTime) / 60000);
+                return parseInt('' + (time - serverTime) / 60000);
             case 'h':
-                return parseInt("" + (time - serverTime) / 3600000);
+                return parseInt('' + (time - serverTime) / 3600000);
             case 'd':
-                return parseInt("" + (time - serverTime) / 86400000);
+                return parseInt('' + (time - serverTime) / 86400000);
             case 'w':
-                return parseInt("" + (time - serverTime) / (86400000 * 7));
+                return parseInt('' + (time - serverTime) / (86400000 * 7));
             case 'm':
-                return this.getOffsetByType("y", time) * 12 + this.getMonthForTime(time) - this.getMonthForTime();
+                return this.getOffsetByType('y', time) * 12 + this.getMonthForTime(time) - this.getMonthForTime();
             case 'y':
                 return this.getYearForTime(time) - this.getYearForTime();
         }
@@ -441,19 +441,19 @@ class DateUtil {
             if (param.length > 10) {
                 param = param.substring(0, 10);
             }
-            time = moment(param + ' 00:00:00').format("x");
+            time = moment(param + ' 00:00:00').format('x');
         } else if (param > 100000000) {
             let numBitLen = ('' + param).length;
             if (numBitLen == 10) {
-                time = moment(param * 1000).format("x");
+                time = moment(param * 1000).format('x');
             } else {
-                time = moment(param).format("x");
+                time = moment(param).format('x');
             }
         } else {
-            let year = parseInt("" + param / 10000);
-            let month = parseInt("" + (param % 10000) / 100);
+            let year = parseInt('' + param / 10000);
+            let month = parseInt('' + (param % 10000) / 100);
             let day = param % 100;
-            time = moment([year, month - 1, day]).format("x");
+            time = moment([year, month - 1, day]).format('x');
         }
 
         let serverTime = this.getSerVerTime();
@@ -485,7 +485,6 @@ class DateUtil {
         return dur;
     }
 
-
     /** 到本周几的指定时间还有多少秒 */
     static getSecondToThisWeekTime(week: number, time: string) {
         let dur = this.getTodayRestDur();
@@ -498,7 +497,7 @@ class DateUtil {
         //     dur += (7 + offset) * secOneDay;
         // }
 
-        let strArr = time.split(":");
+        let strArr = time.split(':');
         if (strArr && strArr.length > 0) {
             let hour: number = parseInt(strArr[0]);
             if (hour) {
@@ -522,23 +521,22 @@ class DateUtil {
     }
     /**通过本周相差时间  */
     static getSecondToNextWeekTimeByDisSec(sec: number): number {
-        let secTemp = sec
+        let secTemp = sec;
         if (sec < 0) {
-            secTemp = 7 * 86400 + sec
+            secTemp = 7 * 86400 + sec;
         }
-        return secTemp
+        return secTemp;
     }
-
 
     /** 到下月(1号)还有多少秒 */
     static getTimeDifferenceToNextMonthFirstDay() {
         let serverTime = this.getSerVerTime();
         let dur = this.getTodayRestDur();
         let nextMonthFirstDay = this.getNextMonthFirstDay();
-        // 计算时间差（毫秒）  
+        // 计算时间差（毫秒）
         let timeDiff = Math.abs(nextMonthFirstDay.getTime() - serverTime);
-        let timeSceond = Math.floor(timeDiff / 1000)
-        return timeSceond
+        let timeSceond = Math.floor(timeDiff / 1000);
+        return timeSceond;
     }
 
     static getNextMonthFirstDay(): Date {
@@ -549,14 +547,10 @@ class DateUtil {
         return new Date(nextYear, nextMonth, 1);
     }
 
-
-
-
-
     /**hh:mm:ss  获取时间戳*/
     static getSecondByTimeStr(time: string) {
         let sec = this.getTodayStartTS();
-        let strArr = time.split(":");
+        let strArr = time.split(':');
         if (strArr && strArr.length > 0) {
             let hour: number = parseInt(strArr[0]);
             if (hour) {
@@ -581,7 +575,7 @@ class DateUtil {
     /** 到下一个x整点还有多少秒 */
     static getSecondToNextHour(hour: number) {
         let svrTime = this.getSerVerTime();
-        let endTime = moment(svrTime).endOf("hour").format("x");
+        let endTime = moment(svrTime).endOf('hour').format('x');
         let dur = Math.floor((endTime - svrTime) / 1000);
 
         const secOneHour = 3600;
@@ -596,24 +590,23 @@ class DateUtil {
     }
 
     /** 获取倒计时到天
- *  @description 一天以上倒计时到几天  一天以内倒计时到小时   一小时以内倒计时到分钟
- */
+     *  @description 一天以上倒计时到几天  一天以内倒计时到小时   一小时以内倒计时到分钟
+     */
     static getDayCountDownCommon(num: number): string {
-        let sec = c2f.utils.date.getSecondToNextWeek(1)
+        let sec = c2f.utils.date.getSecondToNextWeek(1);
         if (sec > 86400) {
             let days: number = Math.floor(sec / 86400);
-            return `${days}${c2f.language.words(2504)}`
+            return `${days}${c2f.language.words('2504')}`;
         } else if (sec > 3600) {
             let hours: number = Math.floor(sec / 3600);
-            return `${hours}${c2f.language.words(2505)}`
+            return `${hours}${c2f.language.words('2505')}`;
         } else if (sec > 60) {
             let minute: number = Math.floor(sec / 60);
-            return `${minute}${c2f.language.words(2506)}`
+            return `${minute}${c2f.language.words('2506')}`;
         } else {
-            return `${sec}${c2f.language.words(2507)}`
+            return `${sec}${c2f.language.words('2507')}`;
         }
     }
-
 
     /**
      * 生成指定范围的随机整数
@@ -630,7 +623,6 @@ class DateUtil {
         return 0;
     }
 
-
     /**
      * 获取上次下线的时间文本
      * 在线 显示绿色 文本在线
@@ -639,31 +631,31 @@ class DateUtil {
      * 大于7天内 显示7天前
      * num 上一次下线的时间戳
      */
-    static getLastOnLineStr(num: number): { str: string, color: string } {
+    static getLastOnLineStr(num: number): { str: string; color: string } {
         let serverTime = this.getSerVerTime();
-        let data = { str: "", color: "#5D4F49" }
+        let data = { str: '', color: '#5D4F49' };
         if (num == -1) {
-            data.str = c2f.language.words(20076)
-            data.color = "#547e49"
-            return data
+            data.str = c2f.language.words('20076');
+            data.color = '#547e49';
+            return data;
         }
-        let seconds = serverTime - num
+        let seconds = serverTime - num;
         let minutes: number = Math.floor(seconds / 60);
         let hours: number = Math.floor(seconds / 3600);
         let days: number = Math.floor(seconds / 86400);
         if (minutes < 5) {
-            data.str = c2f.language.words(20076)
-            data.color = "#547e49"
+            data.str = c2f.language.words('20076');
+            data.color = '#547e49';
         } else if (minutes < 60) {
-            data.str = c2f.language.words(20103).format(minutes)
+            data.str = c2f.language.words('20103').format(minutes);
         } else if (hours < 24) {
-            data.str = c2f.language.words(20077).format(hours)
+            data.str = c2f.language.words('20077').format(hours);
         } else if (days < 7) {
-            data.str = c2f.language.words(20078).format(days)
+            data.str = c2f.language.words('20078').format(days);
         } else {
-            data.str = c2f.language.words(20078).format(7)
+            data.str = c2f.language.words('20078').format(7);
         }
-        return data
+        return data;
     }
 
     /**
@@ -671,12 +663,12 @@ class DateUtil {
      */
     static getLastTimeDay(num: number): number {
         let serverTime = this.getSerVerTime();
-        if (num = -1) {
-            return 0
+        if ((num = -1)) {
+            return 0;
         }
-        let seconds = serverTime - num
+        let seconds = serverTime - num;
         let days: number = Math.floor(seconds / 86400);
-        return days
+        return days;
     }
 
     /** 到下周几的指定时间还有多少秒 */
@@ -691,7 +683,7 @@ class DateUtil {
             dur += (7 + offset) * secOneDay;
         }
 
-        let strArr = time.split(":");
+        let strArr = time.split(':');
         if (strArr && strArr.length > 0) {
             let hour: number = parseInt(strArr[0]);
             if (hour) {
@@ -716,18 +708,18 @@ class DateUtil {
 
     /**周几 多少秒 */
     static getWeekTimeSecondByTimeStr(str: string): number {
-        let strArr = str.split("/");
-        let dur = this.getWeekTimeSecondByTime(parseInt(strArr[0]), strArr[1])
-        return dur
+        let strArr = str.split('/');
+        let dur = this.getWeekTimeSecondByTime(parseInt(strArr[0]), strArr[1]);
+        return dur;
     }
 
     /**
      * 通过09:00获取秒
-     * 
+     *
      */
     static getTimeSecondByTime(time: string): number {
-        let dur = 0
-        let strArrTwo = time.split(":");
+        let dur = 0;
+        let strArrTwo = time.split(':');
         if (strArrTwo && strArrTwo.length > 0) {
             let hour: number = parseInt(strArrTwo[0]);
             if (hour) {
@@ -746,44 +738,38 @@ class DateUtil {
                 }
             }
         }
-        return dur
+        return dur;
     }
     /**周几 多少秒 */
     static getWeekTimeSecondByTime(weekIndex: number, time: string): number {
         let secOneDay = 86400;
         let dur = (weekIndex - 1) * secOneDay;
-        dur = dur + this.getTimeSecondByTime(time)
-        return dur
+        dur = dur + this.getTimeSecondByTime(time);
+        return dur;
     }
 
     /**获取服务器 本周周一零点时间 */
     static getServerCurWeekStartSecond(): number {
         let curTs = this.getSerVerTime();
-        let ret = this.getFirstDayOfWeekTimestamp(curTs * 1000) / 1000
-        return ret
+        let ret = this.getFirstDayOfWeekTimestamp(curTs * 1000) / 1000;
+        return ret;
     }
 
     static getFirstDayOfWeekTimestamp(timestamp: number): number {
-        // 将时间戳转换为 Date 对象  
+        // 将时间戳转换为 Date 对象
         const date = new Date(timestamp);
-        // 获取当前是星期几（0代表星期日，1代表星期一，...，6代表星期六）  
+        // 获取当前是星期几（0代表星期日，1代表星期一，...，6代表星期六）
         const dayOfWeek = date.getDay();
-        // 如果今天是星期一，则不需要做任何调整  
-        // 否则，需要减去相应的天数以回到上一个星期一  
-        const daysToSubtract = (dayOfWeek === 0) ? 6 : dayOfWeek - 1; // 如果星期日是0，则上一个星期一是6天前  
-        // 设置日期为上一个星期一的日期，并将时间设置为凌晨0点  
+        // 如果今天是星期一，则不需要做任何调整
+        // 否则，需要减去相应的天数以回到上一个星期一
+        const daysToSubtract = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // 如果星期日是0，则上一个星期一是6天前
+        // 设置日期为上一个星期一的日期，并将时间设置为凌晨0点
         date.setDate(date.getDate() - daysToSubtract);
         date.setHours(0, 0, 0, 0);
-        // 将修改后的 Date 对象转换回时间戳  
+        // 将修改后的 Date 对象转换回时间戳
         return date.getTime();
     }
-
-
 }
-
-
-
-
 
 declare global {
     interface IUtil {
@@ -791,4 +777,4 @@ declare global {
     }
 }
 c2f.utils.date = DateUtil;
-export { };
+export {};

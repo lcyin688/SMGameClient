@@ -1,4 +1,4 @@
-import WESwitchPage from './WESwitchPage';
+import { WESwitchPage } from './WESwitchPage';
 
 const { ccclass, property, menu } = cc._decorator;
 

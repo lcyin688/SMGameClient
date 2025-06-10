@@ -1,0 +1,216 @@
+
+game_icon.png
+size: 943,472
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ak1
+  rotate: false
+  xy: 2, 59
+  size: 205, 411
+  orig: 205, 411
+  offset: 0, 0
+  index: -1
+ak2
+  rotate: false
+  xy: 586, 275
+  size: 195, 195
+  orig: 195, 195
+  offset: 0, 0
+  index: -1
+bg1
+  rotate: false
+  xy: 209, 62
+  size: 202, 408
+  orig: 202, 408
+  offset: 0, 0
+  index: -1
+bg2
+  rotate: false
+  xy: 567, 3
+  size: 192, 192
+  orig: 192, 192
+  offset: 0, 0
+  index: -1
+bk1
+  rotate: true
+  xy: 512, 274
+  size: 196, 72
+  orig: 196, 72
+  offset: 0, 0
+  index: -1
+bk2
+  rotate: true
+  xy: 427, 5
+  size: 186, 62
+  orig: 186, 62
+  offset: 0, 0
+  index: -1
+gane_1
+  rotate: true
+  xy: 491, 9
+  size: 182, 74
+  orig: 182, 74
+  offset: 0, 0
+  index: -1
+gane_10
+  rotate: true
+  xy: 874, 27
+  size: 25, 61
+  orig: 25, 61
+  offset: 0, 0
+  index: -1
+gane_11
+  rotate: false
+  xy: 900, 55
+  size: 24, 61
+  orig: 24, 61
+  offset: 0, 0
+  index: -1
+gane_12
+  rotate: false
+  xy: 807, 373
+  size: 119, 97
+  orig: 119, 97
+  offset: 0, 0
+  index: -1
+gane_13
+  rotate: true
+  xy: 832, 162
+  size: 69, 97
+  orig: 69, 97
+  offset: 0, 0
+  index: -1
+gane_14
+  rotate: false
+  xy: 856, 54
+  size: 42, 62
+  orig: 42, 62
+  offset: 0, 0
+  index: -1
+gane_24
+  rotate: false
+  xy: 856, 54
+  size: 42, 62
+  orig: 42, 62
+  offset: 0, 0
+  index: -1
+gane_15
+  rotate: false
+  xy: 783, 278
+  size: 66, 93
+  orig: 66, 93
+  offset: 0, 0
+  index: -1
+gane_16
+  rotate: false
+  xy: 190, 4
+  size: 39, 53
+  orig: 39, 53
+  offset: 0, 0
+  index: -1
+gane_17
+  rotate: true
+  xy: 413, 193
+  size: 277, 97
+  orig: 277, 97
+  offset: 0, 0
+  index: -1
+gane_18
+  rotate: false
+  xy: 2, 2
+  size: 62, 55
+  orig: 62, 55
+  offset: 0, 0
+  index: -1
+gane_19
+  rotate: false
+  xy: 231, 10
+  size: 77, 50
+  orig: 77, 50
+  offset: 0, 0
+  index: -1
+gane_2
+  rotate: true
+  xy: 784, 201
+  size: 75, 46
+  orig: 75, 46
+  offset: 0, 0
+  index: -1
+gane_20
+  rotate: false
+  xy: 310, 10
+  size: 47, 50
+  orig: 47, 50
+  offset: 0, 0
+  index: -1
+gane_21
+  rotate: true
+  xy: 66, 2
+  size: 55, 52
+  orig: 55, 52
+  offset: 0, 0
+  index: -1
+gane_22
+  rotate: false
+  xy: 512, 197
+  size: 171, 75
+  orig: 171, 75
+  offset: 0, 0
+  index: -1
+gane_23
+  rotate: true
+  xy: 761, 5
+  size: 191, 44
+  orig: 191, 44
+  offset: 0, 0
+  index: -1
+gane_3
+  rotate: true
+  xy: 120, 4
+  size: 53, 68
+  orig: 53, 68
+  offset: 0, 0
+  index: -1
+gane_4
+  rotate: true
+  xy: 807, 118
+  size: 42, 117
+  orig: 42, 117
+  offset: 0, 0
+  index: -1
+gane_5
+  rotate: false
+  xy: 851, 233
+  size: 90, 138
+  orig: 90, 138
+  offset: 0, 0
+  index: -1
+gane_6
+  rotate: true
+  xy: 359, 13
+  size: 47, 66
+  orig: 47, 66
+  offset: 0, 0
+  index: -1
+gane_7
+  rotate: false
+  xy: 807, 50
+  size: 47, 66
+  orig: 47, 66
+  offset: 0, 0
+  index: -1
+gane_8
+  rotate: false
+  xy: 685, 198
+  size: 97, 75
+  orig: 97, 75
+  offset: 0, 0
+  index: -1
+gane_9
+  rotate: true
+  xy: 807, 6
+  size: 42, 65
+  orig: 42, 65
+  offset: 0, 0
+  index: -1

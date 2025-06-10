@@ -1,0 +1,73 @@
+{
+"skeleton": {
+	"hash": "UEjVsTX0xN13CawvdO0OYKDOTt8",
+	"spine": "3.8.99",
+	"x": -101,
+	"y": -27.73,
+	"width": 202,
+	"height": 55.9,
+	"images": "./images/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone", "parent": "root", "y": 0.75 },
+	{ "name": "bone2", "parent": "bone", "x": 0.42, "y": 15.25 },
+	{ "name": "point1", "parent": "bone", "x": -0.86, "y": -6.77, "color": "1d5cffff" },
+	{ "name": "di", "parent": "bone", "y": -6.85 }
+],
+"slots": [
+	{ "name": "xx", "bone": "bone", "attachment": "xx" },
+	{ "name": "jackpo7", "bone": "di", "attachment": "jackpo7" },
+	{ "name": "jackpo8", "bone": "di", "attachment": "jackpo6", "blend": "additive" },
+	{ "name": "jackpo3", "bone": "bone2", "attachment": "jackpo3" },
+	{ "name": "point1", "bone": "point1" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"jackpo3": {
+				"jackpo3": { "y": -0.59, "width": 143, "height": 23 }
+			},
+			"jackpo7": {
+				"jackpo7": { "y": -3.14, "width": 202, "height": 37 }
+			},
+			"jackpo8": {
+				"jackpo6": { "x": 0.14, "y": -0.88, "width": 194, "height": 30 }
+			},
+			"xx": {
+				"xx": { "x": 0.5, "y": 9.42, "width": 183, "height": 36 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"jackpo8": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 1.3333, "color": "ffffffb2" },
+					{ "time": 1.4333, "color": "ffffff32" },
+					{ "time": 1.5333, "color": "ffffffc1" },
+					{ "time": 1.6, "color": "ffffff18" },
+					{ "time": 1.6667, "color": "ffffff7f" },
+					{ "time": 1.7667, "color": "ffffff0f" },
+					{ "time": 1.8667, "color": "ffffff65" },
+					{ "time": 2.6667, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"bone2": {
+				"scale": [
+					{ "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.3333, "x": 1.062, "y": 1.062, "curve": 0.25, "c3": 0.75 },
+					{ "time": 2.6667 }
+				]
+			}
+		}
+	}
+}
+}

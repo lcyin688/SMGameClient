@@ -1,0 +1,139 @@
+
+lobby_icnew.png
+size: 802,192
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+New
+  rotate: true
+  xy: 745, 86
+  size: 51, 55
+  orig: 51, 55
+  offset: 0, 0
+  index: -1
+Newyy
+  rotate: true
+  xy: 745, 139
+  size: 53, 57
+  orig: 53, 57
+  offset: 0, 0
+  index: -1
+font_hot
+  rotate: true
+  xy: 779, 44
+  size: 40, 21
+  orig: 40, 21
+  offset: 0, 0
+  index: -1
+gq
+  rotate: false
+  xy: 696, 3
+  size: 81, 81
+  orig: 81, 81
+  offset: 0, 0
+  index: -1
+nyy/nyy_00
+  rotate: true
+  xy: 299, 0
+  size: 92, 98
+  orig: 150, 162
+  offset: 28, 30
+  index: -1
+nyy/nyy_02
+  rotate: false
+  xy: 558, 95
+  size: 91, 97
+  orig: 150, 162
+  offset: 29, 31
+  index: -1
+nyy/nyy_04
+  rotate: true
+  xy: 199, 0
+  size: 91, 98
+  orig: 150, 162
+  offset: 29, 32
+  index: -1
+nyy/nyy_06
+  rotate: true
+  xy: 0, 0
+  size: 90, 98
+  orig: 150, 162
+  offset: 30, 32
+  index: -1
+nyy/nyy_08
+  rotate: false
+  xy: 465, 94
+  size: 91, 98
+  orig: 150, 162
+  offset: 30, 33
+  index: -1
+nyy/nyy_10
+  rotate: true
+  xy: 499, 0
+  size: 92, 97
+  orig: 150, 162
+  offset: 31, 33
+  index: -1
+nyy/nyy_12
+  rotate: true
+  xy: 598, 0
+  size: 93, 96
+  orig: 150, 162
+  offset: 31, 34
+  index: -1
+nyy/nyy_14
+  rotate: false
+  xy: 651, 97
+  size: 92, 95
+  orig: 150, 162
+  offset: 32, 35
+  index: -1
+nyy/nyy_16
+  rotate: true
+  xy: 100, 0
+  size: 90, 97
+  orig: 150, 162
+  offset: 33, 33
+  index: -1
+nyy/nyy_18
+  rotate: false
+  xy: 183, 93
+  size: 89, 99
+  orig: 150, 162
+  offset: 34, 30
+  index: -1
+nyy/nyy_20
+  rotate: false
+  xy: 93, 92
+  size: 88, 100
+  orig: 150, 162
+  offset: 35, 29
+  index: -1
+nyy/nyy_22
+  rotate: false
+  xy: 0, 92
+  size: 91, 100
+  orig: 150, 162
+  offset: 31, 29
+  index: -1
+nyy/nyy_24
+  rotate: false
+  xy: 274, 94
+  size: 94, 98
+  orig: 150, 162
+  offset: 28, 30
+  index: -1
+nyy/nyy_26
+  rotate: false
+  xy: 370, 94
+  size: 93, 98
+  orig: 150, 162
+  offset: 28, 30
+  index: -1
+nyy/nyy_28
+  rotate: true
+  xy: 399, 0
+  size: 92, 98
+  orig: 150, 162
+  offset: 28, 30
+  index: -1

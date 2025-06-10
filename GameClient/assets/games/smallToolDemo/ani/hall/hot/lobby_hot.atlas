@@ -1,0 +1,132 @@
+
+lobby_hot.png
+size: 821,209
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: true
+  xy: 749, 0
+  size: 49, 54
+  orig: 49, 54
+  offset: 0, 0
+  index: -1
+bgyy
+  rotate: true
+  xy: 749, 51
+  size: 51, 56
+  orig: 51, 56
+  offset: 0, 0
+  index: -1
+font_hot
+  rotate: true
+  xy: 799, 170
+  size: 39, 22
+  orig: 39, 22
+  offset: 0, 0
+  index: -1
+hy/hy_00
+  rotate: false
+  xy: 0, 104
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_02
+  rotate: true
+  xy: 0, 4
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_04
+  rotate: false
+  xy: 100, 104
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_06
+  rotate: true
+  xy: 107, 4
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_08
+  rotate: false
+  xy: 200, 104
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_10
+  rotate: true
+  xy: 214, 4
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_12
+  rotate: false
+  xy: 300, 104
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_14
+  rotate: true
+  xy: 321, 4
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_16
+  rotate: false
+  xy: 400, 104
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_18
+  rotate: true
+  xy: 428, 4
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_20
+  rotate: false
+  xy: 500, 104
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_22
+  rotate: true
+  xy: 535, 4
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_24
+  rotate: false
+  xy: 600, 104
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_26
+  rotate: true
+  xy: 642, 4
+  size: 98, 105
+  orig: 142, 149
+  offset: 23, 22
+  index: -1
+hy/hy_28
+  rotate: false
+  xy: 700, 104
+  size: 97, 105
+  orig: 142, 149
+  offset: 24, 22
+  index: -1
