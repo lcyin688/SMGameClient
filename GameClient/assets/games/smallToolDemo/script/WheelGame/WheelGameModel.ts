@@ -7,13 +7,20 @@ const { ccclass, property } = cc._decorator;
 export default class WheelGameModel extends UIModelBase {
     /** 预制名 给实例调用 */
     public prefabName = 'F_WheelGame';
+    /** 当前游戏列表，二维数组 */
+    public curGameList: number[][] = [];
 
+    /** 大厅游戏列表 */
+    private hallGameMap = new Map<string, number[][]>();
     public groupList = ['all', 'myFavorite', 'hot', 'hundred', 'slots', 'poker', 'casual', 'new'];
     /** 当前分组下标 */
     public curGroupIndex: number = 0;
     public isShowWithDrawer: boolean = false;
     public isShowShop: boolean = false;
     public groupMap: Map<string, SmallToolDemoUIPa.GameEntryConf[]> = new Map();
+    /** 列表移动速度 */
+    public ListMoveSpeed: number = 1500;
+
     public initGameList(callBack: Function) {
         this.groupMap = new Map();
         let arrTemp: SmallToolDemoUIPa.GameEntryConf[] = [];
@@ -41,6 +48,8 @@ export default class WheelGameModel extends UIModelBase {
         this.setPokerData(callBack);
         this.setCasualData(callBack);
         this.setNewData(callBack);
+
+        this.initHallGameData();
     }
 
     private setHundredData(callBack: Function): void {
@@ -162,5 +171,40 @@ export default class WheelGameModel extends UIModelBase {
         };
         arrTemp.push(tempItem);
         this.groupMap.set('new', arrTemp);
+    }
+
+    public getHallGameList(groupKey: string): number[][] {
+        return [...(this.hallGameMap.get(groupKey) || [])];
+    }
+    private initHallGameData(): void {
+        this.hallGameMap.clear();
+        this.groupMap.forEach((v, key) => {
+            let gameIds: number[][] = [];
+            let arrTemp: number[] = [];
+            for (let i = 0; i < v.length; i++) {
+                const itemGame = v[i];
+                if (itemGame.isBigIcon) {
+                    gameIds.push([itemGame.gameId]);
+                    continue;
+                } else {
+                    arrTemp.push(itemGame.gameId);
+                }
+                if (arrTemp.length >= 2) {
+                    gameIds.push(arrTemp);
+                    arrTemp = [];
+                }
+            }
+            if (arrTemp.length == 1) {
+                gameIds.push(arrTemp);
+            }
+            this.hallGameMap.set(key, gameIds);
+        });
+    }
+    public getGameEntryConfig(gameId: number) {
+        return this.groupMap.get('all').find((item) => {
+            if (item.gameId == gameId) {
+                return item;
+            }
+        });
     }
 }

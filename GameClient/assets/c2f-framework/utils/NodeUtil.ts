@@ -1,11 +1,12 @@
 /** 节点对象工具 */
 class NodeUtil {
-
     //-----------------------------------------------------------
     /** 临时变量处理：防止产生大量临时对象，z轴<0时，可释放 */
     static arrVecTmp: cc.Vec3[] = [];
     static getFreeVecTmp() {
-        let idx = this.arrVecTmp.findIndex((a) => { return a.z < 0 });
+        let idx = this.arrVecTmp.findIndex((a) => {
+            return a.z < 0;
+        });
         if (idx < 0) {
             let newTmp = cc.v3(0, 0, 0);
             this.arrVecTmp.push(newTmp);
@@ -84,6 +85,10 @@ class NodeUtil {
         this.releaseVecTmp(posW);
         return posL;
     }
+
+    static addComponent(node: cc.Node, type: any) {
+        return node.getComponent(type) || node.addComponent(type);
+    }
 }
 
 declare global {
@@ -92,4 +97,4 @@ declare global {
     }
 }
 c2f.utils.node = NodeUtil;
-export { };
+export {};

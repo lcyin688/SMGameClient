@@ -150,10 +150,11 @@ export class LayerUI extends cc.Node {
         if (this.addingView.indexOf(viewPa.prefabPath) >= 0) {
             let childNode: cc.Node = c2f.res.instantiate(res);
             viewPa.node = childNode;
-            let comp: DelegateComponent = childNode.addComponent(DelegateComponent);
+            let comp: DelegateComponent = c2f.utils.node.addComponent(childNode, DelegateComponent) as any;
             comp.viewParams = viewPa;
             //
             this.addMVCComponet(childNode, viewPa.prefabPath);
+
             this.createNode(viewPa);
             //
             c2f.utils.arr.fastRemove(this.addingView, viewPa.prefabPath);
@@ -177,9 +178,9 @@ export class LayerUI extends cc.Node {
     /** 为view添加mvc组件 */
     protected addMVCComponet(node: cc.Node, prefabPath: string) {
         let clsName = this.getMVCClsName(prefabPath);
-        let model = node.addComponent(`${clsName}Model`);
-        let view = node.addComponent(`${clsName}View`) as UIViewBase;
-        let controller = node.addComponent(clsName);
+        let model = c2f.utils.node.addComponent(node, `${clsName}Model`);
+        let view = c2f.utils.node.addComponent(node, `${clsName}View`) as UIViewBase;
+        let controller = c2f.utils.node.addComponent(node, clsName) as any;
         controller.model = model as UIModelBase;
         controller.view = view;
     }

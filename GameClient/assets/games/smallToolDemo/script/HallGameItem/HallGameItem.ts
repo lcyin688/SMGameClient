@@ -56,10 +56,10 @@ export default class HallGameItem extends VirtualItem {
     })
     public fontSizeSmall: number = 30;
 
-    @property({
-        tooltip: CC_DEV && '大图标-坐标位置',
-    })
-    public posYBig: number = -238;
+    // @property({
+    //     tooltip: CC_DEV && '大图标-坐标位置',
+    // })
+    // public posYBig: number = -238;
 
     protected onEnable(): void {
         if (super.onEnable) {
@@ -73,6 +73,14 @@ export default class HallGameItem extends VirtualItem {
             super.onDisable();
         }
         this.off(C2FEnum.UIEvent.ButtonClick);
+    }
+    protected onLoad(): void {
+        if (!this.model) {
+            this.model = this.node.getComponent(HallGameItemModel);
+        }
+        if (!this.view) {
+            this.view = this.node.getComponent(HallGameItemView);
+        }
     }
 
     private async onButtonClick(eventType: string, component: cc.Button) {
@@ -88,7 +96,7 @@ export default class HallGameItem extends VirtualItem {
 
     private CC_onClickbtnItem() {}
 
-    public onRefresh(conf: SmallToolDemoUIPa.GameEntryConf): void {
+    public onRefreshItem(conf: SmallToolDemoUIPa.GameEntryConf): void {
         this.model.initData(conf);
         if (!conf || !conf.gameId) {
             this.node.active = false;
@@ -109,7 +117,7 @@ export default class HallGameItem extends VirtualItem {
         const fontSize = conf.isBigIcon ? this.fontSizeBig : this.fontSizeSmall;
         this.view.labNameLabel.fontSize = fontSize;
 
-        this.node.position.y = conf.isBigIcon ? this.posYBig : 0;
+        // this.node.position.y = conf.isBigIcon ? this.posYBig : 0;
 
         //初始化游戏入口
         this.initGameEntry(conf);
@@ -121,9 +129,11 @@ export default class HallGameItem extends VirtualItem {
             let item = await c2f.res.loadOne(url, cc.Asset);
             if (SmallToolDemoTools.isSkeleton(item)) {
                 this.view.anim.opacity = 255;
-                this.view.animSkeleton.skeletonData = item as unknown as sp.SkeletonData;
-                this.view.animSkeleton.setAnimation(0, conf.isBigIcon ? 'animation1' : 'animation2', true);
-                this.view.icon.active = false;
+                c2f.res.loadOne(url, sp.SkeletonData).then((res: sp.SkeletonData) => {
+                    this.view.animSkeleton.skeletonData = res;
+                    this.view.animSkeleton.setAnimation(0, conf.isBigIcon ? 'animation1' : 'animation2', true);
+                    this.view.icon.active = false;
+                });
             } else {
                 this.view.icon.opacity = 255;
                 c2f.res.loadOne(url, cc.SpriteFrame).then((res: cc.SpriteFrame) => {

@@ -21,7 +21,7 @@ enum WheelListEventType {
 }
 
 @ccclass
-@menu('c2f/UI/WEWheelList)')
+@menu('c2f/UI/WEWheelList')
 export default class WEWheelList extends cc.Component {
     @property({ type: cc.Prefab, tooltip: CC_DEV && '按钮预制体' })
     buttonPrefab: cc.Prefab = null;

@@ -5,7 +5,7 @@
 import { UIViewBase } from './../../../../c2f-framework/gui/layer/UIViewBase';
 import WEWheelList from "./../../../../entrance/script/extend/ui/WEWheelList";
 import WELayoutUpdate from "./../../../../entrance/script/extend/ui/WELayoutUpdate";
-import VirtualList from "./../../../../c2f-framework/component/ui/scrollList/VirtualList";
+import yxCollectionView from "./../../../../entrance/script/extend/yx_list/yxCollectionView";
 
 
 const { ccclass, property } = cc._decorator;
@@ -44,10 +44,15 @@ export default class WheelGameView extends UIViewBase {
     public shopButton: cc.Button = undefined;
     public banner: cc.Node;
     public bannerWidget: cc.Widget = undefined;
-    public listGame: cc.Node;
-    public listGameScrollView: cc.ScrollView = undefined;
-    public listGameWidget: cc.Widget = undefined;
-    public listGameVirtualList: VirtualList = undefined;
+    public games: cc.Node;
+    public gamesWidget: cc.Widget = undefined;
+    public gamesyxCollectionView: yxCollectionView = undefined;
+    public btnLeft: cc.Node;
+    public btnLeftButton: cc.Button = undefined;
+    public btnLeftWidget: cc.Widget = undefined;
+    public btnRight: cc.Node;
+    public btnRightButton: cc.Button = undefined;
+    public btnRightWidget: cc.Widget = undefined;
     
 
     public onLoad() {
@@ -99,10 +104,15 @@ export default class WheelGameView extends UIViewBase {
         this.shopButton = this.shop.getComponent(cc.Button);
         this.banner = this.get('_banner_');
         this.bannerWidget = this.banner.getComponent(cc.Widget);
-        this.listGame = this.get('_listGame_');
-        this.listGameScrollView = this.listGame.getComponent(cc.ScrollView);
-        this.listGameWidget = this.listGame.getComponent(cc.Widget);
-        this.listGameVirtualList = this.listGame.getComponent(VirtualList);
+        this.games = this.get('_games_');
+        this.gamesWidget = this.games.getComponent(cc.Widget);
+        this.gamesyxCollectionView = this.games.getComponent(yxCollectionView);
+        this.btnLeft = this.get('_btnLeft_');
+        this.btnLeftButton = this.btnLeft.getComponent(cc.Button);
+        this.btnLeftWidget = this.btnLeft.getComponent(cc.Widget);
+        this.btnRight = this.get('_btnRight_');
+        this.btnRightButton = this.btnRight.getComponent(cc.Button);
+        this.btnRightWidget = this.btnRight.getComponent(cc.Widget);
         
     }
 
@@ -116,18 +126,8 @@ export default class WheelGameView extends UIViewBase {
         this.btnVipButton.node.on('click', this.onbtnVipButtonClick, this);
         this.btnBorderRadiusMaskButton.node.on('click', this.onbtnBorderRadiusMaskButtonClick, this);
         this.shopButton.node.on('click', this.onshopButtonClick, this);
-        this.listGameScrollView.node.on('scroll-to-top', this.onlistGameScrollViewScrollToTop, this);
-        this.listGameScrollView.node.on('scroll-to-bottom', this.onlistGameScrollViewScrollToBottom, this);
-        this.listGameScrollView.node.on('scroll-to-left', this.onlistGameScrollViewScrollToLeft, this);
-        this.listGameScrollView.node.on('scroll-to-right', this.onlistGameScrollViewScrollToRight, this);
-        this.listGameScrollView.node.on('scrolling', this.onlistGameScrollViewScrolling, this);
-        this.listGameScrollView.node.on('bounce-bottom', this.onlistGameScrollViewBounceBottom, this);
-        this.listGameScrollView.node.on('bounce-top', this.onlistGameScrollViewBounceTop, this);
-        this.listGameScrollView.node.on('bounce-left', this.onlistGameScrollViewBounceLeft, this);
-        this.listGameScrollView.node.on('bounce-right', this.onlistGameScrollViewBounceRight, this);
-        this.listGameScrollView.node.on('scroll-ended', this.onlistGameScrollViewScrollEnded, this);
-        this.listGameScrollView.node.on('touch-up', this.onlistGameScrollViewTouchUp, this);
-        this.listGameScrollView.node.on('scroll-began', this.onlistGameScrollViewScrollBegan, this);
+        this.btnLeftButton.node.on('click', this.onbtnLeftButtonClick, this);
+        this.btnRightButton.node.on('click', this.onbtnRightButtonClick, this);
 
     }
 
@@ -141,18 +141,8 @@ export default class WheelGameView extends UIViewBase {
         this.btnVipButton.node.off('click', this.onbtnVipButtonClick, this);
         this.btnBorderRadiusMaskButton.node.off('click', this.onbtnBorderRadiusMaskButtonClick, this);
         this.shopButton.node.off('click', this.onshopButtonClick, this);
-        this.listGameScrollView.node.off('scroll-to-top', this.onlistGameScrollViewScrollToTop, this);
-        this.listGameScrollView.node.off('scroll-to-bottom', this.onlistGameScrollViewScrollToBottom, this);
-        this.listGameScrollView.node.off('scroll-to-left', this.onlistGameScrollViewScrollToLeft, this);
-        this.listGameScrollView.node.off('scroll-to-right', this.onlistGameScrollViewScrollToRight, this);
-        this.listGameScrollView.node.off('scrolling', this.onlistGameScrollViewScrolling, this);
-        this.listGameScrollView.node.off('bounce-bottom', this.onlistGameScrollViewBounceBottom, this);
-        this.listGameScrollView.node.off('bounce-top', this.onlistGameScrollViewBounceTop, this);
-        this.listGameScrollView.node.off('bounce-left', this.onlistGameScrollViewBounceLeft, this);
-        this.listGameScrollView.node.off('bounce-right', this.onlistGameScrollViewBounceRight, this);
-        this.listGameScrollView.node.off('scroll-ended', this.onlistGameScrollViewScrollEnded, this);
-        this.listGameScrollView.node.off('touch-up', this.onlistGameScrollViewTouchUp, this);
-        this.listGameScrollView.node.off('scroll-began', this.onlistGameScrollViewScrollBegan, this);
+        this.btnLeftButton.node.off('click', this.onbtnLeftButtonClick, this);
+        this.btnRightButton.node.off('click', this.onbtnRightButtonClick, this);
 
     }
 
@@ -192,52 +182,12 @@ export default class WheelGameView extends UIViewBase {
         this.emit('click', component);
     }
 
-    private onlistGameScrollViewScrollToTop(component: cc.ScrollView) {
-        this.emit('scroll-to-top', component);
+    private onbtnLeftButtonClick(component: cc.Button) {
+        this.emit('click', component);
     }
 
-    private onlistGameScrollViewScrollToBottom(component: cc.ScrollView) {
-        this.emit('scroll-to-bottom', component);
-    }
-
-    private onlistGameScrollViewScrollToLeft(component: cc.ScrollView) {
-        this.emit('scroll-to-left', component);
-    }
-
-    private onlistGameScrollViewScrollToRight(component: cc.ScrollView) {
-        this.emit('scroll-to-right', component);
-    }
-
-    private onlistGameScrollViewScrolling(component: cc.ScrollView) {
-        this.emit('scrolling', component);
-    }
-
-    private onlistGameScrollViewBounceBottom(component: cc.ScrollView) {
-        this.emit('bounce-bottom', component);
-    }
-
-    private onlistGameScrollViewBounceTop(component: cc.ScrollView) {
-        this.emit('bounce-top', component);
-    }
-
-    private onlistGameScrollViewBounceLeft(component: cc.ScrollView) {
-        this.emit('bounce-left', component);
-    }
-
-    private onlistGameScrollViewBounceRight(component: cc.ScrollView) {
-        this.emit('bounce-right', component);
-    }
-
-    private onlistGameScrollViewScrollEnded(component: cc.ScrollView) {
-        this.emit('scroll-ended', component);
-    }
-
-    private onlistGameScrollViewTouchUp(component: cc.ScrollView) {
-        this.emit('touch-up', component);
-    }
-
-    private onlistGameScrollViewScrollBegan(component: cc.ScrollView) {
-        this.emit('scroll-began', component);
+    private onbtnRightButtonClick(component: cc.Button) {
+        this.emit('click', component);
     }
 
 
