@@ -3,9 +3,7 @@ import HallGameItemView from './HallGameItemView';
 import VirtualItem from '../../../../c2f-framework/component/ui/scrollList/VirtualItem';
 import { SmallToolDemoUIPa } from '../SmallToolDemoUIPa';
 import { C2FEnum } from '../../../../c2f-framework/define/C2FEnum';
-import { UIHelper } from '../../../../Script/game/UIHelper';
 import { SmallToolDemoTools } from '../SmallToolDemoTools';
-import { SmallToolDemoCfg } from '../SmallToolDemoCfg';
 
 const { ccclass, property } = cc._decorator;
 
@@ -94,7 +92,7 @@ export default class HallGameItem extends VirtualItem {
         }
     }
 
-    private CC_onClickbtnItem() {}
+    private CC_onClickbtnItem() { }
 
     public onRefreshItem(conf: SmallToolDemoUIPa.GameEntryConf): void {
         this.model.initData(conf);
@@ -126,14 +124,12 @@ export default class HallGameItem extends VirtualItem {
     private async initGameEntry(conf: SmallToolDemoUIPa.GameEntryConf) {
         let url = SmallToolDemoTools.getGameEntryUrl(conf.gameId, conf.isBigIcon);
         if (url) {
-            let item = await c2f.res.loadOne(url, cc.Asset);
-            if (SmallToolDemoTools.isSkeleton(item)) {
+            let item = await c2f.res.loadOne(url, sp.SkeletonData);
+            if (item) {
                 this.view.anim.opacity = 255;
-                c2f.res.loadOne(url, sp.SkeletonData).then((res: sp.SkeletonData) => {
-                    this.view.animSkeleton.skeletonData = res;
-                    this.view.animSkeleton.setAnimation(0, conf.isBigIcon ? 'animation1' : 'animation2', true);
-                    this.view.icon.active = false;
-                });
+                this.view.animSkeleton.skeletonData = item as sp.SkeletonData;
+                this.view.animSkeleton.setAnimation(0, conf.isBigIcon ? 'animation1' : 'animation2', true);
+                this.view.icon.active = false;
             } else {
                 this.view.icon.opacity = 255;
                 c2f.res.loadOne(url, cc.SpriteFrame).then((res: cc.SpriteFrame) => {

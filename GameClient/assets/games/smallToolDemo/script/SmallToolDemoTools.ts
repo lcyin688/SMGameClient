@@ -16,7 +16,4 @@ export class SmallToolDemoTools {
         return null;
     }
 
-    static isSkeleton(item: any): item is sp.Skeleton {
-        return item !== null && item !== undefined && 'skeletonProperty' in item;
-    }
 }
