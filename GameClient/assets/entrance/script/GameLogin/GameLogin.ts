@@ -170,7 +170,8 @@ export default class GameLogin extends UIVControlBase {
     private CC_onClickbtnWheelList() {
         // this.closeView();
         GameHelper.loadBundle(GameConsts.Bundle.smallToolDemo).then((UIID) => {
-            c2f.gui.open(UIID.WheelGame);
+            c2f.gui.open(UIID.JoinUs);
+            // c2f.gui.open(UIID.WheelGame);
         });
     }
 }

@@ -3,7 +3,7 @@
   "uuid": "6eaa5521-ec52-4a78-8ced-12659b2b558b",
   "importer": "folder",
   "isBundle": true,
-  "bundleName": "",
+  "bundleName": "smallToolDemo",
   "priority": 1,
   "compressionType": {},
   "optimizeHotUpdate": {},

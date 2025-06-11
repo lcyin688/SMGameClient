@@ -220,7 +220,7 @@ export default class WheelGame extends UIVControlBase {
         await new Promise((resolve) => setTimeout(resolve, 5000));
         c2f.log.log(' 点击了转盘按钮 002 ', Date.now());
     }
-    private CC_onClickbtnGameList() {}
+    private CC_onClickbtnGameList() { }
 
     private CC_onClickbtnSwitchLang() {
         c2f.gui.open(SmallToolDemoUI.SwitchLang);

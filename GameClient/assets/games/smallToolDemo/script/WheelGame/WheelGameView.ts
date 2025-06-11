@@ -1,6 +1,6 @@
 // This script is automatic generation, please do not edit.
-// If you need add logic, please write in WheelGameView.ts .
-// If you need add data, please write in WheelGameViewModel.ts .
+// If you need add logic, please write in wheelGameView.ts .
+// If you need add data, please write in wheelGameViewModel.ts .
 
 import { UIViewBase } from './../../../../c2f-framework/gui/layer/UIViewBase';
 import WEWheelList from "./../../../../entrance/script/extend/ui/WEWheelList";
@@ -10,10 +10,10 @@ import yxCollectionView from "./../../../../entrance/script/extend/yx_list/yxCol
 
 const { ccclass, property } = cc._decorator;
 @ccclass
-export default class WheelGameView extends UIViewBase {
+export default class wheelGameView extends UIViewBase {
 
     /** 预制名 给实例调用 */
-    public prefabName = 'F_WheelGame';
+    public prefabName = 'F_wheelGame';
 
     public wheel_groupCenter: cc.Node;
     public wheel_groupCenterWidget: cc.Widget = undefined;

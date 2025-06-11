@@ -13,6 +13,7 @@ export enum SmallToolDemoUI {
     SevenDaySignItemOne,
     VipMain,
     MonthSignRule,
+    wheelGame,
 }
 
 /** 打开界面方式的配置数据 */
@@ -34,4 +35,6 @@ export const SmallToolDemoView: { [key: number]: UIConfig } = {
     //description:
     [SmallToolDemoUI.VipMain]: { layer: LayerType.PopUp, prefab: 'prefab/vipinfo/V_VipMain', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true }, 
     //description:
-    [SmallToolDemoUI.MonthSignRule]: { layer: LayerType.PopUp, prefab: "prefab/V_MonthSignRule", bundle: GameConsts.Bundle.smallToolDemo }, }
+    [SmallToolDemoUI.MonthSignRule]: { layer: LayerType.PopUp, prefab: "prefab/V_MonthSignRule", bundle: GameConsts.Bundle.smallToolDemo }, 
+    //description:
+    [SmallToolDemoUI.wheelGame]: { layer: LayerType.UI, prefab: "prefab/F_wheelGame", bundle: GameConsts.Bundle.smallToolDemo }, }

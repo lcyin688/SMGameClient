@@ -67,8 +67,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
-      "height": 720
+      "width": 720,
+      "height": 1280
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -79,8 +79,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        640,
         360,
+        640,
         0,
         0,
         0,
@@ -150,8 +150,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
-      "height": 720
+      "width": 720,
+      "height": 1280
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -227,7 +227,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
+      "width": 720,
       "height": 320
     },
     "_anchorPoint": {
@@ -294,7 +294,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 895.9,
+      "width": 335.9,
       "height": 500
     },
     "_anchorPoint": {
@@ -306,7 +306,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -256.9,
+        23.100000000000023,
         0,
         0,
         0,
@@ -441,7 +441,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -700,
+        -420,
         26,
         0,
         0,
@@ -1041,7 +1041,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        596,
+        316,
         4,
         0,
         0,
@@ -1252,7 +1252,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -270,
+        10,
         4,
         0,
         0,
@@ -1497,7 +1497,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -400,
+        -120,
         -175,
         0,
         0,
@@ -1599,8 +1599,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        490,
-        310,
+        210,
+        590,
         0,
         0,
         0,
@@ -5240,7 +5240,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1280,
+      "width": 720,
       "height": 73
     },
     "_anchorPoint": {
@@ -5253,7 +5253,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        -323.5,
+        -603.5,
         0,
         0,
         0,
@@ -5307,7 +5307,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 1800,
+      "width": 1240,
       "height": 79
     },
     "_anchorPoint": {
@@ -5472,7 +5472,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -640,
+        -360,
         23.5,
         0,
         0,
@@ -11557,7 +11557,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        407,
+        127,
         36,
         0,
         0,
@@ -12156,7 +12156,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        561,
+        281,
         36,
         0,
         0,
@@ -12724,8 +12724,8 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -400,
-        -175,
+        -120,
+        -455,
         0,
         0,
         0,
@@ -12821,7 +12821,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 900,
+      "width": 340,
       "height": 600
     },
     "_anchorPoint": {
@@ -12833,7 +12833,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -260,
+        20,
         0,
         0,
         0,
@@ -12888,7 +12888,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 900,
+      "width": 340,
       "height": 500
     },
     "_anchorPoint": {
@@ -13081,7 +13081,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        -270,
+        10,
         0,
         0,
         0,
@@ -13367,7 +13367,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        596,
+        316,
         0,
         0,
         0,

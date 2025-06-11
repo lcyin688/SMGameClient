@@ -3,7 +3,7 @@
   "uuid": "c339d03d-ef3d-49e7-a6fa-841be81db239",
   "importer": "folder",
   "isBundle": true,
-  "bundleName": "",
+  "bundleName": "physics2048",
   "priority": 1,
   "compressionType": {},
   "optimizeHotUpdate": {},
