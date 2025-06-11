@@ -4,6 +4,8 @@
 
 import { UIPanelBase } from './../../../../c2f-framework/gui/layer/UIPanelBase';
 import GradientColor from "./../../../../c2f-framework/component/common/GradientColor";
+import HallGameItem from "./HallGameItem";
+import HallJPRollLabel from "./HallJPRollLabel";
 import WESpriteIndex from "./../../../../entrance/script/extend/ui/WESpriteIndex";
 import WESwitchPage from "./../../../../entrance/script/extend/pageview/WESwitchPage";
 
@@ -19,11 +21,12 @@ export default class HallGameItemView extends UIPanelBase {
     public icon: cc.Node;
     public iconSprite: cc.Sprite = undefined;
     public iconWidget: cc.Widget = undefined;
-    public lab_name: cc.Node;
-    public lab_nameLabel: cc.Label = undefined;
-    public lab_nameWidget: cc.Widget = undefined;
-    public lab_nameLabelOutline: cc.LabelOutline = undefined;
-    public lab_nameGradientColor: GradientColor = undefined;
+    public labName: cc.Node;
+    public labNameLabel: cc.Label = undefined;
+    public labNameWidget: cc.Widget = undefined;
+    public labNameLabelOutline: cc.LabelOutline = undefined;
+    public labNameGradientColor: GradientColor = undefined;
+    public labNameHallGameItem: HallGameItem = undefined;
     public topName: cc.Node;
     public topNameLabel: cc.Label = undefined;
     public topNameLabelOutline: cc.LabelOutline = undefined;
@@ -42,6 +45,7 @@ export default class HallGameItemView extends UIPanelBase {
     public lab_jackpot: cc.Node;
     public lab_jackpotLabel: cc.Label = undefined;
     public lab_jackpotLabelOutline: cc.LabelOutline = undefined;
+    public lab_jackpotHallJPRollLabel: HallJPRollLabel = undefined;
     public limit: cc.Node;
     public limitSprite: cc.Sprite = undefined;
     public limitWESpriteIndex: WESpriteIndex = undefined;
@@ -88,11 +92,12 @@ export default class HallGameItemView extends UIPanelBase {
         this.icon = this.get('_icon_');
         this.iconSprite = this.icon.getComponent(cc.Sprite);
         this.iconWidget = this.icon.getComponent(cc.Widget);
-        this.lab_name = this.get('_lab_name_');
-        this.lab_nameLabel = this.lab_name.getComponent(cc.Label);
-        this.lab_nameWidget = this.lab_name.getComponent(cc.Widget);
-        this.lab_nameLabelOutline = this.lab_name.getComponent(cc.LabelOutline);
-        this.lab_nameGradientColor = this.lab_name.getComponent(GradientColor);
+        this.labName = this.get('_labName_');
+        this.labNameLabel = this.labName.getComponent(cc.Label);
+        this.labNameWidget = this.labName.getComponent(cc.Widget);
+        this.labNameLabelOutline = this.labName.getComponent(cc.LabelOutline);
+        this.labNameGradientColor = this.labName.getComponent(GradientColor);
+        this.labNameHallGameItem = this.labName.getComponent(HallGameItem);
         this.topName = this.get('_topName_');
         this.topNameLabel = this.topName.getComponent(cc.Label);
         this.topNameLabelOutline = this.topName.getComponent(cc.LabelOutline);
@@ -111,6 +116,7 @@ export default class HallGameItemView extends UIPanelBase {
         this.lab_jackpot = this.get('_lab_jackpot_');
         this.lab_jackpotLabel = this.lab_jackpot.getComponent(cc.Label);
         this.lab_jackpotLabelOutline = this.lab_jackpot.getComponent(cc.LabelOutline);
+        this.lab_jackpotHallJPRollLabel = this.lab_jackpot.getComponent(HallJPRollLabel);
         this.limit = this.get('_limit_');
         this.limitSprite = this.limit.getComponent(cc.Sprite);
         this.limitWESpriteIndex = this.limit.getComponent(WESpriteIndex);

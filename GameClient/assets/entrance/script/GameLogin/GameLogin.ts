@@ -168,6 +168,7 @@ export default class GameLogin extends UIVControlBase {
         // c2f.webSocket.send(playerInfo)
     }
     private CC_onClickbtnWheelList() {
+        // this.closeView();
         GameHelper.loadBundle(GameConsts.Bundle.smallToolDemo).then((UIID) => {
             c2f.gui.open(UIID.WheelGame);
         });

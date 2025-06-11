@@ -5,6 +5,7 @@ import { SmallToolDemoUIPa } from '../SmallToolDemoUIPa';
 import { C2FEnum } from '../../../../c2f-framework/define/C2FEnum';
 import { UIHelper } from '../../../../Script/game/UIHelper';
 import { SmallToolDemoTools } from '../SmallToolDemoTools';
+import { SmallToolDemoCfg } from '../SmallToolDemoCfg';
 
 const { ccclass, property } = cc._decorator;
 
@@ -38,12 +39,12 @@ export default class HallGameItem extends VirtualItem {
     @property({
         tooltip: CC_DEV && '大厅游戏 icon 大图标尺寸',
     })
-    public GameItemBigSize: cc.Size = new cc.Size(191, 361);
+    public GameItemBigSize: cc.Size = new cc.Size(212, 415);
 
     @property({
         tooltip: CC_DEV && '大厅游戏 icon 小图标尺寸',
     })
-    public GameItemSmallSize: cc.Size = new cc.Size(191, 176);
+    public GameItemSmallSize: cc.Size = new cc.Size(200, 200);
 
     @property({
         tooltip: CC_DEV && '大图标-字号',
@@ -54,6 +55,11 @@ export default class HallGameItem extends VirtualItem {
         tooltip: CC_DEV && '小图标-字号',
     })
     public fontSizeSmall: number = 30;
+
+    @property({
+        tooltip: CC_DEV && '大图标-坐标位置',
+    })
+    public posYBig: number = -238;
 
     protected onEnable(): void {
         if (super.onEnable) {
@@ -92,7 +98,7 @@ export default class HallGameItem extends VirtualItem {
         this.view.icon.active = true;
         this.view.anim.opacity = 0;
         this.view.anim.active = true;
-        this.view.lab_name.active = false;
+        this.view.labName.active = false;
         this.view.jackpot.active = false;
         this.view.limit.active = false;
         this.view.guide.active = false;
@@ -101,7 +107,10 @@ export default class HallGameItem extends VirtualItem {
         this.node.setContentSize(conf.isBigIcon ? this.GameItemBigSize : this.GameItemSmallSize);
         // 字体大小
         const fontSize = conf.isBigIcon ? this.fontSizeBig : this.fontSizeSmall;
-        this.view.lab_nameLabel.fontSize = fontSize;
+        this.view.labNameLabel.fontSize = fontSize;
+
+        this.node.position.y = conf.isBigIcon ? this.posYBig : 0;
+
         //初始化游戏入口
         this.initGameEntry(conf);
     }
@@ -111,11 +120,16 @@ export default class HallGameItem extends VirtualItem {
         if (url) {
             let item = await c2f.res.loadOne(url, cc.Asset);
             if (SmallToolDemoTools.isSkeleton(item)) {
+                this.view.anim.opacity = 255;
                 this.view.animSkeleton.skeletonData = item as unknown as sp.SkeletonData;
                 this.view.animSkeleton.setAnimation(0, conf.isBigIcon ? 'animation1' : 'animation2', true);
                 this.view.icon.active = false;
             } else {
-                this.view.iconSprite.spriteFrame = item as cc.SpriteFrame;
+                this.view.icon.opacity = 255;
+                c2f.res.loadOne(url, cc.SpriteFrame).then((res: cc.SpriteFrame) => {
+                    this.view.iconSprite.spriteFrame = res;
+                });
+                // c2f.utils.view.changeSpriteFrame(this.view.iconSprite, url);
                 this.view.anim.active = false;
             }
         }
@@ -163,38 +177,61 @@ export default class HallGameItem extends VirtualItem {
 
     /** 设置游戏名称 */
     private setGameName(): void {
-        this.view.lab_nameLabel.string = this.model.conf.gameId.toString();
+        //暂时没有配置游戏名字
+        let nameStr = (this.view.labNameLabel.string = c2f.language.getLangByID(`GAME_${this.model.conf.gameId}`));
+        if (nameStr) {
+            this.view.labName.active = true;
+            this.initBottomTopLabel(nameStr);
+        }
+    }
+    /** 是否使用左右靠齐的样式 */
+    private initBottomTopLabel(str: string) {
+        let strArr = str.split(`\n`);
+        if (this.view.topName && this.view.bottomName) {
+            this.view.bottomNameLabel.fontSize = this.view.labNameLabel.fontSize;
+            this.view.topNameLabel.fontSize = this.view.labNameLabel.fontSize;
+            if (strArr.length > 1) {
+                this.view.labNameLabel.string = '';
+                this.view.bottomName.active = true;
+                this.view.topName.active = true;
+                this.view.bottomNameLabel.getComponent(cc.Label).string = strArr[0];
+                this.view.topNameLabel.getComponent(cc.Label).string = strArr[1];
+            } else {
+                this.view.bottomName.active = false;
+                this.view.topName.active = false;
+            }
+        }
+    }
+    /** 设置引导 */
+    private setGuide(isGuide: boolean): void {
+        this.view.guide.active = isGuide;
     }
 
-    /** 设置引导 */
-    private setGuide(isGuide: boolean): void {}
-
     private setJackpot(): void {
-        // const isOpenJackpot = HallJPRollMgr.isOpenJackPot(this.conf?.gameId);
-        // this.RC_jackpot.active = isOpenJackpot;
-        // const jackpotRoll = this.RC_lab_jackpot.getComponent(HallJPRollLabel_h);
-        // if (isOpenJackpot && jackpotRoll) {
-        //     jackpotRoll.init(this.conf.gameId);
-        // }
+        const isOpenJackpot = true;
+        this.view.jackpot.active = isOpenJackpot;
+        if (isOpenJackpot && this.view.lab_jackpotHallJPRollLabel) {
+            this.view.lab_jackpotHallJPRollLabel.init(this.model.conf.gameId);
+        }
     }
 
     /** 设置游戏厂商 */
     private setGameVendor() {
-        // if (!this.conf) {
-        //     return;
-        // }
-        // const gameId = this.conf?.gameId || -1;
-        // const url = this.conf.vendorIcon;
-        // this.RC_spr_vendor.node.active = Boolean(url);
-        // if (this.RC_spr_vendor.node.active) {
-        //     this.loadAssetRemote(url, cc.SpriteFrame).then((spriteFrame) => {
-        //         if (gameId !== this.conf?.gameId) {
-        //             return;
-        //         }
-        //         if (spriteFrame && cc.isValid(this.RC_spr_vendor)) {
-        //             this.RC_spr_vendor.spriteFrame = spriteFrame;
-        //         }
-        //     });
-        // }
+        if (!this.model.conf) {
+            return;
+        }
+        const gameId = this.model.conf?.gameId || -1;
+        const url = this.model.conf.vendorIcon;
+        this.view.vendor.active = Boolean(url);
+        if (this.view.vendor.active) {
+            c2f.res.loadRemote(url, cc.SpriteFrame, (spriteFrame) => {
+                if (gameId !== this.model.conf?.gameId) {
+                    return;
+                }
+                if (spriteFrame && cc.isValid(this.view.vendorSprite)) {
+                    this.view.vendorSprite.spriteFrame = spriteFrame as unknown as cc.SpriteFrame;
+                }
+            });
+        }
     }
 }

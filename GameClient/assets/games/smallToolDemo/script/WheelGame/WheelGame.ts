@@ -24,6 +24,8 @@ export default class WheelGame extends UIVControlBase {
     }
     protected onLoad(): void {
         this.forceLandscape();
+        //初始化游戏列表数据
+        this.model.initGameList(this.clickGameItem.bind(this));
     }
     // 强制切换为横屏
     private forceLandscape() {
@@ -113,6 +115,12 @@ export default class WheelGame extends UIVControlBase {
     }
     private onSelectGroupItemFinal(i: number) {
         c2f.log.log(' 当前选中的组索引为：', i);
+        if (this.model.groupList[i] != 'myFavorite') {
+            let arr = this.model.groupMap.get(this.model.groupList[i]);
+            this.view.listGameVirtualList.refreshAllWithData(arr);
+        } else {
+            cc.log(' 直接进上次玩的游戏');
+        }
     }
 
     private CC_onClickbtnJoinUs() {
@@ -169,5 +177,9 @@ export default class WheelGame extends UIVControlBase {
     }
     private CC_onClickbtnBorderRadiusMask() {
         c2f.gui.open(SmallToolDemoUI.MonthSignRule);
+    }
+
+    private clickGameItem(gameId: number) {
+        cc.log('点击了某个游戏', gameId);
     }
 }
