@@ -18,22 +18,6 @@ export default class WheelGameView extends UIViewBase {
     public wheel_groupCenter: cc.Node;
     public wheel_groupCenterWidget: cc.Widget = undefined;
     public wheel_groupCenterWEWheelList: WEWheelList = undefined;
-    public btnCircularMove: cc.Node;
-    public btnCircularMoveButton: cc.Button = undefined;
-    public btnJoinUs: cc.Node;
-    public btnJoinUsButton: cc.Button = undefined;
-    public btnTurnTable: cc.Node;
-    public btnTurnTableButton: cc.Button = undefined;
-    public btnGameList: cc.Node;
-    public btnGameListButton: cc.Button = undefined;
-    public btnSwitchLang: cc.Node;
-    public btnSwitchLangButton: cc.Button = undefined;
-    public btnSevenDay: cc.Node;
-    public btnSevenDayButton: cc.Button = undefined;
-    public btnVip: cc.Node;
-    public btnVipButton: cc.Button = undefined;
-    public btnBorderRadiusMask: cc.Node;
-    public btnBorderRadiusMaskButton: cc.Button = undefined;
     public bottom: cc.Node;
     public bottomWidget: cc.Widget = undefined;
     public bottomWELayoutUpdate: WELayoutUpdate = undefined;
@@ -53,6 +37,24 @@ export default class WheelGameView extends UIViewBase {
     public btnRight: cc.Node;
     public btnRightButton: cc.Button = undefined;
     public btnRightWidget: cc.Widget = undefined;
+    public btnCircularMove: cc.Node;
+    public btnCircularMoveButton: cc.Button = undefined;
+    public btnJoinUs: cc.Node;
+    public btnJoinUsButton: cc.Button = undefined;
+    public btnTurnTable: cc.Node;
+    public btnTurnTableButton: cc.Button = undefined;
+    public btnGameList: cc.Node;
+    public btnGameListButton: cc.Button = undefined;
+    public btnSwitchLang: cc.Node;
+    public btnSwitchLangButton: cc.Button = undefined;
+    public btnSevenDay: cc.Node;
+    public btnSevenDayButton: cc.Button = undefined;
+    public btnVip: cc.Node;
+    public btnVipButton: cc.Button = undefined;
+    public btnBorderRadiusMask: cc.Node;
+    public btnBorderRadiusMaskButton: cc.Button = undefined;
+    public btnQrCode: cc.Node;
+    public btnQrCodeButton: cc.Button = undefined;
     
 
     public onLoad() {
@@ -78,22 +80,6 @@ export default class WheelGameView extends UIViewBase {
         this.wheel_groupCenter = this.get('_wheel_groupCenter_');
         this.wheel_groupCenterWidget = this.wheel_groupCenter.getComponent(cc.Widget);
         this.wheel_groupCenterWEWheelList = this.wheel_groupCenter.getComponent(WEWheelList);
-        this.btnCircularMove = this.get('_btnCircularMove_');
-        this.btnCircularMoveButton = this.btnCircularMove.getComponent(cc.Button);
-        this.btnJoinUs = this.get('_btnJoinUs_');
-        this.btnJoinUsButton = this.btnJoinUs.getComponent(cc.Button);
-        this.btnTurnTable = this.get('_btnTurnTable_');
-        this.btnTurnTableButton = this.btnTurnTable.getComponent(cc.Button);
-        this.btnGameList = this.get('_btnGameList_');
-        this.btnGameListButton = this.btnGameList.getComponent(cc.Button);
-        this.btnSwitchLang = this.get('_btnSwitchLang_');
-        this.btnSwitchLangButton = this.btnSwitchLang.getComponent(cc.Button);
-        this.btnSevenDay = this.get('_btnSevenDay_');
-        this.btnSevenDayButton = this.btnSevenDay.getComponent(cc.Button);
-        this.btnVip = this.get('_btnVip_');
-        this.btnVipButton = this.btnVip.getComponent(cc.Button);
-        this.btnBorderRadiusMask = this.get('_btnBorderRadiusMask_');
-        this.btnBorderRadiusMaskButton = this.btnBorderRadiusMask.getComponent(cc.Button);
         this.bottom = this.get('_bottom_');
         this.bottomWidget = this.bottom.getComponent(cc.Widget);
         this.bottomWELayoutUpdate = this.bottom.getComponent(WELayoutUpdate);
@@ -113,10 +99,31 @@ export default class WheelGameView extends UIViewBase {
         this.btnRight = this.get('_btnRight_');
         this.btnRightButton = this.btnRight.getComponent(cc.Button);
         this.btnRightWidget = this.btnRight.getComponent(cc.Widget);
+        this.btnCircularMove = this.get('_btnCircularMove_');
+        this.btnCircularMoveButton = this.btnCircularMove.getComponent(cc.Button);
+        this.btnJoinUs = this.get('_btnJoinUs_');
+        this.btnJoinUsButton = this.btnJoinUs.getComponent(cc.Button);
+        this.btnTurnTable = this.get('_btnTurnTable_');
+        this.btnTurnTableButton = this.btnTurnTable.getComponent(cc.Button);
+        this.btnGameList = this.get('_btnGameList_');
+        this.btnGameListButton = this.btnGameList.getComponent(cc.Button);
+        this.btnSwitchLang = this.get('_btnSwitchLang_');
+        this.btnSwitchLangButton = this.btnSwitchLang.getComponent(cc.Button);
+        this.btnSevenDay = this.get('_btnSevenDay_');
+        this.btnSevenDayButton = this.btnSevenDay.getComponent(cc.Button);
+        this.btnVip = this.get('_btnVip_');
+        this.btnVipButton = this.btnVip.getComponent(cc.Button);
+        this.btnBorderRadiusMask = this.get('_btnBorderRadiusMask_');
+        this.btnBorderRadiusMaskButton = this.btnBorderRadiusMask.getComponent(cc.Button);
+        this.btnQrCode = this.get('_btnQrCode_');
+        this.btnQrCodeButton = this.btnQrCode.getComponent(cc.Button);
         
     }
 
     private addEvent() {
+        this.shopButton.node.on('click', this.onshopButtonClick, this);
+        this.btnLeftButton.node.on('click', this.onbtnLeftButtonClick, this);
+        this.btnRightButton.node.on('click', this.onbtnRightButtonClick, this);
         this.btnCircularMoveButton.node.on('click', this.onbtnCircularMoveButtonClick, this);
         this.btnJoinUsButton.node.on('click', this.onbtnJoinUsButtonClick, this);
         this.btnTurnTableButton.node.on('click', this.onbtnTurnTableButtonClick, this);
@@ -125,13 +132,14 @@ export default class WheelGameView extends UIViewBase {
         this.btnSevenDayButton.node.on('click', this.onbtnSevenDayButtonClick, this);
         this.btnVipButton.node.on('click', this.onbtnVipButtonClick, this);
         this.btnBorderRadiusMaskButton.node.on('click', this.onbtnBorderRadiusMaskButtonClick, this);
-        this.shopButton.node.on('click', this.onshopButtonClick, this);
-        this.btnLeftButton.node.on('click', this.onbtnLeftButtonClick, this);
-        this.btnRightButton.node.on('click', this.onbtnRightButtonClick, this);
+        this.btnQrCodeButton.node.on('click', this.onbtnQrCodeButtonClick, this);
 
     }
 
     private removeEvent() {
+        this.shopButton.node.off('click', this.onshopButtonClick, this);
+        this.btnLeftButton.node.off('click', this.onbtnLeftButtonClick, this);
+        this.btnRightButton.node.off('click', this.onbtnRightButtonClick, this);
         this.btnCircularMoveButton.node.off('click', this.onbtnCircularMoveButtonClick, this);
         this.btnJoinUsButton.node.off('click', this.onbtnJoinUsButtonClick, this);
         this.btnTurnTableButton.node.off('click', this.onbtnTurnTableButtonClick, this);
@@ -140,10 +148,20 @@ export default class WheelGameView extends UIViewBase {
         this.btnSevenDayButton.node.off('click', this.onbtnSevenDayButtonClick, this);
         this.btnVipButton.node.off('click', this.onbtnVipButtonClick, this);
         this.btnBorderRadiusMaskButton.node.off('click', this.onbtnBorderRadiusMaskButtonClick, this);
-        this.shopButton.node.off('click', this.onshopButtonClick, this);
-        this.btnLeftButton.node.off('click', this.onbtnLeftButtonClick, this);
-        this.btnRightButton.node.off('click', this.onbtnRightButtonClick, this);
+        this.btnQrCodeButton.node.off('click', this.onbtnQrCodeButtonClick, this);
 
+    }
+
+    private onshopButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnLeftButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnRightButtonClick(component: cc.Button) {
+        this.emit('click', component);
     }
 
     private onbtnCircularMoveButtonClick(component: cc.Button) {
@@ -178,15 +196,7 @@ export default class WheelGameView extends UIViewBase {
         this.emit('click', component);
     }
 
-    private onshopButtonClick(component: cc.Button) {
-        this.emit('click', component);
-    }
-
-    private onbtnLeftButtonClick(component: cc.Button) {
-        this.emit('click', component);
-    }
-
-    private onbtnRightButtonClick(component: cc.Button) {
+    private onbtnQrCodeButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

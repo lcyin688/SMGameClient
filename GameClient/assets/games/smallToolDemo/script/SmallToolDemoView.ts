@@ -14,6 +14,7 @@ export enum SmallToolDemoUI {
     VipMain,
     MonthSignRule,
     wheelGame,
+    QrCodeDemo,
 }
 
 /** 打开界面方式的配置数据 */
@@ -21,21 +22,23 @@ export const SmallToolDemoView: { [key: number]: UIConfig } = {
     //description:
     [SmallToolDemoUI.WheelGame]: { layer: LayerType.UI, prefab: 'prefab/F_WheelGame', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
-    [SmallToolDemoUI.ListCircularMove]: { layer: LayerType.PopUp, prefab: 'prefab/V_ListCircularMove', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
+    [SmallToolDemoUI.ListCircularMove]: { layer: LayerType.PopUp, prefab: 'prefab/V_ListCircularMove', bundle: GameConsts.Bundle.smallToolDemo, useBlurScn: true },
     //description:
-    [SmallToolDemoUI.JoinUs]: { layer: LayerType.PopUp, prefab: 'prefab/joinus/V_JoinUs', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
+    [SmallToolDemoUI.JoinUs]: { layer: LayerType.PopUp, prefab: 'prefab/joinus/V_JoinUs', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
     [SmallToolDemoUI.Turntable]: { layer: LayerType.PopUp, prefab: 'prefab/turntable/V_Turntable', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
     [SmallToolDemoUI.SwitchLang]: { layer: LayerType.PopUp, prefab: 'prefab/switchLang/V_SwitchLang', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
-    [SmallToolDemoUI.SevenDayMain]: { layer: LayerType.PopUp, prefab: 'prefab/sevenDay/V_SevenDayMain', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
+    [SmallToolDemoUI.SevenDayMain]: { layer: LayerType.PopUp, prefab: 'prefab/sevenDay/V_SevenDayMain', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
-    [SmallToolDemoUI.SevenDaySignItemOne]: { layer: LayerType.PopUp, prefab: 'prefab/sevenDay/SevenDaySignItemOne', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
+    [SmallToolDemoUI.SevenDaySignItemOne]: { layer: LayerType.PopUp, prefab: 'prefab/sevenDay/SevenDaySignItemOne', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
-    [SmallToolDemoUI.VipMain]: { layer: LayerType.PopUp, prefab: 'prefab/vipinfo/V_VipMain', bundle: GameConsts.Bundle.smallToolDemo, noBlurScn: true },
+    [SmallToolDemoUI.VipMain]: { layer: LayerType.PopUp, prefab: 'prefab/vipinfo/V_VipMain', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
-    [SmallToolDemoUI.MonthSignRule]: { layer: LayerType.PopUp, prefab: "prefab/V_MonthSignRule", bundle: GameConsts.Bundle.smallToolDemo },
+    [SmallToolDemoUI.MonthSignRule]: { layer: LayerType.PopUp, prefab: 'prefab/V_MonthSignRule', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
-    [SmallToolDemoUI.wheelGame]: { layer: LayerType.UI, prefab: "prefab/F_wheelGame", bundle: GameConsts.Bundle.smallToolDemo },
-}
+    [SmallToolDemoUI.wheelGame]: { layer: LayerType.UI, prefab: 'prefab/F_wheelGame', bundle: GameConsts.Bundle.smallToolDemo },
+    //description:
+    [SmallToolDemoUI.QrCodeDemo]: { layer: LayerType.PopUp, prefab: 'prefab/V_QrCodeDemo', bundle: GameConsts.Bundle.smallToolDemo },
+};

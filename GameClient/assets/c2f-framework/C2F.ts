@@ -1,7 +1,6 @@
 declare global {
     interface IUtil {}
     interface IGame {}
-
     interface IC2F {
         c2f: {};
         utils: IUtil;

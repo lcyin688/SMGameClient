@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "@types/node": "^20.14.10"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
   }
 }

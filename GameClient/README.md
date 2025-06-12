@@ -1,28 +1,28 @@
 # c2f-framework
 
 #### 介绍
-creator2.4.11 2D游戏框架
+
+creator2.4.11 2D 游戏框架
 
 #### 软件架构
+
 软件架构说明
 
- web google 浏览器上安装 插件 Cocos Creator Devtool  可以直接当作节点树工具使用
+web google 浏览器上安装 插件 Cocos Creator Devtool 可以直接当作节点树工具使用
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. ***
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-构建APK 
-在修改 gradle.properties 文件
-在项目根目录下的 gradle.properties 文件中添加以下行：
-android.ndk.suppressMinSdkVersionError=21
+1. xxxx
+2. xxxx
+3. xxxx
+   构建 APK
+   在修改 gradle.properties 文件
+   在项目根目录下的 gradle.properties 文件中添加以下行：
+   android.ndk.suppressMinSdkVersionError=21
 
 ndk.dir=D\:\\android\\Sdk\\ndk\\25.1.8937393
 classpath 'com.android.tools.build:gradle:8.2.0'
@@ -36,23 +36,19 @@ sdk.dir=D\:\\Android\\sdk\\Sdk
 ndk.dir=D\:\\Android\\android-sdk-windows\\ndk\\25.1.8937393
 JDK 11
 
-
 #### 参与贡献
-
 
 #### 使用注意事项
 
-1. 整个游戏功能以包为单位分成N块，加载包时，需要将包中UI配置新增到Layer总配置中
+1. 整个游戏功能以包为单位分成 N 块，加载包时，需要将包中 UI 配置新增到 Layer 总配置中
 2. 包名不支持变更，如果需变更请手动同步
 3. 包中脚本文件夹下需要有"${包名}Vew.ts"(首字母大写)文件，该文件定义了子包中窗口参数配置
 
+errorcode 服务器回的 code 和 本地定义的 报错内容联系起来
 
-errorcode 服务器回的code 和 本地定义的 报错内容联系起来
+//事件注册参考 EventName
 
-//事件注册参考  EventName 
-
-
-//网络回调  监听的demo
+//网络回调 监听的 demo
 
     protected onLoad(): void {
         c2f.webSocket.addListener(this, [
@@ -74,8 +70,7 @@ errorcode 服务器回的code 和 本地定义的 报错内容联系起来
         }
     }
 
-
-//倒计时demo
+//倒计时 demo
 
     private setTimeView() {
         let endTs = szg.player.act.getActEndTs(this.model.curSeq, GameConsts.ActivityTime.end);
@@ -83,7 +78,6 @@ errorcode 服务器回的code 和 本地定义的 报错内容联系起来
         let sec = endTs - tsNow;
         this.setTimeCountDownScore(this.view.timeCountdownLabel, sec)
     }
-
 
     /**倒计时显示 */
     private setTimeCountDownScore(countdownLabel: CountdownLabel, interval: number) {
@@ -98,19 +92,19 @@ errorcode 服务器回的code 和 本地定义的 报错内容联系起来
     }
 
 //请求网络消息
-        let cData: msg.CS_Login = {
-                account: username,
-                password: password,
-                serverId: 1,
-        }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData,{
-            view: this.view,
-            ops: [GameMsgId.MsgId.MSG_SC_Login],
-            waitNet:false,
-            getErr:false,
-            callback: (code: number, data: msg.SC_Login) => {
+let cData: msg.CS_Login = {
+account: username,
+password: password,
+serverId: 1,
+}
+c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData,{
+view: this.view,
+ops: [GameMsgId.MsgId.MSG_SC_Login],
+waitNet:false,
+getErr:false,
+callback: (code: number, data: msg.SC_Login) => {
 
-                cc.log(" 登录 消息回来",data)
+    cc.log(" 登录 消息回来",data)
                 c2f.gui.notifyTxt('1515');
                 //todo 登录成功逻辑
             }

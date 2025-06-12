@@ -8,7 +8,8 @@ interface FormatAmountOptions {
     /** 是否使用逗号，默认是 */
     useComma?: boolean;
 }
-
+let qrcode = require('qrcode');
+// import * as qrcode from 'qrcode';
 export default class CommonUtils {
     /**
      * 根据节点名称获取目标节点下的节点，如果遇见多个相同节点，返回第一个
@@ -503,7 +504,6 @@ export default class CommonUtils {
      */
     public static generateQrCode(node: cc.Node, data: string, color?: cc.Color): void {
         if (!cc.isValid(node)) {
-            cc.warn(`CommonUtils generateQrCode, node is invalid`);
             return;
         }
 
@@ -511,14 +511,13 @@ export default class CommonUtils {
             return;
         }
 
-        let graphics = node.addComponent(cc.Graphics);
+        let graphics = c2f.utils.node.addComponent(node, cc.Graphics) as cc.Graphics;
         graphics.fillColor = cc.Color.BLACK;
 
         if (color) {
             graphics.fillColor = color;
         }
-
-        let qr = require('qrcode');
+        let qr = new qrcode.QRCode();
         qr.addData(data);
         qr.make();
 

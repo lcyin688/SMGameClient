@@ -108,6 +108,10 @@ export default class WheelGame extends UIVControlBase {
                 this.CC_onClickbtnBorderRadiusMask();
                 break;
 
+            case this.view.btnQrCodeButton.name:
+                this.CC_onClickbtnQrCode();
+                break;
+
             case this.view.btnLeftButton.name:
                 this.CC_onClickbtnLeft();
                 break;
@@ -220,7 +224,7 @@ export default class WheelGame extends UIVControlBase {
         await new Promise((resolve) => setTimeout(resolve, 5000));
         c2f.log.log(' 点击了转盘按钮 002 ', Date.now());
     }
-    private CC_onClickbtnGameList() { }
+    private CC_onClickbtnGameList() {}
 
     private CC_onClickbtnSwitchLang() {
         c2f.gui.open(SmallToolDemoUI.SwitchLang);
@@ -308,5 +312,8 @@ export default class WheelGame extends UIVControlBase {
         const gameCfg = this.model.getGameEntryConfig(gameId);
         let item = cell.getComponent(HallGameItem);
         item?.onRefreshItem(gameCfg);
+    }
+    private CC_onClickbtnQrCode() {
+        c2f.gui.open(SmallToolDemoUI.QrCodeDemo);
     }
 }

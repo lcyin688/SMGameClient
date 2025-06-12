@@ -255,11 +255,11 @@ export class LayerUI extends cc.Node {
             }
             //当前为最上层显示界面时，当前为全屏界面则后面全部隐藏，当前为非全屏时，创建模糊背景后全部隐藏。
             if (one.node.active) {
-                let blurEnable = false;
+                let useBlur = false;
                 if (viewPa.uiCfg) {
-                    blurEnable = !viewPa.uiCfg.noBlurScn;
+                    useBlur = viewPa.uiCfg.useBlurScn;
                 }
-                if (blurEnable) {
+                if (useBlur) {
                     let isPopLayer = !viewPa.uiCfg || viewPa.uiCfg.layer != LayerType.UI;
                     if (this.blurScn) {
                         this.blurScn.node.active = isPopLayer;
