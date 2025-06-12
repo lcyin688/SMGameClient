@@ -67,6 +67,7 @@ export default class NhwcMainView extends UIViewBase {
     public toolSwitchSprite: cc.Sprite = undefined;
     public toolSwitchButton: cc.Button = undefined;
     public toolSwitchWidget: cc.Widget = undefined;
+    public drawWidth: cc.Node;
     public overPanel: cc.Node;
 
     public onLoad() {
@@ -145,6 +146,7 @@ export default class NhwcMainView extends UIViewBase {
         this.toolSwitchSprite = this.toolSwitch.getComponent(cc.Sprite);
         this.toolSwitchButton = this.toolSwitch.getComponent(cc.Button);
         this.toolSwitchWidget = this.toolSwitch.getComponent(cc.Widget);
+        this.drawWidth = this.get('_drawWidth_');
         this.overPanel = this.get('_overPanel_');
     }
 

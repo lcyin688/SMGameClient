@@ -55,6 +55,8 @@ export default class WheelGameView extends UIViewBase {
     public btnBorderRadiusMaskButton: cc.Button = undefined;
     public btnQrCode: cc.Node;
     public btnQrCodeButton: cc.Button = undefined;
+    public btnTogContainer: cc.Node;
+    public btnTogContainerButton: cc.Button = undefined;
     
 
     public onLoad() {
@@ -117,6 +119,8 @@ export default class WheelGameView extends UIViewBase {
         this.btnBorderRadiusMaskButton = this.btnBorderRadiusMask.getComponent(cc.Button);
         this.btnQrCode = this.get('_btnQrCode_');
         this.btnQrCodeButton = this.btnQrCode.getComponent(cc.Button);
+        this.btnTogContainer = this.get('_btnTogContainer_');
+        this.btnTogContainerButton = this.btnTogContainer.getComponent(cc.Button);
         
     }
 
@@ -133,6 +137,7 @@ export default class WheelGameView extends UIViewBase {
         this.btnVipButton.node.on('click', this.onbtnVipButtonClick, this);
         this.btnBorderRadiusMaskButton.node.on('click', this.onbtnBorderRadiusMaskButtonClick, this);
         this.btnQrCodeButton.node.on('click', this.onbtnQrCodeButtonClick, this);
+        this.btnTogContainerButton.node.on('click', this.onbtnTogContainerButtonClick, this);
 
     }
 
@@ -149,6 +154,7 @@ export default class WheelGameView extends UIViewBase {
         this.btnVipButton.node.off('click', this.onbtnVipButtonClick, this);
         this.btnBorderRadiusMaskButton.node.off('click', this.onbtnBorderRadiusMaskButtonClick, this);
         this.btnQrCodeButton.node.off('click', this.onbtnQrCodeButtonClick, this);
+        this.btnTogContainerButton.node.off('click', this.onbtnTogContainerButtonClick, this);
 
     }
 
@@ -197,6 +203,10 @@ export default class WheelGameView extends UIViewBase {
     }
 
     private onbtnQrCodeButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnTogContainerButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 

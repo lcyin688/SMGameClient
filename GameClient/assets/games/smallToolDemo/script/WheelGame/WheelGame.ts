@@ -112,6 +112,10 @@ export default class WheelGame extends UIVControlBase {
                 this.CC_onClickbtnQrCode();
                 break;
 
+            case this.view.btnTogContainerButton.name:
+                this.CC_onClickbtnTogContainer();
+                break;
+
             case this.view.btnLeftButton.name:
                 this.CC_onClickbtnLeft();
                 break;
@@ -315,5 +319,8 @@ export default class WheelGame extends UIVControlBase {
     }
     private CC_onClickbtnQrCode() {
         c2f.gui.open(SmallToolDemoUI.QrCodeDemo);
+    }
+    private CC_onClickbtnTogContainer() {
+        c2f.gui.open(SmallToolDemoUI.TogContainerDemo);
     }
 }

@@ -15,6 +15,7 @@ export enum SmallToolDemoUI {
     MonthSignRule,
     wheelGame,
     QrCodeDemo,
+    TogContainerDemo,
 }
 
 /** 打开界面方式的配置数据 */
@@ -40,5 +41,6 @@ export const SmallToolDemoView: { [key: number]: UIConfig } = {
     //description:
     [SmallToolDemoUI.wheelGame]: { layer: LayerType.UI, prefab: 'prefab/F_wheelGame', bundle: GameConsts.Bundle.smallToolDemo },
     //description:
-    [SmallToolDemoUI.QrCodeDemo]: { layer: LayerType.PopUp, prefab: 'prefab/V_QrCodeDemo', bundle: GameConsts.Bundle.smallToolDemo },
-};
+    [SmallToolDemoUI.QrCodeDemo]: { layer: LayerType.PopUp, prefab: 'prefab/V_QrCodeDemo', bundle: GameConsts.Bundle.smallToolDemo }, 
+    //description:
+    [SmallToolDemoUI.TogContainerDemo]: { layer: LayerType.PopUp, prefab: "prefab/V_TogContainerDemo", bundle: GameConsts.Bundle.smallToolDemo }, }

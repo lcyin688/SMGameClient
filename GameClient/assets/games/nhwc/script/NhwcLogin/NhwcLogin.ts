@@ -1,10 +1,9 @@
 import { UIVControlBase } from './../../../../c2f-framework/gui/layer/UIVControlBase';
 import { C2FEnum } from './../../../../c2f-framework/define/C2FEnum';
-import  NhwcLoginModel from './NhwcLoginModel';
-import  NhwcLoginView from './NhwcLoginView';
+import NhwcLoginModel from './NhwcLoginModel';
+import NhwcLoginView from './NhwcLoginView';
 import { NhwcUI, NhwcView } from '../NhwcView';
 import { GameMsgId } from '../../../../resources/proto/GameMsgId';
-
 
 const { ccclass, property } = cc._decorator;
 @ccclass
@@ -14,25 +13,35 @@ export default class NhwcLogin extends UIVControlBase {
 
     public model: NhwcLoginModel = undefined;
     public view: NhwcLoginView = undefined;
-    
+    protected onLoad(): void {
+        this.forcePortrait();
+    }
+    // 强制切换为横屏
+    private forcePortrait() {
+        cc.view.setDesignResolutionSize(720, 1280, cc.ResolutionPolicy.FIXED_WIDTH);
+        cc.view.setOrientation(cc.macro.ORIENTATION_PORTRAIT);
+        // const frameSize = cc.view.getFrameSize();
+        // const width = frameSize.width > frameSize.height ? frameSize.width : frameSize.height;
+        // const height = frameSize.width > frameSize.height ? frameSize.height : frameSize.width;
+        // cc.view.setFrameSize(height, width);
+    }
+
     protected onViewOpen(param: any) {
         szg.player.initPlayer();
-        let url = "ws://127.0.0.1:9000";
+        let url = 'ws://127.0.0.1:9000';
         c2f.gui.showLoading();
         c2f.webSocket.initService().then(() => {
             c2f.webSocket.connect(url, (reason: string) => {
                 c2f.gui.hideLoading();
-                if (reason === "Connected") {
-                    cc.log(" ~~~ c2f.webSocket.connect 链接成功 可以尝试登录")
+                if (reason === 'Connected') {
+                    cc.log(' ~~~ c2f.webSocket.connect 链接成功 可以尝试登录');
                 } else {
                     c2f.gui.notifyTxt('1006');
                     c2f.net.purge();
                 }
             });
         });
-        
     }
-
 
     protected onEnable(): void {
         if (super.onEnable) {
@@ -49,22 +58,21 @@ export default class NhwcLogin extends UIVControlBase {
     }
 
     private async onButtonClick(eventType: string, component: cc.Button) {
-        switch (component.name){
-            
+        switch (component.name) {
             case this.view.btnLoginButton.name:
                 this.CC_onClickbtnLogin();
                 break;
-                
+
             case this.view.btnRegisterButton.name:
                 this.CC_onClickbtnRegister();
                 break;
-                
+
             default:
                 break;
         }
-    } 
-    
-    private CC_onClickbtnLogin(){
+    }
+
+    private CC_onClickbtnLogin() {
         let username = this.view.userNameEditBox.string;
         let password = this.view.passWordEditBox.string;
         if (!username) {
@@ -77,30 +85,25 @@ export default class NhwcLogin extends UIVControlBase {
         }
 
         let cData: msg.CS_Login = {
-                account: username,
-                password: password,
-                serverId: 1,
-        }
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login,cData,{
+            account: username,
+            password: password,
+            serverId: 1,
+        };
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_Login, cData, {
             view: this.view,
             ops: [GameMsgId.MsgId.MSG_SC_Login],
-            waitNet:false,
-            getErr:false,
+            waitNet: false,
+            getErr: false,
             callback: (code: number, data: msg.SC_Login) => {
-
-                cc.log(" 登录 成功")
+                cc.log(' 登录 成功');
                 c2f.gui.notifyTxt('1515');
                 //todo 登录成功逻辑
                 c2f.gui.open(NhwcUI.NhwcHall);
-            }
-        })
-        
-
+            },
+        });
     }
-            
-    private CC_onClickbtnRegister(){
+
+    private CC_onClickbtnRegister() {
         c2f.gui.open(NhwcUI.NhwcRegister);
     }
-            
-
 }

@@ -1,3 +1,5 @@
+import { DelegateComponent } from '../../../../c2f-framework/gui/layer/DelegateComponent';
+
 interface FormatAmountOptions {
     /** 是否使用 KMBT 单位，默认是 */
     useUnit?: boolean;

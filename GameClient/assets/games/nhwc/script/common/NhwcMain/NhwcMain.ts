@@ -22,6 +22,7 @@ export default class NhwcMain extends UIVControlBase {
     public view: NhwcMainView = undefined;
     private intervalId: NodeJS.Timeout;
     protected onLoad(): void {
+        this.registerEvent();
         c2f.webSocket.addListener(
             this,
             [
@@ -47,6 +48,18 @@ export default class NhwcMain extends UIVControlBase {
             this.view.board.addChild(nodeItem);
             this.model.sketchpad = nodeItem.getComponent(Sketchpad);
         });
+    }
+    registerEvent() {
+        // let togGroupWidth = this.view.drawWidth.getComponent(cc.ToggleContainer);
+        // togGroupWidth.toggleItems.forEach((item: cc.Toggle, index: number) => {
+        //     item.node.on(
+        //         cc.Node.EventType.TOUCH_START,
+        //         () => {
+        //             this.onToggleClickWidth.bind(this);
+        //         },
+        //         this
+        //     );
+        // });
     }
 
     private getIsInit() {
@@ -182,7 +195,7 @@ export default class NhwcMain extends UIVControlBase {
             this.resetView();
             this.view.alarmClock.active = false;
             this.view.messagePanel.active = true;
-            let str = c2f.utils.str.stringFormat(c2f.language.words(7006), szg.player.nhwcData.roomInfo.rid);
+            let str = c2f.utils.str.stringFormat(c2f.language.words('7006'), szg.player.nhwcData.roomInfo.rid);
             this.view.centerLabelLabel.string = str;
             this.scheduleOnce(() => {
                 this.onViewOpen(param);
@@ -258,7 +271,9 @@ export default class NhwcMain extends UIVControlBase {
 
     private CC_onClicktipConfirmBtn() {}
 
-    private CC_onClicktipCloseBtn() {}
+    private CC_onClicktipCloseBtn() {
+        this.view.tips.active = false;
+    }
 
     private CC_onClickswitch() {}
 
@@ -319,7 +334,7 @@ export default class NhwcMain extends UIVControlBase {
     }
     /**倒计时显示 */
     private setTimeCountDownScore(countdownLabel: CountdownLabel, interval: number) {
-        let dayStr = '%{d}' + c2f.language.words(2504) + '%{hh}:%{mm}:%{ss}';
+        let dayStr = '%{d}' + c2f.language.words('2504') + '%{hh}:%{mm}:%{ss}';
         countdownLabel.startCountdown(
             interval,
             {
@@ -328,7 +343,7 @@ export default class NhwcMain extends UIVControlBase {
                 H: '%{hh}:%{mm}:%{ss}',
                 D: dayStr,
             },
-            c2f.language.words(39110),
+            c2f.language.words('39110'),
             null,
             () => {}
         );
@@ -357,7 +372,7 @@ export default class NhwcMain extends UIVControlBase {
             //自己是画师的时候
             this.view.messagePanel.active = false;
             this.view.answerBtn.active = false;
-            let str = c2f.utils.str.stringFormat(c2f.language.words(7008), szg.player.nhwcData.roomInfo.word);
+            let str = c2f.utils.str.stringFormat(c2f.language.words('7008'), szg.player.nhwcData.roomInfo.word);
             this.view.centerLabelLabel.string = str;
 
             this.model.sketchpad.enableDraw();
@@ -366,8 +381,9 @@ export default class NhwcMain extends UIVControlBase {
         } else {
             this.view.answerBtn.active = true;
             this.view.tips.active = true;
-            let str = c2f.utils.str.stringFormat(c2f.language.words(7009), szg.player.nhwcData.roomInfo.hint);
+            let str = c2f.utils.str.stringFormat(c2f.language.words('7009'), szg.player.nhwcData.roomInfo.hint);
             this.view.centerLabelLabel.string = str;
+            this.view.tipInputEditBox.string = str;
             this.model.sketchpad.disableDraw();
             this.view.toolPanel.active = false;
         }
@@ -406,7 +422,7 @@ export default class NhwcMain extends UIVControlBase {
     private onNHWCResult(data: msg.SC_NHWCResult) {
         this.showTicker(this.view.timeCountdownLabel, szg.player.nhwcData.roomInfo.resultTime);
         this.view.answerBtn.active = false;
-        let str = c2f.utils.str.stringFormat(c2f.language.words(7012), szg.player.nhwcData.roomInfo.word);
+        let str = c2f.utils.str.stringFormat(c2f.language.words('7012'), szg.player.nhwcData.roomInfo.word);
         this.view.centerLabelLabel.string = str;
         this.model.sketchpad.disableDraw();
         this.view.messagePanel.active = true;
@@ -417,7 +433,7 @@ export default class NhwcMain extends UIVControlBase {
     private onRNHWCOver(data: msg.SC_NHWCOver) {
         this.view.answerBtn.active = false;
         this.view.overPanel.active = true;
-        this.view.centerLabelLabel.string = c2f.language.words(7013);
+        this.view.centerLabelLabel.string = c2f.language.words('7013');
         setTimeout(() => {
             c2f.gui.open(NhwcUI.NhwcHall);
             this.closeView();
@@ -462,11 +478,11 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     private answerWrong(seat: number) {
-        this.model.SeatDeskItemArr[seat].showTip(c2f.language.words(7010));
+        this.model.SeatDeskItemArr[seat].showTip(c2f.language.words('7010'));
     }
 
     private answerRight(seat: number, score: number) {
-        this.model.SeatDeskItemArr[seat].showTip(c2f.utils.str.formatWithObj(c2f.language.words(7011), score));
+        this.model.SeatDeskItemArr[seat].showTip(c2f.utils.str.formatWithObj(c2f.language.words('7011'), score));
     }
 
     private CC_onClickanswerBtn() {}
