@@ -102,7 +102,7 @@ export class NHWCData {
         let cData: msg.SC_NHWCDrawWidth = {
             width: width,
         };
-        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_NHWCDrawColor, cData);
+        c2f.webSocket.send(GameMsgId.MsgId.MSG_CS_NHWCDrawWidth, cData);
     }
 
     /**请求路径 */

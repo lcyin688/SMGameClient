@@ -3,6 +3,7 @@
     "@types/node": "^20.14.10"
   },
   "dependencies": {
+    "@protobufjs/aspromise": "^1.1.2",
     "qrcode": "^1.5.4"
   }
 }

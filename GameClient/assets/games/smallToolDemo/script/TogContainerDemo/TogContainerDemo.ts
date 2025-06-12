@@ -41,7 +41,6 @@ export default class TogContainerDemo extends UIVControlBase {
         this.closeView();
     }
     protected onLoad(): void {
-        // ToggleContainer 案例
         this.view.togContainerToggleGroupWrapper.addToggleListener((idx, checked) => {
             if (checked) {
                 this._handleSelection(idx);

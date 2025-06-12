@@ -3,11 +3,14 @@
 // If you need add data, please write in NhwcMainViewModel.ts .
 
 import { UIViewBase } from './../../../../../c2f-framework/gui/layer/UIViewBase';
-import CountdownLabel from './../../../../../c2f-framework/component/common/CountdownLabel';
+import CountdownLabel from "./../../../../../c2f-framework/component/common/CountdownLabel";
+import ToggleGroupWrapper from "./../../../../../entrance/script/extend/ui/ToggleGroupWrapper";
+
 
 const { ccclass, property } = cc._decorator;
 @ccclass
 export default class NhwcMainView extends UIViewBase {
+
     /** 预制名 给实例调用 */
     public prefabName = 'F_NhwcMain';
 
@@ -67,8 +70,17 @@ export default class NhwcMainView extends UIViewBase {
     public toolSwitchSprite: cc.Sprite = undefined;
     public toolSwitchButton: cc.Button = undefined;
     public toolSwitchWidget: cc.Widget = undefined;
+    public drawColors: cc.Node;
+    public drawColorsLayout: cc.Layout = undefined;
+    public drawColorsToggleContainer: cc.ToggleContainer = undefined;
+    public drawColorsWidget: cc.Widget = undefined;
+    public drawColorsToggleGroupWrapper: ToggleGroupWrapper = undefined;
     public drawWidth: cc.Node;
+    public drawWidthToggleContainer: cc.ToggleContainer = undefined;
+    public drawWidthWidget: cc.Widget = undefined;
+    public drawWidthToggleGroupWrapper: ToggleGroupWrapper = undefined;
     public overPanel: cc.Node;
+    
 
     public onLoad() {
         super.onLoad();
@@ -86,7 +98,7 @@ export default class NhwcMainView extends UIViewBase {
             super.onDisable();
         }
         this.removeEvent();
-    }
+    } 
 
     protected initProperty() {
         super.initProperty();
@@ -146,8 +158,17 @@ export default class NhwcMainView extends UIViewBase {
         this.toolSwitchSprite = this.toolSwitch.getComponent(cc.Sprite);
         this.toolSwitchButton = this.toolSwitch.getComponent(cc.Button);
         this.toolSwitchWidget = this.toolSwitch.getComponent(cc.Widget);
+        this.drawColors = this.get('_drawColors_');
+        this.drawColorsLayout = this.drawColors.getComponent(cc.Layout);
+        this.drawColorsToggleContainer = this.drawColors.getComponent(cc.ToggleContainer);
+        this.drawColorsWidget = this.drawColors.getComponent(cc.Widget);
+        this.drawColorsToggleGroupWrapper = this.drawColors.getComponent(ToggleGroupWrapper);
         this.drawWidth = this.get('_drawWidth_');
+        this.drawWidthToggleContainer = this.drawWidth.getComponent(cc.ToggleContainer);
+        this.drawWidthWidget = this.drawWidth.getComponent(cc.Widget);
+        this.drawWidthToggleGroupWrapper = this.drawWidth.getComponent(ToggleGroupWrapper);
         this.overPanel = this.get('_overPanel_');
+        
     }
 
     private addEvent() {
@@ -162,6 +183,7 @@ export default class NhwcMainView extends UIViewBase {
         this.tipCloseBtnButton.node.on('click', this.ontipCloseBtnButtonClick, this);
         this.switchButton.node.on('click', this.onswitchButtonClick, this);
         this.toolSwitchButton.node.on('click', this.ontoolSwitchButtonClick, this);
+
     }
 
     private removeEvent() {
@@ -176,6 +198,7 @@ export default class NhwcMainView extends UIViewBase {
         this.tipCloseBtnButton.node.off('click', this.ontipCloseBtnButtonClick, this);
         this.switchButton.node.off('click', this.onswitchButtonClick, this);
         this.toolSwitchButton.node.off('click', this.ontoolSwitchButtonClick, this);
+
     }
 
     private onexitBtnButtonClick(component: cc.Button) {
@@ -221,4 +244,6 @@ export default class NhwcMainView extends UIViewBase {
     private ontoolSwitchButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
+
+
 }

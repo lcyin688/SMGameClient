@@ -1,5 +1,5 @@
 /** 游戏常量定义：
- * 
+ *
  */
 export namespace NHWCConsts {
     /** 常用预制体 */
@@ -15,7 +15,7 @@ export namespace NHWCConsts {
     }
 
     /**默认座位上几个人就开 */
-    export const SeatCount = 2
-    
-    
+    export const SeatCount = 2;
+    /** 画笔宽度 */
+    export const DrawWidthArr = [10, 20, 30];
 }

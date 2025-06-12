@@ -332,7 +332,8 @@ export class NetworkMsg {
         let msg = new message();
         for (const p in msgData) {
             if (msgData.hasOwnProperty(p)) {
-                msg.set(p, msgData[p], false);
+                let itemData = msgData[p] || msgData.p;
+                msg.set(p, itemData, false);
             }
         }
         let bytes = new Uint8Array(msg.encode().toBuffer());

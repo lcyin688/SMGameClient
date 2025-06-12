@@ -49,19 +49,30 @@ export default class NhwcMain extends UIVControlBase {
             this.model.sketchpad = nodeItem.getComponent(Sketchpad);
         });
     }
-    registerEvent() {
-        // let togGroupWidth = this.view.drawWidth.getComponent(cc.ToggleContainer);
-        // togGroupWidth.toggleItems.forEach((item: cc.Toggle, index: number) => {
-        //     item.node.on(
-        //         cc.Node.EventType.TOUCH_START,
-        //         () => {
-        //             this.onToggleClickWidth.bind(this);
-        //         },
-        //         this
-        //     );
-        // });
+    protected registerEvent(): void {
+        // ToggleContainer 案例
+        this.view.drawWidthToggleGroupWrapper.addToggleListener((idx, checked) => {
+            if (checked) {
+                this._handleSelectionDrawWidth(idx);
+            }
+        });
+        this.view.drawColorsToggleGroupWrapper.addToggleListener((idx, checked) => {
+            if (checked) {
+                this._handleSelectionDrawColor(idx);
+            }
+        });
     }
 
+    private _handleSelectionDrawWidth(index: number) {
+        let width = NHWCConsts.DrawWidthArr[index];
+        szg.player.nhwcData.reqNHWCDrawWidth(width);
+    }
+
+    private _handleSelectionDrawColor(index: number) {
+        let color = this.view.drawColorsToggleContainer.toggleItems[index].node.getChildByName('bg').color;
+        let str = color.toCSS('#rrggbb');
+        szg.player.nhwcData.reqNHWCDrawColor(str);
+    }
     private getIsInit() {
         let isInit = false;
         if (this.model.sketchpad && this.model.seatPrepareItem && this.model.seatDeskItem) {
