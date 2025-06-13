@@ -69,6 +69,7 @@ export default class NhwcMain extends UIVControlBase {
     }
 
     private _handleSelectionDrawColor(index: number) {
+        cc.log('点击了  ', index);
         let color = this.view.drawColorsToggleContainer.toggleItems[index].node.getChildByName('bg').color;
         let str = color.toCSS('#rrggbb');
         szg.player.nhwcData.reqNHWCDrawColor(str);
@@ -258,12 +259,20 @@ export default class NhwcMain extends UIVControlBase {
                 this.CC_onClicktipCloseBtn();
                 break;
 
-            case this.view.switchButton.name:
-                this.CC_onClickswitch();
+            case this.view.sendButton.name:
+                this.CC_onClicksend();
+                break;
+
+            case this.view.btnChatButton.name:
+                this.CC_onClickbtnChat();
                 break;
 
             case this.view.toolSwitchButton.name:
                 this.CC_onClicktoolSwitch();
+                break;
+
+            case this.view.clearButton.name:
+                this.CC_onClickclear();
                 break;
 
             default:
@@ -285,10 +294,12 @@ export default class NhwcMain extends UIVControlBase {
     private CC_onClicktipCloseBtn() {
         this.view.tips.active = false;
     }
-
-    private CC_onClickswitch() {}
-
-    private CC_onClicktoolSwitch() {}
+    private CC_onClicktoolSwitch() {
+        this.model.isShowChoose = !this.model.isShowChoose;
+        cc.tween(this.view.toolPanel)
+            .to(0.3, { position: this.model.isShowChoose ? cc.v3(-300, 0, 0) : cc.v3(0, 0, 0) })
+            .start();
+    }
 
     private reflashRoomInfo() {
         if (szg.player.nhwcData.roomInfo?.state <= RoomState.RoomState.Ready) {
@@ -496,7 +507,10 @@ export default class NhwcMain extends UIVControlBase {
         this.model.SeatDeskItemArr[seat].showTip(c2f.utils.str.formatWithObj(c2f.language.words('7011'), score));
     }
 
-    private CC_onClickanswerBtn() {}
+    private CC_onClickanswerBtn() {
+        this.view.answerBtn.active = false;
+        this.showMessAgePanel();
+    }
 
     // 同步绘画信息
     syncPath() {
@@ -507,5 +521,22 @@ export default class NhwcMain extends UIVControlBase {
             let path = this.model.sketchpad.popPath();
             szg.player.nhwcData.reqNHWCDrawPath(path);
         }
+    }
+    private CC_onClickclear() {
+        this.model.sketchpad.clear();
+        szg.player.nhwcData.reqNHWCDrawClear();
+    }
+
+    private showMessAgePanel() {
+        this.view.messagePanel.active = true;
+        this.model.isShowChat = !this.model.isShowChat;
+        cc.tween(this.view.messageP)
+            .to(0.3, { position: cc.v3(this.model.isShowChat ? 0 : 720, 0) })
+            .start();
+    }
+    private CC_onClicksend() {}
+
+    private CC_onClickbtnChat() {
+        this.showMessAgePanel();
     }
 }

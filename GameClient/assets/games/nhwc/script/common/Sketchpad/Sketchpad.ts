@@ -69,34 +69,38 @@ export default class Sketchpad extends UIPControlBase {
         this.view.penGraphics.strokeColor = color;
     }
 
-    public savePoint(p: cc.Vec2, isStart: boolean) {
-        this.model.path.push({ p: p, isStart: isStart });
+    public savePoint(pos: msg.PointItem, isStart: boolean) {
+        let item: msg.NHWCPoint = {
+            pos: pos,
+            isStart: isStart,
+        };
+        this.model.path.push(item);
     }
 
-    public popPath(): Array<{ p: cc.Vec2; isStart: boolean }> {
+    public popPath(): msg.NHWCPoint[] {
         let path = this.model.path.slice();
         this.model.path = [];
         return path;
     }
 
     public drawByPath(pointArr: msg.NHWCPoint[]) {
-        let path: Array<{ p: cc.Vec2; isStart: boolean }> = [];
+        let path: msg.NHWCPoint[] = [];
         for (let i = 0; i < pointArr.length; i++) {
             let item = pointArr[i];
-            path.push({ p: cc.v2(item.p.x, item.p.y), isStart: item.isStart });
+            path.push(item);
         }
         this.drawByPathFinal(path);
     }
 
-    public drawByPathFinal(path: Array<{ p: cc.Vec2; isStart: boolean }>) {
+    public drawByPathFinal(path: msg.NHWCPoint[]) {
         for (let i = 0; i < path.length; i++) {
-            let { p, isStart } = path[i];
+            let { pos, isStart } = path[i];
             if (isStart) {
-                this.view.penGraphics.moveTo(p.x, p.y);
+                this.view.penGraphics.moveTo(pos.x, pos.y);
             } else {
-                this.view.penGraphics.lineTo(p.x, p.y);
+                this.view.penGraphics.lineTo(pos.x, pos.y);
                 this.view.penGraphics.stroke();
-                this.view.penGraphics.moveTo(p.x, p.y);
+                this.view.penGraphics.moveTo(pos.x, pos.y);
             }
         }
     }
@@ -106,7 +110,11 @@ export default class Sketchpad extends UIPControlBase {
         this.view.penImg.active = true;
         this.view.penImg.setPosition(localPosition);
         this.view.penGraphics.moveTo(localPosition.x, localPosition.y);
-        this.savePoint(cc.v2(localPosition.x, localPosition.y), true);
+        let item: msg.PointItem = {
+            x: localPosition.x,
+            y: localPosition.y,
+        };
+        this.savePoint(item, true);
     }
 
     private onTouchMove(e: cc.Event.EventTouch) {
@@ -115,7 +123,11 @@ export default class Sketchpad extends UIPControlBase {
         this.view.penGraphics.lineTo(localPosition.x, localPosition.y);
         this.view.penGraphics.stroke();
         this.view.penGraphics.moveTo(localPosition.x, localPosition.y);
-        this.savePoint(cc.v2(localPosition.x, localPosition.y), false);
+        let item: msg.PointItem = {
+            x: localPosition.x,
+            y: localPosition.y,
+        };
+        this.savePoint(item, false);
     }
 
     private onTouchEnd(e: cc.Event.EventTouch) {

@@ -1,6 +1,5 @@
 const { ccclass, property, menu, requireComponent } = cc._decorator;
 @ccclass
-@requireComponent(cc.Widget)
 @menu('c2f/UI/ToggleGroupWrapper')
 export default class ToggleGroupWrapper extends cc.Component {
     private toggleContainer: cc.ToggleContainer = null!;

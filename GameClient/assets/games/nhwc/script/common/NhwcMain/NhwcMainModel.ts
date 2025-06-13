@@ -9,11 +9,11 @@ export default class NhwcMainModel extends UIModelBase {
     /** 预制名 给实例调用 */
     public prefabName = 'F_NhwcMain';
     public seatPrepareItem: cc.Prefab;
-    public seatPrepareItemArr: SeatPrepareItem [] = null;
+    public seatPrepareItemArr: SeatPrepareItem[] = null;
     public seatDeskItem: cc.Prefab;
-    public SeatDeskItemArr: SeatDeskItem [] = null;
+    public SeatDeskItemArr: SeatDeskItem[] = null;
 
-    public sketchpad:Sketchpad  = null;
-
-
+    public sketchpad: Sketchpad = null;
+    public isShowChoose: boolean = false;
+    public isShowChat: boolean = false;
 }

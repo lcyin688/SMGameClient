@@ -6,7 +6,6 @@ export default class SketchpadModel extends UIModelBase {
     /** 预制名 给实例调用 */
     public prefabName = 'P_Sketchpad';
 
-    public isDrawing:boolean = false;
-    public path: Array<{p:cc.Vec2,isStart:boolean}> = [];
-
+    public isDrawing: boolean = false;
+    public path: msg.NHWCPoint[] = [];
 }

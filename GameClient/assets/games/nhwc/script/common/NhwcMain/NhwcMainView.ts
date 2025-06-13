@@ -14,9 +14,6 @@ export default class NhwcMainView extends UIViewBase {
     /** 预制名 给实例调用 */
     public prefabName = 'F_NhwcMain';
 
-    public board: cc.Node;
-    public boardSprite: cc.Sprite = undefined;
-    public boardWidget: cc.Widget = undefined;
     public alarmClock: cc.Node;
     public alarmClockSprite: cc.Sprite = undefined;
     public time: cc.Node;
@@ -59,11 +56,24 @@ export default class NhwcMainView extends UIViewBase {
     public tipCloseBtnButton: cc.Button = undefined;
     public messagePanel: cc.Node;
     public messagePanelWidget: cc.Widget = undefined;
-    public switch: cc.Node;
-    public switchSprite: cc.Sprite = undefined;
-    public switchButton: cc.Button = undefined;
-    public switchWidget: cc.Widget = undefined;
-    public switchAnimation: cc.Animation = undefined;
+    public messageP: cc.Node;
+    public messagePWidget: cc.Widget = undefined;
+    public message: cc.Node;
+    public messageEditBox: cc.EditBox = undefined;
+    public messageWidget: cc.Widget = undefined;
+    public send: cc.Node;
+    public sendSprite: cc.Sprite = undefined;
+    public sendButton: cc.Button = undefined;
+    public sendWidget: cc.Widget = undefined;
+    public chatPanel: cc.Node;
+    public chatPanelSprite: cc.Sprite = undefined;
+    public chatItem: cc.Node;
+    public chatItemLabel: cc.Label = undefined;
+    public btnChat: cc.Node;
+    public btnChatSprite: cc.Sprite = undefined;
+    public btnChatButton: cc.Button = undefined;
+    public board: cc.Node;
+    public boardWidget: cc.Widget = undefined;
     public toolPanel: cc.Node;
     public toolPanelWidget: cc.Widget = undefined;
     public toolSwitch: cc.Node;
@@ -73,12 +83,12 @@ export default class NhwcMainView extends UIViewBase {
     public drawColors: cc.Node;
     public drawColorsLayout: cc.Layout = undefined;
     public drawColorsToggleContainer: cc.ToggleContainer = undefined;
-    public drawColorsWidget: cc.Widget = undefined;
     public drawColorsToggleGroupWrapper: ToggleGroupWrapper = undefined;
     public drawWidth: cc.Node;
     public drawWidthToggleContainer: cc.ToggleContainer = undefined;
-    public drawWidthWidget: cc.Widget = undefined;
     public drawWidthToggleGroupWrapper: ToggleGroupWrapper = undefined;
+    public clear: cc.Node;
+    public clearButton: cc.Button = undefined;
     public overPanel: cc.Node;
     
 
@@ -102,9 +112,6 @@ export default class NhwcMainView extends UIViewBase {
 
     protected initProperty() {
         super.initProperty();
-        this.board = this.get('_board_');
-        this.boardSprite = this.board.getComponent(cc.Sprite);
-        this.boardWidget = this.board.getComponent(cc.Widget);
         this.alarmClock = this.get('_alarmClock_');
         this.alarmClockSprite = this.alarmClock.getComponent(cc.Sprite);
         this.time = this.get('_time_');
@@ -147,11 +154,24 @@ export default class NhwcMainView extends UIViewBase {
         this.tipCloseBtnButton = this.tipCloseBtn.getComponent(cc.Button);
         this.messagePanel = this.get('_messagePanel_');
         this.messagePanelWidget = this.messagePanel.getComponent(cc.Widget);
-        this.switch = this.get('_switch_');
-        this.switchSprite = this.switch.getComponent(cc.Sprite);
-        this.switchButton = this.switch.getComponent(cc.Button);
-        this.switchWidget = this.switch.getComponent(cc.Widget);
-        this.switchAnimation = this.switch.getComponent(cc.Animation);
+        this.messageP = this.get('_messageP_');
+        this.messagePWidget = this.messageP.getComponent(cc.Widget);
+        this.message = this.get('_message_');
+        this.messageEditBox = this.message.getComponent(cc.EditBox);
+        this.messageWidget = this.message.getComponent(cc.Widget);
+        this.send = this.get('_send_');
+        this.sendSprite = this.send.getComponent(cc.Sprite);
+        this.sendButton = this.send.getComponent(cc.Button);
+        this.sendWidget = this.send.getComponent(cc.Widget);
+        this.chatPanel = this.get('_chatPanel_');
+        this.chatPanelSprite = this.chatPanel.getComponent(cc.Sprite);
+        this.chatItem = this.get('_chatItem_');
+        this.chatItemLabel = this.chatItem.getComponent(cc.Label);
+        this.btnChat = this.get('_btnChat_');
+        this.btnChatSprite = this.btnChat.getComponent(cc.Sprite);
+        this.btnChatButton = this.btnChat.getComponent(cc.Button);
+        this.board = this.get('_board_');
+        this.boardWidget = this.board.getComponent(cc.Widget);
         this.toolPanel = this.get('_toolPanel_');
         this.toolPanelWidget = this.toolPanel.getComponent(cc.Widget);
         this.toolSwitch = this.get('_toolSwitch_');
@@ -161,12 +181,12 @@ export default class NhwcMainView extends UIViewBase {
         this.drawColors = this.get('_drawColors_');
         this.drawColorsLayout = this.drawColors.getComponent(cc.Layout);
         this.drawColorsToggleContainer = this.drawColors.getComponent(cc.ToggleContainer);
-        this.drawColorsWidget = this.drawColors.getComponent(cc.Widget);
         this.drawColorsToggleGroupWrapper = this.drawColors.getComponent(ToggleGroupWrapper);
         this.drawWidth = this.get('_drawWidth_');
         this.drawWidthToggleContainer = this.drawWidth.getComponent(cc.ToggleContainer);
-        this.drawWidthWidget = this.drawWidth.getComponent(cc.Widget);
         this.drawWidthToggleGroupWrapper = this.drawWidth.getComponent(ToggleGroupWrapper);
+        this.clear = this.get('_clear_');
+        this.clearButton = this.clear.getComponent(cc.Button);
         this.overPanel = this.get('_overPanel_');
         
     }
@@ -181,8 +201,14 @@ export default class NhwcMainView extends UIViewBase {
         this.tipInputEditBox.node.on('text-changed', this.ontipInputEditBoxTextChanged, this);
         this.tipConfirmBtnButton.node.on('click', this.ontipConfirmBtnButtonClick, this);
         this.tipCloseBtnButton.node.on('click', this.ontipCloseBtnButtonClick, this);
-        this.switchButton.node.on('click', this.onswitchButtonClick, this);
+        this.messageEditBox.node.on('editing-did-began', this.onmessageEditBoxEditingBegan, this);
+        this.messageEditBox.node.on('editing-did-ended', this.onmessageEditBoxEditingEnded, this);
+        this.messageEditBox.node.on('editing-return', this.onmessageEditBoxEditingReturn, this);
+        this.messageEditBox.node.on('text-changed', this.onmessageEditBoxTextChanged, this);
+        this.sendButton.node.on('click', this.onsendButtonClick, this);
+        this.btnChatButton.node.on('click', this.onbtnChatButtonClick, this);
         this.toolSwitchButton.node.on('click', this.ontoolSwitchButtonClick, this);
+        this.clearButton.node.on('click', this.onclearButtonClick, this);
 
     }
 
@@ -196,8 +222,14 @@ export default class NhwcMainView extends UIViewBase {
         this.tipInputEditBox.node.off('text-changed', this.ontipInputEditBoxTextChanged, this);
         this.tipConfirmBtnButton.node.off('click', this.ontipConfirmBtnButtonClick, this);
         this.tipCloseBtnButton.node.off('click', this.ontipCloseBtnButtonClick, this);
-        this.switchButton.node.off('click', this.onswitchButtonClick, this);
+        this.messageEditBox.node.off('editing-did-began', this.onmessageEditBoxEditingBegan, this);
+        this.messageEditBox.node.off('editing-did-ended', this.onmessageEditBoxEditingEnded, this);
+        this.messageEditBox.node.off('editing-return', this.onmessageEditBoxEditingReturn, this);
+        this.messageEditBox.node.off('text-changed', this.onmessageEditBoxTextChanged, this);
+        this.sendButton.node.off('click', this.onsendButtonClick, this);
+        this.btnChatButton.node.off('click', this.onbtnChatButtonClick, this);
         this.toolSwitchButton.node.off('click', this.ontoolSwitchButtonClick, this);
+        this.clearButton.node.off('click', this.onclearButtonClick, this);
 
     }
 
@@ -237,11 +269,35 @@ export default class NhwcMainView extends UIViewBase {
         this.emit('click', component);
     }
 
-    private onswitchButtonClick(component: cc.Button) {
+    private onmessageEditBoxEditingBegan(component: cc.EditBox) {
+        this.emit('editing-did-began', component);
+    }
+
+    private onmessageEditBoxEditingEnded(component: cc.EditBox) {
+        this.emit('editing-did-ended', component);
+    }
+
+    private onmessageEditBoxEditingReturn(component: cc.EditBox) {
+        this.emit('editing-return', component);
+    }
+
+    private onmessageEditBoxTextChanged(component: cc.EditBox) {
+        this.emit('text-changed', component);
+    }
+
+    private onsendButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onbtnChatButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 
     private ontoolSwitchButtonClick(component: cc.Button) {
+        this.emit('click', component);
+    }
+
+    private onclearButtonClick(component: cc.Button) {
         this.emit('click', component);
     }
 
