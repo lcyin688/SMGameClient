@@ -574,11 +574,9 @@ export default class WEWheelList extends cc.Component {
     }
 
     private isInVisibleRange(angle: number): boolean {
-        // 将角度归一化到 [-180, 180] 范围
-        const normalizedAngle = this.normalizeAngle(angle);
-        // 可视范围是 angleRange
-        const visibleRange = this.angleRange / 2;
-        return Math.abs(normalizedAngle) <= visibleRange;
+        // // 将角度归一化到 [-180, 180] 范围
+        const visibleRange = (this.angleRange / 2) * 1.2; // 降低灵敏度
+        return Math.abs(this.normalizeAngle(angle)) <= visibleRange;
     }
 
     private updateInertiaScroll(dt: number) {
