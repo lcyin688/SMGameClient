@@ -534,7 +534,12 @@ export default class NhwcMain extends UIVControlBase {
             .to(0.3, { position: cc.v3(this.model.isShowChat ? 0 : 720, 0) })
             .start();
     }
-    private CC_onClicksend() {}
+    private CC_onClicksend() {
+        if (this.view.messageEditBox.string.length > 0) {
+            // szg.player.nhwcData.reqNHWCMessage(this.view.messageEditBox.string);
+            this.view.messageEditBox.string = '';
+        }
+    }
 
     private CC_onClickbtnChat() {
         this.showMessAgePanel();
