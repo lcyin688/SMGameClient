@@ -573,20 +573,18 @@ class ViewUtil {
     }
 
     /**
-     * 更改spriteframe
-     * @param sprite
-     * @param url
-     */
-    static changeSFWithAtlas(sprite: cc.Sprite, url: string, subFile: string, endCb?: Function) {
-        sprite.changeSFWithAtlas(url, subFile, endCb);
-    }
-    /**
      * 更改spine
      * @param sprite
      * @param url
      */
-    static changeSkeletonData(spine: sp.Skeleton, url: string, endCb?: Function) {
-        // spine.changeSkeletonData(url, endCb);
+    static async changeSkeletonData(spine: sp.Skeleton, url: string, endCb?: Function) {
+        let item = await c2f.res.loadOne(url, sp.SkeletonData);
+        if (item) {
+            spine.skeletonData = item as sp.SkeletonData;
+            if (endCb) {
+                endCb();
+            }
+        }
     }
 
     /** 重置Ctrl中的view和model对象 */
