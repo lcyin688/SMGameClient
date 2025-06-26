@@ -1,0 +1,73 @@
+# WEC CLI configuration file .wec.cli.yaml
+wec:
+    cli:
+        # cli类型：1、client；2、tool
+        cliType: client
+        # 软链接配置
+        link:
+            - src: ./skin/launcher-std/ct5
+              dst: ./assets/launcher/launcher/skin/ct5
+            - src: ./skin/common-std/ct5
+              dst: ./assets/common/common/skin/ct5
+            - src: ./skin/hall-std/ct5
+              dst: ./assets/hall/hall/skin/ct5
+
+        # 皮肤模版生成配置
+        generate:
+            # 模版输入路径/模版输出路径
+            - artInputPath: ./assets/launcher/launcher/skin
+              artOutputPath: ./assets/launcher/launcher/skin
+            - artInputPath: ./assets/common/common/skin
+              artOutputPath: ./assets/common/common/skin
+            - artInputPath: ./assets/hall/hall/skin
+              artOutputPath: ./assets/hall/hall/skin
+
+        # 子游戏工程模版生成配置
+        # generate:
+        #   模版输入路径/模版输出路径
+        #   - artInputPath: ./assets/game
+        #     artOutputPath: ./assets/game
+
+        # 项目重构模式匹配规则配置，用户规则匹配，重构批量修改
+        # replace:
+        #     # 模版输入路径
+        #     artInputPath: ./input
+        #     # 模版输出路径
+        #     artOutputPath: ./out
+        #     # 关注文件类型
+        #     focusFileExts:
+        #         - .ts
+        #         - .prefab
+        #         - .meta
+        #     # 二进制文件后缀, 直接copy到输出目录
+        #     binaryExts:
+        #         - .png
+        #     matches:
+        #         # 匹配规则列表
+        #         # 替换UIEventHandler
+        #         - src: Dlg<%=Code%>(\w*)EventHandler
+        #           dst: <%=Code%>$1DlgHandler
+        #         # 替换Dlg View代码文件
+        #         - src: Dlg<%=Code%>(\w*)View
+        #           dst: <%=Code%>$1DlgView
+        #         # 替换Dlg 逻辑脚本
+        #         - src: Dlg<%=Code%>(\w*)
+        #           dst: <%=Code%>$1Dlg
+        #         - src: dlg<%=Code%>(\w*)
+        #           dst: <%=code%>$1Dlg
+        #         # 替换Item View代码文件
+        #         - src: Item<%=Code%>(\w*)View
+        #           dst: <%=Code%>$1ItmView
+        #         # 替换Item 逻辑脚本
+        #         - src: Item<%=Code%>(\w*)
+        #           dst: <%=Code%>$1Itm
+        #         # 替换Item_开头的预制体到新规范
+        #         - src: Item_<%=Code%>(\w*)
+        #           dst: <%=Code%>$1Itm
+        #         # 替换uiview目录到bind、item切换到itm
+        #         - src: uiview/dlg
+        #           dst: bind/dlg
+        #         - src: uiview/item
+        #           dst: bind/itm
+        #         - src: uiview
+        #           dst: bind

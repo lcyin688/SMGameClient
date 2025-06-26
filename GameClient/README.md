@@ -109,3 +109,35 @@ callback: (code: number, data: msg.SC_Login) => {
                 //todo 登录成功逻辑
             }
         })
+
+WEC CLIconfigurationfile
+
+wec:
+
+cli:
+
+# cli 类型：1、client；2、tool
+
+    cliType: client
+
+# 工程模版生成配置
+
+    generate:
+
+# 模版输入路径/模版输出路径
+
+    - artInputPath:./assets/launcher/launcher/skin
+
+    artOutputPath: ./assets/launcher/launcher/skin
+
+    - artInputPath:./assets/common/common/skin
+
+    artOutputPath: ./assets/common/common/skin
+
+    - artInputPath:./assets/hall/hall/skin
+
+    artOutputPath: ./assets/hall/hall/skin
+
+# 生成命令
+
+wec generate-sct3-tct4
